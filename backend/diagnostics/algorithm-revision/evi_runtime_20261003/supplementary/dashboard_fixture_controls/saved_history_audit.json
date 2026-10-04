@@ -1,0 +1,87 @@
+{
+  "captured_at": "2026-10-02T18:32:58.751404+00:00",
+  "method": "Read saved report files and reproduce the dashboard aggregation; no reports or model outputs were changed.",
+  "screenshot_arithmetic": {
+    "counts": [
+      138,
+      171,
+      402
+    ],
+    "total": 711,
+    "all_ungraded": true,
+    "interpretation": "The three earliest retained reports match the screenshot total. The screenshot did not include its report IDs, so this association is an inference."
+  },
+  "current_saved_runs": 5,
+  "current_inspection_records": 1587,
+  "current_stored_grades": {
+    "ungraded": 1572,
+    "Class 1": 15
+  },
+  "reports": [
+    {
+      "path": "backend\\results\\beebe44a008345b5bc53bd64cb2c04a6\\report.json",
+      "sha256": "8477db7497e3459c4c2cf496df49f0592de866af4a090c6f7a3b98a6b2388b93",
+      "job_id": "beebe44a008345b5bc53bd64cb2c04a6",
+      "created_at": "2026-10-01T12:05:31.912448+00:00",
+      "source_name": "current-upload.mp4",
+      "inspection_records": 138,
+      "stored_grades": {
+        "ungraded": 138
+      }
+    },
+    {
+      "path": "backend\\results\\9175f97a44a846299aaf457e549e5dfb\\report.json",
+      "sha256": "05a86fc975125e587cdcabbfe017ba5bd4691be2ba62aac9f5afa8a3cfb46176",
+      "job_id": "9175f97a44a846299aaf457e549e5dfb",
+      "created_at": "2026-10-01T14:49:05.421946+00:00",
+      "source_name": "Video Project 6.mp4",
+      "inspection_records": 171,
+      "stored_grades": {
+        "ungraded": 171
+      }
+    },
+    {
+      "path": "backend\\results\\93d5541ce7e143aca7a62cacdac182e3\\report.json",
+      "sha256": "fba671fa67c4ab3f025251baae8bfcfced693df9675de5618c628dbfc28f1682",
+      "job_id": "93d5541ce7e143aca7a62cacdac182e3",
+      "created_at": "2026-10-01T15:57:02.486892+00:00",
+      "source_name": "WIN_20260818_13_29_43_Pro.mp4",
+      "inspection_records": 402,
+      "stored_grades": {
+        "ungraded": 402
+      }
+    },
+    {
+      "path": "backend\\results\\f2276fe89ce24fe1a155c228a00e3f17\\report.json",
+      "sha256": "8023c64461be335f93fb237beb4e0d5a253449f32d797734d2a78d58c542c3c9",
+      "job_id": "f2276fe89ce24fe1a155c228a00e3f17",
+      "created_at": "2026-10-01T23:27:46.369028+00:00",
+      "source_name": "WIN_20260818_13_29_43_Pro.mp4",
+      "inspection_records": 402,
+      "stored_grades": {
+        "ungraded": 394,
+        "Class 1": 8
+      }
+    },
+    {
+      "path": "backend\\results\\272fb3d439e04f3ab86065a99b686545\\report.json",
+      "sha256": "94862812fcf3fe03ce1ba85515aeeaff79b4c3342ceb7d09bcee861f4cd1fa5e",
+      "job_id": "272fb3d439e04f3ab86065a99b686545",
+      "created_at": "2026-10-02T13:10:33.659792+00:00",
+      "source_name": "WIN_20260818_13_29_43_Pro.mp4",
+      "inspection_records": 474,
+      "stored_grades": {
+        "ungraded": 467,
+        "Class 1": 7
+      }
+    }
+  ],
+  "semantics": {
+    "record_identity": "job_id plus track_id; repeated analyses are separate records, not unique physical fruit.",
+    "backend_limit": "All fruits from every report are returned; no recent-fruit cap.",
+    "table_limit": "Six rows initially; filters run on the full scoped list; Show more adds six.",
+    "incomplete_video_runs": "A run with only per-track result.json files and no aggregate report.json is absent from dashboard totals.",
+    "algorithm_changes": "Saved grades are not recomputed automatically. A new completed analysis adds another report.",
+    "grade_limit": "Stored Class values are model/algorithm outputs, not manually verified grade accuracy."
+  }
+}

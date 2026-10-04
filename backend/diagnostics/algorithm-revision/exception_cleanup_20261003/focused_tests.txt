@@ -1,0 +1,17 @@
+test_cancel_after_pipeline_creation_releases_tracks_without_opening_video (test_analysis_cleanup.AnalysisCleanupTests.test_cancel_after_pipeline_creation_releases_tracks_without_opening_video) ... ok
+test_completed_run_saves_review_evidence_and_releases_tracks (test_analysis_cleanup.AnalysisCleanupTests.test_completed_run_saves_review_evidence_and_releases_tracks) ... ok
+test_end_of_video_mapping_error_releases_other_pending_tracks (test_analysis_cleanup.AnalysisCleanupTests.test_end_of_video_mapping_error_releases_other_pending_tracks) ... ok
+test_frame_processing_error_releases_video_and_all_remaining_tracks (test_analysis_cleanup.AnalysisCleanupTests.test_frame_processing_error_releases_video_and_all_remaining_tracks) ... ok
+test_mapping_failure_keeps_views_until_evidence_is_written (test_analysis_cleanup.AnalysisCleanupTests.test_mapping_failure_keeps_views_until_evidence_is_written) ... ok
+test_unexpected_track_errors_propagate_and_release_only_that_track (test_analysis_cleanup.AnalysisCleanupTests.test_unexpected_track_errors_propagate_and_release_only_that_track) ... ok
+test_unopened_video_releases_capture_and_pending_tracks (test_analysis_cleanup.AnalysisCleanupTests.test_unopened_video_releases_capture_and_pending_tracks) ... ok
+test_frame_loop_observes_stop_and_releases_video (test_analysis_cancel.AnalysisCancelTests.test_frame_loop_observes_stop_and_releases_video) ... ok
+test_stop_before_upload_handler_starts (test_analysis_cancel.AnalysisCancelTests.test_stop_before_upload_handler_starts) ... ok
+test_stop_during_processing (test_analysis_cancel.AnalysisCancelTests.test_stop_during_processing) ... ok
+test_mapping_failure_still_saves_entry_and_last_seen_evidence_and_releases_track (test_entry_tracking.EntryTrackingTests.test_mapping_failure_still_saves_entry_and_last_seen_evidence_and_releases_track) ... ok
+test_partial_entry_and_exit_keep_identity_without_becoming_complete_map_views (test_entry_tracking.EntryTrackingTests.test_partial_entry_and_exit_keep_identity_without_becoming_complete_map_views) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.045s
+
+OK

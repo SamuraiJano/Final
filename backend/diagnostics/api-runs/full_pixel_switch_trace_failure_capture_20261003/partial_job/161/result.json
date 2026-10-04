@@ -1,0 +1,108 @@
+{
+  "track_id": 161,
+  "views": 0,
+  "status": "mapping_failed",
+  "grade": null,
+  "reason": "No complete, usable fruit silhouettes were captured.",
+  "rejected_views": {
+    "Fruit is cut off by the video frame": 7,
+    "Fruit foreground has fewer than 100 pixels": 1
+  },
+  "first_seen_frame": 124,
+  "last_seen_frame": 135,
+  "tracked_frames": 8,
+  "tracking_history": [
+    {
+      "frame": 124,
+      "bbox_xyxy": [
+        1876.5550537109375,
+        189.32435607910156,
+        1920.96630859375,
+        275.4674987792969
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 128,
+      "bbox_xyxy": [
+        1877.9530029296875,
+        228.79226684570312,
+        1922.4049072265625,
+        358.4494323730469
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 129,
+      "bbox_xyxy": [
+        1875.1002197265625,
+        244.39671325683594,
+        1921.2877197265625,
+        356.54107666015625
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 131,
+      "bbox_xyxy": [
+        1879.0928955078125,
+        278.5678405761719,
+        1919.367431640625,
+        407.1321105957031
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 132,
+      "bbox_xyxy": [
+        1886.8009033203125,
+        298.321533203125,
+        1919.633056640625,
+        417.2665710449219
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 133,
+      "bbox_xyxy": [
+        1878.3133544921875,
+        309.56866455078125,
+        1919.02392578125,
+        419.9169006347656
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 134,
+      "bbox_xyxy": [
+        1877.0235595703125,
+        323.6773681640625,
+        1918.6256103515625,
+        421.9024963378906
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 135,
+      "bbox_xyxy": [
+        1872.3070068359375,
+        325.72784423828125,
+        1917.7901611328125,
+        433.8301086425781
+      ],
+      "touches_frame_edge": false
+    }
+  ],
+  "tracking_evidence": [
+    {
+      "stage": "entry",
+      "frame": 124,
+      "crop": "/results/78b4a03ccaa549de96ecd88c5efb5806/161/tracking_entry_frame_00124.png"
+    },
+    {
+      "stage": "last_seen",
+      "frame": 135,
+      "crop": "/results/78b4a03ccaa549de96ecd88c5efb5806/161/tracking_last_seen_frame_00135.png"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+import react, { reactCompilerPreset } from '@vitejs/plugin-react'
+import babel from '@rolldown/plugin-babel'
+import { defineConfig } from 'vite'
+import { randomUUID } from 'node:crypto'
+import process from 'node:process'
+
+function backendControl() {
+  return {
+    name: 'backend-control',
+    configureServer(server) {
+      server.middlewares.use('/api/backend/control', (request, response) => {
+        if (request.url !== '/' || !['GET', 'POST'].includes(request.method)) {
+          response.writeHead(404).end()
+          return
+        }
+        if (request.method === 'POST' && request.headers.origin !== `http://${request.headers.host}`) {
+          response.writeHead(403).end()
+          return
+        }
+        if (!process.send) {
+          response.writeHead(503, { 'Content-Type': 'application/json' })
+          response.end(JSON.stringify({ detail: 'Start the app with npm run dev to manage the backend.' }))
+          return
+        }
+        const id = randomUUID()
+        const onMessage = (message) => {
+          if (message?.type !== 'backend-control-result' || message.id !== id) return
+          clearTimeout(timer)
+          process.off('message', onMessage)
+          response.writeHead(message.ok === false ? 409 : 200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' })
+          response.end(JSON.stringify(message))
+        }
+        const timer = setTimeout(() => {
+          process.off('message', onMessage)
+          response.writeHead(504, { 'Content-Type': 'application/json' })
+          response.end(JSON.stringify({ detail: 'Backend refresh timed out.' }))
+        }, 90000)
+        process.on('message', onMessage)
+        process.send({ type: 'backend-control', id, action: request.method === 'POST' ? 'refresh' : 'status' })
+      })
+    },
+  }
+}
+
+// https://vite.dev/config/
+export default defineConfig({
+  server: {
+    // Python environments, saved images and model weights do not need hot reload.
+    watch: { ignored: ['**/backend/**'] },
+    proxy: {
+      '/api': 'http://127.0.0.1:8000',
+      '/results': 'http://127.0.0.1:8000',
+    },
+  },
+  plugins: [
+    backendControl(),
+    react(),
+    babel({ presets: [reactCompilerPreset()] })
+  ],
+})

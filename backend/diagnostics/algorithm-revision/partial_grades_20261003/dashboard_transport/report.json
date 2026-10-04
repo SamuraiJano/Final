@@ -1,0 +1,38 @@
+{
+  "scope": "Read-only transport experiments against the completed dashboard JSON; no inference, saved-map changes or production source changes by this reviewer.",
+  "node_version": "22.12.0",
+  "vite_version": "8.3.1",
+  "vite_version_source": {
+    "installed_package": "node_modules/vite/package.json",
+    "startup_log": "backend/diagnostics/algorithm-revision/service_20261003/partial_policy_resume/dashboard_stdout.log",
+    "observed_startup_banner": "VITE v8.3.1",
+    "captured_evidence": "version_source.txt",
+    "correction": "The initial 8.3.0 entry was taken from the project's declared dependency range ^8.3.0 rather than measured from the installed package. It was corrected to 8.3.1 after checking the installed package and the service's pre-experiment startup banner. Raw experiment output was not edited."
+  },
+  "vendored_proxy_version": "http-proxy-3 1.23.3",
+  "payload_bytes": 3774048,
+  "payload_sha256": "fc74391e044f80a27d30912a6c3793ba2a50536e8f751371da5999b46983ba2c",
+  "dashboard_records": 2535,
+  "experiments": [
+    {"transport": "Node fetch direct API, default headers", "bytes": 3774048, "elapsed_ms": 1529, "complete": true},
+    {"transport": "Node fetch direct API, Connection: close", "bytes_received_before_timeout": 3720960, "elapsed_ms": 3513, "complete": false},
+    {"transport": "Node fetch direct API, Connection: keep-alive", "bytes": 3774048, "elapsed_ms": 1611, "complete": true},
+    {"transport": "Temporary Vite fetch-only proxy; Node HTTP client Connection: close", "bytes_received_before_timeout": 3741696, "complete": false},
+    {"transport": "Temporary Vite dashboard proxy with keep-alive agent and header; Node HTTP client Connection: close", "status": 200, "bytes": 3774048, "elapsed_ms": 1659, "complete": true, "same_bytes_as_reference": true, "sha256": "fc74391e044f80a27d30912a6c3793ba2a50536e8f751371da5999b46983ba2c", "records": 2535},
+    {"transport": "Temporary Vite dashboard proxy with keep-alive agent and header; Node fetch client", "status": 200, "bytes": 3774048, "elapsed_ms": 1779, "complete": true, "same_bytes_as_reference": true, "sha256": "fc74391e044f80a27d30912a6c3793ba2a50536e8f751371da5999b46983ba2c", "records": 2535}
+  ],
+  "tested_proxy_options": {
+    "route": "/api/dashboard",
+    "target": "http://127.0.0.1:8000",
+    "agent": "new http.Agent({keepAlive: true})",
+    "headers": {"connection": "keep-alive"}
+  },
+  "installed_source_evidence": {
+    "path": "node_modules/vite/dist/node/chunks/node.js",
+    "function": "setupOutgoing",
+    "behavior": "outgoing.agent = options.agent || false; when no agent is present, outgoing.headers.connection is forcibly set to close."
+  },
+  "temporary_servers": {"ports": [57991, 61999], "closed_in_finally": true, "keep_alive_agent_destroyed": true},
+  "production_source_modified_by_reviewer": false,
+  "limitation": "This proves the observed dependence on Connection: close and the byte-preserving proxy fix. It does not independently establish the lower-level Windows, Python, or TCP implementation defect. Final application-browser verification remains a separate check."
+}

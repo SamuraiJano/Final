@@ -1,0 +1,59 @@
+{
+  "track_id": 8,
+  "views": 2,
+  "view_frames": [
+    0,
+    1
+  ],
+  "rejected_views": {},
+  "status": "insufficient_longitude_coverage",
+  "grade": null,
+  "model_type": "oblate",
+  "estimated_radii_px": [
+    115.13336238883217,
+    99.53461654377823,
+    115.13336238883217
+  ],
+  "rotation_coverage_deg": 8.25452375269205,
+  "map_longitude_span_deg": 9.3378671892396,
+  "mapped_view_frames": [
+    0,
+    1
+  ],
+  "discarded_view_frames": [],
+  "view_selection": [
+    {
+      "source_frame": 0,
+      "target_frame": 1,
+      "rotation_deg": 8.25452375269205,
+      "error": 0.5539093901537502,
+      "status": "accepted"
+    }
+  ],
+  "observed_surface_pct": 23.357270794380863,
+  "observed_longitude_deg": 99.4475138121547,
+  "defect_pct_of_observed": 0.0,
+  "pair_rotations_deg": [
+    8.25452375269205
+  ],
+  "pair_rotation_vectors_deg": [
+    [
+      8.25452375269205,
+      -3.4544063486715024,
+      0.0
+    ]
+  ],
+  "pair_errors": [
+    0.5539093901537502
+  ],
+  "surface_map": "/results/original_video_symmetric_v1/8/surface_map.png",
+  "observed_mask": "/results/original_video_symmetric_v1/8/observed.png",
+  "defect_maps": {
+    "dark_marking": "/results/original_video_symmetric_v1/8/defect_dark_marking.png",
+    "light_brown_discolouration": "/results/original_video_symmetric_v1/8/defect_light_brown_discolouration.png",
+    "open_skin": "/results/original_video_symmetric_v1/8/defect_open_skin.png",
+    "skin_wrinkling": "/results/original_video_symmetric_v1/8/defect_skin_wrinkling.png",
+    "wind_scarring": "/results/original_video_symmetric_v1/8/defect_wind_scarring.png"
+  },
+  "reason": "The views do not cover enough of the fruit's circumference for a reliable class."
+}

@@ -1,0 +1,186 @@
+{
+  "frozen_at": "2026-10-04T08:47:09.390757+00:00",
+  "method": "Independent analytical sphere and x-axis poses, radius55, camera center74.5. Moving cases have body-to-camera poses0,6,12deg; stationary cases0,0,0. Reflectance=20*exp(1+.003*body_texture). Camera-fixed log-linear light reverses sign between three frames: I=reflectance*exp(sign*gradient*(camera_x+.5*camera_y))*exposure; signs[1,-1,1], exposure[1,.75,1.05], gradient=.006 or.012perpx. No clipping allowed. Pattern and strength choices prescribed before estimator evaluation; no neural models or fitted correspondences.",
+  "acceptance": {
+    "moving": {
+      "all_pairs_measured": true,
+      "endpoint_pose_error_max_deg": 1.0,
+      "maximum_landmark_rms_max_px": 1.0
+    },
+    "stationary": {
+      "all_pairs_unavailable": true,
+      "no_map_or_grade": true
+    }
+  },
+  "scope": "Development stress scenes, not held-out data or realistic calibration of these abrupt lighting changes. Perfect sphere masks/orthographic projection. They check a photometric fallback with independently fixed motion, including genuinely stationary fruit.",
+  "cases": {
+    "moving_x6_log_light_reversal_g0.006_texture_a": {
+      "kind": "short_xy",
+      "rotation_axis": "x",
+      "input_sha256": "e52ea4c79a8ff1bef491c338fd4fbfecac2dcc6698acc7d39137b6577ed2e8af",
+      "float_ranges": [
+        [
+          50.33487621902566,
+          132.05496044957232
+        ],
+        [
+          36.31966283607245,
+          112.51049129500896
+        ],
+        [
+          52.13081372000186,
+          136.65052647168207
+        ]
+      ],
+      "saturated_pixels": 0,
+      "frames": 3
+    },
+    "moving_x6_log_light_reversal_g0.012_texture_a": {
+      "kind": "short_xy",
+      "rotation_axis": "x",
+      "input_sha256": "ceecf06998caf14ea78fe45571a6b458c8834d0d877a8a0cb304794de8407b24",
+      "float_ranges": [
+        [
+          37.909365828130674,
+          188.4029311680207
+        ],
+        [
+          25.71484975594688,
+          156.92454186215434
+        ],
+        [
+          38.73894607782753,
+          194.3917901129157
+        ]
+      ],
+      "saturated_pixels": 0,
+      "frames": 3
+    },
+    "stationary_log_light_reversal_g0.006_texture_a": {
+      "kind": "stationary_stress",
+      "rotation_axis": "x",
+      "input_sha256": "54bba3532acb9fd7c801381f8eeb91eff8c98efa238e4b475f75840b7491d7c6",
+      "float_ranges": [
+        [
+          50.33487621902566,
+          132.05496044957232
+        ],
+        [
+          36.330547282499694,
+          111.63765328364178
+        ],
+        [
+          52.85162002997694,
+          138.65770847205096
+        ]
+      ],
+      "saturated_pixels": 0,
+      "frames": 3
+    },
+    "stationary_log_light_reversal_g0.012_texture_a": {
+      "kind": "stationary_stress",
+      "rotation_axis": "x",
+      "input_sha256": "5e9adbbfcb8632cb5eaf80ef79a92dc2d9299181b2d41607b7c83a064dc3a98b",
+      "float_ranges": [
+        [
+          37.909365828130674,
+          188.4029311680207
+        ],
+        [
+          26.120480421607454,
+          154.62126278658724
+        ],
+        [
+          39.80483411953721,
+          197.82307772642173
+        ]
+      ],
+      "saturated_pixels": 0,
+      "frames": 3
+    },
+    "moving_x6_log_light_reversal_g0.006_texture_b": {
+      "kind": "short_xy",
+      "rotation_axis": "x",
+      "input_sha256": "963dfe4e331d4100c6a9985bdd9e78cf4d85e6fa9212683c580a0dde0a10ffdf",
+      "float_ranges": [
+        [
+          43.927214600965996,
+          140.77010118036918
+        ],
+        [
+          38.620898837700416,
+          104.76844131778913
+        ],
+        [
+          48.31900232800655,
+          156.44444986327062
+        ]
+      ],
+      "saturated_pixels": 0,
+      "frames": 3
+    },
+    "moving_x6_log_light_reversal_g0.012_texture_b": {
+      "kind": "short_xy",
+      "rotation_axis": "x",
+      "input_sha256": "0dd3cf49d782cbec42021a75096104411cbd88133ac089aa760e85e72deb0a29",
+      "float_ranges": [
+        [
+          30.601041691407158,
+          193.6152547097157
+        ],
+        [
+          26.95142095486915,
+          146.77534057725586
+        ],
+        [
+          33.72424953136684,
+          217.93590243316174
+        ]
+      ],
+      "saturated_pixels": 0,
+      "frames": 3
+    },
+    "stationary_log_light_reversal_g0.006_texture_b": {
+      "kind": "stationary_stress",
+      "rotation_axis": "x",
+      "input_sha256": "dccca8a89134439298c09f6365450ffb9557fee3d250d733f275fe42a235a3c8",
+      "float_ranges": [
+        [
+          43.927214600965996,
+          140.77010118036918
+        ],
+        [
+          38.15268786585925,
+          103.76187634619555
+        ],
+        [
+          46.1235753310143,
+          147.80860623938764
+        ]
+      ],
+      "saturated_pixels": 0,
+      "frames": 3
+    },
+    "stationary_log_light_reversal_g0.012_texture_b": {
+      "kind": "stationary_stress",
+      "rotation_axis": "x",
+      "input_sha256": "732db6707e98471bf62a369d359829d5df65bd46891f3d9d3295219bb92a2bcc",
+      "float_ranges": [
+        [
+          30.601041691407158,
+          193.6152547097157
+        ],
+        [
+          26.793550015041212,
+          145.10003496391863
+        ],
+        [
+          32.13109377597752,
+          203.2960174452015
+        ]
+      ],
+      "saturated_pixels": 0,
+      "frames": 3
+    }
+  }
+}

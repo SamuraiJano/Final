@@ -1,0 +1,189 @@
+{
+  "track_id": 35,
+  "views": 15,
+  "view_frames": [
+    0,
+    1,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    27,
+    28,
+    30,
+    31
+  ],
+  "rejected_views": {
+    "Fruit silhouette is occluded or too irregular for a spheroid": 17,
+    "Fruit is cut off by the video frame": 11
+  },
+  "status": "insufficient_longitude_coverage",
+  "grade": null,
+  "model_type": "oblate",
+  "estimated_radii_px": [
+    76.11267981117676,
+    64.78812067214888,
+    76.11267981117676
+  ],
+  "rotation_coverage_deg": 6.499999999999975,
+  "map_longitude_span_deg": 7.876543454770696,
+  "mapped_view_frames": [
+    0,
+    17
+  ],
+  "discarded_view_frames": [
+    1,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    27,
+    28,
+    30,
+    31
+  ],
+  "view_selection": [
+    {
+      "source_frame": 0,
+      "target_frame": 1,
+      "rotation_deg": 0.4999999999999429,
+      "error": 0.46643087220298085,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 0,
+      "target_frame": 17,
+      "rotation_deg": 6.499999999999975,
+      "error": 0.5132154490847229,
+      "status": "accepted"
+    },
+    {
+      "source_frame": 17,
+      "target_frame": 18,
+      "rotation_deg": 0.0,
+      "error": 0.12923915171484746,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 17,
+      "target_frame": 19,
+      "rotation_deg": 0.0,
+      "error": 0.31887701926371487,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 17,
+      "target_frame": 20,
+      "rotation_deg": 0.0,
+      "error": 0.3398474685006937,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 17,
+      "target_frame": 21,
+      "rotation_deg": 0.0,
+      "error": 0.46700154001563715,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 17,
+      "target_frame": 22,
+      "rotation_deg": 0.0,
+      "error": 0.3660627748769596,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 17,
+      "target_frame": 23,
+      "rotation_deg": 0.0,
+      "error": 0.39129479088929386,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 17,
+      "target_frame": 24,
+      "rotation_deg": 0.0,
+      "error": 0.5241595671288564,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 17,
+      "target_frame": 25,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 5.4 deg, error 0.592"
+    },
+    {
+      "source_frame": 25,
+      "target_frame": 27,
+      "rotation_deg": 0.0,
+      "error": 0.33632533073392457,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 25,
+      "target_frame": 28,
+      "rotation_deg": 0.0,
+      "error": 0.387806812963456,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 25,
+      "target_frame": 30,
+      "rotation_deg": 0.0,
+      "error": 0.5354912943360146,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 25,
+      "target_frame": 31,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 1.0 deg, error 0.620"
+    }
+  ],
+  "observed_surface_pct": 23.128079749108974,
+  "observed_longitude_deg": 97.7035490605428,
+  "defect_pct_of_observed": 0.18979543949084265,
+  "pair_rotations_deg": [
+    6.499999999999975
+  ],
+  "pair_rotation_vectors_deg": [
+    [
+      6.499999999999975,
+      -6.499999999999975,
+      0.0
+    ]
+  ],
+  "pair_errors": [
+    0.5132154490847229
+  ],
+  "surface_map": "/results/original_video_symmetric_v1/35/surface_map.png",
+  "observed_mask": "/results/original_video_symmetric_v1/35/observed.png",
+  "defect_maps": {
+    "dark_marking": "/results/original_video_symmetric_v1/35/defect_dark_marking.png",
+    "light_brown_discolouration": "/results/original_video_symmetric_v1/35/defect_light_brown_discolouration.png",
+    "open_skin": "/results/original_video_symmetric_v1/35/defect_open_skin.png",
+    "skin_wrinkling": "/results/original_video_symmetric_v1/35/defect_skin_wrinkling.png",
+    "wind_scarring": "/results/original_video_symmetric_v1/35/defect_wind_scarring.png"
+  },
+  "reason": "The views do not cover enough of the fruit's circumference for a reliable class."
+}

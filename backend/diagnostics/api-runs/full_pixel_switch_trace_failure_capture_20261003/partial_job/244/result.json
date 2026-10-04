@@ -1,0 +1,89 @@
+{
+  "track_id": 244,
+  "views": 0,
+  "status": "mapping_failed",
+  "grade": null,
+  "reason": "No complete, usable fruit silhouettes were captured.",
+  "rejected_views": {
+    "Fruit is cut off by the video frame": 3,
+    "Fruit silhouette is occluded or too irregular for a spheroid": 2,
+    "Fruit mask covers too little of its detection box": 1
+  },
+  "first_seen_frame": 205,
+  "last_seen_frame": 211,
+  "tracked_frames": 6,
+  "tracking_history": [
+    {
+      "frame": 205,
+      "bbox_xyxy": [
+        1445.8931884765625,
+        -0.25763893127441406,
+        1534.7869873046875,
+        22.842330932617188
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 207,
+      "bbox_xyxy": [
+        1431.3170166015625,
+        -0.007837414741516113,
+        1533.0755615234375,
+        70.84168243408203
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 208,
+      "bbox_xyxy": [
+        1418.3961181640625,
+        1.0706117153167725,
+        1532.8406982421875,
+        82.9022445678711
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 209,
+      "bbox_xyxy": [
+        1430.4652099609375,
+        13.408143043518066,
+        1530.5140380859375,
+        97.33623504638672
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 210,
+      "bbox_xyxy": [
+        1431.6092529296875,
+        36.18751525878906,
+        1531.631103515625,
+        111.80818939208984
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 211,
+      "bbox_xyxy": [
+        1429.93359375,
+        44.182186126708984,
+        1528.224609375,
+        127.76020050048828
+      ],
+      "touches_frame_edge": false
+    }
+  ],
+  "tracking_evidence": [
+    {
+      "stage": "entry",
+      "frame": 205,
+      "crop": "/results/78b4a03ccaa549de96ecd88c5efb5806/244/tracking_entry_frame_00205.png"
+    },
+    {
+      "stage": "last_seen",
+      "frame": 211,
+      "crop": "/results/78b4a03ccaa549de96ecd88c5efb5806/244/tracking_last_seen_frame_00211.png"
+    }
+  ]
+}

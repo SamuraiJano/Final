@@ -1,0 +1,8 @@
+{
+  "recorded_at": "2026-10-03T13:20:52.031363+02:00",
+  "command": "python -B backend/validate_current_profile_evidence.py --label evi_runtime_20261003",
+  "exit_code": 1,
+  "error": "RuntimeError: Archived checksum manifest differs from the frozen directory",
+  "diagnosis": "Checker compared raw CRLF archive text to universal-newline-normalized read_text output. Correct comparison is exact manifest bytes. This is not an observed ZIP payload discrepancy.",
+  "sealed_pack_modified": false
+}

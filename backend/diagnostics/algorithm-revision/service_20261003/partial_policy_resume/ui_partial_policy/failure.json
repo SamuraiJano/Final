@@ -1,0 +1,18 @@
+{
+  "captured_at": "2026-10-03T15:51:53.461055+00:00",
+  "passed": false,
+  "stage": "loading_latest_run",
+  "expected_job_id": "ed3aa02cca364812a145610aad627a83",
+  "expected_records": 474,
+  "error": "Browser timed out after 30 seconds waiting for the latest-run count; Vite logged ECONNRESET for /api/dashboard. An independent proxied GET timed out while reading the response body.",
+  "direct_api_bytes": 3774048,
+  "direct_api_elapsed_seconds": 1.719,
+  "proxy_announced_bytes": 3774048,
+  "proxy_bytes_received_before_timeout": 3670016,
+  "proxy_elapsed_seconds": 4.5,
+  "tiny_proxied_health_bytes": 170,
+  "tiny_proxied_health_elapsed_seconds": 0.031,
+  "inference_requested": false,
+  "analysis_cancelled": false,
+  "notes": "The saved direct API dashboard.json contains all 2,535 historical rows and the current 474-record report. These are delivery-failure measurements, not algorithm-accuracy evidence."
+}

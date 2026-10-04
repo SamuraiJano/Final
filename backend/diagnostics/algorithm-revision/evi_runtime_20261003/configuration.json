@@ -1,0 +1,395 @@
+{
+  "label": "evi_runtime_20261003",
+  "algorithm_source": "diagnostics/algorithm-revision/aligned_pixel_switch_trace_source/algorithm_snapshot.py",
+  "algorithm_sha256": "50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d",
+  "profile_settings": {
+    "native_matching_cost": "aligned_mad",
+    "minimum_view_rotation_deg": 20,
+    "transverse_angle_deg": 20,
+    "max_pair_angle_deg": 20
+  },
+  "runtime_status": "Completed 3 October at 13:09:55 SAST: 515 distinct frames, 474 saved records, 2 Class 1 / 472 Review (0.42% grading yield), 37.4 minutes for 17.3 seconds. Execution works for this clip; field accuracy is unmeasured and real-time performance is not achieved.",
+  "reports": [
+    {
+      "name": "camera_lighting",
+      "role": "shading",
+      "path": "diagnostics/algorithm-revision/camera_shading_pixel_switch_trace20_20261002/report.json",
+      "scope": "All twelve frozen camera-fixed lighting scenes, identical inputs and predeclared motion/noise criteria; inspected synthetic development controls."
+    },
+    {
+      "name": "short_motion",
+      "role": "motion",
+      "path": "diagnostics/algorithm-revision/short_pixel_switch_trace20_20261002/report.json",
+      "scope": "Two moving chains, two 120-frame stationary sequences and two exposure-offset checks; unavailable stationary poses are not zero-error estimates."
+    },
+    {
+      "name": "large_sideways20",
+      "role": "large_transverse",
+      "path": "diagnostics/algorithm-revision/large_transverse_pixel_switch_trace20_20261002/report.json",
+      "scope": "Four known +/-13-degree sideways pairs at unchanged one-degree / one-pixel limits. Only transverse bound 20 is primary; bound 10 alternatives remain raw comparison data.",
+      "bounds": [
+        20
+      ]
+    },
+    {
+      "name": "fresh_texture",
+      "role": "fresh_texture",
+      "path": "diagnostics/algorithm-revision/fresh_texture_pixel_switch_trace20_20261002/report.json",
+      "scope": "Fresh texture C under two camera lighting profiles; all-clear maps separately verify supplied-mask class arithmetic."
+    },
+    {
+      "name": "vertical_full_turn",
+      "role": "full_turn",
+      "path": "diagnostics/algorithm-revision/full_turn_y_pixel_switch_trace20_20261002/report.json",
+      "scope": "Both exact frozen vertical-axis full turns; acceptance and original inputs unchanged; separate all-clear arithmetic flags."
+    },
+    {
+      "name": "numerical_equivalence",
+      "role": "numeric",
+      "path": "diagnostics/algorithm-revision/pixel_switch_trace_equivalence_20261002/report.json",
+      "scope": "Exact source50 numerical descriptor/legacy-cost equivalence. Its numerical fixture settings differ from the conveyor profile and do not constitute a conveyor-motion or grading test.",
+      "settings_expected": {}
+    },
+    {
+      "name": "fixed_conveyor_geometry",
+      "role": "fixed",
+      "path": "diagnostics/algorithm-revision/fixed_pixel_switch_trace20_conveyor_20261002/report.json",
+      "scope": "Four exact frozen conveyor tracks; geometric availability/coverage only. Missing defect observations forbid assigning geometry-only grades."
+    },
+    {
+      "name": "author_all36",
+      "role": "author",
+      "path": "diagnostics/authors-benchmark/runs/pixel_switch_trace_author_profile_20261002/report.json",
+      "scope": "All 36 public author sequences and all 497 published labels. Author frame spacing uses a 55-degree rolling bound and direction -1. Repeatedly inspected development data; no declared held-out accuracy acceptance threshold.",
+      "tracks": 36,
+      "labelled_correspondences": 497,
+      "settings_expected": {
+        "native_matching_cost": "aligned_mad",
+        "minimum_view_rotation_deg": 20,
+        "transverse_angle_deg": 20,
+        "max_pair_angle_deg": 55
+      }
+    },
+    {
+      "name": "retained_author_all36",
+      "role": "retained_author",
+      "path": "diagnostics/authors-benchmark/bridge_runs/retained_pixel_switch_trace_author_20261002/report.json",
+      "scope": "Retained-map subset over all 36sequences/all 497labels. Excluded endpoints remain unavailable in the full denominator; no nonadjacent bridge or hidden replacement subset.",
+      "tracks": 36,
+      "labelled_correspondences": 497,
+      "settings_expected": {
+        "native_matching_cost": "aligned_mad",
+        "minimum_view_rotation_deg": 20,
+        "transverse_angle_deg": 20,
+        "max_pair_angle_deg": 55
+      }
+    },
+    {
+      "name": "paired_author_labels",
+      "role": "author_comparison",
+      "path": "diagnostics/algorithm-revision/pixel_switch_author_comparison_20261002/report.json",
+      "scope": "Same exact labels versus both earlier profiles; gains/losses, common-label errors and all 497availability remain separate. No overall author-accuracy improvement is claimed.",
+      "settings_expected": {
+        "native_matching_cost": "aligned_mad",
+        "minimum_view_rotation_deg": 20,
+        "transverse_angle_deg": 20,
+        "max_pair_angle_deg": 55
+      }
+    },
+    {
+      "name": "real_model",
+      "role": "model",
+      "path": "diagnostics/algorithm-revision/real_segmenter_pixel_switch_runtime_20261003/report.json",
+      "scope": "Actual source50/main4c GPU integration on 215 frozen detector/tracker crops and fruit masks. Detector loaded but zero detector calls; 42 segmentation calls/80 instances, 62.1 ms mean latency. Track 98 Class 1 arithmetic and three other tracks partial. No human pose/mask/grade truth.",
+      "main_sha256": "4c0b69d815164c9e4745af72a69880a417ee6b940cc1792027be4b31e775cfdb"
+    },
+    {
+      "name": "known_area_arithmetic",
+      "role": "area",
+      "path": "diagnostics/authors-benchmark/synthetic_runs/pixel_switch_trace_20261002/report.json",
+      "scope": "Source50known5/15/30percent defect masks and supplied true rotations test area/class and coverage arithmetic. Motion estimation/view selection are bypassed; recorded fixture settings differ deliberately from the conveyor profile.",
+      "settings_expected": {}
+    },
+    {
+      "name": "original_software",
+      "role": "software",
+      "path": "diagnostics/software-checks/pixel_switch_trace20_final_20261002/summary.json",
+      "scope": "Original source50/main2a software checkpoint:43tests/build/lint pass. This is not a test of the later runtime main cleanup.",
+      "settings_expected": {}
+    },
+    {
+      "name": "runtime_software",
+      "role": "software",
+      "path": "diagnostics/software-checks/pixel_switch_runtime_20261003/summary.json",
+      "scope": "New runtime software checkpoint after explicit track cleanup; final execution source/hash required separately. No changed rotation algorithm or field-accuracy claim.",
+      "settings_expected": {},
+      "awaited": true,
+      "main_sha256": "4c0b69d815164c9e4745af72a69880a417ee6b940cc1792027be4b31e775cfdb"
+    },
+    {
+      "name": "full_video_runtime",
+      "role": "api",
+      "path": "diagnostics/api-runs/full_pixel_switch_runtime_20261003/summary.json",
+      "scope": "Separately labelled full original 515-frame POST/API replay after runtime cleanup and training pause. Requires completed aggregate report and exact job snapshots; execution is not field grade/pose accuracy.",
+      "awaited": true,
+      "frames": 515,
+      "video_sha256": "dc25964bf6052972cad761b0246f79906e768c6737bf4228ba44711d7272429c"
+    },
+    {
+      "name": "failed_full_video330",
+      "role": "api",
+      "path": "diagnostics/api-runs/full_pixel_switch_trace_failure_capture_20261003/summary.json",
+      "scope": "Preserved original source50/main2a HTTP500 allocation failure at last published330/515 progress. Exact failure time/cause unknown. Concurrent training is context, not established causation;256 partial rows are not completed execution.",
+      "primary": false,
+      "settings_expected": {}
+    },
+    {
+      "name": "operational_author_reference",
+      "role": "author",
+      "path": "diagnostics/authors-benchmark/runs/operational_profile_v1/report.json",
+      "scope": "Historical source74author reference used in exact-label comparison; all 36/all 497scope. Distinct source, not current-source validation.",
+      "primary": false,
+      "settings_expected": {},
+      "tracks": 36,
+      "labelled_correspondences": 497
+    },
+    {
+      "name": "wobble_author_reference",
+      "role": "author",
+      "path": "diagnostics/authors-benchmark/runs/hybrid_wobble_profile_20261002/report.json",
+      "scope": "Historical source951/native8/side20author reference; later failed horizontal-turn controls. All 36/all 497scope retained as comparison only.",
+      "primary": false,
+      "settings_expected": {},
+      "tracks": 36,
+      "labelled_correspondences": 497
+    },
+    {
+      "name": "failed_native8_x12",
+      "role": "full_turn",
+      "path": "diagnostics/algorithm-revision/full_turn_x12_wobble_20261002/report.json",
+      "scope": "Historical source951 native8 ideal12-degree horizontal turns fail despite clear Class1 maps.",
+      "primary": false,
+      "settings_expected": {}
+    },
+    {
+      "name": "native20_setting_trial",
+      "role": "full_turn",
+      "path": "diagnostics/algorithm-revision/full_turn_x12_refine20_20261002/report.json",
+      "scope": "Settings-only source951 native20 ideal-turn passes are comparison history; author availability/fixedcoverage regressions prevented adoption.",
+      "primary": false,
+      "settings_expected": {}
+    },
+    {
+      "name": "failed_detrended_lighting",
+      "role": "shading",
+      "path": "diagnostics/algorithm-revision/camera_shading_detrended20_20261002/report.json",
+      "scope": "Distinct6f2c source lighting trial9/12 PASS; curved-full and short-chain failures remain in images/rawreports.",
+      "primary": false,
+      "settings_expected": {}
+    },
+    {
+      "name": "failed_unblurred_lighting",
+      "role": "shading",
+      "path": "diagnostics/algorithm-revision/camera_shading_unblurred20_20261002/report.json",
+      "scope": "Distinctc5c7 source lighting trial8/12 PASS, including curved failures; not the adopted source.",
+      "primary": false,
+      "settings_expected": {}
+    },
+    {
+      "name": "failed_log_blurred_lighting",
+      "role": "shading",
+      "path": "diagnostics/algorithm-revision/camera_shading_log_pattern20_20261002/report.json",
+      "scope": "Distinct1cfb source lighting trial10/12 PASS; two failed full curved turns retained.",
+      "primary": false,
+      "settings_expected": {}
+    },
+    {
+      "name": "failed_log_detrended_stationary",
+      "role": "shading",
+      "path": "diagnostics/algorithm-revision/camera_shading_log_detrended_unblurred20_20261002/report.json",
+      "scope": "Distinct25d1 source 9/12 PASS;117/0/119/27 false stationary returns. Actual false-map images retained.",
+      "primary": false,
+      "settings_expected": {}
+    },
+    {
+      "name": "failed_mock_checks",
+      "role": "software",
+      "path": "diagnostics/software-checks/pixel_switch_trace20_20261002/summary.json",
+      "scope": "Historical failed software attempt retained with original logs; no retrospective PASS or relabelled current runtime validation.",
+      "primary": false,
+      "settings_expected": {}
+    },
+    {
+      "name": "failed_artifact_lint",
+      "role": "software",
+      "path": "diagnostics/software-checks/pixel_switch_trace20_fixed_checks_20261002/summary.json",
+      "scope": "Historical failed software attempt retained with original logs; no retrospective PASS or relabelled current runtime validation.",
+      "primary": false,
+      "settings_expected": {}
+    },
+    {
+      "name": "original_real_model",
+      "role": "model",
+      "path": "diagnostics/algorithm-revision/real_segmenter_pixel_switch_trace20_20261002/report.json",
+      "scope": "Earlier source50/main2a actual GPU integration on frozen crops, retained as execution history. It does not validate the later cleanup runtime.",
+      "primary": false,
+      "settings_expected": {}
+    }
+  ],
+  "real_examples": [
+    {
+      "name": "fruit98",
+      "track": 98,
+      "tracking_folder": "results/272fb3d439e04f3ab86065a99b686545/98",
+      "tracking_algorithm_sha256": "863fd09cfa629c5b5b8ba7c73963fbe993441b3e3dd989f1e451d0a5f62c9db1",
+      "model_run": "real_model",
+      "scope": "Entry and last-seen images are from the earlier source863 detector/tracker run; source50 mapping and actual-model replay are shown separately."
+    }
+  ],
+  "supplementary_collections": [
+    {
+      "name": "history",
+      "path": "diagnostics/algorithm-revision/development_followup_20261002",
+      "scope": "Previously sealed bounded supplement:source951native20,plane,aligned,fast,contrast,full nine-sample pattern failures and exact shared scenes. Its reports are historical; raw Class 1 maps do not prove pose accuracy. Original archive remains separately preserved."
+    },
+    {
+      "name": "native20_author_comparison",
+      "path": "diagnostics/algorithm-revision/native_recheck_author_comparison_20261002",
+      "scope": "Native20settings-only author-availability/common-label regressions; not adopted source validation."
+    },
+    {
+      "name": "fruit98_walkthrough",
+      "path": "diagnostics/algorithm-revision/debug_fruit_98_pixel_switch_runtime_20261003",
+      "scope": "Current source50/main4c interactive fixed-crop walkthrough, all 65 pairs and three actual model overlays. Source863 tracking donors remain separate; no human pose/mask/grade truth."
+    },
+    {
+      "name": "dashboard_fixture_controls",
+      "path": "diagnostics/ui-checks/dashboard_scope_20261002",
+      "scope": "ArtificialAPI/UI fixture screenshots only establish controls/filtering/display. Saved-history audit separately hashes real reports;711 screenshot association is explicitly an inference."
+    },
+    {
+      "name": "previous_service_history",
+      "path": "diagnostics/algorithm-revision/service_20261002/pixel_switch_trace_services",
+      "scope": "Earlier real-service readiness/history screenshots before the failed replay finished, original launch/runtime/pause evidence. These images are not source50 final grading proof."
+    },
+    {
+      "name": "exception_cleanup",
+      "path": "diagnostics/algorithm-revision/exception_cleanup_20261003",
+      "scope": "Before/after main.py snapshots, diff and focused exception cleanup tests. Runtime lifecycle repair with unchanged source50 estimator; no proven cause for the prior allocation failure."
+    },
+    {
+      "name": "memory_audit",
+      "path": "diagnostics/algorithm-revision/memory_audit_20261003",
+      "scope": "Read-only memory/runtime audit and observed concurrent training context. No causal proof of the previous allocation failure and no motion-accuracy score."
+    },
+    {
+      "name": "fruit98_walkthrough_browser_qa",
+      "path": "diagnostics/ui-checks/walkthrough_pixel_switch_runtime_20261003",
+      "scope": "Headless rendering/interaction QA of the actual Oct3 walkthrough, not an independent motion-accuracy or grading test."
+    },
+    {
+      "name": "evidence_scope_audit",
+      "path": "diagnostics/algorithm-revision/evidence_scope_audit_20261003",
+      "scope": "Read-only source, model, parameter and claim-scope audit; pending full API state is recorded explicitly. No estimator rerun or field accuracy claim."
+    },
+    {
+      "name": "runtime_service",
+      "path": "diagnostics/algorithm-revision/service_20261003/runtime_retry",
+      "scope": "Actual Oct3 hidden API/Vite launch, exact source/main/models/env/PIDs, durable resource sampling and GET-only browser progress. Initial progress screenshots still display the earlier completed history and are not current-source grades. Any separately labelled final screenshots require the completed current job record; service readiness/display are not accuracy tests."
+    }
+  ],
+  "workspace_files": [
+    {
+      "path": "README.md"
+    },
+    {
+      "path": "backend/ALGORITHM_EXPLAINED.md"
+    },
+    {
+      "path": "backend/diagnostics/authors-benchmark/DEVELOPMENT_LOG.md"
+    },
+    {
+      "path": "backend/CURRENT_PROFILE_EVIDENCE.md"
+    },
+    {
+      "path": "backend/main.py",
+      "sha256": "4c0b69d815164c9e4745af72a69880a417ee6b940cc1792027be4b31e775cfdb"
+    },
+    {
+      "path": "backend/dfine_segmenter.py",
+      "sha256": "20049bf4e24678342364f85b1f4eea69a36f5385c858189b40b52fac11fc360a"
+    },
+    {
+      "path": "backend/requirements.txt",
+      "sha256": "2b880df5495aa56cbbd21abb752b301f4f563c267d5ade481295b151dcd4e9c4"
+    },
+    {
+      "path": "src/App.jsx",
+      "sha256": "6638db6b7c173e407f0f4789a8071a5d1ba235110fc587341bcb24681aa5b2d7"
+    },
+    {
+      "path": "src/App.css",
+      "sha256": "3a9777321794c168f188cc75c749d26e3c625eeb6620c236f37899b45fe50d4c"
+    },
+    {
+      "path": "scripts/dev.mjs",
+      "sha256": "f41579d588457f17b06372077abc3f0e93a007ccdadbd415e256a32146abb230"
+    },
+    {
+      "path": "scripts/stop_process_tree.py",
+      "sha256": "fcd6db0138a16caaee584d0c6db42e093aee9c05f983dc3f7f40f66d6a8c1dea"
+    },
+    {
+      "path": "vite.config.js",
+      "sha256": "5473aba67e8860d0fff9622fcecd4a7eaa617c1dc70c391857063be5a41ffc82"
+    },
+    {
+      "path": "eslint.config.js",
+      "sha256": "856dabc578ba67c0e5f1a03c02b867b3eb468ae7a629e30721077ea29d442677"
+    },
+    {
+      "path": "backend/validate_api_video.py",
+      "sha256": "abaf1d87ac80aa2e77d486060103d66ec2a7367d2e3cb1a4725b01f43e782157"
+    },
+    {
+      "path": "backend/validate_current_profile_evidence.py"
+    },
+    {
+      "path": "backend/TESTING_PROCESS.md"
+    }
+  ],
+  "runtime_main_sha256": "4c0b69d815164c9e4745af72a69880a417ee6b940cc1792027be4b31e775cfdb",
+  "report_figures": [
+    {
+      "name": "historical_false_eligible_maps",
+      "path": "diagnostics/algorithm-revision/development_followup_20261002/false_eligible_maps.png",
+      "caption": "Historical failed synthetic candidates: actual false-eligible maps; supplied clear masks, not current-source results",
+      "scope": "Earlier source snapshots fail known motion or stationary criteria despite maps/Class1 arithmetic. The unchanged source maps and development figure are retained as failure evidence."
+    },
+    {
+      "name": "historical_lighting_comparison",
+      "path": "diagnostics/algorithm-revision/development_followup_20261002/camera_shading_comparison.png",
+      "caption": "Earlier lighting-trial outcomes with unchanged criteria; historical sources only",
+      "scope": "Previously sealed development comparison, including failed controls. Later source50 reruns are reported separately; this older chart is not relabelled as current validation."
+    },
+    {
+      "name": "actual_runtime_resources",
+      "path": "diagnostics/algorithm-revision/service_20261003/runtime_retry/resource_usage.png",
+      "caption": "Actual complete-run resource samples and post-run state: runtime evidence, not accuracy proof",
+      "scope": "94samples every25seconds; clearly labelled GiB/GPU units. GPU usage did not return to baseline. Runtime/progress/cleanup measurements do not measure motion or grading accuracy."
+    }
+  ],
+  "api_examples": [
+    {
+      "name": "actual_fruit98",
+      "track": 98,
+      "api_run": "full_video_runtime",
+      "expected_frames": {
+        "entry": 51,
+        "last_seen": 138,
+        "selected": 66
+      },
+      "scope": "Fresh full original-video detector, tracker, silhouettes, source50 motion and actual segmentation example: entry51, last138, crop66. Separate from the 215 frozen-crop replay. Actual 4.5115777% predicted defect area is configured arithmetic, not verified grade accuracy."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "label": "REPLACE_WITH_FRESH_EVIDENCE_LABEL",
+  "algorithm_source": "diagnostics/algorithm-revision/REPLACE_SOURCE/algorithm_snapshot.py",
+  "algorithm_sha256": "REPLACE_WITH_EXACT_FINAL_SOURCE_SHA256",
+  "profile_settings": {
+    "native_matching_cost": "REPLACE_FINAL_MATCHER",
+    "minimum_view_rotation_deg": "REPLACE_FINAL_RECHECK_ANGLE",
+    "transverse_angle_deg": "REPLACE_FINAL_TRANSVERSE_BOUND",
+    "max_pair_angle_deg": "REPLACE_FINAL_ROLLING_BOUND"
+  },
+  "reports": [
+    {
+      "name": "camera_lighting",
+      "role": "shading",
+      "primary": true,
+      "path": "diagnostics/algorithm-revision/REPLACE_COMPLETED_SCENES/report.json",
+      "scope": "The same twelve independently rendered lighting scenes; unchanged predeclared motion/noise criteria."
+    },
+    {
+      "name": "author_labels",
+      "role": "author",
+      "primary": true,
+      "path": "diagnostics/authors-benchmark/runs/REPLACE_COMPLETED_AUTHOR_RUN/report.json",
+      "tracks": 36,
+      "labelled_correspondences": 497,
+      "scope": "All 36 sequences and 497 published labels; inspected development data, not held-out evaluation."
+    },
+    {
+      "name": "real_model",
+      "role": "model",
+      "primary": true,
+      "path": "diagnostics/algorithm-revision/REPLACE_CURRENT_MODEL_RUN/report.json",
+      "scope": "Actual segmentation on frozen crops/masks; no new detector/tracker inference or human defect/grade truth."
+    }
+  ],
+  "real_examples": [
+    {
+      "name": "fruit98",
+      "track": 98,
+      "tracking_folder": "results/272fb3d439e04f3ab86065a99b686545/98",
+      "tracking_algorithm_sha256": "863fd09cfa629c5b5b8ba7c73963fbe993441b3e3dd989f1e451d0a5f62c9db1",
+      "model_run": "real_model",
+      "scope": "Entry/last-seen images from the earlier source863 full-video run; current-source model replay shown separately."
+    }
+  ]
+}

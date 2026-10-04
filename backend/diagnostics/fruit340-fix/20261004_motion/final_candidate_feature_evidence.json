@@ -1,0 +1,4506 @@
+{
+  "method": "Check the photometric candidate against independent descriptor matches.\n\nAll mutual feature matches are included after visible-surface lifting. Their\ncoordinates and per-point residuals are saved. The separately fitted3D feature\npose is reported only as a diagnostic; no feature fit controls the candidate.\n",
+  "pair": [
+    308,
+    309
+  ],
+  "candidate_vector_source": "Saved candidate mapping result",
+  "photometric_candidate_vector_deg": [
+    12.523506123365646,
+    -8.604264657042059,
+    -6.606128624554651
+  ],
+  "earlier_two_axis_retry_vector_deg": [
+    11.587602378943252,
+    -8.223198630558407,
+    0.0
+  ],
+  "limitations": [
+    "Automatic descriptor matches may include wrong correspondences.",
+    "No calibrated pose or map-coverage truth is available.",
+    "Feature fitted poses use RANSAC and are shown separately from the independent photometric candidate.",
+    "The manual marker has approximately2px label uncertainty and uses fitted geometry."
+  ],
+  "comparisons": [
+    {
+      "method": "sift",
+      "preprocess": "raw",
+      "raw_mutual_match_count": 10,
+      "visible_lifted_match_count": 10,
+      "excluded_invalid_depth_matches": 0,
+      "diagnostic_feature_ransac_inlier_count": 7,
+      "variants": {
+        "earlier_two_axis_photometric_retry": {
+          "vector_deg": [
+            11.587602378943252,
+            -8.223198630558407,
+            0.0
+          ],
+          "all_mutual_matches": {
+            "count": 10,
+            "mean_px": 11.76995571724571,
+            "median_px": 5.469587183886945,
+            "maximum_px": 69.85994651607521,
+            "p25_px": 4.441831944485111,
+            "p75_px": 6.009303801722722,
+            "p95_px": 42.78742297596438,
+            "count_under2px": 0,
+            "count_under5px": 4
+          },
+          "manual_marker_reprojection_error_px": 0.7419843111304071,
+          "per_point": [
+            {
+              "source_crop_xy": [
+                33.08035659790039,
+                114.3069839477539
+              ],
+              "matched_target_crop_xy": [
+                32.72996139526367,
+                111.93763732910156
+              ],
+              "predicted_target_crop_xy": [
+                29.61544322583279,
+                106.77435143953653
+              ],
+              "reprojection_error_px": 6.029904195349744,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                34.084293365478516,
+                62.3477668762207
+              ],
+              "matched_target_crop_xy": [
+                32.80252456665039,
+                56.619014739990234
+              ],
+              "predicted_target_crop_xy": [
+                30.80954427879594,
+                55.083101642626715
+              ],
+              "reprojection_error_px": 2.516147744157566,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                34.73033905029297,
+                82.22462463378906
+              ],
+              "matched_target_crop_xy": [
+                29.317968368530273,
+                79.12316131591797
+              ],
+              "predicted_target_crop_xy": [
+                30.240427775908792,
+                73.24763103630428
+              ],
+              "reprojection_error_px": 5.947502620841658,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                35.528846740722656,
+                115.67459106445312
+              ],
+              "matched_target_crop_xy": [
+                34.13315963745117,
+                113.01362609863281
+              ],
+              "predicted_target_crop_xy": [
+                31.727869461614866,
+                107.66839892285601
+              ],
+              "reprojection_error_px": 5.861473738799609,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                61.38482666015625,
+                30.483545303344727
+              ],
+              "matched_target_crop_xy": [
+                126.613525390625,
+                43.756839752197266
+              ],
+              "predicted_target_crop_xy": [
+                59.33433146332035,
+                24.944019875288255
+              ],
+              "reprojection_error_px": 69.85994651607521,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                76.8741226196289,
+                61.01161575317383
+              ],
+              "matched_target_crop_xy": [
+                66.8106689453125,
+                49.74388885498047
+              ],
+              "predicted_target_crop_xy": [
+                70.31949711219364,
+                49.12515971490206
+              ],
+              "reprojection_error_px": 3.5629623704833957,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                77.57793426513672,
+                141.7024383544922
+              ],
+              "matched_target_crop_xy": [
+                76.81944274902344,
+                141.62677001953125
+              ],
+              "predicted_target_crop_xy": [
+                73.06015776890214,
+                132.6861788793958
+              ],
+              "reprojection_error_px": 9.69878309360684,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                94.03044128417969,
+                51.58285140991211
+              ],
+              "matched_target_crop_xy": [
+                84.46862030029297,
+                38.29569625854492
+              ],
+              "predicted_target_crop_xy": [
+                88.11449455367583,
+                40.596380407566485
+              ],
+              "reprojection_error_px": 4.311095756885838,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                101.18638610839844,
+                74.46566009521484
+              ],
+              "matched_target_crop_xy": [
+                90.53343963623047,
+                58.07753372192383
+              ],
+              "predicted_target_crop_xy": [
+                93.8993766533409,
+                61.5471757240471
+              ],
+              "reprojection_error_px": 4.834040507282931,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                103.6015625,
+                58.77959442138672
+              ],
+              "matched_target_crop_xy": [
+                93.53302764892578,
+                43.817203521728516
+              ],
+              "predicted_target_crop_xy": [
+                97.2889761269297,
+                47.23420435697364
+              ],
+              "reprojection_error_px": 5.0777006289742825,
+              "diagnostic_feature_fit_inlier": true
+            }
+          ]
+        },
+        "final_three_axis_photometric_retry": {
+          "vector_deg": [
+            12.523506123365646,
+            -8.604264657042059,
+            -6.606128624554651
+          ],
+          "all_mutual_matches": {
+            "count": 10,
+            "mean_px": 9.665581235886812,
+            "median_px": 1.1859369572270957,
+            "maximum_px": 75.2881206754287,
+            "p25_px": 0.7790398413855841,
+            "p75_px": 4.974595931414608,
+            "p95_px": 45.664872849040556,
+            "count_under2px": 7,
+            "count_under5px": 7
+          },
+          "manual_marker_reprojection_error_px": 1.0454895153399975,
+          "per_point": [
+            {
+              "source_crop_xy": [
+                33.08035659790039,
+                114.3069839477539
+              ],
+              "matched_target_crop_xy": [
+                32.72996139526367,
+                111.93763732910156
+              ],
+              "predicted_target_crop_xy": [
+                32.86333584941841,
+                111.93826365820671
+              ],
+              "reprojection_error_px": 0.13337592477363705,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                34.084293365478516,
+                62.3477668762207
+              ],
+              "matched_target_crop_xy": [
+                32.80252456665039,
+                56.619014739990234
+              ],
+              "predicted_target_crop_xy": [
+                28.166996423910255,
+                60.62315661761591
+              ],
+              "reprojection_error_px": 6.125461071486088,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                34.73033905029297,
+                82.22462463378906
+              ],
+              "matched_target_crop_xy": [
+                29.317968368530273,
+                79.12316131591797
+              ],
+              "predicted_target_crop_xy": [
+                29.695699504780663,
+                78.47081241705301
+              ],
+              "reprojection_error_px": 0.7538168856846686,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                35.528846740722656,
+                115.67459106445312
+              ],
+              "matched_target_crop_xy": [
+                34.13315963745117,
+                113.01362609863281
+              ],
+              "predicted_target_crop_xy": [
+                35.072201806668126,
+                112.52184543227409
+              ],
+              "reprojection_error_px": 1.060022839080324,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                61.38482666015625,
+                30.483545303344727
+              ],
+              "matched_target_crop_xy": [
+                126.613525390625,
+                43.756839752197266
+              ],
+              "predicted_target_crop_xy": [
+                53.05823802636057,
+                27.69692643990335
+              ],
+              "reprojection_error_px": 75.2881206754287,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                76.8741226196289,
+                61.01161575317383
+              ],
+              "matched_target_crop_xy": [
+                66.8106689453125,
+                49.74388885498047
+              ],
+              "predicted_target_crop_xy": [
+                66.83088989560298,
+                49.59750527723055
+              ],
+              "reprojection_error_px": 0.14777360611934603,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                77.57793426513672,
+                141.7024383544922
+              ],
+              "matched_target_crop_xy": [
+                76.81944274902344,
+                141.62677001953125
+              ],
+              "predicted_target_crop_xy": [
+                79.00961769361379,
+                132.42515162219397
+              ],
+              "reprojection_error_px": 9.458681061232975,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                94.03044128417969,
+                51.58285140991211
+              ],
+              "matched_target_crop_xy": [
+                84.46862030029297,
+                38.29569625854492
+              ],
+              "predicted_target_crop_xy": [
+                83.53038383354397,
+                39.212574427344855
+              ],
+              "reprojection_error_px": 1.3118510753738675,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                101.18638610839844,
+                74.46566009521484
+              ],
+              "matched_target_crop_xy": [
+                90.53343963623047,
+                58.07753372192383
+              ],
+              "predicted_target_crop_xy": [
+                91.69412941841624,
+                59.06205634006073
+              ],
+              "reprojection_error_px": 1.5220005112001724,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                103.6015625,
+                58.77959442138672
+              ],
+              "matched_target_crop_xy": [
+                93.53302764892578,
+                43.817203521728516
+              ],
+              "predicted_target_crop_xy": [
+                93.41205194065734,
+                44.66330744819071
+              ],
+              "reprojection_error_px": 0.8547087084883306,
+              "diagnostic_feature_fit_inlier": true
+            }
+          ]
+        },
+        "diagnostic_three_axis_feature_fit": {
+          "vector_deg": [
+            13.084377807165284,
+            -8.845075673299387,
+            -6.915703072850734
+          ],
+          "all_mutual_matches": {
+            "count": 10,
+            "mean_px": 9.73542695593341,
+            "median_px": 1.0113231466449204,
+            "maximum_px": 75.58966975334587,
+            "p25_px": 0.6465385235020737,
+            "p75_px": 5.098174273523653,
+            "p95_px": 46.01541036329833,
+            "count_under2px": 7,
+            "count_under5px": 7
+          },
+          "manual_marker_reprojection_error_px": 0.4937981177082122,
+          "per_point": [
+            {
+              "source_crop_xy": [
+                33.08035659790039,
+                114.3069839477539
+              ],
+              "matched_target_crop_xy": [
+                32.72996139526367,
+                111.93763732910156
+              ],
+              "predicted_target_crop_xy": [
+                32.89571558772271,
+                111.9079946535138
+              ],
+              "reprojection_error_px": 0.16838390817934523,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                34.084293365478516,
+                62.3477668762207
+              ],
+              "matched_target_crop_xy": [
+                32.80252456665039,
+                56.619014739990234
+              ],
+              "predicted_target_crop_xy": [
+                27.97074697883692,
+                60.69741851001467
+              ],
+              "reprojection_error_px": 6.322930647211472,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                34.73033905029297,
+                82.22462463378906
+              ],
+              "matched_target_crop_xy": [
+                29.317968368530273,
+                79.12316131591797
+              ],
+              "predicted_target_crop_xy": [
+                29.5447175725333,
+                78.42885142852329
+              ],
+              "reprojection_error_px": 0.7303981251687474,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                35.528846740722656,
+                115.67459106445312
+              ],
+              "matched_target_crop_xy": [
+                34.13315963745117,
+                113.01362609863281
+              ],
+              "predicted_target_crop_xy": [
+                35.096440550729085,
+                112.45420644626326
+              ],
+              "reprojection_error_px": 1.1139391659075484,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                61.38482666015625,
+                30.483545303344727
+              ],
+              "matched_target_crop_xy": [
+                126.613525390625,
+                43.756839752197266
+              ],
+              "predicted_target_crop_xy": [
+                52.73812322839,
+                27.749868496274537
+              ],
+              "reprojection_error_px": 75.58966975334587,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                76.8741226196289,
+                61.01161575317383
+              ],
+              "matched_target_crop_xy": [
+                66.8106689453125,
+                49.74388885498047
+              ],
+              "predicted_target_crop_xy": [
+                66.47212052837318,
+                49.22617004022411
+              ],
+              "reprojection_error_px": 0.6185853229465159,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                77.57793426513672,
+                141.7024383544922
+              ],
+              "matched_target_crop_xy": [
+                76.81944274902344,
+                141.62677001953125
+              ],
+              "predicted_target_crop_xy": [
+                79.08816334910495,
+                132.02198423248151
+              ],
+              "reprojection_error_px": 9.869093331018144,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                94.03044128417969,
+                51.58285140991211
+              ],
+              "matched_target_crop_xy": [
+                84.46862030029297,
+                38.29569625854492
+              ],
+              "predicted_target_crop_xy": [
+                83.1368942164028,
+                38.79969181476464
+              ],
+              "reprojection_error_px": 1.4239051524601931,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                101.18638610839844,
+                74.46566009521484
+              ],
+              "matched_target_crop_xy": [
+                90.53343963623047,
+                58.07753372192383
+              ],
+              "predicted_target_crop_xy": [
+                91.34806970988868,
+                58.480183056267
+              ],
+              "reprojection_error_px": 0.9087071273822924,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                103.6015625,
+                58.77959442138672
+              ],
+              "matched_target_crop_xy": [
+                93.53302764892578,
+                43.817203521728516
+              ],
+              "predicted_target_crop_xy": [
+                93.02823185518623,
+                44.15726907654674
+              ],
+              "reprojection_error_px": 0.6086570257139612,
+              "diagnostic_feature_fit_inlier": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "sift",
+      "preprocess": "clahe",
+      "raw_mutual_match_count": 9,
+      "visible_lifted_match_count": 9,
+      "excluded_invalid_depth_matches": 0,
+      "diagnostic_feature_ransac_inlier_count": 5,
+      "variants": {
+        "earlier_two_axis_photometric_retry": {
+          "vector_deg": [
+            11.587602378943252,
+            -8.223198630558407,
+            0.0
+          ],
+          "all_mutual_matches": {
+            "count": 9,
+            "mean_px": 13.843609886800673,
+            "median_px": 6.415125652180283,
+            "maximum_px": 67.32415924943342,
+            "p25_px": 5.6437674513344245,
+            "p75_px": 9.772578034850813,
+            "p95_px": 45.378899322150815,
+            "count_under2px": 0,
+            "count_under5px": 1
+          },
+          "manual_marker_reprojection_error_px": 0.7419843111304071,
+          "per_point": [
+            {
+              "source_crop_xy": [
+                32.40172576904297,
+                112.64634704589844
+              ],
+              "matched_target_crop_xy": [
+                31.844959259033203,
+                109.92048645019531
+              ],
+              "predicted_target_crop_xy": [
+                28.92188340791901,
+                105.09267756692591
+              ],
+              "reprojection_error_px": 5.6437674513344245,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                35.6719970703125,
+                115.68946075439453
+              ],
+              "matched_target_crop_xy": [
+                34.18108367919922,
+                112.87371063232422
+              ],
+              "predicted_target_crop_xy": [
+                31.84676548832212,
+                107.64909100984649
+              ],
+              "reprojection_error_px": 5.722385133477045,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                55.30960464477539,
+                137.62460327148438
+              ],
+              "matched_target_crop_xy": [
+                115.90154266357422,
+                109.696533203125
+              ],
+              "predicted_target_crop_xy": [
+                51.65803407559564,
+                129.82894545177007
+              ],
+              "reprojection_error_px": 67.32415924943342,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                56.8550910949707,
+                127.79411315917969
+              ],
+              "matched_target_crop_xy": [
+                55.218509674072266,
+                123.91295623779297
+              ],
+              "predicted_target_crop_xy": [
+                51.532676419118964,
+                117.64400933674237
+              ],
+              "reprojection_error_px": 7.27221163275049,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                77.74044036865234,
+                141.56576538085938
+              ],
+              "matched_target_crop_xy": [
+                77.5007095336914,
+                141.2724151611328
+              ],
+              "predicted_target_crop_xy": [
+                73.18919587383942,
+                132.50234495570353
+              ],
+              "reprojection_error_px": 9.772578034850813,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                82.49954986572266,
+                126.74053192138672
+              ],
+              "matched_target_crop_xy": [
+                83.58757781982422,
+                124.56188201904297
+              ],
+              "predicted_target_crop_xy": [
+                75.88362959567031,
+                114.76770324771746
+              ],
+              "reprojection_error_px": 12.461009431226962,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                100.67640686035156,
+                64.6505355834961
+              ],
+              "matched_target_crop_xy": [
+                89.83170318603516,
+                49.24351119995117
+              ],
+              "predicted_target_crop_xy": [
+                93.87646269250536,
+                52.41839227428656
+              ],
+              "reprojection_error_px": 5.141979122998662,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                103.22999572753906,
+                58.846981048583984
+              ],
+              "matched_target_crop_xy": [
+                93.51998901367188,
+                43.814537048339844
+              ],
+              "predicted_target_crop_xy": [
+                96.90030475767152,
+                47.27748828697933
+              ],
+              "reprojection_error_px": 4.839273272953968,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                114.60985565185547,
+                59.15808868408203
+              ],
+              "matched_target_crop_xy": [
+                103.58883666992188,
+                44.54736328125
+              ],
+              "predicted_target_crop_xy": [
+                108.7884135721924,
+                48.30478755469004
+              ],
+              "reprojection_error_px": 6.415125652180283,
+              "diagnostic_feature_fit_inlier": true
+            }
+          ]
+        },
+        "final_three_axis_photometric_retry": {
+          "vector_deg": [
+            12.523506123365646,
+            -8.604264657042059,
+            -6.606128624554651
+          ],
+          "all_mutual_matches": {
+            "count": 9,
+            "mean_px": 10.260573818621202,
+            "median_px": 1.3627496706670774,
+            "maximum_px": 62.68830779557368,
+            "p25_px": 1.0801067288078132,
+            "p75_px": 9.193447974142044,
+            "p95_px": 42.1053300323438,
+            "count_under2px": 5,
+            "count_under5px": 6
+          },
+          "manual_marker_reprojection_error_px": 1.0454895153399975,
+          "per_point": [
+            {
+              "source_crop_xy": [
+                32.40172576904297,
+                112.64634704589844
+              ],
+              "matched_target_crop_xy": [
+                31.844959259033203,
+                109.92048645019531
+              ],
+              "predicted_target_crop_xy": [
+                31.983188985407438,
+                110.34939201572547
+              ],
+              "reprojection_error_px": 0.4506300493711449,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                35.6719970703125,
+                115.68946075439453
+              ],
+              "matched_target_crop_xy": [
+                34.18108367919922,
+                112.87371063232422
+              ],
+              "predicted_target_crop_xy": [
+                35.18873276183271,
+                112.4847712130263
+              ],
+              "reprojection_error_px": 1.0801067288078132,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                55.30960464477539,
+                137.62460327148438
+              ],
+              "matched_target_crop_xy": [
+                115.90154266357422,
+                109.696533203125
+              ],
+              "predicted_target_crop_xy": [
+                57.39520829126709,
+                132.20947998022143
+              ],
+              "reprojection_error_px": 62.68830779557368,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                56.8550910949707,
+                127.79411315917969
+              ],
+              "matched_target_crop_xy": [
+                55.218509674072266,
+                123.91295623779297
+              ],
+              "predicted_target_crop_xy": [
+                55.92413860512407,
+                119.85837849751097
+              ],
+              "reprojection_error_px": 4.115520968276993,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                77.74044036865234,
+                141.56576538085938
+              ],
+              "matched_target_crop_xy": [
+                77.5007095336914,
+                141.2724151611328
+              ],
+              "predicted_target_crop_xy": [
+                79.11773343481845,
+                132.22229254558553
+              ],
+              "reprojection_error_px": 9.193447974142044,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                82.49954986572266,
+                126.74053192138672
+              ],
+              "matched_target_crop_xy": [
+                83.58757781982422,
+                124.56188201904297
+              ],
+              "predicted_target_crop_xy": [
+                79.82704399326515,
+                113.97931721801427
+              ],
+              "reprojection_error_px": 11.230863387499046,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                100.67640686035156,
+                64.6505355834961
+              ],
+              "matched_target_crop_xy": [
+                89.83170318603516,
+                49.24351119995117
+              ],
+              "predicted_target_crop_xy": [
+                90.6217557990769,
+                50.106333506497904
+              ],
+              "reprojection_error_px": 1.1698912188954582,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                103.22999572753906,
+                58.846981048583984
+              ],
+              "matched_target_crop_xy": [
+                93.51998901367188,
+                43.814537048339844
+              ],
+              "predicted_target_crop_xy": [
+                93.03111981302487,
+                44.74790621877251
+              ],
+              "reprojection_error_px": 1.0536465743575543,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                114.60985565185547,
+                59.15808868408203
+              ],
+              "matched_target_crop_xy": [
+                103.58883666992188,
+                44.54736328125
+              ],
+              "predicted_target_crop_xy": [
+                104.95025171554101,
+                44.48706619620384
+              ],
+              "reprojection_error_px": 1.3627496706670774,
+              "diagnostic_feature_fit_inlier": true
+            }
+          ]
+        },
+        "diagnostic_three_axis_feature_fit": {
+          "vector_deg": [
+            13.205793082572951,
+            -9.437407432123395,
+            -6.623140265946164
+          ],
+          "all_mutual_matches": {
+            "count": 9,
+            "mean_px": 10.31635074791344,
+            "median_px": 1.2882558468669474,
+            "maximum_px": 62.99844438314849,
+            "p25_px": 0.8745164799219113,
+            "p75_px": 9.575616553476095,
+            "p95_px": 42.63269958675787,
+            "count_under2px": 5,
+            "count_under5px": 6
+          },
+          "manual_marker_reprojection_error_px": 0.5827154748707056,
+          "per_point": [
+            {
+              "source_crop_xy": [
+                32.40172576904297,
+                112.64634704589844
+              ],
+              "matched_target_crop_xy": [
+                31.844959259033203,
+                109.92048645019531
+              ],
+              "predicted_target_crop_xy": [
+                31.58547453963518,
+                110.08955164596034
+              ],
+              "reprojection_error_px": 0.30970205039705334,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                35.6719970703125,
+                115.68946075439453
+              ],
+              "matched_target_crop_xy": [
+                34.18108367919922,
+                112.87371063232422
+              ],
+              "predicted_target_crop_xy": [
+                34.74825624747296,
+                112.18837304066565
+              ],
+              "reprojection_error_px": 0.8895911064880281,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                55.30960464477539,
+                137.62460327148438
+              ],
+              "matched_target_crop_xy": [
+                115.90154266357422,
+                109.696533203125
+              ],
+              "predicted_target_crop_xy": [
+                56.9282657148937,
+                131.85407369458932
+              ],
+              "reprojection_error_px": 62.99844438314849,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                56.8550910949707,
+                127.79411315917969
+              ],
+              "matched_target_crop_xy": [
+                55.218509674072266,
+                123.91295623779297
+              ],
+              "predicted_target_crop_xy": [
+                55.29072644207581,
+                119.39206873875328
+              ],
+              "reprojection_error_px": 4.521464258462539,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                77.74044036865234,
+                141.56576538085938
+              ],
+              "matched_target_crop_xy": [
+                77.5007095336914,
+                141.2724151611328
+              ],
+              "predicted_target_crop_xy": [
+                78.5260758777809,
+                131.7518555011331
+              ],
+              "reprojection_error_px": 9.575616553476095,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                82.49954986572266,
+                126.74053192138672
+              ],
+              "matched_target_crop_xy": [
+                83.58757781982422,
+                124.56188201904297
+              ],
+              "predicted_target_crop_xy": [
+                79.02868547623144,
+                113.37074499636594
+              ],
+              "reprojection_error_px": 12.084082392171993,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                100.67640686035156,
+                64.6505355834961
+              ],
+              "matched_target_crop_xy": [
+                89.83170318603516,
+                49.24351119995117
+              ],
+              "predicted_target_crop_xy": [
+                89.83991518052159,
+                49.54888446310538
+              ],
+              "reprojection_error_px": 0.305483660287903,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                103.22999572753906,
+                58.846981048583984
+              ],
+              "matched_target_crop_xy": [
+                93.51998901367188,
+                43.814537048339844
+              ],
+              "predicted_target_crop_xy": [
+                92.30046519934731,
+                44.22970543981751
+              ],
+              "reprojection_error_px": 1.2882558468669474,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                114.60985565185547,
+                59.15808868408203
+              ],
+              "matched_target_crop_xy": [
+                103.58883666992188,
+                44.54736328125
+              ],
+              "predicted_target_crop_xy": [
+                104.25821534525048,
+                43.98459222418475
+              ],
+              "reprojection_error_px": 0.8745164799219113,
+              "diagnostic_feature_fit_inlier": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "sift",
+      "preprocess": "highpass",
+      "raw_mutual_match_count": 9,
+      "visible_lifted_match_count": 9,
+      "excluded_invalid_depth_matches": 0,
+      "diagnostic_feature_ransac_inlier_count": 4,
+      "variants": {
+        "earlier_two_axis_photometric_retry": {
+          "vector_deg": [
+            11.587602378943252,
+            -8.223198630558407,
+            0.0
+          ],
+          "all_mutual_matches": {
+            "count": 9,
+            "mean_px": 26.615773896393293,
+            "median_px": 6.817369353832877,
+            "maximum_px": 88.84938226853176,
+            "p25_px": 5.058668576675669,
+            "p75_px": 47.58402712129232,
+            "p95_px": 80.5181980842632,
+            "count_under2px": 0,
+            "count_under5px": 1
+          },
+          "manual_marker_reprojection_error_px": 0.7419843111304071,
+          "per_point": [
+            {
+              "source_crop_xy": [
+                44.697731018066406,
+                122.55660247802734
+              ],
+              "matched_target_crop_xy": [
+                55.81144714355469,
+                47.30223846435547
+              ],
+              "predicted_target_crop_xy": [
+                40.14830214772366,
+                113.49574051404642
+              ],
+              "reprojection_error_px": 68.0214218078604,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                48.41777420043945,
+                129.32388305664062
+              ],
+              "matched_target_crop_xy": [
+                47.01646041870117,
+                124.60627746582031
+              ],
+              "predicted_target_crop_xy": [
+                44.201426469419545,
+                120.73237760170176
+              ],
+              "reprojection_error_px": 4.788686280476711,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                55.134246826171875,
+                125.5901107788086
+              ],
+              "matched_target_crop_xy": [
+                53.3896484375,
+                121.37275695800781
+              ],
+              "predicted_target_crop_xy": [
+                49.73679758311896,
+                115.3342730724575
+              ],
+              "reprojection_error_px": 7.057379612887707,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                56.86838912963867,
+                140.00729370117188
+              ],
+              "matched_target_crop_xy": [
+                57.20089340209961,
+                138.5139923095703
+              ],
+              "predicted_target_crop_xy": [
+                53.58701831876,
+                132.73329755992327
+              ],
+              "reprojection_error_px": 6.817369353832877,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                61.364051818847656,
+                74.78744506835938
+              ],
+              "matched_target_crop_xy": [
+                91.39620971679688,
+                32.45038986206055
+              ],
+              "predicted_target_crop_xy": [
+                54.67953184535465,
+                62.7179501067289
+              ],
+              "reprojection_error_px": 47.58402712129232,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                93.05413818359375,
+                26.61962890625
+              ],
+              "matched_target_crop_xy": [
+                138.7693634033203,
+                95.67887115478516
+              ],
+              "predicted_target_crop_xy": [
+                90.8479703164634,
+                20.860739568152844
+              ],
+              "reprojection_error_px": 88.84938226853176,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                100.35978698730469,
+                64.74462890625
+              ],
+              "matched_target_crop_xy": [
+                89.65547943115234,
+                49.260986328125
+              ],
+              "predicted_target_crop_xy": [
+                93.54648544047205,
+                52.49366323806879
+              ],
+              "reprojection_error_px": 5.058668576675669,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                103.48139190673828,
+                58.78123474121094
+              ],
+              "matched_target_crop_xy": [
+                93.4939193725586,
+                43.804466247558594
+              ],
+              "predicted_target_crop_xy": [
+                97.16477545374484,
+                47.23016574749032
+              ],
+              "reprojection_error_px": 5.021015976136154,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                114.64057922363281,
+                59.13687515258789
+              ],
+              "matched_target_crop_xy": [
+                103.65447998046875,
+                44.60975646972656
+              ],
+              "predicted_target_crop_xy": [
+                108.82280464162969,
+                48.2887420249089
+              ],
+              "reprojection_error_px": 6.344014069846048,
+              "diagnostic_feature_fit_inlier": true
+            }
+          ]
+        },
+        "final_three_axis_photometric_retry": {
+          "vector_deg": [
+            12.523506123365646,
+            -8.604264657042059,
+            -6.606128624554651
+          ],
+          "all_mutual_matches": {
+            "count": 9,
+            "mean_px": 25.34446531462624,
+            "median_px": 3.6421605442065954,
+            "maximum_px": 93.46959924744789,
+            "p25_px": 1.3355975894815422,
+            "p75_px": 50.35829271351308,
+            "p95_px": 84.42708545292099,
+            "count_under2px": 3,
+            "count_under5px": 6
+          },
+          "manual_marker_reprojection_error_px": 1.0454895153399975,
+          "per_point": [
+            {
+              "source_crop_xy": [
+                44.697731018066406,
+                122.55660247802734
+              ],
+              "matched_target_crop_xy": [
+                55.81144714355469,
+                47.30223846435547
+              ],
+              "predicted_target_crop_xy": [
+                44.1205959525178,
+                117.19453687672785
+              ],
+              "reprojection_error_px": 70.86331476113067,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                48.41777420043945,
+                129.32388305664062
+              ],
+              "matched_target_crop_xy": [
+                47.01646041870117,
+                124.60627746582031
+              ],
+              "predicted_target_crop_xy": [
+                48.96369545475244,
+                123.9561307728961
+              ],
+              "reprojection_error_px": 2.0529040425567553,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                55.134246826171875,
+                125.5901107788086
+              ],
+              "matched_target_crop_xy": [
+                53.3896484375,
+                121.37275695800781
+              ],
+              "predicted_target_crop_xy": [
+                53.87850777527758,
+                117.76355344786282
+              ],
+              "reprojection_error_px": 3.6421605442065954,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                56.86838912963867,
+                140.00729370117188
+              ],
+              "matched_target_crop_xy": [
+                57.20089340209961,
+                138.5139923095703
+              ],
+              "predicted_target_crop_xy": [
+                59.633808932969856,
+                134.92997711310485
+              ],
+              "reprojection_error_px": 4.331771336167803,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                61.364051818847656,
+                74.78744506835938
+              ],
+              "matched_target_crop_xy": [
+                91.39620971679688,
+                32.45038986206055
+              ],
+              "predicted_target_crop_xy": [
+                52.836991641538305,
+                64.84088764218917
+              ],
+              "reprojection_error_px": 50.35829271351308,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                93.05413818359375,
+                26.61962890625
+              ],
+              "matched_target_crop_xy": [
+                138.7693634033203,
+                95.67887115478516
+              ],
+              "predicted_target_crop_xy": [
+                83.91534083813937,
+                19.9979475881615
+              ],
+              "reprojection_error_px": 93.46959924744789,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                100.35978698730469,
+                64.74462890625
+              ],
+              "matched_target_crop_xy": [
+                89.65547943115234,
+                49.260986328125
+              ],
+              "predicted_target_crop_xy": [
+                90.30270278538285,
+                50.21652714729551
+              ],
+              "reprojection_error_px": 1.154104123275899,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                103.48139190673828,
+                58.78123474121094
+              ],
+              "matched_target_crop_xy": [
+                93.4939193725586,
+                43.804466247558594
+              ],
+              "predicted_target_crop_xy": [
+                93.28825838162427,
+                44.672889480110484
+              ],
+              "reprojection_error_px": 0.8924434738558858,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                114.64057922363281,
+                59.13687515258789
+              ],
+              "matched_target_crop_xy": [
+                103.65447998046875,
+                44.60975646972656
+              ],
+              "predicted_target_crop_xy": [
+                104.98251819718823,
+                44.46785715344401
+              ],
+              "reprojection_error_px": 1.3355975894815422,
+              "diagnostic_feature_fit_inlier": true
+            }
+          ]
+        },
+        "diagnostic_three_axis_feature_fit": {
+          "vector_deg": [
+            13.335882519200968,
+            -9.966004590180633,
+            -5.716845999598633
+          ],
+          "all_mutual_matches": {
+            "count": 9,
+            "mean_px": 25.21318091298824,
+            "median_px": 4.375746537672452,
+            "maximum_px": 93.2727163109151,
+            "p25_px": 1.0022016965749105,
+            "p75_px": 50.50961877888181,
+            "p95_px": 84.02668026762883,
+            "count_under2px": 4,
+            "count_under5px": 6
+          },
+          "manual_marker_reprojection_error_px": 1.1269476805986518,
+          "per_point": [
+            {
+              "source_crop_xy": [
+                44.697731018066406,
+                122.55660247802734
+              ],
+              "matched_target_crop_xy": [
+                55.81144714355469,
+                47.30223846435547
+              ],
+              "predicted_target_crop_xy": [
+                42.66620405574171,
+                116.21736814253285
+              ],
+              "reprojection_error_px": 70.15762620269945,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                48.41777420043945,
+                129.32388305664062
+              ],
+              "matched_target_crop_xy": [
+                47.01646041870117,
+                124.60627746582031
+              ],
+              "predicted_target_crop_xy": [
+                47.44397696327811,
+                123.05712901544202
+              ],
+              "reprojection_error_px": 1.6070567249467222,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                55.134246826171875,
+                125.5901107788086
+              ],
+              "matched_target_crop_xy": [
+                53.3896484375,
+                121.37275695800781
+              ],
+              "predicted_target_crop_xy": [
+                52.234580092606585,
+                116.83739925108979
+              ],
+              "reprojection_error_px": 4.680133802689352,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                56.86838912963867,
+                140.00729370117188
+              ],
+              "matched_target_crop_xy": [
+                57.20089340209961,
+                138.5139923095703
+              ],
+              "predicted_target_crop_xy": [
+                58.07328938058303,
+                134.22609270502284
+              ],
+              "reprojection_error_px": 4.375746537672452,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                61.364051818847656,
+                74.78744506835938
+              ],
+              "matched_target_crop_xy": [
+                91.39620971679688,
+                32.45038986206055
+              ],
+              "predicted_target_crop_xy": [
+                51.85367267459425,
+                63.876642477573
+              ],
+              "reprojection_error_px": 50.50961877888181,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                93.05413818359375,
+                26.61962890625
+              ],
+              "matched_target_crop_xy": [
+                138.7693634033203,
+                95.67887115478516
+              ],
+              "predicted_target_crop_xy": [
+                84.43209472499693,
+                19.86818034803848
+              ],
+              "reprojection_error_px": 93.2727163109151,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                100.35978698730469,
+                64.74462890625
+              ],
+              "matched_target_crop_xy": [
+                89.65547943115234,
+                49.260986328125
+              ],
+              "predicted_target_crop_xy": [
+                89.44868029346708,
+                49.73539648919343
+              ],
+              "reprojection_error_px": 0.5175238006819979,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                103.48139190673828,
+                58.78123474121094
+              ],
+              "matched_target_crop_xy": [
+                93.4939193725586,
+                43.804466247558594
+              ],
+              "predicted_target_crop_xy": [
+                92.61139535399971,
+                44.2793973976049
+              ],
+              "reprojection_error_px": 1.0022016965749105,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                114.64057922363281,
+                59.13687515258789
+              ],
+              "matched_target_crop_xy": [
+                103.65447998046875,
+                44.60975646972656
+              ],
+              "predicted_target_crop_xy": [
+                104.371164975597,
+                44.26336714856582
+              ],
+              "reprojection_error_px": 0.7960043618323809,
+              "diagnostic_feature_fit_inlier": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "orb",
+      "preprocess": "raw",
+      "raw_mutual_match_count": 17,
+      "visible_lifted_match_count": 17,
+      "excluded_invalid_depth_matches": 0,
+      "diagnostic_feature_ransac_inlier_count": 7,
+      "variants": {
+        "earlier_two_axis_photometric_retry": {
+          "vector_deg": [
+            11.587602378943252,
+            -8.223198630558407,
+            0.0
+          ],
+          "all_mutual_matches": {
+            "count": 17,
+            "mean_px": 18.40786548203777,
+            "median_px": 7.6099171245160955,
+            "maximum_px": 74.86940441311005,
+            "p25_px": 5.513784497705473,
+            "p75_px": 13.697080783152394,
+            "p95_px": 69.88174585149369,
+            "count_under2px": 0,
+            "count_under5px": 3
+          },
+          "manual_marker_reprojection_error_px": 0.7419843111304071,
+          "per_point": [
+            {
+              "source_crop_xy": [
+                64.0,
+                79.0
+              ],
+              "matched_target_crop_xy": [
+                101.89861297607422,
+                98.85686492919922
+              ],
+              "predicted_target_crop_xy": [
+                57.025521942882364,
+                66.52191476461441
+              ],
+              "reprojection_error_px": 55.30952269744611,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                119.0,
+                110.0
+              ],
+              "matched_target_crop_xy": [
+                117.29999542236328,
+                105.79999542236328
+              ],
+              "predicted_target_crop_xy": [
+                112.50666068906992,
+                98.19990452631204
+              ],
+              "reprojection_error_px": 8.985401465356878,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                92.0,
+                130.0
+              ],
+              "matched_target_crop_xy": [
+                141.0,
+                68.0
+              ],
+              "predicted_target_crop_xy": [
+                85.69620725145394,
+                118.46700134543053
+              ],
+              "reprojection_error_px": 74.86940441311005,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                61.0,
+                118.0
+              ],
+              "matched_target_crop_xy": [
+                58.0,
+                112.0
+              ],
+              "predicted_target_crop_xy": [
+                54.57302325205184,
+                106.2934183798902
+              ],
+              "reprojection_error_px": 6.6565188663409005,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                43.70000076293945,
+                119.5999984741211
+              ],
+              "matched_target_crop_xy": [
+                42.31999969482422,
+                113.73500061035156
+              ],
+              "predicted_target_crop_xy": [
+                38.99796315970432,
+                110.32409010353388
+              ],
+              "reprojection_error_px": 4.761327254683374,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                33.349998474121094,
+                108.0999984741211
+              ],
+              "matched_target_crop_xy": [
+                32.20000076293945,
+                101.19999694824219
+              ],
+              "predicted_target_crop_xy": [
+                29.368752977398778,
+                99.83978395982885
+              ],
+              "reprojection_error_px": 3.141041769378007,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                48.29999923706055,
+                128.8000030517578
+              ],
+              "matched_target_crop_xy": [
+                47.61000061035156,
+                124.31500244140625
+              ],
+              "predicted_target_crop_xy": [
+                44.024968952990626,
+                120.12580591905771
+              ],
+              "reprojection_error_px": 5.513784497705473,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                94.29999542236328,
+                127.64999389648438
+              ],
+              "matched_target_crop_xy": [
+                113.0,
+                52.0
+              ],
+              "predicted_target_crop_xy": [
+                87.80068082421347,
+                115.84147843253317
+              ],
+              "reprojection_error_px": 68.6348312110896,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                39.67499923706055,
+                116.37999725341797
+              ],
+              "matched_target_crop_xy": [
+                38.352500915527344,
+                112.4124984741211
+              ],
+              "predicted_target_crop_xy": [
+                35.259447155417895,
+                107.50778584561618
+              ],
+              "reprojection_error_px": 5.798550468103451,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                44.105369567871094,
+                118.62824249267578
+              ],
+              "matched_target_crop_xy": [
+                42.584495544433594,
+                114.06561279296875
+              ],
+              "predicted_target_crop_xy": [
+                39.26744073486523,
+                109.1608449451742
+              ],
+              "reprojection_error_px": 5.921114781055991,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                40.227142333984375,
+                99.69335174560547
+              ],
+              "matched_target_crop_xy": [
+                37.029998779296875,
+                103.15499877929688
+              ],
+              "predicted_target_crop_xy": [
+                34.95622552533949,
+                89.61581540394614
+              ],
+              "reprojection_error_px": 13.697080783152394,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                40.227142333984375,
+                115.43440246582031
+              ],
+              "matched_target_crop_xy": [
+                42.23849868774414,
+                114.64735412597656
+              ],
+              "predicted_target_crop_xy": [
+                35.656763498590664,
+                106.34401915913932
+              ],
+              "reprojection_error_px": 10.595499500808971,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                62.9642219543457,
+                115.43440246582031
+              ],
+              "matched_target_crop_xy": [
+                65.39762115478516,
+                112.54473876953125
+              ],
+              "predicted_target_crop_xy": [
+                56.27802945027125,
+                103.36255068171538
+              ],
+              "reprojection_error_px": 12.94138829249268,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                66.46223449707031,
+                117.18341064453125
+              ],
+              "matched_target_crop_xy": [
+                66.46223449707031,
+                108.43838500976562
+              ],
+              "predicted_target_crop_xy": [
+                59.68319292409332,
+                104.98072192700974
+              ],
+              "reprojection_error_px": 7.6099171245160955,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                70.39749908447266,
+                34.19306945800781
+              ],
+              "matched_target_crop_xy": [
+                69.0,
+                29.899999618530273
+              ],
+              "predicted_target_crop_xy": [
+                67.01012864383483,
+                26.769705459171547
+              ],
+              "reprojection_error_px": 3.7092222282039073,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                86.48835754394531,
+                36.20442581176758
+              ],
+              "matched_target_crop_xy": [
+                78.02749633789062,
+                30.417499542236328
+              ],
+              "predicted_target_crop_xy": [
+                82.37612089798102,
+                27.75962699874075
+              ],
+              "reprojection_error_px": 5.096550011732356,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                104.59056854248047,
+                112.63599395751953
+              ],
+              "matched_target_crop_xy": [
+                107.0,
+                117.0
+              ],
+              "predicted_target_crop_xy": [
+                97.37586811942151,
+                99.81940282143579
+              ],
+              "reprojection_error_px": 19.692557829465827,
+              "diagnostic_feature_fit_inlier": false
+            }
+          ]
+        },
+        "final_three_axis_photometric_retry": {
+          "vector_deg": [
+            12.523506123365646,
+            -8.604264657042059,
+            -6.606128624554651
+          ],
+          "all_mutual_matches": {
+            "count": 17,
+            "mean_px": 16.33036284672505,
+            "median_px": 5.26516806590966,
+            "maximum_px": 70.43337079820398,
+            "p25_px": 3.4014734374568176,
+            "p75_px": 12.775935153063719,
+            "p95_px": 66.27606864732851,
+            "count_under2px": 4,
+            "count_under5px": 8
+          },
+          "manual_marker_reprojection_error_px": 1.0454895153399975,
+          "per_point": [
+            {
+              "source_crop_xy": [
+                64.0,
+                79.0
+              ],
+              "matched_target_crop_xy": [
+                101.89861297607422,
+                98.85686492919922
+              ],
+              "predicted_target_crop_xy": [
+                55.60781601734502,
+                68.28858922818591
+              ],
+              "reprojection_error_px": 55.47303274932292,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                119.0,
+                110.0
+              ],
+              "matched_target_crop_xy": [
+                117.29999542236328,
+                105.79999542236328
+              ],
+              "predicted_target_crop_xy": [
+                114.33546196241961,
+                93.37276482177637
+              ],
+              "reprojection_error_px": 12.775935153063719,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                92.0,
+                130.0
+              ],
+              "matched_target_crop_xy": [
+                141.0,
+                68.0
+              ],
+              "predicted_target_crop_xy": [
+                89.99201844951156,
+                116.57000658989377
+              ],
+              "reprojection_error_px": 70.43337079820398,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                61.0,
+                118.0
+              ],
+              "matched_target_crop_xy": [
+                58.0,
+                112.0
+              ],
+              "predicted_target_crop_xy": [
+                57.680690458947296,
+                108.06915984319537
+              ],
+              "reprojection_error_px": 3.9437878900056447,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                43.70000076293945,
+                119.5999984741211
+              ],
+              "matched_target_crop_xy": [
+                42.31999969482422,
+                113.73500061035156
+              ],
+              "predicted_target_crop_xy": [
+                42.62029452285481,
+                114.15788239976949
+              ],
+              "reprojection_error_px": 0.5186578752542311,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                33.349998474121094,
+                108.0999984741211
+              ],
+              "matched_target_crop_xy": [
+                32.20000076293945,
+                101.19999694824219
+              ],
+              "predicted_target_crop_xy": [
+                31.841673198284724,
+                105.00571090814472
+              ],
+              "reprojection_error_px": 3.8225459301607363,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                48.29999923706055,
+                128.8000030517578
+              ],
+              "matched_target_crop_xy": [
+                47.61000061035156,
+                124.31500244140625
+              ],
+              "predicted_target_crop_xy": [
+                48.72073037427021,
+                123.36518036900888
+              ],
+              "reprojection_error_px": 1.4614659002754755,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                94.29999542236328,
+                127.64999389648438
+              ],
+              "matched_target_crop_xy": [
+                113.0,
+                52.0
+              ],
+              "predicted_target_crop_xy": [
+                91.78942012695038,
+                113.69233301633344
+              ],
+              "reprojection_error_px": 65.23674310960965,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                39.67499923706055,
+                116.37999725341797
+              ],
+              "matched_target_crop_xy": [
+                38.352500915527344,
+                112.4124984741211
+              ],
+              "predicted_target_crop_xy": [
+                38.57799987344062,
+                111.84829426497633
+              ],
+              "reprojection_error_px": 0.6075986912729808,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                44.105369567871094,
+                118.62824249267578
+              ],
+              "matched_target_crop_xy": [
+                42.584495544433594,
+                114.06561279296875
+              ],
+              "predicted_target_crop_xy": [
+                42.758999135027,
+                112.95054078862026
+              ],
+              "reprojection_error_px": 1.12864391107725,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                40.227142333984375,
+                99.69335174560547
+              ],
+              "matched_target_crop_xy": [
+                37.029998779296875,
+                103.15499877929688
+              ],
+              "predicted_target_crop_xy": [
+                36.26199415961411,
+                94.00700876840632
+              ],
+              "reprojection_error_px": 9.180171694211792,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                40.227142333984375,
+                115.43440246582031
+              ],
+              "matched_target_crop_xy": [
+                42.23849868774414,
+                114.64735412597656
+              ],
+              "predicted_target_crop_xy": [
+                38.84413419177361,
+                110.6223964329356
+              ],
+              "reprojection_error_px": 5.26516806590966,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                62.9642219543457,
+                115.43440246582031
+              ],
+              "matched_target_crop_xy": [
+                65.39762115478516,
+                112.54473876953125
+              ],
+              "predicted_target_crop_xy": [
+                59.047877474224066,
+                104.9237454558274
+              ],
+              "reprojection_error_px": 9.91961611637992,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                66.46223449707031,
+                117.18341064453125
+              ],
+              "matched_target_crop_xy": [
+                66.46223449707031,
+                108.43838500976562
+              ],
+              "predicted_target_crop_xy": [
+                62.61808728625368,
+                106.1187324338876
+              ],
+              "reprojection_error_px": 4.489794633522432,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                70.39749908447266,
+                34.19306945800781
+              ],
+              "matched_target_crop_xy": [
+                69.0,
+                29.899999618530273
+              ],
+              "predicted_target_crop_xy": [
+                60.9253547695437,
+                28.387358702857398
+              ],
+              "reprojection_error_px": 8.21510670274576,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                86.48835754394531,
+                36.20442581176758
+              ],
+              "matched_target_crop_xy": [
+                78.02749633789062,
+                30.417499542236328
+              ],
+              "predicted_target_crop_xy": [
+                76.32546301260433,
+                27.472486111818874
+              ],
+              "reprojection_error_px": 3.4014734374568176,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                104.59056854248047,
+                112.63599395751953
+              ],
+              "matched_target_crop_xy": [
+                107.0,
+                117.0
+              ],
+              "predicted_target_crop_xy": [
+                99.49980556356687,
+                96.5914832447799
+              ],
+              "reprojection_error_px": 21.743055735852824,
+              "diagnostic_feature_fit_inlier": false
+            }
+          ]
+        },
+        "diagnostic_three_axis_feature_fit": {
+          "vector_deg": [
+            4.43983606440391,
+            -3.0139248572587727,
+            0.3946384789948045
+          ],
+          "all_mutual_matches": {
+            "count": 17,
+            "mean_px": 14.553215142736034,
+            "median_px": 3.714218751534123,
+            "maximum_px": 76.37350226277339,
+            "p25_px": 0.9436625911138282,
+            "p75_px": 8.901561794456724,
+            "p95_px": 73.97858033987808,
+            "count_under2px": 7,
+            "count_under5px": 9
+          },
+          "manual_marker_reprojection_error_px": 9.443052022829908,
+          "per_point": [
+            {
+              "source_crop_xy": [
+                64.0,
+                79.0
+              ],
+              "matched_target_crop_xy": [
+                101.89861297607422,
+                98.85686492919922
+              ],
+              "predicted_target_crop_xy": [
+                61.832381237419725,
+                72.90921593210818
+              ],
+              "reprojection_error_px": 47.73450967813333,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                119.0,
+                110.0
+              ],
+              "matched_target_crop_xy": [
+                117.29999542236328,
+                105.79999542236328
+              ],
+              "predicted_target_crop_xy": [
+                117.0276840052652,
+                104.8964769787299
+              ],
+              "reprojection_error_px": 0.9436625911138282,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                92.0,
+                130.0
+              ],
+              "matched_target_crop_xy": [
+                141.0,
+                68.0
+              ],
+              "predicted_target_crop_xy": [
+                89.96155574647968,
+                124.81539453407103
+              ],
+              "reprojection_error_px": 76.37350226277339,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                61.0,
+                118.0
+              ],
+              "matched_target_crop_xy": [
+                58.0,
+                112.0
+              ],
+              "predicted_target_crop_xy": [
+                58.886207632468604,
+                112.36633592672966
+              ],
+              "reprojection_error_px": 0.9589400289165578,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                43.70000076293945,
+                119.5999984741211
+              ],
+              "matched_target_crop_xy": [
+                42.31999969482422,
+                113.73500061035156
+              ],
+              "predicted_target_crop_xy": [
+                42.17412623601461,
+                114.73533165090646
+              ],
+              "reprojection_error_px": 1.0109111022650423,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                33.349998474121094,
+                108.0999984741211
+              ],
+              "matched_target_crop_xy": [
+                32.20000076293945,
+                101.19999694824219
+              ],
+              "predicted_target_crop_xy": [
+                32.10625600444394,
+                103.46497095162405
+              ],
+              "reprojection_error_px": 2.266913168990171,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                48.29999923706055,
+                128.8000030517578
+              ],
+              "matched_target_crop_xy": [
+                47.61000061035156,
+                124.31500244140625
+              ],
+              "predicted_target_crop_xy": [
+                46.908939211333795,
+                124.26117374217321
+              ],
+              "reprojection_error_px": 0.7031248922160771,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                94.29999542236328,
+                127.64999389648438
+              ],
+              "matched_target_crop_xy": [
+                113.0,
+                52.0
+              ],
+              "predicted_target_crop_xy": [
+                92.20352446091593,
+                122.37122260202888
+              ],
+              "reprojection_error_px": 73.37984985915426,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                39.67499923706055,
+                116.37999725341797
+              ],
+              "matched_target_crop_xy": [
+                38.352500915527344,
+                112.4124984741211
+              ],
+              "predicted_target_crop_xy": [
+                38.2566041694437,
+                111.61409211548221
+              ],
+              "reprojection_error_px": 0.8041448249068299,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                44.105369567871094,
+                118.62824249267578
+              ],
+              "matched_target_crop_xy": [
+                42.584495544433594,
+                114.06561279296875
+              ],
+              "predicted_target_crop_xy": [
+                42.533962447031655,
+                113.68889223335717
+              ],
+              "reprojection_error_px": 0.3800946907904649,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                40.227142333984375,
+                99.69335174560547
+              ],
+              "matched_target_crop_xy": [
+                37.029998779296875,
+                103.15499877929688
+              ],
+              "predicted_target_crop_xy": [
+                38.5554961663056,
+                94.38512648246375
+              ],
+              "reprojection_error_px": 8.901561794456724,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                40.227142333984375,
+                115.43440246582031
+              ],
+              "matched_target_crop_xy": [
+                42.23849868774414,
+                114.64735412597656
+              ],
+              "predicted_target_crop_xy": [
+                38.756501339910834,
+                110.58513455207728
+              ],
+              "reprojection_error_px": 5.350320868591777,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                62.9642219543457,
+                115.43440246582031
+              ],
+              "matched_target_crop_xy": [
+                65.39762115478516,
+                112.54473876953125
+              ],
+              "predicted_target_crop_xy": [
+                60.76895446259104,
+                109.6672465479658
+              ],
+              "reprojection_error_px": 5.450185027372637,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                66.46223449707031,
+                117.18341064453125
+              ],
+              "matched_target_crop_xy": [
+                66.46223449707031,
+                108.43838500976562
+              ],
+              "predicted_target_crop_xy": [
+                64.23477587756878,
+                111.41056418213327
+              ],
+              "reprojection_error_px": 3.714218751534123,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                70.39749908447266,
+                34.19306945800781
+              ],
+              "matched_target_crop_xy": [
+                69.0,
+                29.899999618530273
+              ],
+              "predicted_target_crop_xy": [
+                69.72603243176489,
+                29.909745311881416
+              ],
+              "reprojection_error_px": 0.7260978381136646,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                86.48835754394531,
+                36.20442581176758
+              ],
+              "matched_target_crop_xy": [
+                78.02749633789062,
+                30.417499542236328
+              ],
+              "predicted_target_crop_xy": [
+                85.58101003948622,
+                31.703037914147842
+              ],
+              "reprojection_error_px": 7.662126215734718,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                104.59056854248047,
+                112.63599395751953
+              ],
+              "matched_target_crop_xy": [
+                107.0,
+                117.0
+              ],
+              "predicted_target_crop_xy": [
+                102.30933043443795,
+                107.00107690700519
+              ],
+              "reprojection_error_px": 11.044493831449001,
+              "diagnostic_feature_fit_inlier": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "orb",
+      "preprocess": "clahe",
+      "raw_mutual_match_count": 16,
+      "visible_lifted_match_count": 16,
+      "excluded_invalid_depth_matches": 0,
+      "diagnostic_feature_ransac_inlier_count": 8,
+      "variants": {
+        "earlier_two_axis_photometric_retry": {
+          "vector_deg": [
+            11.587602378943252,
+            -8.223198630558407,
+            0.0
+          ],
+          "all_mutual_matches": {
+            "count": 16,
+            "mean_px": 6.31202218563109,
+            "median_px": 6.072260808291652,
+            "maximum_px": 12.471126653949796,
+            "p25_px": 4.239539963341588,
+            "p75_px": 7.481179998516829,
+            "p95_px": 11.161532873143674,
+            "count_under2px": 1,
+            "count_under5px": 6
+          },
+          "manual_marker_reprojection_error_px": 0.7419843111304071,
+          "per_point": [
+            {
+              "source_crop_xy": [
+                40.0,
+                116.0
+              ],
+              "matched_target_crop_xy": [
+                39.0,
+                113.0
+              ],
+              "predicted_target_crop_xy": [
+                35.506107274468704,
+                107.0173959977498
+              ],
+              "reprojection_error_px": 6.928119299294766,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                58.64999771118164,
+                73.5999984741211
+              ],
+              "matched_target_crop_xy": [
+                47.14999771118164,
+                71.29999542236328
+              ],
+              "predicted_target_crop_xy": [
+                52.174179594166475,
+                61.82459273947652
+              ],
+              "reprojection_error_px": 10.725001612874966,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                82.79999542236328,
+                52.89999771118164
+              ],
+              "matched_target_crop_xy": [
+                73.0,
+                42.0
+              ],
+              "predicted_target_crop_xy": [
+                76.76897581128762,
+                41.751373410031995
+              ],
+              "reprojection_error_px": 3.7771674370234467,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                103.5,
+                63.25
+              ],
+              "matched_target_crop_xy": [
+                93.0,
+                49.0
+              ],
+              "predicted_target_crop_xy": [
+                96.86707553939955,
+                51.25321011516468
+              ],
+              "reprojection_error_px": 4.4756261070941505,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                32.20000076293945,
+                112.69999694824219
+              ],
+              "matched_target_crop_xy": [
+                32.20000076293945,
+                110.39999389648438
+              ],
+              "predicted_target_crop_xy": [
+                28.765442157479598,
+                105.21013842391582
+              ],
+              "reprojection_error_px": 6.223406835527315,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                40.25,
+                116.14999389648438
+              ],
+              "matched_target_crop_xy": [
+                39.099998474121094,
+                112.69999694824219
+              ],
+              "predicted_target_crop_xy": [
+                35.73191869463136,
+                107.13330490396957
+              ],
+              "reprojection_error_px": 6.506306303639233,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                34.3849983215332,
+                108.44499969482422
+              ],
+              "matched_target_crop_xy": [
+                31.739999771118164,
+                100.51000213623047
+              ],
+              "predicted_target_crop_xy": [
+                30.24773850261549,
+                99.96493983661645
+              ],
+              "reprojection_error_px": 1.5886902164782564,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                35.70750045776367,
+                112.4124984741211
+              ],
+              "matched_target_crop_xy": [
+                33.0625,
+                105.80000305175781
+              ],
+              "predicted_target_crop_xy": [
+                31.6074755474624,
+                103.98490765321232
+              ],
+              "reprojection_error_px": 2.3262990915407613,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                39.67499923706055,
+                116.37999725341797
+              ],
+              "matched_target_crop_xy": [
+                38.352500915527344,
+                112.4124984741211
+              ],
+              "predicted_target_crop_xy": [
+                35.259447155417895,
+                107.50778584561618
+              ],
+              "reprojection_error_px": 5.798550468103451,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                68.43936920166016,
+                33.45924758911133
+              ],
+              "matched_target_crop_xy": [
+                59.0,
+                33.0
+              ],
+              "predicted_target_crop_xy": [
+                65.28315256096793,
+                26.361610651299422
+              ],
+              "reprojection_error_px": 9.140362096183017,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                44.105369567871094,
+                118.62824249267578
+              ],
+              "matched_target_crop_xy": [
+                42.584495544433594,
+                114.06561279296875
+              ],
+              "predicted_target_crop_xy": [
+                39.26744073486523,
+                109.1608449451742
+              ],
+              "reprojection_error_px": 5.921114781055991,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                63.87674331665039,
+                48.66799545288086
+              ],
+              "matched_target_crop_xy": [
+                54.04999923706055,
+                43.70000076293945
+              ],
+              "predicted_target_crop_xy": [
+                58.89356684546746,
+                38.995924279787666
+              ],
+              "reprojection_error_px": 6.751924372839966,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                41.063621520996094,
+                88.21073913574219
+              ],
+              "matched_target_crop_xy": [
+                34.3849983215332,
+                81.99500274658203
+              ],
+              "predicted_target_crop_xy": [
+                35.66196223537013,
+                77.94896890829723
+              ],
+              "reprojection_error_px": 4.242761678174648,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                62.9642219543457,
+                40.227142333984375
+              ],
+              "matched_target_crop_xy": [
+                52.0,
+                39.0
+              ],
+              "predicted_target_crop_xy": [
+                59.07106603351183,
+                32.09105798180833
+              ],
+              "reprojection_error_px": 9.886023197475268,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                36.729129791259766,
+                89.19931030273438
+              ],
+              "matched_target_crop_xy": [
+                30.417497634887695,
+                83.64811706542969
+              ],
+              "predicted_target_crop_xy": [
+                31.844609546165607,
+                79.66625913529634
+              ],
+              "reprojection_error_px": 4.229874818842408,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                44.249855041503906,
+                120.68142700195312
+              ],
+              "matched_target_crop_xy": [
+                45.474159240722656,
+                122.43042755126953
+              ],
+              "predicted_target_crop_xy": [
+                39.57445208062196,
+                111.4430504555331
+              ],
+              "reprojection_error_px": 12.471126653949796,
+              "diagnostic_feature_fit_inlier": false
+            }
+          ]
+        },
+        "final_three_axis_photometric_retry": {
+          "vector_deg": [
+            12.523506123365646,
+            -8.604264657042059,
+            -6.606128624554651
+          ],
+          "all_mutual_matches": {
+            "count": 16,
+            "mean_px": 2.8053551876327205,
+            "median_px": 1.7775334350850922,
+            "maximum_px": 7.669514863984319,
+            "p25_px": 1.023415423669535,
+            "p75_px": 4.644754283002829,
+            "p95_px": 7.5723431569553314,
+            "count_under2px": 9,
+            "count_under5px": 14
+          },
+          "manual_marker_reprojection_error_px": 1.0454895153399975,
+          "per_point": [
+            {
+              "source_crop_xy": [
+                40.0,
+                116.0
+              ],
+              "matched_target_crop_xy": [
+                39.0,
+                113.0
+              ],
+              "predicted_target_crop_xy": [
+                38.769197514324475,
+                111.32030246080069
+              ],
+              "reprojection_error_px": 1.6954803480389322,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                58.64999771118164,
+                73.5999984741211
+              ],
+              "matched_target_crop_xy": [
+                47.14999771118164,
+                71.29999542236328
+              ],
+              "predicted_target_crop_xy": [
+                50.240710361081646,
+                64.28081074288487
+              ],
+              "reprojection_error_px": 7.669514863984319,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                82.79999542236328,
+                52.89999771118164
+              ],
+              "matched_target_crop_xy": [
+                73.0,
+                42.0
+              ],
+              "predicted_target_crop_xy": [
+                72.389418016553,
+                41.64212943706023
+              ],
+              "reprojection_error_px": 0.7077299614463906,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                103.5,
+                63.25
+              ],
+              "matched_target_crop_xy": [
+                93.0,
+                49.0
+              ],
+              "predicted_target_crop_xy": [
+                93.4573538250363,
+                48.6372108681266
+              ],
+              "reprojection_error_px": 0.5837709101015417,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                32.20000076293945,
+                112.69999694824219
+              ],
+              "matched_target_crop_xy": [
+                32.20000076293945,
+                110.39999389648438
+              ],
+              "predicted_target_crop_xy": [
+                31.840014696607447,
+                110.49172519307382
+              ],
+              "reprojection_error_px": 0.37148970204727316,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                40.25,
+                116.14999389648438
+              ],
+              "matched_target_crop_xy": [
+                39.099998474121094,
+                112.69999694824219
+              ],
+              "predicted_target_crop_xy": [
+                39.007355405626505,
+                111.40489802438721
+              ],
+              "reprojection_error_px": 1.2984082411593123,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                34.3849983215332,
+                108.44499969482422
+              ],
+              "matched_target_crop_xy": [
+                31.739999771118164,
+                100.51000213623047
+              ],
+              "predicted_target_crop_xy": [
+                32.73309345074655,
+                105.00112985243626
+              ],
+              "reprojection_error_px": 4.599615551303145,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                35.70750045776367,
+                112.4124984741211
+              ],
+              "matched_target_crop_xy": [
+                33.0625,
+                105.80000305175781
+              ],
+              "predicted_target_crop_xy": [
+                34.540675230675376,
+                108.83384236071859
+              ],
+              "reprojection_error_px": 3.3747863584496454,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                39.67499923706055,
+                116.37999725341797
+              ],
+              "matched_target_crop_xy": [
+                38.352500915527344,
+                112.4124984741211
+              ],
+              "predicted_target_crop_xy": [
+                38.57799987344062,
+                111.84829426497633
+              ],
+              "reprojection_error_px": 0.6075986912729808,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                68.43936920166016,
+                33.45924758911133
+              ],
+              "matched_target_crop_xy": [
+                59.0,
+                33.0
+              ],
+              "predicted_target_crop_xy": [
+                59.157271883948084,
+                28.22241741523643
+              ],
+              "reprojection_error_px": 4.780170478101879,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                44.105369567871094,
+                118.62824249267578
+              ],
+              "matched_target_crop_xy": [
+                42.584495544433594,
+                114.06561279296875
+              ],
+              "predicted_target_crop_xy": [
+                42.758999135027,
+                112.95054078862026
+              ],
+              "reprojection_error_px": 1.12864391107725,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                63.87674331665039,
+                48.66799545288086
+              ],
+              "matched_target_crop_xy": [
+                54.04999923706055,
+                43.70000076293945
+              ],
+              "predicted_target_crop_xy": [
+                54.28711896771781,
+                41.15341504165043
+              ],
+              "reprojection_error_px": 2.557601337687344,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                41.063621520996094,
+                88.21073913574219
+              ],
+              "matched_target_crop_xy": [
+                34.3849983215332,
+                81.99500274658203
+              ],
+              "predicted_target_crop_xy": [
+                35.63961061624353,
+                82.3443293714884
+              ],
+              "reprojection_error_px": 1.302336784747627,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                62.9642219543457,
+                40.227142333984375
+              ],
+              "matched_target_crop_xy": [
+                52.0,
+                39.0
+              ],
+              "predicted_target_crop_xy": [
+                53.652668680823496,
+                34.48390256989278
+              ],
+              "reprojection_error_px": 4.808996752628966,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                36.729129791259766,
+                89.19931030273438
+              ],
+              "matched_target_crop_xy": [
+                30.417497634887695,
+                83.64811706542969
+              ],
+              "predicted_target_crop_xy": [
+                32.02913337287267,
+                84.57585209297895
+              ],
+              "reprojection_error_px": 1.8595865221312522,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                44.249855041503906,
+                120.68142700195312
+              ],
+              "matched_target_crop_xy": [
+                45.474159240722656,
+                122.43042755126953
+              ],
+              "predicted_target_crop_xy": [
+                43.319828851582784,
+                115.20479639524606
+              ],
+              "reprojection_error_px": 7.539952587945669,
+              "diagnostic_feature_fit_inlier": false
+            }
+          ]
+        },
+        "diagnostic_three_axis_feature_fit": {
+          "vector_deg": [
+            11.78193404948473,
+            -8.982819821765572,
+            -6.650196868896424
+          ],
+          "all_mutual_matches": {
+            "count": 16,
+            "mean_px": 2.608277824507873,
+            "median_px": 1.7337955442466169,
+            "maximum_px": 7.0128732027848955,
+            "p25_px": 0.7443586041037754,
+            "p75_px": 4.3837511574547,
+            "p95_px": 6.947587499283433,
+            "count_under2px": 8,
+            "count_under5px": 13
+          },
+          "manual_marker_reprojection_error_px": 1.7631993424334311,
+          "per_point": [
+            {
+              "source_crop_xy": [
+                40.0,
+                116.0
+              ],
+              "matched_target_crop_xy": [
+                39.0,
+                113.0
+              ],
+              "predicted_target_crop_xy": [
+                38.63681497879342,
+                111.90067043012658
+              ],
+              "reprojection_error_px": 1.1577689159875133,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                58.64999771118164,
+                73.5999984741211
+              ],
+              "matched_target_crop_xy": [
+                47.14999771118164,
+                71.29999542236328
+              ],
+              "predicted_target_crop_xy": [
+                49.94033825135641,
+                64.96114222281844
+              ],
+              "reprojection_error_px": 6.925825598116279,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                82.79999542236328,
+                52.89999771118164
+              ],
+              "matched_target_crop_xy": [
+                73.0,
+                42.0
+              ],
+              "predicted_target_crop_xy": [
+                72.05599380777858,
+                42.21883183912592
+              ],
+              "reprojection_error_px": 0.9690382163607489,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                103.5,
+                63.25
+              ],
+              "matched_target_crop_xy": [
+                93.0,
+                49.0
+              ],
+              "predicted_target_crop_xy": [
+                93.10255975031102,
+                49.252205782050446
+              ],
+              "reprojection_error_px": 0.2722613797135667,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                32.20000076293945,
+                112.69999694824219
+              ],
+              "matched_target_crop_xy": [
+                32.20000076293945,
+                110.39999389648438
+              ],
+              "predicted_target_crop_xy": [
+                31.751530886762374,
+                110.98171569053956
+              ],
+              "reprojection_error_px": 0.7345239788577813,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                40.25,
+                116.14999389648438
+              ],
+              "matched_target_crop_xy": [
+                39.099998474121094,
+                112.69999694824219
+              ],
+              "predicted_target_crop_xy": [
+                38.874049933017226,
+                111.98732026123274
+              ],
+              "reprojection_error_px": 0.7476368125191067,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                34.3849983215332,
+                108.44499969482422
+              ],
+              "matched_target_crop_xy": [
+                31.739999771118164,
+                100.51000213623047
+              ],
+              "predicted_target_crop_xy": [
+                32.60646958231853,
+                105.54712055086915
+              ],
+              "reprojection_error_px": 5.111098889359678,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                35.70750045776367,
+                112.4124984741211
+              ],
+              "matched_target_crop_xy": [
+                33.0625,
+                105.80000305175781
+              ],
+              "predicted_target_crop_xy": [
+                34.42151021939393,
+                109.37960021851168
+              ],
+              "reprojection_error_px": 3.828893397921843,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                39.67499923706055,
+                116.37999725341797
+              ],
+              "matched_target_crop_xy": [
+                38.352500915527344,
+                112.4124984741211
+              ],
+              "predicted_target_crop_xy": [
+                38.44976257163825,
+                112.42241687604864
+              ],
+              "reprojection_error_px": 0.09776607001528283,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                68.43936920166016,
+                33.45924758911133
+              ],
+              "matched_target_crop_xy": [
+                59.0,
+                33.0
+              ],
+              "predicted_target_crop_xy": [
+                58.92046018342368,
+                28.530156974298393
+              ],
+              "reprojection_error_px": 4.470550665950929,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                44.105369567871094,
+                118.62824249267578
+              ],
+              "matched_target_crop_xy": [
+                42.584495544433594,
+                114.06561279296875
+              ],
+              "predicted_target_crop_xy": [
+                42.61396722811958,
+                113.55995659015966
+              ],
+              "reprojection_error_px": 0.5065143389664271,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                63.87674331665039,
+                48.66799545288086
+              ],
+              "matched_target_crop_xy": [
+                54.04999923706055,
+                43.70000076293945
+              ],
+              "predicted_target_crop_xy": [
+                54.00299222472745,
+                41.656047323420246
+              ],
+              "reprojection_error_px": 2.0444939036668415,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                41.063621520996094,
+                88.21073913574219
+              ],
+              "matched_target_crop_xy": [
+                34.3849983215332,
+                81.99500274658203
+              ],
+              "predicted_target_crop_xy": [
+                35.42098692618953,
+                82.97067339207827
+              ],
+              "reprojection_error_px": 1.423097184826392,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                62.9642219543457,
+                40.227142333984375
+              ],
+              "matched_target_crop_xy": [
+                52.0,
+                39.0
+              ],
+              "predicted_target_crop_xy": [
+                53.40029757327839,
+                34.87645705557764
+              ],
+              "reprojection_error_px": 4.354817987955958,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                36.729129791259766,
+                89.19931030273438
+              ],
+              "matched_target_crop_xy": [
+                30.417497634887695,
+                83.64811706542969
+              ],
+              "predicted_target_crop_xy": [
+                31.8367428614049,
+                85.16223375904764
+              ],
+              "reprojection_error_px": 2.075284649122724,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                44.249855041503906,
+                120.68142700195312
+              ],
+              "matched_target_crop_xy": [
+                45.474159240722656,
+                122.43042755126953
+              ],
+              "predicted_target_crop_xy": [
+                43.18501123549665,
+                115.80168770356784
+              ],
+              "reprojection_error_px": 7.0128732027848955,
+              "diagnostic_feature_fit_inlier": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "orb",
+      "preprocess": "highpass",
+      "raw_mutual_match_count": 23,
+      "visible_lifted_match_count": 23,
+      "excluded_invalid_depth_matches": 0,
+      "diagnostic_feature_ransac_inlier_count": 20,
+      "variants": {
+        "earlier_two_axis_photometric_retry": {
+          "vector_deg": [
+            11.587602378943252,
+            -8.223198630558407,
+            0.0
+          ],
+          "all_mutual_matches": {
+            "count": 23,
+            "mean_px": 11.171689577464802,
+            "median_px": 5.335104881646491,
+            "maximum_px": 85.14306563277528,
+            "p25_px": 4.053860495427619,
+            "p75_px": 6.970529205314758,
+            "p95_px": 50.25235097941133,
+            "count_under2px": 0,
+            "count_under5px": 10
+          },
+          "manual_marker_reprojection_error_px": 0.7419843111304071,
+          "per_point": [
+            {
+              "source_crop_xy": [
+                33.0,
+                113.0
+              ],
+              "matched_target_crop_xy": [
+                32.0,
+                110.0
+              ],
+              "predicted_target_crop_xy": [
+                29.432763578109686,
+                105.32318043406761
+              ],
+              "reprojection_error_px": 5.335104881646491,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                119.0,
+                71.0
+              ],
+              "matched_target_crop_xy": [
+                89.93000030517578,
+                141.5074920654297
+              ],
+              "predicted_target_crop_xy": [
+                112.69405669483352,
+                59.46397091942109
+              ],
+              "reprojection_error_px": 85.14306563277528,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                40.0,
+                113.0
+              ],
+              "matched_target_crop_xy": [
+                39.0,
+                109.0
+              ],
+              "predicted_target_crop_xy": [
+                35.29030821173889,
+                103.71330584439157
+              ],
+              "reprojection_error_px": 6.458401370218195,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                82.79999542236328,
+                64.4000015258789
+              ],
+              "matched_target_crop_xy": [
+                72.0,
+                52.0
+              ],
+              "predicted_target_crop_xy": [
+                75.91736942317044,
+                52.05134830019388
+              ],
+              "reprojection_error_px": 3.917705941686221,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                96.5999984741211,
+                71.29999542236328
+              ],
+              "matched_target_crop_xy": [
+                87.0,
+                56.0
+              ],
+              "predicted_target_crop_xy": [
+                89.36210932865308,
+                58.45072823076589
+              ],
+              "reprojection_error_px": 3.403766934086821,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                82.79999542236328,
+                56.349998474121094
+              ],
+              "matched_target_crop_xy": [
+                73.0,
+                45.0
+              ],
+              "predicted_target_crop_xy": [
+                76.47942207472265,
+                44.79335367907464
+              ],
+              "reprojection_error_px": 3.4855531377414475,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                39.099998474121094,
+                112.69999694824219
+              ],
+              "matched_target_crop_xy": [
+                39.099998474121094,
+                109.25
+              ],
+              "predicted_target_crop_xy": [
+                34.49715295322073,
+                103.56386367745169
+              ],
+              "reprojection_error_px": 7.315622541375119,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                48.29999923706055,
+                128.8000030517578
+              ],
+              "matched_target_crop_xy": [
+                47.61000061035156,
+                124.31500244140625
+              ],
+              "predicted_target_crop_xy": [
+                44.024968952990626,
+                120.12580591905771
+              ],
+              "reprojection_error_px": 5.513784497705473,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                93.1500015258789,
+                49.45000076293945
+              ],
+              "matched_target_crop_xy": [
+                76.95626831054688,
+                50.7211799621582
+              ],
+              "predicted_target_crop_xy": [
+                87.43011633690061,
+                38.73980706910471
+              ],
+              "reprojection_error_px": 15.913980925009026,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                100.04999542236328,
+                66.69999694824219
+              ],
+              "matched_target_crop_xy": [
+                90.0,
+                52.0
+              ],
+              "predicted_target_crop_xy": [
+                93.11401797129507,
+                54.276164289535345
+              ],
+              "reprojection_error_px": 3.8572051797259377,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                54.22249984741211,
+                54.22249984741211
+              ],
+              "matched_target_crop_xy": [
+                45.0,
+                50.0
+              ],
+              "predicted_target_crop_xy": [
+                49.3493474314598,
+                44.70546749332464
+              ],
+              "reprojection_error_px": 6.851926557092392,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                39.67499923706055,
+                116.37999725341797
+              ],
+              "matched_target_crop_xy": [
+                38.352500915527344,
+                112.4124984741211
+              ],
+              "predicted_target_crop_xy": [
+                35.259447155417895,
+                107.50778584561618
+              ],
+              "reprojection_error_px": 5.798550468103451,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                100.51000213623047,
+                64.80249786376953
+              ],
+              "matched_target_crop_xy": [
+                89.93000030517578,
+                48.932498931884766
+              ],
+              "predicted_target_crop_xy": [
+                93.69671946091073,
+                52.55155878811
+              ],
+              "reprojection_error_px": 5.223578030538225,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                51.57749938964844,
+                126.95999908447266
+              ],
+              "matched_target_crop_xy": [
+                50.255001068115234,
+                121.66999816894531
+              ],
+              "predicted_target_crop_xy": [
+                46.676588527338986,
+                117.40385131392807
+              ],
+              "reprojection_error_px": 5.568217425761876,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                30.417497634887695,
+                103.41948699951172
+              ],
+              "matched_target_crop_xy": [
+                29.094999313354492,
+                103.15499877929688
+              ],
+              "predicted_target_crop_xy": [
+                26.72706361252341,
+                95.56906530228369
+              ],
+              "reprojection_error_px": 7.9469180315981465,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                83.64811706542969,
+                48.66799545288086
+              ],
+              "matched_target_crop_xy": [
+                74.05999755859375,
+                38.352500915527344
+              ],
+              "predicted_target_crop_xy": [
+                78.00753862944266,
+                38.06955573227654
+              ],
+              "reprojection_error_px": 3.957668313889356,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                97.33599090576172,
+                71.48111724853516
+              ],
+              "matched_target_crop_xy": [
+                86.68986511230469,
+                56.272369384765625
+              ],
+              "predicted_target_crop_xy": [
+                90.10104879853161,
+                58.63600283359203
+              ],
+              "reprojection_error_px": 4.150052676965882,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                100.37773895263672,
+                73.00199127197266
+              ],
+              "matched_target_crop_xy": [
+                89.93000030517578,
+                56.86750030517578
+              ],
+              "predicted_target_crop_xy": [
+                93.13333973587066,
+                60.14355050680014
+              ],
+              "reprojection_error_px": 4.581908819674132,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                94.44633483886719,
+                55.968196868896484
+              ],
+              "matched_target_crop_xy": [
+                83.64811706542969,
+                44.105369567871094
+              ],
+              "predicted_target_crop_xy": [
+                88.1521537894843,
+                44.44874240231184
+              ],
+              "reprojection_error_px": 4.5171065645017165,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                62.9642219543457,
+                64.71322631835938
+              ],
+              "matched_target_crop_xy": [
+                54.751495361328125,
+                54.751495361328125
+              ],
+              "predicted_target_crop_xy": [
+                56.707649703889786,
+                53.246767751240895
+              ],
+              "reprojection_error_px": 2.4679434743287105,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                54.21919250488281,
+                127.67745208740234
+              ],
+              "matched_target_crop_xy": [
+                54.306640625,
+                122.69277954101562
+              ],
+              "predicted_target_crop_xy": [
+                49.12734715374129,
+                117.85225172109644
+              ],
+              "reprojection_error_px": 7.089131853537125,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                100.56785583496094,
+                46.26121139526367
+              ],
+              "matched_target_crop_xy": [
+                67.8499984741211,
+                82.79999542236328
+              ],
+              "predicted_target_crop_xy": [
+                95.33749477555686,
+                36.24082360582784
+              ],
+              "reprojection_error_px": 54.067725429900534,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                94.53378295898438,
+                56.317996978759766
+              ],
+              "matched_target_crop_xy": [
+                83.9522933959961,
+                43.725154876708984
+              ],
+              "predicted_target_crop_xy": [
+                88.21232076241162,
+                44.76009967499218
+              ],
+              "reprojection_error_px": 4.383941593828854,
+              "diagnostic_feature_fit_inlier": true
+            }
+          ]
+        },
+        "final_three_axis_photometric_retry": {
+          "vector_deg": [
+            12.523506123365646,
+            -8.604264657042059,
+            -6.606128624554651
+          ],
+          "all_mutual_matches": {
+            "count": 23,
+            "mean_px": 7.853211747314316,
+            "median_px": 1.2323295047581206,
+            "maximum_px": 88.8227365904222,
+            "p25_px": 0.7429485269334443,
+            "p75_px": 2.089750728352067,
+            "p95_px": 49.59331909546285,
+            "count_under2px": 16,
+            "count_under5px": 20
+          },
+          "manual_marker_reprojection_error_px": 1.0454895153399975,
+          "per_point": [
+            {
+              "source_crop_xy": [
+                33.0,
+                113.0
+              ],
+              "matched_target_crop_xy": [
+                32.0,
+                110.0
+              ],
+              "predicted_target_crop_xy": [
+                32.51916049705162,
+                110.50360182319322
+              ],
+              "reprojection_error_px": 0.7232858480728243,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                119.0,
+                71.0
+              ],
+              "matched_target_crop_xy": [
+                89.93000030517578,
+                141.5074920654297
+              ],
+              "predicted_target_crop_xy": [
+                110.1120733271867,
+                55.007998055662526
+              ],
+              "reprojection_error_px": 88.8227365904222,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                40.0,
+                113.0
+              ],
+              "matched_target_crop_xy": [
+                39.0,
+                109.0
+              ],
+              "predicted_target_crop_xy": [
+                38.18405101535857,
+                108.03379142485038
+              ],
+              "reprojection_error_px": 1.2646468899380745,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                82.79999542236328,
+                64.4000015258789
+              ],
+              "matched_target_crop_xy": [
+                72.0,
+                52.0
+              ],
+              "predicted_target_crop_xy": [
+                72.73445832417066,
+                51.794703089991344
+              ],
+              "reprojection_error_px": 0.7626112057940643,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                96.5999984741211,
+                71.29999542236328
+              ],
+              "matched_target_crop_xy": [
+                87.0,
+                56.0
+              ],
+              "predicted_target_crop_xy": [
+                86.8317613010895,
+                56.525105624979304
+              ],
+              "reprojection_error_px": 0.5513983833817461,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                82.79999542236328,
+                56.349998474121094
+              ],
+              "matched_target_crop_xy": [
+                73.0,
+                45.0
+              ],
+              "predicted_target_crop_xy": [
+                72.45440989481273,
+                44.6382654500556
+              ],
+              "reprojection_error_px": 0.6546147321148051,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                39.099998474121094,
+                112.69999694824219
+              ],
+              "matched_target_crop_xy": [
+                39.099998474121094,
+                109.25
+              ],
+              "predicted_target_crop_xy": [
+                37.376320265435574,
+                107.99579068654198
+              ],
+              "reprojection_error_px": 2.1316912461850945,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                48.29999923706055,
+                128.8000030517578
+              ],
+              "matched_target_crop_xy": [
+                47.61000061035156,
+                124.31500244140625
+              ],
+              "predicted_target_crop_xy": [
+                48.72073037427021,
+                123.36518036900888
+              ],
+              "reprojection_error_px": 1.4614659002754755,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                93.1500015258789,
+                49.45000076293945
+              ],
+              "matched_target_crop_xy": [
+                76.95626831054688,
+                50.7211799621582
+              ],
+              "predicted_target_crop_xy": [
+                82.63451689214143,
+                37.48646727265621
+              ],
+              "reprojection_error_px": 14.401393228713866,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                100.04999542236328,
+                66.69999694824219
+              ],
+              "matched_target_crop_xy": [
+                90.0,
+                52.0
+              ],
+              "predicted_target_crop_xy": [
+                90.07851701786242,
+                52.01066726188404
+              ],
+              "reprojection_error_px": 0.07923832765846892,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                54.22249984741211,
+                54.22249984741211
+              ],
+              "matched_target_crop_xy": [
+                45.0,
+                50.0
+              ],
+              "predicted_target_crop_xy": [
+                45.448937226668235,
+                47.92751899535576
+              ],
+              "reprojection_error_px": 2.1205476057140897,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                39.67499923706055,
+                116.37999725341797
+              ],
+              "matched_target_crop_xy": [
+                38.352500915527344,
+                112.4124984741211
+              ],
+              "predicted_target_crop_xy": [
+                38.57799987344062,
+                111.84829426497633
+              ],
+              "reprojection_error_px": 0.6075986912729808,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                100.51000213623047,
+                64.80249786376953
+              ],
+              "matched_target_crop_xy": [
+                89.93000030517578,
+                48.932498931884766
+              ],
+              "predicted_target_crop_xy": [
+                90.4585869574428,
+                50.25660094353294
+              ],
+              "reprojection_error_px": 1.4257103444268036,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                51.57749938964844,
+                126.95999908447266
+              ],
+              "matched_target_crop_xy": [
+                50.255001068115234,
+                121.66999816894531
+              ],
+              "predicted_target_crop_xy": [
+                51.06101680462562,
+                120.25334609471233
+              ],
+              "reprojection_error_px": 1.6298970724959918,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                30.417497634887695,
+                103.41948699951172
+              ],
+              "matched_target_crop_xy": [
+                29.094999313354492,
+                103.15499877929688
+              ],
+              "predicted_target_crop_xy": [
+                28.72388565728358,
+                101.1297665420499
+              ],
+              "reprojection_error_px": 2.0589538509900445,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                83.64811706542969,
+                48.66799545288086
+              ],
+              "matched_target_crop_xy": [
+                74.05999755859375,
+                38.352500915527344
+              ],
+              "predicted_target_crop_xy": [
+                73.1924041035457,
+                37.92063486821164
+              ],
+              "reprojection_error_px": 0.9691370832169737,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                97.33599090576172,
+                71.48111724853516
+              ],
+              "matched_target_crop_xy": [
+                86.68986511230469,
+                56.272369384765625
+              ],
+              "predicted_target_crop_xy": [
+                87.58711010699878,
+                56.624148231197864
+              ],
+              "reprojection_error_px": 0.9637411152901991,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                100.37773895263672,
+                73.00199127197266
+              ],
+              "matched_target_crop_xy": [
+                89.93000030517578,
+                56.86750030517578
+              ],
+              "predicted_target_crop_xy": [
+                90.77222564606525,
+                57.76710715456112
+              ],
+              "reprojection_error_px": 1.2323295047581206,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                94.44633483886719,
+                55.968196868896484
+              ],
+              "matched_target_crop_xy": [
+                83.64811706542969,
+                44.105369567871094
+              ],
+              "predicted_target_crop_xy": [
+                84.01479788779461,
+                42.95832141407529
+              ],
+              "reprojection_error_px": 1.204231826774469,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                62.9642219543457,
+                64.71322631835938
+              ],
+              "matched_target_crop_xy": [
+                54.751495361328125,
+                54.751495361328125
+              ],
+              "predicted_target_crop_xy": [
+                53.76535395934785,
+                55.29954126289996
+              ],
+              "reprojection_error_px": 1.1281973120555235,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                54.21919250488281,
+                127.67745208740234
+              ],
+              "matched_target_crop_xy": [
+                54.306640625,
+                122.69277954101562
+              ],
+              "predicted_target_crop_xy": [
+                53.552024049575664,
+                120.38200471470256
+              ],
+              "reprojection_error_px": 2.4308694892625,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                100.56785583496094,
+                46.26121139526367
+              ],
+              "matched_target_crop_xy": [
+                67.8499984741211,
+                82.79999542236328
+              ],
+              "predicted_target_crop_xy": [
+                90.19706968898416,
+                34.1868648892365
+              ],
+              "reprojection_error_px": 53.50353308065725,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                94.53378295898438,
+                56.317996978759766
+              ],
+              "matched_target_crop_xy": [
+                83.9522933959961,
+                43.725154876708984
+              ],
+              "predicted_target_crop_xy": [
+                84.11064049207472,
+                43.25506687354306
+              ],
+              "reprojection_error_px": 0.49604085875768616,
+              "diagnostic_feature_fit_inlier": true
+            }
+          ]
+        },
+        "diagnostic_three_axis_feature_fit": {
+          "vector_deg": [
+            12.297814573497222,
+            -8.67039891770695,
+            -7.1824047239501825
+          ],
+          "all_mutual_matches": {
+            "count": 23,
+            "mean_px": 7.7652367095581,
+            "median_px": 1.385234879404399,
+            "maximum_px": 88.88564926609727,
+            "p25_px": 0.7888384253333349,
+            "p75_px": 1.5941256838918476,
+            "p95_px": 49.34692775868641,
+            "count_under2px": 20,
+            "count_under5px": 20
+          },
+          "manual_marker_reprojection_error_px": 1.3681208924164294,
+          "per_point": [
+            {
+              "source_crop_xy": [
+                33.0,
+                113.0
+              ],
+              "matched_target_crop_xy": [
+                32.0,
+                110.0
+              ],
+              "predicted_target_crop_xy": [
+                32.82234472167587,
+                111.11533962068259
+              ],
+              "reprojection_error_px": 1.385724832256587,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                119.0,
+                71.0
+              ],
+              "matched_target_crop_xy": [
+                89.93000030517578,
+                141.5074920654297
+              ],
+              "predicted_target_crop_xy": [
+                109.84036842004252,
+                54.880499234175545
+              ],
+              "reprojection_error_px": 88.88564926609727,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                40.0,
+                113.0
+              ],
+              "matched_target_crop_xy": [
+                39.0,
+                109.0
+              ],
+              "predicted_target_crop_xy": [
+                38.46287482834284,
+                108.61321012490767
+              ],
+              "reprojection_error_px": 0.6618986761594824,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                82.79999542236328,
+                64.4000015258789
+              ],
+              "matched_target_crop_xy": [
+                72.0,
+                52.0
+              ],
+              "predicted_target_crop_xy": [
+                72.43163517285309,
+                52.056363252902855
+              ],
+              "reprojection_error_px": 0.4352995965099321,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                96.5999984741211,
+                71.29999542236328
+              ],
+              "matched_target_crop_xy": [
+                87.0,
+                56.0
+              ],
+              "predicted_target_crop_xy": [
+                86.57789033522349,
+                56.65395845131482
+              ],
+              "reprojection_error_px": 0.7783561043274604,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                82.79999542236328,
+                56.349998474121094
+              ],
+              "matched_target_crop_xy": [
+                73.0,
+                45.0
+              ],
+              "predicted_target_crop_xy": [
+                72.07667709055434,
+                44.887872408313996
+              ],
+              "reprojection_error_px": 0.9301063336654041,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                39.099998474121094,
+                112.69999694824219
+              ],
+              "matched_target_crop_xy": [
+                39.099998474121094,
+                109.25
+              ],
+              "predicted_target_crop_xy": [
+                37.65464431034132,
+                108.58095180174726
+              ],
+              "reprojection_error_px": 1.592693991431113,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                48.29999923706055,
+                128.8000030517578
+              ],
+              "matched_target_crop_xy": [
+                47.61000061035156,
+                124.31500244140625
+              ],
+              "predicted_target_crop_xy": [
+                49.15754236907971,
+                123.83336011581957
+              ],
+              "reprojection_error_px": 1.6207605698572323,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                93.1500015258789,
+                49.45000076293945
+              ],
+              "matched_target_crop_xy": [
+                76.95626831054688,
+                50.7211799621582
+              ],
+              "predicted_target_crop_xy": [
+                82.18146525259093,
+                37.61758565738963
+              ],
+              "reprojection_error_px": 14.106979364382362,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                100.04999542236328,
+                66.69999694824219
+              ],
+              "matched_target_crop_xy": [
+                90.0,
+                52.0
+              ],
+              "predicted_target_crop_xy": [
+                89.77732560102679,
+                52.098546906442635
+              ],
+              "reprojection_error_px": 0.24350642851369336,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                54.22249984741211,
+                54.22249984741211
+              ],
+              "matched_target_crop_xy": [
+                45.0,
+                50.0
+              ],
+              "predicted_target_crop_xy": [
+                45.10450082838501,
+                48.41824257404673
+              ],
+              "reprojection_error_px": 1.5852056578537275,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                39.67499923706055,
+                116.37999725341797
+              ],
+              "matched_target_crop_xy": [
+                38.352500915527344,
+                112.4124984741211
+              ],
+              "predicted_target_crop_xy": [
+                38.89597958597084,
+                112.41834496758226
+              ],
+              "reprojection_error_px": 0.5435101164769836,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                100.51000213623047,
+                64.80249786376953
+              ],
+              "matched_target_crop_xy": [
+                89.93000030517578,
+                48.932498931884766
+              ],
+              "predicted_target_crop_xy": [
+                90.13903680560502,
+                50.337335747609
+              ],
+              "reprojection_error_px": 1.4203037482615886,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                51.57749938964844,
+                126.95999908447266
+              ],
+              "matched_target_crop_xy": [
+                50.255001068115234,
+                121.66999816894531
+              ],
+              "predicted_target_crop_xy": [
+                51.4662778159512,
+                120.71096523435342
+              ],
+              "reprojection_error_px": 1.5449710448678342,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                30.417497634887695,
+                103.41948699951172
+              ],
+              "matched_target_crop_xy": [
+                29.094999313354492,
+                103.15499877929688
+              ],
+              "predicted_target_crop_xy": [
+                28.93018730889888,
+                101.77960331823637
+              ],
+              "reprojection_error_px": 1.385234879404399,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                83.64811706542969,
+                48.66799545288086
+              ],
+              "matched_target_crop_xy": [
+                74.05999755859375,
+                38.352500915527344
+              ],
+              "predicted_target_crop_xy": [
+                72.74412005506716,
+                38.14540634981958
+              ],
+              "reprojection_error_px": 1.3320742334543771,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                97.33599090576172,
+                71.48111724853516
+              ],
+              "matched_target_crop_xy": [
+                86.68986511230469,
+                56.272369384765625
+              ],
+              "predicted_target_crop_xy": [
+                87.3342328002484,
+                56.745342891700574
+              ],
+              "reprojection_error_px": 0.7993207463392095,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                100.37773895263672,
+                73.00199127197266
+              ],
+              "matched_target_crop_xy": [
+                89.93000030517578,
+                56.86750030517578
+              ],
+              "predicted_target_crop_xy": [
+                90.53108665450335,
+                57.856730119845395
+              ],
+              "reprojection_error_px": 1.1575320408434608,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                94.44633483886719,
+                55.968196868896484
+              ],
+              "matched_target_crop_xy": [
+                83.64811706542969,
+                44.105369567871094
+              ],
+              "predicted_target_crop_xy": [
+                83.6191628418695,
+                43.09012988590909
+              ],
+              "reprojection_error_px": 1.0156524793906023,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                62.9642219543457,
+                64.71322631835938
+              ],
+              "matched_target_crop_xy": [
+                54.751495361328125,
+                54.751495361328125
+              ],
+              "predicted_target_crop_xy": [
+                53.498804328024626,
+                55.73971017416699
+              ],
+              "reprojection_error_px": 1.595557376352582,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                54.21919250488281,
+                127.67745208740234
+              ],
+              "matched_target_crop_xy": [
+                54.306640625,
+                122.69277954101562
+              ],
+              "predicted_target_crop_xy": [
+                53.95876719459457,
+                120.81880850886824
+              ],
+              "reprojection_error_px": 1.905986189065797,
+              "diagnostic_feature_fit_inlier": true
+            },
+            {
+              "source_crop_xy": [
+                100.56785583496094,
+                46.26121139526367
+              ],
+              "matched_target_crop_xy": [
+                67.8499984741211,
+                82.79999542236328
+              ],
+              "predicted_target_crop_xy": [
+                89.70888392544676,
+                34.22962745160145
+              ],
+              "reprojection_error_px": 53.262477580275814,
+              "diagnostic_feature_fit_inlier": false
+            },
+            {
+              "source_crop_xy": [
+                94.53378295898438,
+                56.317996978759766
+              ],
+              "matched_target_crop_xy": [
+                83.9522933959961,
+                43.725154876708984
+              ],
+              "predicted_target_crop_xy": [
+                83.7181134383895,
+                43.38661424453122
+              ],
+              "reprojection_error_px": 0.41164306404936146,
+              "diagnostic_feature_fit_inlier": true
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "sources_sha256": {
+    "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\fruit340-fix\\20261004_motion\\feature_motion.json": "b956c78c391c23ceee4ea55eb80533006b9834055e027a7eb1b7a769c0b947c4",
+    "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\fruit340-fix\\20261004_motion\\manual_correspondences.json": "87c631ead8dca0d9c8b60316631fa81a5e84e7e8b383d5de28c9c747bd62d5cd",
+    "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\fruit340-fix\\20261004_candidate\\baseline\\algorithm.py": "6c592861d9318456856f6a05c780f6a8fdd77c4c50286cc0b748ff094f397371",
+    "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\fruit340-fix\\20261004_native_retry_maps\\340\\candidate\\result.json": "3c9cfbeedd58be4914f023032b35893d395224c4d693a2daa2b13d5bb33ad91c",
+    "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\fruit340-fix\\20261004_native_3d_retry_maps\\340\\baseline\\result.json": "9fb665fa980ffe7f542158110edfc0a7b3beeb681a1e2fe4fba83caf7810d0be",
+    "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\fruit340-fix\\20261004_native_3d_retry_maps\\340\\candidate\\result.json": "f1d1ac3315c834e8c7ef55bdb3213bc779652f890bbb6680e380e65c6040519b",
+    "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\fruit340-fix\\20261004_native_3d_retry_maps\\340\\baseline\\surface_map.png": "ecfa1b193ea634b8154bd85d335477be083d4a4820ee6aacacac48fe99e2c054",
+    "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\fruit340-fix\\20261004_native_3d_retry_maps\\340\\candidate\\surface_map.png": "f33f6cc97b6929bf6769abcb01f72ffa43c31d0602ad7fe74ff5aea000a921a6"
+  }
+}

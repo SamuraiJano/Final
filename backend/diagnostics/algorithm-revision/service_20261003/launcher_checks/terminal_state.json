@@ -1,0 +1,40 @@
+{
+  "summary": {
+    "finished_at": "2026-10-03T10:29:23.020750+00:00",
+    "stop_reason": "complete",
+    "samples": 4,
+    "analysis_id": "control",
+    "duration_sec": 0.0,
+    "services_stopped": false,
+    "inference_cancelled": false,
+    "method": "Python requests/psutil and hidden nvidia-smi; only owned service process memory, no unrelated command lines."
+  },
+  "samples": [
+    {
+      "analysis": {
+        "state": "idle",
+        "run_id": null
+      }
+    },
+    {
+      "analysis": {
+        "state": "processing",
+        "run_id": "control"
+      }
+    },
+    {
+      "analysis": {
+        "state": "complete",
+        "run_id": "control"
+      }
+    },
+    {
+      "analysis": {
+        "state": "complete",
+        "run_id": "control"
+      },
+      "phase": "after_terminal_state"
+    }
+  ],
+  "artificial_control": true
+}

@@ -1,0 +1,128 @@
+{
+  "track_id": 56,
+  "views": 0,
+  "status": "mapping_failed",
+  "grade": null,
+  "reason": "No complete, usable fruit silhouettes were captured.",
+  "rejected_views": {
+    "Fruit is cut off by the video frame": 9,
+    "Crop is too small for GrabCut": 1
+  },
+  "first_seen_frame": 1,
+  "last_seen_frame": 10,
+  "tracked_frames": 10,
+  "tracking_history": [
+    {
+      "frame": 1,
+      "bbox_xyxy": [
+        1873.475341796875,
+        -0.3554275631904602,
+        1918.6041259765625,
+        70.04737091064453
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 2,
+      "bbox_xyxy": [
+        1871.809326171875,
+        0.45558393001556396,
+        1918.4541015625,
+        81.43513488769531
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 3,
+      "bbox_xyxy": [
+        1878.253173828125,
+        0.1994919776916504,
+        1918.97216796875,
+        88.7490005493164
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 4,
+      "bbox_xyxy": [
+        1881.8328857421875,
+        2.6485230922698975,
+        1918.0830078125,
+        100.5995101928711
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 5,
+      "bbox_xyxy": [
+        1881.23388671875,
+        3.9150543212890625,
+        1918.531005859375,
+        112.14210510253906
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 6,
+      "bbox_xyxy": [
+        1883.6748046875,
+        32.72106170654297,
+        1918.6287841796875,
+        128.89630126953125
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 7,
+      "bbox_xyxy": [
+        1886.1719970703125,
+        47.05186462402344,
+        1918.622314453125,
+        142.4358367919922
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 8,
+      "bbox_xyxy": [
+        1886.24267578125,
+        78.60340881347656,
+        1918.5223388671875,
+        175.70086669921875
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 9,
+      "bbox_xyxy": [
+        1893.119873046875,
+        97.55689239501953,
+        1918.799072265625,
+        191.36183166503906
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 10,
+      "bbox_xyxy": [
+        1897.920654296875,
+        120.33014678955078,
+        1917.7125244140625,
+        201.12159729003906
+      ],
+      "touches_frame_edge": false
+    }
+  ],
+  "tracking_evidence": [
+    {
+      "stage": "entry",
+      "frame": 1,
+      "crop": "/results/78b4a03ccaa549de96ecd88c5efb5806/56/tracking_entry_frame_00001.png"
+    },
+    {
+      "stage": "last_seen",
+      "frame": 10,
+      "crop": "/results/78b4a03ccaa549de96ecd88c5efb5806/56/tracking_last_seen_frame_00010.png"
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "author_map_examples": [
+    {
+      "object": "objM0001",
+      "views": 14,
+      "bounds_xywh": [
+        [
+          2,
+          1,
+          199,
+          211
+        ],
+        [
+          204,
+          1,
+          197,
+          211
+        ],
+        [
+          404,
+          1,
+          175,
+          209
+        ],
+        [
+          582,
+          1,
+          161,
+          209
+        ],
+        [
+          746,
+          1,
+          181,
+          211
+        ],
+        [
+          930,
+          1,
+          195,
+          209
+        ],
+        [
+          1128,
+          1,
+          201,
+          207
+        ],
+        [
+          2,
+          215,
+          197,
+          205
+        ],
+        [
+          202,
+          215,
+          179,
+          207
+        ],
+        [
+          384,
+          215,
+          161,
+          207
+        ],
+        [
+          548,
+          215,
+          167,
+          207
+        ],
+        [
+          718,
+          215,
+          185,
+          209
+        ],
+        [
+          906,
+          215,
+          203,
+          207
+        ],
+        [
+          1112,
+          215,
+          203,
+          209
+        ]
+      ],
+      "axis": "y",
+      "direction": -1,
+      "reference": "data\\maps\\mandarin\\unrolled_objM0001.png",
+      "direction_basis": "Published montage features move left; positive visible z implies negative y rotation in this code.",
+      "status": "produced",
+      "observed_surface_pct": 87.72933672587497,
+      "rotation_coverage_deg": 389.21684805255717
+    },
+    {
+      "object": "objM0005",
+      "views": 13,
+      "bounds_xywh": [
+        [
+          2,
+          1,
+          207,
+          203
+        ],
+        [
+          212,
+          1,
+          209,
+          203
+        ],
+        [
+          424,
+          1,
+          191,
+          203
+        ],
+        [
+          618,
+          1,
+          163,
+          205
+        ],
+        [
+          784,
+          1,
+          179,
+          205
+        ],
+        [
+          966,
+          1,
+          197,
+          203
+        ],
+        [
+          1166,
+          1,
+          207,
+          203
+        ],
+        [
+          2,
+          209,
+          207,
+          205
+        ],
+        [
+          212,
+          209,
+          193,
+          201
+        ],
+        [
+          408,
+          209,
+          179,
+          201
+        ],
+        [
+          590,
+          209,
+          157,
+          201
+        ],
+        [
+          750,
+          209,
+          203,
+          218
+        ],
+        [
+          956,
+          209,
+          207,
+          203
+        ]
+      ],
+      "axis": "y",
+      "direction": -1,
+      "reference": "data\\maps\\mandarin\\unrolled_objM0005.png",
+      "direction_basis": "Published montage features move left; positive visible z implies negative y rotation in this code.",
+      "status": "failed",
+      "reason": "Unreliable pair 2: rotation 42.5 deg, error 0.678"
+    }
+  ],
+  "exact_geometry_diagnostics": [
+    {
+      "rotation_axis": "y",
+      "true_pair_degrees": 25.0,
+      "true_total_degrees": 375.0,
+      "radii": [
+        55.0,
+        40.0,
+        55.0
+      ],
+      "geometry_and_pair_rotations": "Analytical oracle, not estimated",
+      "status": "produced",
+      "observed_surface_pct": 84.06934802589933,
+      "rotation_coverage_deg": 374.9999999999998,
+      "grade": null,
+      "result_status": "missing_defect_masks"
+    },
+    {
+      "rotation_axis": "x",
+      "true_pair_degrees": 25.0,
+      "true_total_degrees": 375.0,
+      "radii": [
+        55.0,
+        40.0,
+        55.0
+      ],
+      "geometry_and_pair_rotations": "Analytical oracle, not estimated",
+      "status": "produced",
+      "observed_surface_pct": 87.70706729644264,
+      "rotation_coverage_deg": 374.9999999999998,
+      "grade": null,
+      "result_status": "missing_defect_masks"
+    }
+  ],
+  "algorithm_sha256": "61cf918fda503830cb976cf5fbb8f49d4b730e611d166f961edfe36e2e61be10",
+  "recorded_at": "2026-10-01T19:45:35.994878+02:00"
+}

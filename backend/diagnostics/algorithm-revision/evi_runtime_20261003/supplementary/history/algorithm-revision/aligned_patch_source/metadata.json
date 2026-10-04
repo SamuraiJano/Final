@@ -1,0 +1,7 @@
+{
+  "baseline_sha256": "951b55a4912d3147d349282846e2e02d20159a410b6bb2e8fdd4ab4dd3abea2d",
+  "candidate_sha256": "f4b184fa5b5dfd4780fbfdfbba9178a02975b0ca366d4fbf3992b3e1334cf7f0",
+  "changes": "Optional native aligned_mad: lift a Gaussian 3x3 neighborhood, project its samples, then remove the neighborhood mean and compare MAD. Native green smoothing2, existing strong points, coarse gate, 3-degree consensus, and map selection stay. Legacy costs unchanged. Experimental, not production. Explicitly reject fewer than twelve valid neighborhoods.",
+  "limitations": "Approximate Gaussian, shape model and multiplicative shading; requires known-motion, stationary, author and fixed-input validation.",
+  "unvalidated_initial_sha256": "be16b37fa6486ac5754017c95b6e7d9bd302a0804afcae3c2c562dda6821b520"
+}

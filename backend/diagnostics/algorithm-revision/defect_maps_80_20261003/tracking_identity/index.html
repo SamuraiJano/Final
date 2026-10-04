@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conveyor tracking identity audit — 3 October 2026</title>
+<style>
+body { margin: 2rem auto; max-width: 1100px; padding: 0 1rem; font-family: system-ui,sans-serif; line-height: 1.55; color: #23372c; }
+img { width: 100%; height: auto; border: 1px solid #dde5df; }
+a { color: #14664c; } h1 { font-size: 1.8rem; } p { max-width: 850px; }
+</style>
+<h1>Conveyor tracking identity audit</h1>
+<p>The original 515-frame application contains 32,875 saved boxes. Every box exactly matches the retained tracker replay. The seven previously flagged association disagreements involve 15 revised IDs; none of these produced a surface map. True identity-switch accuracy still requires manually labelled physical fruit.</p>
+<p>A CPU-only experiment disabling camera-motion compensation increased published records from 474 to 506 and very short records from 54 to 82. Production tracking remains unchanged. The synthetic example below shows why geometry alone cannot certify which fruit reappeared after a missing detection.</p>
+<p><a href="REPORT.md">Method, findings and proposed safeguards</a> · <a href="tracking_audit.pdf">Report figure PDF</a> · <a href="tracking_audit.png">300 dpi PNG</a> · <a href="audit.json">Raw audit</a> · <a href="no_gmc_experiment.json">Experiment report</a></p>
+<img src="tracking_audit.png" alt="Trajectory and continuity indicators for saved fruit 98, an edge association disagreement, and a synthetic identity replacement">
+<p>These checks use saved detector output and tracker replay. No neural inference, surface mapping or defect grading was performed. A trajectory flag or tracker disagreement does not establish a true identity switch.</p>
+</html>

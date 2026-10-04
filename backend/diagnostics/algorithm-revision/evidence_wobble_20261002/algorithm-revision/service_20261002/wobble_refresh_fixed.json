@@ -1,0 +1,23 @@
+{
+  "status": 200,
+  "body": {
+    "type": "backend-control-result",
+    "id": "3fb2787f-0878-441b-89ac-18f3bc40cc4e",
+    "ok": true
+  },
+  "api_pids_before": [
+    39712,
+    25664
+  ],
+  "api_pids_after": [
+    37924,
+    43836
+  ],
+  "old_api_processes_exited": true,
+  "source_sha256": {
+    "scripts/dev.mjs": "f41579d588457f17b06372077abc3f0e93a007ccdadbd415e256a32146abb230",
+    "scripts/stop_process_tree.py": "fcd6db0138a16caaee584d0c6db42e093aee9c05f983dc3f7f40f66d6a8c1dea",
+    "backend/main.py": "1d37dcb6fc37b5e641af2579c781787f136a06c37a5acda5115ad788150923dd",
+    "backend/algorithm.py": "951b55a4912d3147d349282846e2e02d20159a410b6bb2e8fdd4ab4dd3abea2d"
+  }
+}

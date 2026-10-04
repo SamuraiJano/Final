@@ -1,0 +1,24 @@
+{
+  "job_id": "b23fe12db90e41dbae9928e3fbcf55cf",
+  "created_at": "2026-10-04T13:44:52.045486+00:00",
+  "source_name": "WIN_20260818_13_05_49_Pro.mp4",
+  "video": "C:\\Users\\USER\\Pictures\\Camera Roll\\WIN_20260818_13_05_49_Pro.mp4",
+  "video_sha256": "ae12db73e219a666b639725e9c729e9d3f79e80c4fc6c369795187f67acf8198",
+  "output": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\b23fe12db90e41dbae9928e3fbcf55cf",
+  "method": "Fresh main.analyze_video on the entire original video; no track subset or cached detections.",
+  "source_sha256": {
+    "algorithm.py": "21e8eb0b924d153c5bbc979c9202330b1621283c33444d132b7da51cddfbe3b4",
+    "main.py": "28892b8661e944215effc676ed67c6de3cf7967c32b72fe015094cee7bcbce60",
+    "dfine_segmenter.py": "20049bf4e24678342364f85b1f4eea69a36f5385c858189b40b52fac11fc360a",
+    "map_visualization.py": "c26bd9a73484b93b8a870c46d7f8c1a6885aa33c4273fc82df1ec65c3ffbaaa9",
+    "fruit_identity.py": "d2e737bfd05e55b76039583c8de28154dceb29201e5bfa59ce9490d0a757ce7e",
+    "conveyor_identity.py": "1cfaf09b429d2c1b82e5e375acc29b31d51ab4746de6b8f8d86a7bfa171dda15"
+  },
+  "runner_sha256": "8d237813b0262a67556b9a2dbcbc80bbd52f9780b412afa389cad304c4c656f4",
+  "model_sha256": {
+    "detection": "06f2675d12ec200b4a0419b1bd505c4aa113674c69ab6894684867bd194048b1",
+    "segmentation": "2869048b1bba2ca0e5cfb0416bf9977f79f851dd8907ffa8b07b54e8c6d049c0"
+  },
+  "environment": {},
+  "limitations": "No independent manual fruit identities or grade labels; coverage is estimated by the production geometry model."
+}

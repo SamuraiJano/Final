@@ -1,0 +1,92 @@
+{
+  "checked_at": "2026-10-02T18:52:18.944651+00:00",
+  "passed": true,
+  "method": "Isolated headless Edge against the real running Vite/API; existing saved report data, without mocked responses or a user browser profile.",
+  "limitations": "These screenshots show retained development-run outputs before a completed analysis with the newly validated source. Historical Class values are not proof of field grade accuracy.",
+  "latest_saved_job_id": "272fb3d439e04f3ab86065a99b686545",
+  "latest_saved_records": 474,
+  "latest_saved_classes": {
+    "Class 1": 7,
+    "Class 2": 0,
+    "Class 3": 0,
+    "ungraded": 467
+  },
+  "all_saved_records": 1587,
+  "all_saved_classes": {
+    "Class 1": 15,
+    "Class 2": 0,
+    "Class 3": 0,
+    "ungraded": 1572
+  },
+  "video_preview": {
+    "file": "C:\\Users\\USER\\Pictures\\Camera Roll\\WIN_20260818_13_29_43_Pro.mp4",
+    "selected_locally_only": true,
+    "seek_seconds": 2.9,
+    "upload_or_analysis_requested": false
+  },
+  "refresh_backend_disabled": true,
+  "page_errors": [],
+  "api_requests": [
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/health"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/analysis/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/health"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/analysis/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/dashboard"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/camera/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/live/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/camera/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/live/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/backend/control"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/backend/control"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/analysis/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/analysis/status"
+    }
+  ],
+  "dashboard_sha256": "f9b69f7452b94bc616ac4c13470a51bc4842f76c122a082f170023eedb245146",
+  "analysis_status_after_readonly_capture": {
+    "state": "processing",
+    "run_id": "a43e26c70871450d8b72a5c291074b0c",
+    "frames_processed": 70,
+    "frames_total": 515,
+    "error": null
+  },
+  "capture_note": "The parent agent had started the new full-video analysis during this read-only browser capture. Displayed class counts still come from the latest completed historical report; no upload, analysis or cancellation was requested by this browser."
+}

@@ -1,0 +1,104 @@
+--- mapping_algorithm_50bdd78e.py
++++ grading_algorithm_f10e8393.py
+@@ -86,6 +86,7 @@
+     class_1_max_defect_pct: float = 10.0  # upper boundary is exclusive
+     class_2_max_defect_pct: float = 20.0
+     defect_observations_complete: bool = False  # true only if segmentation ran on every view
++    grade_partial_maps: bool = False  # app can grade observed area provisionally
+ 
+ 
+ @dataclass
+@@ -131,6 +132,8 @@
+     discarded_view_frames: list[int] = field(default_factory=list)
+     selection_diagnostics: list[dict] = field(default_factory=list)
+     observed_longitude_deg: float = 0.0
++    grade_provisional: bool = False
++    coverage_complete: bool = False
+ 
+ 
+ def _binary(mask: np.ndarray, shape: tuple[int, int]) -> np.ndarray:
+@@ -869,17 +872,46 @@
+ 
+ def _grade(defect_pct: float | None, coverage: float,
+            s: Settings) -> tuple[str | None, str]:
+-    if coverage < s.minimum_surface_coverage:
++    if not np.isfinite(coverage) or not 0 < coverage <= 1:
++        return None, 'no_observed_surface'
++    if coverage < s.minimum_surface_coverage and not s.grade_partial_maps:
+         return None, 'insufficient_surface_coverage'
+-    if defect_pct is None:
++    if defect_pct is None or not np.isfinite(defect_pct):
+         return None, 'missing_defect_masks'
++    if not 0 <= defect_pct <= 100:
++        return None, 'invalid_defect_percentage'
+     t1, t2 = s.class_1_max_defect_pct, s.class_2_max_defect_pct
+     if t1 is None or t2 is None:
+         return None, 'grade_thresholds_not_configured'
+     if not (0 <= t1 <= t2 <= 100):
+         raise ValueError('Grade thresholds must satisfy 0 <= T1 <= T2 <= 100')
+-    return ('Class 1' if defect_pct < t1 else
+-            'Class 2' if defect_pct <= t2 else 'Class 3'), 'graded'
++    grade = ('Class 1' if defect_pct < t1 else
++             'Class 2' if defect_pct <= t2 else 'Class 3')
++    return grade, ('graded_partial' if coverage < s.minimum_surface_coverage else 'graded')
++
++
++def _grade_map(defect_pct: float | None, coverage: float,
++               observed_longitude_deg: float, rotation_coverage_deg: float,
++               max_pair_rotation_deg: float, s: Settings) -> tuple[str | None, str]:
++    """Grade observed defects; keep incomplete coverage explicit."""
++    grade, status = _grade(defect_pct, coverage, s)
++    if any(not np.isfinite(value) or value < 0 for value in
++           (observed_longitude_deg, rotation_coverage_deg, max_pair_rotation_deg)):
++        return None, 'insufficient_rotation_coverage'
++    # A bad motion step is not merely a partial map, so it remains ungraded.
++    if (s.maximum_pair_gap_deg is not None and
++            max_pair_rotation_deg > s.maximum_pair_gap_deg):
++        return None, 'insufficient_rotation_coverage'
++    coverage_status = None
++    if observed_longitude_deg < s.minimum_longitude_coverage_deg:
++        coverage_status = 'insufficient_longitude_coverage'
++    if rotation_coverage_deg < s.minimum_rotation_coverage_deg:
++        coverage_status = 'insufficient_rotation_coverage'
++    if coverage_status:
++        if s.grade_partial_maps:
++            return (grade, 'graded_partial') if grade else (None, status)
++        return None, coverage_status
++    return grade, status
+ 
+ 
+ def _map_frame(model: Spheroid, settings: Settings) -> tuple[np.ndarray, np.ndarray]:
+@@ -1131,17 +1163,15 @@
+     has_defect_evidence = bool(names) or s.defect_observations_complete
+     defect_visible = 100*defect_area/observed_area if has_defect_evidence and observed_area else None
+     defect_full = 100*defect_area/total if has_defect_evidence and total else None
+-    grade, status = _grade(defect_visible, coverage/100, s)
+     rotation_coverage = float(magnitudes.sum())
+     # Report actual supported columns, rather than equating camera-relative
+     # motion with surface coverage. Endpoint views also observe +/-45 degrees.
+     observed_longitude = float(np.count_nonzero(observed.any(axis=0))*360/width)
+-    if observed_longitude < s.minimum_longitude_coverage_deg:
+-        grade, status = None, 'insufficient_longitude_coverage'
+-    if (rotation_coverage < s.minimum_rotation_coverage_deg or
+-            (s.maximum_pair_gap_deg is not None and
+-             float(magnitudes.max()) > s.maximum_pair_gap_deg)):
+-        grade, status = None, 'insufficient_rotation_coverage'
++    grade, status = _grade_map(defect_visible, coverage/100, observed_longitude,
++                               rotation_coverage, float(magnitudes.max()), s)
++    coverage_complete = (coverage/100 >= s.minimum_surface_coverage and
++                         observed_longitude >= s.minimum_longitude_coverage_deg and
++                         rotation_coverage >= s.minimum_rotation_coverage_deg)
+     vectors = [cv2.Rodrigues(R)[0].ravel() for R in rotations]
+     return MapResult(bgr, observed.astype(np.uint8), defect_maps,
+                      np.rad2deg(longitude), np.rad2deg(latitude),
+@@ -1153,7 +1183,9 @@
+                      rotation_coverage, float(np.rad2deg(progress[-1])),
+                      [v.frame_index for v in prepared],
+                      [frame for frame in captured_frames if frame not in {v.frame_index for v in prepared}],
+-                     diagnostics, observed_longitude)
++                     diagnostics, observed_longitude,
++                     grade_provisional=status == 'graded_partial',
++                     coverage_complete=coverage_complete)
+ 
+ 
+ def _as_numpy(value: object) -> np.ndarray:

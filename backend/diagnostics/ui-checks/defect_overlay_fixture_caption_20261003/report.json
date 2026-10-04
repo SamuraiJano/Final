@@ -1,0 +1,81 @@
+{
+  "checked_at": "2026-10-03T18:38:07.977666+00:00",
+  "passed": true,
+  "method": "Frozen production build with intercepted artificial GET responses in isolated headless Edge.",
+  "scope": "artificial_UI_controls",
+  "job_id": null,
+  "checks": [
+    {
+      "track_id": 1,
+      "label": "Class 2 (partial)",
+      "overlay_default": true,
+      "original_toggle": true,
+      "legend_matches_metadata": true,
+      "coverage_target_pct": 80,
+      "observed_surface_pct": 26.5
+    },
+    {
+      "track_id": 2,
+      "label": "Class 1",
+      "overlay_default": true,
+      "original_toggle": true,
+      "legend_matches_metadata": true,
+      "coverage_target_pct": 80,
+      "observed_surface_pct": 85.1
+    },
+    {
+      "track_id": 3,
+      "missing_map_not_invented": true
+    },
+    {
+      "track_id": 4,
+      "legacy_original_map_preserved": true
+    }
+  ],
+  "mobile_horizontal_overflow": false,
+  "page_errors": [],
+  "api_requests": [
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:41762/api/health"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:41762/api/analysis/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:41762/api/dashboard"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:41762/api/camera/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:41762/api/live/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:41762/api/backend/control"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:41762/api/analysis/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:41762/api/analysis/status"
+    }
+  ],
+  "inference_requested": false,
+  "software_checks": {
+    "build": "passed",
+    "lint": "passed"
+  },
+  "limitations": "UI correctness only; this does not prove segmentation, identity association or grading accuracy.",
+  "source_sha256": {
+    "App.jsx": "6956d9bf926a6fbe02c3c9c47d28d037bfce8cbca4bbb1e464eb32b4fc112b3b",
+    "App.css": "c85455722c3172af16e2657286cdf8dae847a4d733dc8665e7f669932596052e"
+  }
+}

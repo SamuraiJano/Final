@@ -1,0 +1,40 @@
+{
+  "prepared_at": "2026-10-02T20:11:53.043408+02:00",
+  "seed": 20261002771,
+  "acceptance": {
+    "all_30_pairs_measured": true,
+    "maximum_pose_error_deg": 5.0,
+    "maximum_front_visible_landmark_rms_px": 5.0
+  },
+  "motion": "Known horizontal x-axis 360-degree turn:30 successive12-degree increments,31frames.",
+  "waveform": "Fourteen seeded independent3D directions/frequencies/phases/amplitudes; reflectance125+55*tanh(sum(a*sin(body dot k+phase))/sqrt(sum(a^2)/2)). Frequencies are continuous random values; no repeated angular tile.",
+  "illumination_equations": {
+    "linear_additive": "I=reflectance+0.30*camera_x+0.20*camera_y",
+    "lambertian_multiplicative": "I=reflectance*(0.55+0.45*max(camera_normal dot normalized[0.45,-0.35,1.0],0))"
+  },
+  "scope": "Limited fresh synthetic control after candidate design; not a formally held-out dataset or neural-model/field-grade accuracy test. One new texture, two lighting scenes, ideal sphere/masks, no translation/perspective/occlusion/specular glare. No tuning based on this control's outputs.",
+  "scoring": "Independent truth poses and36body landmarks. Compose actual adjacent measured rotations without correction/extrapolation. Score only truth landmarks with camera_z>10pixels. Any unavailable pair fails completeness.",
+  "cases": {
+    "full_turn_x12_lambertian_multiplicative_fresh_texture_c": {
+      "lighting": "lambertian_multiplicative",
+      "input_file": "full_turn_x12_lambertian_multiplicative_fresh_texture_c_inputs.npz",
+      "input_sha256": "2b91a17b5e4c9b7c7c09cf68ad13c64d404d214b841792482a6dcf7c2c804bfb",
+      "frames": 31,
+      "seed": 20261002771,
+      "fruit_float_min": 38.57003013990116,
+      "fruit_float_max": 179.00678271456013,
+      "saturated_fruit_pixels": 0
+    },
+    "full_turn_x12_linear_additive_fresh_texture_c": {
+      "lighting": "linear_additive",
+      "input_file": "full_turn_x12_linear_additive_fresh_texture_c_inputs.npz",
+      "input_sha256": "8415d772ddfa51df055d1a2dc8da1a2d2ea81ff6ec117de3f759a2d556e31e0d",
+      "frames": 31,
+      "seed": 20261002771,
+      "fruit_float_min": 51.643342432660916,
+      "fruit_float_max": 198.44290496538446,
+      "saturated_fruit_pixels": 0
+    }
+  },
+  "all_inputs_frozen_at": "2026-10-02T20:11:54.665807+02:00"
+}

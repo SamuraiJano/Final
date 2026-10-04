@@ -1,0 +1,57 @@
+{
+  "created_at": "2026-10-02T23:04:27.654613+00:00",
+  "scope": "Read-only source review; no production code, matcher settings, or capture limits changed. No heavy model tests run.",
+  "sources": {
+    "main.py": "2a51490a827c7429114ec51d0e8b627f30a9be069dd7d5769af283780ae50d49",
+    "algorithm.py": "50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d",
+    "dfine_segmenter.py": "20049bf4e24678342364f85b1f4eea69a36f5385c858189b40b52fac11fc360a"
+  },
+  "failure_evidence": "backend/diagnostics/algorithm-revision/service_20261002/pixel_switch_trace_services/api_restart1_stderr.log",
+  "failed_allocation": {
+    "shape": [
+      115,
+      160,
+      9
+    ],
+    "dtype": "float64",
+    "MiB": 1.26,
+    "site": "algorithm.py:528 values @ weights"
+  },
+  "findings": [
+    {
+      "classification": "verified source behavior",
+      "finding": "Normal completed tracks remove all six pipeline dictionaries; no unbounded finished-crop retention found.",
+      "references": [
+        "algorithm.py:1361",
+        "algorithm.py:1383"
+      ]
+    },
+    {
+      "classification": "verified source behavior",
+      "finding": "Detector metrics are scalar totals and one last_detection_rows; segmenter does not keep past prediction outputs. TrackTrack history is bounded to four entries; removed pool bounded to 1000; GMC retains one preceding frame.",
+      "references": [
+        "dfine_segmenter.py:239",
+        "dfine_segmenter.py:268",
+        "dfine_segmenter.py:315",
+        "venv/Lib/site-packages/ultralytics/trackers/track_tracker.py:253",
+        "venv/Lib/site-packages/ultralytics/trackers/utils/stracks.py:55"
+      ]
+    },
+    {
+      "classification": "verified exception cleanup gap; not established cause of initial failure",
+      "finding": "MemoryError escapes _finish_track before drop_track. analyze_video finally only releases VideoCapture. Pipeline and model locals remain reachable while an error traceback remains reachable; cleanup could be improved in a separate reviewed change.",
+      "references": [
+        "main.py:292",
+        "main.py:380",
+        "algorithm.py:1381"
+      ]
+    },
+    {
+      "classification": "estimate from older completed real donor; not actual failed-run memory measurement",
+      "finding": "Crop/mask/tracking evidence retention inferred from 474 completed real track histories: at frame330 about476.14MiB/94active tracks/2758views; peak514 about705.81MiB/76active tracks/4166views. Includes BGR3+mask1 bytes/pixel and entry/last seen evidence3bytes/pixel, padded bbox0.12 clipped1920x1080. Excludes models, defect arrays, runtime caches and map temporaries. Donor source863 profile differs from failed run.",
+      "donor": "backend/results/272fb3d439e04f3ab86065a99b686545"
+    }
+  ],
+  "user_context": "User confirmed model training is active and instructed waiting for it to finish. Concurrent memory demand is confirmed; no trace establishes its exact contribution at failure.",
+  "recommendation": "Keep matcher batch128 and controls unchanged. Wait for training to finish and restore memory headroom before retrying. Do not stop or alter user training. A future patch can guarantee track/run cleanup on every exit and add actual retained-array and process-memory measurements."
+}

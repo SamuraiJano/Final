@@ -1,0 +1,488 @@
+{
+  "source": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\identity-mapping-check\\20261004_scene_motion_v3\\source\\algorithm.py",
+  "scope": "Native search on coarse-rejected pairs. Same .58 residual, .25 dominant motion and20 degree max; inverse mismatch<=3 required. No mapping accuracy claim.",
+  "pairs": [
+    {
+      "identity": 98,
+      "source_frame": 65,
+      "target_frame": 66,
+      "previous_reason": "Unreliable pair 0: rotation 13.6 deg, error 0.603",
+      "forward": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          12.770528801973485,
+          -2.206751401278822,
+          2.506123615965683e-17
+        ],
+        "residual": 0.431025640790432,
+        "nonzero_primary": true
+      },
+      "reverse": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          -12.574126916739559,
+          2.970371904605326,
+          0.0
+        ],
+        "residual": 0.42546592571271324,
+        "nonzero_primary": true
+      },
+      "joint": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          12.635307942547666,
+          -2.6196014916061716,
+          -2.5059394168884828e-17
+        ],
+        "residual": 0.43543859255485406,
+        "nonzero_primary": true
+      },
+      "independent_inverse_disagreement_deg": 0.7868043157094902,
+      "strict_retry_passes": true
+    },
+    {
+      "identity": 98,
+      "source_frame": 89,
+      "target_frame": 90,
+      "previous_reason": "Unreliable pair 0: rotation 15.5 deg, error 0.597",
+      "forward": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          14.770089684136824,
+          -2.018074804781633,
+          0.0
+        ],
+        "residual": 0.34054493154123855,
+        "nonzero_primary": true
+      },
+      "reverse": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          -13.000000000000014,
+          3.5000000000000036,
+          0.0
+        ],
+        "residual": 0.3463833259959625,
+        "nonzero_primary": true
+      },
+      "joint": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          13.499999999999988,
+          -2.999999999999998,
+          0.0
+        ],
+        "residual": 0.38388599016231495,
+        "nonzero_primary": true
+      },
+      "independent_inverse_disagreement_deg": 2.3049723218494247,
+      "strict_retry_passes": true
+    },
+    {
+      "identity": 1,
+      "source_frame": 0,
+      "target_frame": 1,
+      "previous_reason": "Unreliable pair 0: rotation 5.5 deg, error 0.662",
+      "forward": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          4.155616713579817,
+          0.48868052677573875,
+          1.554386497100633e-18
+        ],
+        "residual": 0.5390776497521975,
+        "nonzero_primary": true
+      },
+      "reverse": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          -19.499999999999975,
+          5.999999999999994,
+          0.0
+        ],
+        "residual": 0.5608449635567341,
+        "nonzero_primary": true
+      },
+      "joint": {
+        "status": "rejected",
+        "reason": "Unreliable pair 0: rotation 3.5 deg, error 0.584"
+      },
+      "independent_inverse_disagreement_deg": 16.65901874019388,
+      "strict_retry_passes": false
+    },
+    {
+      "identity": 1,
+      "source_frame": 1,
+      "target_frame": 2,
+      "previous_reason": "Unreliable pair 0: rotation 1.6 deg, error 0.617",
+      "forward": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          1.1999809485811763,
+          2.0468025652578943,
+          -3.1068983063156916e-18
+        ],
+        "residual": 0.5363601311903932,
+        "nonzero_primary": true
+      },
+      "reverse": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          -9.842317240245663,
+          19.95078122301034,
+          0.0
+        ],
+        "residual": 0.5231430203577078,
+        "nonzero_primary": true
+      },
+      "joint": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          1.7524120830702576,
+          1.4896785312608312,
+          0.0
+        ],
+        "residual": 0.5687734818254403,
+        "nonzero_primary": true
+      },
+      "independent_inverse_disagreement_deg": 23.63332767827474,
+      "strict_retry_passes": false
+    },
+    {
+      "identity": 1,
+      "source_frame": 2,
+      "target_frame": 3,
+      "previous_reason": "Unreliable pair 0: rotation 0.0 deg, error 0.635",
+      "forward": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          0.0,
+          1.999999999999765,
+          0.0
+        ],
+        "residual": 0.5119162720108346,
+        "nonzero_primary": false
+      },
+      "reverse": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          -8.93535007401735,
+          1.5857396204151912,
+          1.2476140704494034e-17
+        ],
+        "residual": 0.5293767710226474,
+        "nonzero_primary": true
+      },
+      "joint": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          0.0,
+          1.4999999999993152,
+          0.0
+        ],
+        "residual": 0.5429104614374232,
+        "nonzero_primary": false
+      },
+      "independent_inverse_disagreement_deg": 9.62755932509072,
+      "strict_retry_passes": false
+    },
+    {
+      "identity": 1,
+      "source_frame": 3,
+      "target_frame": 4,
+      "previous_reason": "Unreliable pair 0: rotation 11.0 deg, error 0.606",
+      "forward": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          0.0,
+          -0.9999999999999002,
+          0.0
+        ],
+        "residual": 0.5198746540132846,
+        "nonzero_primary": false
+      },
+      "reverse": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          -1.499999999999989,
+          -10.999999999999917,
+          1.2502125168271104e-17
+        ],
+        "residual": 0.49895089035193907,
+        "nonzero_primary": true
+      },
+      "joint": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          1.870305583953521,
+          11.087049899728441,
+          0.0
+        ],
+        "residual": 0.5040521607142305,
+        "nonzero_primary": true
+      },
+      "independent_inverse_disagreement_deg": 12.093384258982,
+      "strict_retry_passes": false
+    },
+    {
+      "identity": 14,
+      "source_frame": 0,
+      "target_frame": 1,
+      "previous_reason": "Unreliable pair 0: rotation 13.1 deg, error 0.677",
+      "forward": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          16.105823928310343,
+          11.566000947399734,
+          2.0280877412018014e-16
+        ],
+        "residual": 0.5278827872710598,
+        "nonzero_primary": true
+      },
+      "reverse": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          -1.4999999999999558,
+          4.499999999999867,
+          -6.219122627139922e-18
+        ],
+        "residual": 0.5364775197483199,
+        "nonzero_primary": true
+      },
+      "joint": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          17.105407528117208,
+          9.837080188711539,
+          0.0
+        ],
+        "residual": 0.5649295796498668,
+        "nonzero_primary": true
+      },
+      "independent_inverse_disagreement_deg": 21.708088591972558,
+      "strict_retry_passes": false
+    },
+    {
+      "identity": 14,
+      "source_frame": 2,
+      "target_frame": 3,
+      "previous_reason": "Unreliable pair 0: rotation 14.5 deg, error 0.630",
+      "forward": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          15.052036104446383,
+          2.5814435926284522,
+          5.0289526804998245e-17
+        ],
+        "residual": 0.4755987309890868,
+        "nonzero_primary": true
+      },
+      "reverse": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          -14.999999999999964,
+          -2.499999999999995,
+          2.5142226907231658e-17
+        ],
+        "residual": 0.4290306449157168,
+        "nonzero_primary": true
+      },
+      "joint": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          14.999999999999964,
+          2.499999999999995,
+          2.5142226907231658e-17
+        ],
+        "residual": 0.45280024137640384,
+        "nonzero_primary": true
+      },
+      "independent_inverse_disagreement_deg": 0.09649165726377161,
+      "strict_retry_passes": true
+    },
+    {
+      "identity": 14,
+      "source_frame": 4,
+      "target_frame": 5,
+      "previous_reason": "Unreliable pair 0: rotation 17.5 deg, error 0.627",
+      "forward": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          9.670965982941365,
+          18.485186461085874,
+          -2.0324600078298937e-16
+        ],
+        "residual": 0.5016858233330894,
+        "nonzero_primary": true
+      },
+      "reverse": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          -15.109347926661384,
+          0.6254289834813218,
+          0.0
+        ],
+        "residual": 0.46800455295006504,
+        "nonzero_primary": true
+      },
+      "joint": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          15.859023673935738,
+          -0.5194942016832956,
+          0.0
+        ],
+        "residual": 0.4996970318377477,
+        "nonzero_primary": true
+      },
+      "independent_inverse_disagreement_deg": 19.817250291437134,
+      "strict_retry_passes": false
+    },
+    {
+      "identity": 14,
+      "source_frame": 10,
+      "target_frame": 11,
+      "previous_reason": "Unreliable pair 0: rotation 4.5 deg, error 0.600",
+      "forward": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          10.999999999999984,
+          5.499999999999991,
+          -5.007983993022021e-17
+        ],
+        "residual": 0.4646568139111189,
+        "nonzero_primary": true
+      },
+      "reverse": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          -11.889962598684406,
+          -4.163851868283638,
+          0.0
+        ],
+        "residual": 0.519203531655702,
+        "nonzero_primary": true
+      },
+      "joint": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          11.500000000000023,
+          5.000000000000011,
+          0.0
+        ],
+        "residual": 0.5060491198118134,
+        "nonzero_primary": true
+      },
+      "independent_inverse_disagreement_deg": 1.6023720050863173,
+      "strict_retry_passes": true
+    },
+    {
+      "identity": 14,
+      "source_frame": 13,
+      "target_frame": 14,
+      "previous_reason": "Unreliable pair 0: rotation 9.6 deg, error 0.599",
+      "forward": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          8.500000000000002,
+          -1.5000000000000004,
+          0.0
+        ],
+        "residual": 0.398526404938987,
+        "nonzero_primary": true
+      },
+      "reverse": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          -8.86442451471442,
+          2.025636945808613,
+          1.24763476557956e-17
+        ],
+        "residual": 0.44934727754584963,
+        "nonzero_primary": true
+      },
+      "joint": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          8.499999999999943,
+          -1.9999999999999865,
+          -1.2472268073624391e-17
+        ],
+        "residual": 0.4259496009231023,
+        "nonzero_primary": true
+      },
+      "independent_inverse_disagreement_deg": 0.6393038467370499,
+      "strict_retry_passes": true
+    },
+    {
+      "identity": 491,
+      "source_frame": 308,
+      "target_frame": 309,
+      "previous_reason": "Unreliable pair 0: rotation 11.5 deg, error 0.617",
+      "forward": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          10.775119848302289,
+          -9.666393280368077,
+          1.0045763425606978e-16
+        ],
+        "residual": 0.46766489685089646,
+        "nonzero_primary": true
+      },
+      "reverse": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          -12.499999999999979,
+          7.999999999999988,
+          -1.0051250002893852e-16
+        ],
+        "residual": 0.4741116570453445,
+        "nonzero_primary": true
+      },
+      "joint": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          11.587602378943252,
+          -8.223198630558407,
+          0.0
+        ],
+        "residual": 0.48044478079401876,
+        "nonzero_primary": true
+      },
+      "independent_inverse_disagreement_deg": 2.392007972825961,
+      "strict_retry_passes": true
+    },
+    {
+      "identity": 491,
+      "source_frame": 309,
+      "target_frame": 310,
+      "previous_reason": "Unreliable pair 0: rotation 19.0 deg, error 0.581",
+      "forward": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          0.0,
+          -12.500000000000002,
+          0.0
+        ],
+        "residual": 0.5420177460288004,
+        "nonzero_primary": false
+      },
+      "reverse": {
+        "status": "measured",
+        "rotation_vector_deg": [
+          -4.49999999999998,
+          12.999999999999941,
+          5.017688575840067e-17
+        ],
+        "residual": 0.5620125743441492,
+        "nonzero_primary": true
+      },
+      "joint": {
+        "status": "rejected",
+        "reason": "Unreliable pair 0: rotation 10.5 deg, error 0.581"
+      },
+      "independent_inverse_disagreement_deg": 4.5188278414138905,
+      "strict_retry_passes": false
+    }
+  ]
+}

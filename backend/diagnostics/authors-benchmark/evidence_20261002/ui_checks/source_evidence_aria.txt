@@ -1,0 +1,64 @@
+- dialog "Fruit 125 inspection":
+  - text: FRUIT INSPECTION
+  - heading "Fruit 125" [level=2]
+  - button "Close inspection"
+  - text: Class 1
+  - paragraph: WIN_20260818_13_29_43_Pro.mp4 · 02 Oct 2026, 01:27
+  - img "Surface map of fruit 125"
+  - text: Observed surface
+  - strong: 85.5%
+  - text: Surface defects
+  - strong: 3.6%
+  - text: Measured rotation
+  - strong: 381.0°
+  - text: Circumference observed
+  - strong: 360.0°
+  - text: Captured views
+  - strong: "66"
+  - text: Views used in map
+  - strong: "33"
+  - group:
+    - text: Source views and model masks
+    - paragraph: Green outlines the fruit. Red shows predicted defects. These are model outputs, not manually verified labels.
+    - strong: Frame 62
+    - text: Source crop
+    - link "Fruit crop at frame 62":
+      - /url: /results/f2276fe89ce24fe1a155c228a00e3f17/125/frame_00062_crop.png
+      - img "Fruit crop at frame 62"
+    - text: Fruit mask
+    - link "Fruit silhouette at frame 62":
+      - /url: /results/f2276fe89ce24fe1a155c228a00e3f17/125/frame_00062_fruit_mask.png
+      - img "Fruit silhouette at frame 62"
+    - text: Predicted defects
+    - link "Inspection overlay at frame 62":
+      - /url: /results/f2276fe89ce24fe1a155c228a00e3f17/125/frame_00062_overlay.png
+      - img "Inspection overlay at frame 62"
+    - strong: Frame 79
+    - text: Source crop
+    - link "Fruit crop at frame 79":
+      - /url: /results/f2276fe89ce24fe1a155c228a00e3f17/125/frame_00079_crop.png
+      - img "Fruit crop at frame 79"
+    - text: Fruit mask
+    - link "Fruit silhouette at frame 79":
+      - /url: /results/f2276fe89ce24fe1a155c228a00e3f17/125/frame_00079_fruit_mask.png
+      - img "Fruit silhouette at frame 79"
+    - text: Predicted defects
+    - link "Inspection overlay at frame 79":
+      - /url: /results/f2276fe89ce24fe1a155c228a00e3f17/125/frame_00079_overlay.png
+      - img "Inspection overlay at frame 79"
+    - strong: Frame 105
+    - text: Source crop
+    - link "Fruit crop at frame 105":
+      - /url: /results/f2276fe89ce24fe1a155c228a00e3f17/125/frame_00105_crop.png
+      - img "Fruit crop at frame 105"
+    - text: Fruit mask
+    - link "Fruit silhouette at frame 105":
+      - /url: /results/f2276fe89ce24fe1a155c228a00e3f17/125/frame_00105_fruit_mask.png
+      - img "Fruit silhouette at frame 105"
+    - text: Predicted defects
+    - link "Inspection overlay at frame 105":
+      - /url: /results/f2276fe89ce24fe1a155c228a00e3f17/125/frame_00105_overlay.png
+      - img "Inspection overlay at frame 105"
+  - group: Observed area and defect maps
+  - link "Download analysis report":
+    - /url: /results/f2276fe89ce24fe1a155c228a00e3f17/report.json

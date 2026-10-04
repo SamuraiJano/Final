@@ -1,0 +1,15 @@
+{
+  "purpose": "isolated conservative adjacent-motion selector; not production",
+  "baseline_algorithm_sha256": "7f0a367517bd1a91fa3f13bcb4bb6268094d310574832aa360409528c51c28e7",
+  "candidate_algorithm_sha256": "b935808d6ba74fab91cd9e6a1e2d605c16e9e8473cc8a59c9d40d3e3b24ce417",
+  "profile_requirement": "maximum_view_index_gap is interpreted as maximum SOURCE FRAME gap and should be 1 for consecutive frames",
+  "near_stationary_policy": "A total 3D pair angle below 0.25 degrees splits the segment; it is not accumulated, interpolated or treated as identity",
+  "ranking": "measured center-longitude span, not observed pixel coverage or sum of Rodrigues x/y components",
+  "focused_check_exit_code": 0,
+  "recorded_at": "2026-10-02T12:20:06.711322",
+  "focused_checks_command": [
+    "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\venv\\Scripts\\python.exe",
+    "-B",
+    "backend\\diagnostics\\algorithm-revision\\adjacent_candidate_source\\test_candidate.py"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "input_sha256": "795bc8a90bb34384c408f4d0136d185487aaf2c88fb3eabb70385a83f3d504ca",
+  "guard_sha256": "fd57ff4ece345a2333cfbbd750dcb2dbebbea30c8dc0b047978a9b21eca14ac4",
+  "configuration": {
+    "version": 2,
+    "prediction_gate_diameters": 0.35,
+    "ambiguity_margin_diameters": 0.12,
+    "maximum_size_ratio": 1.5,
+    "recovery_observations": 3,
+    "history_frames": 30,
+    "scene_motion_minimum_tracks": 5,
+    "scene_motion_consensus": 0.7
+  },
+  "frame_shape": [
+    1080,
+    1920,
+    3
+  ],
+  "frames": 515,
+  "observations": 32875,
+  "raw_tracker_ids": 474,
+  "capture_segments": 649,
+  "raw_ids_with_at_most_two_observations": 54,
+  "capture_segments_with_at_most_two_observations": 160,
+  "uncertain_segments": 280,
+  "decisions": {
+    "new_track": 473,
+    "continued": 32225,
+    "motion_or_size_discontinuity": 4,
+    "observation_gap": 172,
+    "recovered_tracker_id_change": 1
+  },
+  "elapsed_seconds": 7.495979100000113,
+  "limitations": [
+    "No physical identity labels: these are continuity indicators, not IDSW/IDF1 accuracy.",
+    "Separate capture segments are not a unique physical fruit count.",
+    "No detector, segmenter or map reconstruction was run."
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "prepared_at": "2026-10-02T15:55:37.863214+02:00",
+  "renderer_sha256": "b32e8de75f2990bb94ea07bc21f6d951b3c08722ad320bd43b699f4422d71d3e",
+  "method": "Radius55 sphere, camera center74.5/74.5, independent body textures and analytical body-to-camera rotations. Texture reflectance .75*body_texture+20. Lighting is defined in fixed camera coordinates, not by estimated correspondences.",
+  "illumination_equations": {
+    "linear_additive": "I=reflectance+0.30*camera_x+0.20*camera_y",
+    "lambertian_multiplicative": "I=reflectance*(0.55+0.45*max(camera_normal dot normalized([0.45,-0.35,1]),0))"
+  },
+  "acceptance": {
+    "full_turn": {
+      "all_30_pairs_measured": true,
+      "max_pose_error_deg": 5.0,
+      "max_front_visible_landmark_rms_px": 5.0
+    },
+    "short_xy": {
+      "all_10_pairs_measured": true,
+      "endpoint_pose_error_deg": 1.0,
+      "max_landmark_rms_px": 1.0
+    },
+    "stationary_120": {
+      "all_119_pairs_unavailable": true,
+      "no_extrapolated_endpoint": true,
+      "no_map_or_grade": true
+    }
+  },
+  "scope": "Independent ideal synthetic development controls, not held-out real fruit. Perfect masks, fixed sphere/camera, no occlusion/specular glare/perspective/translation. The plane is additive and exact; Lambertian illumination is multiplicative and curved, deliberately outside that compensation model. Complete-turn scoring uses36 independent body landmarks only when front visible; short motion uses6 always-visible landmarks.",
+  "cases": {
+    "full_turn_x12_linear_additive_texture_a": {
+      "kind": "full_turn_x12",
+      "texture": "a",
+      "illumination": "linear_additive",
+      "stationary_noise_sigma_gray": 0.0,
+      "noise_seed": null,
+      "fruit_float_min": 50.02605208200743,
+      "fruit_float_max": 215.43894814250027,
+      "saturated_pixels": 0,
+      "input_sha256": "b9c94a3fa250f1cf6f01cad533d3e0a2ed9aa362c683c585c2db892924ffb102",
+      "frames": 31
+    },
+    "full_turn_x12_linear_additive_texture_b": {
+      "kind": "full_turn_x12",
+      "texture": "b",
+      "illumination": "linear_additive",
+      "stationary_noise_sigma_gray": 0.0,
+      "noise_seed": null,
+      "fruit_float_min": 31.076228898696492,
+      "fruit_float_max": 208.451811625443,
+      "saturated_pixels": 0,
+      "input_sha256": "2b18de932215c21eaf9c7e0fb812f340dfc3ea801ae02ad2b3fdb5453a84dcee",
+      "frames": 31
+    },
+    "full_turn_x12_lambertian_multiplicative_texture_a": {
+      "kind": "full_turn_x12",
+      "texture": "a",
+      "illumination": "lambertian_multiplicative",
+      "stationary_noise_sigma_gray": 0.0,
+      "noise_seed": null,
+      "fruit_float_min": 37.76814776636961,
+      "fruit_float_max": 193.63973955865475,
+      "saturated_pixels": 0,
+      "input_sha256": "cb4ad646ff9c4fbe750c22df4aed110f7726d272d6e279fe4474de8f730862ae",
+      "frames": 31
+    },
+    "full_turn_x12_lambertian_multiplicative_texture_b": {
+      "kind": "full_turn_x12",
+      "texture": "b",
+      "illumination": "lambertian_multiplicative",
+      "stationary_noise_sigma_gray": 0.0,
+      "noise_seed": null,
+      "fruit_float_min": 27.340435696252992,
+      "fruit_float_max": 189.43508759367282,
+      "saturated_pixels": 0,
+      "input_sha256": "aa5fcfc1ac710e190d35ae6d7a6f49e77a7b3bb963cdb8a662a0fd56032390d3",
+      "frames": 31
+    },
+    "short_xy_linear_additive_texture_a": {
+      "kind": "short_xy",
+      "texture": "a",
+      "illumination": "linear_additive",
+      "stationary_noise_sigma_gray": 0.0,
+      "noise_seed": null,
+      "fruit_float_min": 57.25440935754229,
+      "fruit_float_max": 202.24159461846102,
+      "saturated_pixels": 0,
+      "input_sha256": "adcd543ea0d1ffdbe1c593d45413995329f6234c782da4f29ba37cd72d0270f5",
+      "frames": 11
+    },
+    "short_xy_linear_additive_texture_b": {
+      "kind": "short_xy",
+      "texture": "b",
+      "illumination": "linear_additive",
+      "stationary_noise_sigma_gray": 0.0,
+      "noise_seed": null,
+      "fruit_float_min": 32.25754363045459,
+      "fruit_float_max": 201.75471688562433,
+      "saturated_pixels": 0,
+      "input_sha256": "3f93483245f0160e0a0ea1d24fb8db8184c14204e0ae066a0811469bc533b85e",
+      "frames": 11
+    },
+    "short_xy_lambertian_multiplicative_texture_a": {
+      "kind": "short_xy",
+      "texture": "a",
+      "illumination": "lambertian_multiplicative",
+      "stationary_noise_sigma_gray": 0.0,
+      "noise_seed": null,
+      "fruit_float_min": 37.72095418067656,
+      "fruit_float_max": 174.67144567403952,
+      "saturated_pixels": 0,
+      "input_sha256": "5db209e3a8d64fdcc429f95b395d329e3db47f8ad97424066e7f32eb2ed41824",
+      "frames": 11
+    },
+    "short_xy_lambertian_multiplicative_texture_b": {
+      "kind": "short_xy",
+      "texture": "b",
+      "illumination": "lambertian_multiplicative",
+      "stationary_noise_sigma_gray": 0.0,
+      "noise_seed": null,
+      "fruit_float_min": 28.30589857843668,
+      "fruit_float_max": 181.0541759796909,
+      "saturated_pixels": 0,
+      "input_sha256": "9b5bdec3cce50d64762e97f619fbe45b645f7ef9b4b527bb46c29d03c833b243",
+      "frames": 11
+    },
+    "stationary_120_linear_additive_texture_a": {
+      "kind": "stationary_120",
+      "texture": "a",
+      "illumination": "linear_additive",
+      "stationary_noise_sigma_gray": 2.0,
+      "noise_seed": 1301,
+      "fruit_float_min": 51.82040346951845,
+      "fruit_float_max": 207.09587196179825,
+      "saturated_pixels": 0,
+      "input_sha256": "116b9f378809444d4afb6da097bec6cd5d68620322bcbb7baa93d6b7e3ae4726",
+      "frames": 120
+    },
+    "stationary_120_linear_additive_texture_b": {
+      "kind": "stationary_120",
+      "texture": "b",
+      "illumination": "linear_additive",
+      "stationary_noise_sigma_gray": 2.0,
+      "noise_seed": 1923,
+      "fruit_float_min": 32.95252729105527,
+      "fruit_float_max": 207.18463179201703,
+      "saturated_pixels": 0,
+      "input_sha256": "8a333ddc8eb509fe72c70c7ae81625543d9eb7aa823cb5167271a87852515e4a",
+      "frames": 120
+    },
+    "stationary_120_lambertian_multiplicative_texture_a": {
+      "kind": "stationary_120",
+      "texture": "a",
+      "illumination": "lambertian_multiplicative",
+      "stationary_noise_sigma_gray": 2.0,
+      "noise_seed": 11301,
+      "fruit_float_min": 32.62561627190614,
+      "fruit_float_max": 180.33856473377338,
+      "saturated_pixels": 0,
+      "input_sha256": "930c7c2e115d67bd30338a6ab79d0b3c578b37e6ffe9d5e1b145ced974249e15",
+      "frames": 120
+    },
+    "stationary_120_lambertian_multiplicative_texture_b": {
+      "kind": "stationary_120",
+      "texture": "b",
+      "illumination": "lambertian_multiplicative",
+      "stationary_noise_sigma_gray": 2.0,
+      "noise_seed": 11923,
+      "fruit_float_min": 21.698796399507167,
+      "fruit_float_max": 186.17913083421496,
+      "saturated_pixels": 0,
+      "input_sha256": "e7dcfab8c470216d9354fd9a61c507b9e3b4aeac8641d2ace7d288f6126ef481",
+      "frames": 120
+    }
+  }
+}

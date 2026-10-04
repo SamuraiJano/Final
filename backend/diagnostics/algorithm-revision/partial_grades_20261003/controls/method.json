@@ -1,0 +1,26 @@
+{
+  "source": "Exact deterministic construction in test_partial_grades.py::_known_partial_map",
+  "image_shape": [
+    100,
+    100,
+    3
+  ],
+  "bgr_color": [
+    35,
+    140,
+    235
+  ],
+  "radius_px": 35,
+  "centre_px": [
+    49.5,
+    49.5
+  ],
+  "views": 2,
+  "frame_numbers": [
+    0,
+    1
+  ],
+  "supplied_y_rotation_deg": 25,
+  "denominator_control": "Fully defective observed latitude band with max_latitude_deg=10; expected defect_pct_of_observed=100 even when defect_pct_of_full_surface<10.",
+  "limitations": "Perfect synthetic silhouette, constant synthetic color and mocked known rotation; verifies policy/map invariance/denominator only, no neural or photometric accuracy."
+}

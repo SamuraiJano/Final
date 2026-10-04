@@ -1,0 +1,219 @@
+{
+  "source_job": "ea6e595b8f3f45f2b5edfda8dafff3f2",
+  "source_report_sha256": "c4338b584bfe23f0a626340e0368ebbc6eb9baa1c21a785780b44e362701fda2",
+  "guard_decisions_sha256": "dcc9a7a032fb696a8cd5b7be33f7d12a5552d41dbee50a443cf7cee92fd0c8ad",
+  "guard_source": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\identity-guard\\20261004_scene_motion_v2",
+  "saved_records": 474,
+  "produced_maps": 294,
+  "records_without_map": 180,
+  "maps_with_boundary_inside_captured_views": 40,
+  "maps_with_boundary_inside_selected_views": 1,
+  "failed_records_with_boundary_inside_captured_views": 2,
+  "recovered_id_records": [
+    {
+      "raw_track_id": 244,
+      "status": "mapping_failed",
+      "produced_map": false,
+      "usable_views": 0,
+      "captured_segments": {},
+      "mapped_segments": {},
+      "boundary_inside_captured_views": false,
+      "boundary_inside_mapped_views": false,
+      "identity_events": [
+        {
+          "frame": 207,
+          "raw_track_id": 244,
+          "capture_id": 327,
+          "reason": "observation_gap",
+          "prediction_error_diameters": null
+        }
+      ]
+    },
+    {
+      "raw_track_id": 248,
+      "status": "mapping_failed",
+      "produced_map": false,
+      "usable_views": 1,
+      "captured_segments": {
+        "327": [
+          241
+        ]
+      },
+      "mapped_segments": {},
+      "boundary_inside_captured_views": false,
+      "boundary_inside_mapped_views": false,
+      "identity_events": [
+        {
+          "frame": 212,
+          "raw_track_id": 248,
+          "capture_id": 327,
+          "reason": "recovered_tracker_id_change",
+          "prediction_error_diameters": 0.17283301645088284
+        }
+      ]
+    }
+  ],
+  "previous_disagreement_mapping_results": [
+    {
+      "baseline_track_id": 82,
+      "revised_track_id": 59,
+      "matched_frames": 15,
+      "usable_views": 0,
+      "mapping_status": "mapping_failed"
+    },
+    {
+      "baseline_track_id": 82,
+      "revised_track_id": 91,
+      "matched_frames": 42,
+      "usable_views": 0,
+      "mapping_status": "mapping_failed"
+    },
+    {
+      "baseline_track_id": 82,
+      "revised_track_id": 102,
+      "matched_frames": 31,
+      "usable_views": 0,
+      "mapping_status": "mapping_failed"
+    },
+    {
+      "baseline_track_id": 113,
+      "revised_track_id": 90,
+      "matched_frames": 91,
+      "usable_views": 0,
+      "mapping_status": "mapping_failed"
+    },
+    {
+      "baseline_track_id": 113,
+      "revised_track_id": 162,
+      "matched_frames": 3,
+      "usable_views": 0,
+      "mapping_status": "mapping_failed"
+    },
+    {
+      "baseline_track_id": 175,
+      "revised_track_id": 101,
+      "matched_frames": 10,
+      "usable_views": 0,
+      "mapping_status": "mapping_failed"
+    },
+    {
+      "baseline_track_id": 175,
+      "revised_track_id": 70,
+      "matched_frames": 4,
+      "usable_views": 0,
+      "mapping_status": "mapping_failed"
+    },
+    {
+      "baseline_track_id": 222,
+      "revised_track_id": 161,
+      "matched_frames": 3,
+      "usable_views": 0,
+      "mapping_status": "mapping_failed"
+    },
+    {
+      "baseline_track_id": 222,
+      "revised_track_id": 164,
+      "matched_frames": 59,
+      "usable_views": 0,
+      "mapping_status": "mapping_failed"
+    },
+    {
+      "baseline_track_id": 349,
+      "revised_track_id": 244,
+      "matched_frames": 3,
+      "usable_views": 0,
+      "mapping_status": "mapping_failed"
+    },
+    {
+      "baseline_track_id": 349,
+      "revised_track_id": 248,
+      "matched_frames": 76,
+      "usable_views": 1,
+      "mapping_status": "mapping_failed"
+    },
+    {
+      "baseline_track_id": 490,
+      "revised_track_id": 339,
+      "matched_frames": 6,
+      "usable_views": 0,
+      "mapping_status": "mapping_failed"
+    },
+    {
+      "baseline_track_id": 490,
+      "revised_track_id": 343,
+      "matched_frames": 71,
+      "usable_views": 0,
+      "mapping_status": "mapping_failed"
+    },
+    {
+      "baseline_track_id": 604,
+      "revised_track_id": 400,
+      "matched_frames": 48,
+      "usable_views": 0,
+      "mapping_status": "mapping_failed"
+    },
+    {
+      "baseline_track_id": 604,
+      "revised_track_id": 454,
+      "matched_frames": 23,
+      "usable_views": 0,
+      "mapping_status": "mapping_failed"
+    }
+  ],
+  "fixture_correspondence": {
+    "1": {
+      "views": 46,
+      "uniquely_matched_views": 46,
+      "localized_crop_matches": 0,
+      "unmatched_views": 0,
+      "raw_id_counts": {
+        "1": 46
+      },
+      "capture_id_counts": {
+        "1": 46
+      }
+    },
+    "14": {
+      "views": 44,
+      "uniquely_matched_views": 44,
+      "localized_crop_matches": 0,
+      "unmatched_views": 0,
+      "raw_id_counts": {
+        "14": 44
+      },
+      "capture_id_counts": {
+        "14": 2,
+        "61": 42
+      }
+    },
+    "98": {
+      "views": 66,
+      "uniquely_matched_views": 66,
+      "localized_crop_matches": 0,
+      "unmatched_views": 0,
+      "raw_id_counts": {
+        "98": 66
+      },
+      "capture_id_counts": {
+        "128": 66
+      }
+    },
+    "491": {
+      "views": 59,
+      "uniquely_matched_views": 31,
+      "localized_crop_matches": 28,
+      "unmatched_views": 0,
+      "raw_id_counts": {
+        "340": 59
+      },
+      "capture_id_counts": {
+        "438": 59
+      }
+    }
+  },
+  "limitations": [
+    "Detected boundaries are not labelled identity switches.",
+    "No boundary in selected views does not rule out a smooth wrong-fruit identity exchange.",
+    "Legacy fixture IDs must be matched by pixels; equal numeric IDs alone are insufficient."
+  ]
+}

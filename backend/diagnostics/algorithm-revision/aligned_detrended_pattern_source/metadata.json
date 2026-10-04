@@ -1,0 +1,6 @@
+{
+  "baseline_sha256": "9a5a3e13c8b9200958c678110640153022dbe8e59d4e3559ea1743ef579b5067",
+  "candidate_sha256": "6f2c56ac6edbdc3cc72fecd995055f01a6690113c54115c304b7e29595c20961",
+  "changes": "Optional aligned_mad locally removes weighted constant and x/y linear brightness slopes from the same nine surface-neighborhood samples, then divides by weighted detrended RMS contrast (existingfloor0.005). Weighted symmetric x/y variances0.5. Same full9 weightedMAD and normalized magnitude residual, same geometry/points/visibility/grid/coarse agreement. No global brightness plane, production changes or acceptance tuning. Legacy MAD/green branches unchanged. Experimental.",
+  "generator_sha256": "cd4e45eaba12592bd69f8e4d36f6490ced52ac31812da466368401de2e004354"
+}

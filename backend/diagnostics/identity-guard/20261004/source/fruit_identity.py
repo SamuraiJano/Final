@@ -1,0 +1,175 @@
+"""Conservative capture identity, independent of the tracker's numeric IDs.
+
+Motion consistency is evidence, not proof of physical identity. Thresholds are
+engineering defaults; labelled conveyor trajectories are still needed to tune
+and evaluate them. Never reconnect maps across missing observations.
+"""
+from dataclasses import asdict, dataclass
+
+import numpy as np
+
+
+@dataclass(frozen=True)
+class IdentitySettings:
+    prediction_gate_diameters: float = .35
+    ambiguity_margin_diameters: float = .12
+    maximum_size_ratio: float = 1.5
+    recovery_observations: int = 3
+    history_frames: int = 30
+
+
+class FruitIdentityGuard:
+    def __init__(self, settings=None):
+        self.settings = settings or IdentitySettings()
+        self.states = {}
+        self.metadata = {}
+        self.used_ids = set()
+        self.seen_raw_ids = set()
+        self.next_id = 1
+        self.last_frame = None
+
+    def configuration(self):
+        return {"version": 1, **asdict(self.settings)}
+
+    def drop(self, identity):
+        self.states.pop(identity, None)
+        self.metadata.pop(identity, None)
+
+    @staticmethod
+    def _edge(box, shape):
+        height, width = shape[:2]
+        return box[0] <= 2 or box[1] <= 2 or box[2] >= width-2 or box[3] >= height-2
+
+    def _cost(self, state, box, raw_id, shape):
+        history = state['history']
+        old = history[-1]
+        size = old[2:]-old[:2]
+        new_size = box[2:]-box[:2]
+        diameter = max(float(np.sqrt(size.prod())), 1.)
+        center = (box[:2]+box[2:])/2
+        old_center = (old[:2]+old[2:])/2
+        same_raw = raw_id == state['raw_id']
+        if self._edge(old, shape) or self._edge(box, shape):
+            # Visible caps change shape too quickly for a full-box velocity.
+            # Edge rebinding belongs to the detector's virtual-extent adapter.
+            overlap = np.maximum(0, np.minimum(old[2:], box[2:])-np.maximum(old[:2], box[:2])).prod()
+            scale = max(float(np.max(size)), float(np.max(new_size)), 1.)
+            error = float(np.linalg.norm(center-old_center)/scale)
+            return error if same_raw and overlap > 0 and error <= .75 else np.inf
+        ratio = np.maximum(size/new_size, new_size/size)
+        if np.max(ratio) > self.settings.maximum_size_ratio:
+            return np.inf
+        if len(history) < self.settings.recovery_observations and not same_raw:
+            return np.inf
+        velocity = np.zeros(2)
+        if len(history) >= 2 and not any(self._edge(item, shape) for item in history):
+            centers = np.array([(item[:2]+item[2:])/2 for item in history])
+            velocity = np.median(np.diff(centers, axis=0), axis=0)
+        elif not same_raw:
+            return np.inf
+        error = float(np.linalg.norm(center-old_center-velocity)/diameter)
+        return error if error <= self.settings.prediction_gate_diameters else np.inf
+
+    def _uncertain(self, identities, frame, reason):
+        for identity in identities:
+            meta = self.metadata.get(identity)
+            if meta is not None:
+                meta['identity_status'] = 'uncertain'
+                meta['identity_events'].append({'frame': frame, 'reason': reason})
+
+    def update(self, boxes, raw_ids, frame, shape):
+        """Return one capture ID and audit decision per observed box, in order.
+
+        Resolve against a frozen prior frame, in both directions. A detection
+        cannot steal a session from another detection because of loop order.
+        """
+        boxes = np.asarray(boxes, dtype=float).reshape(-1, 4)
+        raw_ids = np.asarray(raw_ids, dtype=int).ravel()
+        if len(boxes) != len(raw_ids) or len(set(raw_ids.tolist())) != len(raw_ids):
+            raise ValueError('Identity input must have one unique tracker ID per box')
+        if not np.isfinite(boxes).all() or np.any(boxes[:, 2:] <= boxes[:, :2]):
+            raise ValueError('Identity boxes must be finite and have positive area')
+        if self.last_frame is not None and frame <= self.last_frame:
+            raise ValueError('Identity frames must increase')
+        self.last_frame = frame
+        self.next_id = max(self.next_id, int(max(raw_ids, default=0))+1)
+        self.states = {key: value for key, value in self.states.items()
+                       if frame-value['frame'] <= self.settings.history_frames}
+        prior = list(self.states)
+        prior_states = {key: dict(self.states[key]) for key in prior}
+        costs = np.full((len(prior), len(boxes)), np.inf)
+        centers = (boxes[:, :2]+boxes[:, 2:])/2
+        for i, identity in enumerate(prior):
+            state = prior_states[identity]
+            if state['frame'] != frame-1:
+                continue
+            # Cheap broad phase avoids evaluating every fruit against every
+            # other fruit. This bound includes the entire fine prediction gate.
+            history = state['history']
+            old = history[-1]
+            old_centers = np.array([(item[:2]+item[2:])/2 for item in history])
+            travel = (float(np.linalg.norm(np.diff(old_centers, axis=0), axis=1).max())
+                      if len(history) > 1 else 0.)
+            radius = self.settings.prediction_gate_diameters*max(float(np.sqrt((old[2:]-old[:2]).prod())), 1.)+travel
+            nearby = (raw_ids == state['raw_id']) | (np.linalg.norm(centers-old_centers[-1], axis=1) <= radius)
+            for j in np.flatnonzero(nearby):
+                costs[i, j] = self._cost(state, boxes[j], int(raw_ids[j]), shape)
+
+        decisions = []
+        for j, (box, raw_id) in enumerate(zip(boxes, raw_ids)):
+            raw_id = int(raw_id)
+            candidates = np.flatnonzero(np.isfinite(costs[:, j]))
+            candidates = candidates[np.argsort(costs[candidates, j])]
+            selected = None
+            reason = 'new_track'
+            related = {key for key in prior if prior_states[key]['raw_id'] == raw_id}
+            if len(candidates):
+                best = int(candidates[0])
+                alternatives = np.sort(costs[best, np.isfinite(costs[best])])
+                column_clear = (len(candidates) == 1 or
+                                costs[candidates[1], j]-costs[best, j] >= self.settings.ambiguity_margin_diameters)
+                row_clear = (int(np.argmin(costs[best])) == j and
+                             (len(alternatives) == 1 or alternatives[1]-alternatives[0] >= self.settings.ambiguity_margin_diameters))
+                if column_clear and row_clear:
+                    selected = prior[best]
+                    reason = ('continued' if prior_states[selected]['raw_id'] == raw_id
+                              else 'recovered_tracker_id_change')
+                else:
+                    reason = 'ambiguous_association'
+                    related.update(prior[int(i)] for i in candidates)
+            elif related:
+                reason = ('observation_gap' if all(prior_states[key]['frame'] < frame-1 for key in related)
+                          else 'motion_or_size_discontinuity')
+            elif raw_id in self.seen_raw_ids:
+                reason = 'retired_tracker_id_reappeared'
+
+            uncertain = selected is None and reason != 'new_track'
+            if uncertain:
+                self._uncertain(related, frame, reason)
+            error = None
+            if selected is None:
+                selected = raw_id if raw_id not in self.used_ids else self.next_id
+                self.next_id = max(self.next_id, selected+1)
+                self.used_ids.add(selected)
+                self.metadata[selected] = {
+                    'identity_status': 'uncertain' if uncertain else 'motion_consistent',
+                    'source_tracker_ids': [], 'identity_events': [],
+                    'identity_guard': self.configuration(),
+                }
+                self.states[selected] = {'history': []}
+            else:
+                error = float(costs[prior.index(selected), j])
+            decision = {'frame': int(frame), 'raw_track_id': raw_id,
+                        'capture_id': int(selected), 'reason': reason,
+                        'prediction_error_diameters': error}
+            meta = self.metadata[selected]
+            if raw_id not in meta['source_tracker_ids']:
+                meta['source_tracker_ids'].append(raw_id)
+            if reason != 'continued':
+                meta['identity_events'].append(decision.copy())
+            state = self.states[selected]
+            state.update(raw_id=raw_id, frame=frame)
+            state['history'] = (state['history']+[box.copy()])[-3:]
+            self.seen_raw_ids.add(raw_id)
+            decisions.append(decision)
+        return decisions

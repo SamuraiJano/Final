@@ -1,0 +1,124 @@
+{
+  "captured_at": "2026-10-03T11:11:46.865786+00:00",
+  "passed": true,
+  "stage": "completed",
+  "method": "Actual Vite/API in isolated headless Edge; no mocked responses or user browser profile.",
+  "status_before_capture": {
+    "state": "complete",
+    "run_id": "e40c363cba5d4093ab647a438b1cbe96",
+    "frames_processed": 515,
+    "frames_total": 515,
+    "error": null
+  },
+  "status_after_capture": {
+    "state": "complete",
+    "run_id": "e40c363cba5d4093ab647a438b1cbe96",
+    "frames_processed": 515,
+    "frames_total": 515,
+    "error": null
+  },
+  "progress_text": null,
+  "latest_saved_job_id": "ea6e595b8f3f45f2b5edfda8dafff3f2",
+  "latest_saved_records": 474,
+  "latest_saved_classes": {
+    "Class 1": 2,
+    "Class 2": 0,
+    "Class 3": 0,
+    "ungraded": 472
+  },
+  "all_saved_summary": {
+    "runs": 6,
+    "fruit_count": 2061,
+    "classes": {
+      "Class 1": 17,
+      "Class 2": 0,
+      "Class 3": 0,
+      "ungraded": 2044
+    }
+  },
+  "page_errors": [],
+  "api_requests": [
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/health"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/analysis/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/health"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/analysis/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/dashboard"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/camera/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/live/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/camera/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/live/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/backend/control"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/backend/control"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/analysis/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/analysis/status"
+    }
+  ],
+  "expected_runtime_algorithm_sha256": "50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d",
+  "expected_runtime_main_sha256": "4c0b69d815164c9e4745af72a69880a417ee6b940cc1792027be4b31e775cfdb",
+  "video": "C:\\Users\\USER\\Pictures\\Camera Roll\\WIN_20260818_13_29_43_Pro.mp4",
+  "local_preview_only": true,
+  "preview_seek_sec": 2.9,
+  "analysis_requested": false,
+  "analysis_cancelled": false,
+  "inspection_capture": {
+    "track_id": 98,
+    "grade": "Class 1",
+    "first_seen_frame": 51,
+    "last_seen_frame": 138,
+    "tracked_frames": 88,
+    "surface_map": "/results/ea6e595b8f3f45f2b5edfda8dafff3f2/98/surface_map.png",
+    "tracking_evidence": [
+      {
+        "stage": "entry",
+        "frame": 51,
+        "crop": "/results/ea6e595b8f3f45f2b5edfda8dafff3f2/98/tracking_entry_frame_00051.png"
+      },
+      {
+        "stage": "last_seen",
+        "frame": 138,
+        "crop": "/results/ea6e595b8f3f45f2b5edfda8dafff3f2/98/tracking_last_seen_frame_00138.png"
+      }
+    ],
+    "report_link_checked": true
+  },
+  "limitations": "During progress, displayed counts belong to the previous completed report. Completed model/algorithm class outputs do not establish manually verified field accuracy.",
+  "capture_source_sha256": "4daec2ac37297163da74a71fdf4313d4991aa891047c375a13ded319e5372639"
+}

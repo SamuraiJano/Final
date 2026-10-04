@@ -1,0 +1,87 @@
+{
+  "1": {
+    "usable_views": 28,
+    "rejected": {
+      "Fruit is cut off by the video frame": 8
+    },
+    "fits": {
+      "x_-1": {
+        "A": 82.34374247878927,
+        "B": 82.34374247878927
+      },
+      "x_1": {
+        "A": 82.34374247878927,
+        "B": 82.34374247878927
+      },
+      "y_-1": {
+        "A": 82.34374247878927,
+        "B": 82.34374247878927
+      },
+      "y_1": {
+        "A": 82.34374247878927,
+        "B": 82.34374247878927
+      }
+    }
+  },
+  "108": {
+    "usable_views": 15,
+    "rejected": {
+      "Fruit is cut off by the video frame": 8
+    },
+    "fits": {
+      "x_-1": {
+        "A": 100.5378432871955,
+        "B": 80.35459626819141
+      },
+      "x_1": {
+        "A": 100.5378432871955,
+        "B": 80.35459626819141
+      },
+      "y_-1": {
+        "error": "Oblate pose mismatch at pair 5: 5.2 deg; check silhouette quality, view spacing and rotation configuration"
+      },
+      "y_1": {
+        "error": "Oblate pose mismatch at pair 5: 5.2 deg; check silhouette quality, view spacing and rotation configuration"
+      }
+    }
+  },
+  "123": {
+    "usable_views": 1,
+    "rejected": {
+      "Fruit silhouette is occluded or too irregular for a spheroid": 22,
+      "Fruit is cut off by the video frame": 1
+    },
+    "fits": {
+      "x_-1": {
+        "error": "At least two views are required to fit a spheroid"
+      },
+      "x_1": {
+        "error": "At least two views are required to fit a spheroid"
+      },
+      "y_-1": {
+        "error": "At least two views are required to fit a spheroid"
+      },
+      "y_1": {
+        "error": "At least two views are required to fit a spheroid"
+      }
+    }
+  },
+  "14": {
+    "usable_views": 48,
+    "rejected": {},
+    "fits": {
+      "x_-1": {
+        "error": "No consistent oblate pose sequence through pair 10; check silhouette quality, view spacing and rotation configuration"
+      },
+      "x_1": {
+        "error": "No consistent oblate pose sequence through pair 10; check silhouette quality, view spacing and rotation configuration"
+      },
+      "y_-1": {
+        "error": "Oblate pose mismatch at pair 1: 7.0 deg; check silhouette quality, view spacing and rotation configuration"
+      },
+      "y_1": {
+        "error": "Oblate pose mismatch at pair 1: 7.0 deg; check silhouette quality, view spacing and rotation configuration"
+      }
+    }
+  }
+}

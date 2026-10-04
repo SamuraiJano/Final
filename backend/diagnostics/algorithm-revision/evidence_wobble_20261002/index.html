@@ -1,0 +1,304 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Naartjie hybrid algorithm validation evidence</title><style>
+body{margin:0;background:#f4f5f2;color:#20332a;font:17px/1.55 system-ui,sans-serif}main{max-width:1150px;margin:auto;padding:28px}
+h1{font-size:32px;line-height:1.15}a{color:#226648}.status{background:#f6e2d9;padding:14px 18px;border-radius:8px}
+figure{margin:26px 0;background:white;padding:18px;border:1px solid #d9dfd6;border-radius:8px}img{max-width:100%;display:block;height:auto;margin:auto}
+figcaption{margin-top:12px}.links{display:flex;gap:18px;flex-wrap:wrap}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.65 ui-monospace,monospace;background:white;padding:20px}
+</style><main><h1>Naartjie algorithm: hybrid tests and image evidence</h1>
+<p class="status">Draft: the final hybrid full API run is pending.
+The current profile fails the additional twelve-degree horizontal full-turn motion controls, despite passing the earlier six-degree/subdegree controls. It remains a development profile with unresolved motion accuracy.
+The additional strict large-transverse probe fails one of four alpha20 cases. Frozen track98 reaches coverage and receives Class1 with actual defect masks; the other three remain partial.
+Field motion and real grading accuracy remain unverified. Failed development sources are preserved.</p>
+<p class="links"><a href="VALIDATION_REPORT.md">Testing report</a><a href="source/ALGORITHM_EXPLAINED.md">Simple explanation</a>
+<a href="bundle_summary.json">Source and scope</a><a href="SHA256SUMS.txt">Checksums</a></p>
+<p><a href="algorithm-revision/debug_fruit_98_wobble_20261002/index.html">Open the step-by-step track-98 debugger</a></p>
+<figure><a href="author_comparison.png"><img src="author_comparison.png" alt="All author labels: accuracy and availability"></a><figcaption>All author labels: accuracy and availability · <a href="author_comparison.pdf">PDF</a></figcaption></figure><figure><a href="publication_table4_context.png"><img src="publication_table4_context.png" alt="Publication Table 4 context: different evaluation denominators"></a><figcaption>Publication Table 4 context: different evaluation denominators · <a href="publication_table4_context.pdf">PDF</a></figcaption></figure><figure><a href="algorithm-revision/full_turn_x12_wobble_20261002/full_turn_accuracy.png"><img src="algorithm-revision/full_turn_x12_wobble_20261002/full_turn_accuracy.png" alt="Current profile horizontal twelve-degree full-turn accuracy failure"></a><figcaption>Current profile horizontal twelve-degree full-turn accuracy failure · <a href="algorithm-revision\full_turn_x12_wobble_20261002\full_turn_accuracy.pdf">PDF</a></figcaption></figure><figure><a href="algorithm-revision/transverse_author_comparison_20261002/same_label_accuracy.png"><img src="algorithm-revision/transverse_author_comparison_20261002/same_label_accuracy.png" alt="Author accuracy on the same returned labels: mixed results"></a><figcaption>Author accuracy on the same returned labels: mixed results · <a href="algorithm-revision\transverse_author_comparison_20261002\same_label_accuracy.pdf">PDF</a></figcaption></figure><figure><a href="algorithm-revision/large_transverse_truth_20261002/large_transverse_truth.png"><img src="algorithm-revision/large_transverse_truth_20261002/large_transverse_truth.png" alt="Original strict large-transverse probe: one of four wider-bound cases fails"></a><figcaption>Original strict large-transverse probe: one of four wider-bound cases fails · <a href="algorithm-revision\large_transverse_truth_20261002\large_transverse_truth.pdf">PDF</a></figcaption></figure><figure><a href="algorithm-revision/debug_fruit_98_wobble_20261002/one_fruit_steps.png"><img src="algorithm-revision/debug_fruit_98_wobble_20261002/one_fruit_steps.png" alt="One naartjie: illustrative processing replay with explicit donor provenance"></a><figcaption>One naartjie: illustrative processing replay with explicit donor provenance · <a href="algorithm-revision\debug_fruit_98_wobble_20261002\one_fruit_steps.pdf">PDF</a></figcaption></figure><figure><a href="algorithm-revision/full_turn_hybrid_wobble_20261002/full_turn_accuracy.png"><img src="algorithm-revision/full_turn_hybrid_wobble_20261002/full_turn_accuracy.png" alt="Final hybrid complete-turn geometry"></a><figcaption>Final hybrid complete-turn geometry · <a href="algorithm-revision\full_turn_hybrid_wobble_20261002\full_turn_accuracy.pdf">PDF</a></figcaption></figure><figure><a href="algorithm-revision/hybrid_wobble_controls_20261002/observable_moving_accuracy.png"><img src="algorithm-revision/hybrid_wobble_controls_20261002/observable_moving_accuracy.png" alt="Final hybrid short moving geometry"></a><figcaption>Final hybrid short moving geometry · <a href="algorithm-revision\hybrid_wobble_controls_20261002\observable_moving_accuracy.pdf">PDF</a></figcaption></figure><figure><a href="algorithm-revision/hybrid_wobble_controls_20261002/stationary_observability.png"><img src="algorithm-revision/hybrid_wobble_controls_20261002/stationary_observability.png" alt="Final hybrid stationary measurements unavailable"></a><figcaption>Final hybrid stationary measurements unavailable · <a href="algorithm-revision\hybrid_wobble_controls_20261002\stationary_observability.pdf">PDF</a></figcaption></figure><figure><a href="algorithm-revision/hybrid_wobble_controls_20261002/brightness_offset_invariance.png"><img src="algorithm-revision/hybrid_wobble_controls_20261002/brightness_offset_invariance.png" alt="Final hybrid exposure-offset invariance"></a><figcaption>Final hybrid exposure-offset invariance · <a href="algorithm-revision\hybrid_wobble_controls_20261002\brightness_offset_invariance.pdf">PDF</a></figcaption></figure><figure><a href="algorithm-revision/fixed_hybrid_wobble_conveyor_20261002/fixed_input_comparison.png"><img src="algorithm-revision/fixed_hybrid_wobble_conveyor_20261002/fixed_input_comparison.png" alt="Real conveyor frozen-input comparison"></a><figcaption>Real conveyor frozen-input comparison · <a href="algorithm-revision\fixed_hybrid_wobble_conveyor_20261002\fixed_input_comparison.pdf">PDF</a></figcaption></figure><figure><a href="algorithm-revision/full_turn_observable_20261002/full_turn_accuracy.png"><img src="algorithm-revision/full_turn_observable_20261002/full_turn_accuracy.png" alt="Preserved 863 full-turn accuracy failure"></a><figcaption>Preserved 863 full-turn accuracy failure · <a href="algorithm-revision\full_turn_observable_20261002\full_turn_accuracy.pdf">PDF</a></figcaption></figure><figure><a href="algorithm-revision/photometric_motion_controls_20261002/stationary_observability.png"><img src="algorithm-revision/photometric_motion_controls_20261002/stationary_observability.png" alt="Rejected original-green stationary outcomes"></a><figcaption>Rejected original-green stationary outcomes · <a href="algorithm-revision\photometric_motion_controls_20261002\stationary_observability.pdf">PDF</a></figcaption></figure><figure><a href="algorithm-revision/extended_motion_controls_20261002/extended_motion_accuracy.png"><img src="algorithm-revision/extended_motion_controls_20261002/extended_motion_accuracy.png" alt="Historical raw stationary drift"></a><figcaption>Historical raw stationary drift · <a href="algorithm-revision\extended_motion_controls_20261002\extended_motion_accuracy.pdf">PDF</a></figcaption></figure><figure><a href="algorithm-revision/full_turn_native_20261002/full_turn_accuracy.png"><img src="algorithm-revision/full_turn_native_20261002/full_turn_accuracy.png" alt="Historical rejected native high-pass reconstruction"></a><figcaption>Historical rejected native high-pass reconstruction · <a href="algorithm-revision\full_turn_native_20261002\full_turn_accuracy.pdf">PDF</a></figcaption></figure><figure><a href="algorithm-revision/photometric_objective_20261002/objective_curves.png"><img src="algorithm-revision/photometric_objective_20261002/objective_curves.png" alt="One-axis objective curves: diagnosis only"></a><figcaption>One-axis objective curves: diagnosis only · <a href="algorithm-revision\photometric_objective_20261002\objective_curves.pdf">PDF</a></figcaption></figure><figure><img src="algorithm-revision/real_segmenter_wobble_20261002/98/frame_00066_overlay.png" alt="Actual defect model output track 98"><figcaption>Actual defect model: track 98, frame 66; graded; grade Class 1. Execution output; accuracy is unverified.</figcaption></figure><figure><img src="algorithm-revision/real_segmenter_wobble_20261002/1/frame_00011_overlay.png" alt="Actual defect model output track 1"><figcaption>Actual defect model: track 1, frame 11; insufficient_longitude_coverage; grade None. Execution output; accuracy is unverified.</figcaption></figure><figure><img src="algorithm-revision/real_segmenter_wobble_20261002/14/frame_00006_overlay.png" alt="Actual defect model output track 14"><figcaption>Actual defect model: track 14, frame 6; insufficient_longitude_coverage; grade None. Execution output; accuracy is unverified.</figcaption></figure><figure><img src="algorithm-revision/real_segmenter_wobble_20261002/491/frame_00305_overlay.png" alt="Actual defect model output track 491"><figcaption>Actual defect model: track 491, frame 305; insufficient_longitude_coverage; grade None. Execution output; accuracy is unverified.</figcaption></figure><figure><img src="algorithm-revision/transverse_author_comparison_20261002/independent_pairs_worst_alpha20.png" alt="Worst returned alpha20 author prediction, error39.55996pixels"><figcaption>Worst returned author prediction: mandarins/obj0004 annotation61, error39.55996 pixels. This failure remains in the accuracy totals.</figcaption></figure><figure><img src="authors-benchmark/runs/hybrid_wobble_profile_20261002/mandarins/obj0000/point_001.png" alt="Actual published author correspondence"><figcaption>Actual author image: green feature annotation and red prediction.</figcaption></figure><figure><img src="authors-benchmark/runs/hybrid_wobble_profile_20261002/mandarins/obj0005/point_062.png" alt="Actual published author correspondence"><figcaption>Actual author image: green feature annotation and red prediction.</figcaption></figure><figure><img src="authors-benchmark/runs/hybrid_wobble_profile_20261002/oranges/obj0001/point_001.png" alt="Actual published author correspondence"><figcaption>Actual author image: green feature annotation and red prediction.</figcaption></figure><figure><img src="authors-benchmark/runs/hybrid_wobble_profile_20261002/oranges/obj0006/point_094.png" alt="Actual published author correspondence"><figcaption>Actual author image: green feature annotation and red prediction.</figcaption></figure><figure><img src="authors-benchmark/runs/hybrid_wobble_profile_20261002/tomatoes/obj0000/point_001.png" alt="Actual published author correspondence"><figcaption>Actual author image: green feature annotation and red prediction.</figcaption></figure><figure><img src="authors-benchmark/runs/hybrid_wobble_profile_20261002/tomatoes/obj0005/point_096.png" alt="Actual published author correspondence"><figcaption>Actual author image: green feature annotation and red prediction.</figcaption></figure><h2>Full testing record</h2><pre># Algorithm revision: testing and evidence
+
+Built 2026-10-02T15:47:30.742981+02:00.
+Status: **draft; final hybrid full API run pending**.
+
+**The current profile fails the additional twelve-degree horizontal full-turn motion controls, despite passing the earlier six-degree/subdegree controls. It remains a development profile with unresolved motion accuracy.**
+The twenty-degree transverse search fixes a demonstrated clipped search boundary and allows frozen track 98 to meet coverage gates. It returns more author predictions, with mixed accuracy changes. An additional strict large-transverse probe fails one of four cases at the one-degree/one-pixel limits. Those errors are retained. General
+conveyor motion, segmentation and grade accuracy are not established by these tests.
+
+Exact execution source SHA256: `951b55a4912d3147d349282846e2e02d20159a410b6bb2e8fdd4ab4dd3abea2d`. Detection and segmentation weights
+are unchanged. [Simple code explanation](source/ALGORITHM_EXPLAINED.md).
+
+The spheroid shape, 3D texture lifting, rotation search, matrix propagation and
+surface-area calculation follow the research papers. The paper&#x27;s quarter-resolution
+high-pass MAD remains the normal matcher. A successful coarse turn below eight
+degrees is rechecked at original resolution using smoothed green-channel MAD and
+median brightness-offset compensation. A disagreement above three degrees rejects
+the transition. Failed or unobservable transitions end a connected sequence;
+missing poses are never assumed to be zero or joined by a replacement bridge.
+These native rechecks and conservative selection are explicit engineering adaptations.
+
+The conveyor profile widens the transverse search bound from ten to twenty degrees. The [2021 paper, Section 3.2](https://pmc.ncbi.nlm.nih.gov/articles/PMC8004661/) describes ten degrees as typical; twenty degrees is our engineering adaptation to this setup. It does not relax the 0.58 residual limit, quarter-degree observable motion or coverage gates. The fixed track 98 pair 85→86 was clipped at the old ten-degree boundary: residual 0.61674. With a twenty-degree search it finds approximately [11.013, −13.222, 0] degrees, residual 0.37731. Another rejected pair 65→66 remains rejected. The diagnostic probe temporarily disables residual rejection only to inspect failed minima; those ungated results are not accepted as production motion or ground truth. [Bound diagnostic](algorithm-revision/transverse_bound_probe_20261002.json).
+
+
+## Author data and labelled point accuracy
+
+All 578 original images in 36 sequences (15 mandarins, 10 oranges, 11 tomatoes)
+and all 497 published correspondences are used. Labels only score predictions;
+they do not fit motion. Masks are derived from nonblack backgrounds. These images
+were inspected during development and are not held-out evaluation.
+
+| Source/profile | Returned / labels | Conditional RMS, px | Within 5 px / all labels | Maximum returned error, px |
+| --- | --- | --- | --- | --- |
+| Previous operational | 458/497 | 5.10288 | 367/497 | 35.93046 |
+| Prior observable 863 | 458/497 | 5.10295 | 367/497 | 35.93046 |
+| Rejected native original green 46a46 | 457/497 | 18.43342 | 269/497 | 89.59003 |
+| Hybrid 951b55 transverse 10 | 455/497 | 5.10965 | 366/497 | 35.93046 |
+| Final hybrid 951b55 transverse 20 | 462/497 | 5.39868 | 373/497 | 39.55996 |
+
+Widening the bound returns 462/497 independent predictions instead of 455/497. Conditional RMS rises from 5.10965 to 5.39868 pixels on the different subsets; the maximum rises from 35.93046 to 39.55996 pixels. On the same 455 returned labels, RMS slightly falls from 5.10965 to 5.08041 pixels; 17 labels improve, seven worsen and 431 are unchanged. All seven newly available labels remain in the final counts. Retained-map accuracy has a different tradeoff: on the same 344 returned labels, RMS rises from 4.99766 to 5.22752 pixels, with 24 newly returned labels and four lost. More predictions and coverage do not establish a general accuracy improvement.
+
+| Same labelled subset | Common labels | Alpha 10 RMS, px | Alpha 20 RMS, px | Newly returned | Lost |
+| --- | --- | --- | --- | --- | --- |
+| independent_pairs | 455 | 5.10965 | 5.08041 | 7 | 0 |
+| retained_segment | 344 | 4.99766 | 5.22752 | 24 | 4 |
+
+[Exact same-label comparison](algorithm-revision/transverse_author_comparison_20261002/SAME_LABEL_COMPARISON.md). The 39.55996-pixel error is mandarins/obj0004, annotation line 61, and appears in both the independent and retained results. Its actual image evidence is preserved.
+
+![Worst returned author error](algorithm-revision/transverse_author_comparison_20261002/independent_pairs_worst_alpha20.png)
+
+The native original-green
+replacement is rejected because author accuracy substantially worsens.
+Final author maps: `{&quot;insufficient_longitude_coverage&quot;: 22, &quot;missing_defect_masks&quot;: 14}`. Coverage-eligible maps have no
+author defect truth and cannot validate grades.
+
+For publication context, the [2021 paper, Section 4.2 and Table 4](https://pmc.ncbi.nlm.nih.gov/articles/PMC8004661/)
+reports the following pixel reprojection RMS values. The authors describe about
+200 point correspondences per fruit class. The public annotation files evaluated
+here contain 132/179/186 labels (497 total), with 123/175/164 returned predictions.
+
+| Fruit class | Published Table 4 RMS, px | Independent hybrid conditional RMS, px | Returned / available labels |
+| --- | --- | --- | --- |
+| Mandarins | 6.5 | 5.075 | 123/132 |
+| Oranges | 2.53 | 3.311 | 175/179 |
+| Tomatoes | 5.2 | 7.148 | 164/186 |
+
+The returned prediction denominator, rejection gates, shape/profile choices and
+independent implementation differ from the publication. Conditional error on
+returned predictions omits unavailable ones. These values are a contextual
+comparison; they do not establish reproduction of the published evaluation or
+that this implementation beats its accuracy.
+
+![Publication context with prediction denominators](publication_table4_context.png)
+[Publication comparison provenance](publication_table4_comparison.json).
+
+The final retained-map audit returns 368/497 original labels, conditional RMS 5.60733 pixels, with 296/497 within five pixels. It creates 0 nonadjacent bridges. This subset is selected by the algorithm and has a different denominator from independent pair scoring; unavailable labels are not silently removed. Exact chained labels are correlated with the published annotations.
+
+![Author accuracy and availability](author_comparison.png)
+[Exact author record](authors-benchmark/runs/hybrid_wobble_profile_20261002/report.json).
+
+## Independently known motion and unavailable stationary motion
+
+The actual fitted sphere, matcher, matrix propagation and selector execute on
+the SAME four archived NPZ scenes used for the previous candidates. Two different
+analytic body textures undergo ten known noncommuting x/y wobble steps. Six
+independently projected visible landmarks score the complete measured chain.
+Moving controls require all ten pairs, endpoint error at most one degree and
+every landmark RMS at most one pixel; these limits are unchanged.
+
+| Known scene | Returned / attempted | Endpoint pose error, deg | Maximum visible-landmark RMS, px | Mapping outcome |
+| --- | --- | --- | --- | --- |
+| variable_xy_texture_a | 10/10 | 0.222 | 0.202 | insufficient_longitude_coverage |
+| variable_xy_texture_b | 10/10 | 0.085 | 0.086 | insufficient_longitude_coverage |
+| stationary_120_texture_a | 0/119 | unavailable | unavailable | mapping_failed |
+| stationary_120_texture_b | 0/119 | unavailable | unavailable | mapping_failed |
+
+Each stationary scene contains 120 frames with independently sampled pixel noise.
+All 119 dominant-turn measurements per texture are unavailable, after 119 native
+attempts, with null endpoints and no map or grade. The helper&#x27;s maximum pose/RMS
+of zero comes ONLY from the frame-zero reference scaffold. It is not estimated
+zero stationary error, and none of the 238 rejected pairs is scored as zero.
+The quarter-degree observability bound is unchanged.
+
+Two unsaturated global +10 gray offsets on the second image only preserve
+estimated geometry and residual under the predeclared 0.01-degree/0.00001
+invariance limits. Both original and shifted pairs also meet one-degree/one-pixel
+known-geometry criteria. [Motion and exposure record](algorithm-revision/hybrid_wobble_controls_20261002/PHOTOMETRIC_MOTION_CONTROLS.md).
+
+![Moving geometry](algorithm-revision/hybrid_wobble_controls_20261002/observable_moving_accuracy.png)
+![Actual stationary outcomes](algorithm-revision/hybrid_wobble_controls_20261002/stationary_observability.png)
+![Exposure invariance](algorithm-revision/hybrid_wobble_controls_20261002/brightness_offset_invariance.png)
+
+## Actual matcher over complete known turns
+
+These controls execute the real geometry fit, two-axis image matcher, pose
+composition, selector and surface fusion, with no mocked rotations. Texture A
+has sixty six-degree steps; texture B has 120 alternating 0.6/5.4-degree steps.
+Thirty-six known spherical landmarks are scored whenever front-visible. Perfect
+masks and analytical camera geometry isolate motion from detector errors. Limits
+are predeclared at five degrees maximum pose error and five pixels landmark RMS.
+
+| Complete known turn | Returned / attempted | Maximum pose error, deg | Maximum front-visible RMS, px | All-clear class arithmetic | Motion control |
+| --- | --- | --- | --- | --- | --- |
+| constant_6deg_texture_a | 60/60 | 1.976 | 1.342 | Class 1 | PASS |
+| variable_06_54deg_texture_b | 120/120 | 1.482 | 1.004 | Class 1 | PASS |
+
+Both ideal complete-turn controls pass and all 180 transitions are measured.
+Their all-clear masks test zero-defect class arithmetic, not the real segmentation
+model or general real-fruit grading accuracy. [Complete-turn record](algorithm-revision/full_turn_hybrid_wobble_20261002/FULL_TURN_CONTROLS.md).
+
+![Actual full-turn geometry](algorithm-revision/full_turn_hybrid_wobble_20261002/full_turn_accuracy.png)
+
+## Horizontal twelve-degree complete turns fail
+
+An additional relevant control uses thirty known twelve-degree x-axis steps on each texture, matching horizontal conveyor rolling. The actual quarter/native matcher, sphere fit, pose composition and fusion run with the current eight-degree native recheck trigger and twenty-degree transverse bound. The same established five-degree maximum pose / five-pixel landmark RMS limits are used.
+
+| Known horizontal turn | Returned / attempted | Maximum pose error, deg | Maximum landmark RMS, px | All-clear arithmetic | Motion control |
+| --- | --- | --- | --- | --- | --- |
+| constant_12deg_texture_a | 30/30 | 11.092 | 7.485 | Class 1 | FAIL |
+| constant_12deg_texture_b | 30/30 | 6.189 | 4.195 | Class 1 | FAIL |
+
+Both textures fail the motion criteria despite all sixty measurements, full maps and Class 1 outputs. Source951 with these settings cannot be called generally motion-accuracy validated. The full-looking maps do not prove correct reconstruction. [Original unchanged failure](algorithm-revision/full_turn_x12_wobble_20261002/FULL_TURN_CONTROLS.md).
+
+![Horizontal full-turn accuracy failure](algorithm-revision/full_turn_x12_wobble_20261002/full_turn_accuracy.png)
+
+
+## Additional strict large-transverse probe
+
+Four independently rendered pairs use the two textures, eleven-degree rolling and both signs of thirteen-degree transverse motion. The same analytical pose and six projected landmarks score both search bounds. Before the first run, this probe declares one degree pose error and one pixel landmark RMS, stricter than the separate full-turn five-degree/five-pixel controls. The original strict report remains unchanged.
+
+| Known pair | Transverse bound, deg | Pose error, deg | Landmark RMS, px | Strict control |
+| --- | --- | --- | --- | --- |
+| texture_a_transverse_-13 | 10 | 3.353 | 2.962 | FAIL |
+| texture_a_transverse_-13 | 20 | 3.266 | 2.884 | FAIL |
+| texture_a_transverse_+13 | 10 | 3.353 | 2.962 | FAIL |
+| texture_a_transverse_+13 | 20 | 0.800 | 0.704 | PASS |
+| texture_b_transverse_-13 | 10 | 3.038 | 2.698 | FAIL |
+| texture_b_transverse_-13 | 20 | 0.278 | 0.251 | PASS |
+| texture_b_transverse_+13 | 10 | 2.995 | 2.671 | FAIL |
+| texture_b_transverse_+13 | 20 | 0.952 | 0.837 | PASS |
+
+All eight estimates are returned. At twenty degrees, three of four pairs pass; texture A with negative transverse motion still fails at 3.26551 degrees / 2.88357 pixels. The wider bound improves three cases substantially but does not generally validate large-wobble accuracy or field motion. No thresholds are relabelled to hide the strict failure. [Original probe](algorithm-revision/large_transverse_truth_20261002/LARGE_TRANSVERSE_TRUTH.md).
+
+![Strict transverse geometry results](algorithm-revision/large_transverse_truth_20261002/large_transverse_truth.png)
+
+
+## Frozen real conveyor inputs and the user&#x27;s segmentation model
+
+The exact 215 detector/tracker crops and fruit masks of tracks 98, 1, 14 and 491
+are held fixed across variants. They are selected development cases, not a
+random or held-out sample. Detection, tracking, GrabCut and neural inference are
+not rerun in this geometry comparison. No independent conveyor motion truth is available.
+
+| Track | Input views | Retained views | Original frames | Observed longitude, deg | Result |
+| --- | --- | --- | --- | --- | --- |
+| 98 | 66 | 24 | 66–89 | 360.00 | missing_defect_masks |
+| 1 | 46 | 6 | 11–16 | 126.47 | insufficient_longitude_coverage |
+| 14 | 44 | 5 | 6–10 | 121.12 | insufficient_longitude_coverage |
+| 491 | 59 | 4 | 305–308 | 161.53 | insufficient_longitude_coverage |
+
+Track 98 retains 24 adjacent frames 66–89 and reaches 360 degrees observed longitude and about 85.31% surface coverage. This geometry-only fixture has no defect observations and correctly reports missing_defect_masks, with no grade. Tracks 1, 14 and 491 remain partial. The same fixed inputs and rejection gates are used. More coverage, an ordered map or a low residual does not establish correct field surface geometry; independent conveyor landmarks and verified turns are still required.
+
+The separate real D-FINE integration executes 39 model
+calls and returns 79 defect instances on those
+same frozen crops. Actual masks, overlays and maps are retained. Track 98 produces Class 1 after meeting coverage and complete defect-observation gates; the other three tracks remain partial and ungraded. Class 1 is an execution result under the configured 10%/20% boundaries, not a verified grade. This tests model execution and mapper/report connection; no defect-mask, field pose or grade truth is available. Detection,
+tracking and GrabCut are not recomputed in that isolated segmentation run.
+Mean segmentation latency is 128.8 ms;
+mean confidence 48.5% is model certainty,
+not measured accuracy.
+
+![Real conveyor comparison](algorithm-revision/fixed_hybrid_wobble_conveyor_20261002/fixed_input_comparison.png)
+[Actual model record](algorithm-revision/real_segmenter_wobble_20261002/report.json).
+
+## Follow one real naartjie step by step
+
+The [interactive track-98 debugger](algorithm-revision/debug_fruit_98_wobble_20261002/index.html) shows all 65 adjacent input pairs, actual masks, accepted/unavailable decisions, source and target crops, retained frames, the map and three actual model overlays. It compares the old ten-degree and new twenty-degree bound. Entry/last-seen tracking images and the donor source are recorded: these detector/tracker observations come from the prior 863 full-video run, while the displayed revised motion uses source951 on the frozen inputs. It is an illustrative replay, not a fresh completed final-video validation.
+
+Isolated headless Edge checks load all 65 pair images, Next/Previous navigation, the mask toggle and all three model overlays with zero JavaScript errors. [Browser check record](ui-checks/walkthrough_wobble_20261002/report.json).
+
+![One-fruit processing steps](algorithm-revision/debug_fruit_98_wobble_20261002/one_fruit_steps.png)
+[Exportable step figure](algorithm-revision/debug_fruit_98_wobble_20261002/one_fruit_steps.pdf).
+
+
+## Area arithmetic, implementation checks and full-video execution
+
+Known defect longitude wedges are projected with exact geometry and supplied
+rotations. This control intentionally bypasses the image matcher and neural
+models; it verifies repeated-defect union and spherical area normalization.
+
+| Known observed defect area | Measured | Absolute error, percentage points | Configured class |
+| --- | --- | --- | --- |
+| 5% | 5.14365% | 0.14365 | Class 1 |
+| 15% | 15.17867% | 0.17867 | Class 2 |
+| 30% | 30.09276% | 0.09276 | Class 3 |
+
+Coverage controls also pass: known 250- and 100-degree turns stay partial.
+The configured 10%/20% class boundaries are engineering rules, not published
+author validation of conveyor grades.
+This area-only control is reused from the earlier ten-degree hybrid profile: it tests the same source951 fusion code with supplied exact rotations, bypassing the transverse image search.
+
+All 43 Python tests, frontend build and lint pass, with commands,
+timestamps, output and exact source hashes retained in [software-checks/service_wobble_20261002](software-checks/service_wobble_20261002/summary.json).
+New checks cover brightness-offset invariance, scalar/batch agreement, all-invalid
+hypotheses without NaN warnings, native recheck settings, disagreement rejection
+and preservation of the paper matcher for larger motion. Existing failure/no-bridge
+and native-failure checks remain. [Legacy-profile equivalence](algorithm-revision/photometric_equivalence_20261002/PHOTOMETRIC_EQUIVALENCE.md)
+also confirms bit-identical scalar/batch costs and two archived image-pair outcomes
+against source 863 when the optional green adaptation is disabled. Software
+equivalence is separate from ground-truth image accuracy.
+
+The final hybrid full API run is pending. Its incomplete request, if present, is retained; no completed hybrid detector/tracker/video outcome is claimed. The old observable-source run is recorded separately and cannot count as final hybrid validation.
+
+Backend refresh initially returned an access-denied failure. The service helper now stops its owned child process tree through psutil before restarting. An actual managed refresh returned HTTP 200, with replaced backend/worker process IDs and the prior processes no longer alive. The failed response and successful process evidence are retained separately; this verifies service restart, not reconstruction accuracy. [Successful refresh](algorithm-revision/service_20261002/wobble_refresh_fixed.json), [prior failure](algorithm-revision/service_20261002/wobble_refresh_response.json).
+
+Final service implementation checks are included in [service software checks](software-checks/service_wobble_20261002/summary.json).
+
+## Rejected and failed development results remain preserved
+
+The earlier observable source 863 produces full-looking all-clear Class 1 maps
+despite maximum full-turn errors of 25.744/21.415 degrees and 17.029/14.371 pixels.
+Native resolution with the old high-pass objective also fails (18.651/13.878
+degrees; 12.565/9.383 pixels). Those failures motivate the separate photometric
+diagnosis; they are not overwritten by later passes.
+
+The original-green source 46a46 passes ideal full turns but returns 83/119 false
+stationary texture-A turns and a partial map. Its author RMS is about 18.43 pixels,
+so it is rejected. Smoothed-green source 1fb passes the tested ideal short/full
+turn and stationary controls; this is not a claim of general author accuracy.
+The hybrid keeps the original objective for larger author motions instead of
+globally replacing it. [Original-green failure record](algorithm-revision/photometric_motion_controls_20261002/PHOTOMETRIC_MOTION_CONTROLS.md).
+
+Historical source 52 raw forced-zero-minimum stationary chains drift by
+59.768 and 7.388 degrees. Native sigma 1.118/2 prefilter trials do not pass all
+original raw accuracy limits. These unchanged failures, rejected native trials,
+objective curves and source/settings records remain in the bundle. The original
+green chart&#x27;s false static annotation was corrected with explicit postprocessing
+provenance; original exports and measurements are preserved.
+
+The older full_revised API is interrupted and incomplete. Full_observable is
+an earlier execution source and has its own state in [api_run_states.json](api_run_states.json).
+Neither can count as completion of the final hybrid full-video test.
+Geometry-size and paired GrabCut-thread diagnostics remain separate historical
+investigations; they establish neither a camera correction nor a production
+thread-speed improvement.
+
+## Reproduce and report images
+
+The gallery provides actual author/conveyor images, known-answer controls and
+300-dpi PNG/PDF figures. Result JSON, NPZ inputs, frozen sources, settings,
+software output, model hashes and author source/license provenance are retained.
+NPZ inputs are stored once by SHA256; [input_references.json](input_references.json)
+resolves duplicate paths from historical reports. Models and the complete original
+author dataset/video are not duplicated. The original clip is
+`WIN_20260818_13_29_43_Pro.mp4`, SHA256
+`dc25964bf6052972cad761b0246f79906e768c6737bf4228ba44711d7272429c`.
+
+Research basis: [2021 spheroid rotation paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC8004661/)
+and [2022 surface-map paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC9323781/).
+This is an independent implementation. The public author repositories provide
+data and feature annotations rather than the reconstruction software used here.
+These are development tests with explicit scope, not certification of real grade accuracy.
+
+```powershell
+./backend/venv/Scripts/python.exe -B backend/build_algorithm_revision_evidence.py --profile wobble --label evidence_wobble_20261002 --refresh
+```
+
+Run each validation under a fresh label; recorded inputs/settings/scripts supply
+individual reproduction. [SHA256SUMS.txt](SHA256SUMS.txt) identifies every payload;
+[bundle_summary.json](bundle_summary.json) states completion and limitations.
+</pre></main></html>

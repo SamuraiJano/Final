@@ -1,0 +1,175 @@
+{
+  "captured_at": "2026-10-03T16:02:13.231374+00:00",
+  "passed": true,
+  "method": "Actual Vite/API in isolated headless Edge; no mocked responses or user profile.",
+  "latest_job_id": "ed3aa02cca364812a145610aad627a83",
+  "latest_records": 474,
+  "classes": {
+    "Class 1": 293,
+    "Class 2": 1,
+    "Class 3": 0,
+    "ungraded": 180
+  },
+  "provisional_records": 292,
+  "no_map_ungraded_records": 180,
+  "all_saved_summary": {
+    "runs": 7,
+    "fruit_count": 2535,
+    "classes": {
+      "Class 1": 310,
+      "Class 2": 1,
+      "Class 3": 0,
+      "ungraded": 2224
+    }
+  },
+  "inspection_checks": [
+    {
+      "track_id": 340,
+      "grade": "Class 2",
+      "label": "Class 2 (partial)",
+      "grade_provisional": true,
+      "observed_surface_pct": 26.51571379905746,
+      "observed_longitude_deg": 157.23150357995226,
+      "defect_pct_of_observed": 17.842163663758484,
+      "surface_map_loaded": true
+    },
+    {
+      "track_id": 32,
+      "grade": "Class 1",
+      "label": "Class 1 (partial)",
+      "grade_provisional": true,
+      "observed_surface_pct": 22.43043915705299,
+      "observed_longitude_deg": 93.45521023765997,
+      "defect_pct_of_observed": 1.2415637547085638,
+      "surface_map_loaded": true
+    },
+    {
+      "track_id": 98,
+      "grade": "Class 1",
+      "label": "Class 1",
+      "grade_provisional": false,
+      "observed_surface_pct": 85.1501205452467,
+      "observed_longitude_deg": 360.0,
+      "defect_pct_of_observed": 4.511577700155574,
+      "surface_map_loaded": true
+    }
+  ],
+  "no_map_track_id_checked": 47,
+  "partial_note_checked": "Provisional grade based on the observed surface; unseen areas were not assessed.",
+  "mobile_partial_class2_width": 390,
+  "mobile_horizontal_overflow": false,
+  "status_before": {
+    "state": "idle",
+    "run_id": null,
+    "frames_processed": 0,
+    "frames_total": null,
+    "error": null
+  },
+  "status_after": {
+    "state": "idle",
+    "run_id": null,
+    "frames_processed": 0,
+    "frames_total": null,
+    "error": null
+  },
+  "page_errors": [],
+  "api_requests": [
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/health"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/analysis/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/health"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/analysis/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/dashboard"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/camera/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/camera/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/live/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/live/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/backend/control"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/analysis/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/backend/control"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/analysis/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/analysis/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/analysis/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/health"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/analysis/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/camera/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/live/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/backend/control"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/analysis/status"
+    }
+  ],
+  "runtime_algorithm_sha256": "f10e8393f1af64f67023f9519fcbf1b117d91418c1955ec44c2bd329fa22e657",
+  "runtime_main_sha256": "76a66ac90ad2549775bce28f0ecb66b4348a4a0829219c770eb08349230d5f89",
+  "runtime_vite_sha256": "1b6582dca898de357a7b048a30489197d860509aa01c3c1803a03590079dec4e",
+  "dashboard_response_bytes": 3774048,
+  "dashboard_response_sha256": "fc74391e044f80a27d30912a6c3793ba2a50536e8f751371da5999b46983ba2c",
+  "proxy_response_bytes": 3774048,
+  "proxy_response_sha256": "fc74391e044f80a27d30912a6c3793ba2a50536e8f751371da5999b46983ba2c",
+  "direct_and_proxy_response_identical": true,
+  "inference_requested": false,
+  "analysis_cancelled": false,
+  "local_video_preview_only": true,
+  "limitations": "The saved report regrades existing maps. This UI test does not rerun detection, segmentation or reconstruction, and does not measure manual grading accuracy.",
+  "capture_source_sha256": "75a8ecbcab05474a9bafd260627b7b1e908b572fb165b38031f5f64b6c728642"
+}

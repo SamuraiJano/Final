@@ -1,0 +1,5085 @@
+{
+  "method": "Independent SIFT/ORB correspondences for fast-motion pairs, diagnostic only.\n\nFeatures require mutual descriptor-ratio matches, foreground support and\ngeometric agreement. RANSAC uses source points lifted onto the frozen fitted\nspheroid. Nothing is sent to production mapping. No ground truth poses exist.\n",
+  "results": [
+    {
+      "source_frame": 305,
+      "target_frame": 306,
+      "method": "sift",
+      "preprocess": "raw",
+      "source_keypoints": 466,
+      "target_keypoints": 443,
+      "mutual_matches": 26,
+      "status": "diagnostic_fit",
+      "rotation_vector_deg": [
+        5.472090124185897,
+        -2.0245881324162065,
+        -7.150538655297307
+      ],
+      "inliers": 22,
+      "median_inlier_error_px": 0.6331025347792997,
+      "source_inlier_span_px": [
+        95.96857833862305,
+        87.87789916992188
+      ],
+      "matches": [
+        {
+          "source_crop": [
+            36.1649055480957,
+            72.3812484741211
+          ],
+          "target_crop": [
+            33.09006881713867,
+            71.58924865722656
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.37642388176218694
+        },
+        {
+          "source_crop": [
+            63.109130859375,
+            69.95700073242188
+          ],
+          "target_crop": [
+            58.31106948852539,
+            65.38894653320312
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.2692808951882493
+        },
+        {
+          "source_crop": [
+            63.75115203857422,
+            54.6118049621582
+          ],
+          "target_crop": [
+            58.08104705810547,
+            50.20091247558594
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.5287395935498264
+        },
+        {
+          "source_crop": [
+            67.71967315673828,
+            136.46180725097656
+          ],
+          "target_crop": [
+            71.6796646118164,
+            128.5392303466797
+          ],
+          "inlier": false,
+          "reprojection_error_px": 2.159562994850841
+        },
+        {
+          "source_crop": [
+            68.18362426757812,
+            55.46720886230469
+          ],
+          "target_crop": [
+            62.629127502441406,
+            49.98822021484375
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.24488816162982882
+        },
+        {
+          "source_crop": [
+            70.79057312011719,
+            65.49688720703125
+          ],
+          "target_crop": [
+            66.22928619384766,
+            59.01287841796875
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.19404733755681677
+        },
+        {
+          "source_crop": [
+            72.88710021972656,
+            136.69052124023438
+          ],
+          "target_crop": [
+            77.49613189697266,
+            128.33328247070312
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.8325548607123614
+        },
+        {
+          "source_crop": [
+            75.40948486328125,
+            48.8126220703125
+          ],
+          "target_crop": [
+            69.98320770263672,
+            42.93381881713867
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.075961231129597
+        },
+        {
+          "source_crop": [
+            75.41622161865234,
+            63.18798065185547
+          ],
+          "target_crop": [
+            70.4462661743164,
+            56.09821319580078
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.09684689673788925
+        },
+        {
+          "source_crop": [
+            75.53419494628906,
+            70.23442077636719
+          ],
+          "target_crop": [
+            71.16563415527344,
+            63.914024353027344
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.0351109290502656
+        },
+        {
+          "source_crop": [
+            79.3277816772461,
+            79.02877044677734
+          ],
+          "target_crop": [
+            76.67764282226562,
+            71.97523498535156
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.2412821850804183
+        },
+        {
+          "source_crop": [
+            79.97035217285156,
+            51.91189193725586
+          ],
+          "target_crop": [
+            73.22905731201172,
+            47.572669982910156
+          ],
+          "inlier": false,
+          "reprojection_error_px": 2.6245780670855616
+        },
+        {
+          "source_crop": [
+            82.10718536376953,
+            58.30937576293945
+          ],
+          "target_crop": [
+            77.90930938720703,
+            51.566795349121094
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.628612859852079
+        },
+        {
+          "source_crop": [
+            88.09452819824219,
+            92.34226989746094
+          ],
+          "target_crop": [
+            86.40089416503906,
+            81.6799545288086
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.307486798853042
+        },
+        {
+          "source_crop": [
+            88.45629119873047,
+            53.64166259765625
+          ],
+          "target_crop": [
+            82.405517578125,
+            46.07006072998047
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.42805081669064904
+        },
+        {
+          "source_crop": [
+            91.79874420166016,
+            85.76821899414062
+          ],
+          "target_crop": [
+            88.96853637695312,
+            76.15918731689453
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.29276875550883624
+        },
+        {
+          "source_crop": [
+            94.35816955566406,
+            99.69894409179688
+          ],
+          "target_crop": [
+            93.04277038574219,
+            88.78416442871094
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.001257856001933
+        },
+        {
+          "source_crop": [
+            97.3362808227539,
+            96.53178405761719
+          ],
+          "target_crop": [
+            95.72930908203125,
+            85.71019744873047
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.6315112882645633
+        },
+        {
+          "source_crop": [
+            99.39285278320312,
+            98.36270141601562
+          ],
+          "target_crop": [
+            98.02615356445312,
+            87.62935638427734
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.45216934197502084
+        },
+        {
+          "source_crop": [
+            105.73722839355469,
+            69.53215026855469
+          ],
+          "target_crop": [
+            102.07402801513672,
+            59.185821533203125
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.6835306161667762
+        },
+        {
+          "source_crop": [
+            106.37740325927734,
+            85.51984405517578
+          ],
+          "target_crop": [
+            104.41326141357422,
+            74.29347229003906
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.5607175511034537
+        },
+        {
+          "source_crop": [
+            114.54635620117188,
+            68.97978210449219
+          ],
+          "target_crop": [
+            110.54724884033203,
+            58.43685531616211
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.6346937812940361
+        },
+        {
+          "source_crop": [
+            117.72572326660156,
+            97.68640899658203
+          ],
+          "target_crop": [
+            115.69953155517578,
+            84.03550720214844
+          ],
+          "inlier": false,
+          "reprojection_error_px": 2.064604238003331
+        },
+        {
+          "source_crop": [
+            122.98302459716797,
+            134.37416076660156
+          ],
+          "target_crop": [
+            126.81961822509766,
+            127.48303985595703
+          ],
+          "inlier": false,
+          "reprojection_error_px": 3.940739606566076
+        },
+        {
+          "source_crop": [
+            130.7061004638672,
+            76.53771209716797
+          ],
+          "target_crop": [
+            127.39273071289062,
+            64.83979034423828
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.5587964240173324
+        },
+        {
+          "source_crop": [
+            132.13348388671875,
+            93.32466888427734
+          ],
+          "target_crop": [
+            130.82151794433594,
+            79.45902252197266
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.359692562239725
+        }
+      ],
+      "manual_marker_reprojection_error_px": 1.9979881974799185,
+      "supports_rotation_hypothesis": true,
+      "nearest_source_match_to_manual_marker_px": 0.34669852983833377
+    },
+    {
+      "source_frame": 308,
+      "target_frame": 309,
+      "method": "sift",
+      "preprocess": "raw",
+      "source_keypoints": 416,
+      "target_keypoints": 364,
+      "mutual_matches": 10,
+      "status": "diagnostic_fit",
+      "rotation_vector_deg": [
+        13.084377807165284,
+        -8.845075673299387,
+        -6.915703072850734
+      ],
+      "inliers": 7,
+      "median_inlier_error_px": 0.7303981251687474,
+      "source_inlier_span_px": [
+        70.52120590209961,
+        64.09173965454102
+      ],
+      "matches": [
+        {
+          "source_crop": [
+            33.08035659790039,
+            114.3069839477539
+          ],
+          "target_crop": [
+            32.72996139526367,
+            111.93763732910156
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.16838390817934523
+        },
+        {
+          "source_crop": [
+            34.084293365478516,
+            62.3477668762207
+          ],
+          "target_crop": [
+            32.80252456665039,
+            56.619014739990234
+          ],
+          "inlier": false,
+          "reprojection_error_px": 6.322930647211472
+        },
+        {
+          "source_crop": [
+            34.73033905029297,
+            82.22462463378906
+          ],
+          "target_crop": [
+            29.317968368530273,
+            79.12316131591797
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.7303981251687474
+        },
+        {
+          "source_crop": [
+            35.528846740722656,
+            115.67459106445312
+          ],
+          "target_crop": [
+            34.13315963745117,
+            113.01362609863281
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.1139391659075484
+        },
+        {
+          "source_crop": [
+            61.38482666015625,
+            30.483545303344727
+          ],
+          "target_crop": [
+            126.613525390625,
+            43.756839752197266
+          ],
+          "inlier": false,
+          "reprojection_error_px": 75.58966975334587
+        },
+        {
+          "source_crop": [
+            76.8741226196289,
+            61.01161575317383
+          ],
+          "target_crop": [
+            66.8106689453125,
+            49.74388885498047
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.6185853229465159
+        },
+        {
+          "source_crop": [
+            77.57793426513672,
+            141.7024383544922
+          ],
+          "target_crop": [
+            76.81944274902344,
+            141.62677001953125
+          ],
+          "inlier": false,
+          "reprojection_error_px": 9.86909333101814
+        },
+        {
+          "source_crop": [
+            94.03044128417969,
+            51.58285140991211
+          ],
+          "target_crop": [
+            84.46862030029297,
+            38.29569625854492
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.4239051524601931
+        },
+        {
+          "source_crop": [
+            101.18638610839844,
+            74.46566009521484
+          ],
+          "target_crop": [
+            90.53343963623047,
+            58.07753372192383
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.9087071273822955
+        },
+        {
+          "source_crop": [
+            103.6015625,
+            58.77959442138672
+          ],
+          "target_crop": [
+            93.53302764892578,
+            43.817203521728516
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.6086570257139612
+        }
+      ],
+      "manual_marker_reprojection_error_px": 0.4937981177082122,
+      "supports_rotation_hypothesis": true,
+      "nearest_source_match_to_manual_marker_px": 34.09088800340022
+    },
+    {
+      "source_frame": 309,
+      "target_frame": 310,
+      "method": "sift",
+      "preprocess": "raw",
+      "source_keypoints": 364,
+      "target_keypoints": 294,
+      "mutual_matches": 2
+    },
+    {
+      "source_frame": 310,
+      "target_frame": 311,
+      "method": "sift",
+      "preprocess": "raw",
+      "source_keypoints": 294,
+      "target_keypoints": 253,
+      "mutual_matches": 7,
+      "status": "diagnostic_fit",
+      "rotation_vector_deg": [
+        14.713331644621153,
+        -7.154140441185336,
+        -5.708706743942844
+      ],
+      "inliers": 3,
+      "median_inlier_error_px": 0.8679705777324382,
+      "source_inlier_span_px": [
+        13.075050354003906,
+        67.50918960571289
+      ],
+      "matches": [
+        {
+          "source_crop": [
+            48.17135238647461,
+            112.45348358154297
+          ],
+          "target_crop": [
+            43.78775405883789,
+            104.54761505126953
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.0177768528510398
+        },
+        {
+          "source_crop": [
+            49.9300537109375,
+            129.86529541015625
+          ],
+          "target_crop": [
+            48.04154968261719,
+            123.76594543457031
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.8679705777324382
+        },
+        {
+          "source_crop": [
+            61.246402740478516,
+            62.35610580444336
+          ],
+          "target_crop": [
+            50.48745346069336,
+            51.76129150390625
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.3830109673230011
+        },
+        {
+          "source_crop": [
+            66.67819213867188,
+            136.69546508789062
+          ],
+          "target_crop": [
+            91.22561645507812,
+            133.31297302246094
+          ],
+          "inlier": false,
+          "reprojection_error_px": 25.765534227564824
+        },
+        {
+          "source_crop": [
+            95.37455749511719,
+            127.4678726196289
+          ],
+          "target_crop": [
+            49.038692474365234,
+            96.9984130859375
+          ],
+          "inlier": false,
+          "reprojection_error_px": 45.61004732150385
+        },
+        {
+          "source_crop": [
+            113.19084167480469,
+            53.95630645751953
+          ],
+          "target_crop": [
+            70.36473083496094,
+            87.3492431640625
+          ],
+          "inlier": false,
+          "reprojection_error_px": 57.802540294089596
+        },
+        {
+          "source_crop": [
+            129.8970947265625,
+            80.78872680664062
+          ],
+          "target_crop": [
+            128.02418518066406,
+            59.71601486206055
+          ],
+          "inlier": false,
+          "reprojection_error_px": 8.043819798084371
+        }
+      ],
+      "manual_marker_reprojection_error_px": 0.6636303279671942,
+      "supports_rotation_hypothesis": false,
+      "nearest_source_match_to_manual_marker_px": 0.42674948825014236
+    },
+    {
+      "source_frame": 305,
+      "target_frame": 306,
+      "method": "sift",
+      "preprocess": "clahe",
+      "source_keypoints": 510,
+      "target_keypoints": 487,
+      "mutual_matches": 26,
+      "status": "diagnostic_fit",
+      "rotation_vector_deg": [
+        5.710769832137791,
+        -1.8800858776507576,
+        -7.791246572004767
+      ],
+      "inliers": 22,
+      "median_inlier_error_px": 0.7980699959100692,
+      "source_inlier_span_px": [
+        94.71172332763672,
+        45.92522430419922
+      ],
+      "matches": [
+        {
+          "source_crop": [
+            33.14234161376953,
+            78.71573638916016
+          ],
+          "target_crop": [
+            30.47067642211914,
+            77.73053741455078
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.693666337635601
+        },
+        {
+          "source_crop": [
+            127.85406494140625,
+            100.49345397949219
+          ],
+          "target_crop": [
+            127.09415435791016,
+            86.58502960205078
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.0321476011496984
+        },
+        {
+          "source_crop": [
+            36.1922721862793,
+            72.38924407958984
+          ],
+          "target_crop": [
+            33.10118103027344,
+            71.5927963256836
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.11048872714671869
+        },
+        {
+          "source_crop": [
+            123.2425308227539,
+            89.71011352539062
+          ],
+          "target_crop": [
+            122.5811767578125,
+            76.51724243164062
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.077271023805425
+        },
+        {
+          "source_crop": [
+            121.85787200927734,
+            86.2612075805664
+          ],
+          "target_crop": [
+            120.5991439819336,
+            73.20287322998047
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.9756410613470727
+        },
+        {
+          "source_crop": [
+            118.73821258544922,
+            85.11322784423828
+          ],
+          "target_crop": [
+            116.5632095336914,
+            71.93345642089844
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.722173427967328
+        },
+        {
+          "source_crop": [
+            117.79410552978516,
+            97.7568359375
+          ],
+          "target_crop": [
+            115.86859893798828,
+            84.14302825927734
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.6035443472849593
+        },
+        {
+          "source_crop": [
+            50.894283294677734,
+            82.84968566894531
+          ],
+          "target_crop": [
+            48.245460510253906,
+            78.34696197509766
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.5071080366123101
+        },
+        {
+          "source_crop": [
+            63.0866584777832,
+            69.94170379638672
+          ],
+          "target_crop": [
+            58.21613311767578,
+            65.49958801269531
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.34037223611553
+        },
+        {
+          "source_crop": [
+            63.868507385253906,
+            54.56822967529297
+          ],
+          "target_crop": [
+            58.189266204833984,
+            50.16373825073242
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.6146915646394794
+        },
+        {
+          "source_crop": [
+            99.46820831298828,
+            98.1147689819336
+          ],
+          "target_crop": [
+            98.01425170898438,
+            87.56938934326172
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.7502894903677402
+        },
+        {
+          "source_crop": [
+            97.3597183227539,
+            96.41459655761719
+          ],
+          "target_crop": [
+            95.73220825195312,
+            85.69854736328125
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.5467496334638423
+        },
+        {
+          "source_crop": [
+            70.8010482788086,
+            65.45001220703125
+          ],
+          "target_crop": [
+            66.19613647460938,
+            58.93272399902344
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.3318607861229562
+        },
+        {
+          "source_crop": [
+            71.92008972167969,
+            93.01458740234375
+          ],
+          "target_crop": [
+            130.16195678710938,
+            103.36316680908203
+          ],
+          "inlier": false,
+          "reprojection_error_px": 62.30012496206674
+        },
+        {
+          "source_crop": [
+            94.3524398803711,
+            99.72611236572266
+          ],
+          "target_crop": [
+            93.03448486328125,
+            88.79862976074219
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.8458505014523982
+        },
+        {
+          "source_crop": [
+            75.46170806884766,
+            63.20654296875
+          ],
+          "target_crop": [
+            70.45938110351562,
+            56.0817985534668
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.2457405210433231
+        },
+        {
+          "source_crop": [
+            75.5442123413086,
+            70.21550750732422
+          ],
+          "target_crop": [
+            71.16963958740234,
+            63.95741271972656
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.2192240587661491
+        },
+        {
+          "source_crop": [
+            91.80561065673828,
+            56.41899871826172
+          ],
+          "target_crop": [
+            85.79005432128906,
+            47.73973846435547
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.13896420863850648
+        },
+        {
+          "source_crop": [
+            91.79439544677734,
+            85.80853271484375
+          ],
+          "target_crop": [
+            88.89381408691406,
+            76.26651000976562
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.5990635363724378
+        },
+        {
+          "source_crop": [
+            79.35249328613281,
+            79.03343200683594
+          ],
+          "target_crop": [
+            76.65983581542969,
+            71.93550109863281
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.3636931384470468
+        },
+        {
+          "source_crop": [
+            88.15962219238281,
+            92.44334411621094
+          ],
+          "target_crop": [
+            86.44579315185547,
+            81.67912292480469
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.0930689918250307
+        },
+        {
+          "source_crop": [
+            82.16881561279297,
+            58.3082389831543
+          ],
+          "target_crop": [
+            77.87926483154297,
+            51.56968688964844
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.8726590602529276
+        },
+        {
+          "source_crop": [
+            75.01358032226562,
+            58.64299392700195
+          ],
+          "target_crop": [
+            70.69259643554688,
+            51.66264343261719
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.4622145264827622
+        },
+        {
+          "source_crop": [
+            123.0401382446289,
+            134.33404541015625
+          ],
+          "target_crop": [
+            126.68008422851562,
+            127.49246215820312
+          ],
+          "inlier": false,
+          "reprojection_error_px": 4.762366504485169
+        },
+        {
+          "source_crop": [
+            90.82514190673828,
+            36.12753677368164
+          ],
+          "target_crop": [
+            36.337608337402344,
+            69.09066009521484
+          ],
+          "inlier": false,
+          "reprojection_error_px": 61.00133093942355
+        },
+        {
+          "source_crop": [
+            77.84331512451172,
+            148.42730712890625
+          ],
+          "target_crop": [
+            79.04627990722656,
+            144.3028564453125
+          ],
+          "inlier": false,
+          "reprojection_error_px": 6.271880270338621
+        }
+      ],
+      "manual_marker_reprojection_error_px": 2.1196651808690037,
+      "supports_rotation_hypothesis": true,
+      "nearest_source_match_to_manual_marker_px": 16.007265049988924
+    },
+    {
+      "source_frame": 308,
+      "target_frame": 309,
+      "method": "sift",
+      "preprocess": "clahe",
+      "source_keypoints": 467,
+      "target_keypoints": 413,
+      "mutual_matches": 9,
+      "status": "diagnostic_fit",
+      "rotation_vector_deg": [
+        13.205793082572951,
+        -9.437407432123395,
+        -6.623140265946164
+      ],
+      "inliers": 5,
+      "median_inlier_error_px": 0.8745164799219113,
+      "source_inlier_span_px": [
+        82.2081298828125,
+        56.84247970581055
+      ],
+      "matches": [
+        {
+          "source_crop": [
+            32.40172576904297,
+            112.64634704589844
+          ],
+          "target_crop": [
+            31.844959259033203,
+            109.92048645019531
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.30970205039705334
+        },
+        {
+          "source_crop": [
+            35.6719970703125,
+            115.68946075439453
+          ],
+          "target_crop": [
+            34.18108367919922,
+            112.87371063232422
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.8895911064880281
+        },
+        {
+          "source_crop": [
+            55.30960464477539,
+            137.62460327148438
+          ],
+          "target_crop": [
+            115.90154266357422,
+            109.696533203125
+          ],
+          "inlier": false,
+          "reprojection_error_px": 62.99844438314849
+        },
+        {
+          "source_crop": [
+            56.8550910949707,
+            127.79411315917969
+          ],
+          "target_crop": [
+            55.218509674072266,
+            123.91295623779297
+          ],
+          "inlier": false,
+          "reprojection_error_px": 4.521464258462539
+        },
+        {
+          "source_crop": [
+            77.74044036865234,
+            141.56576538085938
+          ],
+          "target_crop": [
+            77.5007095336914,
+            141.2724151611328
+          ],
+          "inlier": false,
+          "reprojection_error_px": 9.575616553476095
+        },
+        {
+          "source_crop": [
+            82.49954986572266,
+            126.74053192138672
+          ],
+          "target_crop": [
+            83.58757781982422,
+            124.56188201904297
+          ],
+          "inlier": false,
+          "reprojection_error_px": 12.084082392171993
+        },
+        {
+          "source_crop": [
+            100.67640686035156,
+            64.6505355834961
+          ],
+          "target_crop": [
+            89.83170318603516,
+            49.24351119995117
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.305483660287903
+        },
+        {
+          "source_crop": [
+            103.22999572753906,
+            58.846981048583984
+          ],
+          "target_crop": [
+            93.51998901367188,
+            43.814537048339844
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.2882558468669474
+        },
+        {
+          "source_crop": [
+            114.60985565185547,
+            59.15808868408203
+          ],
+          "target_crop": [
+            103.58883666992188,
+            44.54736328125
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.8745164799219113
+        }
+      ],
+      "manual_marker_reprojection_error_px": 0.5827154748707056,
+      "supports_rotation_hypothesis": false,
+      "nearest_source_match_to_manual_marker_px": 30.495541133318905
+    },
+    {
+      "source_frame": 309,
+      "target_frame": 310,
+      "method": "sift",
+      "preprocess": "clahe",
+      "source_keypoints": 413,
+      "target_keypoints": 357,
+      "mutual_matches": 3
+    },
+    {
+      "source_frame": 310,
+      "target_frame": 311,
+      "method": "sift",
+      "preprocess": "clahe",
+      "source_keypoints": 357,
+      "target_keypoints": 328,
+      "mutual_matches": 3
+    },
+    {
+      "source_frame": 305,
+      "target_frame": 306,
+      "method": "sift",
+      "preprocess": "highpass",
+      "source_keypoints": 490,
+      "target_keypoints": 495,
+      "mutual_matches": 27,
+      "status": "diagnostic_fit",
+      "rotation_vector_deg": [
+        5.586272483501709,
+        -2.096056069416165,
+        -6.761591912685417
+      ],
+      "inliers": 25,
+      "median_inlier_error_px": 0.7530019438039594,
+      "source_inlier_span_px": [
+        105.50140762329102,
+        87.87895965576172
+      ],
+      "matches": [
+        {
+          "source_crop": [
+            72.85684204101562,
+            69.22764587402344
+          ],
+          "target_crop": [
+            68.51534271240234,
+            63.06587600708008
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.9969957221521475
+        },
+        {
+          "source_crop": [
+            99.38865661621094,
+            98.36571502685547
+          ],
+          "target_crop": [
+            98.030517578125,
+            87.64087677001953
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.36343708891181004
+        },
+        {
+          "source_crop": [
+            97.33417510986328,
+            96.51983642578125
+          ],
+          "target_crop": [
+            95.72634887695312,
+            85.69322204589844
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.5792650237149034
+        },
+        {
+          "source_crop": [
+            92.00232696533203,
+            85.62545013427734
+          ],
+          "target_crop": [
+            89.10590362548828,
+            76.20314025878906
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.4473030548568009
+        },
+        {
+          "source_crop": [
+            76.12156677246094,
+            56.12118911743164
+          ],
+          "target_crop": [
+            72.00244140625,
+            49.15314865112305
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.4800748059738287
+        },
+        {
+          "source_crop": [
+            81.96524047851562,
+            58.33774185180664
+          ],
+          "target_crop": [
+            78.09761810302734,
+            51.45688247680664
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.7523067011952451
+        },
+        {
+          "source_crop": [
+            58.79629135131836,
+            97.08566284179688
+          ],
+          "target_crop": [
+            57.89276885986328,
+            91.15691375732422
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.0933718045424766
+        },
+        {
+          "source_crop": [
+            63.613304138183594,
+            54.59408187866211
+          ],
+          "target_crop": [
+            57.97801971435547,
+            50.192710876464844
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.7530019438039594
+        },
+        {
+          "source_crop": [
+            63.613304138183594,
+            54.59408187866211
+          ],
+          "target_crop": [
+            57.97801971435547,
+            50.192710876464844
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.7530019438039594
+        },
+        {
+          "source_crop": [
+            64.03599548339844,
+            48.59288787841797
+          ],
+          "target_crop": [
+            57.633331298828125,
+            44.60540771484375
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.8157271805157223
+        },
+        {
+          "source_crop": [
+            127.87901306152344,
+            100.50502014160156
+          ],
+          "target_crop": [
+            127.12184143066406,
+            86.6351089477539
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.72658068005191
+        },
+        {
+          "source_crop": [
+            67.69749450683594,
+            136.4718475341797
+          ],
+          "target_crop": [
+            71.66079711914062,
+            128.55177307128906
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.9485536386986668
+        },
+        {
+          "source_crop": [
+            70.80754852294922,
+            65.62529754638672
+          ],
+          "target_crop": [
+            66.358642578125,
+            59.51492691040039
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.6585985829292793
+        },
+        {
+          "source_crop": [
+            40.2042236328125,
+            79.96822357177734
+          ],
+          "target_crop": [
+            37.763023376464844,
+            76.20408630371094
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.132411733944132
+        },
+        {
+          "source_crop": [
+            40.2042236328125,
+            79.96822357177734
+          ],
+          "target_crop": [
+            37.763023376464844,
+            76.20408630371094
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.132411733944132
+        },
+        {
+          "source_crop": [
+            109.78509521484375,
+            98.45282745361328
+          ],
+          "target_crop": [
+            108.3958511352539,
+            84.34194946289062
+          ],
+          "inlier": false,
+          "reprojection_error_px": 2.8077834297527824
+        },
+        {
+          "source_crop": [
+            107.38040161132812,
+            91.27603912353516
+          ],
+          "target_crop": [
+            105.83053588867188,
+            78.25336456298828
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.9095276863858373
+        },
+        {
+          "source_crop": [
+            44.141761779785156,
+            78.30047607421875
+          ],
+          "target_crop": [
+            41.50383758544922,
+            74.91600036621094
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.1640425662530342
+        },
+        {
+          "source_crop": [
+            106.27010345458984,
+            85.66154479980469
+          ],
+          "target_crop": [
+            104.29656982421875,
+            74.34600830078125
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.6065660663222785
+        },
+        {
+          "source_crop": [
+            33.21870040893555,
+            78.7450942993164
+          ],
+          "target_crop": [
+            30.51835060119629,
+            77.6568374633789
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.42841170958342656
+        },
+        {
+          "source_crop": [
+            68.10901641845703,
+            55.56235122680664
+          ],
+          "target_crop": [
+            62.62697982788086,
+            49.95718002319336
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.2428889809795856
+        },
+        {
+          "source_crop": [
+            68.10901641845703,
+            55.56235122680664
+          ],
+          "target_crop": [
+            62.62697982788086,
+            49.95718002319336
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.2428889809795856
+        },
+        {
+          "source_crop": [
+            94.36539459228516,
+            99.6705093383789
+          ],
+          "target_crop": [
+            93.03213500976562,
+            88.85929107666016
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.8414662041861565
+        },
+        {
+          "source_crop": [
+            75.51224517822266,
+            70.27753448486328
+          ],
+          "target_crop": [
+            71.17218017578125,
+            63.870975494384766
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.1238480406513065
+        },
+        {
+          "source_crop": [
+            75.33914947509766,
+            63.18702697753906
+          ],
+          "target_crop": [
+            70.46598052978516,
+            56.09925842285156
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.10671546005454788
+        },
+        {
+          "source_crop": [
+            59.963130950927734,
+            137.2376708984375
+          ],
+          "target_crop": [
+            119.64122009277344,
+            123.025146484375
+          ],
+          "inlier": false,
+          "reprojection_error_px": 56.06729129837559
+        },
+        {
+          "source_crop": [
+            138.72010803222656,
+            96.10303497314453
+          ],
+          "target_crop": [
+            138.67832946777344,
+            84.515869140625
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.6393231527872562
+        }
+      ],
+      "manual_marker_reprojection_error_px": 1.7970142523425416,
+      "supports_rotation_hypothesis": true,
+      "nearest_source_match_to_manual_marker_px": 0.33450995760331587
+    },
+    {
+      "source_frame": 308,
+      "target_frame": 309,
+      "method": "sift",
+      "preprocess": "highpass",
+      "source_keypoints": 484,
+      "target_keypoints": 411,
+      "mutual_matches": 9,
+      "status": "diagnostic_fit",
+      "rotation_vector_deg": [
+        13.335882519200968,
+        -9.966004590180633,
+        -5.716845999598633
+      ],
+      "inliers": 4,
+      "median_inlier_error_px": 0.8991030292036457,
+      "source_inlier_span_px": [
+        66.22280502319336,
+        70.54264831542969
+      ],
+      "matches": [
+        {
+          "source_crop": [
+            44.697731018066406,
+            122.55660247802734
+          ],
+          "target_crop": [
+            55.81144714355469,
+            47.30223846435547
+          ],
+          "inlier": false,
+          "reprojection_error_px": 70.15762620269945
+        },
+        {
+          "source_crop": [
+            48.41777420043945,
+            129.32388305664062
+          ],
+          "target_crop": [
+            47.01646041870117,
+            124.60627746582031
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.6070567249467222
+        },
+        {
+          "source_crop": [
+            55.134246826171875,
+            125.5901107788086
+          ],
+          "target_crop": [
+            53.3896484375,
+            121.37275695800781
+          ],
+          "inlier": false,
+          "reprojection_error_px": 4.680133802689352
+        },
+        {
+          "source_crop": [
+            56.86838912963867,
+            140.00729370117188
+          ],
+          "target_crop": [
+            57.20089340209961,
+            138.5139923095703
+          ],
+          "inlier": false,
+          "reprojection_error_px": 4.375746537672452
+        },
+        {
+          "source_crop": [
+            61.364051818847656,
+            74.78744506835938
+          ],
+          "target_crop": [
+            91.39620971679688,
+            32.45038986206055
+          ],
+          "inlier": false,
+          "reprojection_error_px": 50.50961877888181
+        },
+        {
+          "source_crop": [
+            93.05413818359375,
+            26.61962890625
+          ],
+          "target_crop": [
+            138.7693634033203,
+            95.67887115478516
+          ],
+          "inlier": false,
+          "reprojection_error_px": 93.2727163109151
+        },
+        {
+          "source_crop": [
+            100.35978698730469,
+            64.74462890625
+          ],
+          "target_crop": [
+            89.65547943115234,
+            49.260986328125
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.5175238006819979
+        },
+        {
+          "source_crop": [
+            103.48139190673828,
+            58.78123474121094
+          ],
+          "target_crop": [
+            93.4939193725586,
+            43.804466247558594
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.0022016965749105
+        },
+        {
+          "source_crop": [
+            114.64057922363281,
+            59.13687515258789
+          ],
+          "target_crop": [
+            103.65447998046875,
+            44.60975646972656
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.7960043618323809
+        }
+      ],
+      "manual_marker_reprojection_error_px": 1.1269476805986518,
+      "supports_rotation_hypothesis": false,
+      "nearest_source_match_to_manual_marker_px": 26.423576271958606
+    },
+    {
+      "source_frame": 309,
+      "target_frame": 310,
+      "method": "sift",
+      "preprocess": "highpass",
+      "source_keypoints": 411,
+      "target_keypoints": 365,
+      "mutual_matches": 5,
+      "status": "diagnostic_fit",
+      "rotation_vector_deg": [
+        4.063089809976437,
+        -7.712597675866545,
+        -2.3465324847398095
+      ],
+      "inliers": 1,
+      "median_inlier_error_px": 1.6857981624847034,
+      "source_inlier_span_px": [
+        0.0,
+        0.0
+      ],
+      "matches": [
+        {
+          "source_crop": [
+            54.42594909667969,
+            110.96981811523438
+          ],
+          "target_crop": [
+            51.12733840942383,
+            94.38993835449219
+          ],
+          "inlier": false,
+          "reprojection_error_px": 12.695289576326054
+        },
+        {
+          "source_crop": [
+            57.20089340209961,
+            138.5139923095703
+          ],
+          "target_crop": [
+            57.19967269897461,
+            135.07981872558594
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.6857981624847034
+        },
+        {
+          "source_crop": [
+            121.39482879638672,
+            119.24298095703125
+          ],
+          "target_crop": [
+            86.80326843261719,
+            131.26963806152344
+          ],
+          "inlier": false,
+          "reprojection_error_px": 35.02854996004044
+        },
+        {
+          "source_crop": [
+            123.98194122314453,
+            86.00907135009766
+          ],
+          "target_crop": [
+            113.33451843261719,
+            76.65274810791016
+          ],
+          "inlier": false,
+          "reprojection_error_px": 3.5069111820366436
+        },
+        {
+          "source_crop": [
+            138.7693634033203,
+            95.67887115478516
+          ],
+          "target_crop": [
+            136.75897216796875,
+            91.96331787109375
+          ],
+          "inlier": false,
+          "reprojection_error_px": 4.405838863003519
+        }
+      ],
+      "manual_marker_reprojection_error_px": 15.645311888051161,
+      "supports_rotation_hypothesis": false,
+      "nearest_source_match_to_manual_marker_px": 31.247703424811775
+    },
+    {
+      "source_frame": 310,
+      "target_frame": 311,
+      "method": "sift",
+      "preprocess": "highpass",
+      "source_keypoints": 365,
+      "target_keypoints": 363,
+      "mutual_matches": 2
+    },
+    {
+      "source_frame": 305,
+      "target_frame": 306,
+      "method": "orb",
+      "preprocess": "raw",
+      "source_keypoints": 877,
+      "target_keypoints": 882,
+      "mutual_matches": 32,
+      "status": "diagnostic_fit",
+      "rotation_vector_deg": [
+        5.415984209070571,
+        -1.2682251161149332,
+        -7.623196423854507
+      ],
+      "inliers": 22,
+      "median_inlier_error_px": 0.9467487935644292,
+      "source_inlier_span_px": [
+        77.2788200378418,
+        47.750144958496094
+      ],
+      "matches": [
+        {
+          "source_crop": [
+            64.0,
+            44.0
+          ],
+          "target_crop": [
+            38.02186965942383,
+            71.48111724853516
+          ],
+          "inlier": false,
+          "reprojection_error_px": 36.86581580149977
+        },
+        {
+          "source_crop": [
+            53.0,
+            56.0
+          ],
+          "target_crop": [
+            47.0,
+            53.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.9135203722893512
+        },
+        {
+          "source_crop": [
+            75.0,
+            61.0
+          ],
+          "target_crop": [
+            71.0,
+            54.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.8752089487323316
+        },
+        {
+          "source_crop": [
+            67.0,
+            64.0
+          ],
+          "target_crop": [
+            62.0,
+            58.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.639591355728591
+        },
+        {
+          "source_crop": [
+            128.0,
+            86.0
+          ],
+          "target_crop": [
+            126.0,
+            74.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.8068439269044074
+        },
+        {
+          "source_crop": [
+            64.0,
+            134.0
+          ],
+          "target_crop": [
+            67.8499984741211,
+            124.19999694824219
+          ],
+          "inlier": false,
+          "reprojection_error_px": 4.632127842214861
+        },
+        {
+          "source_crop": [
+            79.3499984741211,
+            50.599998474121094
+          ],
+          "target_crop": [
+            73.5999984741211,
+            44.849998474121094
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.9799772148395073
+        },
+        {
+          "source_crop": [
+            97.75,
+            92.0
+          ],
+          "target_crop": [
+            96.5999984741211,
+            80.5
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.0522166335104624
+        },
+        {
+          "source_crop": [
+            87.4000015258789,
+            92.0
+          ],
+          "target_crop": [
+            86.25,
+            81.6500015258789
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.052589566713012
+        },
+        {
+          "source_crop": [
+            87.4000015258789,
+            88.54999542236328
+          ],
+          "target_crop": [
+            85.0999984741211,
+            78.19999694824219
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.3649460126231392
+        },
+        {
+          "source_crop": [
+            82.79999542236328,
+            49.45000076293945
+          ],
+          "target_crop": [
+            77.04999542236328,
+            42.54999923706055
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.5020350305919875
+        },
+        {
+          "source_crop": [
+            66.125,
+            43.64249801635742
+          ],
+          "target_crop": [
+            118.0,
+            61.0
+          ],
+          "inlier": false,
+          "reprojection_error_px": 62.402968151194074
+        },
+        {
+          "source_crop": [
+            83.31749725341797,
+            48.932498931884766
+          ],
+          "target_crop": [
+            76.70500183105469,
+            42.31999969482422
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.5316630585005501
+        },
+        {
+          "source_crop": [
+            71.41500091552734,
+            50.255001068115234
+          ],
+          "target_crop": [
+            64.80249786376953,
+            46.287498474121094
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.6960742182091344
+        },
+        {
+          "source_crop": [
+            58.189998626708984,
+            52.900001525878906
+          ],
+          "target_crop": [
+            52.900001525878906,
+            50.255001068115234
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.1140997365739926
+        },
+        {
+          "source_crop": [
+            60.834999084472656,
+            54.22249984741211
+          ],
+          "target_crop": [
+            55.54499816894531,
+            50.255001068115234
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.33136425228607674
+        },
+        {
+          "source_crop": [
+            111.08999633789062,
+            78.02749633789062
+          ],
+          "target_crop": [
+            108.44499969482422,
+            66.125
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.5158452648083129
+        },
+        {
+          "source_crop": [
+            83.31749725341797,
+            85.9625015258789
+          ],
+          "target_crop": [
+            81.6500015258789,
+            77.04999542236328
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.2289242503446738
+        },
+        {
+          "source_crop": [
+            89.93000030517578,
+            88.60749816894531
+          ],
+          "target_crop": [
+            88.54999542236328,
+            78.19999694824219
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.8597964317558577
+        },
+        {
+          "source_crop": [
+            34.3849983215332,
+            111.08999633789062
+          ],
+          "target_crop": [
+            34.3849983215332,
+            108.44499969482422
+          ],
+          "inlier": false,
+          "reprojection_error_px": 3.0522011678052587
+        },
+        {
+          "source_crop": [
+            93.89749908447266,
+            129.60499572753906
+          ],
+          "target_crop": [
+            101.89861297607422,
+            112.54473876953125
+          ],
+          "inlier": false,
+          "reprojection_error_px": 8.483521392654755
+        },
+        {
+          "source_crop": [
+            115.58648681640625,
+            69.96024322509766
+          ],
+          "target_crop": [
+            112.4124984741211,
+            59.51250076293945
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.1731626127018133
+        },
+        {
+          "source_crop": [
+            80.60636901855469,
+            80.60636901855469
+          ],
+          "target_crop": [
+            78.0,
+            75.0
+          ],
+          "inlier": false,
+          "reprojection_error_px": 2.663669302269156
+        },
+        {
+          "source_crop": [
+            50.7211799621582,
+            82.20329284667969
+          ],
+          "target_crop": [
+            47.223167419433594,
+            78.70527648925781
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.681573705800328
+        },
+        {
+          "source_crop": [
+            78.44292449951172,
+            38.21578598022461
+          ],
+          "target_crop": [
+            71.48111724853516,
+            34.98012161254883
+          ],
+          "inlier": false,
+          "reprojection_error_px": 2.181633475072138
+        },
+        {
+          "source_crop": [
+            80.45428466796875,
+            44.249855041503906
+          ],
+          "target_crop": [
+            72.40885162353516,
+            38.21578598022461
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.2787367378181305
+        },
+        {
+          "source_crop": [
+            74.42021179199219,
+            48.27256774902344
+          ],
+          "target_crop": [
+            68.38613891601562,
+            42.23849868774414
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.3354955814605248
+        },
+        {
+          "source_crop": [
+            62.35206985473633,
+            52.295284271240234
+          ],
+          "target_crop": [
+            58.32935333251953,
+            48.27256774902344
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.6993567158974894
+        },
+        {
+          "source_crop": [
+            80.45428466796875,
+            58.32935333251953
+          ],
+          "target_crop": [
+            76.43157196044922,
+            50.28392791748047
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.3814739243851082
+        },
+        {
+          "source_crop": [
+            56.317996978759766,
+            68.38613891601562
+          ],
+          "target_crop": [
+            62.9642219543457,
+            52.470184326171875
+          ],
+          "inlier": false,
+          "reprojection_error_px": 15.516707353839726
+        },
+        {
+          "source_crop": [
+            50.28392791748047,
+            82.46563720703125
+          ],
+          "target_crop": [
+            48.27256774902344,
+            62.35206985473633
+          ],
+          "inlier": false,
+          "reprojection_error_px": 16.284855384782297
+        },
+        {
+          "source_crop": [
+            124.70413970947266,
+            82.46563720703125
+          ],
+          "target_crop": [
+            126.71549224853516,
+            90.51107025146484
+          ],
+          "inlier": false,
+          "reprojection_error_px": 20.91285588212144
+        }
+      ],
+      "manual_marker_reprojection_error_px": 2.4576675413819045,
+      "supports_rotation_hypothesis": true,
+      "nearest_source_match_to_manual_marker_px": 4.113853483889559
+    },
+    {
+      "source_frame": 308,
+      "target_frame": 309,
+      "method": "orb",
+      "preprocess": "raw",
+      "source_keypoints": 827,
+      "target_keypoints": 729,
+      "mutual_matches": 17,
+      "status": "diagnostic_fit",
+      "rotation_vector_deg": [
+        4.43983606440391,
+        -3.0139248572587727,
+        0.3946384789948045
+      ],
+      "inliers": 7,
+      "median_inlier_error_px": 0.8041448249068299,
+      "source_inlier_span_px": [
+        79.32500076293945,
+        94.60693359375
+      ],
+      "matches": [
+        {
+          "source_crop": [
+            64.0,
+            79.0
+          ],
+          "target_crop": [
+            101.89861297607422,
+            98.85686492919922
+          ],
+          "inlier": false,
+          "reprojection_error_px": 47.73450967813333
+        },
+        {
+          "source_crop": [
+            119.0,
+            110.0
+          ],
+          "target_crop": [
+            117.29999542236328,
+            105.79999542236328
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.9436625911138282
+        },
+        {
+          "source_crop": [
+            92.0,
+            130.0
+          ],
+          "target_crop": [
+            141.0,
+            68.0
+          ],
+          "inlier": false,
+          "reprojection_error_px": 76.37350226277339
+        },
+        {
+          "source_crop": [
+            61.0,
+            118.0
+          ],
+          "target_crop": [
+            58.0,
+            112.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.9589400289165578
+        },
+        {
+          "source_crop": [
+            43.70000076293945,
+            119.5999984741211
+          ],
+          "target_crop": [
+            42.31999969482422,
+            113.73500061035156
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.0109111022650423
+        },
+        {
+          "source_crop": [
+            33.349998474121094,
+            108.0999984741211
+          ],
+          "target_crop": [
+            32.20000076293945,
+            101.19999694824219
+          ],
+          "inlier": false,
+          "reprojection_error_px": 2.266913168990171
+        },
+        {
+          "source_crop": [
+            48.29999923706055,
+            128.8000030517578
+          ],
+          "target_crop": [
+            47.61000061035156,
+            124.31500244140625
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.7031248922160771
+        },
+        {
+          "source_crop": [
+            94.29999542236328,
+            127.64999389648438
+          ],
+          "target_crop": [
+            113.0,
+            52.0
+          ],
+          "inlier": false,
+          "reprojection_error_px": 73.37984985915426
+        },
+        {
+          "source_crop": [
+            39.67499923706055,
+            116.37999725341797
+          ],
+          "target_crop": [
+            38.352500915527344,
+            112.4124984741211
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.8041448249068299
+        },
+        {
+          "source_crop": [
+            44.105369567871094,
+            118.62824249267578
+          ],
+          "target_crop": [
+            42.584495544433594,
+            114.06561279296875
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.3800946907904649
+        },
+        {
+          "source_crop": [
+            40.227142333984375,
+            99.69335174560547
+          ],
+          "target_crop": [
+            37.029998779296875,
+            103.15499877929688
+          ],
+          "inlier": false,
+          "reprojection_error_px": 8.901561794456724
+        },
+        {
+          "source_crop": [
+            40.227142333984375,
+            115.43440246582031
+          ],
+          "target_crop": [
+            42.23849868774414,
+            114.64735412597656
+          ],
+          "inlier": false,
+          "reprojection_error_px": 5.350320868591777
+        },
+        {
+          "source_crop": [
+            62.9642219543457,
+            115.43440246582031
+          ],
+          "target_crop": [
+            65.39762115478516,
+            112.54473876953125
+          ],
+          "inlier": false,
+          "reprojection_error_px": 5.450185027372637
+        },
+        {
+          "source_crop": [
+            66.46223449707031,
+            117.18341064453125
+          ],
+          "target_crop": [
+            66.46223449707031,
+            108.43838500976562
+          ],
+          "inlier": false,
+          "reprojection_error_px": 3.714218751534123
+        },
+        {
+          "source_crop": [
+            70.39749908447266,
+            34.19306945800781
+          ],
+          "target_crop": [
+            69.0,
+            29.899999618530273
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.7260978381136646
+        },
+        {
+          "source_crop": [
+            86.48835754394531,
+            36.20442581176758
+          ],
+          "target_crop": [
+            78.02749633789062,
+            30.417499542236328
+          ],
+          "inlier": false,
+          "reprojection_error_px": 7.662126215734718
+        },
+        {
+          "source_crop": [
+            104.59056854248047,
+            112.63599395751953
+          ],
+          "target_crop": [
+            107.0,
+            117.0
+          ],
+          "inlier": false,
+          "reprojection_error_px": 11.044493831449001
+        }
+      ],
+      "manual_marker_reprojection_error_px": 9.443052022829908,
+      "supports_rotation_hypothesis": false,
+      "nearest_source_match_to_manual_marker_px": 21.45467088432436
+    },
+    {
+      "source_frame": 309,
+      "target_frame": 310,
+      "method": "orb",
+      "preprocess": "raw",
+      "source_keypoints": 729,
+      "target_keypoints": 469,
+      "mutual_matches": 10,
+      "status": "diagnostic_fit",
+      "rotation_vector_deg": [
+        5.463783422576104,
+        1.0555128714276465,
+        -2.120142270291736
+      ],
+      "inliers": 3,
+      "median_inlier_error_px": 1.6105675687826853,
+      "source_inlier_span_px": [
+        16.063621520996094,
+        18.62824249267578
+      ],
+      "matches": [
+        {
+          "source_crop": [
+            25.0,
+            100.0
+          ],
+          "target_crop": [
+            27.0,
+            97.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.7867733695276837
+        },
+        {
+          "source_crop": [
+            101.0,
+            112.0
+          ],
+          "target_crop": [
+            89.73161315917969,
+            59.31412124633789
+          ],
+          "inlier": false,
+          "reprojection_error_px": 46.33822841297946
+        },
+        {
+          "source_crop": [
+            37.029998779296875,
+            103.15499877929688
+          ],
+          "target_crop": [
+            39.542747497558594,
+            98.85686492919922
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.6105675687826853
+        },
+        {
+          "source_crop": [
+            112.4124984741211,
+            107.12249755859375
+          ],
+          "target_crop": [
+            64.3634262084961,
+            50.28392791748047
+          ],
+          "inlier": false,
+          "reprojection_error_px": 69.17796653539929
+        },
+        {
+          "source_crop": [
+            98.85686492919922,
+            34.98012161254883
+          ],
+          "target_crop": [
+            112.69999694824219,
+            100.04999542236328
+          ],
+          "inlier": false,
+          "reprojection_error_px": 72.68123166118109
+        },
+        {
+          "source_crop": [
+            112.54473876953125,
+            51.70974349975586
+          ],
+          "target_crop": [
+            69.0,
+            103.0
+          ],
+          "inlier": false,
+          "reprojection_error_px": 72.56551264642214
+        },
+        {
+          "source_crop": [
+            41.063621520996094,
+            118.62824249267578
+          ],
+          "target_crop": [
+            43.725154876708984,
+            115.43440246582031
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.421348820743087
+        },
+        {
+          "source_crop": [
+            87.45030975341797,
+            43.725154876708984
+          ],
+          "target_crop": [
+            102.57920837402344,
+            72.40885162353516
+          ],
+          "inlier": false,
+          "reprojection_error_px": 38.7274820342801
+        },
+        {
+          "source_crop": [
+            55.968196868896484,
+            85.70130157470703
+          ],
+          "target_crop": [
+            66.37478637695312,
+            66.37478637695312
+          ],
+          "inlier": false,
+          "reprojection_error_px": 16.42676615156095
+        },
+        {
+          "source_crop": [
+            33.231117248535156,
+            104.94036865234375
+          ],
+          "target_crop": [
+            31.0,
+            101.0
+          ],
+          "inlier": false,
+          "reprojection_error_px": 3.1717863612543176
+        }
+      ],
+      "manual_marker_reprojection_error_px": 15.650910771319564,
+      "supports_rotation_hypothesis": false,
+      "nearest_source_match_to_manual_marker_px": 12.40698603250982
+    },
+    {
+      "source_frame": 310,
+      "target_frame": 311,
+      "method": "orb",
+      "preprocess": "raw",
+      "source_keypoints": 469,
+      "target_keypoints": 523,
+      "mutual_matches": 12,
+      "status": "diagnostic_fit",
+      "rotation_vector_deg": [
+        4.523520088143783,
+        -1.7841469680514528,
+        -2.8053163718833556
+      ],
+      "inliers": 3,
+      "median_inlier_error_px": 0.17295218185386546,
+      "source_inlier_span_px": [
+        26.697498321533203,
+        37.707069396972656
+      ],
+      "matches": [
+        {
+          "source_crop": [
+            69.0,
+            57.0
+          ],
+          "target_crop": [
+            60.834999084472656,
+            48.932498931884766
+          ],
+          "inlier": false,
+          "reprojection_error_px": 5.747561256542247
+        },
+        {
+          "source_crop": [
+            47.14999771118164,
+            94.29999542236328
+          ],
+          "target_crop": [
+            40.0,
+            86.0
+          ],
+          "inlier": false,
+          "reprojection_error_px": 7.4202324948315805
+        },
+        {
+          "source_crop": [
+            43.70000076293945,
+            116.14999389648438
+          ],
+          "target_crop": [
+            42.31999969482422,
+            115.05750274658203
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.14394675050348452
+        },
+        {
+          "source_crop": [
+            74.05999755859375,
+            112.4124984741211
+          ],
+          "target_crop": [
+            51.0,
+            64.0
+          ],
+          "inlier": false,
+          "reprojection_error_px": 48.96963673212087
+        },
+        {
+          "source_crop": [
+            39.542747497558594,
+            98.85686492919922
+          ],
+          "target_crop": [
+            38.47813415527344,
+            92.69732666015625
+          ],
+          "inlier": false,
+          "reprojection_error_px": 4.999021484072791
+        },
+        {
+          "source_crop": [
+            47.14712142944336,
+            112.54473876953125
+          ],
+          "target_crop": [
+            45.474159240722656,
+            108.43838500976562
+          ],
+          "inlier": false,
+          "reprojection_error_px": 2.277970668552491
+        },
+        {
+          "source_crop": [
+            77.56462097167969,
+            123.19086456298828
+          ],
+          "target_crop": [
+            131.1754608154297,
+            80.45428466796875
+          ],
+          "inlier": false,
+          "reprojection_error_px": 67.4583805474191
+        },
+        {
+          "source_crop": [
+            55.968196868896484,
+            47.223167419433594
+          ],
+          "target_crop": [
+            100.04999542236328,
+            102.3499984741211
+          ],
+          "inlier": false,
+          "reprojection_error_px": 74.90469583835707
+        },
+        {
+          "source_crop": [
+            43.725154876708984,
+            115.43440246582031
+          ],
+          "target_crop": [
+            42.23849868774414,
+            114.64735412597656
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.49554804766461164
+        },
+        {
+          "source_crop": [
+            56.317996978759766,
+            66.37478637695312
+          ],
+          "target_crop": [
+            52.295284271240234,
+            60.34071350097656
+          ],
+          "inlier": false,
+          "reprojection_error_px": 3.2953796519902583
+        },
+        {
+          "source_crop": [
+            70.39749908447266,
+            78.44292449951172
+          ],
+          "target_crop": [
+            66.37478637695312,
+            74.42021179199219
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.17295218185386546
+        },
+        {
+          "source_crop": [
+            40.227142333984375,
+            92.52242279052734
+          ],
+          "target_crop": [
+            33.45924758911133,
+            86.68986511230469
+          ],
+          "inlier": false,
+          "reprojection_error_px": 5.936785128899647
+        }
+      ],
+      "manual_marker_reprojection_error_px": 9.927266192751302,
+      "supports_rotation_hypothesis": false,
+      "nearest_source_match_to_manual_marker_px": 6.5726132927438385
+    },
+    {
+      "source_frame": 305,
+      "target_frame": 306,
+      "method": "orb",
+      "preprocess": "clahe",
+      "source_keypoints": 1000,
+      "target_keypoints": 1000,
+      "mutual_matches": 49,
+      "status": "diagnostic_fit",
+      "rotation_vector_deg": [
+        5.158763196463025,
+        -1.4529540483879428,
+        -7.413357841109961
+      ],
+      "inliers": 37,
+      "median_inlier_error_px": 1.0868238992661787,
+      "source_inlier_span_px": [
+        65.96112442016602,
+        41.38433074951172
+      ],
+      "matches": [
+        {
+          "source_crop": [
+            71.0,
+            66.0
+          ],
+          "target_crop": [
+            67.0,
+            60.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.3792875396394244
+        },
+        {
+          "source_crop": [
+            110.0,
+            111.0
+          ],
+          "target_crop": [
+            118.93241882324219,
+            96.1953353881836
+          ],
+          "inlier": false,
+          "reprojection_error_px": 8.357516728577712
+        },
+        {
+          "source_crop": [
+            105.0,
+            86.0
+          ],
+          "target_crop": [
+            102.0,
+            75.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.0868238992661787
+        },
+        {
+          "source_crop": [
+            67.0,
+            69.0
+          ],
+          "target_crop": [
+            63.0,
+            63.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.20895768781679303
+        },
+        {
+          "source_crop": [
+            56.0,
+            66.0
+          ],
+          "target_crop": [
+            52.0,
+            61.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.9458281930848519
+        },
+        {
+          "source_crop": [
+            64.0,
+            65.0
+          ],
+          "target_crop": [
+            60.0,
+            60.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.374051021144582
+        },
+        {
+          "source_crop": [
+            45.0,
+            142.0
+          ],
+          "target_crop": [
+            42.23849868774414,
+            126.71549224853516
+          ],
+          "inlier": false,
+          "reprojection_error_px": 17.244290024876243
+        },
+        {
+          "source_crop": [
+            116.14999389648438,
+            88.54999542236328
+          ],
+          "target_crop": [
+            115.0,
+            75.9000015258789
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.0093263674045465
+        },
+        {
+          "source_crop": [
+            115.0,
+            85.0999984741211
+          ],
+          "target_crop": [
+            111.54999542236328,
+            72.44999694824219
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.8265983388022065
+        },
+        {
+          "source_crop": [
+            64.4000015258789,
+            65.54999542236328
+          ],
+          "target_crop": [
+            59.79999923706055,
+            59.79999923706055
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.5662271427027996
+        },
+        {
+          "source_crop": [
+            60.94999694824219,
+            55.19999694824219
+          ],
+          "target_crop": [
+            55.0,
+            51.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.6058876856700711
+        },
+        {
+          "source_crop": [
+            75.9000015258789,
+            58.64999771118164
+          ],
+          "target_crop": [
+            71.0,
+            54.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.9283962197672317
+        },
+        {
+          "source_crop": [
+            93.1500015258789,
+            73.5999984741211
+          ],
+          "target_crop": [
+            88.54999542236328,
+            63.25
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.554767535547864
+        },
+        {
+          "source_crop": [
+            98.9000015258789,
+            74.75
+          ],
+          "target_crop": [
+            95.22000122070312,
+            64.80249786376953
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.33501743089413977
+        },
+        {
+          "source_crop": [
+            52.900001525878906,
+            55.54499816894531
+          ],
+          "target_crop": [
+            46.287498474121094,
+            52.900001525878906
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.4978569522734355
+        },
+        {
+          "source_crop": [
+            55.54499816894531,
+            68.7699966430664
+          ],
+          "target_crop": [
+            52.900001525878906,
+            63.47999954223633
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.5925554941843032
+        },
+        {
+          "source_crop": [
+            104.47750091552734,
+            76.70500183105469
+          ],
+          "target_crop": [
+            100.04999542236328,
+            66.69999694824219
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.418002168979728
+        },
+        {
+          "source_crop": [
+            100.51000213623047,
+            81.99500274658203
+          ],
+          "target_crop": [
+            97.75,
+            71.29999542236328
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.5386813311051664
+        },
+        {
+          "source_crop": [
+            113.73500061035156,
+            84.63999938964844
+          ],
+          "target_crop": [
+            112.4124984741211,
+            72.73750305175781
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.8458564993180515
+        },
+        {
+          "source_crop": [
+            87.28499603271484,
+            88.60749816894531
+          ],
+          "target_crop": [
+            85.0999984741211,
+            78.19999694824219
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.5546362326764804
+        },
+        {
+          "source_crop": [
+            92.77336883544922,
+            79.08549499511719
+          ],
+          "target_crop": [
+            89.19931030273438,
+            69.96024322509766
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.7919313999651952
+        },
+        {
+          "source_crop": [
+            83.64811706542969,
+            57.793243408203125
+          ],
+          "target_crop": [
+            79.08549499511719,
+            51.70974349975586
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.5836087827457341
+        },
+        {
+          "source_crop": [
+            86.68986511230469,
+            60.83499526977539
+          ],
+          "target_crop": [
+            81.99500274658203,
+            54.22249984741211
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.4192618401816985
+        },
+        {
+          "source_crop": [
+            82.12724304199219,
+            62.35586929321289
+          ],
+          "target_crop": [
+            68.43936920166016,
+            86.68986511230469
+          ],
+          "inlier": false,
+          "reprojection_error_px": 33.094650361639324
+        },
+        {
+          "source_crop": [
+            86.68986511230469,
+            66.91849517822266
+          ],
+          "target_crop": [
+            82.12724304199219,
+            59.31412124633789
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.7429126126429827
+        },
+        {
+          "source_crop": [
+            73.00199127197266,
+            69.96024322509766
+          ],
+          "target_crop": [
+            68.7699966430664,
+            63.47999954223633
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.46837526151690106
+        },
+        {
+          "source_crop": [
+            36.50099563598633,
+            76.04373931884766
+          ],
+          "target_crop": [
+            71.29999542236328,
+            37.95000076293945
+          ],
+          "inlier": false,
+          "reprojection_error_px": 52.510988888806246
+        },
+        {
+          "source_crop": [
+            63.87674331665039,
+            80.60636901855469
+          ],
+          "target_crop": [
+            62.35586929321289,
+            74.52286529541016
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.9561710180980175
+        },
+        {
+          "source_crop": [
+            50.18886947631836,
+            82.12724304199219
+          ],
+          "target_crop": [
+            47.14712142944336,
+            77.56462097167969
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.375394293149267
+        },
+        {
+          "source_crop": [
+            77.56462097167969,
+            83.64811706542969
+          ],
+          "target_crop": [
+            74.52286529541016,
+            76.04373931884766
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.8541011842067028
+        },
+        {
+          "source_crop": [
+            107.98211669921875,
+            126.23261260986328
+          ],
+          "target_crop": [
+            110.62464141845703,
+            118.6700668334961
+          ],
+          "inlier": false,
+          "reprojection_error_px": 3.177474368314631
+        },
+        {
+          "source_crop": [
+            92.77336883544922,
+            139.9204864501953
+          ],
+          "target_crop": [
+            104.94036865234375,
+            131.1754608154297
+          ],
+          "inlier": false,
+          "reprojection_error_px": 6.633016671910258
+        },
+        {
+          "source_crop": [
+            73.45825958251953,
+            47.223167419433594
+          ],
+          "target_crop": [
+            68.43936920166016,
+            42.584495544433594
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.5843274985077276
+        },
+        {
+          "source_crop": [
+            82.20329284667969,
+            47.223167419433594
+          ],
+          "target_crop": [
+            75.20726776123047,
+            41.97614669799805
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.4550852567989903
+        },
+        {
+          "source_crop": [
+            90.94831848144531,
+            55.968196868896484
+          ],
+          "target_crop": [
+            86.48835754394531,
+            46.26121139526367
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.8423013601643614
+        },
+        {
+          "source_crop": [
+            82.20329284667969,
+            57.717201232910156
+          ],
+          "target_crop": [
+            76.95626831054688,
+            50.7211799621582
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.31303764515801574
+        },
+        {
+          "source_crop": [
+            97.94434356689453,
+            75.20726776123047
+          ],
+          "target_crop": [
+            96.1953353881836,
+            64.71322631835938
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.691275862841695
+        },
+        {
+          "source_crop": [
+            108.43838500976562,
+            80.45428466796875
+          ],
+          "target_crop": [
+            106.68937683105469,
+            69.96024322509766
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.9711267768761409
+        },
+        {
+          "source_crop": [
+            36.729129791259766,
+            124.17943572998047
+          ],
+          "target_crop": [
+            33.231117248535156,
+            115.43440246582031
+          ],
+          "inlier": false,
+          "reprojection_error_px": 11.012898274986451
+        },
+        {
+          "source_crop": [
+            97.94434356689453,
+            139.9204864501953
+          ],
+          "target_crop": [
+            33.0,
+            118.0
+          ],
+          "inlier": false,
+          "reprojection_error_px": 71.6881370769531
+        },
+        {
+          "source_crop": [
+            96.54513549804688,
+            70.39749908447266
+          ],
+          "target_crop": [
+            94.53378295898438,
+            60.34071350097656
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.9439406772286156
+        },
+        {
+          "source_crop": [
+            66.37478637695312,
+            44.249855041503906
+          ],
+          "target_crop": [
+            61.215213775634766,
+            41.97614669799805
+          ],
+          "inlier": false,
+          "reprojection_error_px": 2.3872993234034325
+        },
+        {
+          "source_crop": [
+            78.44292449951172,
+            50.28392791748047
+          ],
+          "target_crop": [
+            73.45825958251953,
+            45.474159240722656
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.9044176154415005
+        },
+        {
+          "source_crop": [
+            68.38613891601562,
+            56.317996978759766
+          ],
+          "target_crop": [
+            64.3634262084961,
+            52.295284271240234
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.9042462521584211
+        },
+        {
+          "source_crop": [
+            86.48835754394531,
+            66.37478637695312
+          ],
+          "target_crop": [
+            82.46563720703125,
+            58.32935333251953
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.3688664571890599
+        },
+        {
+          "source_crop": [
+            62.35206985473633,
+            68.38613891601562
+          ],
+          "target_crop": [
+            58.32935333251953,
+            64.3634262084961
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.126959347593022
+        },
+        {
+          "source_crop": [
+            88.49971008300781,
+            74.42021179199219
+          ],
+          "target_crop": [
+            87.45030975341797,
+            66.46223449707031
+          ],
+          "inlier": false,
+          "reprojection_error_px": 2.4732019461404833
+        },
+        {
+          "source_crop": [
+            116.65870666503906,
+            80.45428466796875
+          ],
+          "target_crop": [
+            115.43440246582031,
+            71.7092514038086
+          ],
+          "inlier": false,
+          "reprojection_error_px": 3.127101499079113
+        },
+        {
+          "source_crop": [
+            38.21578598022461,
+            112.63599395751953
+          ],
+          "target_crop": [
+            36.729129791259766,
+            115.43440246582031
+          ],
+          "inlier": false,
+          "reprojection_error_px": 5.797613148344196
+        }
+      ],
+      "manual_marker_reprojection_error_px": 2.470159238789555,
+      "supports_rotation_hypothesis": true,
+      "nearest_source_match_to_manual_marker_px": 23.152311274668815
+    },
+    {
+      "source_frame": 308,
+      "target_frame": 309,
+      "method": "orb",
+      "preprocess": "clahe",
+      "source_keypoints": 1000,
+      "target_keypoints": 1000,
+      "mutual_matches": 16,
+      "status": "diagnostic_fit",
+      "rotation_vector_deg": [
+        11.78193404948473,
+        -8.982819821765572,
+        -6.650196868896424
+      ],
+      "inliers": 8,
+      "median_inlier_error_px": 0.741080395688444,
+      "source_inlier_span_px": [
+        71.29999923706055,
+        65.72824478149414
+      ],
+      "matches": [
+        {
+          "source_crop": [
+            40.0,
+            116.0
+          ],
+          "target_crop": [
+            39.0,
+            113.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.1577689159875133
+        },
+        {
+          "source_crop": [
+            58.64999771118164,
+            73.5999984741211
+          ],
+          "target_crop": [
+            47.14999771118164,
+            71.29999542236328
+          ],
+          "inlier": false,
+          "reprojection_error_px": 6.925825598116279
+        },
+        {
+          "source_crop": [
+            82.79999542236328,
+            52.89999771118164
+          ],
+          "target_crop": [
+            73.0,
+            42.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.9690382163607489
+        },
+        {
+          "source_crop": [
+            103.5,
+            63.25
+          ],
+          "target_crop": [
+            93.0,
+            49.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.2722613797135667
+        },
+        {
+          "source_crop": [
+            32.20000076293945,
+            112.69999694824219
+          ],
+          "target_crop": [
+            32.20000076293945,
+            110.39999389648438
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.7345239788577813
+        },
+        {
+          "source_crop": [
+            40.25,
+            116.14999389648438
+          ],
+          "target_crop": [
+            39.099998474121094,
+            112.69999694824219
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.7476368125191067
+        },
+        {
+          "source_crop": [
+            34.3849983215332,
+            108.44499969482422
+          ],
+          "target_crop": [
+            31.739999771118164,
+            100.51000213623047
+          ],
+          "inlier": false,
+          "reprojection_error_px": 5.111098889359678
+        },
+        {
+          "source_crop": [
+            35.70750045776367,
+            112.4124984741211
+          ],
+          "target_crop": [
+            33.0625,
+            105.80000305175781
+          ],
+          "inlier": false,
+          "reprojection_error_px": 3.828893397921843
+        },
+        {
+          "source_crop": [
+            39.67499923706055,
+            116.37999725341797
+          ],
+          "target_crop": [
+            38.352500915527344,
+            112.4124984741211
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.09776607001528283
+        },
+        {
+          "source_crop": [
+            68.43936920166016,
+            33.45924758911133
+          ],
+          "target_crop": [
+            59.0,
+            33.0
+          ],
+          "inlier": false,
+          "reprojection_error_px": 4.470550665950929
+        },
+        {
+          "source_crop": [
+            44.105369567871094,
+            118.62824249267578
+          ],
+          "target_crop": [
+            42.584495544433594,
+            114.06561279296875
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.5065143389664271
+        },
+        {
+          "source_crop": [
+            63.87674331665039,
+            48.66799545288086
+          ],
+          "target_crop": [
+            54.04999923706055,
+            43.70000076293945
+          ],
+          "inlier": false,
+          "reprojection_error_px": 2.0444939036668415
+        },
+        {
+          "source_crop": [
+            41.063621520996094,
+            88.21073913574219
+          ],
+          "target_crop": [
+            34.3849983215332,
+            81.99500274658203
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.423097184826392
+        },
+        {
+          "source_crop": [
+            62.9642219543457,
+            40.227142333984375
+          ],
+          "target_crop": [
+            52.0,
+            39.0
+          ],
+          "inlier": false,
+          "reprojection_error_px": 4.354817987955958
+        },
+        {
+          "source_crop": [
+            36.729129791259766,
+            89.19931030273438
+          ],
+          "target_crop": [
+            30.417497634887695,
+            83.64811706542969
+          ],
+          "inlier": false,
+          "reprojection_error_px": 2.075284649122724
+        },
+        {
+          "source_crop": [
+            44.249855041503906,
+            120.68142700195312
+          ],
+          "target_crop": [
+            45.474159240722656,
+            122.43042755126953
+          ],
+          "inlier": false,
+          "reprojection_error_px": 7.0128732027848955
+        }
+      ],
+      "manual_marker_reprojection_error_px": 1.7631993424334311,
+      "supports_rotation_hypothesis": false,
+      "nearest_source_match_to_manual_marker_px": 28.935138497720576
+    },
+    {
+      "source_frame": 309,
+      "target_frame": 310,
+      "method": "orb",
+      "preprocess": "clahe",
+      "source_keypoints": 1000,
+      "target_keypoints": 949,
+      "mutual_matches": 17,
+      "status": "diagnostic_fit",
+      "rotation_vector_deg": [
+        2.323151076959475,
+        2.6507413159824074,
+        4.556187188579881
+      ],
+      "inliers": 3,
+      "median_inlier_error_px": 1.4768257921236339,
+      "source_inlier_span_px": [
+        16.178306579589844,
+        41.75664520263672
+      ],
+      "matches": [
+        {
+          "source_crop": [
+            90.0,
+            48.0
+          ],
+          "target_crop": [
+            100.04999542236328,
+            80.5
+          ],
+          "inlier": false,
+          "reprojection_error_px": 36.16048374056921
+        },
+        {
+          "source_crop": [
+            59.0,
+            33.0
+          ],
+          "target_crop": [
+            99.69335174560547,
+            85.70130157470703
+          ],
+          "inlier": false,
+          "reprojection_error_px": 67.81506719739143
+        },
+        {
+          "source_crop": [
+            70.1500015258789,
+            141.4499969482422
+          ],
+          "target_crop": [
+            67.0,
+            137.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.7270195734468389
+        },
+        {
+          "source_crop": [
+            96.5999984741211,
+            32.20000076293945
+          ],
+          "target_crop": [
+            117.18341064453125,
+            69.96024322509766
+          ],
+          "inlier": false,
+          "reprojection_error_px": 42.771191609126824
+        },
+        {
+          "source_crop": [
+            54.04999923706055,
+            95.44999694824219
+          ],
+          "target_crop": [
+            80.60636901855469,
+            83.64811706542969
+          ],
+          "inlier": false,
+          "reprojection_error_px": 26.089073997173085
+        },
+        {
+          "source_crop": [
+            109.25,
+            69.0
+          ],
+          "target_crop": [
+            51.70974349975586,
+            111.02386474609375
+          ],
+          "inlier": false,
+          "reprojection_error_px": 74.90250514935808
+        },
+        {
+          "source_crop": [
+            115.0,
+            77.04999542236328
+          ],
+          "target_crop": [
+            83.0,
+            125.0
+          ],
+          "inlier": false,
+          "reprojection_error_px": 60.27666313478239
+        },
+        {
+          "source_crop": [
+            38.02186965942383,
+            112.54473876953125
+          ],
+          "target_crop": [
+            44.105369567871094,
+            117.10736083984375
+          ],
+          "inlier": false,
+          "reprojection_error_px": 13.678853707304585
+        },
+        {
+          "source_crop": [
+            124.17943572998047,
+            96.1953353881836
+          ],
+          "target_crop": [
+            129.2743682861328,
+            50.18886947631836
+          ],
+          "inlier": false,
+          "reprojection_error_px": 45.55536719499698
+        },
+        {
+          "source_crop": [
+            40.227142333984375,
+            80.45428466796875
+          ],
+          "target_crop": [
+            93.89749908447266,
+            54.22249984741211
+          ],
+          "inlier": false,
+          "reprojection_error_px": 55.3239592268571
+        },
+        {
+          "source_crop": [
+            68.21124267578125,
+            125.9284439086914
+          ],
+          "target_crop": [
+            136.8787384033203,
+            69.96024322509766
+          ],
+          "inlier": false,
+          "reprojection_error_px": 86.80423618822873
+        },
+        {
+          "source_crop": [
+            59.466209411621094,
+            99.69335174560547
+          ],
+          "target_crop": [
+            61.215213775634766,
+            89.19931030273438
+          ],
+          "inlier": false,
+          "reprojection_error_px": 4.51826726386547
+        },
+        {
+          "source_crop": [
+            54.21919250488281,
+            99.69335174560547
+          ],
+          "target_crop": [
+            56.272369384765625,
+            92.77336883544922
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.4768257921236339
+        },
+        {
+          "source_crop": [
+            42.23849868774414,
+            114.64735412597656
+          ],
+          "target_crop": [
+            121.66999053955078,
+            109.50299072265625
+          ],
+          "inlier": false,
+          "reprojection_error_px": 80.59183734570165
+        },
+        {
+          "source_crop": [
+            70.39749908447266,
+            138.78363037109375
+          ],
+          "target_crop": [
+            68.43936920166016,
+            135.3578643798828
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.7999264237076653
+        },
+        {
+          "source_crop": [
+            110.62464141845703,
+            106.60192108154297
+          ],
+          "target_crop": [
+            112.4124984741211,
+            97.86499786376953
+          ],
+          "inlier": false,
+          "reprojection_error_px": 6.976567568005927
+        },
+        {
+          "source_crop": [
+            124.70413970947266,
+            114.64735412597656
+          ],
+          "target_crop": [
+            120.14911651611328,
+            114.06561279296875
+          ],
+          "inlier": false,
+          "reprojection_error_px": 3.19090769461703
+        }
+      ],
+      "manual_marker_reprojection_error_px": 17.926161230976575,
+      "supports_rotation_hypothesis": false,
+      "nearest_source_match_to_manual_marker_px": 18.83260185518114
+    },
+    {
+      "source_frame": 310,
+      "target_frame": 311,
+      "method": "orb",
+      "preprocess": "clahe",
+      "source_keypoints": 949,
+      "target_keypoints": 978,
+      "mutual_matches": 13,
+      "status": "diagnostic_fit",
+      "rotation_vector_deg": [
+        11.810004246387352,
+        -4.890230582712005,
+        -6.157184255101806
+      ],
+      "inliers": 3,
+      "median_inlier_error_px": 1.0902591882075425,
+      "source_inlier_span_px": [
+        33.150001525878906,
+        23.167503356933594
+      ],
+      "matches": [
+        {
+          "source_crop": [
+            78.0,
+            125.0
+          ],
+          "target_crop": [
+            76.43157196044922,
+            114.64735412597656
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.4892422376006803
+        },
+        {
+          "source_crop": [
+            44.849998474121094,
+            104.6500015258789
+          ],
+          "target_crop": [
+            40.25,
+            97.75
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.4844324765139807
+        },
+        {
+          "source_crop": [
+            49.45000076293945,
+            105.79999542236328
+          ],
+          "target_crop": [
+            44.849998474121094,
+            96.5999984741211
+          ],
+          "inlier": false,
+          "reprojection_error_px": 2.4044721682955985
+        },
+        {
+          "source_crop": [
+            73.5999984741211,
+            126.5
+          ],
+          "target_crop": [
+            122.69277954101562,
+            52.295284271240234
+          ],
+          "inlier": false,
+          "reprojection_error_px": 82.31049523292093
+        },
+        {
+          "source_crop": [
+            98.9000015258789,
+            129.9499969482422
+          ],
+          "target_crop": [
+            90.8499984741211,
+            132.25
+          ],
+          "inlier": false,
+          "reprojection_error_px": 14.816773148929792
+        },
+        {
+          "source_crop": [
+            43.64249801635742,
+            116.37999725341797
+          ],
+          "target_crop": [
+            41.063621520996094,
+            114.06561279296875
+          ],
+          "inlier": false,
+          "reprojection_error_px": 2.2001344714324795
+        },
+        {
+          "source_crop": [
+            51.57749938964844,
+            101.8324966430664
+          ],
+          "target_crop": [
+            47.14999771118164,
+            93.1500015258789
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.0902591882075425
+        },
+        {
+          "source_crop": [
+            122.99250030517578,
+            112.4124984741211
+          ],
+          "target_crop": [
+            117.29999542236328,
+            112.69999694824219
+          ],
+          "inlier": false,
+          "reprojection_error_px": 13.656911147030346
+        },
+        {
+          "source_crop": [
+            44.105369567871094,
+            117.10736083984375
+          ],
+          "target_crop": [
+            101.4423599243164,
+            118.93241882324219
+          ],
+          "inlier": false,
+          "reprojection_error_px": 59.3160548193798
+        },
+        {
+          "source_crop": [
+            66.91849517822266,
+            66.91849517822266
+          ],
+          "target_crop": [
+            66.46223449707031,
+            75.20726776123047
+          ],
+          "inlier": false,
+          "reprojection_error_px": 19.598177816155363
+        },
+        {
+          "source_crop": [
+            31.938371658325195,
+            101.89861297607422
+          ],
+          "target_crop": [
+            32.18171310424805,
+            102.57920837402344
+          ],
+          "inlier": false,
+          "reprojection_error_px": 3.6525627046468245
+        },
+        {
+          "source_crop": [
+            50.7211799621582,
+            104.94036865234375
+          ],
+          "target_crop": [
+            47.223167419433594,
+            99.69335174560547
+          ],
+          "inlier": false,
+          "reprojection_error_px": 2.100882883641533
+        },
+        {
+          "source_crop": [
+            61.215213775634766,
+            129.42645263671875
+          ],
+          "target_crop": [
+            64.71322631835938,
+            131.1754608154297
+          ],
+          "inlier": false,
+          "reprojection_error_px": 9.251858905447586
+        }
+      ],
+      "manual_marker_reprojection_error_px": 3.5603853467302997,
+      "supports_rotation_hypothesis": false,
+      "nearest_source_match_to_manual_marker_px": 7.609513151884286
+    },
+    {
+      "source_frame": 305,
+      "target_frame": 306,
+      "method": "orb",
+      "preprocess": "highpass",
+      "source_keypoints": 1000,
+      "target_keypoints": 1000,
+      "mutual_matches": 50,
+      "status": "diagnostic_fit",
+      "rotation_vector_deg": [
+        5.600899850587021,
+        -1.5806644751003485,
+        -8.112976922100893
+      ],
+      "inliers": 41,
+      "median_inlier_error_px": 0.8734491587469901,
+      "source_inlier_span_px": [
+        84.63749694824219,
+        48.29999542236328
+      ],
+      "matches": [
+        {
+          "source_crop": [
+            71.0,
+            66.0
+          ],
+          "target_crop": [
+            67.0,
+            60.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.8723396091221788
+        },
+        {
+          "source_crop": [
+            64.0,
+            134.0
+          ],
+          "target_crop": [
+            73.0,
+            124.0
+          ],
+          "inlier": false,
+          "reprojection_error_px": 5.961951805138158
+        },
+        {
+          "source_crop": [
+            67.0,
+            69.0
+          ],
+          "target_crop": [
+            63.0,
+            63.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.28590242496470264
+        },
+        {
+          "source_crop": [
+            53.0,
+            56.0
+          ],
+          "target_crop": [
+            71.48111724853516,
+            85.16899108886719
+          ],
+          "inlier": false,
+          "reprojection_error_px": 40.106315478718955
+        },
+        {
+          "source_crop": [
+            70.0,
+            72.0
+          ],
+          "target_crop": [
+            66.0,
+            66.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.6031515657405092
+        },
+        {
+          "source_crop": [
+            56.0,
+            66.0
+          ],
+          "target_crop": [
+            52.0,
+            61.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.0468403802929782
+        },
+        {
+          "source_crop": [
+            41.0,
+            74.0
+          ],
+          "target_crop": [
+            38.0,
+            71.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.398918839708436
+        },
+        {
+          "source_crop": [
+            53.0,
+            62.0
+          ],
+          "target_crop": [
+            49.0,
+            59.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.9428105240387394
+        },
+        {
+          "source_crop": [
+            115.0,
+            89.0
+          ],
+          "target_crop": [
+            113.0,
+            76.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.6697538707998488
+        },
+        {
+          "source_crop": [
+            75.0,
+            61.0
+          ],
+          "target_crop": [
+            71.0,
+            54.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.4155856818325707
+        },
+        {
+          "source_crop": [
+            114.0,
+            100.0
+          ],
+          "target_crop": [
+            113.0,
+            87.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.0209742827079364
+        },
+        {
+          "source_crop": [
+            117.0,
+            92.0
+          ],
+          "target_crop": [
+            116.0,
+            79.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.49387032699552563
+        },
+        {
+          "source_crop": [
+            95.44999694824219,
+            85.0999984741211
+          ],
+          "target_crop": [
+            94.0,
+            75.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.9468498956437148
+        },
+        {
+          "source_crop": [
+            96.5999984741211,
+            96.5999984741211
+          ],
+          "target_crop": [
+            95.0,
+            85.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.267989932893335
+        },
+        {
+          "source_crop": [
+            116.14999389648438,
+            88.54999542236328
+          ],
+          "target_crop": [
+            115.0,
+            75.9000015258789
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.6463928835270693
+        },
+        {
+          "source_crop": [
+            52.89999771118164,
+            56.349998474121094
+          ],
+          "target_crop": [
+            47.0,
+            53.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.5577639205639757
+        },
+        {
+          "source_crop": [
+            75.9000015258789,
+            60.94999694824219
+          ],
+          "target_crop": [
+            70.1500015258789,
+            54.04999923706055
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.3334203170225294
+        },
+        {
+          "source_crop": [
+            32.20000076293945,
+            123.04999542236328
+          ],
+          "target_crop": [
+            30.0,
+            118.0
+          ],
+          "inlier": false,
+          "reprojection_error_px": 8.73191137586132
+        },
+        {
+          "source_crop": [
+            72.44999694824219,
+            71.29999542236328
+          ],
+          "target_crop": [
+            67.8499984741211,
+            64.4000015258789
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.5400152335640915
+        },
+        {
+          "source_crop": [
+            124.19999694824219,
+            101.19999694824219
+          ],
+          "target_crop": [
+            125.0,
+            87.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.2515752443794879
+        },
+        {
+          "source_crop": [
+            78.19999694824219,
+            70.1500015258789
+          ],
+          "target_crop": [
+            73.5999984741211,
+            63.25
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.8734491587469901
+        },
+        {
+          "source_crop": [
+            66.69999694824219,
+            60.94999694824219
+          ],
+          "target_crop": [
+            62.099998474121094,
+            55.19999694824219
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.7246068010121912
+        },
+        {
+          "source_crop": [
+            104.47750091552734,
+            85.9625015258789
+          ],
+          "target_crop": [
+            102.3499984741211,
+            74.75
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.17835489373447125
+        },
+        {
+          "source_crop": [
+            60.834999084472656,
+            54.22249984741211
+          ],
+          "target_crop": [
+            55.19999694824219,
+            50.599998474121094
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.6469133193570729
+        },
+        {
+          "source_crop": [
+            93.89749908447266,
+            99.1875
+          ],
+          "target_crop": [
+            92.57499694824219,
+            88.60749816894531
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.9694210865309018
+        },
+        {
+          "source_crop": [
+            87.28499603271484,
+            52.900001525878906
+          ],
+          "target_crop": [
+            81.6500015258789,
+            46.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.3370223853870036
+        },
+        {
+          "source_crop": [
+            91.25250244140625,
+            55.54499816894531
+          ],
+          "target_crop": [
+            85.0999984741211,
+            47.14999771118164
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.21249704077079648
+        },
+        {
+          "source_crop": [
+            125.63749694824219,
+            83.31749725341797
+          ],
+          "target_crop": [
+            124.31500244140625,
+            70.09249877929688
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.0346032400265384
+        },
+        {
+          "source_crop": [
+            88.21073913574219,
+            51.70974349975586
+          ],
+          "target_crop": [
+            81.99500274658203,
+            46.287498474121094
+          ],
+          "inlier": false,
+          "reprojection_error_px": 2.57172191025065
+        },
+        {
+          "source_crop": [
+            63.87674331665039,
+            54.751495361328125
+          ],
+          "target_crop": [
+            57.793243408203125,
+            50.18886947631836
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.15834121387887556
+        },
+        {
+          "source_crop": [
+            63.87674331665039,
+            59.31412124633789
+          ],
+          "target_crop": [
+            59.51250076293945,
+            55.54499816894531
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.6473449210462272
+        },
+        {
+          "source_crop": [
+            97.33599090576172,
+            95.81511688232422
+          ],
+          "target_crop": [
+            95.81511688232422,
+            85.16899108886719
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.6647891185761113
+        },
+        {
+          "source_crop": [
+            101.89861297607422,
+            94.29424285888672
+          ],
+          "target_crop": [
+            100.51000213623047,
+            81.99500274658203
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.1249897976705632
+        },
+        {
+          "source_crop": [
+            129.2743682861328,
+            92.77336883544922
+          ],
+          "target_crop": [
+            117.29999542236328,
+            89.69999694824219
+          ],
+          "inlier": false,
+          "reprojection_error_px": 15.082522790882535
+        },
+        {
+          "source_crop": [
+            97.33599090576172,
+            91.25249481201172
+          ],
+          "target_crop": [
+            95.81511688232422,
+            80.60636901855469
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.04505632376530052
+        },
+        {
+          "source_crop": [
+            114.06561279296875,
+            85.16899108886719
+          ],
+          "target_crop": [
+            111.02386474609375,
+            73.00199127197266
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.7832320592380448
+        },
+        {
+          "source_crop": [
+            115.58648681640625,
+            88.21073913574219
+          ],
+          "target_crop": [
+            113.73500061035156,
+            75.38249969482422
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.404666922519523
+        },
+        {
+          "source_crop": [
+            103.41948699951172,
+            74.52286529541016
+          ],
+          "target_crop": [
+            100.37773895263672,
+            62.35586929321289
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.435613149693905
+        },
+        {
+          "source_crop": [
+            75.20726776123047,
+            71.7092514038086
+          ],
+          "target_crop": [
+            71.48111724853516,
+            65.39762115478516
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.086079265108197
+        },
+        {
+          "source_crop": [
+            96.1953353881836,
+            96.1953353881836
+          ],
+          "target_crop": [
+            94.44633483886719,
+            85.70130157470703
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.9478450015593732
+        },
+        {
+          "source_crop": [
+            69.96024322509766,
+            75.20726776123047
+          ],
+          "target_crop": [
+            65.39762115478516,
+            69.96024322509766
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.8014348661872503
+        },
+        {
+          "source_crop": [
+            31.48211097717285,
+            78.70527648925781
+          ],
+          "target_crop": [
+            33.231117248535156,
+            73.45825958251953
+          ],
+          "inlier": false,
+          "reprojection_error_px": 6.742279832092966
+        },
+        {
+          "source_crop": [
+            115.43440246582031,
+            78.70527648925781
+          ],
+          "target_crop": [
+            111.02386474609375,
+            68.43936920166016
+          ],
+          "inlier": false,
+          "reprojection_error_px": 2.3042953591139335
+        },
+        {
+          "source_crop": [
+            76.95626831054688,
+            83.9522933959961
+          ],
+          "target_crop": [
+            74.52286529541016,
+            76.04373931884766
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.07337293829881127
+        },
+        {
+          "source_crop": [
+            90.94831848144531,
+            83.9522933959961
+          ],
+          "target_crop": [
+            89.19931030273438,
+            75.20726776123047
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.3073865064674577
+        },
+        {
+          "source_crop": [
+            80.45428466796875,
+            56.317996978759766
+          ],
+          "target_crop": [
+            76.95626831054688,
+            50.7211799621582
+          ],
+          "inlier": false,
+          "reprojection_error_px": 3.0408887151919424
+        },
+        {
+          "source_crop": [
+            96.54513549804688,
+            70.39749908447266
+          ],
+          "target_crop": [
+            94.53378295898438,
+            60.34071350097656
+          ],
+          "inlier": false,
+          "reprojection_error_px": 2.3097765286633907
+        },
+        {
+          "source_crop": [
+            100.56785583496094,
+            82.46563720703125
+          ],
+          "target_crop": [
+            97.94434356689453,
+            71.7092514038086
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.14882013525400253
+        },
+        {
+          "source_crop": [
+            114.64735412597656,
+            86.48835754394531
+          ],
+          "target_crop": [
+            111.93639373779297,
+            73.45825958251953
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.9576760922619804
+        },
+        {
+          "source_crop": [
+            62.35206985473633,
+            88.49971008300781
+          ],
+          "target_crop": [
+            59.466209411621094,
+            82.20329284667969
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.3499019400834007
+        }
+      ],
+      "manual_marker_reprojection_error_px": 2.4891384850516713,
+      "supports_rotation_hypothesis": true,
+      "nearest_source_match_to_manual_marker_px": 4.113853483889559
+    },
+    {
+      "source_frame": 308,
+      "target_frame": 309,
+      "method": "orb",
+      "preprocess": "highpass",
+      "source_keypoints": 1000,
+      "target_keypoints": 971,
+      "mutual_matches": 23,
+      "status": "diagnostic_fit",
+      "rotation_vector_deg": [
+        12.297814573497222,
+        -8.67039891770695,
+        -7.1824047239501825
+      ],
+      "inliers": 20,
+      "median_inlier_error_px": 1.244803137148919,
+      "source_inlier_span_px": [
+        70.09250450134277,
+        80.13200759887695
+      ],
+      "matches": [
+        {
+          "source_crop": [
+            33.0,
+            113.0
+          ],
+          "target_crop": [
+            32.0,
+            110.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.385724832256587
+        },
+        {
+          "source_crop": [
+            119.0,
+            71.0
+          ],
+          "target_crop": [
+            89.93000030517578,
+            141.5074920654297
+          ],
+          "inlier": false,
+          "reprojection_error_px": 88.88564926609727
+        },
+        {
+          "source_crop": [
+            40.0,
+            113.0
+          ],
+          "target_crop": [
+            39.0,
+            109.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.6618986761594742
+        },
+        {
+          "source_crop": [
+            82.79999542236328,
+            64.4000015258789
+          ],
+          "target_crop": [
+            72.0,
+            52.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.4352995965099321
+        },
+        {
+          "source_crop": [
+            96.5999984741211,
+            71.29999542236328
+          ],
+          "target_crop": [
+            87.0,
+            56.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.7783561043274604
+        },
+        {
+          "source_crop": [
+            82.79999542236328,
+            56.349998474121094
+          ],
+          "target_crop": [
+            73.0,
+            45.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.9301063336653899
+        },
+        {
+          "source_crop": [
+            39.099998474121094,
+            112.69999694824219
+          ],
+          "target_crop": [
+            39.099998474121094,
+            109.25
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.592693991431113
+        },
+        {
+          "source_crop": [
+            48.29999923706055,
+            128.8000030517578
+          ],
+          "target_crop": [
+            47.61000061035156,
+            124.31500244140625
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.6207605698572323
+        },
+        {
+          "source_crop": [
+            93.1500015258789,
+            49.45000076293945
+          ],
+          "target_crop": [
+            76.95626831054688,
+            50.7211799621582
+          ],
+          "inlier": false,
+          "reprojection_error_px": 14.106979364382367
+        },
+        {
+          "source_crop": [
+            100.04999542236328,
+            66.69999694824219
+          ],
+          "target_crop": [
+            90.0,
+            52.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.24350642851368037
+        },
+        {
+          "source_crop": [
+            54.22249984741211,
+            54.22249984741211
+          ],
+          "target_crop": [
+            45.0,
+            50.0
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.5852056578537201
+        },
+        {
+          "source_crop": [
+            39.67499923706055,
+            116.37999725341797
+          ],
+          "target_crop": [
+            38.352500915527344,
+            112.4124984741211
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.5435101164769836
+        },
+        {
+          "source_crop": [
+            100.51000213623047,
+            64.80249786376953
+          ],
+          "target_crop": [
+            89.93000030517578,
+            48.932498931884766
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.4203037482615908
+        },
+        {
+          "source_crop": [
+            51.57749938964844,
+            126.95999908447266
+          ],
+          "target_crop": [
+            50.255001068115234,
+            121.66999816894531
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.5449710448678284
+        },
+        {
+          "source_crop": [
+            30.417497634887695,
+            103.41948699951172
+          ],
+          "target_crop": [
+            29.094999313354492,
+            103.15499877929688
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.3852348794043847
+        },
+        {
+          "source_crop": [
+            83.64811706542969,
+            48.66799545288086
+          ],
+          "target_crop": [
+            74.05999755859375,
+            38.352500915527344
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.3320742334543771
+        },
+        {
+          "source_crop": [
+            97.33599090576172,
+            71.48111724853516
+          ],
+          "target_crop": [
+            86.68986511230469,
+            56.272369384765625
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.7993207463392095
+        },
+        {
+          "source_crop": [
+            100.37773895263672,
+            73.00199127197266
+          ],
+          "target_crop": [
+            89.93000030517578,
+            56.86750030517578
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.1575320408434608
+        },
+        {
+          "source_crop": [
+            94.44633483886719,
+            55.968196868896484
+          ],
+          "target_crop": [
+            83.64811706542969,
+            44.105369567871094
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.0156524793905952
+        },
+        {
+          "source_crop": [
+            62.9642219543457,
+            64.71322631835938
+          ],
+          "target_crop": [
+            54.751495361328125,
+            54.751495361328125
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.595557376352582
+        },
+        {
+          "source_crop": [
+            54.21919250488281,
+            127.67745208740234
+          ],
+          "target_crop": [
+            54.306640625,
+            122.69277954101562
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.9059861890657956
+        },
+        {
+          "source_crop": [
+            100.56785583496094,
+            46.26121139526367
+          ],
+          "target_crop": [
+            67.8499984741211,
+            82.79999542236328
+          ],
+          "inlier": false,
+          "reprojection_error_px": 53.262477580275814
+        },
+        {
+          "source_crop": [
+            94.53378295898438,
+            56.317996978759766
+          ],
+          "target_crop": [
+            83.9522933959961,
+            43.725154876708984
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.41164306404935563
+        }
+      ],
+      "manual_marker_reprojection_error_px": 1.3681208924164294,
+      "supports_rotation_hypothesis": true,
+      "nearest_source_match_to_manual_marker_px": 33.19158176091844
+    },
+    {
+      "source_frame": 309,
+      "target_frame": 310,
+      "method": "orb",
+      "preprocess": "highpass",
+      "source_keypoints": 971,
+      "target_keypoints": 930,
+      "mutual_matches": 10,
+      "status": "diagnostic_fit",
+      "rotation_vector_deg": [
+        -14.965686120704516,
+        24.999999999999996,
+        11.553552452318257
+      ],
+      "inliers": 1,
+      "median_inlier_error_px": 0.8626820531251714,
+      "source_inlier_span_px": [
+        0.0,
+        0.0
+      ],
+      "matches": [
+        {
+          "source_crop": [
+            76.0,
+            73.0
+          ],
+          "target_crop": [
+            75.9000015258789,
+            64.4000015258789
+          ],
+          "inlier": false,
+          "reprojection_error_px": 34.542384927748344
+        },
+        {
+          "source_crop": [
+            67.0,
+            142.0
+          ],
+          "target_crop": [
+            50.599998474121094,
+            109.25
+          ],
+          "inlier": false,
+          "reprojection_error_px": 34.56281491024969
+        },
+        {
+          "source_crop": [
+            30.0,
+            108.0
+          ],
+          "target_crop": [
+            31.049999237060547,
+            105.79999542236328
+          ],
+          "inlier": false,
+          "reprojection_error_px": 7.988499970703548
+        },
+        {
+          "source_crop": [
+            67.8499984741211,
+            82.79999542236328
+          ],
+          "target_crop": [
+            87.0,
+            63.0
+          ],
+          "inlier": false,
+          "reprojection_error_px": 33.045746425108184
+        },
+        {
+          "source_crop": [
+            57.5,
+            57.5
+          ],
+          "target_crop": [
+            101.0,
+            76.0
+          ],
+          "inlier": false,
+          "reprojection_error_px": 19.379731405850922
+        },
+        {
+          "source_crop": [
+            35.64999771118164,
+            105.79999542236328
+          ],
+          "target_crop": [
+            83.0,
+            131.0
+          ],
+          "inlier": false,
+          "reprojection_error_px": 42.73295366927162
+        },
+        {
+          "source_crop": [
+            34.3849983215332,
+            54.22249984741211
+          ],
+          "target_crop": [
+            76.95626831054688,
+            31.48211097717285
+          ],
+          "inlier": false,
+          "reprojection_error_px": 31.276939435561204
+        },
+        {
+          "source_crop": [
+            89.93000030517578,
+            141.5074920654297
+          ],
+          "target_crop": [
+            119.0250015258789,
+            116.37999725341797
+          ],
+          "inlier": false,
+          "reprojection_error_px": 44.895773734479754
+        },
+        {
+          "source_crop": [
+            47.14712142944336,
+            124.71173858642578
+          ],
+          "target_crop": [
+            54.21919250488281,
+            125.9284439086914
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.8626820531251714
+        },
+        {
+          "source_crop": [
+            44.105369567871094,
+            47.14712142944336
+          ],
+          "target_crop": [
+            90.0,
+            24.0
+          ],
+          "inlier": false,
+          "reprojection_error_px": 34.32288028828619
+        }
+      ],
+      "manual_marker_reprojection_error_px": 45.63215111591869,
+      "supports_rotation_hypothesis": false,
+      "nearest_source_match_to_manual_marker_px": 0.19695645838216186
+    },
+    {
+      "source_frame": 310,
+      "target_frame": 311,
+      "method": "orb",
+      "preprocess": "highpass",
+      "source_keypoints": 930,
+      "target_keypoints": 872,
+      "mutual_matches": 9,
+      "status": "diagnostic_fit",
+      "rotation_vector_deg": [
+        1.8712038867587029,
+        -4.559991228689173,
+        1.3979942708038862
+      ],
+      "inliers": 3,
+      "median_inlier_error_px": 1.432217611065332,
+      "source_inlier_span_px": [
+        70.55537033081055,
+        44.43598937988281
+      ],
+      "matches": [
+        {
+          "source_crop": [
+            68.0,
+            67.0
+          ],
+          "target_crop": [
+            112.0,
+            80.0
+          ],
+          "inlier": false,
+          "reprojection_error_px": 52.42336217693794
+        },
+        {
+          "source_crop": [
+            106.0,
+            130.0
+          ],
+          "target_crop": [
+            105.80000305175781,
+            125.63749694824219
+          ],
+          "inlier": false,
+          "reprojection_error_px": 6.73880906962036
+        },
+        {
+          "source_crop": [
+            46.0,
+            94.29999542236328
+          ],
+          "target_crop": [
+            40.0,
+            86.0
+          ],
+          "inlier": false,
+          "reprojection_error_px": 5.838654013085612
+        },
+        {
+          "source_crop": [
+            78.19999694824219,
+            123.04999542236328
+          ],
+          "target_crop": [
+            60.0,
+            74.0
+          ],
+          "inlier": false,
+          "reprojection_error_px": 48.65719210140514
+        },
+        {
+          "source_crop": [
+            65.54999542236328,
+            80.5
+          ],
+          "target_crop": [
+            39.542747497558594,
+            65.39762115478516
+          ],
+          "inlier": false,
+          "reprojection_error_px": 23.152553568657968
+        },
+        {
+          "source_crop": [
+            83.31749725341797,
+            92.57499694824219
+          ],
+          "target_crop": [
+            62.35586929321289,
+            51.70974349975586
+          ],
+          "inlier": false,
+          "reprojection_error_px": 41.14757599293423
+        },
+        {
+          "source_crop": [
+            34.3849983215332,
+            83.31749725341797
+          ],
+          "target_crop": [
+            28.75,
+            80.5
+          ],
+          "inlier": true,
+          "reprojection_error_px": 0.8045543225027948
+        },
+        {
+          "source_crop": [
+            104.94036865234375,
+            127.75348663330078
+          ],
+          "target_crop": [
+            99.69335174560547,
+            125.9284439086914
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.432217611065332
+        },
+        {
+          "source_crop": [
+            104.94036865234375,
+            125.9284439086914
+          ],
+          "target_crop": [
+            98.5564956665039,
+            126.71549224853516
+          ],
+          "inlier": true,
+          "reprojection_error_px": 1.5214445658657434
+        }
+      ],
+      "manual_marker_reprojection_error_px": 9.865434972070041,
+      "supports_rotation_hypothesis": false,
+      "nearest_source_match_to_manual_marker_px": 8.50501719245926
+    }
+  ]
+}

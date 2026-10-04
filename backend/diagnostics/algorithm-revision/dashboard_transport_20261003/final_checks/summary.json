@@ -1,0 +1,32 @@
+{
+  "captured_at": "2026-10-03T16:03:50+00:00",
+  "scope": "Final Vite transport change only; algorithm, API and App source hashes are unchanged from the 64-test policy record.",
+  "checks": [
+    {
+      "name": "frontend_build",
+      "command": "npm run build",
+      "exit_code": 0,
+      "log": "frontend_build.txt"
+    },
+    {
+      "name": "frontend_lint",
+      "command": "npm run lint",
+      "exit_code": 0,
+      "log": "frontend_lint.txt"
+    },
+    {
+      "name": "direct_api_vs_vite_complete_dashboard",
+      "command": "python -B scripts/check_dashboard_transport.py --folder backend/diagnostics/algorithm-revision/dashboard_transport_20261003/final_checks --expected-job ed3aa02cca364812a145610aad627a83",
+      "exit_code": 0,
+      "report": "get_only_check.json"
+    }
+  ],
+  "source_sha256": {
+    "vite.config.js": "1b6582dca898de357a7b048a30489197d860509aa01c3c1803a03590079dec4e",
+    "backend/algorithm.py": "f10e8393f1af64f67023f9519fcbf1b117d91418c1955ec44c2bd329fa22e657",
+    "backend/main.py": "76a66ac90ad2549775bce28f0ecb66b4348a4a0829219c770eb08349230d5f89",
+    "src/App.jsx": "949ac0b5afd11a3542c57be96b2ed20816b8656c0d70343ff45e332104d45e66"
+  },
+  "unchanged_algorithm_policy_checks": "backend/diagnostics/software-checks/partial_grades_20261003/summary.json",
+  "inference_requested": false
+}

@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-10-03T11:44:26.166130+00:00",
+  "passed": true,
+  "method": "Isolated headless Edge with frozen production build and intercepted artificial GET fixture; no running inference/API service, user browser profile, or actual result changes.",
+  "limitations": "UI verification only. All classes, defect percentages and maps in this fixture are artificial controls, not model predictions or proof of grading accuracy.",
+  "checks": [
+    "Latest-run raw class totals include all three partial classes and retain unmapped records as Review.",
+    "All three partial classes pass their raw class filter and show the partial label, provisional note, surface percentage and longitude in the drawer.",
+    "A complete grade keeps its normal label without a partial note; the unmapped record alone appears in Needs review.",
+    "All saved runs counts partial classes correctly; 390px mobile layout has no horizontal overflow."
+  ],
+  "page_errors": [],
+  "mobile_dimensions": {
+    "width": 390,
+    "content": 390
+  },
+  "software_checks": {
+    "npm run build": "passed",
+    "npm run lint": "passed"
+  },
+  "source_hashes": {
+    "App.jsx.snapshot": "949ac0b5afd11a3542c57be96b2ed20816b8656c0d70343ff45e332104d45e66",
+    "App.css.snapshot": "3a9777321794c168f188cc75c749d26e3c625eeb6620c236f37899b45fe50d4c",
+    "fixture.json": "317b57cbb86bbea2134eac939036eea0cf40d1a26786d02d5da60843f9014526",
+    "check_partial_grades.py": "97833270e76deadc2c3aa21d8e471d9c98d9a98c0a243f3193ed31d6c80d3ab2"
+  }
+}

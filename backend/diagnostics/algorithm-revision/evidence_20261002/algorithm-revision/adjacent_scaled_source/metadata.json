@@ -1,0 +1,13 @@
+{
+  "recorded_at": "2026-10-02T13:00:55.099953",
+  "purpose": "Final frozen production algorithm with physical-width preserving native recheck",
+  "candidate_algorithm_sha256": "52c13a0452875653fb054053fcc0bdbb4a6ed9cb4227c697be32b62fbe811327",
+  "native_filter_policy": "highpass_sigma native = configured highpass_sigma * original image_downsample; coarse sigma unchanged",
+  "profile_changes_from_baseline": "refine_small_motion=True; maximum_view_index_gap=1 source frame; conservative adjacent selector; early exact longitude check",
+  "prior_native_sigma1_25_source": "../adjacent_native_source/algorithm_snapshot.py; preserved without replacement",
+  "author_benchmark_exit_code": 0,
+  "author_retained_exit_code": 0,
+  "fixed_chain_exit_code": 0,
+  "visual_qa": "author_accuracy_availability.png inspected; three panels and labels readable; PNG3600x1500 at300dpi, companion PDF",
+  "completed_at": "2026-10-02T13:05:07.317390"
+}

@@ -1,0 +1,76 @@
+{
+  "time": "2026-10-03T10:31:38.222598+00:00",
+  "system_memory": {
+    "total_bytes": 33549090816,
+    "available_bytes": 11385962496,
+    "used_pct": 66.1
+  },
+  "owned_processes": [
+    {
+      "role": "api",
+      "pid": 17328,
+      "name": "python.exe",
+      "rss_bytes": 5050368,
+      "private_bytes": 937984,
+      "peak_rss_bytes": 5050368
+    },
+    {
+      "role": "api",
+      "pid": 30832,
+      "name": "conhost.exe",
+      "rss_bytes": 8409088,
+      "private_bytes": 1466368,
+      "peak_rss_bytes": 8413184
+    },
+    {
+      "role": "api",
+      "pid": 21712,
+      "name": "python.exe",
+      "rss_bytes": 439291904,
+      "private_bytes": 700100608,
+      "peak_rss_bytes": 439291904
+    },
+    {
+      "role": "dashboard",
+      "pid": 39332,
+      "name": "node.exe",
+      "rss_bytes": 39206912,
+      "private_bytes": 56246272,
+      "peak_rss_bytes": 39206912
+    },
+    {
+      "role": "dashboard",
+      "pid": 34108,
+      "name": "conhost.exe",
+      "rss_bytes": 8454144,
+      "private_bytes": 1486848,
+      "peak_rss_bytes": 8454144
+    },
+    {
+      "role": "dashboard",
+      "pid": 32188,
+      "name": "node.exe",
+      "rss_bytes": 163680256,
+      "private_bytes": 209567744,
+      "peak_rss_bytes": 166133760
+    }
+  ],
+  "gpu": {
+    "devices": [
+      {
+        "index": 0.0,
+        "total_memory_mib": 8188.0,
+        "used_memory_mib": 835.0,
+        "free_memory_mib": 7122.0,
+        "utilization_pct": 0.0
+      }
+    ]
+  },
+  "analysis": {
+    "state": "idle",
+    "run_id": null,
+    "frames_processed": 0,
+    "frames_total": null,
+    "error": null
+  }
+}

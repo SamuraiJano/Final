@@ -1,0 +1,287 @@
+{
+  "started_at": "2026-10-04T09:02:10.989223+00:00",
+  "algorithm_sha256": "ed3328de998abba50cf9c135957176649bc2d2ef51ededc9eeed90be1bffc9af",
+  "validator_sha256": "d720b02164b2b45e6dcadcb45ce26b185b9347f352406eb6a494578b1d2ccd71",
+  "method": "Explicitly invoke production native bidirectional aligned_mad withZbound10degrees, rolling/transverse bounds20degrees, radius fitted from exact frozen sphere masks, native sigma5, unchanged0.58residual/.25degree minimum gates. Prescribed first6pairs of each of four stationary noisy scenes, plus all8prescribed stationary light-reversal pairs. No mocked motion or zero substitution.",
+  "scope": "Limited component safety control, not full-pipeline map/grade execution or proof for all realistic lighting. Automatic coarse eligibility is bypassed explicitly. Samples are fixed before estimation, not selected by failures. Exact stationary poses are identities in frozen input NPZs.",
+  "independent_consensus_applied": true,
+  "joint_reference_report": null,
+  "joint_reference_sha256": null,
+  "cases": {
+    "stationary_120_texture_a_inputs": {
+      "input_sha256": "b973556de921cdf36ebc329472e6b824dc92ea1ca6698f269642c9566f31683c",
+      "pairs": [
+        {
+          "source_frame": 0,
+          "target_frame": 1,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.438 pixels is below one pixel"
+        },
+        {
+          "source_frame": 1,
+          "target_frame": 2,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.000 pixels is below one pixel"
+        },
+        {
+          "source_frame": 2,
+          "target_frame": 3,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.398 pixels is below one pixel"
+        },
+        {
+          "source_frame": 3,
+          "target_frame": 4,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.458 pixels is below one pixel"
+        },
+        {
+          "source_frame": 4,
+          "target_frame": 5,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.418 pixels is below one pixel"
+        },
+        {
+          "source_frame": 5,
+          "target_frame": 6,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.351 pixels is below one pixel"
+        }
+      ],
+      "summary": {
+        "tested_pairs": 6,
+        "false_motion_pairs": 0
+      },
+      "passed": true
+    },
+    "stationary_120_texture_b_inputs": {
+      "input_sha256": "b4bd3571d5b10dffb932dbe44597890ebc25014f37377de42815f70162afa29a",
+      "pairs": [
+        {
+          "source_frame": 0,
+          "target_frame": 1,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.000 pixels is below one pixel"
+        },
+        {
+          "source_frame": 1,
+          "target_frame": 2,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.000 pixels is below one pixel"
+        },
+        {
+          "source_frame": 2,
+          "target_frame": 3,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.000 pixels is below one pixel"
+        },
+        {
+          "source_frame": 3,
+          "target_frame": 4,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.000 pixels is below one pixel"
+        },
+        {
+          "source_frame": 4,
+          "target_frame": 5,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.000 pixels is below one pixel"
+        },
+        {
+          "source_frame": 5,
+          "target_frame": 6,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.000 pixels is below one pixel"
+        }
+      ],
+      "summary": {
+        "tested_pairs": 6,
+        "false_motion_pairs": 0
+      },
+      "passed": true
+    },
+    "stationary_120_lambertian_multiplicative_texture_a": {
+      "input_sha256": "930c7c2e115d67bd30338a6ab79d0b3c578b37e6ffe9d5e1b145ced974249e15",
+      "pairs": [
+        {
+          "source_frame": 0,
+          "target_frame": 1,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.574 pixels is below one pixel"
+        },
+        {
+          "source_frame": 1,
+          "target_frame": 2,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.667 pixels is below one pixel"
+        },
+        {
+          "source_frame": 2,
+          "target_frame": 3,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.554 pixels is below one pixel"
+        },
+        {
+          "source_frame": 3,
+          "target_frame": 4,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.614 pixels is below one pixel"
+        },
+        {
+          "source_frame": 4,
+          "target_frame": 5,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.546 pixels is below one pixel"
+        },
+        {
+          "source_frame": 5,
+          "target_frame": 6,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.639 pixels is below one pixel"
+        }
+      ],
+      "summary": {
+        "tested_pairs": 6,
+        "false_motion_pairs": 0
+      },
+      "passed": true
+    },
+    "stationary_120_lambertian_multiplicative_texture_b": {
+      "input_sha256": "e7dcfab8c470216d9354fd9a61c507b9e3b4aeac8641d2ace7d288f6126ef481",
+      "pairs": [
+        {
+          "source_frame": 0,
+          "target_frame": 1,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.000 pixels is below one pixel"
+        },
+        {
+          "source_frame": 1,
+          "target_frame": 2,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.291 pixels is below one pixel"
+        },
+        {
+          "source_frame": 2,
+          "target_frame": 3,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.186 pixels is below one pixel"
+        },
+        {
+          "source_frame": 3,
+          "target_frame": 4,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.285 pixels is below one pixel"
+        },
+        {
+          "source_frame": 4,
+          "target_frame": 5,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.000 pixels is below one pixel"
+        },
+        {
+          "source_frame": 5,
+          "target_frame": 6,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.000 pixels is below one pixel"
+        }
+      ],
+      "summary": {
+        "tested_pairs": 6,
+        "false_motion_pairs": 0
+      },
+      "passed": true
+    },
+    "stationary_log_light_reversal_g0.006_texture_a": {
+      "input_sha256": "54bba3532acb9fd7c801381f8eeb91eff8c98efa238e4b475f75840b7491d7c6",
+      "pairs": [
+        {
+          "source_frame": 0,
+          "target_frame": 1,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.000 pixels is below one pixel"
+        },
+        {
+          "source_frame": 1,
+          "target_frame": 2,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.296 pixels is below one pixel"
+        }
+      ],
+      "summary": {
+        "tested_pairs": 2,
+        "false_motion_pairs": 0
+      },
+      "passed": true
+    },
+    "stationary_log_light_reversal_g0.012_texture_a": {
+      "input_sha256": "5e9adbbfcb8632cb5eaf80ef79a92dc2d9299181b2d41607b7c83a064dc3a98b",
+      "pairs": [
+        {
+          "source_frame": 0,
+          "target_frame": 1,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.470 pixels is below one pixel"
+        },
+        {
+          "source_frame": 1,
+          "target_frame": 2,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.442 pixels is below one pixel"
+        }
+      ],
+      "summary": {
+        "tested_pairs": 2,
+        "false_motion_pairs": 0
+      },
+      "passed": true
+    },
+    "stationary_log_light_reversal_g0.006_texture_b": {
+      "input_sha256": "dccca8a89134439298c09f6365450ffb9557fee3d250d733f275fe42a235a3c8",
+      "pairs": [
+        {
+          "source_frame": 0,
+          "target_frame": 1,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.000 pixels is below one pixel"
+        },
+        {
+          "source_frame": 1,
+          "target_frame": 2,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.000 pixels is below one pixel"
+        }
+      ],
+      "summary": {
+        "tested_pairs": 2,
+        "false_motion_pairs": 0
+      },
+      "passed": true
+    },
+    "stationary_log_light_reversal_g0.012_texture_b": {
+      "input_sha256": "732db6707e98471bf62a369d359829d5df65bd46891f3d9d3295219bb92a2bcc",
+      "pairs": [
+        {
+          "source_frame": 0,
+          "target_frame": 1,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.163 pixels is below one pixel"
+        },
+        {
+          "source_frame": 1,
+          "target_frame": 2,
+          "status": "unavailable",
+          "reason": "Unobservable native three-axis rolling motion: 0.000 pixels is below one pixel"
+        }
+      ],
+      "summary": {
+        "tested_pairs": 2,
+        "false_motion_pairs": 0
+      },
+      "passed": true
+    }
+  },
+  "all_component_stationary_controls_passed": true,
+  "seconds": 77.13313040000503,
+  "completed_at": "2026-10-04T09:03:28.132844+00:00"
+}

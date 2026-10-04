@@ -1,0 +1,174 @@
+{
+  "baseline": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\algorithm-revision\\hybrid_motion_controls_20261002",
+  "candidate": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\algorithm-revision\\hybrid_wobble_controls_20261002",
+  "baseline_report_sha256": "799e0372970d052f7cd249f5b397697bb3f4f6277d8b8a82906ebb2e7af13ca2",
+  "candidate_report_sha256": "a7daf3e7e739361856a783850658a61c69473a5d438147135cd9fe9e714bdf99",
+  "algorithm_source_unchanged": true,
+  "algorithm_sha256": "951b55a4912d3147d349282846e2e02d20159a410b6bb2e8fdd4ab4dd3abea2d",
+  "acceptance_limits_unchanged": true,
+  "cases": {
+    "variable_xy_texture_a": {
+      "input_bytes_identical": true,
+      "input_sha256": "ac6e15bdba5d621ee769b40d1f9b0d5d8b95dc61e0f84e9d59118bf0eda21003",
+      "settings_changes": {
+        "transverse_angle_deg": {
+          "before": 10.0,
+          "after": 20.0
+        }
+      },
+      "only_transverse_bound_changed": true,
+      "summary_unchanged": true,
+      "control_results_unchanged": true,
+      "baseline_summary": {
+        "frames": 11,
+        "input_pairs": 10,
+        "measured_pairs": 10,
+        "native_rechecks": 10,
+        "all_pairs_measured": true,
+        "endpoint_pose_error_deg": 0.22195284743479204,
+        "endpoint_landmark_rms_px": 0.2023188400794917,
+        "maximum_pose_error_deg": 0.22195284743479204,
+        "maximum_landmark_rms_px": 0.2023188400794917,
+        "native_attempts_including_unavailable": 10
+      },
+      "candidate_summary": {
+        "frames": 11,
+        "input_pairs": 10,
+        "measured_pairs": 10,
+        "native_rechecks": 10,
+        "all_pairs_measured": true,
+        "endpoint_pose_error_deg": 0.22195284743479204,
+        "endpoint_landmark_rms_px": 0.2023188400794917,
+        "maximum_pose_error_deg": 0.22195284743479204,
+        "maximum_landmark_rms_px": 0.2023188400794917,
+        "native_attempts_including_unavailable": 10
+      }
+    },
+    "variable_xy_texture_b": {
+      "input_bytes_identical": true,
+      "input_sha256": "ae6184542a4cade480cc2bec085a2b46f5e51529e5df3789a707ade4cdd6aac8",
+      "settings_changes": {
+        "transverse_angle_deg": {
+          "before": 10.0,
+          "after": 20.0
+        }
+      },
+      "only_transverse_bound_changed": true,
+      "summary_unchanged": true,
+      "control_results_unchanged": true,
+      "baseline_summary": {
+        "frames": 11,
+        "input_pairs": 10,
+        "measured_pairs": 10,
+        "native_rechecks": 10,
+        "all_pairs_measured": true,
+        "endpoint_pose_error_deg": 0.08524700030613885,
+        "endpoint_landmark_rms_px": 0.07842892307990075,
+        "maximum_pose_error_deg": 0.09416876298970926,
+        "maximum_landmark_rms_px": 0.08598666410163051,
+        "native_attempts_including_unavailable": 10
+      },
+      "candidate_summary": {
+        "frames": 11,
+        "input_pairs": 10,
+        "measured_pairs": 10,
+        "native_rechecks": 10,
+        "all_pairs_measured": true,
+        "endpoint_pose_error_deg": 0.08524700030613885,
+        "endpoint_landmark_rms_px": 0.07842892307990075,
+        "maximum_pose_error_deg": 0.09416876298970926,
+        "maximum_landmark_rms_px": 0.08598666410163051,
+        "native_attempts_including_unavailable": 10
+      }
+    },
+    "stationary_120_texture_a": {
+      "input_bytes_identical": true,
+      "input_sha256": "b973556de921cdf36ebc329472e6b824dc92ea1ca6698f269642c9566f31683c",
+      "settings_changes": {
+        "transverse_angle_deg": {
+          "before": 10.0,
+          "after": 20.0
+        }
+      },
+      "only_transverse_bound_changed": true,
+      "summary_unchanged": true,
+      "control_results_unchanged": true,
+      "baseline_summary": {
+        "frames": 120,
+        "input_pairs": 119,
+        "measured_pairs": 0,
+        "native_rechecks": 0,
+        "all_pairs_measured": false,
+        "endpoint_pose_error_deg": null,
+        "endpoint_landmark_rms_px": null,
+        "maximum_pose_error_deg": 0.0,
+        "maximum_landmark_rms_px": 0.0,
+        "native_attempts_including_unavailable": 119
+      },
+      "candidate_summary": {
+        "frames": 120,
+        "input_pairs": 119,
+        "measured_pairs": 0,
+        "native_rechecks": 0,
+        "all_pairs_measured": false,
+        "endpoint_pose_error_deg": null,
+        "endpoint_landmark_rms_px": null,
+        "maximum_pose_error_deg": 0.0,
+        "maximum_landmark_rms_px": 0.0,
+        "native_attempts_including_unavailable": 119
+      }
+    },
+    "stationary_120_texture_b": {
+      "input_bytes_identical": true,
+      "input_sha256": "b4bd3571d5b10dffb932dbe44597890ebc25014f37377de42815f70162afa29a",
+      "settings_changes": {
+        "transverse_angle_deg": {
+          "before": 10.0,
+          "after": 20.0
+        }
+      },
+      "only_transverse_bound_changed": true,
+      "summary_unchanged": true,
+      "control_results_unchanged": true,
+      "baseline_summary": {
+        "frames": 120,
+        "input_pairs": 119,
+        "measured_pairs": 0,
+        "native_rechecks": 0,
+        "all_pairs_measured": false,
+        "endpoint_pose_error_deg": null,
+        "endpoint_landmark_rms_px": null,
+        "maximum_pose_error_deg": 0.0,
+        "maximum_landmark_rms_px": 0.0,
+        "native_attempts_including_unavailable": 119
+      },
+      "candidate_summary": {
+        "frames": 120,
+        "input_pairs": 119,
+        "measured_pairs": 0,
+        "native_rechecks": 0,
+        "all_pairs_measured": false,
+        "endpoint_pose_error_deg": null,
+        "endpoint_landmark_rms_px": null,
+        "maximum_pose_error_deg": 0.0,
+        "maximum_landmark_rms_px": 0.0,
+        "native_attempts_including_unavailable": 119
+      }
+    }
+  },
+  "exposure_controls": {
+    "variable_xy_texture_a": {
+      "comparison_unchanged": true,
+      "control_results_unchanged": true
+    },
+    "variable_xy_texture_b": {
+      "comparison_unchanged": true,
+      "control_results_unchanged": true
+    }
+  },
+  "stationary_scoring_note": "Unavailable endpoints are not zero pose error; helper maxima contain only the initial identity pose when all pairs are rejected.",
+  "scope": "Two ideal rendered textures, perfect masks, subdegree motion with small transverse wobble, independent pixel noise and unsaturated global brightness offsets. This does not test large transverse wobble, field pose truth, real defects or grade accuracy.",
+  "paper_context": "The 2021 paper describes a typical transverse bound of 10 degrees in Section 3.2. The 20-degree bound is a setup adaptation tested here with unchanged rejection limits, rather than a change to the photometric objective or publication accuracy claim.",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8004661/",
+  "comparison_passed": true
+}

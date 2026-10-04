@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Naartjie entry-to-exit tracking evidence</title><style>
+body{font:17px/1.6 system-ui,sans-serif;background:#f5f6f3;color:#14231b;margin:0}main{max-width:1100px;margin:auto;padding:38px 24px}
+h1{font-size:38px;line-height:1.2}h2{margin-top:40px}p{max-width:900px}a{color:#176847}video,.sheet{width:100%;background:#15221a;border-radius:8px}
+.crops{display:flex;gap:30px;flex-wrap:wrap}figure{margin:0;min-width:200px}figure img{max-width:400px;image-rendering:pixelated}
+table{border-collapse:collapse}td,th{text-align:left;padding:12px 24px 12px 0;border-bottom:1px solid #ccd3ce}
+</style><main><p>Actual model outputs · Original conveyor footage · Tracking-only validation</p>
+<h1>Follow the naartjie from its first detection</h1>
+<p>The revised ID <strong>98</strong> starts at frame <strong>51</strong>
+and continues through frame <strong>138</strong>: 88 consecutive observations.
+The earlier configuration first published this fruit at frame 55.</p>
+<p><a href="TRACKING_FOLLOWUP.md">Testing report and limitations</a> · <a href="entry_tracking_comparison.pdf">Report-ready PDF figure</a>
+ · <a href="report.json">Run settings and source hashes</a> · <a href="all_frame_tracking_checks.json">Full-clip checks</a></p>
+<h2>One fruit: entry through last seen</h2><video controls preload="metadata" src="entry_to_exit.mp4"></video>
+<h2>Six observed frames, same identity</h2><a href="entry_tracking_comparison.png"><img class="sheet" src="entry_tracking_comparison.png" alt="Six frames following the same naartjie"></a>
+<h2>Complete clip: all published IDs</h2><video controls preload="metadata" src="all_fruit_tracking.mp4"></video>
+<p>515 original frames checked. ID numbers are local to each run.
+Overlapping duplicates and consistency against the old tracker were checked; manually labelled physical identities are still needed to measure accuracy.</p>
+<h2>Original source crops</h2><div class="crops"><figure><img src="application_evidence/98/tracking_entry_frame_00051.png" alt="Original entry crop"><figcaption>entry: frame 51</figcaption></figure><figure><img src="application_evidence/98/tracking_last_seen_frame_00138.png" alt="Original last_seen crop"><figcaption>last_seen: frame 138</figcaption></figure></div>
+<p>Partial observations preserve tracking. Reconstruction requires usable silhouettes from that identity.
+These videos do not claim new surface-map or grade accuracy.</p></main></html>

@@ -1,0 +1,189 @@
+{
+  "started_at": "2026-10-02T18:49:08.992906+00:00",
+  "reason": "Place Ultralytics runtime settings in the writable workspace instead of the protected global AppData profile.",
+  "state_before_restart": {
+    "state": "idle",
+    "run_id": null,
+    "frames_processed": 0,
+    "frames_total": null,
+    "error": null
+  },
+  "old_api": {
+    "command": [
+      "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\venv\\Scripts\\python.exe",
+      "-B",
+      "-m",
+      "uvicorn",
+      "main:app",
+      "--app-dir",
+      "backend",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "8000"
+    ],
+    "pid": 29660,
+    "stdout": "api_stdout.log",
+    "stderr": "api_stderr.log",
+    "ready_at": "2026-10-02T18:46:46.403960+00:00",
+    "process_tree": [
+      {
+        "pid": 29660,
+        "ppid": 41536,
+        "name": "python.exe",
+        "command": [
+          "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\venv\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "uvicorn",
+          "main:app",
+          "--app-dir",
+          "backend",
+          "--host",
+          "127.0.0.1",
+          "--port",
+          "8000"
+        ],
+        "created_at": 1790966798.75779
+      },
+      {
+        "pid": 43284,
+        "ppid": 29660,
+        "name": "conhost.exe",
+        "command": [
+          "\\??\\C:\\WINDOWS\\system32\\conhost.exe",
+          "0x4"
+        ],
+        "created_at": 1790966798.7734709
+      },
+      {
+        "pid": 26316,
+        "ppid": 29660,
+        "name": "python.exe",
+        "command": [
+          "C:\\Python312\\python.exe",
+          "-B",
+          "-m",
+          "uvicorn",
+          "main:app",
+          "--app-dir",
+          "backend",
+          "--host",
+          "127.0.0.1",
+          "--port",
+          "8000"
+        ],
+        "created_at": 1790966798.8048332
+      }
+    ],
+    "health": {
+      "status": "ok",
+      "torch": "2.6.0+cu124",
+      "cuda_available": true,
+      "requested_device": "cuda",
+      "models_present": {
+        "detection": true,
+        "segmentation": true,
+        "segmentation_metadata": true
+      }
+    }
+  },
+  "source_changed": false,
+  "status": "ready",
+  "new_api_pid": 45580,
+  "finished_at": "2026-10-02T18:49:18.409924+00:00",
+  "new_api": {
+    "command": [
+      "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\venv\\Scripts\\python.exe",
+      "-B",
+      "-m",
+      "uvicorn",
+      "main:app",
+      "--app-dir",
+      "backend",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "8000"
+    ],
+    "pid": 45580,
+    "stdout": "api_restart1_stdout.log",
+    "stderr": "api_restart1_stderr.log",
+    "ready_at": "2026-10-02T18:49:16.105237+00:00",
+    "process_tree": [
+      {
+        "pid": 45580,
+        "ppid": 44916,
+        "name": "python.exe",
+        "command": [
+          "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\venv\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "uvicorn",
+          "main:app",
+          "--app-dir",
+          "backend",
+          "--host",
+          "127.0.0.1",
+          "--port",
+          "8000"
+        ],
+        "created_at": 1790966949.2594626
+      },
+      {
+        "pid": 39328,
+        "ppid": 45580,
+        "name": "conhost.exe",
+        "command": [
+          "\\??\\C:\\WINDOWS\\system32\\conhost.exe",
+          "0x4"
+        ],
+        "created_at": 1790966949.2699456
+      },
+      {
+        "pid": 31488,
+        "ppid": 45580,
+        "name": "python.exe",
+        "command": [
+          "C:\\Python312\\python.exe",
+          "-B",
+          "-m",
+          "uvicorn",
+          "main:app",
+          "--app-dir",
+          "backend",
+          "--host",
+          "127.0.0.1",
+          "--port",
+          "8000"
+        ],
+        "created_at": 1790966949.3031852
+      }
+    ],
+    "health": {
+      "status": "ok",
+      "torch": "2.6.0+cu124",
+      "cuda_available": true,
+      "requested_device": "cuda",
+      "models_present": {
+        "detection": true,
+        "segmentation": true,
+        "segmentation_metadata": true
+      }
+    },
+    "environment_overrides": {
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "PYTHONUNBUFFERED": "1",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "YOLO_CONFIG_DIR": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\runtime\\ultralytics"
+    }
+  },
+  "backend_control": {
+    "type": "backend-control-result",
+    "id": "427ab87c-ac32-4705-8800-749b81fc0b3a",
+    "managed": false,
+    "refreshing": false
+  }
+}

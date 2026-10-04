@@ -1,0 +1,1606 @@
+{
+  "recorded_at": "2026-10-02T14:13:28.942669",
+  "algorithm_sha256": "863fd09cfa629c5b5b8ba7c73963fbe993441b3e3dd989f1e451d0a5f62c9db1",
+  "validator_sha256": "245c6b47759e72c067d1b0fe69ac0122138716406e29616613a9055ae4cf8cd8",
+  "settings": {
+    "spheroid_type": "auto",
+    "spherical_tolerance": 0.06,
+    "rotation_axis": "x",
+    "rotation_direction": 1,
+    "max_pair_angle_deg": 55.0,
+    "transverse_angle_deg": 10.0,
+    "search_step_deg": 1.0,
+    "image_downsample": 4,
+    "refine_small_motion": true,
+    "highpass_sigma": 1.25,
+    "point_percentile": 97.0,
+    "min_pair_points": 12,
+    "min_pair_angle_deg": 0.25,
+    "max_pair_error": 0.58,
+    "min_texture": 0.006,
+    "matching_cost": "mad",
+    "batch_rotation_search": true,
+    "bidirectional_matching": true,
+    "select_rotating_views": true,
+    "minimum_view_rotation_deg": 3.0,
+    "maximum_view_index_gap": 1,
+    "texture_metric": "selected_rms",
+    "exclude_specular_texture": false,
+    "enforce_uniform_pair_rotation": false,
+    "max_latitude_deg": 60.0,
+    "map_angle_step_deg": null,
+    "grabcut_iterations": 3,
+    "minimum_surface_coverage": 0.65,
+    "minimum_rotation_coverage_deg": 0.0,
+    "minimum_longitude_coverage_deg": 350,
+    "maximum_pair_gap_deg": 55,
+    "pole_pose_tolerance_deg": 5.0,
+    "pole_pose_method": "silhouette_trend",
+    "minimum_mask_box_fraction": 0.4,
+    "minimum_silhouette_solidity": 0.95,
+    "class_1_max_defect_pct": 10.0,
+    "class_2_max_defect_pct": 20.0,
+    "defect_observations_complete": false
+  },
+  "repetitions": 3,
+  "hardware": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD",
+    "opencv_version": "5.0.0",
+    "opencv_cpu_count": 16,
+    "initial_threads": 16,
+    "opencl_enabled": true
+  },
+  "method": "Three real adjacent pairs selected from previous frozen replay: two native rechecks and one coarse-only match. Exact full-track spheroid is fitted once outside timing; each pair uses the production selector subset helper. Each mode gets one untimed warm-up. Three paired estimator repetitions alternate mode order. Captured actual remap arrays are timed separately in three groups of 50 calls, after warm-up; setup, hashing and thread switching are excluded. No production change.",
+  "limitations": "A short single-process microbenchmark under other machine load. These crops have no pose ground truth. Equality between thread modes establishes numerical agreement, not geometric accuracy or full-video throughput.",
+  "cases": [
+    {
+      "track": 98,
+      "source_frame": 99,
+      "target_frame": 100,
+      "crop_shapes": [
+        [
+          185,
+          197,
+          3
+        ],
+        [
+          184,
+          197,
+          3
+        ]
+      ],
+      "inputs": [
+        {
+          "file": "inputs\\fruit_98_view_037.npz",
+          "original": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\algorithm-revision\\fixed_observable_conveyor_20261002\\98\\inputs\\view_037.npz",
+          "sha256": "2aab42c82d2bbe7eec7cbe3a6f6f45e747fb8954f5357c1ab583c7e4077d60a9",
+          "metadata": {
+            "file": "view_037.npz",
+            "frame": 99,
+            "bbox": [
+              19,
+              18,
+              178,
+              167
+            ]
+          }
+        },
+        {
+          "file": "inputs\\fruit_98_view_038.npz",
+          "original": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\algorithm-revision\\fixed_observable_conveyor_20261002\\98\\inputs\\view_038.npz",
+          "sha256": "72907739da6d50e3e444babe7b3bd21f223b8d4a305ccfccb80ee212f4245e60",
+          "metadata": {
+            "file": "view_038.npz",
+            "frame": 100,
+            "bbox": [
+              19,
+              17,
+              178,
+              167
+            ]
+          }
+        }
+      ],
+      "estimator_calls": [
+        {
+          "repetition": 0,
+          "threads": 16,
+          "milliseconds": 209.77570000013657,
+          "rotation_matrix": [
+            [
+              0.99990049767453,
+              -4.890050069734103e-05,
+              -0.014106465147877546
+            ],
+            [
+              -4.890050069734103e-05,
+              0.999975967808218,
+              -0.006932634041893245
+            ],
+            [
+              0.014106465147877546,
+              0.006932634041893245,
+              0.999876465482748
+            ]
+          ],
+          "error": 0.058152303879960704,
+          "details": {
+            "image_downsample": 1,
+            "highpass_sigma": 5.0,
+            "coarse_rotation_deg": 0.0
+          },
+          "output_sha256": "0a9a7a47ad8b3e20d55d2b876a9bcf225997468ea955d0f368e17114f30dddc4"
+        },
+        {
+          "repetition": 0,
+          "threads": 1,
+          "milliseconds": 202.38359999984823,
+          "rotation_matrix": [
+            [
+              0.99990049767453,
+              -4.890050069734103e-05,
+              -0.014106465147877546
+            ],
+            [
+              -4.890050069734103e-05,
+              0.999975967808218,
+              -0.006932634041893245
+            ],
+            [
+              0.014106465147877546,
+              0.006932634041893245,
+              0.999876465482748
+            ]
+          ],
+          "error": 0.058152303879960704,
+          "details": {
+            "image_downsample": 1,
+            "highpass_sigma": 5.0,
+            "coarse_rotation_deg": 0.0
+          },
+          "output_sha256": "0a9a7a47ad8b3e20d55d2b876a9bcf225997468ea955d0f368e17114f30dddc4"
+        },
+        {
+          "repetition": 1,
+          "threads": 1,
+          "milliseconds": 193.85280000005878,
+          "rotation_matrix": [
+            [
+              0.99990049767453,
+              -4.890050069734103e-05,
+              -0.014106465147877546
+            ],
+            [
+              -4.890050069734103e-05,
+              0.999975967808218,
+              -0.006932634041893245
+            ],
+            [
+              0.014106465147877546,
+              0.006932634041893245,
+              0.999876465482748
+            ]
+          ],
+          "error": 0.058152303879960704,
+          "details": {
+            "image_downsample": 1,
+            "highpass_sigma": 5.0,
+            "coarse_rotation_deg": 0.0
+          },
+          "output_sha256": "0a9a7a47ad8b3e20d55d2b876a9bcf225997468ea955d0f368e17114f30dddc4"
+        },
+        {
+          "repetition": 1,
+          "threads": 16,
+          "milliseconds": 212.50119999967865,
+          "rotation_matrix": [
+            [
+              0.99990049767453,
+              -4.890050069734103e-05,
+              -0.014106465147877546
+            ],
+            [
+              -4.890050069734103e-05,
+              0.999975967808218,
+              -0.006932634041893245
+            ],
+            [
+              0.014106465147877546,
+              0.006932634041893245,
+              0.999876465482748
+            ]
+          ],
+          "error": 0.058152303879960704,
+          "details": {
+            "image_downsample": 1,
+            "highpass_sigma": 5.0,
+            "coarse_rotation_deg": 0.0
+          },
+          "output_sha256": "0a9a7a47ad8b3e20d55d2b876a9bcf225997468ea955d0f368e17114f30dddc4"
+        },
+        {
+          "repetition": 2,
+          "threads": 16,
+          "milliseconds": 194.91909999942436,
+          "rotation_matrix": [
+            [
+              0.99990049767453,
+              -4.890050069734103e-05,
+              -0.014106465147877546
+            ],
+            [
+              -4.890050069734103e-05,
+              0.999975967808218,
+              -0.006932634041893245
+            ],
+            [
+              0.014106465147877546,
+              0.006932634041893245,
+              0.999876465482748
+            ]
+          ],
+          "error": 0.058152303879960704,
+          "details": {
+            "image_downsample": 1,
+            "highpass_sigma": 5.0,
+            "coarse_rotation_deg": 0.0
+          },
+          "output_sha256": "0a9a7a47ad8b3e20d55d2b876a9bcf225997468ea955d0f368e17114f30dddc4"
+        },
+        {
+          "repetition": 2,
+          "threads": 1,
+          "milliseconds": 211.02129999962926,
+          "rotation_matrix": [
+            [
+              0.99990049767453,
+              -4.890050069734103e-05,
+              -0.014106465147877546
+            ],
+            [
+              -4.890050069734103e-05,
+              0.999975967808218,
+              -0.006932634041893245
+            ],
+            [
+              0.014106465147877546,
+              0.006932634041893245,
+              0.999876465482748
+            ]
+          ],
+          "error": 0.058152303879960704,
+          "details": {
+            "image_downsample": 1,
+            "highpass_sigma": 5.0,
+            "coarse_rotation_deg": 0.0
+          },
+          "output_sha256": "0a9a7a47ad8b3e20d55d2b876a9bcf225997468ea955d0f368e17114f30dddc4"
+        }
+      ],
+      "remap_calls": [
+        {
+          "source_shape": [
+            46,
+            49
+          ],
+          "map_shape": [
+            1176,
+            14
+          ],
+          "repetition": 0,
+          "threads": 16,
+          "mean_milliseconds": 0.09354800000437535,
+          "output_sha256": "653f30b04df673c3c0957166954696b411d5393918613a8cc53d4033a961c542"
+        },
+        {
+          "source_shape": [
+            46,
+            49
+          ],
+          "map_shape": [
+            1176,
+            14
+          ],
+          "repetition": 0,
+          "threads": 1,
+          "mean_milliseconds": 0.2675400000043737,
+          "output_sha256": "653f30b04df673c3c0957166954696b411d5393918613a8cc53d4033a961c542"
+        },
+        {
+          "source_shape": [
+            46,
+            49
+          ],
+          "map_shape": [
+            1176,
+            14
+          ],
+          "repetition": 1,
+          "threads": 1,
+          "mean_milliseconds": 0.3327680000074906,
+          "output_sha256": "653f30b04df673c3c0957166954696b411d5393918613a8cc53d4033a961c542"
+        },
+        {
+          "source_shape": [
+            46,
+            49
+          ],
+          "map_shape": [
+            1176,
+            14
+          ],
+          "repetition": 1,
+          "threads": 16,
+          "mean_milliseconds": 0.11791000000812346,
+          "output_sha256": "653f30b04df673c3c0957166954696b411d5393918613a8cc53d4033a961c542"
+        },
+        {
+          "source_shape": [
+            46,
+            49
+          ],
+          "map_shape": [
+            1176,
+            14
+          ],
+          "repetition": 2,
+          "threads": 16,
+          "mean_milliseconds": 0.14148799999020412,
+          "output_sha256": "653f30b04df673c3c0957166954696b411d5393918613a8cc53d4033a961c542"
+        },
+        {
+          "source_shape": [
+            46,
+            49
+          ],
+          "map_shape": [
+            1176,
+            14
+          ],
+          "repetition": 2,
+          "threads": 1,
+          "mean_milliseconds": 0.33482000000731205,
+          "output_sha256": "653f30b04df673c3c0957166954696b411d5393918613a8cc53d4033a961c542"
+        },
+        {
+          "source_shape": [
+            184,
+            197
+          ],
+          "map_shape": [
+            1176,
+            160
+          ],
+          "repetition": 0,
+          "threads": 16,
+          "mean_milliseconds": 0.2531439999984286,
+          "output_sha256": "5b758fa2fb43ed63674ff7811d93eb57b9d7a7340d97396d4f3399b7fd29149f"
+        },
+        {
+          "source_shape": [
+            184,
+            197
+          ],
+          "map_shape": [
+            1176,
+            160
+          ],
+          "repetition": 0,
+          "threads": 1,
+          "mean_milliseconds": 1.1117920000106096,
+          "output_sha256": "5b758fa2fb43ed63674ff7811d93eb57b9d7a7340d97396d4f3399b7fd29149f"
+        },
+        {
+          "source_shape": [
+            184,
+            197
+          ],
+          "map_shape": [
+            1176,
+            160
+          ],
+          "repetition": 1,
+          "threads": 1,
+          "mean_milliseconds": 0.8806919999915408,
+          "output_sha256": "5b758fa2fb43ed63674ff7811d93eb57b9d7a7340d97396d4f3399b7fd29149f"
+        },
+        {
+          "source_shape": [
+            184,
+            197
+          ],
+          "map_shape": [
+            1176,
+            160
+          ],
+          "repetition": 1,
+          "threads": 16,
+          "mean_milliseconds": 0.22244399999181041,
+          "output_sha256": "5b758fa2fb43ed63674ff7811d93eb57b9d7a7340d97396d4f3399b7fd29149f"
+        },
+        {
+          "source_shape": [
+            184,
+            197
+          ],
+          "map_shape": [
+            1176,
+            160
+          ],
+          "repetition": 2,
+          "threads": 16,
+          "mean_milliseconds": 0.19246400001065922,
+          "output_sha256": "5b758fa2fb43ed63674ff7811d93eb57b9d7a7340d97396d4f3399b7fd29149f"
+        },
+        {
+          "source_shape": [
+            184,
+            197
+          ],
+          "map_shape": [
+            1176,
+            160
+          ],
+          "repetition": 2,
+          "threads": 1,
+          "mean_milliseconds": 0.9409640000012587,
+          "output_sha256": "5b758fa2fb43ed63674ff7811d93eb57b9d7a7340d97396d4f3399b7fd29149f"
+        },
+        {
+          "source_shape": [
+            185,
+            197
+          ],
+          "map_shape": [
+            1176,
+            160
+          ],
+          "repetition": 0,
+          "threads": 16,
+          "mean_milliseconds": 0.20743999999467633,
+          "output_sha256": "a4fb20d814c6ae7f8ff8a4f73152404548b13d0358192be44cb72a72761fd2a3"
+        },
+        {
+          "source_shape": [
+            185,
+            197
+          ],
+          "map_shape": [
+            1176,
+            160
+          ],
+          "repetition": 0,
+          "threads": 1,
+          "mean_milliseconds": 1.0748039999998582,
+          "output_sha256": "a4fb20d814c6ae7f8ff8a4f73152404548b13d0358192be44cb72a72761fd2a3"
+        },
+        {
+          "source_shape": [
+            185,
+            197
+          ],
+          "map_shape": [
+            1176,
+            160
+          ],
+          "repetition": 1,
+          "threads": 1,
+          "mean_milliseconds": 0.9782219999942754,
+          "output_sha256": "a4fb20d814c6ae7f8ff8a4f73152404548b13d0358192be44cb72a72761fd2a3"
+        },
+        {
+          "source_shape": [
+            185,
+            197
+          ],
+          "map_shape": [
+            1176,
+            160
+          ],
+          "repetition": 1,
+          "threads": 16,
+          "mean_milliseconds": 0.23467200000595767,
+          "output_sha256": "a4fb20d814c6ae7f8ff8a4f73152404548b13d0358192be44cb72a72761fd2a3"
+        },
+        {
+          "source_shape": [
+            185,
+            197
+          ],
+          "map_shape": [
+            1176,
+            160
+          ],
+          "repetition": 2,
+          "threads": 16,
+          "mean_milliseconds": 0.1647179999963555,
+          "output_sha256": "a4fb20d814c6ae7f8ff8a4f73152404548b13d0358192be44cb72a72761fd2a3"
+        },
+        {
+          "source_shape": [
+            185,
+            197
+          ],
+          "map_shape": [
+            1176,
+            160
+          ],
+          "repetition": 2,
+          "threads": 1,
+          "mean_milliseconds": 1.0146179999901506,
+          "output_sha256": "a4fb20d814c6ae7f8ff8a4f73152404548b13d0358192be44cb72a72761fd2a3"
+        }
+      ],
+      "observed_path": {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "coarse_rotation_deg": 0.0
+      },
+      "estimator_comparison": [
+        {
+          "repetition": 0,
+          "bit_identical": true,
+          "maximum_matrix_difference": 0.0,
+          "residual_difference": 0.0,
+          "details_identical": true
+        },
+        {
+          "repetition": 1,
+          "bit_identical": true,
+          "maximum_matrix_difference": 0.0,
+          "residual_difference": 0.0,
+          "details_identical": true
+        },
+        {
+          "repetition": 2,
+          "bit_identical": true,
+          "maximum_matrix_difference": 0.0,
+          "residual_difference": 0.0,
+          "details_identical": true
+        }
+      ],
+      "remap_bit_identical": true,
+      "estimator_mean_milliseconds": {
+        "16": 205.73199999974653,
+        "1": 202.41923333317877
+      }
+    },
+    {
+      "track": 1,
+      "source_frame": 4,
+      "target_frame": 5,
+      "crop_shapes": [
+        [
+          193,
+          195,
+          3
+        ],
+        [
+          186,
+          194,
+          3
+        ]
+      ],
+      "inputs": [
+        {
+          "file": "inputs\\fruit_1_view_004.npz",
+          "original": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\algorithm-revision\\fixed_observable_conveyor_20261002\\1\\inputs\\view_004.npz",
+          "sha256": "19f2a1001bb264e28ddab3b30f9caf464f8f897e49dbe75d23eae5991d6f34b7",
+          "metadata": {
+            "file": "view_004.npz",
+            "frame": 4,
+            "bbox": [
+              19,
+              19,
+              177,
+              175
+            ]
+          }
+        },
+        {
+          "file": "inputs\\fruit_1_view_005.npz",
+          "original": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\algorithm-revision\\fixed_observable_conveyor_20261002\\1\\inputs\\view_005.npz",
+          "sha256": "efbd23c6e203cc56b8aee57cb631bbccb290a7ea1e94a36f84d5e961a03776ab",
+          "metadata": {
+            "file": "view_005.npz",
+            "frame": 5,
+            "bbox": [
+              19,
+              18,
+              176,
+              168
+            ]
+          }
+        }
+      ],
+      "estimator_calls": [
+        {
+          "repetition": 0,
+          "threads": 1,
+          "milliseconds": 184.93400000079419,
+          "rotation_matrix": [
+            [
+              0.9979183225762328,
+              0.0013612276895979662,
+              0.06447610817826056
+            ],
+            [
+              0.0013612276895979662,
+              0.9991098809057674,
+              -0.04216151012049331
+            ],
+            [
+              -0.06447610817826056,
+              0.04216151012049331,
+              0.9970282034820002
+            ]
+          ],
+          "error": 0.4078051451851995,
+          "details": {
+            "image_downsample": 1,
+            "highpass_sigma": 5.0,
+            "coarse_rotation_deg": 0.6727030917866242
+          },
+          "output_sha256": "e57cc23b18a4b199ab0ae57480d35af8993f471ba1628abd2a5d3e049395c3b8"
+        },
+        {
+          "repetition": 0,
+          "threads": 16,
+          "milliseconds": 177.04570000023523,
+          "rotation_matrix": [
+            [
+              0.9979183225762328,
+              0.0013612276895979662,
+              0.06447610817826056
+            ],
+            [
+              0.0013612276895979662,
+              0.9991098809057674,
+              -0.04216151012049331
+            ],
+            [
+              -0.06447610817826056,
+              0.04216151012049331,
+              0.9970282034820002
+            ]
+          ],
+          "error": 0.4078051451851995,
+          "details": {
+            "image_downsample": 1,
+            "highpass_sigma": 5.0,
+            "coarse_rotation_deg": 0.6727030917866242
+          },
+          "output_sha256": "e57cc23b18a4b199ab0ae57480d35af8993f471ba1628abd2a5d3e049395c3b8"
+        },
+        {
+          "repetition": 1,
+          "threads": 16,
+          "milliseconds": 191.17939999978262,
+          "rotation_matrix": [
+            [
+              0.9979183225762328,
+              0.0013612276895979662,
+              0.06447610817826056
+            ],
+            [
+              0.0013612276895979662,
+              0.9991098809057674,
+              -0.04216151012049331
+            ],
+            [
+              -0.06447610817826056,
+              0.04216151012049331,
+              0.9970282034820002
+            ]
+          ],
+          "error": 0.4078051451851995,
+          "details": {
+            "image_downsample": 1,
+            "highpass_sigma": 5.0,
+            "coarse_rotation_deg": 0.6727030917866242
+          },
+          "output_sha256": "e57cc23b18a4b199ab0ae57480d35af8993f471ba1628abd2a5d3e049395c3b8"
+        },
+        {
+          "repetition": 1,
+          "threads": 1,
+          "milliseconds": 186.07650000012654,
+          "rotation_matrix": [
+            [
+              0.9979183225762328,
+              0.0013612276895979662,
+              0.06447610817826056
+            ],
+            [
+              0.0013612276895979662,
+              0.9991098809057674,
+              -0.04216151012049331
+            ],
+            [
+              -0.06447610817826056,
+              0.04216151012049331,
+              0.9970282034820002
+            ]
+          ],
+          "error": 0.4078051451851995,
+          "details": {
+            "image_downsample": 1,
+            "highpass_sigma": 5.0,
+            "coarse_rotation_deg": 0.6727030917866242
+          },
+          "output_sha256": "e57cc23b18a4b199ab0ae57480d35af8993f471ba1628abd2a5d3e049395c3b8"
+        },
+        {
+          "repetition": 2,
+          "threads": 1,
+          "milliseconds": 201.15220000025147,
+          "rotation_matrix": [
+            [
+              0.9979183225762328,
+              0.0013612276895979662,
+              0.06447610817826056
+            ],
+            [
+              0.0013612276895979662,
+              0.9991098809057674,
+              -0.04216151012049331
+            ],
+            [
+              -0.06447610817826056,
+              0.04216151012049331,
+              0.9970282034820002
+            ]
+          ],
+          "error": 0.4078051451851995,
+          "details": {
+            "image_downsample": 1,
+            "highpass_sigma": 5.0,
+            "coarse_rotation_deg": 0.6727030917866242
+          },
+          "output_sha256": "e57cc23b18a4b199ab0ae57480d35af8993f471ba1628abd2a5d3e049395c3b8"
+        },
+        {
+          "repetition": 2,
+          "threads": 16,
+          "milliseconds": 189.7793999996793,
+          "rotation_matrix": [
+            [
+              0.9979183225762328,
+              0.0013612276895979662,
+              0.06447610817826056
+            ],
+            [
+              0.0013612276895979662,
+              0.9991098809057674,
+              -0.04216151012049331
+            ],
+            [
+              -0.06447610817826056,
+              0.04216151012049331,
+              0.9970282034820002
+            ]
+          ],
+          "error": 0.4078051451851995,
+          "details": {
+            "image_downsample": 1,
+            "highpass_sigma": 5.0,
+            "coarse_rotation_deg": 0.6727030917866242
+          },
+          "output_sha256": "e57cc23b18a4b199ab0ae57480d35af8993f471ba1628abd2a5d3e049395c3b8"
+        }
+      ],
+      "remap_calls": [
+        {
+          "source_shape": [
+            46,
+            48
+          ],
+          "map_shape": [
+            1176,
+            15
+          ],
+          "repetition": 0,
+          "threads": 1,
+          "mean_milliseconds": 0.32768599998235004,
+          "output_sha256": "3da07d403e72bc71ee777a875e40fc7351fc818b94cb40f595c87109f3bd0339"
+        },
+        {
+          "source_shape": [
+            46,
+            48
+          ],
+          "map_shape": [
+            1176,
+            15
+          ],
+          "repetition": 0,
+          "threads": 16,
+          "mean_milliseconds": 0.13177799999539275,
+          "output_sha256": "3da07d403e72bc71ee777a875e40fc7351fc818b94cb40f595c87109f3bd0339"
+        },
+        {
+          "source_shape": [
+            46,
+            48
+          ],
+          "map_shape": [
+            1176,
+            15
+          ],
+          "repetition": 1,
+          "threads": 16,
+          "mean_milliseconds": 0.14293199999883655,
+          "output_sha256": "3da07d403e72bc71ee777a875e40fc7351fc818b94cb40f595c87109f3bd0339"
+        },
+        {
+          "source_shape": [
+            46,
+            48
+          ],
+          "map_shape": [
+            1176,
+            15
+          ],
+          "repetition": 1,
+          "threads": 1,
+          "mean_milliseconds": 0.3188659999977972,
+          "output_sha256": "3da07d403e72bc71ee777a875e40fc7351fc818b94cb40f595c87109f3bd0339"
+        },
+        {
+          "source_shape": [
+            46,
+            48
+          ],
+          "map_shape": [
+            1176,
+            15
+          ],
+          "repetition": 2,
+          "threads": 1,
+          "mean_milliseconds": 0.3066140000009909,
+          "output_sha256": "3da07d403e72bc71ee777a875e40fc7351fc818b94cb40f595c87109f3bd0339"
+        },
+        {
+          "source_shape": [
+            46,
+            48
+          ],
+          "map_shape": [
+            1176,
+            15
+          ],
+          "repetition": 2,
+          "threads": 16,
+          "mean_milliseconds": 0.1372580000133894,
+          "output_sha256": "3da07d403e72bc71ee777a875e40fc7351fc818b94cb40f595c87109f3bd0339"
+        },
+        {
+          "source_shape": [
+            48,
+            48
+          ],
+          "map_shape": [
+            1176,
+            15
+          ],
+          "repetition": 0,
+          "threads": 1,
+          "mean_milliseconds": 0.29033000000708853,
+          "output_sha256": "1b244760f30b419a25b22c54550889fa26e0cb64aa2f360a2aa3e60d57caec4c"
+        },
+        {
+          "source_shape": [
+            48,
+            48
+          ],
+          "map_shape": [
+            1176,
+            15
+          ],
+          "repetition": 0,
+          "threads": 16,
+          "mean_milliseconds": 0.11212800000066636,
+          "output_sha256": "1b244760f30b419a25b22c54550889fa26e0cb64aa2f360a2aa3e60d57caec4c"
+        },
+        {
+          "source_shape": [
+            48,
+            48
+          ],
+          "map_shape": [
+            1176,
+            15
+          ],
+          "repetition": 1,
+          "threads": 16,
+          "mean_milliseconds": 0.10954599998513004,
+          "output_sha256": "1b244760f30b419a25b22c54550889fa26e0cb64aa2f360a2aa3e60d57caec4c"
+        },
+        {
+          "source_shape": [
+            48,
+            48
+          ],
+          "map_shape": [
+            1176,
+            15
+          ],
+          "repetition": 1,
+          "threads": 1,
+          "mean_milliseconds": 0.2623660000062955,
+          "output_sha256": "1b244760f30b419a25b22c54550889fa26e0cb64aa2f360a2aa3e60d57caec4c"
+        },
+        {
+          "source_shape": [
+            48,
+            48
+          ],
+          "map_shape": [
+            1176,
+            15
+          ],
+          "repetition": 2,
+          "threads": 1,
+          "mean_milliseconds": 0.30414200000450364,
+          "output_sha256": "1b244760f30b419a25b22c54550889fa26e0cb64aa2f360a2aa3e60d57caec4c"
+        },
+        {
+          "source_shape": [
+            48,
+            48
+          ],
+          "map_shape": [
+            1176,
+            15
+          ],
+          "repetition": 2,
+          "threads": 16,
+          "mean_milliseconds": 0.21377200000642915,
+          "output_sha256": "1b244760f30b419a25b22c54550889fa26e0cb64aa2f360a2aa3e60d57caec4c"
+        },
+        {
+          "source_shape": [
+            186,
+            194
+          ],
+          "map_shape": [
+            1176,
+            160
+          ],
+          "repetition": 0,
+          "threads": 1,
+          "mean_milliseconds": 1.0047339999982796,
+          "output_sha256": "dead171c01f286239fa085a1562498185a743900583f270f859827b48469739f"
+        },
+        {
+          "source_shape": [
+            186,
+            194
+          ],
+          "map_shape": [
+            1176,
+            160
+          ],
+          "repetition": 0,
+          "threads": 16,
+          "mean_milliseconds": 0.16376999999920372,
+          "output_sha256": "dead171c01f286239fa085a1562498185a743900583f270f859827b48469739f"
+        },
+        {
+          "source_shape": [
+            186,
+            194
+          ],
+          "map_shape": [
+            1176,
+            160
+          ],
+          "repetition": 1,
+          "threads": 16,
+          "mean_milliseconds": 0.17615799999475712,
+          "output_sha256": "dead171c01f286239fa085a1562498185a743900583f270f859827b48469739f"
+        },
+        {
+          "source_shape": [
+            186,
+            194
+          ],
+          "map_shape": [
+            1176,
+            160
+          ],
+          "repetition": 1,
+          "threads": 1,
+          "mean_milliseconds": 0.7809580000139249,
+          "output_sha256": "dead171c01f286239fa085a1562498185a743900583f270f859827b48469739f"
+        },
+        {
+          "source_shape": [
+            186,
+            194
+          ],
+          "map_shape": [
+            1176,
+            160
+          ],
+          "repetition": 2,
+          "threads": 1,
+          "mean_milliseconds": 1.0042079999948328,
+          "output_sha256": "dead171c01f286239fa085a1562498185a743900583f270f859827b48469739f"
+        },
+        {
+          "source_shape": [
+            186,
+            194
+          ],
+          "map_shape": [
+            1176,
+            160
+          ],
+          "repetition": 2,
+          "threads": 16,
+          "mean_milliseconds": 0.2179939999950875,
+          "output_sha256": "dead171c01f286239fa085a1562498185a743900583f270f859827b48469739f"
+        },
+        {
+          "source_shape": [
+            193,
+            195
+          ],
+          "map_shape": [
+            1176,
+            160
+          ],
+          "repetition": 0,
+          "threads": 1,
+          "mean_milliseconds": 1.041321999982756,
+          "output_sha256": "5a2af34cceda69f4990b92768cad9ef4366000371f7041461d2725afc01cee14"
+        },
+        {
+          "source_shape": [
+            193,
+            195
+          ],
+          "map_shape": [
+            1176,
+            160
+          ],
+          "repetition": 0,
+          "threads": 16,
+          "mean_milliseconds": 0.21167400000194903,
+          "output_sha256": "5a2af34cceda69f4990b92768cad9ef4366000371f7041461d2725afc01cee14"
+        },
+        {
+          "source_shape": [
+            193,
+            195
+          ],
+          "map_shape": [
+            1176,
+            160
+          ],
+          "repetition": 1,
+          "threads": 16,
+          "mean_milliseconds": 0.15899199999694247,
+          "output_sha256": "5a2af34cceda69f4990b92768cad9ef4366000371f7041461d2725afc01cee14"
+        },
+        {
+          "source_shape": [
+            193,
+            195
+          ],
+          "map_shape": [
+            1176,
+            160
+          ],
+          "repetition": 1,
+          "threads": 1,
+          "mean_milliseconds": 0.9043720000045141,
+          "output_sha256": "5a2af34cceda69f4990b92768cad9ef4366000371f7041461d2725afc01cee14"
+        },
+        {
+          "source_shape": [
+            193,
+            195
+          ],
+          "map_shape": [
+            1176,
+            160
+          ],
+          "repetition": 2,
+          "threads": 1,
+          "mean_milliseconds": 0.9463080000023183,
+          "output_sha256": "5a2af34cceda69f4990b92768cad9ef4366000371f7041461d2725afc01cee14"
+        },
+        {
+          "source_shape": [
+            193,
+            195
+          ],
+          "map_shape": [
+            1176,
+            160
+          ],
+          "repetition": 2,
+          "threads": 16,
+          "mean_milliseconds": 0.19790199999988545,
+          "output_sha256": "5a2af34cceda69f4990b92768cad9ef4366000371f7041461d2725afc01cee14"
+        }
+      ],
+      "observed_path": {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "coarse_rotation_deg": 0.6727030917866242
+      },
+      "estimator_comparison": [
+        {
+          "repetition": 0,
+          "bit_identical": true,
+          "maximum_matrix_difference": 0.0,
+          "residual_difference": 0.0,
+          "details_identical": true
+        },
+        {
+          "repetition": 1,
+          "bit_identical": true,
+          "maximum_matrix_difference": 0.0,
+          "residual_difference": 0.0,
+          "details_identical": true
+        },
+        {
+          "repetition": 2,
+          "bit_identical": true,
+          "maximum_matrix_difference": 0.0,
+          "residual_difference": 0.0,
+          "details_identical": true
+        }
+      ],
+      "remap_bit_identical": true,
+      "estimator_mean_milliseconds": {
+        "16": 186.00149999989904,
+        "1": 190.72090000039074
+      }
+    },
+    {
+      "track": 14,
+      "source_frame": 1,
+      "target_frame": 2,
+      "crop_shapes": [
+        [
+          204,
+          214,
+          3
+        ],
+        [
+          201,
+          215,
+          3
+        ]
+      ],
+      "inputs": [
+        {
+          "file": "inputs\\fruit_14_view_001.npz",
+          "original": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\algorithm-revision\\fixed_observable_conveyor_20261002\\14\\inputs\\view_001.npz",
+          "sha256": "50f10c876b15d49d09dc03a8b76c75dddb671ba151f9b4529ef612b9a2eba48c",
+          "metadata": {
+            "file": "view_001.npz",
+            "frame": 1,
+            "bbox": [
+              20,
+              19,
+              193,
+              184
+            ]
+          }
+        },
+        {
+          "file": "inputs\\fruit_14_view_002.npz",
+          "original": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\algorithm-revision\\fixed_observable_conveyor_20261002\\14\\inputs\\view_002.npz",
+          "sha256": "0a6ba38fe03abe3003641d6dd96fa6d0be4bd6e89782c485d12626d9ac39faeb",
+          "metadata": {
+            "file": "view_002.npz",
+            "frame": 2,
+            "bbox": [
+              21,
+              20,
+              194,
+              182
+            ]
+          }
+        }
+      ],
+      "estimator_calls": [
+        {
+          "repetition": 0,
+          "threads": 16,
+          "milliseconds": 47.38849999921513,
+          "rotation_matrix": [
+            [
+              0.999980974067652,
+              -0.0005862619858621571,
+              -0.00614066768306803
+            ],
+            [
+              -0.0005862619858621571,
+              0.9819350184905516,
+              -0.18921753554796125
+            ],
+            [
+              0.00614066768306803,
+              0.18921753554796125,
+              0.9819159925582036
+            ]
+          ],
+          "error": 0.42945415816407206,
+          "details": {
+            "image_downsample": 4,
+            "highpass_sigma": 1.25,
+            "coarse_rotation_deg": 10.907194401415492
+          },
+          "output_sha256": "08f58fceb0091a0ada2660f653fa0a41e1a0db585280b46f3800f3d56394e3dd"
+        },
+        {
+          "repetition": 0,
+          "threads": 1,
+          "milliseconds": 47.274499999730324,
+          "rotation_matrix": [
+            [
+              0.999980974067652,
+              -0.0005862619858621571,
+              -0.00614066768306803
+            ],
+            [
+              -0.0005862619858621571,
+              0.9819350184905516,
+              -0.18921753554796125
+            ],
+            [
+              0.00614066768306803,
+              0.18921753554796125,
+              0.9819159925582036
+            ]
+          ],
+          "error": 0.42945415816407206,
+          "details": {
+            "image_downsample": 4,
+            "highpass_sigma": 1.25,
+            "coarse_rotation_deg": 10.907194401415492
+          },
+          "output_sha256": "08f58fceb0091a0ada2660f653fa0a41e1a0db585280b46f3800f3d56394e3dd"
+        },
+        {
+          "repetition": 1,
+          "threads": 1,
+          "milliseconds": 44.417000000066764,
+          "rotation_matrix": [
+            [
+              0.999980974067652,
+              -0.0005862619858621571,
+              -0.00614066768306803
+            ],
+            [
+              -0.0005862619858621571,
+              0.9819350184905516,
+              -0.18921753554796125
+            ],
+            [
+              0.00614066768306803,
+              0.18921753554796125,
+              0.9819159925582036
+            ]
+          ],
+          "error": 0.42945415816407206,
+          "details": {
+            "image_downsample": 4,
+            "highpass_sigma": 1.25,
+            "coarse_rotation_deg": 10.907194401415492
+          },
+          "output_sha256": "08f58fceb0091a0ada2660f653fa0a41e1a0db585280b46f3800f3d56394e3dd"
+        },
+        {
+          "repetition": 1,
+          "threads": 16,
+          "milliseconds": 43.511999999282125,
+          "rotation_matrix": [
+            [
+              0.999980974067652,
+              -0.0005862619858621571,
+              -0.00614066768306803
+            ],
+            [
+              -0.0005862619858621571,
+              0.9819350184905516,
+              -0.18921753554796125
+            ],
+            [
+              0.00614066768306803,
+              0.18921753554796125,
+              0.9819159925582036
+            ]
+          ],
+          "error": 0.42945415816407206,
+          "details": {
+            "image_downsample": 4,
+            "highpass_sigma": 1.25,
+            "coarse_rotation_deg": 10.907194401415492
+          },
+          "output_sha256": "08f58fceb0091a0ada2660f653fa0a41e1a0db585280b46f3800f3d56394e3dd"
+        },
+        {
+          "repetition": 2,
+          "threads": 16,
+          "milliseconds": 48.498600000129954,
+          "rotation_matrix": [
+            [
+              0.999980974067652,
+              -0.0005862619858621571,
+              -0.00614066768306803
+            ],
+            [
+              -0.0005862619858621571,
+              0.9819350184905516,
+              -0.18921753554796125
+            ],
+            [
+              0.00614066768306803,
+              0.18921753554796125,
+              0.9819159925582036
+            ]
+          ],
+          "error": 0.42945415816407206,
+          "details": {
+            "image_downsample": 4,
+            "highpass_sigma": 1.25,
+            "coarse_rotation_deg": 10.907194401415492
+          },
+          "output_sha256": "08f58fceb0091a0ada2660f653fa0a41e1a0db585280b46f3800f3d56394e3dd"
+        },
+        {
+          "repetition": 2,
+          "threads": 1,
+          "milliseconds": 49.72929999985354,
+          "rotation_matrix": [
+            [
+              0.999980974067652,
+              -0.0005862619858621571,
+              -0.00614066768306803
+            ],
+            [
+              -0.0005862619858621571,
+              0.9819350184905516,
+              -0.18921753554796125
+            ],
+            [
+              0.00614066768306803,
+              0.18921753554796125,
+              0.9819159925582036
+            ]
+          ],
+          "error": 0.42945415816407206,
+          "details": {
+            "image_downsample": 4,
+            "highpass_sigma": 1.25,
+            "coarse_rotation_deg": 10.907194401415492
+          },
+          "output_sha256": "08f58fceb0091a0ada2660f653fa0a41e1a0db585280b46f3800f3d56394e3dd"
+        }
+      ],
+      "remap_calls": [
+        {
+          "source_shape": [
+            50,
+            53
+          ],
+          "map_shape": [
+            1176,
+            17
+          ],
+          "repetition": 0,
+          "threads": 16,
+          "mean_milliseconds": 0.118265999990399,
+          "output_sha256": "9d3f97ed64fec291a107369e5f45c950bfb937d824854b20ec6b98ee35152560"
+        },
+        {
+          "source_shape": [
+            50,
+            53
+          ],
+          "map_shape": [
+            1176,
+            17
+          ],
+          "repetition": 0,
+          "threads": 1,
+          "mean_milliseconds": 0.1586219999990135,
+          "output_sha256": "9d3f97ed64fec291a107369e5f45c950bfb937d824854b20ec6b98ee35152560"
+        },
+        {
+          "source_shape": [
+            50,
+            53
+          ],
+          "map_shape": [
+            1176,
+            17
+          ],
+          "repetition": 1,
+          "threads": 1,
+          "mean_milliseconds": 0.11138400001073023,
+          "output_sha256": "9d3f97ed64fec291a107369e5f45c950bfb937d824854b20ec6b98ee35152560"
+        },
+        {
+          "source_shape": [
+            50,
+            53
+          ],
+          "map_shape": [
+            1176,
+            17
+          ],
+          "repetition": 1,
+          "threads": 16,
+          "mean_milliseconds": 0.09038399999553803,
+          "output_sha256": "9d3f97ed64fec291a107369e5f45c950bfb937d824854b20ec6b98ee35152560"
+        },
+        {
+          "source_shape": [
+            50,
+            53
+          ],
+          "map_shape": [
+            1176,
+            17
+          ],
+          "repetition": 2,
+          "threads": 16,
+          "mean_milliseconds": 0.09135199999946053,
+          "output_sha256": "9d3f97ed64fec291a107369e5f45c950bfb937d824854b20ec6b98ee35152560"
+        },
+        {
+          "source_shape": [
+            50,
+            53
+          ],
+          "map_shape": [
+            1176,
+            17
+          ],
+          "repetition": 2,
+          "threads": 1,
+          "mean_milliseconds": 0.1433080000060727,
+          "output_sha256": "9d3f97ed64fec291a107369e5f45c950bfb937d824854b20ec6b98ee35152560"
+        },
+        {
+          "source_shape": [
+            51,
+            53
+          ],
+          "map_shape": [
+            1176,
+            17
+          ],
+          "repetition": 0,
+          "threads": 16,
+          "mean_milliseconds": 0.113787999998749,
+          "output_sha256": "73462819e2c3ad1520105fbabcbbcf6b354c8e286ae6f21fab7a3de6a2ccbd21"
+        },
+        {
+          "source_shape": [
+            51,
+            53
+          ],
+          "map_shape": [
+            1176,
+            17
+          ],
+          "repetition": 0,
+          "threads": 1,
+          "mean_milliseconds": 0.12536199999885866,
+          "output_sha256": "73462819e2c3ad1520105fbabcbbcf6b354c8e286ae6f21fab7a3de6a2ccbd21"
+        },
+        {
+          "source_shape": [
+            51,
+            53
+          ],
+          "map_shape": [
+            1176,
+            17
+          ],
+          "repetition": 1,
+          "threads": 1,
+          "mean_milliseconds": 0.12074999998731073,
+          "output_sha256": "73462819e2c3ad1520105fbabcbbcf6b354c8e286ae6f21fab7a3de6a2ccbd21"
+        },
+        {
+          "source_shape": [
+            51,
+            53
+          ],
+          "map_shape": [
+            1176,
+            17
+          ],
+          "repetition": 1,
+          "threads": 16,
+          "mean_milliseconds": 0.13845600000422564,
+          "output_sha256": "73462819e2c3ad1520105fbabcbbcf6b354c8e286ae6f21fab7a3de6a2ccbd21"
+        },
+        {
+          "source_shape": [
+            51,
+            53
+          ],
+          "map_shape": [
+            1176,
+            17
+          ],
+          "repetition": 2,
+          "threads": 16,
+          "mean_milliseconds": 0.09755000000950531,
+          "output_sha256": "73462819e2c3ad1520105fbabcbbcf6b354c8e286ae6f21fab7a3de6a2ccbd21"
+        },
+        {
+          "source_shape": [
+            51,
+            53
+          ],
+          "map_shape": [
+            1176,
+            17
+          ],
+          "repetition": 2,
+          "threads": 1,
+          "mean_milliseconds": 0.1277239999944868,
+          "output_sha256": "73462819e2c3ad1520105fbabcbbcf6b354c8e286ae6f21fab7a3de6a2ccbd21"
+        }
+      ],
+      "observed_path": {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "coarse_rotation_deg": 10.907194401415492
+      },
+      "estimator_comparison": [
+        {
+          "repetition": 0,
+          "bit_identical": true,
+          "maximum_matrix_difference": 0.0,
+          "residual_difference": 0.0,
+          "details_identical": true
+        },
+        {
+          "repetition": 1,
+          "bit_identical": true,
+          "maximum_matrix_difference": 0.0,
+          "residual_difference": 0.0,
+          "details_identical": true
+        },
+        {
+          "repetition": 2,
+          "bit_identical": true,
+          "maximum_matrix_difference": 0.0,
+          "residual_difference": 0.0,
+          "details_identical": true
+        }
+      ],
+      "remap_bit_identical": true,
+      "estimator_mean_milliseconds": {
+        "16": 46.46636666620907,
+        "1": 47.14026666655021
+      }
+    }
+  ],
+  "estimator_mean_milliseconds": {
+    "16": 146.06662222195155,
+    "1": 146.76013333337323
+  },
+  "remap_mean_milliseconds": {
+    "16": 0.15746399999948657,
+    "1": 0.5635287407407035
+  },
+  "all_estimator_pairs_bit_identical": true,
+  "all_remap_pairs_bit_identical": true,
+  "estimator_speed_ratio_16_over_1": 0.9952745265647426,
+  "completed_at": "2026-10-02T14:13:36.548576"
+}

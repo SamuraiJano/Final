@@ -1,0 +1,1798 @@
+{
+  "started_at": "2026-10-04T08:55:13.405599+00:00",
+  "algorithm_sha256": "d2a49090d0c8abc9d9d2785da05664e3ee677f70eb812994e86617cac927b164",
+  "validator_sha256": "63aff15bc98cb1964a395247aa8b5177701e8aae7239c44ef53c647b81a691db",
+  "input_manifest_sha256": "cff4f426ad269b09455ee598a033919870bbae79f112de2a7d99f924396c3a2e",
+  "method": "Explicitly invoke the production native aligned_mad search with boundedZ10degrees on every known pair, followed by separate forward/backward searches and the same3degree SO3 consensus gates. Compare independent analytical pair and propagated pose truth and visible landmark projections. Coarse estimator and automatic fallback eligibility do not run in this component control.",
+  "scope": "Component correctness on prespecified perfect synthetic sphere scenes only. This does not validate the full estimator's automatic use of3D, real fruit accuracy, detection or segmentation. The separate full-estimator spatial controls retain failures when coarse2D succeeds.",
+  "acceptance": {
+    "all_30_pairs_measured": true,
+    "maximum_pose_error_max_deg": 5.0,
+    "maximum_front_visible_landmark_rms_max_px": 5.0
+  },
+  "cases": {
+    "full_turn_x12_y3_z6_texture_a": {
+      "input_sha256": "8d40a27e3b81326d1490528eab2e82bdd6bd6720640cefa724fa6051675ef09b",
+      "pairs": [
+        {
+          "source_frame": 0,
+          "target_frame": 1,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.005016225423863204,
+          "forward_residual": 0.005035991770466649,
+          "backward_residual": 0.0049749629477966635,
+          "inverse_disagreement_deg": 0.013652446112937425,
+          "forward_disagreement_deg": 0.009021902360171636,
+          "backward_disagreement_deg": 0.004666900752087562,
+          "measured_vector_deg": [
+            11.989287209923821,
+            2.9972553526586716,
+            5.994428583056222
+          ],
+          "independent_pair_pose_error_deg": 0.012382950389679351
+        },
+        {
+          "source_frame": 1,
+          "target_frame": 2,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.00451788946517101,
+          "forward_residual": 0.004816616925067223,
+          "backward_residual": 0.004194934767897433,
+          "inverse_disagreement_deg": 0.01860114729119305,
+          "forward_disagreement_deg": 0.009541924011600627,
+          "backward_disagreement_deg": 0.009084296280597029,
+          "measured_vector_deg": [
+            12.00097073035099,
+            -3.0000453664294207,
+            6.005305329365904
+          ],
+          "independent_pair_pose_error_deg": 0.005385145584815448
+        },
+        {
+          "source_frame": 2,
+          "target_frame": 3,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.004559987625876746,
+          "forward_residual": 0.004340551854889426,
+          "backward_residual": 0.004744765524451634,
+          "inverse_disagreement_deg": 0.019995064835287495,
+          "forward_disagreement_deg": 0.011642945886968936,
+          "backward_disagreement_deg": 0.008468055862850134,
+          "measured_vector_deg": [
+            12.001334002842718,
+            2.993179752975898,
+            5.999010938404248
+          ],
+          "independent_pair_pose_error_deg": 0.007002882326155976
+        },
+        {
+          "source_frame": 3,
+          "target_frame": 4,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.004681783260183188,
+          "forward_residual": 0.004794639990216802,
+          "backward_residual": 0.004573405328191359,
+          "inverse_disagreement_deg": 0.009128523241041183,
+          "forward_disagreement_deg": 0.006450921131868625,
+          "backward_disagreement_deg": 0.0074619246248035405,
+          "measured_vector_deg": [
+            11.997397050762036,
+            -2.9959249787212143,
+            -5.994306696691931
+          ],
+          "independent_pair_pose_error_deg": 0.0074619244294305
+        },
+        {
+          "source_frame": 4,
+          "target_frame": 5,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.004550270867667949,
+          "forward_residual": 0.00438780331620445,
+          "backward_residual": 0.004663405653970389,
+          "inverse_disagreement_deg": 0.01806576113813305,
+          "forward_disagreement_deg": 0.009147207657693609,
+          "backward_disagreement_deg": 0.00892183134189941,
+          "measured_vector_deg": [
+            11.995676429960717,
+            3.0005058441877392,
+            -6.015752951032804
+          ],
+          "independent_pair_pose_error_deg": 0.016305672426169406
+        },
+        {
+          "source_frame": 5,
+          "target_frame": 6,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.004797095623483841,
+          "forward_residual": 0.004849508132551567,
+          "backward_residual": 0.004705250560038376,
+          "inverse_disagreement_deg": 0.026153020209375554,
+          "forward_disagreement_deg": 0.011461279600923068,
+          "backward_disagreement_deg": 0.01499759204727397,
+          "measured_vector_deg": [
+            11.99339718821967,
+            -2.991810622082061,
+            -5.989293548067917
+          ],
+          "independent_pair_pose_error_deg": 0.014997591901464673
+        },
+        {
+          "source_frame": 6,
+          "target_frame": 7,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.004523782820017816,
+          "forward_residual": 0.004672346565427244,
+          "backward_residual": 0.0043602529031850044,
+          "inverse_disagreement_deg": 0.020534324183785393,
+          "forward_disagreement_deg": 0.009546449105517017,
+          "backward_disagreement_deg": 0.011093621752631181,
+          "measured_vector_deg": [
+            11.992458395363848,
+            2.9949021674454746,
+            6.007025251107772
+          ],
+          "independent_pair_pose_error_deg": 0.011475510206108569
+        },
+        {
+          "source_frame": 7,
+          "target_frame": 8,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.004532870297280776,
+          "forward_residual": 0.00461997621497408,
+          "backward_residual": 0.004423071065534089,
+          "inverse_disagreement_deg": 0.02155502884180269,
+          "forward_disagreement_deg": 0.00861887029688573,
+          "backward_disagreement_deg": 0.013251860159283027,
+          "measured_vector_deg": [
+            11.984205851364433,
+            -2.9923422016235786,
+            6.020287909306333
+          ],
+          "independent_pair_pose_error_deg": 0.026766747191127815
+        },
+        {
+          "source_frame": 8,
+          "target_frame": 9,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.004397621530414429,
+          "forward_residual": 0.004321424910088165,
+          "backward_residual": 0.004468030111482807,
+          "inverse_disagreement_deg": 0.014157022602262634,
+          "forward_disagreement_deg": 0.007213703051763637,
+          "backward_disagreement_deg": 0.006947100815716708,
+          "measured_vector_deg": [
+            12.006721715979282,
+            2.9947720783485074,
+            5.992874264397589
+          ],
+          "independent_pair_pose_error_deg": 0.011077494120921759
+        },
+        {
+          "source_frame": 9,
+          "target_frame": 10,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.004458562481493213,
+          "forward_residual": 0.004455594320688433,
+          "backward_residual": 0.004417438458420184,
+          "inverse_disagreement_deg": 0.03609004242927029,
+          "forward_disagreement_deg": 0.01769526916229135,
+          "backward_disagreement_deg": 0.018477826510903607,
+          "measured_vector_deg": [
+            11.988372827647026,
+            -3.0004985974372995,
+            -5.98616320611838
+          ],
+          "independent_pair_pose_error_deg": 0.018071227313997715
+        },
+        {
+          "source_frame": 10,
+          "target_frame": 11,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.005334200090966165,
+          "forward_residual": 0.004749227612703598,
+          "backward_residual": 0.005919894437245789,
+          "inverse_disagreement_deg": 0.017468955634709966,
+          "forward_disagreement_deg": 0.010839976378288802,
+          "backward_disagreement_deg": 0.006822880910434996,
+          "measured_vector_deg": [
+            11.999971794062088,
+            2.995857272891568,
+            -5.9899614825893295
+          ],
+          "independent_pair_pose_error_deg": 0.010839976243799681
+        },
+        {
+          "source_frame": 11,
+          "target_frame": 12,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.005714382393274213,
+          "forward_residual": 0.005549744181190784,
+          "backward_residual": 0.005871325402490342,
+          "inverse_disagreement_deg": 0.010300299650660807,
+          "forward_disagreement_deg": 0.0071732109744098846,
+          "backward_disagreement_deg": 0.003502552665337655,
+          "measured_vector_deg": [
+            12.000304694962862,
+            -3.002808567821321,
+            -5.99759117928504
+          ],
+          "independent_pair_pose_error_deg": 0.0037037070786936927
+        },
+        {
+          "source_frame": 12,
+          "target_frame": 13,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.005695498037436825,
+          "forward_residual": 0.005383758954652091,
+          "backward_residual": 0.005989365815223849,
+          "inverse_disagreement_deg": 0.014964279083797872,
+          "forward_disagreement_deg": 0.008655942173026641,
+          "backward_disagreement_deg": 0.006418797806905633,
+          "measured_vector_deg": [
+            11.99882538466028,
+            3.008878261968694,
+            5.995210287655481
+          ],
+          "independent_pair_pose_error_deg": 0.01013199558495492
+        },
+        {
+          "source_frame": 13,
+          "target_frame": 14,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.0057431248567695395,
+          "forward_residual": 0.006247347573435351,
+          "backward_residual": 0.005225550763693526,
+          "inverse_disagreement_deg": 0.017221981085941883,
+          "forward_disagreement_deg": 0.0064185112844007295,
+          "backward_disagreement_deg": 0.010939767523927094,
+          "measured_vector_deg": [
+            11.998110365001361,
+            -2.9946192893658266,
+            6.004479250107692
+          ],
+          "independent_pair_pose_error_deg": 0.007234517584512742
+        },
+        {
+          "source_frame": 14,
+          "target_frame": 15,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.005448518941165773,
+          "forward_residual": 0.005283368929365539,
+          "backward_residual": 0.0056030784293554904,
+          "inverse_disagreement_deg": 0.03603630160472976,
+          "forward_disagreement_deg": 0.01625869860236518,
+          "backward_disagreement_deg": 0.019875199644671018,
+          "measured_vector_deg": [
+            11.988203238403662,
+            2.996662733556849,
+            5.989930009749152
+          ],
+          "independent_pair_pose_error_deg": 0.015863132135180442
+        },
+        {
+          "source_frame": 15,
+          "target_frame": 16,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.0049891080815060215,
+          "forward_residual": 0.005113906352632653,
+          "backward_residual": 0.004859395926848028,
+          "inverse_disagreement_deg": 0.016421991499539743,
+          "forward_disagreement_deg": 0.00998372136492376,
+          "backward_disagreement_deg": 0.006483546504909999,
+          "measured_vector_deg": [
+            11.997460059736293,
+            -2.9995706518323835,
+            -6.002835467980301
+          ],
+          "independent_pair_pose_error_deg": 0.003822401157754491
+        },
+        {
+          "source_frame": 16,
+          "target_frame": 17,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.005208071085350606,
+          "forward_residual": 0.005451908564832928,
+          "backward_residual": 0.004910616601304899,
+          "inverse_disagreement_deg": 0.02543223775772655,
+          "forward_disagreement_deg": 0.015905490439780887,
+          "backward_disagreement_deg": 0.009547178965396355,
+          "measured_vector_deg": [
+            11.992499807487688,
+            3.0087763124126203,
+            -6.010159202985486
+          ],
+          "independent_pair_pose_error_deg": 0.015341242292656728
+        },
+        {
+          "source_frame": 17,
+          "target_frame": 18,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.004977731814238528,
+          "forward_residual": 0.004548532577107377,
+          "backward_residual": 0.0053179021366328814,
+          "inverse_disagreement_deg": 0.03520045838956014,
+          "forward_disagreement_deg": 0.018332324114272536,
+          "backward_disagreement_deg": 0.017260000605086315,
+          "measured_vector_deg": [
+            11.995242999197425,
+            -2.9947348933379807,
+            -5.99331527265128
+          ],
+          "independent_pair_pose_error_deg": 0.009741885949173173
+        },
+        {
+          "source_frame": 18,
+          "target_frame": 19,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.005342467091260543,
+          "forward_residual": 0.005405635047509853,
+          "backward_residual": 0.005223489976245021,
+          "inverse_disagreement_deg": 0.02140450633464926,
+          "forward_disagreement_deg": 0.015643369630126188,
+          "backward_disagreement_deg": 0.008740048507294746,
+          "measured_vector_deg": [
+            11.999999999999972,
+            2.999999999999993,
+            5.999999999999986
+          ],
+          "independent_pair_pose_error_deg": 0.0
+        },
+        {
+          "source_frame": 19,
+          "target_frame": 20,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.005039991593759232,
+          "forward_residual": 0.0048744645967261,
+          "backward_residual": 0.0051753383285671984,
+          "inverse_disagreement_deg": 0.023069525690729238,
+          "forward_disagreement_deg": 0.009181187890451324,
+          "backward_disagreement_deg": 0.013980136151360657,
+          "measured_vector_deg": [
+            11.999842176289688,
+            -2.998703551941486,
+            5.967033044855463
+          ],
+          "independent_pair_pose_error_deg": 0.03292967456566167
+        },
+        {
+          "source_frame": 20,
+          "target_frame": 21,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.005003982143095244,
+          "forward_residual": 0.005057112404872471,
+          "backward_residual": 0.0049073965059727295,
+          "inverse_disagreement_deg": 0.04517483125900915,
+          "forward_disagreement_deg": 0.024101813788017897,
+          "backward_disagreement_deg": 0.021153727754467437,
+          "measured_vector_deg": [
+            11.996828820271007,
+            3.002343835986929,
+            5.994136783120417
+          ],
+          "independent_pair_pose_error_deg": 0.007056855735268915
+        },
+        {
+          "source_frame": 21,
+          "target_frame": 22,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.0053050632064725566,
+          "forward_residual": 0.005237078483293637,
+          "backward_residual": 0.005360014701737956,
+          "inverse_disagreement_deg": 0.04901564522481164,
+          "forward_disagreement_deg": 0.023446318668563625,
+          "backward_disagreement_deg": 0.02575062058176818,
+          "measured_vector_deg": [
+            11.994013301300074,
+            -3.006111915560648,
+            -6.0151744804201
+          ],
+          "independent_pair_pose_error_deg": 0.01737939866820133
+        },
+        {
+          "source_frame": 22,
+          "target_frame": 23,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.004868415860810422,
+          "forward_residual": 0.005034782040136296,
+          "backward_residual": 0.004667841069501618,
+          "inverse_disagreement_deg": 0.043502551618278616,
+          "forward_disagreement_deg": 0.018841742763134123,
+          "backward_disagreement_deg": 0.02492621550756945,
+          "measured_vector_deg": [
+            11.995132573623678,
+            2.9980799628936774,
+            -5.983813982252141
+          ],
+          "independent_pair_pose_error_deg": 0.016989378266027852
+        },
+        {
+          "source_frame": 23,
+          "target_frame": 24,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.005272525365343271,
+          "forward_residual": 0.005076758267105711,
+          "backward_residual": 0.005467977176964179,
+          "inverse_disagreement_deg": 0.020305950587231964,
+          "forward_disagreement_deg": 0.006030300029718654,
+          "backward_disagreement_deg": 0.015586241062273201,
+          "measured_vector_deg": [
+            11.996544020188413,
+            -2.999073051646727,
+            -6.0152065957237335
+          ],
+          "independent_pair_pose_error_deg": 0.01558624078166823
+        },
+        {
+          "source_frame": 24,
+          "target_frame": 25,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.0051543421543450785,
+          "forward_residual": 0.005522554768113701,
+          "backward_residual": 0.004767707742297275,
+          "inverse_disagreement_deg": 0.01642820810938894,
+          "forward_disagreement_deg": 0.008300622220066448,
+          "backward_disagreement_deg": 0.008233575798510268,
+          "measured_vector_deg": [
+            11.991908580919581,
+            2.998641642642351,
+            6.000750911541363
+          ],
+          "independent_pair_pose_error_deg": 0.008233575178790914
+        },
+        {
+          "source_frame": 25,
+          "target_frame": 26,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.00539481382342481,
+          "forward_residual": 0.004913541424270847,
+          "backward_residual": 0.005863063382636622,
+          "inverse_disagreement_deg": 0.012959997808539915,
+          "forward_disagreement_deg": 0.008295827473554536,
+          "backward_disagreement_deg": 0.005484270028333155,
+          "measured_vector_deg": [
+            11.999386686287306,
+            -3.0023404897632764,
+            6.008665952055549
+          ],
+          "independent_pair_pose_error_deg": 0.008979572684667704
+        },
+        {
+          "source_frame": 26,
+          "target_frame": 27,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.005874333668900498,
+          "forward_residual": 0.006033204879697045,
+          "backward_residual": 0.005698773335549445,
+          "inverse_disagreement_deg": 0.022864942665021953,
+          "forward_disagreement_deg": 0.009951680854600003,
+          "backward_disagreement_deg": 0.013043706512957824,
+          "measured_vector_deg": [
+            11.994027996138778,
+            2.9936492443447724,
+            5.98675672395181
+          ],
+          "independent_pair_pose_error_deg": 0.015840178681596727
+        },
+        {
+          "source_frame": 27,
+          "target_frame": 28,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.0057136579666469175,
+          "forward_residual": 0.005796485461557345,
+          "backward_residual": 0.005626991139027292,
+          "inverse_disagreement_deg": 0.01179753731569645,
+          "forward_disagreement_deg": 0.005075224964691324,
+          "backward_disagreement_deg": 0.0067800859013843655,
+          "measured_vector_deg": [
+            12.00178117787062,
+            -3.0019706277035736,
+            -5.995661124903009
+          ],
+          "independent_pair_pose_error_deg": 0.005075223815690793
+        },
+        {
+          "source_frame": 28,
+          "target_frame": 29,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.005581087655645307,
+          "forward_residual": 0.005818116007728082,
+          "backward_residual": 0.005336256543980085,
+          "inverse_disagreement_deg": 0.008954291151645765,
+          "forward_disagreement_deg": 0.007047850103534404,
+          "backward_disagreement_deg": 0.005155384188896481,
+          "measured_vector_deg": [
+            12.00281310687572,
+            3.000955602546463,
+            -5.9935902917196495
+          ],
+          "independent_pair_pose_error_deg": 0.00704784937955386
+        },
+        {
+          "source_frame": 29,
+          "target_frame": 30,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.005258009790474518,
+          "forward_residual": 0.005500093543623876,
+          "backward_residual": 0.0050065397921076815,
+          "inverse_disagreement_deg": 0.006278331891983358,
+          "forward_disagreement_deg": 0.0,
+          "backward_disagreement_deg": 0.006278331891983358,
+          "measured_vector_deg": [
+            11.999999999999972,
+            -2.999999999999993,
+            -5.999999999999986
+          ],
+          "independent_pair_pose_error_deg": 0.0
+        }
+      ],
+      "trace": [
+        {
+          "frame": 1,
+          "chain_available": true,
+          "pose_error_deg": 0.012382950389679351,
+          "landmark_rms_px": 0.00835283882802548,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 2,
+          "chain_available": true,
+          "pose_error_deg": 0.009862716901357878,
+          "landmark_rms_px": 0.006346589838007063,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 3,
+          "chain_available": true,
+          "pose_error_deg": 0.013093385541674466,
+          "landmark_rms_px": 0.00844571528110625,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 4,
+          "chain_available": true,
+          "pose_error_deg": 0.011752038484521374,
+          "landmark_rms_px": 0.006794097423559278,
+          "visible_landmarks": 14
+        },
+        {
+          "frame": 5,
+          "chain_available": true,
+          "pose_error_deg": 0.022163598408354968,
+          "landmark_rms_px": 0.014526338728851201,
+          "visible_landmarks": 12
+        },
+        {
+          "frame": 6,
+          "chain_available": true,
+          "pose_error_deg": 0.024382735634744662,
+          "landmark_rms_px": 0.011151763464863232,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 7,
+          "chain_available": true,
+          "pose_error_deg": 0.030173275212429355,
+          "landmark_rms_px": 0.01510769106574686,
+          "visible_landmarks": 12
+        },
+        {
+          "frame": 8,
+          "chain_available": true,
+          "pose_error_deg": 0.052581553220501016,
+          "landmark_rms_px": 0.030778699695473522,
+          "visible_landmarks": 13
+        },
+        {
+          "frame": 9,
+          "chain_available": true,
+          "pose_error_deg": 0.04385197706851541,
+          "landmark_rms_px": 0.02479947940657184,
+          "visible_landmarks": 16
+        },
+        {
+          "frame": 10,
+          "chain_available": true,
+          "pose_error_deg": 0.06023171178771407,
+          "landmark_rms_px": 0.0395908721084179,
+          "visible_landmarks": 13
+        },
+        {
+          "frame": 11,
+          "chain_available": true,
+          "pose_error_deg": 0.06635259717534468,
+          "landmark_rms_px": 0.04570365040240057,
+          "visible_landmarks": 14
+        },
+        {
+          "frame": 12,
+          "chain_available": true,
+          "pose_error_deg": 0.06817930683332768,
+          "landmark_rms_px": 0.04805282995863814,
+          "visible_landmarks": 14
+        },
+        {
+          "frame": 13,
+          "chain_available": true,
+          "pose_error_deg": 0.06388297450738767,
+          "landmark_rms_px": 0.04434142050459566,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 14,
+          "chain_available": true,
+          "pose_error_deg": 0.06487710047060753,
+          "landmark_rms_px": 0.044406526636197416,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 15,
+          "chain_available": true,
+          "pose_error_deg": 0.07404494128383181,
+          "landmark_rms_px": 0.05028093773755093,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 16,
+          "chain_available": true,
+          "pose_error_deg": 0.07596394197883742,
+          "landmark_rms_px": 0.05126206944590868,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 17,
+          "chain_available": true,
+          "pose_error_deg": 0.08163986543834699,
+          "landmark_rms_px": 0.05440713056796438,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 18,
+          "chain_available": true,
+          "pose_error_deg": 0.08431128985976104,
+          "landmark_rms_px": 0.05269774885187578,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 19,
+          "chain_available": true,
+          "pose_error_deg": 0.08431128985111534,
+          "landmark_rms_px": 0.050442788923730456,
+          "visible_landmarks": 14
+        },
+        {
+          "frame": 20,
+          "chain_available": true,
+          "pose_error_deg": 0.09626145207131652,
+          "landmark_rms_px": 0.06453200988350394,
+          "visible_landmarks": 12
+        },
+        {
+          "frame": 21,
+          "chain_available": true,
+          "pose_error_deg": 0.10201217954810181,
+          "landmark_rms_px": 0.06329732704652395,
+          "visible_landmarks": 14
+        },
+        {
+          "frame": 22,
+          "chain_available": true,
+          "pose_error_deg": 0.11521568633868041,
+          "landmark_rms_px": 0.0745680160043264,
+          "visible_landmarks": 12
+        },
+        {
+          "frame": 23,
+          "chain_available": true,
+          "pose_error_deg": 0.11026061201056445,
+          "landmark_rms_px": 0.0627150745786477,
+          "visible_landmarks": 13
+        },
+        {
+          "frame": 24,
+          "chain_available": true,
+          "pose_error_deg": 0.12009056314935679,
+          "landmark_rms_px": 0.07241824496010026,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 25,
+          "chain_available": true,
+          "pose_error_deg": 0.12563180596782952,
+          "landmark_rms_px": 0.07828760563746036,
+          "visible_landmarks": 13
+        },
+        {
+          "frame": 26,
+          "chain_available": true,
+          "pose_error_deg": 0.12305786523046616,
+          "landmark_rms_px": 0.07416011548723934,
+          "visible_landmarks": 14
+        },
+        {
+          "frame": 27,
+          "chain_available": true,
+          "pose_error_deg": 0.1288776935167938,
+          "landmark_rms_px": 0.08307559671268284,
+          "visible_landmarks": 14
+        },
+        {
+          "frame": 28,
+          "chain_available": true,
+          "pose_error_deg": 0.12592408024207113,
+          "landmark_rms_px": 0.08204291247294455,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 29,
+          "chain_available": true,
+          "pose_error_deg": 0.12367498243754226,
+          "landmark_rms_px": 0.08194263868594015,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 30,
+          "chain_available": true,
+          "pose_error_deg": 0.12367498244343618,
+          "landmark_rms_px": 0.08381709552609243,
+          "visible_landmarks": 15
+        }
+      ],
+      "summary": {
+        "input_pairs": 30,
+        "measured_pairs": 30,
+        "maximum_pair_pose_error_deg": 0.03292967456566167,
+        "maximum_pose_error_deg": 0.1288776935167938,
+        "maximum_landmark_rms_px": 0.08381709552609243
+      },
+      "checks": {
+        "all_30_pairs_measured": true,
+        "maximum_pose_within_5deg": true,
+        "maximum_front_visible_landmarks_within_5px": true
+      },
+      "passed": true
+    },
+    "full_turn_x12_y3_z6_texture_b": {
+      "input_sha256": "ab7a24a48932b2b518b154f9b44be7b5a9d08ee3fc4e33512fd3e59fe5526a86",
+      "pairs": [
+        {
+          "source_frame": 0,
+          "target_frame": 1,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.0031140619026736906,
+          "forward_residual": 0.003028199545966235,
+          "backward_residual": 0.003161358512687111,
+          "inverse_disagreement_deg": 0.012602423978856823,
+          "forward_disagreement_deg": 0.006408972312030222,
+          "backward_disagreement_deg": 0.00619721150956965,
+          "measured_vector_deg": [
+            12.001838053789287,
+            2.9986662306491247,
+            5.995184147921214
+          ],
+          "independent_pair_pose_error_deg": 0.005311971052631092
+        },
+        {
+          "source_frame": 1,
+          "target_frame": 2,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.003292756919598416,
+          "forward_residual": 0.0031432934533092067,
+          "backward_residual": 0.003398006355328062,
+          "inverse_disagreement_deg": 0.01042842428895386,
+          "forward_disagreement_deg": 0.005410331196037733,
+          "backward_disagreement_deg": 0.0050352929244926485,
+          "measured_vector_deg": [
+            11.999560800156278,
+            -3.0016190044486497,
+            6.000542874798432
+          ],
+          "independent_pair_pose_error_deg": 0.0017590062042406795
+        },
+        {
+          "source_frame": 2,
+          "target_frame": 3,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.003313537973348715,
+          "forward_residual": 0.0033670599964918516,
+          "backward_residual": 0.0032308879176135407,
+          "inverse_disagreement_deg": 0.006718060934228011,
+          "forward_disagreement_deg": 0.004151774219252853,
+          "backward_disagreement_deg": 0.002750518959931228,
+          "measured_vector_deg": [
+            12.001505611507415,
+            3.002297095523124,
+            5.999790379633417
+          ],
+          "independent_pair_pose_error_deg": 0.0027505186949159763
+        },
+        {
+          "source_frame": 3,
+          "target_frame": 4,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.003358131599652132,
+          "forward_residual": 0.0035845628576524247,
+          "backward_residual": 0.0030779678175335765,
+          "inverse_disagreement_deg": 0.011784896238668463,
+          "forward_disagreement_deg": 0.005592923691616404,
+          "backward_disagreement_deg": 0.006194364869852281,
+          "measured_vector_deg": [
+            11.995121121735211,
+            -3.0000647611434705,
+            -6.009665531341593
+          ],
+          "independent_pair_pose_error_deg": 0.010801332587862738
+        },
+        {
+          "source_frame": 4,
+          "target_frame": 5,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.0032179239709083938,
+          "forward_residual": 0.0030781136390686976,
+          "backward_residual": 0.003339720701934352,
+          "inverse_disagreement_deg": 0.009880489922316863,
+          "forward_disagreement_deg": 0.004396832488383924,
+          "backward_disagreement_deg": 0.005552253148177136,
+          "measured_vector_deg": [
+            12.005261208750866,
+            3.002092436857607,
+            -5.992557207259682
+          ],
+          "independent_pair_pose_error_deg": 0.009330087011515383
+        },
+        {
+          "source_frame": 5,
+          "target_frame": 6,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.0035320590103128657,
+          "forward_residual": 0.0035024895529006074,
+          "backward_residual": 0.003520066351189846,
+          "inverse_disagreement_deg": 0.014585700445150344,
+          "forward_disagreement_deg": 0.006185363983874837,
+          "backward_disagreement_deg": 0.008413455992223175,
+          "measured_vector_deg": [
+            11.999339744882722,
+            -3.0002646920321756,
+            -6.004882651820741
+          ],
+          "independent_pair_pose_error_deg": 0.004923632008461958
+        },
+        {
+          "source_frame": 6,
+          "target_frame": 7,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.0037177314604036585,
+          "forward_residual": 0.003660782330609406,
+          "backward_residual": 0.0037529784860800943,
+          "inverse_disagreement_deg": 0.011122403801778338,
+          "forward_disagreement_deg": 0.005186752549894947,
+          "backward_disagreement_deg": 0.005999857110416556,
+          "measured_vector_deg": [
+            11.99888148673987,
+            2.999891104422152,
+            6.003563943293755
+          ],
+          "independent_pair_pose_error_deg": 0.003728166647079961
+        },
+        {
+          "source_frame": 7,
+          "target_frame": 8,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.0037702475171272547,
+          "forward_residual": 0.003759311570141596,
+          "backward_residual": 0.0037742482218004747,
+          "inverse_disagreement_deg": 0.006252838030847535,
+          "forward_disagreement_deg": 0.0030846809941466454,
+          "backward_disagreement_deg": 0.003234011853598421,
+          "measured_vector_deg": [
+            11.999513225436747,
+            -2.9965255248258047,
+            6.006214820411535
+          ],
+          "independent_pair_pose_error_deg": 0.007120408948797856
+        },
+        {
+          "source_frame": 8,
+          "target_frame": 9,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.0038401753378562494,
+          "forward_residual": 0.003910297288847995,
+          "backward_residual": 0.0037575715084245584,
+          "inverse_disagreement_deg": 0.015070933654204609,
+          "forward_disagreement_deg": 0.007625700510223097,
+          "backward_disagreement_deg": 0.007672269368052743,
+          "measured_vector_deg": [
+            12.008179689980832,
+            2.999853970101342,
+            6.003604550806519
+          ],
+          "independent_pair_pose_error_deg": 0.00893865772346256
+        },
+        {
+          "source_frame": 9,
+          "target_frame": 10,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.0038522487991986664,
+          "forward_residual": 0.0037542539181628517,
+          "backward_residual": 0.003918265972159522,
+          "inverse_disagreement_deg": 0.013308378798119126,
+          "forward_disagreement_deg": 0.00552983964354026,
+          "backward_disagreement_deg": 0.008966201092264191,
+          "measured_vector_deg": [
+            11.999999999999972,
+            -2.999999999999993,
+            -5.999999999999986
+          ],
+          "independent_pair_pose_error_deg": 0.0
+        },
+        {
+          "source_frame": 10,
+          "target_frame": 11,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.004193698403018368,
+          "forward_residual": 0.004153642551064195,
+          "backward_residual": 0.004209791247063509,
+          "inverse_disagreement_deg": 0.015378877210240803,
+          "forward_disagreement_deg": 0.010152387830782265,
+          "backward_disagreement_deg": 0.005687442096120458,
+          "measured_vector_deg": [
+            11.99736502485543,
+            2.9946086037254602,
+            -6.002910029001997
+          ],
+          "independent_pair_pose_error_deg": 0.006654986002086397
+        },
+        {
+          "source_frame": 11,
+          "target_frame": 12,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.004619330945766208,
+          "forward_residual": 0.004850208212455426,
+          "backward_residual": 0.004387903777938563,
+          "inverse_disagreement_deg": 0.00959548047237358,
+          "forward_disagreement_deg": 0.004543332534259156,
+          "backward_disagreement_deg": 0.005062473713051672,
+          "measured_vector_deg": [
+            11.997408614118495,
+            -2.998284034381332,
+            -5.993121791054642
+          ],
+          "independent_pair_pose_error_deg": 0.007539827778672228
+        },
+        {
+          "source_frame": 12,
+          "target_frame": 13,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.004473751340855049,
+          "forward_residual": 0.0048235887893763214,
+          "backward_residual": 0.004108673893149781,
+          "inverse_disagreement_deg": 0.020138969017172586,
+          "forward_disagreement_deg": 0.006577561274718715,
+          "backward_disagreement_deg": 0.01374226431449576,
+          "measured_vector_deg": [
+            11.997784736966315,
+            2.9981389696372087,
+            5.996164110166671
+          ],
+          "independent_pair_pose_error_deg": 0.004801195323010355
+        },
+        {
+          "source_frame": 13,
+          "target_frame": 14,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.003981601440691344,
+          "forward_residual": 0.004038498598207079,
+          "backward_residual": 0.0039018329508429604,
+          "inverse_disagreement_deg": 0.017844633941290048,
+          "forward_disagreement_deg": 0.009579618060838326,
+          "backward_disagreement_deg": 0.00842741444268147,
+          "measured_vector_deg": [
+            11.98899882663163,
+            -2.9950612896704856,
+            5.985024708314206
+          ],
+          "independent_pair_pose_error_deg": 0.01921783325818608
+        },
+        {
+          "source_frame": 14,
+          "target_frame": 15,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.0037674226908082885,
+          "forward_residual": 0.0038008756787091535,
+          "backward_residual": 0.0037300315314330603,
+          "inverse_disagreement_deg": 0.009905515265264545,
+          "forward_disagreement_deg": 0.009905515265264545,
+          "backward_disagreement_deg": 0.0,
+          "measured_vector_deg": [
+            11.999999999999972,
+            2.999999999999993,
+            5.999999999999986
+          ],
+          "independent_pair_pose_error_deg": 0.0
+        },
+        {
+          "source_frame": 15,
+          "target_frame": 16,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.004004143237218695,
+          "forward_residual": 0.00366100252356878,
+          "backward_residual": 0.004334310971879851,
+          "inverse_disagreement_deg": 0.010004753477398511,
+          "forward_disagreement_deg": 0.006536672363266781,
+          "backward_disagreement_deg": 0.0035226094353642723,
+          "measured_vector_deg": [
+            11.995510965659795,
+            -2.9963556625735452,
+            -5.980234593591717
+          ],
+          "independent_pair_pose_error_deg": 0.020565145563264515
+        },
+        {
+          "source_frame": 16,
+          "target_frame": 17,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.0041972560697861525,
+          "forward_residual": 0.004143291637165419,
+          "backward_residual": 0.004212743211280271,
+          "inverse_disagreement_deg": 0.021390948033026637,
+          "forward_disagreement_deg": 0.011232993816539147,
+          "backward_disagreement_deg": 0.01032479107741986,
+          "measured_vector_deg": [
+            11.99348115856371,
+            3.002049554239013,
+            -6.004349678992554
+          ],
+          "independent_pair_pose_error_deg": 0.008084245565814824
+        },
+        {
+          "source_frame": 17,
+          "target_frame": 18,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.004065885777423317,
+          "forward_residual": 0.00388279527239937,
+          "backward_residual": 0.004243032905251618,
+          "inverse_disagreement_deg": 0.008040933760752626,
+          "forward_disagreement_deg": 0.003905622050005739,
+          "backward_disagreement_deg": 0.004205177831040359,
+          "measured_vector_deg": [
+            11.996930756558527,
+            -3.002695265168343,
+            -6.003005898261971
+          ],
+          "independent_pair_pose_error_deg": 0.005059631479485634
+        },
+        {
+          "source_frame": 18,
+          "target_frame": 19,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.004080247506758334,
+          "forward_residual": 0.004115455283853683,
+          "backward_residual": 0.004040256200364296,
+          "inverse_disagreement_deg": 0.006540996331980393,
+          "forward_disagreement_deg": 0.0030496751624368556,
+          "backward_disagreement_deg": 0.0035116518587876393,
+          "measured_vector_deg": [
+            12.001898666445456,
+            2.9987666544212295,
+            5.9987782877901985
+          ],
+          "independent_pair_pose_error_deg": 0.0025671881815810763
+        },
+        {
+          "source_frame": 19,
+          "target_frame": 20,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.004322131366651797,
+          "forward_residual": 0.004274584710033829,
+          "backward_residual": 0.0043600882428666875,
+          "inverse_disagreement_deg": 0.028830949766420855,
+          "forward_disagreement_deg": 0.014495751181311621,
+          "backward_disagreement_deg": 0.01451922150059431,
+          "measured_vector_deg": [
+            12.004026847753604,
+            -2.9943031708273087,
+            6.005096712754222
+          ],
+          "independent_pair_pose_error_deg": 0.008624685227339729
+        },
+        {
+          "source_frame": 20,
+          "target_frame": 21,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.003955777132705986,
+          "forward_residual": 0.004160493048207531,
+          "backward_residual": 0.0037437617649089218,
+          "inverse_disagreement_deg": 0.010169748803287604,
+          "forward_disagreement_deg": 0.005558619069583826,
+          "backward_disagreement_deg": 0.004657767429767454,
+          "measured_vector_deg": [
+            12.003105854782513,
+            3.0030733169014976,
+            5.993450707593496
+          ],
+          "independent_pair_pose_error_deg": 0.00785425529387401
+        },
+        {
+          "source_frame": 21,
+          "target_frame": 22,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.0037595709251977017,
+          "forward_residual": 0.00393003124308557,
+          "backward_residual": 0.0035645008834063728,
+          "inverse_disagreement_deg": 0.027692876704139297,
+          "forward_disagreement_deg": 0.0109411231176001,
+          "backward_disagreement_deg": 0.016756018170264408,
+          "measured_vector_deg": [
+            11.998073673403544,
+            -2.9974348500366013,
+            -5.983199511093077
+          ],
+          "independent_pair_pose_error_deg": 0.017075864695084243
+        },
+        {
+          "source_frame": 22,
+          "target_frame": 23,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.003696054457538976,
+          "forward_residual": 0.0035583105133559665,
+          "backward_residual": 0.0038195523808223393,
+          "inverse_disagreement_deg": 0.014918490164584752,
+          "forward_disagreement_deg": 0.007562654675287624,
+          "backward_disagreement_deg": 0.0075840430959098854,
+          "measured_vector_deg": [
+            11.998634714067327,
+            2.993137796066274,
+            -5.997039535963075
+          ],
+          "independent_pair_pose_error_deg": 0.00758404242311488
+        },
+        {
+          "source_frame": 23,
+          "target_frame": 24,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.003931346726952752,
+          "forward_residual": 0.0038964688779861705,
+          "backward_residual": 0.003918348686621217,
+          "inverse_disagreement_deg": 0.0350437686731126,
+          "forward_disagreement_deg": 0.018380042189038385,
+          "backward_disagreement_deg": 0.016706580987263246,
+          "measured_vector_deg": [
+            11.993270943046083,
+            -2.9932507686657495,
+            -6.0045512338370495
+          ],
+          "independent_pair_pose_error_deg": 0.010542745610348639
+        },
+        {
+          "source_frame": 24,
+          "target_frame": 25,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.0038673619337816576,
+          "forward_residual": 0.0037219917137721933,
+          "backward_residual": 0.00397826689177706,
+          "inverse_disagreement_deg": 0.018701306474496616,
+          "forward_disagreement_deg": 0.009808984143275556,
+          "backward_disagreement_deg": 0.009155476089876961,
+          "measured_vector_deg": [
+            12.005457059395605,
+            3.0021873749488286,
+            6.0019786716957215
+          ],
+          "independent_pair_pose_error_deg": 0.006202693336166473
+        },
+        {
+          "source_frame": 25,
+          "target_frame": 26,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.004426810992739861,
+          "forward_residual": 0.0041730895302554815,
+          "backward_residual": 0.004654439851735072,
+          "inverse_disagreement_deg": 0.01579345794721952,
+          "forward_disagreement_deg": 0.008671292604027535,
+          "backward_disagreement_deg": 0.007216187290465205,
+          "measured_vector_deg": [
+            11.997221623737857,
+            -3.004636404692249,
+            6.001193160592254
+          ],
+          "independent_pair_pose_error_deg": 0.005522349447889815
+        },
+        {
+          "source_frame": 26,
+          "target_frame": 27,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            6.0
+          ],
+          "status": "measured",
+          "residual": 0.004392603240768863,
+          "forward_residual": 0.004548060041009943,
+          "backward_residual": 0.0042025938466771105,
+          "inverse_disagreement_deg": 0.01259275067915041,
+          "forward_disagreement_deg": 0.006739136041273516,
+          "backward_disagreement_deg": 0.006223895578235475,
+          "measured_vector_deg": [
+            11.984020384521132,
+            2.9983569417268305,
+            6.003363995496438
+          ],
+          "independent_pair_pose_error_deg": 0.01639706157077966
+        },
+        {
+          "source_frame": 27,
+          "target_frame": 28,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.0037029768256551417,
+          "forward_residual": 0.003734163364069818,
+          "backward_residual": 0.0035701115475632946,
+          "inverse_disagreement_deg": 0.024835464157500646,
+          "forward_disagreement_deg": 0.011350586805117129,
+          "backward_disagreement_deg": 0.013705192813103777,
+          "measured_vector_deg": [
+            11.998017667814812,
+            -2.9984303914351838,
+            -6.0060157410362125
+          ],
+          "independent_pair_pose_error_deg": 0.0065099919765960745
+        },
+        {
+          "source_frame": 28,
+          "target_frame": 29,
+          "truth_increment_xyz_deg": [
+            12.0,
+            3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.0038399188635525007,
+          "forward_residual": 0.0038865126467714094,
+          "backward_residual": 0.0036204215257472573,
+          "inverse_disagreement_deg": 0.026555608812816465,
+          "forward_disagreement_deg": 0.015267899312669485,
+          "backward_disagreement_deg": 0.011400617553163529,
+          "measured_vector_deg": [
+            11.99930304951171,
+            2.991455452172399,
+            -6.008407073455477
+          ],
+          "independent_pair_pose_error_deg": 0.011978747081574679
+        },
+        {
+          "source_frame": 29,
+          "target_frame": 30,
+          "truth_increment_xyz_deg": [
+            12.0,
+            -3.0,
+            -6.0
+          ],
+          "status": "measured",
+          "residual": 0.003155939715205676,
+          "forward_residual": 0.0030100818371578794,
+          "backward_residual": 0.0031869983537504143,
+          "inverse_disagreement_deg": 0.020545861516316145,
+          "forward_disagreement_deg": 0.01027362542679617,
+          "backward_disagreement_deg": 0.010324512698175223,
+          "measured_vector_deg": [
+            11.997161994977912,
+            -3.0030555232861333,
+            -6.00524571146581
+          ],
+          "independent_pair_pose_error_deg": 0.006685359279511972
+        }
+      ],
+      "trace": [
+        {
+          "frame": 1,
+          "chain_available": true,
+          "pose_error_deg": 0.005311971052631092,
+          "landmark_rms_px": 0.0037358833488287256,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 2,
+          "chain_available": true,
+          "pose_error_deg": 0.004962030778813569,
+          "landmark_rms_px": 0.003695055667075579,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 3,
+          "chain_available": true,
+          "pose_error_deg": 0.006010865892059337,
+          "landmark_rms_px": 0.003973753881853998,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 4,
+          "chain_available": true,
+          "pose_error_deg": 0.01438212746959735,
+          "landmark_rms_px": 0.009958690835980045,
+          "visible_landmarks": 14
+        },
+        {
+          "frame": 5,
+          "chain_available": true,
+          "pose_error_deg": 0.010390545812917857,
+          "landmark_rms_px": 0.00556592123124345,
+          "visible_landmarks": 12
+        },
+        {
+          "frame": 6,
+          "chain_available": true,
+          "pose_error_deg": 0.012694262045357271,
+          "landmark_rms_px": 0.007415020405267389,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 7,
+          "chain_available": true,
+          "pose_error_deg": 0.010647702146041986,
+          "landmark_rms_px": 0.005378555636870322,
+          "visible_landmarks": 12
+        },
+        {
+          "frame": 8,
+          "chain_available": true,
+          "pose_error_deg": 0.014702338855929595,
+          "landmark_rms_px": 0.007919534979608938,
+          "visible_landmarks": 13
+        },
+        {
+          "frame": 9,
+          "chain_available": true,
+          "pose_error_deg": 0.018651974755275486,
+          "landmark_rms_px": 0.011073243043723447,
+          "visible_landmarks": 16
+        },
+        {
+          "frame": 10,
+          "chain_available": true,
+          "pose_error_deg": 0.01865197479435604,
+          "landmark_rms_px": 0.011317081262701914,
+          "visible_landmarks": 13
+        },
+        {
+          "frame": 11,
+          "chain_available": true,
+          "pose_error_deg": 0.013868771149654463,
+          "landmark_rms_px": 0.010039685248078448,
+          "visible_landmarks": 14
+        },
+        {
+          "frame": 12,
+          "chain_available": true,
+          "pose_error_deg": 0.019332754466921575,
+          "landmark_rms_px": 0.01438440228049563,
+          "visible_landmarks": 14
+        },
+        {
+          "frame": 13,
+          "chain_available": true,
+          "pose_error_deg": 0.016053724529865847,
+          "landmark_rms_px": 0.012028232572500902,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 14,
+          "chain_available": true,
+          "pose_error_deg": 0.009908997143216785,
+          "landmark_rms_px": 0.006510835423193229,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 15,
+          "chain_available": true,
+          "pose_error_deg": 0.009908997143216785,
+          "landmark_rms_px": 0.006716883356313638,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 16,
+          "chain_available": true,
+          "pose_error_deg": 0.020122515625724938,
+          "landmark_rms_px": 0.013415830077170206,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 17,
+          "chain_available": true,
+          "pose_error_deg": 0.0222187217447506,
+          "landmark_rms_px": 0.014173710847484478,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 18,
+          "chain_available": true,
+          "pose_error_deg": 0.02397010338300358,
+          "landmark_rms_px": 0.014305760411109111,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 19,
+          "chain_available": true,
+          "pose_error_deg": 0.022147019681160906,
+          "landmark_rms_px": 0.012433942315575637,
+          "visible_landmarks": 14
+        },
+        {
+          "frame": 20,
+          "chain_available": true,
+          "pose_error_deg": 0.018629282585899146,
+          "landmark_rms_px": 0.010361444485362414,
+          "visible_landmarks": 12
+        },
+        {
+          "frame": 21,
+          "chain_available": true,
+          "pose_error_deg": 0.012733626815419717,
+          "landmark_rms_px": 0.005997317829485481,
+          "visible_landmarks": 14
+        },
+        {
+          "frame": 22,
+          "chain_available": true,
+          "pose_error_deg": 0.022580360235885142,
+          "landmark_rms_px": 0.015641836297818193,
+          "visible_landmarks": 12
+        },
+        {
+          "frame": 23,
+          "chain_available": true,
+          "pose_error_deg": 0.027583374261320417,
+          "landmark_rms_px": 0.01838630794003611,
+          "visible_landmarks": 13
+        },
+        {
+          "frame": 24,
+          "chain_available": true,
+          "pose_error_deg": 0.027608505873572248,
+          "landmark_rms_px": 0.015032589637526492,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 25,
+          "chain_available": true,
+          "pose_error_deg": 0.023492702966639138,
+          "landmark_rms_px": 0.015205557407141228,
+          "visible_landmarks": 13
+        },
+        {
+          "frame": 26,
+          "chain_available": true,
+          "pose_error_deg": 0.028428929165145212,
+          "landmark_rms_px": 0.018162012502861292,
+          "visible_landmarks": 14
+        },
+        {
+          "frame": 27,
+          "chain_available": true,
+          "pose_error_deg": 0.04216191634337606,
+          "landmark_rms_px": 0.027254149078034313,
+          "visible_landmarks": 14
+        },
+        {
+          "frame": 28,
+          "chain_available": true,
+          "pose_error_deg": 0.04230798752759295,
+          "landmark_rms_px": 0.02689510318310284,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 29,
+          "chain_available": true,
+          "pose_error_deg": 0.04840807893329461,
+          "landmark_rms_px": 0.0316367639874768,
+          "visible_landmarks": 15
+        },
+        {
+          "frame": 30,
+          "chain_available": true,
+          "pose_error_deg": 0.05394380880025209,
+          "landmark_rms_px": 0.03648711669779996,
+          "visible_landmarks": 15
+        }
+      ],
+      "summary": {
+        "input_pairs": 30,
+        "measured_pairs": 30,
+        "maximum_pair_pose_error_deg": 0.020565145563264515,
+        "maximum_pose_error_deg": 0.05394380880025209,
+        "maximum_landmark_rms_px": 0.03648711669779996
+      },
+      "checks": {
+        "all_30_pairs_measured": true,
+        "maximum_pose_within_5deg": true,
+        "maximum_front_visible_landmarks_within_5px": true
+      },
+      "passed": true
+    }
+  },
+  "seconds": 226.06774820000282,
+  "completed_at": "2026-10-04T08:58:59.481390+00:00",
+  "all_component_controls_passed": true
+}

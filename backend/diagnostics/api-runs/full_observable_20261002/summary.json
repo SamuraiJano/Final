@@ -1,0 +1,20 @@
+{
+  "started_at": "2026-10-02T14:09:23.600496+02:00",
+  "video": "C:\\Users\\USER\\Pictures\\Camera Roll\\WIN_20260818_13_29_43_Pro.mp4",
+  "video_sha256": "dc25964bf6052972cad761b0246f79906e768c6737bf4228ba44711d7272429c",
+  "analysis_id": "cff11fe7d7d445cdaa2daccb70335ee1",
+  "method": "Full video submitted through POST /api/analyze-video; no track subset filter.",
+  "limitations": "No manually labelled fruit identities, rotations or grades; tests pipeline execution, not classification accuracy.",
+  "finished_at": "2026-10-02T15:10:35.379279+02:00",
+  "job_id": "272fb3d439e04f3ab86065a99b686545",
+  "fruits": 474,
+  "statuses": {
+    "mapping_failed": 182,
+    "insufficient_longitude_coverage": 285,
+    "graded": 7
+  },
+  "grades": {
+    "ungraded": 467,
+    "Class 1": 7
+  }
+}

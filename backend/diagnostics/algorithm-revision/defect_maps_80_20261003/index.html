@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Naartjie maps — defect colours and 80% target</title>
+<style>
+body{margin:0;background:#f2f5f2;color:#142d22;font:17px/1.6 system-ui,sans-serif}
+main{max-width:1250px;margin:36px auto;padding:0 24px 48px}
+h1{font-size:32px;line-height:1.2}h2{font-size:23px;margin-top:36px}
+a{color:#176248}figure{margin:22px 0;background:white;padding:18px;border-radius:10px}
+img{display:block;width:100%;height:auto}figcaption{margin-top:12px;font-size:15px}
+.links{display:flex;gap:18px;flex-wrap:wrap}.note{padding:16px;background:#e1eadf;border-radius:8px}
+</style>
+<main>
+<h1>Preserved naartjie texture with coloured predicted defects</h1>
+<p>The map keeps the original fruit texture. A separate translucent overlay highlights five predicted defect categories. The whole surface canvas stays visible; black unseen regions remain unassessed. Defect categories are separate from overall quality Classes 1, 2 and 3.</p>
+<p class="links"><a href="REPORT.md">Testing and provenance report</a><a href="figures/actual_defect_maps_300dpi.png">300-dpi figure</a><a href="figures/actual_defect_maps.pdf">Figure PDF</a><a href="examples.json">Example measurements and hashes</a><a href="all_474_display_records.json">All 474 display records</a></p>
+<p class="note"><strong>Coverage target: 80% observed surface plus 350° observed longitude.</strong> Earlier requested partial grades remain provisional. Colours change no map masks, measured areas or grades. Saved job d0cb7e25b5e14d76a7ebf03c111e259b has 293 Class 1, 1 Class 2 and 180 Review, including 292 partial grades. No models were rerun.</p>
+<figure><a href="figures/actual_defect_maps_300dpi.png"><img src="figures/actual_defect_maps_300dpi.png" alt="Actual fruit 98, 340 and 32: original textured map, coloured defect overlay and observed mask"></a><figcaption>Actual saved conveyor predictions: fruit 98 meets the coverage target; 340 and 32 remain partial. White mask pixels identify observed locations. Unseen surface is excluded from the defect-percentage denominator. No human defect truth is supplied.</figcaption></figure>
+<h2>Actual dashboard proof</h2>
+<p>The GET-only browser check loads the actual saved report without mocks. Original and Defects toggles, five category colours, actual measured coverage and the distinct 80% target are verified. The existing user analysis continued under the earlier API settings; the check does not claim a runtime restart or a new inference run.</p>
+<p class="links"><a href="actual_ui/report.json">Actual browser checks</a><a href="checks/summary.json">71 tests, build and lint</a><a href="artificial_ui_controls/report.json">Separate artificial UI controls</a></p>
+<figure><img src="actual_ui/fruit_340_defects.png" alt="Actual Class 2 partial fruit 340 with coloured map and defect legend"><figcaption>Fruit 340: 26.516% observed surface, 17.842% predicted defects within that observed area, Class 2 (partial).</figcaption></figure>
+<figure><img src="actual_ui/fruit_098_defects.png" alt="Actual complete fruit 98 with textured defect map and distinct class colours"><figcaption>Fruit 98: 85.150% observed surface, 4.512% predicted defects within the observed area, regular Class 1.</figcaption></figure>
+<h2>Identity remains a separate requirement</h2>
+<p>A map must join views of the same physical fruit. The seven old association disagreements involved only fruit without usable maps; a smooth ID switch has not been ruled out without manual identity labels. The proposed safeguard splits uncertain capture before shape fitting. It needs labelled validation and is not currently active.</p>
+<p class="links"><a href="tracking_identity/REPORT.md">Identity audit and next validation</a><a href="tracking_identity/audit.json">Raw audit</a><a href="tracking_identity/no_gmc_experiment.json">Cached tracker experiment</a></p>
+<figure><img src="tracking_identity/tracking_audit.png" alt="Tracking consistency audit and camera-motion compensation experiment"><figcaption>Read-only audit and cached detections, without neural inference. Detection-box consistency does not establish physical identity accuracy.</figcaption></figure>
+</main>
+</html>

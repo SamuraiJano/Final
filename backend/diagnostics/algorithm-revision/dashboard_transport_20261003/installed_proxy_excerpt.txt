@@ -1,0 +1,12 @@
+Installed source: node_modules/vite/dist/node/chunks/node.js
+Vendored package: http-proxy-3 1.23.3
+Function: setupOutgoing
+
+outgoing.agent = options.agent || false;
+outgoing.localAddress = options.localAddress;
+if (!outgoing.agent) {
+    outgoing.headers = outgoing.headers || {};
+    if (typeof outgoing.headers.connection !== "string" || !upgradeHeader.test(outgoing.headers.connection)) outgoing.headers.connection = "close";
+}
+
+The fetch path uses this same setupOutgoing function, so switching only to fetch also retains the forced Connection: close header.

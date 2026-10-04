@@ -1,0 +1,29 @@
+{
+  "started_at": "2026-10-03T12:32:32.565603+02:00",
+  "video": "C:\\Users\\USER\\Pictures\\Camera Roll\\WIN_20260818_13_29_43_Pro.mp4",
+  "video_sha256": "dc25964bf6052972cad761b0246f79906e768c6737bf4228ba44711d7272429c",
+  "analysis_id": "e40c363cba5d4093ab647a438b1cbe96",
+  "api_url": "http://127.0.0.1:8000",
+  "connect_timeout_seconds": 30,
+  "read_timeout_seconds": 21600,
+  "validator_sha256": "abaf1d87ac80aa2e77d486060103d66ec2a7367d2e3cb1a4725b01f43e782157",
+  "expected_algorithm_sha256": "50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d",
+  "method": "Full video submitted through POST /api/analyze-video; no track subset filter.",
+  "limitations": "No manually labelled fruit identities, rotations or grades; tests pipeline execution, not classification accuracy.",
+  "finished_at": "2026-10-03T13:09:55.104124+02:00",
+  "request_duration_sec": 2242.5,
+  "status": "complete",
+  "algorithm_sha256": "50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d",
+  "source_matches": true,
+  "job_id": "ea6e595b8f3f45f2b5edfda8dafff3f2",
+  "fruits": 474,
+  "statuses": {
+    "mapping_failed": 180,
+    "insufficient_longitude_coverage": 292,
+    "graded": 2
+  },
+  "grades": {
+    "ungraded": 472,
+    "Class 1": 2
+  }
+}

@@ -1,0 +1,3830 @@
+{
+  "record_count": 474,
+  "frames": 515,
+  "statuses": {
+    "mapping_failed": 180,
+    "insufficient_longitude_coverage": 292,
+    "graded": 2
+  },
+  "video_duration_sec": 17.3,
+  "analysis_duration_sec": 2241.4,
+  "grades": {
+    "Review": 472,
+    "Class 1": 2
+  },
+  "review_reasons": {
+    "No complete, usable fruit silhouettes were captured.": 164,
+    "At least two views are required": 6,
+    "The views do not cover enough of the fruit's circumference for a reliable class.": 292,
+    "No reliable rotating sequence; inspect motion, reflections and fruit masks": 10
+  },
+  "capture_rejection_reason_events": {
+    "Fruit is cut off by the video frame": 12914,
+    "Fruit silhouette is occluded or too irregular for a spheroid": 1878,
+    "Crop is too small for GrabCut": 2,
+    "Foreground mask has no fruit": 166,
+    "Fruit mask covers too little of its detection box": 47,
+    "Fruit foreground has fewer than 100 pixels": 647
+  },
+  "motion_diagnostic_statuses": {
+    "split": 9693,
+    "accepted": 2710,
+    "other_segment": 4732,
+    "measured": 1
+  },
+  "records": [
+    {
+      "track_id": 47,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 0
+    },
+    {
+      "track_id": 41,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 4
+    },
+    {
+      "track_id": 7,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 6
+    },
+    {
+      "track_id": 17,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 6
+    },
+    {
+      "track_id": 19,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 9
+    },
+    {
+      "track_id": 20,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 9
+    },
+    {
+      "track_id": 25,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "At least two views are required",
+      "first_seen_frame": 0,
+      "last_seen_frame": 9
+    },
+    {
+      "track_id": 62,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 8,
+      "last_seen_frame": 9
+    },
+    {
+      "track_id": 56,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 1,
+      "last_seen_frame": 10
+    },
+    {
+      "track_id": 44,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 11
+    },
+    {
+      "track_id": 65,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 11,
+      "last_seen_frame": 12
+    },
+    {
+      "track_id": 58,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 1,
+      "last_seen_frame": 14
+    },
+    {
+      "track_id": 67,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 14,
+      "last_seen_frame": 14
+    },
+    {
+      "track_id": 63,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 9,
+      "last_seen_frame": 16
+    },
+    {
+      "track_id": 71,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 16,
+      "last_seen_frame": 20
+    },
+    {
+      "track_id": 30,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 21
+    },
+    {
+      "track_id": 29,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No reliable rotating sequence; inspect motion, reflections and fruit masks",
+      "first_seen_frame": 0,
+      "last_seen_frame": 23
+    },
+    {
+      "track_id": 32,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 23
+    },
+    {
+      "track_id": 4,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 25
+    },
+    {
+      "track_id": 10,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 25
+    },
+    {
+      "track_id": 27,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No reliable rotating sequence; inspect motion, reflections and fruit masks",
+      "first_seen_frame": 0,
+      "last_seen_frame": 25
+    },
+    {
+      "track_id": 22,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 26
+    },
+    {
+      "track_id": 39,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 29
+    },
+    {
+      "track_id": 12,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 39
+    },
+    {
+      "track_id": 8,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 40
+    },
+    {
+      "track_id": 21,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 40
+    },
+    {
+      "track_id": 16,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 41
+    },
+    {
+      "track_id": 18,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 41
+    },
+    {
+      "track_id": 26,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 41
+    },
+    {
+      "track_id": 66,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 12,
+      "last_seen_frame": 41
+    },
+    {
+      "track_id": 35,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 42
+    },
+    {
+      "track_id": 31,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No reliable rotating sequence; inspect motion, reflections and fruit masks",
+      "first_seen_frame": 0,
+      "last_seen_frame": 43
+    },
+    {
+      "track_id": 45,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 45
+    },
+    {
+      "track_id": 87,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 33,
+      "last_seen_frame": 45
+    },
+    {
+      "track_id": 77,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 29,
+      "last_seen_frame": 47
+    },
+    {
+      "track_id": 59,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 6,
+      "last_seen_frame": 49
+    },
+    {
+      "track_id": 76,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 18,
+      "last_seen_frame": 49
+    },
+    {
+      "track_id": 2,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 54
+    },
+    {
+      "track_id": 40,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 54
+    },
+    {
+      "track_id": 3,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 55
+    },
+    {
+      "track_id": 14,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 55
+    },
+    {
+      "track_id": 99,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 55,
+      "last_seen_frame": 56
+    },
+    {
+      "track_id": 1,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 57
+    },
+    {
+      "track_id": 34,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 57
+    },
+    {
+      "track_id": 9,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 58
+    },
+    {
+      "track_id": 11,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 58
+    },
+    {
+      "track_id": 24,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 58
+    },
+    {
+      "track_id": 100,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 55,
+      "last_seen_frame": 59
+    },
+    {
+      "track_id": 42,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 67
+    },
+    {
+      "track_id": 43,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 67
+    },
+    {
+      "track_id": 36,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 68
+    },
+    {
+      "track_id": 28,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 71
+    },
+    {
+      "track_id": 15,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 72
+    },
+    {
+      "track_id": 5,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 73
+    },
+    {
+      "track_id": 13,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 74
+    },
+    {
+      "track_id": 33,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 74
+    },
+    {
+      "track_id": 38,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 74
+    },
+    {
+      "track_id": 6,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 75
+    },
+    {
+      "track_id": 23,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 76
+    },
+    {
+      "track_id": 37,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 0,
+      "last_seen_frame": 76
+    },
+    {
+      "track_id": 46,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "At least two views are required",
+      "first_seen_frame": 0,
+      "last_seen_frame": 77
+    },
+    {
+      "track_id": 114,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 77,
+      "last_seen_frame": 78
+    },
+    {
+      "track_id": 50,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "At least two views are required",
+      "first_seen_frame": 1,
+      "last_seen_frame": 79
+    },
+    {
+      "track_id": 104,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 65,
+      "last_seen_frame": 84
+    },
+    {
+      "track_id": 57,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 1,
+      "last_seen_frame": 87
+    },
+    {
+      "track_id": 130,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 87,
+      "last_seen_frame": 87
+    },
+    {
+      "track_id": 55,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 1,
+      "last_seen_frame": 89
+    },
+    {
+      "track_id": 128,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 86,
+      "last_seen_frame": 89
+    },
+    {
+      "track_id": 51,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 1,
+      "last_seen_frame": 90
+    },
+    {
+      "track_id": 131,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 90,
+      "last_seen_frame": 90
+    },
+    {
+      "track_id": 52,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 1,
+      "last_seen_frame": 91
+    },
+    {
+      "track_id": 53,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 1,
+      "last_seen_frame": 91
+    },
+    {
+      "track_id": 54,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 1,
+      "last_seen_frame": 91
+    },
+    {
+      "track_id": 48,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 1,
+      "last_seen_frame": 93
+    },
+    {
+      "track_id": 49,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 1,
+      "last_seen_frame": 94
+    },
+    {
+      "track_id": 60,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 8,
+      "last_seen_frame": 94
+    },
+    {
+      "track_id": 61,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 8,
+      "last_seen_frame": 94
+    },
+    {
+      "track_id": 91,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 49,
+      "last_seen_frame": 98
+    },
+    {
+      "track_id": 140,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 102,
+      "last_seen_frame": 102
+    },
+    {
+      "track_id": 141,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 102,
+      "last_seen_frame": 103
+    },
+    {
+      "track_id": 70,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 16,
+      "last_seen_frame": 104
+    },
+    {
+      "track_id": 113,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 74,
+      "last_seen_frame": 104
+    },
+    {
+      "track_id": 73,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 17,
+      "last_seen_frame": 107
+    },
+    {
+      "track_id": 75,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 17,
+      "last_seen_frame": 107
+    },
+    {
+      "track_id": 69,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 16,
+      "last_seen_frame": 108
+    },
+    {
+      "track_id": 74,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 17,
+      "last_seen_frame": 108
+    },
+    {
+      "track_id": 101,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 60,
+      "last_seen_frame": 108
+    },
+    {
+      "track_id": 68,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 16,
+      "last_seen_frame": 110
+    },
+    {
+      "track_id": 72,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 16,
+      "last_seen_frame": 110
+    },
+    {
+      "track_id": 146,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 111,
+      "last_seen_frame": 111
+    },
+    {
+      "track_id": 142,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 109,
+      "last_seen_frame": 113
+    },
+    {
+      "track_id": 155,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 118,
+      "last_seen_frame": 118
+    },
+    {
+      "track_id": 102,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 64,
+      "last_seen_frame": 121
+    },
+    {
+      "track_id": 82,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 33,
+      "last_seen_frame": 123
+    },
+    {
+      "track_id": 86,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 33,
+      "last_seen_frame": 123
+    },
+    {
+      "track_id": 159,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 122,
+      "last_seen_frame": 123
+    },
+    {
+      "track_id": 79,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 32,
+      "last_seen_frame": 124
+    },
+    {
+      "track_id": 85,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 33,
+      "last_seen_frame": 124
+    },
+    {
+      "track_id": 83,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 33,
+      "last_seen_frame": 125
+    },
+    {
+      "track_id": 84,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 33,
+      "last_seen_frame": 125
+    },
+    {
+      "track_id": 80,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 32,
+      "last_seen_frame": 126
+    },
+    {
+      "track_id": 81,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 33,
+      "last_seen_frame": 126
+    },
+    {
+      "track_id": 156,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 119,
+      "last_seen_frame": 126
+    },
+    {
+      "track_id": 78,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 31,
+      "last_seen_frame": 127
+    },
+    {
+      "track_id": 143,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 109,
+      "last_seen_frame": 130
+    },
+    {
+      "track_id": 158,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 120,
+      "last_seen_frame": 130
+    },
+    {
+      "track_id": 161,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 124,
+      "last_seen_frame": 135
+    },
+    {
+      "track_id": 174,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 134,
+      "last_seen_frame": 135
+    },
+    {
+      "track_id": 177,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 135,
+      "last_seen_frame": 136
+    },
+    {
+      "track_id": 98,
+      "status": "graded",
+      "grade": "Class 1",
+      "reason": null,
+      "first_seen_frame": 51,
+      "last_seen_frame": 138
+    },
+    {
+      "track_id": 95,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 50,
+      "last_seen_frame": 140
+    },
+    {
+      "track_id": 97,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 51,
+      "last_seen_frame": 140
+    },
+    {
+      "track_id": 180,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 139,
+      "last_seen_frame": 140
+    },
+    {
+      "track_id": 88,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 48,
+      "last_seen_frame": 141
+    },
+    {
+      "track_id": 93,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 49,
+      "last_seen_frame": 141
+    },
+    {
+      "track_id": 94,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 49,
+      "last_seen_frame": 141
+    },
+    {
+      "track_id": 96,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 50,
+      "last_seen_frame": 141
+    },
+    {
+      "track_id": 89,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 48,
+      "last_seen_frame": 142
+    },
+    {
+      "track_id": 92,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 49,
+      "last_seen_frame": 142
+    },
+    {
+      "track_id": 167,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 131,
+      "last_seen_frame": 143
+    },
+    {
+      "track_id": 90,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 48,
+      "last_seen_frame": 144
+    },
+    {
+      "track_id": 162,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 126,
+      "last_seen_frame": 145
+    },
+    {
+      "track_id": 183,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 146,
+      "last_seen_frame": 146
+    },
+    {
+      "track_id": 182,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 144,
+      "last_seen_frame": 147
+    },
+    {
+      "track_id": 103,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 65,
+      "last_seen_frame": 150
+    },
+    {
+      "track_id": 108,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 66,
+      "last_seen_frame": 155
+    },
+    {
+      "track_id": 111,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 67,
+      "last_seen_frame": 156
+    },
+    {
+      "track_id": 109,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 66,
+      "last_seen_frame": 157
+    },
+    {
+      "track_id": 110,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 66,
+      "last_seen_frame": 157
+    },
+    {
+      "track_id": 112,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 68,
+      "last_seen_frame": 157
+    },
+    {
+      "track_id": 106,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 66,
+      "last_seen_frame": 159
+    },
+    {
+      "track_id": 107,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 66,
+      "last_seen_frame": 159
+    },
+    {
+      "track_id": 105,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 65,
+      "last_seen_frame": 160
+    },
+    {
+      "track_id": 115,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 79,
+      "last_seen_frame": 161
+    },
+    {
+      "track_id": 118,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 82,
+      "last_seen_frame": 170
+    },
+    {
+      "track_id": 132,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 93,
+      "last_seen_frame": 170
+    },
+    {
+      "track_id": 208,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 170,
+      "last_seen_frame": 171
+    },
+    {
+      "track_id": 122,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 83,
+      "last_seen_frame": 172
+    },
+    {
+      "track_id": 210,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 172,
+      "last_seen_frame": 172
+    },
+    {
+      "track_id": 121,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 83,
+      "last_seen_frame": 173
+    },
+    {
+      "track_id": 123,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 83,
+      "last_seen_frame": 173
+    },
+    {
+      "track_id": 124,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 83,
+      "last_seen_frame": 174
+    },
+    {
+      "track_id": 119,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 83,
+      "last_seen_frame": 175
+    },
+    {
+      "track_id": 120,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 83,
+      "last_seen_frame": 176
+    },
+    {
+      "track_id": 211,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 175,
+      "last_seen_frame": 176
+    },
+    {
+      "track_id": 117,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 81,
+      "last_seen_frame": 178
+    },
+    {
+      "track_id": 135,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 99,
+      "last_seen_frame": 179
+    },
+    {
+      "track_id": 137,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 100,
+      "last_seen_frame": 179
+    },
+    {
+      "track_id": 138,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 100,
+      "last_seen_frame": 180
+    },
+    {
+      "track_id": 134,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 99,
+      "last_seen_frame": 190
+    },
+    {
+      "track_id": 139,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 100,
+      "last_seen_frame": 190
+    },
+    {
+      "track_id": 157,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 120,
+      "last_seen_frame": 191
+    },
+    {
+      "track_id": 136,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 99,
+      "last_seen_frame": 192
+    },
+    {
+      "track_id": 149,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 115,
+      "last_seen_frame": 192
+    },
+    {
+      "track_id": 147,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 113,
+      "last_seen_frame": 193
+    },
+    {
+      "track_id": 133,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 98,
+      "last_seen_frame": 194
+    },
+    {
+      "track_id": 220,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 184,
+      "last_seen_frame": 194
+    },
+    {
+      "track_id": 231,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 194,
+      "last_seen_frame": 194
+    },
+    {
+      "track_id": 164,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 127,
+      "last_seen_frame": 195
+    },
+    {
+      "track_id": 230,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 193,
+      "last_seen_frame": 195
+    },
+    {
+      "track_id": 160,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 123,
+      "last_seen_frame": 199
+    },
+    {
+      "track_id": 207,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 170,
+      "last_seen_frame": 199
+    },
+    {
+      "track_id": 212,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 177,
+      "last_seen_frame": 203
+    },
+    {
+      "track_id": 154,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 117,
+      "last_seen_frame": 205
+    },
+    {
+      "track_id": 153,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 117,
+      "last_seen_frame": 206
+    },
+    {
+      "track_id": 151,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 117,
+      "last_seen_frame": 207
+    },
+    {
+      "track_id": 152,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 117,
+      "last_seen_frame": 207
+    },
+    {
+      "track_id": 148,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 114,
+      "last_seen_frame": 208
+    },
+    {
+      "track_id": 150,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 116,
+      "last_seen_frame": 208
+    },
+    {
+      "track_id": 165,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 128,
+      "last_seen_frame": 208
+    },
+    {
+      "track_id": 163,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 127,
+      "last_seen_frame": 209
+    },
+    {
+      "track_id": 166,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 130,
+      "last_seen_frame": 209
+    },
+    {
+      "track_id": 244,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 205,
+      "last_seen_frame": 211
+    },
+    {
+      "track_id": 257,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 216,
+      "last_seen_frame": 216
+    },
+    {
+      "track_id": 181,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 143,
+      "last_seen_frame": 217
+    },
+    {
+      "track_id": 178,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 138,
+      "last_seen_frame": 220
+    },
+    {
+      "track_id": 263,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 220,
+      "last_seen_frame": 220
+    },
+    {
+      "track_id": 264,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 220,
+      "last_seen_frame": 220
+    },
+    {
+      "track_id": 172,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 133,
+      "last_seen_frame": 222
+    },
+    {
+      "track_id": 173,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 134,
+      "last_seen_frame": 222
+    },
+    {
+      "track_id": 176,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 135,
+      "last_seen_frame": 222
+    },
+    {
+      "track_id": 170,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 133,
+      "last_seen_frame": 223
+    },
+    {
+      "track_id": 168,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 131,
+      "last_seen_frame": 225
+    },
+    {
+      "track_id": 171,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 133,
+      "last_seen_frame": 225
+    },
+    {
+      "track_id": 265,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 225,
+      "last_seen_frame": 225
+    },
+    {
+      "track_id": 169,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 132,
+      "last_seen_frame": 226
+    },
+    {
+      "track_id": 256,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 216,
+      "last_seen_frame": 226
+    },
+    {
+      "track_id": 186,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 149,
+      "last_seen_frame": 231
+    },
+    {
+      "track_id": 189,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 149,
+      "last_seen_frame": 232
+    },
+    {
+      "track_id": 284,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 234,
+      "last_seen_frame": 234
+    },
+    {
+      "track_id": 204,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "At least two views are required",
+      "first_seen_frame": 167,
+      "last_seen_frame": 236
+    },
+    {
+      "track_id": 184,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 149,
+      "last_seen_frame": 237
+    },
+    {
+      "track_id": 194,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 152,
+      "last_seen_frame": 237
+    },
+    {
+      "track_id": 195,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 163,
+      "last_seen_frame": 237
+    },
+    {
+      "track_id": 192,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 151,
+      "last_seen_frame": 238
+    },
+    {
+      "track_id": 193,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 151,
+      "last_seen_frame": 239
+    },
+    {
+      "track_id": 187,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 149,
+      "last_seen_frame": 240
+    },
+    {
+      "track_id": 190,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 150,
+      "last_seen_frame": 240
+    },
+    {
+      "track_id": 191,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 151,
+      "last_seen_frame": 240
+    },
+    {
+      "track_id": 188,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 149,
+      "last_seen_frame": 241
+    },
+    {
+      "track_id": 185,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 149,
+      "last_seen_frame": 242
+    },
+    {
+      "track_id": 285,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 242,
+      "last_seen_frame": 242
+    },
+    {
+      "track_id": 197,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 166,
+      "last_seen_frame": 248
+    },
+    {
+      "track_id": 209,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 172,
+      "last_seen_frame": 248
+    },
+    {
+      "track_id": 203,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 167,
+      "last_seen_frame": 254
+    },
+    {
+      "track_id": 291,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 248,
+      "last_seen_frame": 254
+    },
+    {
+      "track_id": 205,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 168,
+      "last_seen_frame": 255
+    },
+    {
+      "track_id": 200,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 166,
+      "last_seen_frame": 256
+    },
+    {
+      "track_id": 206,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 168,
+      "last_seen_frame": 256
+    },
+    {
+      "track_id": 199,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 166,
+      "last_seen_frame": 257
+    },
+    {
+      "track_id": 202,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 167,
+      "last_seen_frame": 257
+    },
+    {
+      "track_id": 201,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 166,
+      "last_seen_frame": 258
+    },
+    {
+      "track_id": 198,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 166,
+      "last_seen_frame": 259
+    },
+    {
+      "track_id": 196,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 164,
+      "last_seen_frame": 260
+    },
+    {
+      "track_id": 214,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 181,
+      "last_seen_frame": 260
+    },
+    {
+      "track_id": 246,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 207,
+      "last_seen_frame": 261
+    },
+    {
+      "track_id": 301,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 262,
+      "last_seen_frame": 262
+    },
+    {
+      "track_id": 213,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No reliable rotating sequence; inspect motion, reflections and fruit masks",
+      "first_seen_frame": 181,
+      "last_seen_frame": 264
+    },
+    {
+      "track_id": 218,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 183,
+      "last_seen_frame": 267
+    },
+    {
+      "track_id": 216,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 182,
+      "last_seen_frame": 270
+    },
+    {
+      "track_id": 222,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 185,
+      "last_seen_frame": 270
+    },
+    {
+      "track_id": 228,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 192,
+      "last_seen_frame": 271
+    },
+    {
+      "track_id": 314,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 271,
+      "last_seen_frame": 271
+    },
+    {
+      "track_id": 315,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 273,
+      "last_seen_frame": 273
+    },
+    {
+      "track_id": 217,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 183,
+      "last_seen_frame": 274
+    },
+    {
+      "track_id": 219,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 184,
+      "last_seen_frame": 274
+    },
+    {
+      "track_id": 233,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 195,
+      "last_seen_frame": 274
+    },
+    {
+      "track_id": 215,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 182,
+      "last_seen_frame": 275
+    },
+    {
+      "track_id": 229,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No reliable rotating sequence; inspect motion, reflections and fruit masks",
+      "first_seen_frame": 193,
+      "last_seen_frame": 277
+    },
+    {
+      "track_id": 318,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 277,
+      "last_seen_frame": 277
+    },
+    {
+      "track_id": 227,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 191,
+      "last_seen_frame": 279
+    },
+    {
+      "track_id": 234,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No reliable rotating sequence; inspect motion, reflections and fruit masks",
+      "first_seen_frame": 196,
+      "last_seen_frame": 280
+    },
+    {
+      "track_id": 232,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 195,
+      "last_seen_frame": 281
+    },
+    {
+      "track_id": 331,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 284,
+      "last_seen_frame": 286
+    },
+    {
+      "track_id": 248,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "At least two views are required",
+      "first_seen_frame": 212,
+      "last_seen_frame": 287
+    },
+    {
+      "track_id": 235,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 199,
+      "last_seen_frame": 289
+    },
+    {
+      "track_id": 239,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 200,
+      "last_seen_frame": 289
+    },
+    {
+      "track_id": 241,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 200,
+      "last_seen_frame": 289
+    },
+    {
+      "track_id": 238,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 200,
+      "last_seen_frame": 290
+    },
+    {
+      "track_id": 317,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 275,
+      "last_seen_frame": 290
+    },
+    {
+      "track_id": 236,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 199,
+      "last_seen_frame": 291
+    },
+    {
+      "track_id": 240,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 200,
+      "last_seen_frame": 291
+    },
+    {
+      "track_id": 243,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 204,
+      "last_seen_frame": 292
+    },
+    {
+      "track_id": 335,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 291,
+      "last_seen_frame": 292
+    },
+    {
+      "track_id": 242,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 204,
+      "last_seen_frame": 293
+    },
+    {
+      "track_id": 316,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 274,
+      "last_seen_frame": 293
+    },
+    {
+      "track_id": 333,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 291,
+      "last_seen_frame": 293
+    },
+    {
+      "track_id": 237,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 199,
+      "last_seen_frame": 294
+    },
+    {
+      "track_id": 250,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 213,
+      "last_seen_frame": 298
+    },
+    {
+      "track_id": 338,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 293,
+      "last_seen_frame": 298
+    },
+    {
+      "track_id": 341,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 298,
+      "last_seen_frame": 298
+    },
+    {
+      "track_id": 249,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 212,
+      "last_seen_frame": 299
+    },
+    {
+      "track_id": 342,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 298,
+      "last_seen_frame": 300
+    },
+    {
+      "track_id": 251,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 214,
+      "last_seen_frame": 303
+    },
+    {
+      "track_id": 254,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 215,
+      "last_seen_frame": 303
+    },
+    {
+      "track_id": 356,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 304,
+      "last_seen_frame": 304
+    },
+    {
+      "track_id": 258,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 217,
+      "last_seen_frame": 305
+    },
+    {
+      "track_id": 259,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 217,
+      "last_seen_frame": 305
+    },
+    {
+      "track_id": 262,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 218,
+      "last_seen_frame": 305
+    },
+    {
+      "track_id": 253,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 215,
+      "last_seen_frame": 306
+    },
+    {
+      "track_id": 260,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 217,
+      "last_seen_frame": 306
+    },
+    {
+      "track_id": 358,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 306,
+      "last_seen_frame": 306
+    },
+    {
+      "track_id": 255,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 216,
+      "last_seen_frame": 307
+    },
+    {
+      "track_id": 261,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 217,
+      "last_seen_frame": 307
+    },
+    {
+      "track_id": 266,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 226,
+      "last_seen_frame": 308
+    },
+    {
+      "track_id": 252,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 214,
+      "last_seen_frame": 309
+    },
+    {
+      "track_id": 267,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 228,
+      "last_seen_frame": 309
+    },
+    {
+      "track_id": 361,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 314,
+      "last_seen_frame": 314
+    },
+    {
+      "track_id": 278,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "At least two views are required",
+      "first_seen_frame": 233,
+      "last_seen_frame": 315
+    },
+    {
+      "track_id": 269,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 230,
+      "last_seen_frame": 316
+    },
+    {
+      "track_id": 323,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 282,
+      "last_seen_frame": 316
+    },
+    {
+      "track_id": 339,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 295,
+      "last_seen_frame": 316
+    },
+    {
+      "track_id": 282,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 234,
+      "last_seen_frame": 321
+    },
+    {
+      "track_id": 283,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 234,
+      "last_seen_frame": 321
+    },
+    {
+      "track_id": 277,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 233,
+      "last_seen_frame": 322
+    },
+    {
+      "track_id": 279,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 233,
+      "last_seen_frame": 322
+    },
+    {
+      "track_id": 281,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 234,
+      "last_seen_frame": 322
+    },
+    {
+      "track_id": 270,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 231,
+      "last_seen_frame": 323
+    },
+    {
+      "track_id": 357,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 305,
+      "last_seen_frame": 323
+    },
+    {
+      "track_id": 273,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 232,
+      "last_seen_frame": 324
+    },
+    {
+      "track_id": 276,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 233,
+      "last_seen_frame": 324
+    },
+    {
+      "track_id": 280,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 234,
+      "last_seen_frame": 326
+    },
+    {
+      "track_id": 272,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 232,
+      "last_seen_frame": 327
+    },
+    {
+      "track_id": 286,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 244,
+      "last_seen_frame": 327
+    },
+    {
+      "track_id": 288,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 246,
+      "last_seen_frame": 327
+    },
+    {
+      "track_id": 287,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 245,
+      "last_seen_frame": 330
+    },
+    {
+      "track_id": 383,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 335,
+      "last_seen_frame": 335
+    },
+    {
+      "track_id": 298,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 252,
+      "last_seen_frame": 337
+    },
+    {
+      "track_id": 296,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 250,
+      "last_seen_frame": 339
+    },
+    {
+      "track_id": 289,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 248,
+      "last_seen_frame": 340
+    },
+    {
+      "track_id": 293,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 250,
+      "last_seen_frame": 340
+    },
+    {
+      "track_id": 295,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 250,
+      "last_seen_frame": 340
+    },
+    {
+      "track_id": 297,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 250,
+      "last_seen_frame": 340
+    },
+    {
+      "track_id": 294,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 250,
+      "last_seen_frame": 341
+    },
+    {
+      "track_id": 299,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 253,
+      "last_seen_frame": 342
+    },
+    {
+      "track_id": 290,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 248,
+      "last_seen_frame": 343
+    },
+    {
+      "track_id": 292,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 249,
+      "last_seen_frame": 343
+    },
+    {
+      "track_id": 300,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 255,
+      "last_seen_frame": 343
+    },
+    {
+      "track_id": 320,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 281,
+      "last_seen_frame": 345
+    },
+    {
+      "track_id": 303,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 265,
+      "last_seen_frame": 347
+    },
+    {
+      "track_id": 391,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 348,
+      "last_seen_frame": 351
+    },
+    {
+      "track_id": 390,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 348,
+      "last_seen_frame": 353
+    },
+    {
+      "track_id": 313,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 267,
+      "last_seen_frame": 355
+    },
+    {
+      "track_id": 402,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 355,
+      "last_seen_frame": 355
+    },
+    {
+      "track_id": 309,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 266,
+      "last_seen_frame": 356
+    },
+    {
+      "track_id": 310,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 267,
+      "last_seen_frame": 356
+    },
+    {
+      "track_id": 311,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 267,
+      "last_seen_frame": 356
+    },
+    {
+      "track_id": 312,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 267,
+      "last_seen_frame": 356
+    },
+    {
+      "track_id": 305,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 266,
+      "last_seen_frame": 357
+    },
+    {
+      "track_id": 308,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 266,
+      "last_seen_frame": 357
+    },
+    {
+      "track_id": 304,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 265,
+      "last_seen_frame": 359
+    },
+    {
+      "track_id": 307,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 266,
+      "last_seen_frame": 359
+    },
+    {
+      "track_id": 325,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 283,
+      "last_seen_frame": 359
+    },
+    {
+      "track_id": 386,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 345,
+      "last_seen_frame": 359
+    },
+    {
+      "track_id": 302,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No reliable rotating sequence; inspect motion, reflections and fruit masks",
+      "first_seen_frame": 264,
+      "last_seen_frame": 361
+    },
+    {
+      "track_id": 306,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 266,
+      "last_seen_frame": 361
+    },
+    {
+      "track_id": 327,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 283,
+      "last_seen_frame": 364
+    },
+    {
+      "track_id": 330,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 284,
+      "last_seen_frame": 371
+    },
+    {
+      "track_id": 332,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 289,
+      "last_seen_frame": 371
+    },
+    {
+      "track_id": 326,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 283,
+      "last_seen_frame": 373
+    },
+    {
+      "track_id": 328,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 283,
+      "last_seen_frame": 373
+    },
+    {
+      "track_id": 329,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 283,
+      "last_seen_frame": 373
+    },
+    {
+      "track_id": 337,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 293,
+      "last_seen_frame": 374
+    },
+    {
+      "track_id": 340,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 296,
+      "last_seen_frame": 374
+    },
+    {
+      "track_id": 424,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 374,
+      "last_seen_frame": 374
+    },
+    {
+      "track_id": 322,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 282,
+      "last_seen_frame": 375
+    },
+    {
+      "track_id": 324,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 283,
+      "last_seen_frame": 375
+    },
+    {
+      "track_id": 321,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 282,
+      "last_seen_frame": 377
+    },
+    {
+      "track_id": 343,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 298,
+      "last_seen_frame": 377
+    },
+    {
+      "track_id": 319,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 280,
+      "last_seen_frame": 379
+    },
+    {
+      "track_id": 405,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 360,
+      "last_seen_frame": 383
+    },
+    {
+      "track_id": 355,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No reliable rotating sequence; inspect motion, reflections and fruit masks",
+      "first_seen_frame": 303,
+      "last_seen_frame": 384
+    },
+    {
+      "track_id": 435,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 384,
+      "last_seen_frame": 386
+    },
+    {
+      "track_id": 349,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 300,
+      "last_seen_frame": 388
+    },
+    {
+      "track_id": 351,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 301,
+      "last_seen_frame": 388
+    },
+    {
+      "track_id": 352,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 301,
+      "last_seen_frame": 388
+    },
+    {
+      "track_id": 353,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 301,
+      "last_seen_frame": 388
+    },
+    {
+      "track_id": 436,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 384,
+      "last_seen_frame": 388
+    },
+    {
+      "track_id": 354,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 302,
+      "last_seen_frame": 389
+    },
+    {
+      "track_id": 345,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 299,
+      "last_seen_frame": 391
+    },
+    {
+      "track_id": 346,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 299,
+      "last_seen_frame": 391
+    },
+    {
+      "track_id": 344,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 299,
+      "last_seen_frame": 392
+    },
+    {
+      "track_id": 347,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 299,
+      "last_seen_frame": 392
+    },
+    {
+      "track_id": 350,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 300,
+      "last_seen_frame": 392
+    },
+    {
+      "track_id": 394,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 349,
+      "last_seen_frame": 395
+    },
+    {
+      "track_id": 440,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 394,
+      "last_seen_frame": 395
+    },
+    {
+      "track_id": 362,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 315,
+      "last_seen_frame": 398
+    },
+    {
+      "track_id": 359,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 313,
+      "last_seen_frame": 399
+    },
+    {
+      "track_id": 363,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 315,
+      "last_seen_frame": 399
+    },
+    {
+      "track_id": 449,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 399,
+      "last_seen_frame": 399
+    },
+    {
+      "track_id": 432,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 383,
+      "last_seen_frame": 400
+    },
+    {
+      "track_id": 400,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 351,
+      "last_seen_frame": 403
+    },
+    {
+      "track_id": 368,
+      "status": "graded",
+      "grade": "Class 1",
+      "reason": null,
+      "first_seen_frame": 317,
+      "last_seen_frame": 405
+    },
+    {
+      "track_id": 370,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 317,
+      "last_seen_frame": 405
+    },
+    {
+      "track_id": 369,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 317,
+      "last_seen_frame": 406
+    },
+    {
+      "track_id": 364,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 316,
+      "last_seen_frame": 407
+    },
+    {
+      "track_id": 366,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 316,
+      "last_seen_frame": 407
+    },
+    {
+      "track_id": 367,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 317,
+      "last_seen_frame": 407
+    },
+    {
+      "track_id": 365,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 316,
+      "last_seen_frame": 408
+    },
+    {
+      "track_id": 373,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 332,
+      "last_seen_frame": 409
+    },
+    {
+      "track_id": 372,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 332,
+      "last_seen_frame": 410
+    },
+    {
+      "track_id": 360,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 314,
+      "last_seen_frame": 412
+    },
+    {
+      "track_id": 374,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 332,
+      "last_seen_frame": 417
+    },
+    {
+      "track_id": 377,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 333,
+      "last_seen_frame": 421
+    },
+    {
+      "track_id": 378,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 333,
+      "last_seen_frame": 421
+    },
+    {
+      "track_id": 382,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 334,
+      "last_seen_frame": 421
+    },
+    {
+      "track_id": 384,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 336,
+      "last_seen_frame": 421
+    },
+    {
+      "track_id": 379,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 333,
+      "last_seen_frame": 422
+    },
+    {
+      "track_id": 381,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 334,
+      "last_seen_frame": 422
+    },
+    {
+      "track_id": 380,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 334,
+      "last_seen_frame": 424
+    },
+    {
+      "track_id": 396,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 350,
+      "last_seen_frame": 424
+    },
+    {
+      "track_id": 467,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 424,
+      "last_seen_frame": 425
+    },
+    {
+      "track_id": 468,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 425,
+      "last_seen_frame": 425
+    },
+    {
+      "track_id": 469,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 425,
+      "last_seen_frame": 425
+    },
+    {
+      "track_id": 375,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 333,
+      "last_seen_frame": 426
+    },
+    {
+      "track_id": 371,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 331,
+      "last_seen_frame": 427
+    },
+    {
+      "track_id": 376,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 333,
+      "last_seen_frame": 428
+    },
+    {
+      "track_id": 385,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 340,
+      "last_seen_frame": 428
+    },
+    {
+      "track_id": 398,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 350,
+      "last_seen_frame": 432
+    },
+    {
+      "track_id": 401,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 355,
+      "last_seen_frame": 433
+    },
+    {
+      "track_id": 480,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 433,
+      "last_seen_frame": 433
+    },
+    {
+      "track_id": 454,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 412,
+      "last_seen_frame": 436
+    },
+    {
+      "track_id": 485,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 437,
+      "last_seen_frame": 437
+    },
+    {
+      "track_id": 486,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 437,
+      "last_seen_frame": 437
+    },
+    {
+      "track_id": 397,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 350,
+      "last_seen_frame": 439
+    },
+    {
+      "track_id": 399,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 351,
+      "last_seen_frame": 440
+    },
+    {
+      "track_id": 395,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 349,
+      "last_seen_frame": 442
+    },
+    {
+      "track_id": 403,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 358,
+      "last_seen_frame": 443
+    },
+    {
+      "track_id": 404,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 358,
+      "last_seen_frame": 444
+    },
+    {
+      "track_id": 387,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 348,
+      "last_seen_frame": 445
+    },
+    {
+      "track_id": 392,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 349,
+      "last_seen_frame": 446
+    },
+    {
+      "track_id": 393,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 349,
+      "last_seen_frame": 446
+    },
+    {
+      "track_id": 388,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 348,
+      "last_seen_frame": 448
+    },
+    {
+      "track_id": 389,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 348,
+      "last_seen_frame": 448
+    },
+    {
+      "track_id": 442,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 397,
+      "last_seen_frame": 460
+    },
+    {
+      "track_id": 496,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 459,
+      "last_seen_frame": 460
+    },
+    {
+      "track_id": 497,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 459,
+      "last_seen_frame": 460
+    },
+    {
+      "track_id": 502,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 463,
+      "last_seen_frame": 463
+    },
+    {
+      "track_id": 407,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 363,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 410,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 365,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 411,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 365,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 412,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 365,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 413,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 365,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 414,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 365,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 416,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 366,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 418,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 367,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 419,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 368,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 420,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 368,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 421,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 368,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 422,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 370,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 423,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 373,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 425,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 380,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 426,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 381,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 427,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 381,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 428,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 382,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 429,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 382,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 430,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 383,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 431,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 383,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 433,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 383,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 434,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 383,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 437,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 384,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 438,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 384,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 439,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No reliable rotating sequence; inspect motion, reflections and fruit masks",
+      "first_seen_frame": 391,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 441,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 397,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 443,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 399,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 444,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 399,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 445,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 399,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 446,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 399,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 447,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 399,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 448,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 399,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 450,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 400,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 451,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 401,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 452,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 403,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 453,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 409,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 455,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 412,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 456,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 415,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 457,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 415,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 458,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 416,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 459,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 416,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 460,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 416,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 461,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 416,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 462,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 416,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 463,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 417,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 464,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 417,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 465,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 417,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 466,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 418,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 470,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No reliable rotating sequence; inspect motion, reflections and fruit masks",
+      "first_seen_frame": 432,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 471,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 432,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 472,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 432,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 473,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 432,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 474,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 433,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 475,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 433,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 476,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 433,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 477,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 433,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 478,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 433,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 479,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 433,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 481,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 434,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 482,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 435,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 483,
+      "status": "insufficient_longitude_coverage",
+      "grade": null,
+      "reason": "The views do not cover enough of the fruit's circumference for a reliable class.",
+      "first_seen_frame": 435,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 484,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 436,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 488,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 454,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 489,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 455,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 490,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 455,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 491,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 455,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 492,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 457,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 493,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 457,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 494,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 458,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 495,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 459,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 498,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 460,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 499,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 460,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 500,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 460,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 501,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 461,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 503,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 468,
+      "last_seen_frame": 514
+    },
+    {
+      "track_id": 504,
+      "status": "mapping_failed",
+      "grade": null,
+      "reason": "No complete, usable fruit silhouettes were captured.",
+      "first_seen_frame": 476,
+      "last_seen_frame": 514
+    }
+  ],
+  "scope": "Saved track records, not manually verified unique fruits. Fruit reasons, rejected-capture attempts and pair splits have distinct denominators; event totals are not additional fruit counts. Automatic edge/silhouette rejection labels do not independently establish physical truncation. Observed map longitude is computed coverage, not ground-truth physical rotation. No manually labelled identity, pose, mask or grade truth."
+}

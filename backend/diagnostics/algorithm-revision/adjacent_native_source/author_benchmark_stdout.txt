@@ -1,0 +1,206 @@
+adjacent_native_profile_20261002: mandarins/obj0000: geometry=ok, pairs=9/11, map=produced
+adjacent_native_profile_20261002: mandarins/obj0001: geometry=ok, pairs=9/12, map=produced
+adjacent_native_profile_20261002: mandarins/obj0002: geometry=ok, pairs=12/14, map=produced
+adjacent_native_profile_20261002: mandarins/obj0003: geometry=ok, pairs=14/14, map=produced
+adjacent_native_profile_20261002: mandarins/obj0004: geometry=ok, pairs=9/12, map=produced
+adjacent_native_profile_20261002: mandarins/obj0005: geometry=ok, pairs=15/15, map=produced
+adjacent_native_profile_20261002: mandarins/obj0006: geometry=ok, pairs=13/14, map=produced
+adjacent_native_profile_20261002: mandarins/obj0007: geometry=ok, pairs=10/15, map=produced
+adjacent_native_profile_20261002: mandarins/obj0008: geometry=ok, pairs=14/15, map=produced
+adjacent_native_profile_20261002: mandarins/obj0009: geometry=ok, pairs=13/15, map=produced
+adjacent_native_profile_20261002: mandarins/obj0010: geometry=ok, pairs=12/12, map=produced
+adjacent_native_profile_20261002: mandarins/obj0011: geometry=ok, pairs=15/15, map=produced
+adjacent_native_profile_20261002: mandarins/obj0012: geometry=ok, pairs=14/15, map=produced
+adjacent_native_profile_20261002: mandarins/obj0013: geometry=ok, pairs=12/15, map=produced
+adjacent_native_profile_20261002: mandarins/obj0014: geometry=ok, pairs=13/15, map=produced
+adjacent_native_profile_20261002: oranges/obj0001: geometry=ok, pairs=15/15, map=produced
+adjacent_native_profile_20261002: oranges/obj0002: geometry=ok, pairs=15/15, map=produced
+adjacent_native_profile_20261002: oranges/obj0003: geometry=ok, pairs=15/15, map=produced
+adjacent_native_profile_20261002: oranges/obj0004: geometry=ok, pairs=14/15, map=produced
+adjacent_native_profile_20261002: oranges/obj0005: geometry=ok, pairs=15/15, map=produced
+adjacent_native_profile_20261002: oranges/obj0006: geometry=ok, pairs=8/15, map=produced
+adjacent_native_profile_20261002: oranges/obj0007: geometry=ok, pairs=15/15, map=produced
+adjacent_native_profile_20261002: oranges/obj0008: geometry=ok, pairs=15/15, map=produced
+adjacent_native_profile_20261002: oranges/obj0009: geometry=ok, pairs=15/15, map=produced
+adjacent_native_profile_20261002: oranges/obj0010: geometry=ok, pairs=15/15, map=produced
+adjacent_native_profile_20261002: tomatoes/obj0000: geometry=ok, pairs=13/16, map=produced
+adjacent_native_profile_20261002: tomatoes/obj0001: geometry=ok, pairs=13/16, map=produced
+adjacent_native_profile_20261002: tomatoes/obj0002: geometry=ok, pairs=14/17, map=produced
+adjacent_native_profile_20261002: tomatoes/obj0003: geometry=ok, pairs=17/18, map=produced
+adjacent_native_profile_20261002: tomatoes/obj0004: geometry=ok, pairs=10/16, map=produced
+adjacent_native_profile_20261002: tomatoes/obj0005: geometry=ok, pairs=14/16, map=produced
+adjacent_native_profile_20261002: tomatoes/obj0006: geometry=ok, pairs=14/16, map=produced
+adjacent_native_profile_20261002: tomatoes/obj0007: geometry=ok, pairs=13/16, map=produced
+adjacent_native_profile_20261002: tomatoes/obj0008: geometry=ok, pairs=15/17, map=produced
+adjacent_native_profile_20261002: tomatoes/obj0009: geometry=ok, pairs=12/17, map=produced
+adjacent_native_profile_20261002: tomatoes/obj0010: geometry=ok, pairs=12/18, map=produced
+{
+  "all": {
+    "tracks": 36,
+    "geometry_ok": 36,
+    "maps_produced": 36,
+    "labelled_correspondences": 497,
+    "predicted_correspondences": 454,
+    "errors_px_conditional_on_prediction": {
+      "count": 454,
+      "mean": 3.507519979450509,
+      "rms": 5.121533548576413,
+      "median": 2.276015352601447,
+      "p90": 7.068508896090324,
+      "max": 35.93045686796884,
+      "within_2px": 197,
+      "within_5px": 363
+    },
+    "center_translation_baseline_px_same_subset": {
+      "count": 454,
+      "mean": 34.73431588918444,
+      "rms": 37.55124294394264,
+      "median": 33.736542537253555,
+      "p90": 51.49432362371466,
+      "max": 112.70033722600598,
+      "within_2px": 0,
+      "within_5px": 3
+    },
+    "fraction_all_labels_within_5px": 0.7303822937625755
+  },
+  "calibration": {
+    "tracks": 3,
+    "geometry_ok": 3,
+    "maps_produced": 3,
+    "labelled_correspondences": 49,
+    "predicted_correspondences": 44,
+    "errors_px_conditional_on_prediction": {
+      "count": 44,
+      "mean": 2.9542379966487498,
+      "rms": 3.9691419821047953,
+      "median": 1.6957699777689708,
+      "p90": 6.89591453941926,
+      "max": 9.954897682061036,
+      "within_2px": 25,
+      "within_5px": 35
+    },
+    "center_translation_baseline_px_same_subset": {
+      "count": 44,
+      "mean": 38.329262628005175,
+      "rms": 40.37515799146096,
+      "median": 37.735729267085446,
+      "p90": 58.325416523935665,
+      "max": 63.976020053264,
+      "within_2px": 0,
+      "within_5px": 0
+    },
+    "fraction_all_labels_within_5px": 0.7142857142857143
+  },
+  "evaluation": {
+    "tracks": 33,
+    "geometry_ok": 33,
+    "maps_produced": 33,
+    "labelled_correspondences": 448,
+    "predicted_correspondences": 410,
+    "errors_px_conditional_on_prediction": {
+      "count": 410,
+      "mean": 3.566896582482893,
+      "rms": 5.230139717024134,
+      "median": 2.3279139269129505,
+      "p90": 7.092807511062728,
+      "max": 35.93045686796884,
+      "within_2px": 172,
+      "within_5px": 328
+    },
+    "center_translation_baseline_px_same_subset": {
+      "count": 410,
+      "mean": 34.34851672696953,
+      "rms": 37.235465834615376,
+      "median": 33.34443949721252,
+      "p90": 50.64014111894338,
+      "max": 112.70033722600598,
+      "within_2px": 0,
+      "within_5px": 3
+    },
+    "fraction_all_labels_within_5px": 0.7321428571428571
+  },
+  "mandarins": {
+    "tracks": 15,
+    "geometry_ok": 15,
+    "maps_produced": 15,
+    "labelled_correspondences": 132,
+    "predicted_correspondences": 119,
+    "errors_px_conditional_on_prediction": {
+      "count": 119,
+      "mean": 3.0985907111824718,
+      "rms": 4.733833366373758,
+      "median": 1.9100944078321511,
+      "p90": 6.566878657521168,
+      "max": 30.958936239706205,
+      "within_2px": 63,
+      "within_5px": 99
+    },
+    "center_translation_baseline_px_same_subset": {
+      "count": 119,
+      "mean": 31.65645583469714,
+      "rms": 33.343998061455615,
+      "median": 32.72649707042779,
+      "p90": 42.80747077026294,
+      "max": 64.31124090862022,
+      "within_2px": 0,
+      "within_5px": 0
+    },
+    "fraction_all_labels_within_5px": 0.75
+  },
+  "oranges": {
+    "tracks": 10,
+    "geometry_ok": 10,
+    "maps_produced": 10,
+    "labelled_correspondences": 179,
+    "predicted_correspondences": 175,
+    "errors_px_conditional_on_prediction": {
+      "count": 175,
+      "mean": 2.6492531626358953,
+      "rms": 3.3164902423301887,
+      "median": 2.005587672381997,
+      "p90": 5.263303984308658,
+      "max": 11.315337290685978,
+      "within_2px": 87,
+      "within_5px": 156
+    },
+    "center_translation_baseline_px_same_subset": {
+      "count": 175,
+      "mean": 37.56370917805918,
+      "rms": 39.475990140634025,
+      "median": 38.13180192523539,
+      "p90": 53.16738760614497,
+      "max": 65.76656775293988,
+      "within_2px": 0,
+      "within_5px": 0
+    },
+    "fraction_all_labels_within_5px": 0.8715083798882681
+  },
+  "tomatoes": {
+    "tracks": 11,
+    "geometry_ok": 11,
+    "maps_produced": 11,
+    "labelled_correspondences": 186,
+    "predicted_correspondences": 160,
+    "errors_px_conditional_on_prediction": {
+      "count": 160,
+      "mean": 4.750390453615845,
+      "rms": 6.76245703953814,
+      "median": 3.2104371722996943,
+      "p90": 10.471553284002045,
+      "max": 35.93045686796884,
+      "within_2px": 47,
+      "within_5px": 108
+    },
+    "center_translation_baseline_px_same_subset": {
+      "count": 160,
+      "mean": 33.92882539500262,
+      "rms": 38.33770640596778,
+      "median": 30.980017442263424,
+      "p90": 56.40605688296351,
+      "max": 112.70033722600598,
+      "within_2px": 0,
+      "within_5px": 3
+    },
+    "fraction_all_labels_within_5px": 0.5806451612903226
+  }
+}

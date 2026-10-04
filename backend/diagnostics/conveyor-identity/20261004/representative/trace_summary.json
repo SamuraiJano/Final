@@ -1,0 +1,89 @@
+{
+  "reason_counts": {
+    "new_track": 514,
+    "continued": 39679,
+    "motion_or_size_discontinuity": 8,
+    "recovered_after_gap": 95,
+    "ambiguous_association": 34,
+    "trajectory_correction": 4
+  },
+  "corrections": [
+    {
+      "frame": 726,
+      "timestamp": 24.25596666666667,
+      "timestamp_source": "timestamp",
+      "raw_track_id": 501,
+      "tracker_id": 501,
+      "fruit_id": 500,
+      "capture_id": 500,
+      "reason": "trajectory_correction",
+      "identity_corrected": true,
+      "cx": 1900.3135375976562,
+      "cy": 662.33154296875,
+      "predicted_cx": 1901.8620403289794,
+      "predicted_cy": 658.9400374348968,
+      "prediction_error": 3.7282932415613876,
+      "vx": -12.210845947265886,
+      "vy": 317.73681640625676
+    },
+    {
+      "frame": 763,
+      "timestamp": 25.48796666666667,
+      "timestamp_source": "timestamp",
+      "raw_track_id": 531,
+      "tracker_id": 531,
+      "fruit_id": 509,
+      "capture_id": 509,
+      "reason": "trajectory_correction",
+      "identity_corrected": true,
+      "cx": 1910.5438842773438,
+      "cy": 504.4288787841797,
+      "predicted_cx": 1908.6685970435071,
+      "predicted_cy": 539.732840820119,
+      "prediction_error": 35.35373300861502,
+      "vx": -3.3015724084751525,
+      "vy": 408.2214182291689
+    },
+    {
+      "frame": 765,
+      "timestamp": 25.552,
+      "timestamp_source": "timestamp",
+      "raw_track_id": 533,
+      "tracker_id": 533,
+      "fruit_id": 531,
+      "capture_id": 531,
+      "reason": "trajectory_correction",
+      "identity_corrected": true,
+      "cx": 1911.35009765625,
+      "cy": 992.9965209960938,
+      "predicted_cx": 1912.8784386498849,
+      "predicted_cy": 937.175114990517,
+      "prediction_error": 55.84232440212585,
+      "vx": 1.806595037407397,
+      "vy": 418.11584187145843
+    },
+    {
+      "frame": 783,
+      "timestamp": 26.15996666666667,
+      "timestamp_source": "timestamp",
+      "raw_track_id": 550,
+      "tracker_id": 550,
+      "fruit_id": 535,
+      "capture_id": 535,
+      "reason": "trajectory_correction",
+      "identity_corrected": true,
+      "cx": 1907.5753784179688,
+      "cy": 246.44628143310547,
+      "predicted_cx": 1909.285675559002,
+      "predicted_cy": 233.69757421811403,
+      "prediction_error": 12.862917708055239,
+      "vx": -4.736656937048748,
+      "vy": 418.34473609924277
+    }
+  ],
+  "timestamp_sources": {
+    "timestamp": 40334
+  },
+  "uncertain": 57,
+  "elapsed_tracking_seconds": 317.18339720001677
+}

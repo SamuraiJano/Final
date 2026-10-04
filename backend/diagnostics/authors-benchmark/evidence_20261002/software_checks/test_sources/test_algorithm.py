@@ -1,0 +1,258 @@
+"""Synthetic regression checks for the surface reconstruction geometry."""
+
+import unittest
+from types import SimpleNamespace
+from unittest.mock import patch
+
+import numpy as np
+
+from algorithm import (Ellipse, FruitView, MappingError, NaartjiePipeline, Settings,
+                       _grade, _height, _oblate_poles, _sample_view,
+                       _validate_capture_mask, _select_rotating_views,
+                       build_surface_map, fit_spheroid)
+
+
+class AlgorithmTests(unittest.TestCase):
+    @staticmethod
+    def _rotation(axis: str, degrees: float) -> np.ndarray:
+        angle = np.deg2rad(degrees)
+        c, s = np.cos(angle), np.sin(angle)
+        if axis == "y":
+            return np.array([[c, 0, s], [0, 1, 0], [-s, 0, c]])
+        return np.array([[1, 0, 0], [0, c, -s], [0, s, c]])
+
+    @staticmethod
+    def _silhouette(pole: np.ndarray, A: float = 55, B: float = 40,
+                    size: int = 150) -> np.ndarray:
+        y, x = np.mgrid[:size, :size]
+        xy = np.stack((x-(size-1)/2, y-(size-1)/2), axis=-1)
+        projected = A*A*np.eye(2) + (B*B-A*A)*np.outer(pole[:2], pole[:2])
+        return (np.einsum("...i,ij,...j->...", xy,
+                          np.linalg.inv(projected), xy) <= 1).astype(np.uint8)
+
+    def test_grade_boundaries_are_percentages(self) -> None:
+        settings = Settings()
+        for percentage, expected in ((0, "Class 1"), (5, "Class 1"),
+                                     (10, "Class 2"), (20, "Class 2"),
+                                     (25, "Class 3")):
+            with self.subTest(percentage=percentage):
+                self.assertEqual(_grade(percentage, .8, settings),
+                                 (expected, "graded"))
+        self.assertEqual(_grade(5, .5, settings),
+                         (None, "insufficient_surface_coverage"))
+
+    def test_oblate_pole_follows_rotation_through_turning_point(self) -> None:
+        for axis in ("x", "y"):
+            for direction in (-1, 1):
+                with self.subTest(axis=axis, direction=direction):
+                    pole0 = np.array([.55, .75, .36]) if axis == "y" else np.array([.75, .55, .36])
+                    pole0 /= np.linalg.norm(pole0)
+                    truth = [self._rotation(axis, direction*k*25) @ pole0
+                             for k in range(10)]
+                    views = [FruitView(np.zeros((150, 150, 3), np.uint8),
+                                       self._silhouette(pole)) for pole in truth]
+                    fitted = fit_spheroid(views, Settings(rotation_axis=axis,
+                                                          rotation_direction=direction))
+                    self.assertGreater(min(abs(float(a @ b)) for a, b in
+                                           zip(fitted.pole_axes, truth)), .98)
+
+    def test_axis_aligned_oblate_pole_has_constant_silhouette(self) -> None:
+        pole = np.array([0., 1., 0.])
+        mask = self._silhouette(pole)
+        views = [FruitView(np.zeros((150, 150, 3), np.uint8), mask)
+                 for _ in range(5)]
+        fitted = fit_spheroid(views, Settings())
+        self.assertTrue(all(abs(float(p @ pole)) > .99
+                            for p in fitted.pole_axes))
+
+    def test_small_silhouette_noise_does_not_become_a_full_turn(self) -> None:
+        ellipses = []
+        for degrees, minor in [(0, 40), (.2, 40.02), (-.2, 40.01), (.1, 40.03)]:
+            angle = np.deg2rad(degrees)
+            ellipses.append(Ellipse(np.array([75., 75.]), 55., minor,
+                                    np.array([np.cos(angle), -np.sin(angle)]),
+                                    np.array([np.sin(angle), np.cos(angle)])))
+        for axis in ('x', 'y'):
+            with self.subTest(axis=axis):
+                poles = _oblate_poles(ellipses, 55., 40., Settings(rotation_axis=axis))
+                self.assertTrue(all(abs(p[1]) > .99 for p in poles))
+
+    def test_tilted_spheroid_visibility_uses_surface_normal(self) -> None:
+        pole = np.array([.6, 0., .8])
+        matrix = np.eye(3)/55**2 + (1/25**2-1/55**2)*np.outer(pole, pole)
+        x = np.linspace(-49, 49, 1000)
+        front = _height(matrix, x, np.zeros_like(x))
+        visible_index = np.flatnonzero(np.isfinite(front) & (front < 0))[0]
+        back = -2*matrix[0, 2]*x/matrix[2, 2] - front
+        hidden_index = np.flatnonzero(np.isfinite(back) & (back > 0))[0]
+        points = np.array([[x[visible_index]+60, 60., front[visible_index]],
+                           [x[hidden_index]+60, 60., back[hidden_index]]])
+        view = FruitView(np.full((120, 120, 3), 200, np.uint8),
+                         np.ones((120, 120), np.uint8))
+        _, valid, _ = _sample_view(view, points, [], matrix, np.array([60., 60.]))
+        self.assertEqual(valid.tolist(), [True, False])
+
+    def test_collapsed_and_occluded_masks_are_rejected(self) -> None:
+        mask = np.zeros((100, 100), np.uint8)
+        mask[45:55, 45:55] = 1
+        with self.assertRaisesRegex(MappingError, 'too little'):
+            _validate_capture_mask(mask, (10, 10, 90, 90), Settings())
+        mask[10:90, 10:90] = 1
+        mask[30:70, 50:90] = 0
+        with self.assertRaisesRegex(MappingError, 'occluded'):
+            _validate_capture_mask(mask, (10, 10, 90, 90), Settings())
+
+    def test_auto_model_uses_sphere_for_near_circular_views(self) -> None:
+        y, x = np.mgrid[:128, :128]
+        mask = (((x-63.5)**2 + (y-63.5)**2) < 48**2).astype(np.uint8)
+        views = [FruitView(np.zeros((128, 128, 3), np.uint8), mask)
+                 for _ in range(3)]
+        fitted = fit_spheroid(views, Settings(spheroid_type="auto"))
+        self.assertEqual(fitted.A, fitted.B)
+
+    def test_view_selection_skips_only_measured_stationary_or_bad_views(self) -> None:
+        mask = self._silhouette(np.array([0., 1., 0.]))
+        views = [FruitView(np.zeros((150,150,3), np.uint8), mask, frame_index=i)
+                 for i in range(6)]
+        settings = Settings(select_rotating_views=True)
+        model = fit_spheroid(views, settings)
+        measured = {(0,1):0., (0,2):25., (2,4):50., (4,5):25.}
+        def estimate(source, target, *args):
+            pair = (source.frame_index, target.frame_index)
+            if pair not in measured:
+                raise MappingError('bad target texture')
+            return self._rotation('y', measured[pair]), .2
+        with patch('algorithm.estimate_rotation', side_effect=estimate):
+            selected, _, rotations, _, _ = _select_rotating_views(views, model, settings)
+        self.assertEqual([v.frame_index for v in selected], [0,2,4,5])
+        self.assertEqual(len(rotations), 3)
+        self.assertTrue(np.allclose(rotations[1], self._rotation('y', 50)))
+
+    def test_stationary_fruit_cannot_acquire_rotation_coverage(self) -> None:
+        mask = self._silhouette(np.array([0., 1., 0.]))
+        views = [FruitView(np.zeros((150,150,3), np.uint8), mask, frame_index=i)
+                 for i in range(6)]
+        settings = Settings(select_rotating_views=True)
+        model = fit_spheroid(views, settings)
+        with patch('algorithm.estimate_rotation', return_value=(np.eye(3), .05)):
+            with self.assertRaisesRegex(MappingError, 'No reliable rotating sequence'):
+                _select_rotating_views(views, model, settings)
+
+    def test_view_selection_does_not_join_across_unmeasured_gaps(self) -> None:
+        mask = self._silhouette(np.array([0., 1., 0.]))
+        views = [FruitView(np.zeros((150,150,3), np.uint8), mask, frame_index=i)
+                 for i in range(6)]
+        settings = Settings(select_rotating_views=True, maximum_view_index_gap=1)
+        model = fit_spheroid(views, settings)
+        def estimate(source, target, *args):
+            if source.frame_index == 1:
+                raise MappingError('no matched transition')
+            return self._rotation('y',25.), .2
+        with patch('algorithm.estimate_rotation', side_effect=estimate):
+            selected, _, rotations, _, _ = _select_rotating_views(views, model, settings)
+        self.assertEqual([v.frame_index for v in selected], [2,3,4,5])
+        self.assertEqual(len(rotations), 3)
+
+    def test_deferred_segmentation_runs_on_retained_views_and_preserves_area(self) -> None:
+        class Segmenter:
+            names = {0:'spot'}
+            calls = 0
+            def predict(self, image, **kwargs):
+                self.calls += 1
+                return [SimpleNamespace(
+                    masks=SimpleNamespace(data=np.ones((1,*image.shape[:2]),np.uint8)),
+                    boxes=SimpleNamespace(cls=np.array([0])))]
+        segmenter=Segmenter()
+        settings=Settings(spheroid_type='sphere',rotation_axis='y',select_rotating_views=True,
+                          minimum_rotation_coverage_deg=350,defect_observations_complete=True)
+        pipeline=NaartjiePipeline(segmenter,settings=settings,defer_defect_segmentation=True)
+        y,x=np.mgrid[:150,:150]
+        mask=(((x-74.5)**2+(y-74.5)**2)<55**2).astype(np.uint8)
+        frame=np.zeros((150,150,3),np.uint8);frame[mask>0]=(45,150,230)
+        self.assertTrue(pipeline.add_tracked_detection(frame,7,(19,19,130,130),0))
+        self.assertEqual(segmenter.calls,0)
+        # Known motion isolates lazy inference from texture matching. Frame 1
+        # repeats frame 0; the other 15 transitions total exactly 375 degrees.
+        pipeline.views_by_id[7]=[FruitView(frame,mask,frame_index=i) for i in range(17)]
+        def estimate(source,target,*args):
+            angle=0. if target.frame_index==1 else 25.
+            return self._rotation('y',angle),.1
+        with patch('algorithm.estimate_rotation',side_effect=estimate):
+            result=pipeline.finish_track(7)
+        self.assertEqual(segmenter.calls,16)
+        self.assertEqual(result.discarded_view_frames,[1])
+        self.assertAlmostEqual(result.defect_pct_of_observed,100.,places=6)
+        self.assertEqual(result.grade,'Class 3')
+
+    def test_detector_uses_tracktrack_and_grabcut_crop(self) -> None:
+        class Detector:
+            names = {0: "object"}
+
+            def track(self, frame, **kwargs):
+                self.tracker_name = kwargs["tracker"]
+                boxes = SimpleNamespace(
+                    id=np.array([7]), cls=np.array([0]),
+                    xyxy=np.array([[32, 32, 112, 112]], np.float32),
+                )
+                return [SimpleNamespace(boxes=boxes)]
+
+        class Segmenter:
+            names = {0: "spot"}
+
+            def predict(self, crop, **kwargs):
+                return [SimpleNamespace(masks=None, boxes=None)]
+
+        detector = Detector()
+        pipeline = NaartjiePipeline(Segmenter(), detector,
+                                    max_views_per_track=2)
+        y, x = np.mgrid[:144, :144]
+        frame = np.zeros((144, 144, 3), np.uint8)
+        frame[(x-72)**2 + (y-72)**2 < 40**2] = (45, 150, 230)
+        self.assertEqual(pipeline.process_frame(frame, 1), [7])
+        self.assertEqual(detector.tracker_name, "tracktrack.yaml")
+        self.assertEqual(pipeline.last_seen_frame[7], 1)
+        self.assertGreater(int(pipeline.views_by_id[7][0].object_mask.sum()), 100)
+        self.assertEqual(pipeline.process_frame(frame, 2, capture_views=False), [])
+        self.assertEqual(pipeline.last_seen_frame[7], 2)
+        self.assertEqual(len(pipeline.views_by_id[7]), 1)
+        with self.assertRaisesRegex(MappingError, 'cut off'):
+            pipeline.add_tracked_detection(frame, 8, (0, 32, 80, 112), 3)
+
+    def test_textured_oblate_track_builds_map(self) -> None:
+        size, A, B = 150, 55., 40.
+        y, x = np.mgrid[:size, :size]
+        X, Y = x-(size-1)/2, y-(size-1)/2
+        pole0 = np.array([.55, .75, .36])
+        pole0 /= np.linalg.norm(pole0)
+        views = []
+        for k in range(16):
+            rotation = self._rotation("y", k*25)
+            pole = rotation @ pole0
+            matrix = np.eye(3)/A**2 + (1/B**2-1/A**2)*np.outer(pole, pole)
+            Z = _height(matrix, X, Y)
+            visible = np.isfinite(Z) & (Z > 0)
+            camera = np.stack((X, Y, np.nan_to_num(Z)), axis=-1)
+            fruit = camera @ rotation
+            fx, fy, fz = fruit[:, :, 0], fruit[:, :, 1], fruit[:, :, 2]
+            intensity = (.5 + .17*np.sin(.31*fx+.14*fy) +
+                         .13*np.cos(.29*fz-.11*fy) + .1*np.sin(.23*fx+.26*fz))
+            channel = np.uint8(np.clip(intensity, 0, 1)*255)
+            image = np.repeat(channel[:, :, None], 3, axis=2)
+            image[~visible] = 0
+            defect = visible & (fx > 15) & (fx < 25) & (fy > -8) & (fy < 8) & (fz > 35)
+            views.append(FruitView(image, visible.astype(np.uint8),
+                                   {"spot": defect.astype(np.uint8)}, k))
+        result = build_surface_map(views, Settings(search_step_deg=3,
+                                                   transverse_angle_deg=3,
+                                                   min_texture=.002,
+                                                   minimum_rotation_coverage_deg=350,
+                                                   maximum_pair_gap_deg=55))
+        self.assertTrue(all(abs(angle-25) < 2 for angle in result.pair_rotations_deg))
+        self.assertGreater(result.observed_surface_pct, 65)
+        self.assertGreaterEqual(result.rotation_coverage_deg, 350)
+        self.assertEqual((result.grade, result.status), ("Class 1", "graded"))
+        self.assertGreater(result.defect_pct_of_observed, 0)
+
+
+if __name__ == "__main__":
+    unittest.main()

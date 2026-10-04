@@ -1,0 +1,43 @@
+[
+  {
+    "label": "camera_shading_unblurred20_20261002",
+    "pid": 42740,
+    "args": [
+      "backend/validate_camera_shading.py",
+      "--label",
+      "camera_shading_unblurred20_20261002",
+      "--algorithm-source",
+      "backend/diagnostics/algorithm-revision/aligned_unblurred_pattern_source/algorithm_snapshot.py",
+      "--expected-sha256",
+      "c5c7e7292af1ef67eeca476ed99389b96f8aa17fd2d3814cbe7934934be2b911",
+      "--native-matching-cost",
+      "aligned_mad",
+      "--max-pair-angle",
+      "20"
+    ],
+    "launched_at": "2026-10-02T20:20:16.049169"
+  },
+  {
+    "label": "fixed_unblurred20_conveyor_20261002",
+    "pid": 5908,
+    "args": [
+      "backend/validate_algorithm_revision.py",
+      "--candidate",
+      "backend/diagnostics/algorithm-revision/aligned_unblurred_pattern_source/algorithm_snapshot.py",
+      "--native-candidate",
+      "backend/diagnostics/algorithm-revision/aligned_unblurred_pattern_source/algorithm_snapshot.py",
+      "--label",
+      "fixed_unblurred20_conveyor_20261002",
+      "--native-only",
+      "--native-matching-cost",
+      "aligned_mad",
+      "--native-recheck-angle",
+      "20",
+      "--transverse-angle",
+      "20",
+      "--max-pair-angle",
+      "20"
+    ],
+    "launched_at": "2026-10-02T20:20:16.067581"
+  }
+]

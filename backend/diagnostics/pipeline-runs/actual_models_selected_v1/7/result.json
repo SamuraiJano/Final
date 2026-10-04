@@ -1,0 +1,385 @@
+{
+  "track_id": 7,
+  "views": 36,
+  "view_frames": [
+    0,
+    5,
+    10,
+    14,
+    19,
+    24,
+    29,
+    34,
+    41,
+    46,
+    50,
+    55,
+    60,
+    65,
+    70,
+    74,
+    79,
+    84,
+    89,
+    101,
+    106,
+    110,
+    115,
+    120,
+    125,
+    130,
+    134,
+    139,
+    149,
+    156,
+    158,
+    161,
+    166,
+    185,
+    194,
+    211
+  ],
+  "rejected_views": {
+    "Fruit silhouette is occluded or too irregular for a spheroid": 4,
+    "Fruit foreground has fewer than 100 pixels": 3,
+    "Fruit is cut off by the video frame": 12
+  },
+  "status": "insufficient_rotation_coverage",
+  "grade": null,
+  "model_type": "oblate",
+  "estimated_radii_px": [
+    89.11791532463161,
+    72.00930405476606,
+    89.11791532463161
+  ],
+  "rotation_coverage_deg": 40.783282185846375,
+  "map_longitude_span_deg": 33.51571114001213,
+  "mapped_view_frames": [
+    46,
+    50,
+    55,
+    60,
+    74
+  ],
+  "discarded_view_frames": [
+    0,
+    5,
+    10,
+    14,
+    19,
+    24,
+    29,
+    34,
+    41,
+    65,
+    70,
+    79,
+    84,
+    89,
+    101,
+    106,
+    110,
+    115,
+    120,
+    125,
+    130,
+    134,
+    139,
+    149,
+    156,
+    158,
+    161,
+    166,
+    185,
+    194,
+    211
+  ],
+  "view_selection": [
+    {
+      "source_frame": 0,
+      "target_frame": 5,
+      "rotation_deg": 3.978054356693703,
+      "error": 0.5275342269293164,
+      "status": "accepted"
+    },
+    {
+      "source_frame": 5,
+      "target_frame": 10,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 1.2 deg, error 0.638"
+    },
+    {
+      "source_frame": 5,
+      "target_frame": 14,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 0.0 deg, error 0.647"
+    },
+    {
+      "source_frame": 5,
+      "target_frame": 19,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 4.5 deg, error 0.655"
+    },
+    {
+      "source_frame": 5,
+      "target_frame": 24,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 0.0 deg, error 0.619"
+    },
+    {
+      "source_frame": 5,
+      "target_frame": 29,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 13.0 deg, error 0.710"
+    },
+    {
+      "source_frame": 5,
+      "target_frame": 34,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 1.9 deg, error 0.599"
+    },
+    {
+      "source_frame": 5,
+      "target_frame": 41,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 9.1 deg, error 0.595"
+    },
+    {
+      "source_frame": 5,
+      "target_frame": 46,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 14.5 deg, error 0.583"
+    },
+    {
+      "source_frame": 46,
+      "target_frame": 50,
+      "rotation_deg": 8.791212966149889,
+      "error": 0.29111165742019,
+      "status": "accepted"
+    },
+    {
+      "source_frame": 50,
+      "target_frame": 55,
+      "rotation_deg": 7.871191667291651,
+      "error": 0.5215691794040896,
+      "status": "accepted"
+    },
+    {
+      "source_frame": 55,
+      "target_frame": 60,
+      "rotation_deg": 7.028282737950039,
+      "error": 0.34410782959181957,
+      "status": "accepted"
+    },
+    {
+      "source_frame": 60,
+      "target_frame": 65,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 10.1 deg, error 0.621"
+    },
+    {
+      "source_frame": 60,
+      "target_frame": 70,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 15.7 deg, error 0.666"
+    },
+    {
+      "source_frame": 60,
+      "target_frame": 74,
+      "rotation_deg": 17.092594814454795,
+      "error": 0.5762772676249577,
+      "status": "accepted"
+    },
+    {
+      "source_frame": 74,
+      "target_frame": 79,
+      "rotation_deg": 0.1458864559335643,
+      "error": 0.1910931970715285,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 74,
+      "target_frame": 84,
+      "rotation_deg": 0.19633855486246632,
+      "error": 0.16913844867817016,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 74,
+      "target_frame": 89,
+      "rotation_deg": 0.0,
+      "error": 0.4955695553906696,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 74,
+      "target_frame": 101,
+      "rotation_deg": 1.4748525656804017,
+      "error": 0.18690626762984916,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 74,
+      "target_frame": 106,
+      "rotation_deg": 0.6401547471629697,
+      "error": 0.3052179693827971,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 74,
+      "target_frame": 110,
+      "rotation_deg": 0.718164711219516,
+      "error": 0.40085744467326273,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 74,
+      "target_frame": 115,
+      "rotation_deg": 0.9140448094476676,
+      "error": 0.2149063874289507,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 74,
+      "target_frame": 120,
+      "rotation_deg": 1.9249382289584365,
+      "error": 0.2732546747183359,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 120,
+      "target_frame": 125,
+      "rotation_deg": 0.5163892394487829,
+      "error": 0.0549327167565041,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 120,
+      "target_frame": 130,
+      "rotation_deg": 1.8001685372344314,
+      "error": 0.20293760845403108,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 120,
+      "target_frame": 134,
+      "rotation_deg": 2.5000000000000866,
+      "error": 0.12184499562967613,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 120,
+      "target_frame": 139,
+      "rotation_deg": 1.3557079957420568,
+      "error": 0.4781892705039475,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 120,
+      "target_frame": 149,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 0.0 deg, error 0.595"
+    },
+    {
+      "source_frame": 120,
+      "target_frame": 156,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 41.0 deg, error 0.608"
+    },
+    {
+      "source_frame": 120,
+      "target_frame": 158,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 41.0 deg, error 0.602"
+    },
+    {
+      "source_frame": 120,
+      "target_frame": 161,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 34.5 deg, error 0.581"
+    },
+    {
+      "source_frame": 161,
+      "target_frame": 166,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 0.1 deg, error 0.608"
+    },
+    {
+      "source_frame": 161,
+      "target_frame": 185,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 9.1 deg, error 0.647"
+    },
+    {
+      "source_frame": 161,
+      "target_frame": 194,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 10.3 deg, error 0.643"
+    },
+    {
+      "source_frame": 161,
+      "target_frame": 211,
+      "rotation_deg": 4.876297479141271,
+      "error": 0.5552360225351076,
+      "status": "accepted"
+    }
+  ],
+  "observed_surface_pct": 30.56860088343759,
+  "defect_pct_of_observed": 2.187178841170211,
+  "pair_rotations_deg": [
+    8.791212966149889,
+    7.871191667291651,
+    7.028282737950039,
+    17.092594814454795
+  ],
+  "pair_rotation_vectors_deg": [
+    [
+      8.791212966149889,
+      -4.414155596344941,
+      0.0
+    ],
+    [
+      7.871191667291651,
+      -1.2504838967770477,
+      -1.2464198036962669e-17
+    ],
+    [
+      7.028282737950039,
+      -2.575168927105434,
+      -1.2459452783860255e-17
+    ],
+    [
+      17.092594814454795,
+      1.7388352798410367,
+      -2.5224405025815426e-17
+    ]
+  ],
+  "pair_errors": [
+    0.29111165742019,
+    0.5215691794040896,
+    0.34410782959181957,
+    0.5762772676249577
+  ],
+  "surface_map": "/results/actual_models_selected_v1/7/surface_map.png",
+  "observed_mask": "/results/actual_models_selected_v1/7/observed.png",
+  "defect_maps": {
+    "dark_marking": "/results/actual_models_selected_v1/7/defect_dark_marking.png",
+    "light_brown_discolouration": "/results/actual_models_selected_v1/7/defect_light_brown_discolouration.png",
+    "open_skin": "/results/actual_models_selected_v1/7/defect_open_skin.png",
+    "skin_wrinkling": "/results/actual_models_selected_v1/7/defect_skin_wrinkling.png",
+    "wind_scarring": "/results/actual_models_selected_v1/7/defect_wind_scarring.png"
+  },
+  "reason": "The fruit did not rotate far enough for a reliable class."
+}

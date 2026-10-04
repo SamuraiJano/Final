@@ -1,0 +1,15 @@
+--- measured_ed3328
++++ final_cf6c2d
+@@ -929,7 +929,11 @@
+         # fruit stopped. Require separately measured native matches in both
+         # directions before accepting a replacement; a joint cost alone can
+         # conceal one direction choosing an unrelated texture minimum.
+-        if not (s.refine_small_motion and s.image_downsample > 1 and
++        # The retry is validated for the dense recorded-video search. Wider
++        # sparse-view searches are much more expensive and retain their
++        # established behavior until separately validated.
++        if not (s.max_pair_angle_deg <= 20. and
++                s.refine_small_motion and s.image_downsample > 1 and
+                 s.native_matching_cost == 'aligned_mad' and s.bidirectional_matching):
+             raise
+         if details is not None:

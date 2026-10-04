@@ -1,0 +1,70 @@
+[
+  {
+    "label": "pixel_switch_trace_author_profile_20261002",
+    "pid": 45676,
+    "args": [
+      "backend/benchmark_authors.py",
+      "run",
+      "--label",
+      "pixel_switch_trace_author_profile_20261002",
+      "--groups",
+      "mandarins",
+      "oranges",
+      "tomatoes",
+      "--algorithm-snapshot",
+      "backend/diagnostics/algorithm-revision/aligned_pixel_switch_trace_source/algorithm_snapshot.py",
+      "--axis",
+      "x",
+      "--direction",
+      "-1",
+      "--shape",
+      "auto",
+      "--bidirectional",
+      "--select-views",
+      "--minimum-rotation",
+      "0",
+      "--minimum-longitude",
+      "350",
+      "--native-matching-cost",
+      "aligned_mad",
+      "--native-recheck-angle",
+      "20",
+      "--transverse-angle",
+      "20"
+    ],
+    "cpu_thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    },
+    "launched_at": "2026-10-02T20:37:28.402822"
+  },
+  {
+    "label": "fixed_pixel_switch_trace20_conveyor_20261002",
+    "pid": 45684,
+    "args": [
+      "backend/validate_algorithm_revision.py",
+      "--candidate",
+      "backend/diagnostics/algorithm-revision/aligned_pixel_switch_trace_source/algorithm_snapshot.py",
+      "--native-candidate",
+      "backend/diagnostics/algorithm-revision/aligned_pixel_switch_trace_source/algorithm_snapshot.py",
+      "--label",
+      "fixed_pixel_switch_trace20_conveyor_20261002",
+      "--native-only",
+      "--native-matching-cost",
+      "aligned_mad",
+      "--native-recheck-angle",
+      "20",
+      "--transverse-angle",
+      "20",
+      "--max-pair-angle",
+      "20"
+    ],
+    "cpu_thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    },
+    "launched_at": "2026-10-02T20:37:28.424605"
+  }
+]

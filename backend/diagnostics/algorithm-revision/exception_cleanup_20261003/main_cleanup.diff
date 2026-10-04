@@ -1,0 +1,72 @@
+--- main.py.before
++++ main.py.after
+@@ -217,6 +217,15 @@
+ 
+ 
+ def _finish_track(pipeline: NaartjiePipeline, track_id: int, output: Path) -> dict | None:
++    """Write the result/evidence, then release this track on every exit."""
++    try:
++        return _write_track_result(pipeline, track_id, output)
++    finally:
++        # Unexpected failures (including MemoryError) must still propagate.
++        pipeline.drop_track(track_id)
++
++
++def _write_track_result(pipeline: NaartjiePipeline, track_id: int, output: Path) -> dict | None:
+     views = pipeline.views_by_id.get(track_id, [])
+     rejected = pipeline.rejected_views_by_id.get(track_id, {}).copy()
+     history = getattr(pipeline, 'tracking_history_by_id', {}).get(track_id, []).copy()
+@@ -236,7 +245,6 @@
+             tracking['tracking_evidence'].append({'stage': kind, 'frame': frame_index,
+                 'crop': f'/results/{output.name}/{track_id}/{filename}'})
+     if not views:
+-        pipeline.drop_track(track_id)
+         if rejected or history:
+             row = {"track_id": track_id, "views": 0, "status": "mapping_failed",
+                    "grade": None, "reason": "No complete, usable fruit silhouettes were captured.",
+@@ -292,7 +300,6 @@
+     except (MappingError, ValueError) as error:
+         row.update(status="mapping_failed", grade=None, reason=str(error))
+         row['view_selection'] = getattr(error, 'diagnostics', [])
+-        pipeline.drop_track(track_id)
+     row['view_evidence']=_save_view_evidence(views,folder,f'/results/{output.name}/{track_id}')
+     (folder / 'result.json').write_text(json.dumps(row,indent=2),encoding='utf-8')
+     return row
+@@ -326,11 +333,7 @@
+         progress(state="loading_models")
+     pipeline, detector, segmenter = _make_pipeline(
+         capture_stride_frames=1, max_views_per_track=120)
+-    _check_analysis_cancelled()
+-    video = cv2.VideoCapture(str(path))
+-    if not video.isOpened():
+-        raise ValueError("Could not open the uploaded video")
+-
++    video = None
+     results = []
+ 
+     def finish(track_id: int) -> None:
+@@ -341,6 +344,10 @@
+             results.append(row)
+ 
+     try:
++        _check_analysis_cancelled()
++        video = cv2.VideoCapture(str(path))
++        if not video.isOpened():
++            raise ValueError("Could not open the uploaded video")
+         frame_index = 0
+         fps = video.get(cv2.CAP_PROP_FPS)
+         total = int(video.get(cv2.CAP_PROP_FRAME_COUNT))
+@@ -377,7 +384,12 @@
+             finish(track_id)
+         _check_analysis_cancelled()
+     finally:
+-        video.release()
++        if video is not None:
++            video.release()
++        # A traceback may retain the pipeline after an aborted run. Remove its
++        # remaining crops/evidence rather than waiting for that traceback to die.
++        for track_id in list(pipeline.last_seen_frame):
++            pipeline.drop_track(track_id)
+     if metrics is not None:
+         metrics.update(_analysis_metrics(frame_index, started, detector, segmenter, fps))
+         metrics.update(sampled_frames=sampled_frames, duplicate_frames=frame_index-sampled_frames,

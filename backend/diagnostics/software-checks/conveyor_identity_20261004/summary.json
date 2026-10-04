@@ -1,0 +1,57 @@
+{
+  "checks": [
+    {
+      "name": "python_tests",
+      "command": [
+        "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "backend",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "started_at": "2026-10-04T14:50:04.828263+02:00",
+      "exit_code": 0,
+      "log": "python_tests.txt"
+    },
+    {
+      "name": "frontend_build",
+      "command": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "run",
+        "build"
+      ],
+      "started_at": "2026-10-04T14:50:17.005166+02:00",
+      "exit_code": 0,
+      "log": "frontend_build.txt"
+    },
+    {
+      "name": "frontend_lint",
+      "command": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "run",
+        "lint"
+      ],
+      "started_at": "2026-10-04T14:50:22.557905+02:00",
+      "exit_code": 0,
+      "log": "frontend_lint.txt"
+    }
+  ],
+  "source_sha256": {
+    "backend/algorithm.py": "542898330f265d5fd4e0b1eb22847d87dadfbae4304ed8a6545b8173554a4963",
+    "backend/main.py": "28892b8661e944215effc676ed67c6de3cf7967c32b72fe015094cee7bcbce60",
+    "backend/dfine_segmenter.py": "20049bf4e24678342364f85b1f4eea69a36f5385c858189b40b52fac11fc360a",
+    "src/App.jsx": "3269e9464d88623c152e206cef86465d1da01c47e6b16f213dc52d1e7c4c2206",
+    "src/App.css": "c85455722c3172af16e2657286cdf8dae847a4d733dc8665e7f669932596052e",
+    "scripts/dev.mjs": "f41579d588457f17b06372077abc3f0e93a007ccdadbd415e256a32146abb230",
+    "scripts/stop_process_tree.py": "fcd6db0138a16caaee584d0c6db42e093aee9c05f983dc3f7f40f66d6a8c1dea",
+    "backend/requirements.txt": "2b880df5495aa56cbbd21abb752b301f4f563c267d5ade481295b151dcd4e9c4",
+    "vite.config.js": "1b6582dca898de357a7b048a30489197d860509aa01c3c1803a03590079dec4e",
+    "eslint.config.js": "856dabc578ba67c0e5f1a03c02b867b3eb468ae7a629e30721077ea29d442677",
+    "backend/validate_api_video.py": "abaf1d87ac80aa2e77d486060103d66ec2a7367d2e3cb1a4725b01f43e782157"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "baseline_sha256": "6f2c56ac6edbdc3cc72fecd995055f01a6690113c54115c304b7e29595c20961",
+  "candidate_sha256": "25d14c1be4321bc6d031eee948d48bd32785a4528d3f45a2eb078fef72a1be04",
+  "changes": "Optional aligned_mad only: log(max(green/255,1/255)), noGaussian2camera-plane preblur for descriptor sampling, then same local weighted mean/x/y linear slope removal and weightedRMS normalization of9projected surface-neighborhood samples, weightedMAD/magnitude residual. Multiplicative illumination becomes additive abovefloor; local log-gradient removal is approximate for curved lighting. Additive exposure offsets are not invariant under logarithm. Original green_mad retainsGaussian2; feature selection, geometry, visibility, search, coarse agreement, limits and legacy cost modes unchanged. Experimental, not production.",
+  "generator_sha256": "f35dcfcd6f523e86421c85a0bcc0a30838803cff7711e56b47b3bced2a96e202"
+}

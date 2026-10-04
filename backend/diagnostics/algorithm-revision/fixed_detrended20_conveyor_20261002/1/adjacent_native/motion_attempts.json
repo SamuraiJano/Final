@@ -1,0 +1,1850 @@
+[
+  {
+    "source_frame": 0,
+    "target_frame": 1,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "failed",
+        "reason": "Unreliable pair 0: rotation 5.5 deg, error 0.662"
+      }
+    ],
+    "native_rechecked": false,
+    "status": "failed_coarse",
+    "reason": "Unreliable pair 0: rotation 5.5 deg, error 0.662",
+    "estimator_details": {
+      "image_downsample": 4,
+      "highpass_sigma": 1.25
+    }
+  },
+  {
+    "source_frame": 1,
+    "target_frame": 2,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "failed",
+        "reason": "Unreliable pair 0: rotation 1.6 deg, error 0.617"
+      }
+    ],
+    "native_rechecked": false,
+    "status": "failed_coarse",
+    "reason": "Unreliable pair 0: rotation 1.6 deg, error 0.617",
+    "estimator_details": {
+      "image_downsample": 4,
+      "highpass_sigma": 1.25
+    }
+  },
+  {
+    "source_frame": 2,
+    "target_frame": 3,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "failed",
+        "reason": "Unreliable pair 0: rotation 0.0 deg, error 0.635"
+      }
+    ],
+    "native_rechecked": false,
+    "status": "failed_coarse",
+    "reason": "Unreliable pair 0: rotation 0.0 deg, error 0.635",
+    "estimator_details": {
+      "image_downsample": 4,
+      "highpass_sigma": 1.25
+    }
+  },
+  {
+    "source_frame": 3,
+    "target_frame": 4,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "failed",
+        "reason": "Unreliable pair 0: rotation 11.0 deg, error 0.606"
+      }
+    ],
+    "native_rechecked": false,
+    "status": "failed_coarse",
+    "reason": "Unreliable pair 0: rotation 11.0 deg, error 0.606",
+    "estimator_details": {
+      "image_downsample": 4,
+      "highpass_sigma": 1.25
+    }
+  },
+  {
+    "source_frame": 4,
+    "target_frame": 5,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.5086436731151028,
+        "vector_deg": [
+          0.6727030917866242,
+          3.0434284376248626,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.36725218890437183,
+        "vector_deg": [
+          2.6250784765285085,
+          2.6434754187579603,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "accepted",
+    "final_vector_deg": [
+      2.6250784765285085,
+      2.6434754187579603,
+      0.0
+    ],
+    "final_error": 0.36725218890437183,
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.6727030917866242,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 5,
+    "target_frame": 6,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.39634865846444367,
+        "vector_deg": [
+          7.000000000000016,
+          -2.0000000000000044,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.3249775929579264,
+        "vector_deg": [
+          5.115452842788295,
+          -2.8557761581834815,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "accepted",
+    "final_vector_deg": [
+      5.115452842788295,
+      -2.8557761581834815,
+      0.0
+    ],
+    "final_error": 0.3249775929579264,
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 7.000000000000016,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 6,
+    "target_frame": 7,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.41197366724314216,
+        "vector_deg": [
+          4.499999999999962,
+          0.4999999999999957,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.29089668969778515,
+        "vector_deg": [
+          5.270769588562006,
+          1.9345858376161558,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "accepted",
+    "final_vector_deg": [
+      5.270769588562006,
+      1.9345858376161558,
+      0.0
+    ],
+    "final_error": 0.29089668969778515,
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 4.499999999999962,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 7,
+    "target_frame": 8,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.4344389623932133,
+        "vector_deg": [
+          4.499999999999948,
+          4.999999999999941,
+          2.490525945556378e-17
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.2936385768834069,
+        "vector_deg": [
+          3.349178155232467,
+          2.3058495148399185,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "accepted",
+    "final_vector_deg": [
+      3.349178155232467,
+      2.3058495148399185,
+      0.0
+    ],
+    "final_error": 0.2936385768834069,
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 4.499999999999948,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 8,
+    "target_frame": 9,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.45248581928373277,
+        "vector_deg": [
+          1.4999999999999958,
+          -2.4999999999999933,
+          -3.107351208043499e-18
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.3940888022739246,
+        "vector_deg": [
+          1.998752897029384,
+          -0.4339549012485661,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "accepted",
+    "final_vector_deg": [
+      1.998752897029384,
+      -0.4339549012485661,
+      0.0
+    ],
+    "final_error": 0.3940888022739246,
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 1.4999999999999958,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 9,
+    "target_frame": 10,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.5313385130408651,
+        "vector_deg": [
+          6.560286433735102,
+          -0.152693903617246,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.36931503918395503,
+        "vector_deg": [
+          3.9999999999997695,
+          -1.4999999999999136,
+          -6.217780312178328e-18
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "accepted",
+    "final_vector_deg": [
+      3.9999999999997695,
+      -1.4999999999999136,
+      -6.217780312178328e-18
+    ],
+    "final_error": 0.36931503918395503,
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 6.560286433735102,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 10,
+    "target_frame": 11,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.5094642917507548,
+        "vector_deg": [
+          0.9999999999999097,
+          -0.49999999999995487,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.39451419819375555,
+        "vector_deg": [
+          0.3871274275612057,
+          0.10379789329788634,
+          4.8531808796243204e-20
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "accepted",
+    "final_vector_deg": [
+      0.3871274275612057,
+      0.10379789329788634,
+      4.8531808796243204e-20
+    ],
+    "final_error": 0.39451419819375555,
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.9999999999999097,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 11,
+    "target_frame": 12,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.48449636157449516,
+        "vector_deg": [
+          16.000000000000007,
+          -0.5000000000000002,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.4181195960088038,
+        "vector_deg": [
+          14.738737172280294,
+          -0.7304804545003744,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "accepted",
+    "final_vector_deg": [
+      14.738737172280294,
+      -0.7304804545003744,
+      0.0
+    ],
+    "final_error": 0.4181195960088038,
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 16.000000000000007,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 12,
+    "target_frame": 13,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.35039776328861905,
+        "vector_deg": [
+          9.830453423956556,
+          -3.080076794544754,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.33546563899905335,
+        "vector_deg": [
+          10.970553680213504,
+          -2.624800825304528,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "accepted",
+    "final_vector_deg": [
+      10.970553680213504,
+      -2.624800825304528,
+      0.0
+    ],
+    "final_error": 0.33546563899905335,
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 9.830453423956556,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 13,
+    "target_frame": 14,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.312753383548521,
+        "vector_deg": [
+          10.085087945162115,
+          -3.300478701537261,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.2686359184965895,
+        "vector_deg": [
+          10.0221838059836,
+          -2.341515415698836,
+          2.4982217760468047e-17
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "accepted",
+    "final_vector_deg": [
+      10.0221838059836,
+      -2.341515415698836,
+      2.4982217760468047e-17
+    ],
+    "final_error": 0.2686359184965895,
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 10.085087945162115,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 14,
+    "target_frame": 15,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.38358720682942066,
+        "vector_deg": [
+          4.236380962816845,
+          -1.9997884393248178,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.19225751834074123,
+        "vector_deg": [
+          5.192773013103614,
+          -2.7461964013881572,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "accepted",
+    "final_vector_deg": [
+      5.192773013103614,
+      -2.7461964013881572,
+      0.0
+    ],
+    "final_error": 0.19225751834074123,
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 4.236380962816845,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 15,
+    "target_frame": 16,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.18733159674976696,
+        "vector_deg": [
+          0.2109614892614162,
+          0.25594812525526195,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.0736887033977139,
+        "vector_deg": [
+          0.3607410162542247,
+          -1.6432289525073969,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "accepted",
+    "final_vector_deg": [
+      0.3607410162542247,
+      -1.6432289525073969,
+      0.0
+    ],
+    "final_error": 0.0736887033977139,
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.2109614892614162,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 16,
+    "target_frame": 17,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.1976342244694218,
+        "vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.11218005268281049,
+        "vector_deg": [
+          0.0,
+          1.4999999999993152,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "failed_native",
+    "reason": "Unreliable pair 0: rotation 0.00 deg is too small",
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 17,
+    "target_frame": 18,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.07356450323561076,
+        "vector_deg": [
+          0.261674759329863,
+          0.6152339589557982,
+          1.9413005736877133e-19
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.04231159075531418,
+        "vector_deg": [
+          0.7185909785042697,
+          0.4219147769641382,
+          -3.882649914954253e-19
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "accepted",
+    "final_vector_deg": [
+      0.7185909785042697,
+      0.4219147769641382,
+      -3.882649914954253e-19
+    ],
+    "final_error": 0.04231159075531418,
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.261674759329863,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 18,
+    "target_frame": 19,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.07126911537642526,
+        "vector_deg": [
+          0.5698350973530291,
+          0.44925481999300154,
+          1.9413084146851973e-19
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.07294889349404038,
+        "vector_deg": [
+          1.2049576163344125,
+          0.5337899297218336,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "accepted",
+    "final_vector_deg": [
+      1.2049576163344125,
+      0.5337899297218336,
+      0.0
+    ],
+    "final_error": 0.07294889349404038,
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.5698350973530291,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 19,
+    "target_frame": 20,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.17994264744098964,
+        "vector_deg": [
+          0.0,
+          -0.5000000000005914,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.037535119744997195,
+        "vector_deg": [
+          0.0,
+          -0.9999999999999002,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "failed_native",
+    "reason": "Unreliable pair 0: rotation 0.00 deg is too small",
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 20,
+    "target_frame": 21,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.1515279815089861,
+        "vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.04676695291311978,
+        "vector_deg": [
+          0.4718863385652334,
+          -0.6292458965898368,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "accepted",
+    "final_vector_deg": [
+      0.4718863385652334,
+      -0.6292458965898368,
+      0.0
+    ],
+    "final_error": 0.04676695291311978,
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 21,
+    "target_frame": 22,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.19313887907868754,
+        "vector_deg": [
+          0.0,
+          0.9999999999999002,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.0648104116344239,
+        "vector_deg": [
+          0.25202558430927013,
+          0.6802839467238146,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "accepted",
+    "final_vector_deg": [
+      0.25202558430927013,
+      0.6802839467238146,
+      0.0
+    ],
+    "final_error": 0.0648104116344239,
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 22,
+    "target_frame": 23,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.2707463823478921,
+        "vector_deg": [
+          0.3771644398054389,
+          -0.38527382415495176,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.07276768742561676,
+        "vector_deg": [
+          1.1246759822349293,
+          -1.2387330541030128,
+          -1.5532259538528074e-18
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "accepted",
+    "final_vector_deg": [
+      1.1246759822349293,
+      -1.2387330541030128,
+      -1.5532259538528074e-18
+    ],
+    "final_error": 0.07276768742561676,
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.3771644398054389,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 23,
+    "target_frame": 24,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.2752081633303888,
+        "vector_deg": [
+          4.0921474802086495,
+          -1.820447620879669,
+          -6.2183518362567855e-18
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.0872246509835739,
+        "vector_deg": [
+          2.73916308870514,
+          -0.9429088304767409,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "accepted",
+    "final_vector_deg": [
+      2.73916308870514,
+      -0.9429088304767409,
+      0.0
+    ],
+    "final_error": 0.0872246509835739,
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 4.0921474802086495,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 24,
+    "target_frame": 25,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.31337587728947025,
+        "vector_deg": [
+          4.075903145998935,
+          -1.7644875162139424,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.20507771059394853,
+        "vector_deg": [
+          4.535109678589087,
+          -2.0265372485448077,
+          6.2198094406525726e-18
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "accepted",
+    "final_vector_deg": [
+      4.535109678589087,
+      -2.0265372485448077,
+      6.2198094406525726e-18
+    ],
+    "final_error": 0.20507771059394853,
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 4.075903145998935,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 25,
+    "target_frame": 26,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.38940773265867523,
+        "vector_deg": [
+          7.736385868231524,
+          -3.262785088098694,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.30409622659472013,
+        "vector_deg": [
+          7.1448654264148965,
+          -2.1799578219474762,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "accepted",
+    "final_vector_deg": [
+      7.1448654264148965,
+      -2.1799578219474762,
+      0.0
+    ],
+    "final_error": 0.30409622659472013,
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 7.736385868231524,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 26,
+    "target_frame": 27,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.37069657421459445,
+        "vector_deg": [
+          9.680255319086791,
+          -1.2609863374147154,
+          1.2484356044128817e-17
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.23132788647804844,
+        "vector_deg": [
+          8.315582031405352,
+          -0.18224082156898777,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "accepted",
+    "final_vector_deg": [
+      8.315582031405352,
+      -0.18224082156898777,
+      0.0
+    ],
+    "final_error": 0.23132788647804844,
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 9.680255319086791,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 27,
+    "target_frame": 28,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.17686430194087108,
+        "vector_deg": [
+          5.68392790832148,
+          0.11597812346294095,
+          -7.77778233827683e-19
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.17180675994907862,
+        "vector_deg": [
+          6.07589740971364,
+          -0.2819129909330397,
+          -1.5559260203288527e-18
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "accepted",
+    "final_vector_deg": [
+      6.07589740971364,
+      -0.2819129909330397,
+      -1.5559260203288527e-18
+    ],
+    "final_error": 0.17180675994907862,
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 5.68392790832148,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 28,
+    "target_frame": 29,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.29513720600944293,
+        "vector_deg": [
+          3.4999999999999645,
+          -0.9999999999999897,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.12495426693705172,
+        "vector_deg": [
+          2.7646124106392773,
+          -0.24614732647291862,
+          7.768063904554872e-19
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "accepted",
+    "final_vector_deg": [
+      2.7646124106392773,
+      -0.24614732647291862,
+      7.768063904554872e-19
+    ],
+    "final_error": 0.12495426693705172,
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 3.4999999999999645,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 29,
+    "target_frame": 30,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.3025444943579061,
+        "vector_deg": [
+          0.32022557630924187,
+          -0.638400421252017,
+          1.9413067941143506e-19
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.1010118290417711,
+        "vector_deg": [
+          0.44057027546142086,
+          -0.07398043224638724,
+          -2.426595236339896e-20
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "accepted",
+    "final_vector_deg": [
+      0.44057027546142086,
+      -0.07398043224638724,
+      -2.426595236339896e-20
+    ],
+    "final_error": 0.1010118290417711,
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.32022557630924187,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 30,
+    "target_frame": 31,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.23572424143796017,
+        "vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.2084728809980403,
+        "vector_deg": [
+          0.0,
+          -0.5000000000005914,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "failed_native",
+    "reason": "Unreliable pair 0: rotation 0.00 deg is too small",
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 31,
+    "target_frame": 32,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.2568927350028368,
+        "vector_deg": [
+          0.0,
+          -0.9999999999999002,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.0914821059582266,
+        "vector_deg": [
+          0.0,
+          -0.5000000000005914,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "failed_native",
+    "reason": "Unreliable pair 0: rotation 0.00 deg is too small",
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 32,
+    "target_frame": 33,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.4136159644792068,
+        "vector_deg": [
+          0.3506005640419912,
+          -0.35060112830044243,
+          -9.706403745182876e-20
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.10258313631635099,
+        "vector_deg": [
+          0.0,
+          -0.5000000000005914,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "failed_native",
+    "reason": "Unreliable pair 0: rotation 0.00 deg is too small",
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.3506005640419912,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 33,
+    "target_frame": 34,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.3088372234707931,
+        "vector_deg": [
+          0.4864747364783785,
+          0.3255507389161075,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.060969804773493105,
+        "vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "failed_native",
+    "reason": "Unreliable pair 0: rotation 0.00 deg is too small",
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.4864747364783785,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 34,
+    "target_frame": 35,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.29097092820387915,
+        "vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.0981089706477038,
+        "vector_deg": [
+          0.0,
+          -0.5000000000005914,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "failed_native",
+    "reason": "Unreliable pair 0: rotation 0.00 deg is too small",
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 35,
+    "target_frame": 36,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.21496043649517999,
+        "vector_deg": [
+          0.026042135351411626,
+          0.5645121971264773,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.09789817674504903,
+        "vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "failed_native",
+    "reason": "Unreliable pair 0: rotation 0.00 deg is too small",
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.026042135351411626,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 36,
+    "target_frame": 37,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.41814920393338173,
+        "vector_deg": [
+          1.4999999999998286,
+          0.4999999999999429,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.06897076179054124,
+        "vector_deg": [
+          0.1912199402202385,
+          0.09337444492558755,
+          -1.213288114034883e-20
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "failed_native",
+    "reason": "Unreliable pair 0: rotation 0.19 deg is too small",
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 1.4999999999998286,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 37,
+    "target_frame": 38,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.2338243941449123,
+        "vector_deg": [
+          0.0,
+          0.9999999999999002,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.054602568593600825,
+        "vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "failed_native",
+    "reason": "Unreliable pair 0: rotation 0.00 deg is too small",
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 38,
+    "target_frame": 39,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.26363204520770445,
+        "vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.039273470275663205,
+        "vector_deg": [
+          0.0,
+          -0.5000000000005914,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "failed_native",
+    "reason": "Unreliable pair 0: rotation 0.00 deg is too small",
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 39,
+    "target_frame": 40,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.29359920647391824,
+        "vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.09323485835882658,
+        "vector_deg": [
+          0.0,
+          0.9999999999999002,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "failed_native",
+    "reason": "Unreliable pair 0: rotation 0.00 deg is too small",
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 40,
+    "target_frame": 41,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.2401051937410946,
+        "vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.08453406850246084,
+        "vector_deg": [
+          0.0,
+          -0.5000000000005914,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "failed_native",
+    "reason": "Unreliable pair 0: rotation 0.00 deg is too small",
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 41,
+    "target_frame": 42,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.08877704575872193,
+        "vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.06557932238783572,
+        "vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "failed_native",
+    "reason": "Unreliable pair 0: rotation 0.00 deg is too small",
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 42,
+    "target_frame": 43,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.19823993262240136,
+        "vector_deg": [
+          0.0,
+          0.9999999999999002,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.08579813170813963,
+        "vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "failed_native",
+    "reason": "Unreliable pair 0: rotation 0.00 deg is too small",
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 43,
+    "target_frame": 44,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.18456579165258963,
+        "vector_deg": [
+          0.5239550672257502,
+          -0.8889553015550324,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.04431290569599765,
+        "vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "failed_native",
+    "reason": "Unreliable pair 0: rotation 0.00 deg is too small",
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.5239550672257502,
+      "native_matching_cost": "aligned_mad"
+    }
+  },
+  {
+    "source_frame": 44,
+    "target_frame": 45,
+    "image_downsample": 4,
+    "requested_minimum_pair_angle_deg": 0.25,
+    "adaptive_native": true,
+    "searches": [
+      {
+        "image_downsample": 4,
+        "highpass_sigma": 1.25,
+        "status": "accepted",
+        "error": 0.30803062560297867,
+        "vector_deg": [
+          0.0,
+          -0.5000000000005914,
+          0.0
+        ]
+      },
+      {
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "status": "accepted",
+        "error": 0.06495661248422355,
+        "vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "native_rechecked": true,
+    "status": "failed_native",
+    "reason": "Unreliable pair 0: rotation 0.00 deg is too small",
+    "estimator_details": {
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "aligned_mad"
+    }
+  }
+]

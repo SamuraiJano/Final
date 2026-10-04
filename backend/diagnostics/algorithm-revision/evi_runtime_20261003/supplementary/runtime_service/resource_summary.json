@@ -1,0 +1,175 @@
+{
+  "monitor": {
+    "finished_at": "2026-10-03T11:10:00.482316+00:00",
+    "stop_reason": "complete",
+    "samples": 94,
+    "analysis_id": "e40c363cba5d4093ab647a438b1cbe96",
+    "duration_sec": 2302.3,
+    "services_stopped": false,
+    "inference_cancelled": false,
+    "method": "Python requests/psutil and hidden nvidia-smi; only owned service process memory, no unrelated command lines."
+  },
+  "sample_interval_seconds": 25,
+  "started_at": "2026-10-03T10:31:38.222598+00:00",
+  "last_sample_at": "2026-10-03T11:10:00.374862+00:00",
+  "minimum_sampled_available_ram_bytes": 8290611200,
+  "maximum_sampled_owned_api_private_bytes": 3621527552,
+  "maximum_sampled_owned_dashboard_private_bytes": 267300864,
+  "maximum_os_reported_api_worker_peak_rss_bytes": 2601226240,
+  "maximum_sampled_device_gpu_used_mib": 1468.0,
+  "baseline": {
+    "time": "2026-10-03T10:31:38.222598+00:00",
+    "system_memory": {
+      "total_bytes": 33549090816,
+      "available_bytes": 11385962496,
+      "used_pct": 66.1
+    },
+    "owned_processes": [
+      {
+        "role": "api",
+        "pid": 17328,
+        "name": "python.exe",
+        "rss_bytes": 5050368,
+        "private_bytes": 937984,
+        "peak_rss_bytes": 5050368
+      },
+      {
+        "role": "api",
+        "pid": 30832,
+        "name": "conhost.exe",
+        "rss_bytes": 8409088,
+        "private_bytes": 1466368,
+        "peak_rss_bytes": 8413184
+      },
+      {
+        "role": "api",
+        "pid": 21712,
+        "name": "python.exe",
+        "rss_bytes": 439291904,
+        "private_bytes": 700100608,
+        "peak_rss_bytes": 439291904
+      },
+      {
+        "role": "dashboard",
+        "pid": 39332,
+        "name": "node.exe",
+        "rss_bytes": 39206912,
+        "private_bytes": 56246272,
+        "peak_rss_bytes": 39206912
+      },
+      {
+        "role": "dashboard",
+        "pid": 34108,
+        "name": "conhost.exe",
+        "rss_bytes": 8454144,
+        "private_bytes": 1486848,
+        "peak_rss_bytes": 8454144
+      },
+      {
+        "role": "dashboard",
+        "pid": 32188,
+        "name": "node.exe",
+        "rss_bytes": 163680256,
+        "private_bytes": 209567744,
+        "peak_rss_bytes": 166133760
+      }
+    ],
+    "gpu": {
+      "devices": [
+        {
+          "index": 0.0,
+          "total_memory_mib": 8188.0,
+          "used_memory_mib": 835.0,
+          "free_memory_mib": 7122.0,
+          "utilization_pct": 0.0
+        }
+      ]
+    },
+    "analysis": {
+      "state": "idle",
+      "run_id": null,
+      "frames_processed": 0,
+      "frames_total": null,
+      "error": null
+    }
+  },
+  "after_completion": {
+    "time": "2026-10-03T11:10:00.374862+00:00",
+    "system_memory": {
+      "total_bytes": 33549090816,
+      "available_bytes": 9439019008,
+      "used_pct": 71.9
+    },
+    "owned_processes": [
+      {
+        "role": "api",
+        "pid": 17328,
+        "name": "python.exe",
+        "rss_bytes": 5103616,
+        "private_bytes": 884736,
+        "peak_rss_bytes": 5124096
+      },
+      {
+        "role": "api",
+        "pid": 30832,
+        "name": "conhost.exe",
+        "rss_bytes": 8491008,
+        "private_bytes": 1441792,
+        "peak_rss_bytes": 8540160
+      },
+      {
+        "role": "api",
+        "pid": 21712,
+        "name": "python.exe",
+        "rss_bytes": 1654358016,
+        "private_bytes": 2753732608,
+        "peak_rss_bytes": 2601226240
+      },
+      {
+        "role": "dashboard",
+        "pid": 39332,
+        "name": "node.exe",
+        "rss_bytes": 37937152,
+        "private_bytes": 52379648,
+        "peak_rss_bytes": 40054784
+      },
+      {
+        "role": "dashboard",
+        "pid": 34108,
+        "name": "conhost.exe",
+        "rss_bytes": 8527872,
+        "private_bytes": 1449984,
+        "peak_rss_bytes": 8577024
+      },
+      {
+        "role": "dashboard",
+        "pid": 32188,
+        "name": "node.exe",
+        "rss_bytes": 128520192,
+        "private_bytes": 207278080,
+        "peak_rss_bytes": 180015104
+      }
+    ],
+    "gpu": {
+      "devices": [
+        {
+          "index": 0.0,
+          "total_memory_mib": 8188.0,
+          "used_memory_mib": 1468.0,
+          "free_memory_mib": 6489.0,
+          "utilization_pct": 0.0
+        }
+      ]
+    },
+    "analysis": {
+      "state": "complete",
+      "run_id": "e40c363cba5d4093ab647a438b1cbe96",
+      "frames_processed": 515,
+      "frames_total": 515,
+      "error": null
+    },
+    "phase": "after_terminal_state"
+  },
+  "limitations": "25-second samples can miss short peaks. Windows peak RSS is separately reported. RAM totals include unrelated applications; GPU usage is total device usage, not per-model allocation. Successful runtime completion does not establish manually verified grading accuracy.",
+  "source_sha256": "246c46576235d08c940325ae804482dbbbea1a22872bfe1b78f122389a78c682"
+}

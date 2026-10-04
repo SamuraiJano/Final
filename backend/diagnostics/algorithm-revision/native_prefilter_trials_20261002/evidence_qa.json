@@ -1,0 +1,58 @@
+{
+  "coarse_preprocess_checks": [
+    {
+      "input_file": "backend\\diagnostics\\algorithm-revision\\extended_motion_controls_20261002\\stationary_120_texture_a_inputs.npz",
+      "sigma": 1.118033988749895,
+      "coarse_highpass_array_identical": true,
+      "coarse_mask_array_identical": true
+    },
+    {
+      "input_file": "backend\\diagnostics\\algorithm-revision\\extended_motion_controls_20261002\\stationary_120_texture_a_inputs.npz",
+      "sigma": 2.0,
+      "coarse_highpass_array_identical": true,
+      "coarse_mask_array_identical": true
+    },
+    {
+      "input_file": "backend\\diagnostics\\algorithm-revision\\extended_motion_controls_20261002\\stationary_120_texture_b_inputs.npz",
+      "sigma": 1.118033988749895,
+      "coarse_highpass_array_identical": true,
+      "coarse_mask_array_identical": true
+    },
+    {
+      "input_file": "backend\\diagnostics\\algorithm-revision\\extended_motion_controls_20261002\\stationary_120_texture_b_inputs.npz",
+      "sigma": 2.0,
+      "coarse_highpass_array_identical": true,
+      "coarse_mask_array_identical": true
+    },
+    {
+      "input_file": "backend\\diagnostics\\algorithm-revision\\extended_motion_controls_20261002\\variable_xy_texture_a_inputs.npz",
+      "sigma": 1.118033988749895,
+      "coarse_highpass_array_identical": true,
+      "coarse_mask_array_identical": true
+    },
+    {
+      "input_file": "backend\\diagnostics\\algorithm-revision\\extended_motion_controls_20261002\\variable_xy_texture_a_inputs.npz",
+      "sigma": 2.0,
+      "coarse_highpass_array_identical": true,
+      "coarse_mask_array_identical": true
+    },
+    {
+      "input_file": "backend\\diagnostics\\algorithm-revision\\extended_motion_controls_20261002\\variable_xy_texture_b_inputs.npz",
+      "sigma": 1.118033988749895,
+      "coarse_highpass_array_identical": true,
+      "coarse_mask_array_identical": true
+    },
+    {
+      "input_file": "backend\\diagnostics\\algorithm-revision\\extended_motion_controls_20261002\\variable_xy_texture_b_inputs.npz",
+      "sigma": 2.0,
+      "coarse_highpass_array_identical": true,
+      "coarse_mask_array_identical": true
+    }
+  ],
+  "all_coarse_arrays_identical": true,
+  "figures_visually_checked": [
+    "native_prefilter_comparison.png"
+  ],
+  "accuracy_result": "Neither trial passes every unchanged control; failures retained.",
+  "production_edits": false
+}

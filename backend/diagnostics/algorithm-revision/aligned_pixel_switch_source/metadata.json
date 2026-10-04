@@ -1,0 +1,6 @@
+{
+  "baseline_sha256": "25d14c1be4321bc6d031eee948d48bd32785a4528d3f45a2eb078fef72a1be04",
+  "candidate_sha256": "d57078ace090cd6aedaad97a614d0a3bb9d8045c2896141400c052e8aa7ce12c",
+  "changes": "Only when optional native aligned_mad is requested and a successful coarse estimate qualifies for native rechecking: choose existingGaussian2green_mad when 2*A*sin(abs(rolling_axis_angle)/2)<1nativepixel; otherwise existinglog/unblurred/locallydetrendedfull9aligned_mad. A is fitted full-resolution maximum spheroid radius; chord gives approximate maximum projected displacement, not a calibrated true motion. Threshold1nativepixel is derived from sampling geometry. Actual rolling Rodrigues component used, not vector norm. Coarse failure, recheck threshold,3degreeagreement, visibility, all confidence/accuracy limits unchanged. Trace records requested/actualmode/pixelmovement/threshold. Legacy requested green/MAD stays numerically unchanged. Experimental, not production.",
+  "generator_sha256": "d8df579b7e5bf9f0afdd4336da4bcd5217dd0043a09054a69e520a6f909c5cf1"
+}

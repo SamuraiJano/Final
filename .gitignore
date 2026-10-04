@@ -1,0 +1,56 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+backend/venv/
+backend/results/
+__pycache__/
+
+# Local configuration, uploads and generated runtime state
+.env
+.env.*
+!.env.example
+backend/runtime/
+backend/uploads/
+*.tmp
+
+# Trained checkpoints remain in the local model directory.
+# Keep model metadata/configuration in version control.
+backend/models/**/*.pth
+backend/models/**/*.pt
+backend/models/**/*.onnx
+backend/models/**/*.safetensors
+
+# Keep diagnostic code, text reports, fingerprints and source snapshots.
+# Generated media, numerical caches and archive bundles stay local.
+backend/diagnostics/**/*.png
+backend/diagnostics/**/*.jpg
+backend/diagnostics/**/*.jpeg
+backend/diagnostics/**/*.mp4
+backend/diagnostics/**/*.avi
+backend/diagnostics/**/*.mov
+backend/diagnostics/**/*.mkv
+backend/diagnostics/**/*.zip
+backend/diagnostics/**/*.npz
+backend/diagnostics/**/*.npy
+backend/diagnostics/**/*.pdf
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

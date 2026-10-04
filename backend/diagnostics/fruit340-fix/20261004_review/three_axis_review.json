@@ -1,0 +1,656 @@
+{
+  "source": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\identity-mapping-check\\20261004_scene_motion_v3\\source\\algorithm.py",
+  "scope": "3D candidate grid search; x rolling bound20 and residual.58 kept. Additional z range10 is experimental, not an accepted mapper. No defect/map inference.",
+  "pairs": [
+    {
+      "source_frame": 308,
+      "target_frame": 309,
+      "forward": {
+        "rotation_vector_deg": [
+          12.25,
+          -8.5,
+          -6.5
+        ],
+        "raw_cost": 0.5476635529567948,
+        "residual": 0.3263809857335042,
+        "unchanged_residual_gate_passes": true,
+        "nonzero_x_gate_passes": true,
+        "hits_bounds": false,
+        "trace": [
+          {
+            "grid_step": 2,
+            "degrees": [
+              12.0,
+              -8.0,
+              -6.0
+            ],
+            "raw_cost": 0.5563156976922186
+          },
+          {
+            "grid_step": 1.0,
+            "degrees": [
+              12.0,
+              -9.0,
+              -6.0
+            ],
+            "raw_cost": 0.5552135547791336
+          },
+          {
+            "grid_step": 0.5,
+            "degrees": [
+              12.5,
+              -8.0,
+              -6.5
+            ],
+            "raw_cost": 0.5497427309454788
+          },
+          {
+            "grid_step": 0.25,
+            "degrees": [
+              12.25,
+              -8.5,
+              -6.5
+            ],
+            "raw_cost": 0.5476635529567948
+          }
+        ],
+        "manual_freckle_predicted_xy": [
+          68.54707498955013,
+          84.0645254133785
+        ],
+        "manual_freckle_error_px": 1.320392110701875
+      },
+      "reverse": {
+        "rotation_vector_deg": [
+          -13.25,
+          9.0,
+          7.25
+        ],
+        "raw_cost": 0.6696700239790416,
+        "residual": 0.40376253741563994,
+        "unchanged_residual_gate_passes": true,
+        "nonzero_x_gate_passes": true,
+        "hits_bounds": false,
+        "trace": [
+          {
+            "grid_step": 2,
+            "degrees": [
+              -12.0,
+              8.0,
+              8.0
+            ],
+            "raw_cost": 0.7120826031242775
+          },
+          {
+            "grid_step": 1.0,
+            "degrees": [
+              -13.0,
+              9.0,
+              7.0
+            ],
+            "raw_cost": 0.6706966426671611
+          },
+          {
+            "grid_step": 0.5,
+            "degrees": [
+              -13.0,
+              9.0,
+              7.0
+            ],
+            "raw_cost": 0.6706966426671611
+          },
+          {
+            "grid_step": 0.25,
+            "degrees": [
+              -13.25,
+              9.0,
+              7.25
+            ],
+            "raw_cost": 0.6696700239790416
+          }
+        ]
+      },
+      "joint": {
+        "rotation_vector_deg": [
+          12.5,
+          -8.5,
+          -6.5
+        ],
+        "raw_cost": 0.6175360658363203,
+        "residual": 0.37170417479819917,
+        "unchanged_residual_gate_passes": true,
+        "nonzero_x_gate_passes": true,
+        "hits_bounds": false,
+        "trace": [
+          {
+            "grid_step": 2,
+            "degrees": [
+              12.0,
+              -8.0,
+              -6.0
+            ],
+            "raw_cost": 0.6353670162885723
+          },
+          {
+            "grid_step": 1.0,
+            "degrees": [
+              13.0,
+              -9.0,
+              -7.0
+            ],
+            "raw_cost": 0.6215100696001482
+          },
+          {
+            "grid_step": 0.5,
+            "degrees": [
+              12.5,
+              -8.5,
+              -6.5
+            ],
+            "raw_cost": 0.6175360658363203
+          },
+          {
+            "grid_step": 0.25,
+            "degrees": [
+              12.5,
+              -8.5,
+              -6.5
+            ],
+            "raw_cost": 0.6175360658363203
+          }
+        ],
+        "manual_freckle_predicted_xy": [
+          68.53090813393439,
+          83.80910825533698
+        ],
+        "manual_freckle_error_px": 1.0814016295565452
+      },
+      "independent_inverse_disagreement_deg": 1.3460784635437475
+    },
+    {
+      "source_frame": 309,
+      "target_frame": 310,
+      "forward": {
+        "rotation_vector_deg": [
+          20.0,
+          -6.0,
+          -6.0
+        ],
+        "raw_cost": 0.7821186569379198,
+        "residual": 0.4778927919926973,
+        "unchanged_residual_gate_passes": true,
+        "nonzero_x_gate_passes": true,
+        "hits_bounds": true,
+        "trace": [
+          {
+            "grid_step": 2,
+            "degrees": [
+              20.0,
+              -6.0,
+              -6.0
+            ],
+            "raw_cost": 0.7821186569379198
+          },
+          {
+            "grid_step": 1.0,
+            "degrees": [
+              20.0,
+              -6.0,
+              -6.0
+            ],
+            "raw_cost": 0.7821186569379198
+          },
+          {
+            "grid_step": 0.5,
+            "degrees": [
+              20.0,
+              -6.0,
+              -6.0
+            ],
+            "raw_cost": 0.7821186569379198
+          },
+          {
+            "grid_step": 0.25,
+            "degrees": [
+              20.0,
+              -6.0,
+              -6.0
+            ],
+            "raw_cost": 0.7821186569379198
+          }
+        ],
+        "manual_freckle_predicted_xy": [
+          60.685417207262304,
+          62.905849307449685
+        ],
+        "manual_freckle_error_px": 1.081611198148978
+      },
+      "reverse": {
+        "rotation_vector_deg": [
+          -4.25,
+          14.25,
+          6.25
+        ],
+        "raw_cost": 0.8918304752901495,
+        "residual": 0.5367373559675337,
+        "unchanged_residual_gate_passes": true,
+        "nonzero_x_gate_passes": true,
+        "hits_bounds": false,
+        "trace": [
+          {
+            "grid_step": 2,
+            "degrees": [
+              -4.0,
+              14.0,
+              8.0
+            ],
+            "raw_cost": 0.8976552565308744
+          },
+          {
+            "grid_step": 1.0,
+            "degrees": [
+              -4.0,
+              14.0,
+              8.0
+            ],
+            "raw_cost": 0.8976552565308744
+          },
+          {
+            "grid_step": 0.5,
+            "degrees": [
+              -4.5,
+              14.0,
+              7.0
+            ],
+            "raw_cost": 0.8927032425089095
+          },
+          {
+            "grid_step": 0.25,
+            "degrees": [
+              -4.25,
+              14.25,
+              6.25
+            ],
+            "raw_cost": 0.8918304752901495
+          }
+        ]
+      },
+      "joint": {
+        "rotation_vector_deg": [
+          20.0,
+          -5.25,
+          -6.75
+        ],
+        "raw_cost": 0.8763143150364543,
+        "residual": 0.5368317743977163,
+        "unchanged_residual_gate_passes": true,
+        "nonzero_x_gate_passes": true,
+        "hits_bounds": true,
+        "trace": [
+          {
+            "grid_step": 2,
+            "degrees": [
+              20.0,
+              -6.0,
+              -6.0
+            ],
+            "raw_cost": 0.8811403744265203
+          },
+          {
+            "grid_step": 1.0,
+            "degrees": [
+              20.0,
+              -5.0,
+              -7.0
+            ],
+            "raw_cost": 0.8787700579246327
+          },
+          {
+            "grid_step": 0.5,
+            "degrees": [
+              20.0,
+              -5.0,
+              -7.0
+            ],
+            "raw_cost": 0.8787700579246327
+          },
+          {
+            "grid_step": 0.25,
+            "degrees": [
+              20.0,
+              -5.25,
+              -6.75
+            ],
+            "raw_cost": 0.8763143150364543
+          }
+        ],
+        "manual_freckle_predicted_xy": [
+          61.31734204865617,
+          63.05609100279973
+        ],
+        "manual_freckle_error_px": 1.1292897125836472
+      },
+      "independent_inverse_disagreement_deg": 17.72482226666746
+    },
+    {
+      "source_frame": 310,
+      "target_frame": 311,
+      "forward": {
+        "rotation_vector_deg": [
+          3.25,
+          -1.75,
+          -8.0
+        ],
+        "raw_cost": 0.7378651369087736,
+        "residual": 0.4440414582143133,
+        "unchanged_residual_gate_passes": true,
+        "nonzero_x_gate_passes": true,
+        "hits_bounds": false,
+        "trace": [
+          {
+            "grid_step": 2,
+            "degrees": [
+              4.0,
+              -2.0,
+              -10.0
+            ],
+            "raw_cost": 0.7463179019286905
+          },
+          {
+            "grid_step": 1.0,
+            "degrees": [
+              4.0,
+              -2.0,
+              -10.0
+            ],
+            "raw_cost": 0.7463179019286905
+          },
+          {
+            "grid_step": 0.5,
+            "degrees": [
+              3.5,
+              -1.5,
+              -9.0
+            ],
+            "raw_cost": 0.7435130183933838
+          },
+          {
+            "grid_step": 0.25,
+            "degrees": [
+              3.25,
+              -1.75,
+              -8.0
+            ],
+            "raw_cost": 0.7378651369087736
+          }
+        ],
+        "manual_freckle_predicted_xy": [
+          55.1563194044337,
+          62.23544124231832
+        ],
+        "manual_freckle_error_px": 11.854816676115375
+      },
+      "reverse": {
+        "rotation_vector_deg": [
+          -2.5,
+          2.0,
+          4.5
+        ],
+        "raw_cost": 0.6905271393664694,
+        "residual": 0.4130502593494007,
+        "unchanged_residual_gate_passes": true,
+        "nonzero_x_gate_passes": true,
+        "hits_bounds": false,
+        "trace": [
+          {
+            "grid_step": 2,
+            "degrees": [
+              -2.0,
+              2.0,
+              2.0
+            ],
+            "raw_cost": 0.7065499121336268
+          },
+          {
+            "grid_step": 1.0,
+            "degrees": [
+              -2.0,
+              2.0,
+              3.0
+            ],
+            "raw_cost": 0.7007387878506316
+          },
+          {
+            "grid_step": 0.5,
+            "degrees": [
+              -2.5,
+              1.5,
+              4.0
+            ],
+            "raw_cost": 0.6936727989489184
+          },
+          {
+            "grid_step": 0.25,
+            "degrees": [
+              -2.5,
+              2.0,
+              4.5
+            ],
+            "raw_cost": 0.6905271393664694
+          }
+        ]
+      },
+      "joint": {
+        "rotation_vector_deg": [
+          3.0,
+          -1.75,
+          -6.5
+        ],
+        "raw_cost": 0.7285980237967947,
+        "residual": 0.4379271751965182,
+        "unchanged_residual_gate_passes": true,
+        "nonzero_x_gate_passes": true,
+        "hits_bounds": false,
+        "trace": [
+          {
+            "grid_step": 2,
+            "degrees": [
+              2.0,
+              -2.0,
+              -6.0
+            ],
+            "raw_cost": 0.7488521381210307
+          },
+          {
+            "grid_step": 1.0,
+            "degrees": [
+              3.0,
+              -2.0,
+              -6.0
+            ],
+            "raw_cost": 0.7311634311108031
+          },
+          {
+            "grid_step": 0.5,
+            "degrees": [
+              3.0,
+              -2.0,
+              -6.5
+            ],
+            "raw_cost": 0.7291558029856602
+          },
+          {
+            "grid_step": 0.25,
+            "degrees": [
+              3.0,
+              -1.75,
+              -6.5
+            ],
+            "raw_cost": 0.7285980237967947
+          }
+        ],
+        "manual_freckle_predicted_xy": [
+          55.60462497388717,
+          61.834767073197526
+        ],
+        "manual_freckle_error_px": 11.700800952278437
+      },
+      "independent_inverse_disagreement_deg": 3.5878234700707075
+    },
+    {
+      "source_frame": 311,
+      "target_frame": 312,
+      "forward": {
+        "rotation_vector_deg": [
+          2.0,
+          -4.0,
+          1.25
+        ],
+        "raw_cost": 0.7227009643501747,
+        "residual": 0.4324602171981792,
+        "unchanged_residual_gate_passes": true,
+        "nonzero_x_gate_passes": true,
+        "hits_bounds": false,
+        "trace": [
+          {
+            "grid_step": 2,
+            "degrees": [
+              2.0,
+              -4.0,
+              2.0
+            ],
+            "raw_cost": 0.7340883691620034
+          },
+          {
+            "grid_step": 1.0,
+            "degrees": [
+              2.0,
+              -4.0,
+              1.0
+            ],
+            "raw_cost": 0.7246198942738248
+          },
+          {
+            "grid_step": 0.5,
+            "degrees": [
+              2.0,
+              -4.0,
+              1.0
+            ],
+            "raw_cost": 0.7246198942738248
+          },
+          {
+            "grid_step": 0.25,
+            "degrees": [
+              2.0,
+              -4.0,
+              1.25
+            ],
+            "raw_cost": 0.7227009643501747
+          }
+        ]
+      },
+      "reverse": {
+        "rotation_vector_deg": [
+          -1.5,
+          -5.5,
+          8.0
+        ],
+        "raw_cost": 0.7661288407193185,
+        "residual": 0.4563905570746224,
+        "unchanged_residual_gate_passes": true,
+        "nonzero_x_gate_passes": true,
+        "hits_bounds": false,
+        "trace": [
+          {
+            "grid_step": 2,
+            "degrees": [
+              -2.0,
+              -6.0,
+              10.0
+            ],
+            "raw_cost": 0.774560671853689
+          },
+          {
+            "grid_step": 1.0,
+            "degrees": [
+              -2.0,
+              -6.0,
+              10.0
+            ],
+            "raw_cost": 0.774560671853689
+          },
+          {
+            "grid_step": 0.5,
+            "degrees": [
+              -1.5,
+              -6.0,
+              9.0
+            ],
+            "raw_cost": 0.7678681556044861
+          },
+          {
+            "grid_step": 0.25,
+            "degrees": [
+              -1.5,
+              -5.5,
+              8.0
+            ],
+            "raw_cost": 0.7661288407193185
+          }
+        ]
+      },
+      "joint": {
+        "rotation_vector_deg": [
+          1.25,
+          6.25,
+          -9.75
+        ],
+        "raw_cost": 0.8191688367891747,
+        "residual": 0.48808007704614453,
+        "unchanged_residual_gate_passes": true,
+        "nonzero_x_gate_passes": true,
+        "hits_bounds": false,
+        "trace": [
+          {
+            "grid_step": 2,
+            "degrees": [
+              2.0,
+              6.0,
+              -10.0
+            ],
+            "raw_cost": 0.8390311982652926
+          },
+          {
+            "grid_step": 1.0,
+            "degrees": [
+              1.0,
+              6.0,
+              -9.0
+            ],
+            "raw_cost": 0.8239127054816877
+          },
+          {
+            "grid_step": 0.5,
+            "degrees": [
+              1.0,
+              6.5,
+              -10.0
+            ],
+            "raw_cost": 0.8226215257512814
+          },
+          {
+            "grid_step": 0.25,
+            "degrees": [
+              1.25,
+              6.25,
+              -9.75
+            ],
+            "raw_cost": 0.8191688367891747
+          }
+        ]
+      },
+      "independent_inverse_disagreement_deg": 13.267667126422497
+    }
+  ]
+}

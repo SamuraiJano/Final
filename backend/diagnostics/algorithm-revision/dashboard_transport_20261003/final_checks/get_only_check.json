@@ -1,0 +1,63 @@
+{
+  "captured_at": "2026-10-03T16:03:50.683652+00:00",
+  "status": "pass",
+  "checks": [
+    {
+      "url": "http://127.0.0.1:8000/api/dashboard",
+      "status": 200,
+      "bytes": 3774048,
+      "announced_bytes": 3774048,
+      "sha256": "fc74391e044f80a27d30912a6c3793ba2a50536e8f751371da5999b46983ba2c",
+      "seconds": 1.561,
+      "rows": 2535,
+      "summary": {
+        "runs": 7,
+        "fruit_count": 2535,
+        "classes": {
+          "Class 1": 310,
+          "Class 2": 1,
+          "Class 3": 0,
+          "ungraded": 2224
+        }
+      }
+    },
+    {
+      "url": "http://localhost:5173/api/dashboard",
+      "status": 200,
+      "bytes": 3774048,
+      "announced_bytes": 3774048,
+      "sha256": "fc74391e044f80a27d30912a6c3793ba2a50536e8f751371da5999b46983ba2c",
+      "seconds": 1.405,
+      "rows": 2535,
+      "summary": {
+        "runs": 7,
+        "fruit_count": 2535,
+        "classes": {
+          "Class 1": 310,
+          "Class 2": 1,
+          "Class 3": 0,
+          "ungraded": 2224
+        }
+      }
+    }
+  ],
+  "raw_response_byte_identical": true,
+  "latest_job": "ed3aa02cca364812a145610aad627a83",
+  "latest_records": 474,
+  "latest_grades": {
+    "ungraded": 180,
+    "Class 1": 293,
+    "Class 2": 1
+  },
+  "provisional_grades": 292,
+  "methods": [
+    "GET"
+  ],
+  "inference_requested": false,
+  "source_sha256": {
+    "vite.config.js": "1b6582dca898de357a7b048a30489197d860509aa01c3c1803a03590079dec4e",
+    "backend/algorithm.py": "f10e8393f1af64f67023f9519fcbf1b117d91418c1955ec44c2bd329fa22e657",
+    "backend/main.py": "76a66ac90ad2549775bce28f0ecb66b4348a4a0829219c770eb08349230d5f89",
+    "src/App.jsx": "949ac0b5afd11a3542c57be96b2ed20816b8656c0d70343ff45e332104d45e66"
+  }
+}

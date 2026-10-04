@@ -1,0 +1,718 @@
+{
+  "frames": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26
+  ],
+  "reference_frame": 22,
+  "progress_deg": [
+    -0.0,
+    0.9521946003253864,
+    1.6884659025973063,
+    4.493910131304687,
+    10.984037262537957,
+    21.911617570390874,
+    37.376740942889974
+  ],
+  "longitude_steps_deg": [
+    0.9521946003253864,
+    0.7362713022719201,
+    2.8054442287073806,
+    6.490127131233271,
+    10.927580307852915,
+    15.465123372499098
+  ],
+  "below_025_count": 0,
+  "backward_count": 0,
+  "above_maximum_count": 0,
+  "A": 79.58854429896925,
+  "B": 62.63776454726343,
+  "pair_errors": [
+    0.03626358212766808,
+    0.06655190566300855,
+    0.04883210741516947,
+    0.06926160816717111,
+    0.17482040544298064,
+    0.26003939136949084
+  ],
+  "selection_diagnostics": [
+    {
+      "source_frame": 0,
+      "target_frame": 1,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 4,
+      "highpass_sigma": 1.25,
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 5.5 deg, error 0.662"
+    },
+    {
+      "source_frame": 1,
+      "target_frame": 2,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 4,
+      "highpass_sigma": 1.25,
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 1.6 deg, error 0.617"
+    },
+    {
+      "source_frame": 2,
+      "target_frame": 3,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 4,
+      "highpass_sigma": 1.25,
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 0.0 deg, error 0.635"
+    },
+    {
+      "source_frame": 3,
+      "target_frame": 4,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 4,
+      "highpass_sigma": 1.25,
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 11.0 deg, error 0.606"
+    },
+    {
+      "source_frame": 4,
+      "target_frame": 5,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.6727030917866242,
+      "native_matching_cost": "green_mad",
+      "status": "split",
+      "reason": "Native green refinement disagrees with coarse rotation: 0.67 vs 22.21 degrees"
+    },
+    {
+      "source_frame": 5,
+      "target_frame": 6,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 7.000000000000016,
+      "native_matching_cost": "green_mad",
+      "rotation_vector_deg": [
+        4.99999999999988,
+        -0.9999999999999761,
+        -6.220228367667122e-18
+      ],
+      "rotation_deg": 5.099019513592663,
+      "error": 0.19464703181198628,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 6,
+      "target_frame": 7,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 4.499999999999962,
+      "native_matching_cost": "green_mad",
+      "rotation_vector_deg": [
+        3.9999999999999227,
+        0.9999999999999807,
+        3.1086927954301732e-18
+      ],
+      "rotation_deg": 4.123105625617581,
+      "error": 0.26519903232007974,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 7,
+      "target_frame": 8,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 4.499999999999948,
+      "native_matching_cost": "green_mad",
+      "status": "split",
+      "reason": "Native green refinement disagrees with coarse rotation: 4.50 vs 53.50 degrees"
+    },
+    {
+      "source_frame": 8,
+      "target_frame": 9,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 1.4999999999999958,
+      "native_matching_cost": "green_mad",
+      "status": "split",
+      "reason": "Native green refinement disagrees with coarse rotation: 1.50 vs 49.00 degrees"
+    },
+    {
+      "source_frame": 9,
+      "target_frame": 10,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 6.560286433735102,
+      "native_matching_cost": "green_mad",
+      "status": "split",
+      "reason": "Native green refinement disagrees with coarse rotation: 6.56 vs 52.00 degrees"
+    },
+    {
+      "source_frame": 10,
+      "target_frame": 11,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.9999999999999097,
+      "native_matching_cost": "green_mad",
+      "status": "split",
+      "reason": "Native green refinement disagrees with coarse rotation: 1.00 vs 9.66 degrees"
+    },
+    {
+      "source_frame": 11,
+      "target_frame": 12,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 16.000000000000007,
+      "native_matching_cost": "green_mad",
+      "status": "split",
+      "reason": "Native green refinement disagrees with coarse rotation: 16.00 vs 0.00 degrees"
+    },
+    {
+      "source_frame": 12,
+      "target_frame": 13,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 9.830453423956556,
+      "native_matching_cost": "green_mad",
+      "rotation_vector_deg": [
+        8.000000000000004,
+        -1.5000000000000009,
+        -1.2465928387386075e-17
+      ],
+      "rotation_deg": 8.139410298049857,
+      "error": 0.21989041992139924,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 13,
+      "target_frame": 14,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 10.085087945162115,
+      "native_matching_cost": "green_mad",
+      "rotation_vector_deg": [
+        9.30190385143495,
+        -2.28733897167978,
+        0.0
+      ],
+      "rotation_deg": 9.579004897832837,
+      "error": 0.22792851275367104,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 14,
+      "target_frame": 15,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 4.236380962816845,
+      "native_matching_cost": "green_mad",
+      "rotation_vector_deg": [
+        5.134709073091814,
+        -2.6748363457753435,
+        0.0
+      ],
+      "rotation_deg": 5.78964478547451,
+      "error": 0.15639722452017255,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 15,
+      "target_frame": 16,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.2109614892614162,
+      "native_matching_cost": "green_mad",
+      "rotation_vector_deg": [
+        0.49999999999995487,
+        -0.9999999999999097,
+        0.0
+      ],
+      "rotation_deg": 1.1180339887497939,
+      "error": 0.06342423878280337,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 16,
+      "target_frame": 17,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "green_mad",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 0.00 deg is too small"
+    },
+    {
+      "source_frame": 17,
+      "target_frame": 18,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.261674759329863,
+      "native_matching_cost": "green_mad",
+      "rotation_vector_deg": [
+        0.8070172658276383,
+        0.34856811652591446,
+        0.0
+      ],
+      "rotation_deg": 0.8790771292681551,
+      "error": 0.030315549147053873,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 18,
+      "target_frame": 19,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.5698350973530291,
+      "native_matching_cost": "green_mad",
+      "rotation_vector_deg": [
+        1.0332402444907656,
+        0.6025573038442285,
+        0.0
+      ],
+      "rotation_deg": 1.1961022979876608,
+      "error": 0.05948866272037021,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 19,
+      "target_frame": 20,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "green_mad",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 0.00 deg is too small"
+    },
+    {
+      "source_frame": 20,
+      "target_frame": 21,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "green_mad",
+      "rotation_vector_deg": [
+        0.33483068534015803,
+        -0.5920481629600289,
+        0.0
+      ],
+      "rotation_deg": 0.6801710190163243,
+      "error": 0.03626358212766808,
+      "status": "accepted"
+    },
+    {
+      "source_frame": 21,
+      "target_frame": 22,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "green_mad",
+      "rotation_vector_deg": [
+        0.422061785138427,
+        0.6196286768773681,
+        0.0
+      ],
+      "rotation_deg": 0.7497171784633413,
+      "error": 0.06655190566300855,
+      "status": "accepted"
+    },
+    {
+      "source_frame": 22,
+      "target_frame": 23,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.3771644398054389,
+      "native_matching_cost": "green_mad",
+      "rotation_vector_deg": [
+        1.0289421946602648,
+        -1.1449741465442724,
+        0.0
+      ],
+      "rotation_deg": 1.5393790424086808,
+      "error": 0.04883210741516947,
+      "status": "accepted"
+    },
+    {
+      "source_frame": 23,
+      "target_frame": 24,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 4.0921474802086495,
+      "native_matching_cost": "green_mad",
+      "rotation_vector_deg": [
+        2.62677617998075,
+        -0.8761581962189343,
+        1.553609935876151e-18
+      ],
+      "rotation_deg": 2.7690442908187434,
+      "error": 0.06926160816717111,
+      "status": "accepted"
+    },
+    {
+      "source_frame": 24,
+      "target_frame": 25,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 4.075903145998935,
+      "native_matching_cost": "green_mad",
+      "rotation_vector_deg": [
+        3.970140188738906,
+        -2.3683763496566894,
+        0.0
+      ],
+      "rotation_deg": 4.622901648516107,
+      "error": 0.17482040544298064,
+      "status": "accepted"
+    },
+    {
+      "source_frame": 25,
+      "target_frame": 26,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 7.736385868231524,
+      "native_matching_cost": "green_mad",
+      "rotation_vector_deg": [
+        6.791032764494366,
+        -1.8895296945112858,
+        0.0
+      ],
+      "rotation_deg": 7.0490033674893295,
+      "error": 0.26003939136949084,
+      "status": "accepted"
+    },
+    {
+      "source_frame": 26,
+      "target_frame": 27,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 9.680255319086791,
+      "native_matching_cost": "green_mad",
+      "status": "split",
+      "reason": "Native green refinement disagrees with coarse rotation: 9.68 vs 13.45 degrees"
+    },
+    {
+      "source_frame": 27,
+      "target_frame": 28,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 5.68392790832148,
+      "native_matching_cost": "green_mad",
+      "rotation_vector_deg": [
+        5.651630003109243,
+        -0.49282690134374013,
+        0.0
+      ],
+      "rotation_deg": 5.673076770742015,
+      "error": 0.27892328668335187,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 28,
+      "target_frame": 29,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 3.4999999999999645,
+      "native_matching_cost": "green_mad",
+      "rotation_vector_deg": [
+        2.5442178097452914,
+        -0.18191101796871795,
+        0.0
+      ],
+      "rotation_deg": 2.550712818386959,
+      "error": 0.19682743711661524,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 29,
+      "target_frame": 30,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.32022557630924187,
+      "native_matching_cost": "green_mad",
+      "rotation_vector_deg": [
+        0.2538282292802127,
+        -0.15736714210416503,
+        4.85316327513339e-20
+      ],
+      "rotation_deg": 0.29865228509683417,
+      "error": 0.1282222886961556,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 30,
+      "target_frame": 31,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "green_mad",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 0.00 deg is too small"
+    },
+    {
+      "source_frame": 31,
+      "target_frame": 32,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "green_mad",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 0.00 deg is too small"
+    },
+    {
+      "source_frame": 32,
+      "target_frame": 33,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.3506005640419912,
+      "native_matching_cost": "green_mad",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 0.00 deg is too small"
+    },
+    {
+      "source_frame": 33,
+      "target_frame": 34,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.4864747364783785,
+      "native_matching_cost": "green_mad",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 0.06 deg is too small"
+    },
+    {
+      "source_frame": 34,
+      "target_frame": 35,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "green_mad",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 0.00 deg is too small"
+    },
+    {
+      "source_frame": 35,
+      "target_frame": 36,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.026042135351411626,
+      "native_matching_cost": "green_mad",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 0.00 deg is too small"
+    },
+    {
+      "source_frame": 36,
+      "target_frame": 37,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 1.4999999999998286,
+      "native_matching_cost": "green_mad",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 0.05 deg is too small"
+    },
+    {
+      "source_frame": 37,
+      "target_frame": 38,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "green_mad",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 0.00 deg is too small"
+    },
+    {
+      "source_frame": 38,
+      "target_frame": 39,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "green_mad",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 0.12 deg is too small"
+    },
+    {
+      "source_frame": 39,
+      "target_frame": 40,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "green_mad",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 0.00 deg is too small"
+    },
+    {
+      "source_frame": 40,
+      "target_frame": 41,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "green_mad",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 0.00 deg is too small"
+    },
+    {
+      "source_frame": 41,
+      "target_frame": 42,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "green_mad",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 0.00 deg is too small"
+    },
+    {
+      "source_frame": 42,
+      "target_frame": 43,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "green_mad",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 0.00 deg is too small"
+    },
+    {
+      "source_frame": 43,
+      "target_frame": 44,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.5239550672257502,
+      "native_matching_cost": "green_mad",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 0.00 deg is too small"
+    },
+    {
+      "source_frame": 44,
+      "target_frame": 45,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "image_downsample": 1,
+      "highpass_sigma": 5.0,
+      "coarse_rotation_deg": 0.0,
+      "native_matching_cost": "green_mad",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 0.00 deg is too small"
+    },
+    {
+      "source_frame": 29,
+      "target_frame": 30,
+      "method": "map_trajectory_check",
+      "status": "split",
+      "longitude_delta_deg": 0.10621382678735199,
+      "reason": "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees"
+    }
+  ],
+  "pair_vectors_deg": [
+    [
+      0.33483068534015803,
+      -0.5920481629600289,
+      0.0
+    ],
+    [
+      0.422061785138427,
+      0.6196286768773681,
+      0.0
+    ],
+    [
+      1.0289421946602648,
+      -1.1449741465442724,
+      0.0
+    ],
+    [
+      2.62677617998075,
+      -0.8761581962189343,
+      1.553609935876151e-18
+    ],
+    [
+      3.970140188738906,
+      -2.3683763496566894,
+      0.0
+    ],
+    [
+      6.791032764494366,
+      -1.8895296945112858,
+      0.0
+    ]
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "checked_at": "2026-10-03T18:58:51.574470+00:00",
+  "passed": true,
+  "method": "Local HTML in isolated headless Edge; no mocked responses, user browser profile, API or model operations.",
+  "images": [
+    {
+      "src": "figures/actual_defect_maps_300dpi.png",
+      "alt": "Actual fruit 98, 340 and 32: original textured map, coloured defect overlay and observed mask",
+      "width": 5400,
+      "height": 3450,
+      "loaded": true
+    },
+    {
+      "src": "actual_ui/fruit_340_defects.png",
+      "alt": "Actual Class 2 partial fruit 340 with coloured map and defect legend",
+      "width": 475,
+      "height": 1050,
+      "loaded": true
+    },
+    {
+      "src": "actual_ui/fruit_098_defects.png",
+      "alt": "Actual complete fruit 98 with textured defect map and distinct class colours",
+      "width": 475,
+      "height": 1050,
+      "loaded": true
+    },
+    {
+      "src": "tracking_identity/tracking_audit.png",
+      "alt": "Tracking consistency audit and camera-motion compensation experiment",
+      "width": 4200,
+      "height": 2700,
+      "loaded": true
+    }
+  ],
+  "image_count": 4,
+  "page_errors": [],
+  "desktop_dimensions": {
+    "width": 1440,
+    "content": 1440,
+    "bodyFont": "17px"
+  },
+  "mobile_dimensions": {
+    "width": 390,
+    "content": 390,
+    "bodyFont": "17px"
+  },
+  "all_requests_local_file_GET": true,
+  "api_requests": 0,
+  "source_sha256": "abefafd64b3e02e676227ffb22d1c93ea7d25963b9780747df590f9ca6296f99",
+  "gallery_changed_by_check": false,
+  "check_source_sha256": "c279fdb753fe712b951e958e8c377f880597303409a4949ce24a949dc2648a48",
+  "limitations": "Checks gallery loading and layout; predictions and identity are not manually verified."
+}

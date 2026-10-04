@@ -1,0 +1,117 @@
+{
+  "conclusion": "The observed ID changes do not explain the mapping limitation in the tested sequences. Rotation/view selection remains the immediate limiting stage; smooth unseen switches are not ruled out.",
+  "saved_maps_audited": 294,
+  "maps_crossing_detected_identity_boundaries_in_selected_views": 0,
+  "paired_cases": 7,
+  "paired_inputs_unchanged_after_guard_fix": true,
+  "real_model_mapping_cases": [
+    {
+      "raw_track_id": 98,
+      "fixture_id": 98,
+      "views": 66,
+      "mapped_views": 24,
+      "observed_surface_pct": 85.07359332349164,
+      "observed_longitude_deg": 360.0,
+      "status": "graded",
+      "grade": "Class 1",
+      "split_reasons": {
+        "Unreliable pair 0: rotation 13.6 deg, error 0.603": 1,
+        "Unreliable pair 0: rotation 15.5 deg, error 0.597": 1,
+        "Unreliable pair 0: rotation 0.00 deg is too small": 16,
+        "Unreliable pair 0: rotation 0.17 deg is too small": 1,
+        "Unreliable pair 0: rotation 0.07 deg is too small": 1
+      }
+    },
+    {
+      "raw_track_id": 1,
+      "fixture_id": 1,
+      "views": 46,
+      "mapped_views": 12,
+      "observed_surface_pct": 39.143568442127076,
+      "observed_longitude_deg": 162.39520958083833,
+      "status": "graded_partial",
+      "grade": "Class 1",
+      "split_reasons": {
+        "Unreliable pair 0: rotation 5.5 deg, error 0.662": 1,
+        "Unreliable pair 0: rotation 1.6 deg, error 0.617": 1,
+        "Unreliable pair 0: rotation 0.0 deg, error 0.635": 1,
+        "Unreliable pair 0: rotation 11.0 deg, error 0.606": 1,
+        "Unreliable pair 0: rotation 20.0 deg, error 0.439": 1,
+        "Unreliable pair 0: rotation 0.00 deg is too small": 14,
+        "Unreliable pair 0: rotation 0.06 deg is too small": 1,
+        "Unreliable pair 0: rotation 0.11 deg is too small": 1,
+        "Unreliable pair 0: rotation 0.12 deg is too small": 1,
+        "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees": 2
+      }
+    },
+    {
+      "raw_track_id": 14,
+      "fixture_id": 14,
+      "views": 44,
+      "mapped_views": 2,
+      "observed_surface_pct": 25.962077127300876,
+      "observed_longitude_deg": 108.40148698884758,
+      "status": "graded_partial",
+      "grade": "Class 1",
+      "split_reasons": {
+        "Unreliable pair 0: rotation 13.1 deg, error 0.677": 1,
+        "Unreliable pair 0: rotation 14.5 deg, error 0.630": 1,
+        "Unreliable pair 0: rotation 17.5 deg, error 0.627": 1,
+        "Native green refinement disagrees with coarse rotation: 0.50 vs 7.00 degrees": 1,
+        "Native green refinement disagrees with coarse rotation: 16.38 vs 10.00 degrees": 1,
+        "Native green refinement disagrees with coarse rotation: 7.32 vs 3.75 degrees": 1,
+        "Unreliable pair 0: rotation 4.5 deg, error 0.600": 1,
+        "Unreliable pair 0: rotation 9.6 deg, error 0.599": 1,
+        "Unreliable pair 0: rotation 0.00 deg is too small": 21,
+        "Unreliable pair 0: rotation 0.18 deg is too small": 1,
+        "Unreliable pair 0: rotation 0.25 deg is too small": 1,
+        "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees": 2
+      }
+    },
+    {
+      "raw_track_id": 340,
+      "fixture_id": 491,
+      "views": 59,
+      "mapped_views": 4,
+      "observed_surface_pct": 26.412693475809256,
+      "observed_longitude_deg": 161.52744630071598,
+      "status": "graded_partial",
+      "grade": "Class 2",
+      "split_reasons": {
+        "Unreliable pair 0: rotation 11.5 deg, error 0.617": 1,
+        "Unreliable pair 0: rotation 19.0 deg, error 0.581": 1,
+        "Unreliable pair 0: rotation 0.00 deg is too small": 25,
+        "Native green refinement disagrees with coarse rotation: 5.46 vs 1.89 degrees": 1,
+        "Native green refinement disagrees with coarse rotation: 0.00 vs 3.61 degrees": 1,
+        "Missing original frames between captured views": 1,
+        "Unreliable pair 0: rotation 20.0 deg, error 0.174": 1,
+        "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees": 3
+      }
+    }
+  ],
+  "real_segmentation_calls": 42,
+  "predicted_defect_instances": 80,
+  "known_area_controls_passed": true,
+  "maximum_known_area_error_percentage_points": 0.17867053054499316,
+  "python_tests_passed": 88,
+  "guard_configuration": {
+    "version": 3,
+    "prediction_gate_diameters": 0.35,
+    "ambiguity_margin_diameters": 0.12,
+    "maximum_size_ratio": 1.5,
+    "recovery_observations": 3,
+    "history_frames": 30,
+    "scene_motion_minimum_tracks": 5,
+    "scene_motion_consensus": 0.7,
+    "scene_motion_initial_observations": 3
+  },
+  "guard_source_sha256": "d2e737bfd05e55b76039583c8de28154dceb29201e5bfa59ce9490d0a757ce7e",
+  "mapping_algorithm_sha256": "6c592861d9318456856f6a05c780f6a8fdd77c4c50286cc0b748ff094f397371",
+  "limitations": [
+    "Frozen detector/tracker observations; no fresh full-video detection run.",
+    "Four actual model mapping fixtures and seven paired geometry cases, not all 474 records reconstructed.",
+    "No labelled physical identities, rotation poses, defect masks or fruit grades.",
+    "Same inputs give same maps; reused paired results establish absence of input segmentation, not two independent accuracy trials.",
+    "37 maps have boundaries elsewhere in captured views; their shape fits may still change when separate segments are reconstructed."
+  ]
+}

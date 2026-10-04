@@ -1,0 +1,15 @@
+{
+  "observed_at": "2026-10-03T01:02:28.150942+02:00",
+  "status": "failed",
+  "reason": "API server returned HTTP500; analysis status reports MemoryError at330/515; full video was not completed.",
+  "last_api_status": {
+    "state": "error",
+    "run_id": "a43e26c70871450d8b72a5c291074b0c",
+    "frames_processed": 330,
+    "frames_total": 515,
+    "error": "Unable to allocate 1.26 MiB for an array with shape (115, 160, 9) and data type float64"
+  },
+  "request_sha256": "d4b93d86149308c13e46c33aedc3108ced7dd6bd3acbdf670371fc379a1408a4",
+  "response_sha256": "e41656eb2ba6c6293bf6dd928e5a88cdbc50535cab661c1969e0f598e497ed62",
+  "deadline_full_verification_met": false
+}

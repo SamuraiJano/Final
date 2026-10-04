@@ -1,0 +1,54 @@
+{
+  "checks": [
+    {
+      "name": "python_tests",
+      "command": [
+        "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "backend",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "started_at": "2026-10-02T15:36:24.726421+02:00",
+      "exit_code": 0,
+      "log": "python_tests.txt"
+    },
+    {
+      "name": "frontend_build",
+      "command": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "run",
+        "build"
+      ],
+      "started_at": "2026-10-02T15:36:35.256786+02:00",
+      "exit_code": 0,
+      "log": "frontend_build.txt"
+    },
+    {
+      "name": "frontend_lint",
+      "command": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "run",
+        "lint"
+      ],
+      "started_at": "2026-10-02T15:36:40.494492+02:00",
+      "exit_code": 0,
+      "log": "frontend_lint.txt"
+    }
+  ],
+  "source_sha256": {
+    "backend/algorithm.py": "951b55a4912d3147d349282846e2e02d20159a410b6bb2e8fdd4ab4dd3abea2d",
+    "backend/main.py": "1d37dcb6fc37b5e641af2579c781787f136a06c37a5acda5115ad788150923dd",
+    "backend/dfine_segmenter.py": "20049bf4e24678342364f85b1f4eea69a36f5385c858189b40b52fac11fc360a",
+    "src/App.jsx": "139f62e0180df8d365578ee8bea4784493a031aa390b791f9557af558ba96517",
+    "src/App.css": "d635826aac668b5b1246fcadfac90c8ea83c1524bca69a31d99a49850574ad80",
+    "scripts/dev.mjs": "f41579d588457f17b06372077abc3f0e93a007ccdadbd415e256a32146abb230",
+    "scripts/stop_process_tree.py": "fcd6db0138a16caaee584d0c6db42e093aee9c05f983dc3f7f40f66d6a8c1dea",
+    "backend/requirements.txt": "2b880df5495aa56cbbd21abb752b301f4f563c267d5ade481295b151dcd4e9c4"
+  }
+}

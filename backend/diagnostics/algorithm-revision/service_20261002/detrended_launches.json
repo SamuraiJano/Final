@@ -1,0 +1,78 @@
+[
+  {
+    "label": "camera_shading_detrended20_20261002",
+    "pid": 29824,
+    "args": [
+      "backend/validate_camera_shading.py",
+      "--label",
+      "camera_shading_detrended20_20261002",
+      "--algorithm-source",
+      "backend/diagnostics/algorithm-revision/aligned_detrended_pattern_source/algorithm_snapshot.py",
+      "--expected-sha256",
+      "6f2c56ac6edbdc3cc72fecd995055f01a6690113c54115c304b7e29595c20961",
+      "--native-matching-cost",
+      "aligned_mad",
+      "--max-pair-angle",
+      "20"
+    ],
+    "launched_at": "2026-10-02T20:17:40.248221"
+  },
+  {
+    "label": "fixed_detrended20_conveyor_20261002",
+    "pid": 40880,
+    "args": [
+      "backend/validate_algorithm_revision.py",
+      "--candidate",
+      "backend/diagnostics/algorithm-revision/aligned_detrended_pattern_source/algorithm_snapshot.py",
+      "--native-candidate",
+      "backend/diagnostics/algorithm-revision/aligned_detrended_pattern_source/algorithm_snapshot.py",
+      "--label",
+      "fixed_detrended20_conveyor_20261002",
+      "--native-only",
+      "--native-matching-cost",
+      "aligned_mad",
+      "--native-recheck-angle",
+      "20",
+      "--transverse-angle",
+      "20",
+      "--max-pair-angle",
+      "20"
+    ],
+    "launched_at": "2026-10-02T20:17:40.262756"
+  },
+  {
+    "label": "detrended_author_profile_20261002",
+    "pid": 42992,
+    "args": [
+      "backend/benchmark_authors.py",
+      "run",
+      "--label",
+      "detrended_author_profile_20261002",
+      "--groups",
+      "mandarins",
+      "oranges",
+      "tomatoes",
+      "--algorithm-snapshot",
+      "backend/diagnostics/algorithm-revision/aligned_detrended_pattern_source/algorithm_snapshot.py",
+      "--axis",
+      "x",
+      "--direction",
+      "-1",
+      "--shape",
+      "auto",
+      "--bidirectional",
+      "--select-views",
+      "--minimum-rotation",
+      "0",
+      "--minimum-longitude",
+      "350",
+      "--native-matching-cost",
+      "aligned_mad",
+      "--native-recheck-angle",
+      "20",
+      "--transverse-angle",
+      "20"
+    ],
+    "launched_at": "2026-10-02T20:17:40.278029"
+  }
+]

@@ -1,0 +1,97 @@
+{
+  "track_id": 7,
+  "views": 0,
+  "status": "mapping_failed",
+  "grade": null,
+  "reason": "No complete, usable fruit silhouettes were captured.",
+  "rejected_views": {
+    "Fruit is cut off by the video frame": 7
+  },
+  "first_seen_frame": 0,
+  "last_seen_frame": 6,
+  "tracked_frames": 7,
+  "tracking_history": [
+    {
+      "frame": 0,
+      "bbox_xyxy": [
+        248.35910034179688,
+        940.8432006835938,
+        455.9679870605469,
+        1079.5804443359375
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 1,
+      "bbox_xyxy": [
+        250.46058654785156,
+        1000.6900634765625,
+        450.8436584472656,
+        1079.5269775390625
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 2,
+      "bbox_xyxy": [
+        255.74884033203125,
+        1013.3638916015625,
+        450.5368957519531,
+        1079.1217041015625
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 3,
+      "bbox_xyxy": [
+        265.5450439453125,
+        1031.44482421875,
+        442.1039123535156,
+        1079.1279296875
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 4,
+      "bbox_xyxy": [
+        273.4125061035156,
+        1038.332763671875,
+        437.7303466796875,
+        1079.2098388671875
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 5,
+      "bbox_xyxy": [
+        295.58465576171875,
+        1058.06298828125,
+        416.1636047363281,
+        1079.5513916015625
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 6,
+      "bbox_xyxy": [
+        308.33306884765625,
+        1067.2025146484375,
+        405.337890625,
+        1079.6220703125
+      ],
+      "touches_frame_edge": true
+    }
+  ],
+  "tracking_evidence": [
+    {
+      "stage": "entry",
+      "frame": 0,
+      "crop": "/results/78b4a03ccaa549de96ecd88c5efb5806/7/tracking_entry_frame_00000.png"
+    },
+    {
+      "stage": "last_seen",
+      "frame": 6,
+      "crop": "/results/78b4a03ccaa549de96ecd88c5efb5806/7/tracking_last_seen_frame_00006.png"
+    }
+  ]
+}

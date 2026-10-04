@@ -1,0 +1,159 @@
+{
+  "track_id": 31,
+  "views": 11,
+  "view_frames": [
+    3,
+    5,
+    8,
+    11,
+    12,
+    14,
+    22,
+    23,
+    26,
+    28,
+    29
+  ],
+  "rejected_views": {
+    "Fruit silhouette is occluded or too irregular for a spheroid": 18,
+    "Fruit is cut off by the video frame": 12
+  },
+  "status": "insufficient_longitude_coverage",
+  "grade": null,
+  "model_type": "oblate",
+  "estimated_radii_px": [
+    76.25013074378357,
+    61.95661679406485,
+    76.25013074378357
+  ],
+  "rotation_coverage_deg": 11.140980200919662,
+  "map_longitude_span_deg": 11.253305560956441,
+  "mapped_view_frames": [
+    3,
+    23,
+    26
+  ],
+  "discarded_view_frames": [
+    5,
+    8,
+    11,
+    12,
+    14,
+    22,
+    28,
+    29
+  ],
+  "view_selection": [
+    {
+      "source_frame": 3,
+      "target_frame": 5,
+      "rotation_deg": 0.4366385767509807,
+      "error": 0.26598460442868266,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 3,
+      "target_frame": 8,
+      "rotation_deg": 2.2683013056257297,
+      "error": 0.3756612264408463,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 3,
+      "target_frame": 11,
+      "rotation_deg": 0.0,
+      "error": 0.4669087379848308,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 3,
+      "target_frame": 12,
+      "rotation_deg": 0.0,
+      "error": 0.48637341280101365,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 3,
+      "target_frame": 14,
+      "rotation_deg": 2.5312933452963504,
+      "error": 0.5161996739001734,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 3,
+      "target_frame": 22,
+      "rotation_deg": 0.0,
+      "error": 0.5115672643976664,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 3,
+      "target_frame": 23,
+      "rotation_deg": 6.033899671872127,
+      "error": 0.5779134724225363,
+      "status": "accepted"
+    },
+    {
+      "source_frame": 23,
+      "target_frame": 26,
+      "rotation_deg": 5.107080529047535,
+      "error": 0.4864435364310258,
+      "status": "accepted"
+    },
+    {
+      "source_frame": 26,
+      "target_frame": 28,
+      "rotation_deg": 0.0,
+      "error": 0.2173428848712579,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 26,
+      "target_frame": 29,
+      "rotation_deg": 0.0,
+      "error": 0.2923291964863367,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    }
+  ],
+  "observed_surface_pct": 22.588137122450803,
+  "observed_longitude_deg": 101.25,
+  "defect_pct_of_observed": 2.8239661843873645,
+  "pair_rotations_deg": [
+    6.033899671872127,
+    5.107080529047535
+  ],
+  "pair_rotation_vectors_deg": [
+    [
+      6.033899671872127,
+      -0.2974772700646456,
+      1.5558865287630016e-18
+    ],
+    [
+      5.107080529047535,
+      -3.564647682148273,
+      -1.2448542160307716e-17
+    ]
+  ],
+  "pair_errors": [
+    0.5779134724225363,
+    0.4864435364310258
+  ],
+  "surface_map": "/results/original_video_symmetric_v1/31/surface_map.png",
+  "observed_mask": "/results/original_video_symmetric_v1/31/observed.png",
+  "defect_maps": {
+    "dark_marking": "/results/original_video_symmetric_v1/31/defect_dark_marking.png",
+    "light_brown_discolouration": "/results/original_video_symmetric_v1/31/defect_light_brown_discolouration.png",
+    "open_skin": "/results/original_video_symmetric_v1/31/defect_open_skin.png",
+    "skin_wrinkling": "/results/original_video_symmetric_v1/31/defect_skin_wrinkling.png",
+    "wind_scarring": "/results/original_video_symmetric_v1/31/defect_wind_scarring.png"
+  },
+  "reason": "The views do not cover enough of the fruit's circumference for a reliable class."
+}

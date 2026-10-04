@@ -1,0 +1,176 @@
+{
+  "two_axis_parity": [
+    {
+      "source_frame": 305,
+      "same": true
+    },
+    {
+      "source_frame": 306,
+      "same": true
+    },
+    {
+      "source_frame": 307,
+      "same": true
+    },
+    {
+      "source_frame": 308,
+      "same": true
+    },
+    {
+      "source_frame": 309,
+      "same": true
+    },
+    {
+      "source_frame": 310,
+      "same": true
+    },
+    {
+      "source_frame": 311,
+      "same": true
+    },
+    {
+      "source_frame": 312,
+      "same": true
+    },
+    {
+      "source_frame": 313,
+      "same": true
+    },
+    {
+      "source_frame": 315,
+      "same": true
+    },
+    {
+      "source_frame": 316,
+      "same": true
+    },
+    {
+      "source_frame": 324,
+      "same": true
+    },
+    {
+      "source_frame": 337,
+      "same": true
+    },
+    {
+      "source_frame": 340,
+      "same": true
+    },
+    {
+      "source_frame": 350,
+      "same": true
+    },
+    {
+      "source_frame": 360,
+      "same": true
+    }
+  ],
+  "three_axis_pairs": [
+    {
+      "source_frame": 308,
+      "target_frame": 309,
+      "joint": {
+        "rotation_vector_deg": [
+          12.523506123365646,
+          -8.604264657042059,
+          -6.606128624554651
+        ],
+        "residual": 0.3712528210987116
+      },
+      "forward": {
+        "rotation_vector_deg": [
+          12.241416328355381,
+          -8.505437285630233,
+          -6.424861534136616
+        ],
+        "residual": 0.32638188854444483
+      },
+      "reverse": {
+        "rotation_vector_deg": [
+          -13.249999999999988,
+          8.99999999999999,
+          7.249999999999993
+        ],
+        "residual": 0.40376253741563994
+      },
+      "independent_inverse_disagreement_deg": 1.3934921196273211
+    },
+    {
+      "source_frame": 309,
+      "target_frame": 310,
+      "joint": {
+        "reason": "Unreliable three-axis pair 0: rotation 20.0 deg, in-plane -6.8 deg, error 0.537"
+      },
+      "forward": {
+        "reason": "Unreliable three-axis pair 0: rotation 20.0 deg, in-plane -6.0 deg, error 0.478"
+      },
+      "reverse": {
+        "rotation_vector_deg": [
+          -4.463353354590472,
+          14.155147203657362,
+          7.034174974979772
+        ],
+        "residual": 0.5358271934797424
+      }
+    },
+    {
+      "source_frame": 310,
+      "target_frame": 311,
+      "joint": {
+        "rotation_vector_deg": [
+          2.960261264140295,
+          -1.8384430213715837,
+          -6.518773470316392
+        ],
+        "residual": 0.4378929150604548
+      },
+      "forward": {
+        "rotation_vector_deg": [
+          3.2998884577839243,
+          -1.8956365186121444,
+          -7.763360643243166
+        ],
+        "residual": 0.4431128921341762
+      },
+      "reverse": {
+        "rotation_vector_deg": [
+          -2.499999999999949,
+          1.9999999999999596,
+          4.499999999999909
+        ],
+        "residual": 0.4130502593494007
+      },
+      "independent_inverse_disagreement_deg": 3.3613061025757625
+    },
+    {
+      "source_frame": 311,
+      "target_frame": 312,
+      "joint": {
+        "rotation_vector_deg": [
+          1.213328209333252,
+          6.362044699308681,
+          -9.7939286558484
+        ],
+        "residual": 0.48758380655045297
+      },
+      "forward": {
+        "rotation_vector_deg": [
+          2.0050007045257567,
+          -3.9911817587931058,
+          1.2155877037222267
+        ],
+        "residual": 0.4323278584001074
+      },
+      "reverse": {
+        "rotation_vector_deg": [
+          -1.4999999999999976,
+          -5.74999999999999,
+          8.749999999999986
+        ],
+        "residual": 0.456657815128916
+      },
+      "independent_inverse_disagreement_deg": 13.943508224621382
+    }
+  ],
+  "two_axis_bit_identical": true
+}

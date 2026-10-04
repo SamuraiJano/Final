@@ -1,0 +1,155 @@
+{
+  "track_id": 6,
+  "views": 12,
+  "view_frames": [
+    0,
+    5,
+    10,
+    14,
+    19,
+    24,
+    29,
+    34,
+    41,
+    46,
+    50,
+    55
+  ],
+  "rejected_views": {
+    "Fruit is cut off by the video frame": 11
+  },
+  "status": "insufficient_rotation_coverage",
+  "grade": null,
+  "model_type": "sphere",
+  "estimated_radii_px": [
+    84.12724365870471,
+    84.12724365870471,
+    84.12724365870471
+  ],
+  "rotation_coverage_deg": 7.4999999999999405,
+  "map_longitude_span_deg": 7.5007590298586555,
+  "mapped_view_frames": [
+    0,
+    29
+  ],
+  "discarded_view_frames": [
+    5,
+    10,
+    14,
+    19,
+    24,
+    34,
+    41,
+    46,
+    50,
+    55
+  ],
+  "view_selection": [
+    {
+      "source_frame": 0,
+      "target_frame": 5,
+      "rotation_deg": 0.0,
+      "error": 0.24399542109160935,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 0,
+      "target_frame": 10,
+      "rotation_deg": 0.0,
+      "error": 0.4237194708106007,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 0,
+      "target_frame": 14,
+      "rotation_deg": 0.0,
+      "error": 0.47541342017368704,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 0,
+      "target_frame": 19,
+      "rotation_deg": 0.0,
+      "error": 0.5034845741347365,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 0,
+      "target_frame": 24,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 55.0 deg, error 0.626"
+    },
+    {
+      "source_frame": 0,
+      "target_frame": 29,
+      "rotation_deg": 7.4999999999999405,
+      "error": 0.5668176748842249,
+      "status": "accepted"
+    },
+    {
+      "source_frame": 29,
+      "target_frame": 34,
+      "rotation_deg": 0.2914767226317728,
+      "error": 0.2513258670829755,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 29,
+      "target_frame": 41,
+      "rotation_deg": 0.0,
+      "error": 0.3720789792611149,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 29,
+      "target_frame": 46,
+      "rotation_deg": 0.0,
+      "error": 0.4809840980725672,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 29,
+      "target_frame": 50,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 0.0 deg, error 0.602"
+    },
+    {
+      "source_frame": 29,
+      "target_frame": 55,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 7.1 deg, error 0.606"
+    }
+  ],
+  "observed_surface_pct": 23.437176519859293,
+  "defect_pct_of_observed": 0.0,
+  "pair_rotations_deg": [
+    7.4999999999999405
+  ],
+  "pair_rotation_vectors_deg": [
+    [
+      7.4999999999999405,
+      -0.9999999999999921,
+      -6.230113263845099e-18
+    ]
+  ],
+  "pair_errors": [
+    0.5668176748842249
+  ],
+  "surface_map": "/results/actual_models_selected_v1/6/surface_map.png",
+  "observed_mask": "/results/actual_models_selected_v1/6/observed.png",
+  "defect_maps": {
+    "dark_marking": "/results/actual_models_selected_v1/6/defect_dark_marking.png",
+    "light_brown_discolouration": "/results/actual_models_selected_v1/6/defect_light_brown_discolouration.png",
+    "open_skin": "/results/actual_models_selected_v1/6/defect_open_skin.png",
+    "skin_wrinkling": "/results/actual_models_selected_v1/6/defect_skin_wrinkling.png",
+    "wind_scarring": "/results/actual_models_selected_v1/6/defect_wind_scarring.png"
+  },
+  "reason": "The fruit did not rotate far enough for a reliable class."
+}

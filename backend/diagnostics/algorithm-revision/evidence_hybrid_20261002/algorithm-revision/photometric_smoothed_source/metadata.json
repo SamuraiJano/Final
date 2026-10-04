@@ -1,0 +1,10 @@
+{
+  "baseline_sha256": "46a46f9aac7c2f8f57114786f11df62e2833142f352e0c2a49eac2bdb1cd6b89",
+  "candidate_sha256": "1fb1a343f66ef30445ce1544338dc61b5717c22a804b6f209a355001e9f1186d",
+  "changes": [
+    "Native original green values are Gaussian-smoothed sigma2 to suppress pixel noise, consistent with nativefeature extraction.",
+    "MAD subtracts median brightness difference; same sparse3Dgeometry andpaperfeaturepoints.",
+    "Batch brightness/contrast calculations skip invalid hypotheses to avoid all-NaN warnings; thosehypothesesretain infinite cost."
+  ],
+  "production_changed": false
+}

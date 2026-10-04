@@ -1,0 +1,644 @@
+{
+  "dataset_orientation": {
+    "all": {
+      "tracks": 36,
+      "geometry_ok": 9,
+      "maps": 0,
+      "labels": 497,
+      "predicted": 81,
+      "errors_px": {
+        "count": 81,
+        "mean": 2.8541615645585314,
+        "rms": 3.5503689930597444,
+        "median": 2.135814600403902,
+        "p90": 5.358206807240628,
+        "max": 9.30653813253834,
+        "within_2px": 36,
+        "within_5px": 70
+      },
+      "baseline_px_same_subset": {
+        "count": 81,
+        "mean": 35.18390265252652,
+        "rms": 36.95783657449276,
+        "median": 34.13598836392043,
+        "p90": 50.038470874517316,
+        "max": 65.76656775293988,
+        "within_2px": 0,
+        "within_5px": 0
+      },
+      "all_labels_within_5px": 70,
+      "pair_count": 542,
+      "pairs_accepted": 67
+    },
+    "mandarins": {
+      "tracks": 15,
+      "geometry_ok": 3,
+      "maps": 0,
+      "labels": 132,
+      "predicted": 34,
+      "errors_px": {
+        "count": 34,
+        "mean": 2.7624588466078626,
+        "rms": 3.4630710528792656,
+        "median": 2.1664848015751996,
+        "p90": 5.3353181268744,
+        "max": 8.488752892940141,
+        "within_2px": 16,
+        "within_5px": 28
+      },
+      "baseline_px_same_subset": {
+        "count": 34,
+        "mean": 32.92285365210805,
+        "rms": 33.70604695250586,
+        "median": 33.198067297632875,
+        "p90": 42.19607518230312,
+        "max": 47.969755743873215,
+        "within_2px": 0,
+        "within_5px": 0
+      },
+      "all_labels_within_5px": 28,
+      "pair_count": 209,
+      "pairs_accepted": 33
+    },
+    "oranges": {
+      "tracks": 10,
+      "geometry_ok": 6,
+      "maps": 0,
+      "labels": 179,
+      "predicted": 47,
+      "errors_px": {
+        "count": 47,
+        "mean": 2.920499700948376,
+        "rms": 3.6122057885034984,
+        "median": 2.135814600403902,
+        "p90": 5.257024144054361,
+        "max": 9.30653813253834,
+        "within_2px": 20,
+        "within_5px": 42
+      },
+      "baseline_px_same_subset": {
+        "count": 47,
+        "mean": 36.81955512091436,
+        "rms": 39.1421571682986,
+        "median": 34.981399164937486,
+        "p90": 55.14775213992719,
+        "max": 65.76656775293988,
+        "within_2px": 0,
+        "within_5px": 0
+      },
+      "all_labels_within_5px": 42,
+      "pair_count": 150,
+      "pairs_accepted": 34
+    },
+    "tomatoes": {
+      "tracks": 11,
+      "geometry_ok": 0,
+      "maps": 0,
+      "labels": 186,
+      "predicted": 0,
+      "errors_px": {
+        "count": 0
+      },
+      "baseline_px_same_subset": {
+        "count": 0
+      },
+      "all_labels_within_5px": 0,
+      "pair_count": 183,
+      "pairs_accepted": 0
+    }
+  },
+  "sphere_diagnostic": {
+    "all": {
+      "tracks": 36,
+      "geometry_ok": 36,
+      "maps": 0,
+      "labels": 497,
+      "predicted": 294,
+      "errors_px": {
+        "count": 294,
+        "mean": 4.705867873943604,
+        "rms": 8.052501621828698,
+        "median": 2.383633718416654,
+        "p90": 11.064929754309823,
+        "max": 42.400893546116464,
+        "within_2px": 120,
+        "within_5px": 225
+      },
+      "baseline_px_same_subset": {
+        "count": 294,
+        "mean": 34.598452181645634,
+        "rms": 37.600750267958944,
+        "median": 33.20738690162406,
+        "p90": 51.49432362371466,
+        "max": 112.70033722600598,
+        "within_2px": 0,
+        "within_5px": 4
+      },
+      "all_labels_within_5px": 225,
+      "pair_count": 542,
+      "pairs_accepted": 294
+    },
+    "mandarins": {
+      "tracks": 15,
+      "geometry_ok": 15,
+      "maps": 0,
+      "labels": 132,
+      "predicted": 118,
+      "errors_px": {
+        "count": 118,
+        "mean": 5.8152561513691845,
+        "rms": 10.18842702640711,
+        "median": 2.02891894651388,
+        "p90": 18.117280713014186,
+        "max": 42.20613364492999,
+        "within_2px": 58,
+        "within_5px": 85
+      },
+      "baseline_px_same_subset": {
+        "count": 118,
+        "mean": 32.68687162665454,
+        "rms": 34.259888555196284,
+        "median": 34.00879492753985,
+        "p90": 44.04669334789398,
+        "max": 64.31124090862022,
+        "within_2px": 0,
+        "within_5px": 0
+      },
+      "all_labels_within_5px": 85,
+      "pair_count": 209,
+      "pairs_accepted": 173
+    },
+    "oranges": {
+      "tracks": 10,
+      "geometry_ok": 10,
+      "maps": 0,
+      "labels": 179,
+      "predicted": 82,
+      "errors_px": {
+        "count": 82,
+        "mean": 2.6768989020302834,
+        "rms": 3.32918789011226,
+        "median": 2.0954020733022527,
+        "p90": 5.0579902780402,
+        "max": 9.30653813253834,
+        "within_2px": 36,
+        "within_5px": 73
+      },
+      "baseline_px_same_subset": {
+        "count": 82,
+        "mean": 38.9995521295573,
+        "rms": 40.82616616777695,
+        "median": 39.78853916654903,
+        "p90": 55.92879548749033,
+        "max": 65.76656775293988,
+        "within_2px": 0,
+        "within_5px": 0
+      },
+      "all_labels_within_5px": 73,
+      "pair_count": 150,
+      "pairs_accepted": 53
+    },
+    "tomatoes": {
+      "tracks": 11,
+      "geometry_ok": 11,
+      "maps": 0,
+      "labels": 186,
+      "predicted": 94,
+      "errors_px": {
+        "count": 94,
+        "mean": 5.0831831820358815,
+        "rms": 7.926560742934183,
+        "median": 3.413808602153142,
+        "p90": 10.68441544253251,
+        "max": 42.400893546116464,
+        "within_2px": 26,
+        "within_5px": 67
+      },
+      "baseline_px_same_subset": {
+        "count": 94,
+        "mean": 33.15883845569022,
+        "rms": 38.659051506097576,
+        "median": 28.68174369884188,
+        "p90": 59.427244788262186,
+        "max": 112.70033722600598,
+        "within_2px": 0,
+        "within_5px": 4
+      },
+      "all_labels_within_5px": 67,
+      "pair_count": 183,
+      "pairs_accepted": 68
+    }
+  },
+  "direction_plus_exact_black": {
+    "all": {
+      "tracks": 36,
+      "geometry_ok": 9,
+      "maps": 0,
+      "labels": 497,
+      "predicted": 3,
+      "errors_px": {
+        "count": 3,
+        "mean": 95.34129285658126,
+        "rms": 96.31177963830757,
+        "median": 90.0751121225943,
+        "p90": 109.24930344796286,
+        "max": 114.042851279305,
+        "within_2px": 0,
+        "within_5px": 0
+      },
+      "baseline_px_same_subset": {
+        "count": 3,
+        "mean": 37.21595385928597,
+        "rms": 37.57047344233874,
+        "median": 38.60545002281733,
+        "p90": 41.89042649281854,
+        "max": 42.71167061031885,
+        "within_2px": 0,
+        "within_5px": 0
+      },
+      "all_labels_within_5px": 0,
+      "pair_count": 542,
+      "pairs_accepted": 7
+    },
+    "mandarins": {
+      "tracks": 15,
+      "geometry_ok": 3,
+      "maps": 0,
+      "labels": 132,
+      "predicted": 3,
+      "errors_px": {
+        "count": 3,
+        "mean": 95.34129285658126,
+        "rms": 96.31177963830757,
+        "median": 90.0751121225943,
+        "p90": 109.24930344796286,
+        "max": 114.042851279305,
+        "within_2px": 0,
+        "within_5px": 0
+      },
+      "baseline_px_same_subset": {
+        "count": 3,
+        "mean": 37.21595385928597,
+        "rms": 37.57047344233874,
+        "median": 38.60545002281733,
+        "p90": 41.89042649281854,
+        "max": 42.71167061031885,
+        "within_2px": 0,
+        "within_5px": 0
+      },
+      "all_labels_within_5px": 0,
+      "pair_count": 209,
+      "pairs_accepted": 7
+    },
+    "oranges": {
+      "tracks": 10,
+      "geometry_ok": 6,
+      "maps": 0,
+      "labels": 179,
+      "predicted": 0,
+      "errors_px": {
+        "count": 0
+      },
+      "baseline_px_same_subset": {
+        "count": 0
+      },
+      "all_labels_within_5px": 0,
+      "pair_count": 150,
+      "pairs_accepted": 0
+    },
+    "tomatoes": {
+      "tracks": 11,
+      "geometry_ok": 0,
+      "maps": 0,
+      "labels": 186,
+      "predicted": 0,
+      "errors_px": {
+        "count": 0
+      },
+      "baseline_px_same_subset": {
+        "count": 0
+      },
+      "all_labels_within_5px": 0,
+      "pair_count": 183,
+      "pairs_accepted": 0
+    }
+  },
+  "threshold8_plus_direction": {
+    "all": {
+      "tracks": 36,
+      "geometry_ok": 9,
+      "maps": 0,
+      "labels": 497,
+      "predicted": 3,
+      "errors_px": {
+        "count": 3,
+        "mean": 95.34129285658126,
+        "rms": 96.31177963830757,
+        "median": 90.0751121225943,
+        "p90": 109.24930344796286,
+        "max": 114.042851279305,
+        "within_2px": 0,
+        "within_5px": 0
+      },
+      "baseline_px_same_subset": {
+        "count": 3,
+        "mean": 37.21595385928597,
+        "rms": 37.57047344233874,
+        "median": 38.60545002281733,
+        "p90": 41.89042649281854,
+        "max": 42.71167061031885,
+        "within_2px": 0,
+        "within_5px": 0
+      },
+      "all_labels_within_5px": 0,
+      "pair_count": 542,
+      "pairs_accepted": 7
+    },
+    "mandarins": {
+      "tracks": 15,
+      "geometry_ok": 3,
+      "maps": 0,
+      "labels": 132,
+      "predicted": 3,
+      "errors_px": {
+        "count": 3,
+        "mean": 95.34129285658126,
+        "rms": 96.31177963830757,
+        "median": 90.0751121225943,
+        "p90": 109.24930344796286,
+        "max": 114.042851279305,
+        "within_2px": 0,
+        "within_5px": 0
+      },
+      "baseline_px_same_subset": {
+        "count": 3,
+        "mean": 37.21595385928597,
+        "rms": 37.57047344233874,
+        "median": 38.60545002281733,
+        "p90": 41.89042649281854,
+        "max": 42.71167061031885,
+        "within_2px": 0,
+        "within_5px": 0
+      },
+      "all_labels_within_5px": 0,
+      "pair_count": 209,
+      "pairs_accepted": 7
+    },
+    "oranges": {
+      "tracks": 10,
+      "geometry_ok": 6,
+      "maps": 0,
+      "labels": 179,
+      "predicted": 0,
+      "errors_px": {
+        "count": 0
+      },
+      "baseline_px_same_subset": {
+        "count": 0
+      },
+      "all_labels_within_5px": 0,
+      "pair_count": 150,
+      "pairs_accepted": 0
+    },
+    "tomatoes": {
+      "tracks": 11,
+      "geometry_ok": 0,
+      "maps": 0,
+      "labels": 186,
+      "predicted": 0,
+      "errors_px": {
+        "count": 0
+      },
+      "baseline_px_same_subset": {
+        "count": 0
+      },
+      "all_labels_within_5px": 0,
+      "pair_count": 183,
+      "pairs_accepted": 0
+    }
+  },
+  "algorithm_sha256": "f971919a2989be845fbd79800890cc0fc8cfafb88c3650307f9f0d6e6a25ce59",
+  "source_integrity_verified": true,
+  "annotated_endpoints_inside_images": 994,
+  "supplemental_mapping": {
+    "author_map_examples": [
+      {
+        "object": "objM0001",
+        "views": 14,
+        "bounds_xywh": [
+          [
+            2,
+            1,
+            199,
+            211
+          ],
+          [
+            204,
+            1,
+            197,
+            211
+          ],
+          [
+            404,
+            1,
+            175,
+            209
+          ],
+          [
+            582,
+            1,
+            161,
+            209
+          ],
+          [
+            746,
+            1,
+            181,
+            211
+          ],
+          [
+            930,
+            1,
+            195,
+            209
+          ],
+          [
+            1128,
+            1,
+            201,
+            207
+          ],
+          [
+            2,
+            215,
+            197,
+            205
+          ],
+          [
+            202,
+            215,
+            179,
+            207
+          ],
+          [
+            384,
+            215,
+            161,
+            207
+          ],
+          [
+            548,
+            215,
+            167,
+            207
+          ],
+          [
+            718,
+            215,
+            185,
+            209
+          ],
+          [
+            906,
+            215,
+            203,
+            207
+          ],
+          [
+            1112,
+            215,
+            203,
+            209
+          ]
+        ],
+        "axis": "y",
+        "direction": -1,
+        "reference": "data\\maps\\mandarin\\unrolled_objM0001.png",
+        "direction_basis": "Published montage features move left; positive visible z implies negative y rotation in this code.",
+        "status": "failed",
+        "reason": "No consistent oblate pose sequence through pair 6; check silhouette quality, view spacing and rotation configuration"
+      },
+      {
+        "object": "objM0005",
+        "views": 13,
+        "bounds_xywh": [
+          [
+            2,
+            1,
+            207,
+            203
+          ],
+          [
+            212,
+            1,
+            209,
+            203
+          ],
+          [
+            424,
+            1,
+            191,
+            203
+          ],
+          [
+            618,
+            1,
+            163,
+            205
+          ],
+          [
+            784,
+            1,
+            179,
+            205
+          ],
+          [
+            966,
+            1,
+            197,
+            203
+          ],
+          [
+            1166,
+            1,
+            207,
+            203
+          ],
+          [
+            2,
+            209,
+            207,
+            205
+          ],
+          [
+            212,
+            209,
+            193,
+            201
+          ],
+          [
+            408,
+            209,
+            179,
+            201
+          ],
+          [
+            590,
+            209,
+            157,
+            201
+          ],
+          [
+            750,
+            209,
+            203,
+            218
+          ],
+          [
+            956,
+            209,
+            207,
+            203
+          ]
+        ],
+        "axis": "y",
+        "direction": -1,
+        "reference": "data\\maps\\mandarin\\unrolled_objM0005.png",
+        "direction_basis": "Published montage features move left; positive visible z implies negative y rotation in this code.",
+        "status": "failed",
+        "reason": "Oblate pose mismatch at pair 1: 8.0 deg; check silhouette quality, view spacing and rotation configuration"
+      }
+    ],
+    "exact_geometry_diagnostics": [
+      {
+        "rotation_axis": "y",
+        "true_pair_degrees": 25.0,
+        "true_total_degrees": 375.0,
+        "radii": [
+          55.0,
+          40.0,
+          55.0
+        ],
+        "geometry_and_pair_rotations": "Analytical oracle, not estimated",
+        "status": "produced",
+        "observed_surface_pct": 84.06934802589932,
+        "rotation_coverage_deg": 375.0,
+        "grade": null,
+        "result_status": "missing_defect_masks"
+      },
+      {
+        "rotation_axis": "x",
+        "true_pair_degrees": 25.0,
+        "true_total_degrees": 375.0,
+        "radii": [
+          55.0,
+          40.0,
+          55.0
+        ],
+        "geometry_and_pair_rotations": "Analytical oracle, not estimated",
+        "status": "failed",
+        "reason": "No consistent angular progress"
+      }
+    ]
+  }
+}

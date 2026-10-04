@@ -1,0 +1,56 @@
+{
+  "count": 454,
+  "baseline_errors_px": {
+    "rms": 5.121955034516112
+  },
+  "new_errors_px": {
+    "rms": 5.121533548576413
+  },
+  "changed_predictions": [
+    {
+      "group": "tomatoes",
+      "object": "obj0008",
+      "line": 140,
+      "baseline_error_px": 1.8057934891012093,
+      "new_error_px": 1.1405048419807793
+    }
+  ],
+  "lost_predictions": [
+    {
+      "group": "tomatoes",
+      "object": "obj0009",
+      "line": 156,
+      "source": 13,
+      "target": 14,
+      "old_error_px": 1.7473731269045947,
+      "new_failure": "Missing accepted rotation 13"
+    },
+    {
+      "group": "tomatoes",
+      "object": "obj0009",
+      "line": 158,
+      "source": 15,
+      "target": 16,
+      "old_error_px": 2.0650471692344046,
+      "new_failure": "Missing accepted rotation 15"
+    },
+    {
+      "group": "tomatoes",
+      "object": "obj0009",
+      "line": 159,
+      "source": 16,
+      "target": 17,
+      "old_error_px": 2.623961485553442,
+      "new_failure": "Missing accepted rotation 16"
+    },
+    {
+      "group": "tomatoes",
+      "object": "obj0009",
+      "line": 161,
+      "source": 14,
+      "target": 13,
+      "old_error_px": 1.1889604585090616,
+      "new_failure": "Missing accepted rotation 13"
+    }
+  ]
+}

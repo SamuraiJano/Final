@@ -1,0 +1,6 @@
+{
+  "baseline_sha256": "951b55a4912d3147d349282846e2e02d20159a410b6bb2e8fdd4ab4dd3abea2d",
+  "candidate_sha256": "f03b2ec019d7e3e5f366333d0c5cf2830ad56c57dd508fc0f866cc0e347e2bc7",
+  "changes": "Native green MAD only: least-squares exposure offset and fixed-camera linear lighting gradients on projected displacement, followed by median residual centering. Same texture points, Gaussian2, coarse MAD, rejection/consensus rules and mapping. Not production.",
+  "limitations": "Smooth additive camera lighting approximation; extra nuisance parameters may remove real texture evidence. Requires unchanged known-motion, noise, author and real-input checks."
+}

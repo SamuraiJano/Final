@@ -1,0 +1,57 @@
+{
+  "track_id": 331,
+  "views": 0,
+  "status": "mapping_failed",
+  "grade": null,
+  "reason": "No complete, usable fruit silhouettes were captured.",
+  "rejected_views": {
+    "Fruit is cut off by the video frame": 3
+  },
+  "first_seen_frame": 284,
+  "last_seen_frame": 286,
+  "tracked_frames": 3,
+  "tracking_history": [
+    {
+      "frame": 284,
+      "bbox_xyxy": [
+        1903.882080078125,
+        107.87560272216797,
+        1920.3309326171875,
+        219.5518341064453
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 285,
+      "bbox_xyxy": [
+        1903.7496337890625,
+        120.68183135986328,
+        1920.105712890625,
+        223.5224609375
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 286,
+      "bbox_xyxy": [
+        1905.2613525390625,
+        135.77633666992188,
+        1920.2220458984375,
+        244.60556030273438
+      ],
+      "touches_frame_edge": true
+    }
+  ],
+  "tracking_evidence": [
+    {
+      "stage": "entry",
+      "frame": 284,
+      "crop": "/results/78b4a03ccaa549de96ecd88c5efb5806/331/tracking_entry_frame_00284.png"
+    },
+    {
+      "stage": "last_seen",
+      "frame": 286,
+      "crop": "/results/78b4a03ccaa549de96ecd88c5efb5806/331/tracking_last_seen_frame_00286.png"
+    }
+  ]
+}

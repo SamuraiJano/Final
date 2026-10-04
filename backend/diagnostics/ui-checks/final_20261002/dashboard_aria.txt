@@ -1,0 +1,86 @@
+- complementary:
+  - link "Citrusvision INSPECTION SYSTEM":
+    - /url: "#overview"
+    - strong: Citrusvision
+    - text: INSPECTION SYSTEM
+  - text: WORKSPACE
+  - navigation "Main navigation":
+    - link "Overview":
+      - /url: "#overview"
+    - link "Inspections":
+      - /url: "#inspections"
+  - strong: Models ready
+  - text: CUDA acceleration active
+- main:
+  - text: OPERATIONS / OVERVIEW Camera offline Backend online QUALITY CONTROL DASHBOARD
+  - heading "Conveyor overview." [level=1]
+  - paragraph: Camera, model signals and the latest naartjie surface inspections.
+  - text: LATEST ANALYSIS
+  - strong: 02 Oct 2026, 01:27
+  - region "Inspection summary": Fruit inspected 1 113 4 inspection sessions Class 1 share 100% Of fruit assigned a grade Needs review 1 105 Coverage or mapping was insufficient
+  - region "Camera and model monitoring":
+    - text: 01 / CAMERA
+    - heading "Conveyor view" [level=2]
+    - text: NO LIVE FEED
+    - strong: Camera source not connected
+    - text: Configure a USB camera or network stream to monitor the conveyor here. CAMERA SOURCE
+    - strong: Not configured
+    - text: Choose video
+    - button "Choose video"
+    - button "Refresh backend"
+    - button "Analyze" [disabled]
+    - text: 02 / QUALITY
+    - heading "Class mix" [level=2]
+    - text: ALL SAVED RUNS
+    - strong: 1 113
+    - text: fruit recorded Class 1
+    - strong: "8"
+    - text: Class 2
+    - strong: "0"
+    - text: Class 3
+    - strong: "0"
+    - text: Review
+    - strong: 1 105
+    - text: 03 / MODEL SIGNAL
+    - heading "Inference performance" [level=2]
+    - text: LATEST RUN
+    - strong: Fruit detection
+    - text: D-FINE · object boxes 126.8 ms Mean confidence
+    - strong: 75.8%
+    - text: 55 057 detections across 515 frames
+    - strong: Defect segmentation
+    - text: D-FINE-seg · fruit crops 88.7 ms Mean confidence
+    - strong: 49.8%
+    - text: 3 418 detections across 3 169 fruit views
+    - paragraph: Confidence is model certainty, not measured accuracy.
+  - text: 04 / INSPECTIONS
+  - heading "Recent fruit and surface maps" [level=2]
+  - text: 1 113 shown in history
+  - group "Filter fruit by class":
+    - button "All fruit"
+    - button "Class 1"
+    - button "Class 2"
+    - button "Class 3"
+    - button "Needs review"
+  - textbox "Search fruit or video"
+  - text: FRUIT / SOURCE CLASS OBSERVED DEFECTS SURFACE MAP
+  - button "Fruit 007 WIN_20260818_13_29_43_Pro.mp4 · 02 Oct 2026, 01:27 Mapping failed — — Unavailable":
+    - strong: Fruit 007
+    - text: WIN_20260818_13_29_43_Pro.mp4 · 02 Oct 2026, 01:27 Mapping failed — — Unavailable
+  - button "Fruit 011 WIN_20260818_13_29_43_Pro.mp4 · 02 Oct 2026, 01:27 Mapping failed — — Unavailable":
+    - strong: Fruit 011
+    - text: WIN_20260818_13_29_43_Pro.mp4 · 02 Oct 2026, 01:27 Mapping failed — — Unavailable
+  - button "Fruit 032 WIN_20260818_13_29_43_Pro.mp4 · 02 Oct 2026, 01:27 Mapping failed — — Unavailable":
+    - strong: Fruit 032
+    - text: WIN_20260818_13_29_43_Pro.mp4 · 02 Oct 2026, 01:27 Mapping failed — — Unavailable
+  - button "Fruit 036 WIN_20260818_13_29_43_Pro.mp4 · 02 Oct 2026, 01:27 Mapping failed — — Unavailable":
+    - strong: Fruit 036
+    - text: WIN_20260818_13_29_43_Pro.mp4 · 02 Oct 2026, 01:27 Mapping failed — — Unavailable
+  - button "Fruit 041 WIN_20260818_13_29_43_Pro.mp4 · 02 Oct 2026, 01:27 Mapping failed — — Unavailable":
+    - strong: Fruit 041
+    - text: WIN_20260818_13_29_43_Pro.mp4 · 02 Oct 2026, 01:27 Mapping failed — — Unavailable
+  - button "Fruit 008 WIN_20260818_13_29_43_Pro.mp4 · 02 Oct 2026, 01:27 Needs review 23.4% 0.0% View map":
+    - strong: Fruit 008
+    - text: WIN_20260818_13_29_43_Pro.mp4 · 02 Oct 2026, 01:27 Needs review 23.4% 0.0% View map
+  - button "Show more inspections"
+  - text: Citrusvision · Naartjie quality monitoring Results update during live inspection and after video analysis.

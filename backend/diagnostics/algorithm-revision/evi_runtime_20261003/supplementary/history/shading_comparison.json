@@ -1,0 +1,1223 @@
+{
+  "input_manifest_sha256": "7f52fcc044edcfd741e62bba5dbbcb2746456f13329dab602f0cbafbacc14e1f",
+  "acceptance": {
+    "full_turn": {
+      "all_30_pairs_measured": true,
+      "max_pose_error_deg": 5.0,
+      "max_front_visible_landmark_rms_px": 5.0
+    },
+    "short_xy": {
+      "all_10_pairs_measured": true,
+      "endpoint_pose_error_deg": 1.0,
+      "max_landmark_rms_px": 1.0
+    },
+    "stationary_120": {
+      "all_119_pairs_unavailable": true,
+      "no_extrapolated_endpoint": true,
+      "no_map_or_grade": true
+    }
+  },
+  "stationary_accuracy": "unavailable, never scored zero",
+  "cases": [
+    {
+      "profile": "Green 951 / native20",
+      "case": "full_turn_x12_linear_additive_texture_a",
+      "kind": "full_turn_x12",
+      "returned_pairs": 30,
+      "attempted_pairs": 30,
+      "maximum_pose_error_deg": 2.097712162819,
+      "maximum_landmark_rms_px": 1.4234512223842275,
+      "endpoint_pose_error_deg": 2.097712162819,
+      "mapping_status": "graded",
+      "grade": "Class 1",
+      "observed_longitude_deg": 360.0,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_30_pairs_measured": true,
+        "maximum_pose_within_5deg": true,
+        "maximum_front_visible_landmarks_within_5px": true
+      }
+    },
+    {
+      "profile": "Green 951 / native20",
+      "case": "full_turn_x12_linear_additive_texture_b",
+      "kind": "full_turn_x12",
+      "returned_pairs": 30,
+      "attempted_pairs": 30,
+      "maximum_pose_error_deg": 0.7923990659770532,
+      "maximum_landmark_rms_px": 0.5378486337613464,
+      "endpoint_pose_error_deg": 0.7923990659770532,
+      "mapping_status": "graded",
+      "grade": "Class 1",
+      "observed_longitude_deg": 360.0,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_30_pairs_measured": true,
+        "maximum_pose_within_5deg": true,
+        "maximum_front_visible_landmarks_within_5px": true
+      }
+    },
+    {
+      "profile": "Green 951 / native20",
+      "case": "full_turn_x12_lambertian_multiplicative_texture_a",
+      "kind": "full_turn_x12",
+      "returned_pairs": 30,
+      "attempted_pairs": 30,
+      "maximum_pose_error_deg": 14.03161977758782,
+      "maximum_landmark_rms_px": 9.460680061667947,
+      "endpoint_pose_error_deg": 14.03161977758782,
+      "mapping_status": "graded",
+      "grade": "Class 1",
+      "observed_longitude_deg": 360.0,
+      "passed": false,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_30_pairs_measured": true,
+        "maximum_pose_within_5deg": false,
+        "maximum_front_visible_landmarks_within_5px": false
+      }
+    },
+    {
+      "profile": "Green 951 / native20",
+      "case": "full_turn_x12_lambertian_multiplicative_texture_b",
+      "kind": "full_turn_x12",
+      "returned_pairs": 30,
+      "attempted_pairs": 30,
+      "maximum_pose_error_deg": 9.694349244620325,
+      "maximum_landmark_rms_px": 6.555355106394605,
+      "endpoint_pose_error_deg": 9.694349244620325,
+      "mapping_status": "graded",
+      "grade": "Class 1",
+      "observed_longitude_deg": 360.0,
+      "passed": false,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_30_pairs_measured": true,
+        "maximum_pose_within_5deg": false,
+        "maximum_front_visible_landmarks_within_5px": false
+      }
+    },
+    {
+      "profile": "Green 951 / native20",
+      "case": "short_xy_linear_additive_texture_a",
+      "kind": "short_xy",
+      "returned_pairs": 10,
+      "attempted_pairs": 10,
+      "maximum_pose_error_deg": 0.25548400913118,
+      "maximum_landmark_rms_px": 0.23268830415208092,
+      "endpoint_pose_error_deg": 0.25548400913118,
+      "mapping_status": "insufficient_longitude_coverage",
+      "grade": null,
+      "observed_longitude_deg": 97.80346820809248,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_10_pairs_measured": true,
+        "endpoint_within_1deg": true,
+        "maximum_landmarks_within_1px": true
+      }
+    },
+    {
+      "profile": "Green 951 / native20",
+      "case": "short_xy_linear_additive_texture_b",
+      "kind": "short_xy",
+      "returned_pairs": 10,
+      "attempted_pairs": 10,
+      "maximum_pose_error_deg": 0.09538561088667188,
+      "maximum_landmark_rms_px": 0.08709994842609695,
+      "endpoint_pose_error_deg": 0.08258882028750732,
+      "mapping_status": "insufficient_longitude_coverage",
+      "grade": null,
+      "observed_longitude_deg": 97.80346820809248,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_10_pairs_measured": true,
+        "endpoint_within_1deg": true,
+        "maximum_landmarks_within_1px": true
+      }
+    },
+    {
+      "profile": "Green 951 / native20",
+      "case": "short_xy_lambertian_multiplicative_texture_a",
+      "kind": "short_xy",
+      "returned_pairs": 10,
+      "attempted_pairs": 10,
+      "maximum_pose_error_deg": 0.26537988050653943,
+      "maximum_landmark_rms_px": 0.24210865630791742,
+      "endpoint_pose_error_deg": 0.1856097470029097,
+      "mapping_status": "insufficient_longitude_coverage",
+      "grade": null,
+      "observed_longitude_deg": 97.80346820809248,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_10_pairs_measured": true,
+        "endpoint_within_1deg": true,
+        "maximum_landmarks_within_1px": true
+      }
+    },
+    {
+      "profile": "Green 951 / native20",
+      "case": "short_xy_lambertian_multiplicative_texture_b",
+      "kind": "short_xy",
+      "returned_pairs": 10,
+      "attempted_pairs": 10,
+      "maximum_pose_error_deg": 0.3018905973763493,
+      "maximum_landmark_rms_px": 0.2743792744240039,
+      "endpoint_pose_error_deg": 0.3018905973763493,
+      "mapping_status": "insufficient_longitude_coverage",
+      "grade": null,
+      "observed_longitude_deg": 97.80346820809248,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_10_pairs_measured": true,
+        "endpoint_within_1deg": true,
+        "maximum_landmarks_within_1px": true
+      }
+    },
+    {
+      "profile": "Green 951 / native20",
+      "case": "stationary_120_linear_additive_texture_a",
+      "kind": "stationary_120",
+      "returned_pairs": 0,
+      "attempted_pairs": 119,
+      "maximum_pose_error_deg": null,
+      "maximum_landmark_rms_px": null,
+      "endpoint_pose_error_deg": null,
+      "mapping_status": "mapping_failed",
+      "grade": null,
+      "observed_longitude_deg": 0.0,
+      "passed": true,
+      "accuracy_unavailable": true,
+      "checks": {
+        "all_119_unavailable": true,
+        "endpoint_unavailable": true,
+        "no_map_or_grade": true
+      }
+    },
+    {
+      "profile": "Green 951 / native20",
+      "case": "stationary_120_linear_additive_texture_b",
+      "kind": "stationary_120",
+      "returned_pairs": 0,
+      "attempted_pairs": 119,
+      "maximum_pose_error_deg": null,
+      "maximum_landmark_rms_px": null,
+      "endpoint_pose_error_deg": null,
+      "mapping_status": "mapping_failed",
+      "grade": null,
+      "observed_longitude_deg": 0.0,
+      "passed": true,
+      "accuracy_unavailable": true,
+      "checks": {
+        "all_119_unavailable": true,
+        "endpoint_unavailable": true,
+        "no_map_or_grade": true
+      }
+    },
+    {
+      "profile": "Green 951 / native20",
+      "case": "stationary_120_lambertian_multiplicative_texture_a",
+      "kind": "stationary_120",
+      "returned_pairs": 0,
+      "attempted_pairs": 119,
+      "maximum_pose_error_deg": null,
+      "maximum_landmark_rms_px": null,
+      "endpoint_pose_error_deg": null,
+      "mapping_status": "mapping_failed",
+      "grade": null,
+      "observed_longitude_deg": 0.0,
+      "passed": true,
+      "accuracy_unavailable": true,
+      "checks": {
+        "all_119_unavailable": true,
+        "endpoint_unavailable": true,
+        "no_map_or_grade": true
+      }
+    },
+    {
+      "profile": "Green 951 / native20",
+      "case": "stationary_120_lambertian_multiplicative_texture_b",
+      "kind": "stationary_120",
+      "returned_pairs": 0,
+      "attempted_pairs": 119,
+      "maximum_pose_error_deg": null,
+      "maximum_landmark_rms_px": null,
+      "endpoint_pose_error_deg": null,
+      "mapping_status": "mapping_failed",
+      "grade": null,
+      "observed_longitude_deg": 0.0,
+      "passed": true,
+      "accuracy_unavailable": true,
+      "checks": {
+        "all_119_unavailable": true,
+        "endpoint_unavailable": true,
+        "no_map_or_grade": true
+      }
+    },
+    {
+      "profile": "Additive plane f03",
+      "case": "full_turn_x12_linear_additive_texture_a",
+      "kind": "full_turn_x12",
+      "returned_pairs": 30,
+      "attempted_pairs": 30,
+      "maximum_pose_error_deg": 1.5218295478848676,
+      "maximum_landmark_rms_px": 1.0328100960851352,
+      "endpoint_pose_error_deg": 1.5218295478848676,
+      "mapping_status": "graded",
+      "grade": "Class 1",
+      "observed_longitude_deg": 360.0,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_30_pairs_measured": true,
+        "maximum_pose_within_5deg": true,
+        "maximum_front_visible_landmarks_within_5px": true
+      }
+    },
+    {
+      "profile": "Additive plane f03",
+      "case": "full_turn_x12_linear_additive_texture_b",
+      "kind": "full_turn_x12",
+      "returned_pairs": 30,
+      "attempted_pairs": 30,
+      "maximum_pose_error_deg": 1.2161170813907876,
+      "maximum_landmark_rms_px": 0.8254268821676705,
+      "endpoint_pose_error_deg": 1.2161170813907876,
+      "mapping_status": "graded",
+      "grade": "Class 1",
+      "observed_longitude_deg": 360.0,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_30_pairs_measured": true,
+        "maximum_pose_within_5deg": true,
+        "maximum_front_visible_landmarks_within_5px": true
+      }
+    },
+    {
+      "profile": "Additive plane f03",
+      "case": "full_turn_x12_lambertian_multiplicative_texture_a",
+      "kind": "full_turn_x12",
+      "returned_pairs": 30,
+      "attempted_pairs": 30,
+      "maximum_pose_error_deg": 11.163741635643094,
+      "maximum_landmark_rms_px": 7.547075980253173,
+      "endpoint_pose_error_deg": 11.163741635643094,
+      "mapping_status": "graded",
+      "grade": "Class 1",
+      "observed_longitude_deg": 360.0,
+      "passed": false,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_30_pairs_measured": true,
+        "maximum_pose_within_5deg": false,
+        "maximum_front_visible_landmarks_within_5px": false
+      }
+    },
+    {
+      "profile": "Additive plane f03",
+      "case": "full_turn_x12_lambertian_multiplicative_texture_b",
+      "kind": "full_turn_x12",
+      "returned_pairs": 30,
+      "attempted_pairs": 30,
+      "maximum_pose_error_deg": 7.212724151641872,
+      "maximum_landmark_rms_px": 4.821931083125981,
+      "endpoint_pose_error_deg": 7.118938839299144,
+      "mapping_status": "graded",
+      "grade": "Class 1",
+      "observed_longitude_deg": 360.0,
+      "passed": false,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_30_pairs_measured": true,
+        "maximum_pose_within_5deg": false,
+        "maximum_front_visible_landmarks_within_5px": true
+      }
+    },
+    {
+      "profile": "Additive plane f03",
+      "case": "short_xy_linear_additive_texture_a",
+      "kind": "short_xy",
+      "returned_pairs": 10,
+      "attempted_pairs": 10,
+      "maximum_pose_error_deg": 0.2317136479586416,
+      "maximum_landmark_rms_px": 0.2113958497472709,
+      "endpoint_pose_error_deg": 0.2317136479586416,
+      "mapping_status": "insufficient_longitude_coverage",
+      "grade": null,
+      "observed_longitude_deg": 97.80346820809248,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_10_pairs_measured": true,
+        "endpoint_within_1deg": true,
+        "maximum_landmarks_within_1px": true
+      }
+    },
+    {
+      "profile": "Additive plane f03",
+      "case": "short_xy_linear_additive_texture_b",
+      "kind": "short_xy",
+      "returned_pairs": 10,
+      "attempted_pairs": 10,
+      "maximum_pose_error_deg": 0.08605498909829747,
+      "maximum_landmark_rms_px": 0.07858836648426974,
+      "endpoint_pose_error_deg": 0.05440387175192182,
+      "mapping_status": "insufficient_longitude_coverage",
+      "grade": null,
+      "observed_longitude_deg": 97.80346820809248,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_10_pairs_measured": true,
+        "endpoint_within_1deg": true,
+        "maximum_landmarks_within_1px": true
+      }
+    },
+    {
+      "profile": "Additive plane f03",
+      "case": "short_xy_lambertian_multiplicative_texture_a",
+      "kind": "short_xy",
+      "returned_pairs": 10,
+      "attempted_pairs": 10,
+      "maximum_pose_error_deg": 0.6653071141574409,
+      "maximum_landmark_rms_px": 0.6052653246708473,
+      "endpoint_pose_error_deg": 0.516533408739216,
+      "mapping_status": "insufficient_longitude_coverage",
+      "grade": null,
+      "observed_longitude_deg": 98.84393063583815,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_10_pairs_measured": true,
+        "endpoint_within_1deg": true,
+        "maximum_landmarks_within_1px": true
+      }
+    },
+    {
+      "profile": "Additive plane f03",
+      "case": "short_xy_lambertian_multiplicative_texture_b",
+      "kind": "short_xy",
+      "returned_pairs": 10,
+      "attempted_pairs": 10,
+      "maximum_pose_error_deg": 0.2671594952721944,
+      "maximum_landmark_rms_px": 0.24290235280532316,
+      "endpoint_pose_error_deg": 0.2671594952721944,
+      "mapping_status": "insufficient_longitude_coverage",
+      "grade": null,
+      "observed_longitude_deg": 97.80346820809248,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_10_pairs_measured": true,
+        "endpoint_within_1deg": true,
+        "maximum_landmarks_within_1px": true
+      }
+    },
+    {
+      "profile": "Additive plane f03",
+      "case": "stationary_120_linear_additive_texture_a",
+      "kind": "stationary_120",
+      "returned_pairs": 0,
+      "attempted_pairs": 119,
+      "maximum_pose_error_deg": null,
+      "maximum_landmark_rms_px": null,
+      "endpoint_pose_error_deg": null,
+      "mapping_status": "mapping_failed",
+      "grade": null,
+      "observed_longitude_deg": 0.0,
+      "passed": true,
+      "accuracy_unavailable": true,
+      "checks": {
+        "all_119_unavailable": true,
+        "endpoint_unavailable": true,
+        "no_map_or_grade": true
+      }
+    },
+    {
+      "profile": "Additive plane f03",
+      "case": "stationary_120_linear_additive_texture_b",
+      "kind": "stationary_120",
+      "returned_pairs": 0,
+      "attempted_pairs": 119,
+      "maximum_pose_error_deg": null,
+      "maximum_landmark_rms_px": null,
+      "endpoint_pose_error_deg": null,
+      "mapping_status": "mapping_failed",
+      "grade": null,
+      "observed_longitude_deg": 0.0,
+      "passed": true,
+      "accuracy_unavailable": true,
+      "checks": {
+        "all_119_unavailable": true,
+        "endpoint_unavailable": true,
+        "no_map_or_grade": true
+      }
+    },
+    {
+      "profile": "Additive plane f03",
+      "case": "stationary_120_lambertian_multiplicative_texture_a",
+      "kind": "stationary_120",
+      "returned_pairs": 1,
+      "attempted_pairs": 119,
+      "maximum_pose_error_deg": null,
+      "maximum_landmark_rms_px": null,
+      "endpoint_pose_error_deg": null,
+      "mapping_status": "insufficient_longitude_coverage",
+      "grade": null,
+      "observed_longitude_deg": 90.52023121387283,
+      "passed": false,
+      "accuracy_unavailable": true,
+      "checks": {
+        "all_119_unavailable": false,
+        "endpoint_unavailable": true,
+        "no_map_or_grade": false
+      }
+    },
+    {
+      "profile": "Additive plane f03",
+      "case": "stationary_120_lambertian_multiplicative_texture_b",
+      "kind": "stationary_120",
+      "returned_pairs": 0,
+      "attempted_pairs": 119,
+      "maximum_pose_error_deg": null,
+      "maximum_landmark_rms_px": null,
+      "endpoint_pose_error_deg": null,
+      "mapping_status": "mapping_failed",
+      "grade": null,
+      "observed_longitude_deg": 0.0,
+      "passed": true,
+      "accuracy_unavailable": true,
+      "checks": {
+        "all_119_unavailable": true,
+        "endpoint_unavailable": true,
+        "no_map_or_grade": true
+      }
+    },
+    {
+      "profile": "Aligned fast bf25",
+      "case": "full_turn_x12_linear_additive_texture_a",
+      "kind": "full_turn_x12",
+      "returned_pairs": 30,
+      "attempted_pairs": 30,
+      "maximum_pose_error_deg": 3.6552084563818843,
+      "maximum_landmark_rms_px": 2.479798826154783,
+      "endpoint_pose_error_deg": 3.6552084563818843,
+      "mapping_status": "graded",
+      "grade": "Class 1",
+      "observed_longitude_deg": 360.0,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_30_pairs_measured": true,
+        "maximum_pose_within_5deg": true,
+        "maximum_front_visible_landmarks_within_5px": true
+      }
+    },
+    {
+      "profile": "Aligned fast bf25",
+      "case": "full_turn_x12_linear_additive_texture_b",
+      "kind": "full_turn_x12",
+      "returned_pairs": 30,
+      "attempted_pairs": 30,
+      "maximum_pose_error_deg": 2.809834911498793,
+      "maximum_landmark_rms_px": 1.9066710236214353,
+      "endpoint_pose_error_deg": 2.809834911498793,
+      "mapping_status": "graded",
+      "grade": "Class 1",
+      "observed_longitude_deg": 360.0,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_30_pairs_measured": true,
+        "maximum_pose_within_5deg": true,
+        "maximum_front_visible_landmarks_within_5px": true
+      }
+    },
+    {
+      "profile": "Aligned fast bf25",
+      "case": "full_turn_x12_lambertian_multiplicative_texture_a",
+      "kind": "full_turn_x12",
+      "returned_pairs": 30,
+      "attempted_pairs": 30,
+      "maximum_pose_error_deg": 11.16272949394714,
+      "maximum_landmark_rms_px": 7.539925869354936,
+      "endpoint_pose_error_deg": 11.16272949394714,
+      "mapping_status": "graded",
+      "grade": "Class 1",
+      "observed_longitude_deg": 360.0,
+      "passed": false,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_30_pairs_measured": true,
+        "maximum_pose_within_5deg": false,
+        "maximum_front_visible_landmarks_within_5px": false
+      }
+    },
+    {
+      "profile": "Aligned fast bf25",
+      "case": "full_turn_x12_lambertian_multiplicative_texture_b",
+      "kind": "full_turn_x12",
+      "returned_pairs": 30,
+      "attempted_pairs": 30,
+      "maximum_pose_error_deg": 6.8647325425300485,
+      "maximum_landmark_rms_px": 4.651398643542173,
+      "endpoint_pose_error_deg": 6.8647325425300485,
+      "mapping_status": "graded",
+      "grade": "Class 1",
+      "observed_longitude_deg": 360.0,
+      "passed": false,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_30_pairs_measured": true,
+        "maximum_pose_within_5deg": false,
+        "maximum_front_visible_landmarks_within_5px": true
+      }
+    },
+    {
+      "profile": "Aligned fast bf25",
+      "case": "short_xy_linear_additive_texture_a",
+      "kind": "short_xy",
+      "returned_pairs": 10,
+      "attempted_pairs": 10,
+      "maximum_pose_error_deg": 0.20217499293037502,
+      "maximum_landmark_rms_px": 0.18450704702654605,
+      "endpoint_pose_error_deg": 0.1799025707425019,
+      "mapping_status": "insufficient_longitude_coverage",
+      "grade": null,
+      "observed_longitude_deg": 97.80346820809248,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_10_pairs_measured": true,
+        "endpoint_within_1deg": true,
+        "maximum_landmarks_within_1px": true
+      }
+    },
+    {
+      "profile": "Aligned fast bf25",
+      "case": "short_xy_linear_additive_texture_b",
+      "kind": "short_xy",
+      "returned_pairs": 10,
+      "attempted_pairs": 10,
+      "maximum_pose_error_deg": 0.09890117488311409,
+      "maximum_landmark_rms_px": 0.09078595950920791,
+      "endpoint_pose_error_deg": 0.09890117488311409,
+      "mapping_status": "insufficient_longitude_coverage",
+      "grade": null,
+      "observed_longitude_deg": 97.80346820809248,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_10_pairs_measured": true,
+        "endpoint_within_1deg": true,
+        "maximum_landmarks_within_1px": true
+      }
+    },
+    {
+      "profile": "Aligned fast bf25",
+      "case": "short_xy_lambertian_multiplicative_texture_a",
+      "kind": "short_xy",
+      "returned_pairs": 10,
+      "attempted_pairs": 10,
+      "maximum_pose_error_deg": 1.1096309622428722,
+      "maximum_landmark_rms_px": 1.0113067108770644,
+      "endpoint_pose_error_deg": 1.0396748539542913,
+      "mapping_status": "insufficient_longitude_coverage",
+      "grade": null,
+      "observed_longitude_deg": 96.76300578034682,
+      "passed": false,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_10_pairs_measured": true,
+        "endpoint_within_1deg": false,
+        "maximum_landmarks_within_1px": false
+      }
+    },
+    {
+      "profile": "Aligned fast bf25",
+      "case": "short_xy_lambertian_multiplicative_texture_b",
+      "kind": "short_xy",
+      "returned_pairs": 10,
+      "attempted_pairs": 10,
+      "maximum_pose_error_deg": 0.19599852215981536,
+      "maximum_landmark_rms_px": 0.17859006867603816,
+      "endpoint_pose_error_deg": 0.19599852215981536,
+      "mapping_status": "insufficient_longitude_coverage",
+      "grade": null,
+      "observed_longitude_deg": 97.80346820809248,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_10_pairs_measured": true,
+        "endpoint_within_1deg": true,
+        "maximum_landmarks_within_1px": true
+      }
+    },
+    {
+      "profile": "Aligned fast bf25",
+      "case": "stationary_120_linear_additive_texture_a",
+      "kind": "stationary_120",
+      "returned_pairs": 1,
+      "attempted_pairs": 119,
+      "maximum_pose_error_deg": null,
+      "maximum_landmark_rms_px": null,
+      "endpoint_pose_error_deg": null,
+      "mapping_status": "insufficient_longitude_coverage",
+      "grade": null,
+      "observed_longitude_deg": 90.52023121387283,
+      "passed": false,
+      "accuracy_unavailable": true,
+      "checks": {
+        "all_119_unavailable": false,
+        "endpoint_unavailable": true,
+        "no_map_or_grade": false
+      }
+    },
+    {
+      "profile": "Aligned fast bf25",
+      "case": "stationary_120_linear_additive_texture_b",
+      "kind": "stationary_120",
+      "returned_pairs": 0,
+      "attempted_pairs": 119,
+      "maximum_pose_error_deg": null,
+      "maximum_landmark_rms_px": null,
+      "endpoint_pose_error_deg": null,
+      "mapping_status": "mapping_failed",
+      "grade": null,
+      "observed_longitude_deg": 0.0,
+      "passed": true,
+      "accuracy_unavailable": true,
+      "checks": {
+        "all_119_unavailable": true,
+        "endpoint_unavailable": true,
+        "no_map_or_grade": true
+      }
+    },
+    {
+      "profile": "Aligned fast bf25",
+      "case": "stationary_120_lambertian_multiplicative_texture_a",
+      "kind": "stationary_120",
+      "returned_pairs": 4,
+      "attempted_pairs": 119,
+      "maximum_pose_error_deg": null,
+      "maximum_landmark_rms_px": null,
+      "endpoint_pose_error_deg": null,
+      "mapping_status": "insufficient_longitude_coverage",
+      "grade": null,
+      "observed_longitude_deg": 90.52023121387283,
+      "passed": false,
+      "accuracy_unavailable": true,
+      "checks": {
+        "all_119_unavailable": false,
+        "endpoint_unavailable": true,
+        "no_map_or_grade": false
+      }
+    },
+    {
+      "profile": "Aligned fast bf25",
+      "case": "stationary_120_lambertian_multiplicative_texture_b",
+      "kind": "stationary_120",
+      "returned_pairs": 0,
+      "attempted_pairs": 119,
+      "maximum_pose_error_deg": null,
+      "maximum_landmark_rms_px": null,
+      "endpoint_pose_error_deg": null,
+      "mapping_status": "mapping_failed",
+      "grade": null,
+      "observed_longitude_deg": 0.0,
+      "passed": true,
+      "accuracy_unavailable": true,
+      "checks": {
+        "all_119_unavailable": true,
+        "endpoint_unavailable": true,
+        "no_map_or_grade": true
+      }
+    },
+    {
+      "profile": "Aligned contrast d3bf",
+      "case": "full_turn_x12_linear_additive_texture_a",
+      "kind": "full_turn_x12",
+      "returned_pairs": 30,
+      "attempted_pairs": 30,
+      "maximum_pose_error_deg": 1.0265330611157373,
+      "maximum_landmark_rms_px": 0.69673244005266,
+      "endpoint_pose_error_deg": 1.0265330611157373,
+      "mapping_status": "graded",
+      "grade": "Class 1",
+      "observed_longitude_deg": 360.0,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_30_pairs_measured": true,
+        "maximum_pose_within_5deg": true,
+        "maximum_front_visible_landmarks_within_5px": true
+      }
+    },
+    {
+      "profile": "Aligned contrast d3bf",
+      "case": "full_turn_x12_linear_additive_texture_b",
+      "kind": "full_turn_x12",
+      "returned_pairs": 30,
+      "attempted_pairs": 30,
+      "maximum_pose_error_deg": 0.8361441652692336,
+      "maximum_landmark_rms_px": 0.567535460166587,
+      "endpoint_pose_error_deg": 0.8361441652692336,
+      "mapping_status": "graded",
+      "grade": "Class 1",
+      "observed_longitude_deg": 360.0,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_30_pairs_measured": true,
+        "maximum_pose_within_5deg": true,
+        "maximum_front_visible_landmarks_within_5px": true
+      }
+    },
+    {
+      "profile": "Aligned contrast d3bf",
+      "case": "full_turn_x12_lambertian_multiplicative_texture_a",
+      "kind": "full_turn_x12",
+      "returned_pairs": 30,
+      "attempted_pairs": 30,
+      "maximum_pose_error_deg": 8.387329098743892,
+      "maximum_landmark_rms_px": 5.676123194085582,
+      "endpoint_pose_error_deg": 8.387329098743892,
+      "mapping_status": "graded",
+      "grade": "Class 1",
+      "observed_longitude_deg": 360.0,
+      "passed": false,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_30_pairs_measured": true,
+        "maximum_pose_within_5deg": false,
+        "maximum_front_visible_landmarks_within_5px": false
+      }
+    },
+    {
+      "profile": "Aligned contrast d3bf",
+      "case": "full_turn_x12_lambertian_multiplicative_texture_b",
+      "kind": "full_turn_x12",
+      "returned_pairs": 30,
+      "attempted_pairs": 30,
+      "maximum_pose_error_deg": 3.670025934499673,
+      "maximum_landmark_rms_px": 2.4898367254643596,
+      "endpoint_pose_error_deg": 3.670025934499474,
+      "mapping_status": "graded",
+      "grade": "Class 1",
+      "observed_longitude_deg": 360.0,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_30_pairs_measured": true,
+        "maximum_pose_within_5deg": true,
+        "maximum_front_visible_landmarks_within_5px": true
+      }
+    },
+    {
+      "profile": "Aligned contrast d3bf",
+      "case": "short_xy_linear_additive_texture_a",
+      "kind": "short_xy",
+      "returned_pairs": 10,
+      "attempted_pairs": 10,
+      "maximum_pose_error_deg": 0.20804572106528552,
+      "maximum_landmark_rms_px": 0.18984725299530084,
+      "endpoint_pose_error_deg": 0.16518264894369056,
+      "mapping_status": "insufficient_longitude_coverage",
+      "grade": null,
+      "observed_longitude_deg": 97.80346820809248,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_10_pairs_measured": true,
+        "endpoint_within_1deg": true,
+        "maximum_landmarks_within_1px": true
+      }
+    },
+    {
+      "profile": "Aligned contrast d3bf",
+      "case": "short_xy_linear_additive_texture_b",
+      "kind": "short_xy",
+      "returned_pairs": 10,
+      "attempted_pairs": 10,
+      "maximum_pose_error_deg": 0.1321135040547784,
+      "maximum_landmark_rms_px": 0.12058560069687882,
+      "endpoint_pose_error_deg": 0.05330902112364177,
+      "mapping_status": "insufficient_longitude_coverage",
+      "grade": null,
+      "observed_longitude_deg": 97.80346820809248,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_10_pairs_measured": true,
+        "endpoint_within_1deg": true,
+        "maximum_landmarks_within_1px": true
+      }
+    },
+    {
+      "profile": "Aligned contrast d3bf",
+      "case": "short_xy_lambertian_multiplicative_texture_a",
+      "kind": "short_xy",
+      "returned_pairs": 10,
+      "attempted_pairs": 10,
+      "maximum_pose_error_deg": 0.36403597658170134,
+      "maximum_landmark_rms_px": 0.33205354924010316,
+      "endpoint_pose_error_deg": 0.30871916863104193,
+      "mapping_status": "insufficient_longitude_coverage",
+      "grade": null,
+      "observed_longitude_deg": 97.80346820809248,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_10_pairs_measured": true,
+        "endpoint_within_1deg": true,
+        "maximum_landmarks_within_1px": true
+      }
+    },
+    {
+      "profile": "Aligned contrast d3bf",
+      "case": "short_xy_lambertian_multiplicative_texture_b",
+      "kind": "short_xy",
+      "returned_pairs": 10,
+      "attempted_pairs": 10,
+      "maximum_pose_error_deg": 0.10849329369630713,
+      "maximum_landmark_rms_px": 0.09901745132625428,
+      "endpoint_pose_error_deg": 0.06289508332823415,
+      "mapping_status": "insufficient_longitude_coverage",
+      "grade": null,
+      "observed_longitude_deg": 97.80346820809248,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_10_pairs_measured": true,
+        "endpoint_within_1deg": true,
+        "maximum_landmarks_within_1px": true
+      }
+    },
+    {
+      "profile": "Aligned contrast d3bf",
+      "case": "stationary_120_linear_additive_texture_a",
+      "kind": "stationary_120",
+      "returned_pairs": 0,
+      "attempted_pairs": 119,
+      "maximum_pose_error_deg": null,
+      "maximum_landmark_rms_px": null,
+      "endpoint_pose_error_deg": null,
+      "mapping_status": "mapping_failed",
+      "grade": null,
+      "observed_longitude_deg": 0.0,
+      "passed": true,
+      "accuracy_unavailable": true,
+      "checks": {
+        "all_119_unavailable": true,
+        "endpoint_unavailable": true,
+        "no_map_or_grade": true
+      }
+    },
+    {
+      "profile": "Aligned contrast d3bf",
+      "case": "stationary_120_linear_additive_texture_b",
+      "kind": "stationary_120",
+      "returned_pairs": 0,
+      "attempted_pairs": 119,
+      "maximum_pose_error_deg": null,
+      "maximum_landmark_rms_px": null,
+      "endpoint_pose_error_deg": null,
+      "mapping_status": "mapping_failed",
+      "grade": null,
+      "observed_longitude_deg": 0.0,
+      "passed": true,
+      "accuracy_unavailable": true,
+      "checks": {
+        "all_119_unavailable": true,
+        "endpoint_unavailable": true,
+        "no_map_or_grade": true
+      }
+    },
+    {
+      "profile": "Aligned contrast d3bf",
+      "case": "stationary_120_lambertian_multiplicative_texture_a",
+      "kind": "stationary_120",
+      "returned_pairs": 0,
+      "attempted_pairs": 119,
+      "maximum_pose_error_deg": null,
+      "maximum_landmark_rms_px": null,
+      "endpoint_pose_error_deg": null,
+      "mapping_status": "mapping_failed",
+      "grade": null,
+      "observed_longitude_deg": 0.0,
+      "passed": true,
+      "accuracy_unavailable": true,
+      "checks": {
+        "all_119_unavailable": true,
+        "endpoint_unavailable": true,
+        "no_map_or_grade": true
+      }
+    },
+    {
+      "profile": "Aligned contrast d3bf",
+      "case": "stationary_120_lambertian_multiplicative_texture_b",
+      "kind": "stationary_120",
+      "returned_pairs": 0,
+      "attempted_pairs": 119,
+      "maximum_pose_error_deg": null,
+      "maximum_landmark_rms_px": null,
+      "endpoint_pose_error_deg": null,
+      "mapping_status": "mapping_failed",
+      "grade": null,
+      "observed_longitude_deg": 0.0,
+      "passed": true,
+      "accuracy_unavailable": true,
+      "checks": {
+        "all_119_unavailable": true,
+        "endpoint_unavailable": true,
+        "no_map_or_grade": true
+      }
+    },
+    {
+      "profile": "Aligned full pattern 9a5a",
+      "case": "full_turn_x12_linear_additive_texture_a",
+      "kind": "full_turn_x12",
+      "returned_pairs": 30,
+      "attempted_pairs": 30,
+      "maximum_pose_error_deg": 1.0153340628868919,
+      "maximum_landmark_rms_px": 0.6891495523482721,
+      "endpoint_pose_error_deg": 1.0153340628868919,
+      "mapping_status": "graded",
+      "grade": "Class 1",
+      "observed_longitude_deg": 360.0,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_30_pairs_measured": true,
+        "maximum_pose_within_5deg": true,
+        "maximum_front_visible_landmarks_within_5px": true
+      }
+    },
+    {
+      "profile": "Aligned full pattern 9a5a",
+      "case": "full_turn_x12_linear_additive_texture_b",
+      "kind": "full_turn_x12",
+      "returned_pairs": 30,
+      "attempted_pairs": 30,
+      "maximum_pose_error_deg": 0.7566987699828218,
+      "maximum_landmark_rms_px": 0.5136189433121439,
+      "endpoint_pose_error_deg": 0.7566987699828218,
+      "mapping_status": "graded",
+      "grade": "Class 1",
+      "observed_longitude_deg": 360.0,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_30_pairs_measured": true,
+        "maximum_pose_within_5deg": true,
+        "maximum_front_visible_landmarks_within_5px": true
+      }
+    },
+    {
+      "profile": "Aligned full pattern 9a5a",
+      "case": "full_turn_x12_lambertian_multiplicative_texture_a",
+      "kind": "full_turn_x12",
+      "returned_pairs": 30,
+      "attempted_pairs": 30,
+      "maximum_pose_error_deg": 7.257497657845601,
+      "maximum_landmark_rms_px": 4.914972645626398,
+      "endpoint_pose_error_deg": 7.257497657845601,
+      "mapping_status": "graded",
+      "grade": "Class 1",
+      "observed_longitude_deg": 360.0,
+      "passed": false,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_30_pairs_measured": true,
+        "maximum_pose_within_5deg": false,
+        "maximum_front_visible_landmarks_within_5px": true
+      }
+    },
+    {
+      "profile": "Aligned full pattern 9a5a",
+      "case": "full_turn_x12_lambertian_multiplicative_texture_b",
+      "kind": "full_turn_x12",
+      "returned_pairs": 30,
+      "attempted_pairs": 30,
+      "maximum_pose_error_deg": 3.7762077332786332,
+      "maximum_landmark_rms_px": 2.561796365344053,
+      "endpoint_pose_error_deg": 3.7762077332786332,
+      "mapping_status": "graded",
+      "grade": "Class 1",
+      "observed_longitude_deg": 360.0,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_30_pairs_measured": true,
+        "maximum_pose_within_5deg": true,
+        "maximum_front_visible_landmarks_within_5px": true
+      }
+    },
+    {
+      "profile": "Aligned full pattern 9a5a",
+      "case": "short_xy_linear_additive_texture_a",
+      "kind": "short_xy",
+      "returned_pairs": 10,
+      "attempted_pairs": 10,
+      "maximum_pose_error_deg": 0.6918075012654437,
+      "maximum_landmark_rms_px": 0.6306597712285794,
+      "endpoint_pose_error_deg": 0.14402134061953353,
+      "mapping_status": "insufficient_longitude_coverage",
+      "grade": null,
+      "observed_longitude_deg": 97.80346820809248,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_10_pairs_measured": true,
+        "endpoint_within_1deg": true,
+        "maximum_landmarks_within_1px": true
+      }
+    },
+    {
+      "profile": "Aligned full pattern 9a5a",
+      "case": "short_xy_linear_additive_texture_b",
+      "kind": "short_xy",
+      "returned_pairs": 10,
+      "attempted_pairs": 10,
+      "maximum_pose_error_deg": 0.17048493596845293,
+      "maximum_landmark_rms_px": 0.15555397035310672,
+      "endpoint_pose_error_deg": 0.07079741367906384,
+      "mapping_status": "insufficient_longitude_coverage",
+      "grade": null,
+      "observed_longitude_deg": 97.80346820809248,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_10_pairs_measured": true,
+        "endpoint_within_1deg": true,
+        "maximum_landmarks_within_1px": true
+      }
+    },
+    {
+      "profile": "Aligned full pattern 9a5a",
+      "case": "short_xy_lambertian_multiplicative_texture_a",
+      "kind": "short_xy",
+      "returned_pairs": 10,
+      "attempted_pairs": 10,
+      "maximum_pose_error_deg": 1.53861777322,
+      "maximum_landmark_rms_px": 1.402352108819089,
+      "endpoint_pose_error_deg": 1.1142428902417427,
+      "mapping_status": "insufficient_longitude_coverage",
+      "grade": null,
+      "observed_longitude_deg": 97.80346820809248,
+      "passed": false,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_10_pairs_measured": true,
+        "endpoint_within_1deg": false,
+        "maximum_landmarks_within_1px": false
+      }
+    },
+    {
+      "profile": "Aligned full pattern 9a5a",
+      "case": "short_xy_lambertian_multiplicative_texture_b",
+      "kind": "short_xy",
+      "returned_pairs": 10,
+      "attempted_pairs": 10,
+      "maximum_pose_error_deg": 0.07025736160188303,
+      "maximum_landmark_rms_px": 0.06419911659523998,
+      "endpoint_pose_error_deg": 0.030055278193801955,
+      "mapping_status": "insufficient_longitude_coverage",
+      "grade": null,
+      "observed_longitude_deg": 97.80346820809248,
+      "passed": true,
+      "accuracy_unavailable": false,
+      "checks": {
+        "all_10_pairs_measured": true,
+        "endpoint_within_1deg": true,
+        "maximum_landmarks_within_1px": true
+      }
+    },
+    {
+      "profile": "Aligned full pattern 9a5a",
+      "case": "stationary_120_linear_additive_texture_a",
+      "kind": "stationary_120",
+      "returned_pairs": 0,
+      "attempted_pairs": 119,
+      "maximum_pose_error_deg": null,
+      "maximum_landmark_rms_px": null,
+      "endpoint_pose_error_deg": null,
+      "mapping_status": "mapping_failed",
+      "grade": null,
+      "observed_longitude_deg": 0.0,
+      "passed": true,
+      "accuracy_unavailable": true,
+      "checks": {
+        "all_119_unavailable": true,
+        "endpoint_unavailable": true,
+        "no_map_or_grade": true
+      }
+    },
+    {
+      "profile": "Aligned full pattern 9a5a",
+      "case": "stationary_120_linear_additive_texture_b",
+      "kind": "stationary_120",
+      "returned_pairs": 0,
+      "attempted_pairs": 119,
+      "maximum_pose_error_deg": null,
+      "maximum_landmark_rms_px": null,
+      "endpoint_pose_error_deg": null,
+      "mapping_status": "mapping_failed",
+      "grade": null,
+      "observed_longitude_deg": 0.0,
+      "passed": true,
+      "accuracy_unavailable": true,
+      "checks": {
+        "all_119_unavailable": true,
+        "endpoint_unavailable": true,
+        "no_map_or_grade": true
+      }
+    },
+    {
+      "profile": "Aligned full pattern 9a5a",
+      "case": "stationary_120_lambertian_multiplicative_texture_a",
+      "kind": "stationary_120",
+      "returned_pairs": 0,
+      "attempted_pairs": 119,
+      "maximum_pose_error_deg": null,
+      "maximum_landmark_rms_px": null,
+      "endpoint_pose_error_deg": null,
+      "mapping_status": "mapping_failed",
+      "grade": null,
+      "observed_longitude_deg": 0.0,
+      "passed": true,
+      "accuracy_unavailable": true,
+      "checks": {
+        "all_119_unavailable": true,
+        "endpoint_unavailable": true,
+        "no_map_or_grade": true
+      }
+    },
+    {
+      "profile": "Aligned full pattern 9a5a",
+      "case": "stationary_120_lambertian_multiplicative_texture_b",
+      "kind": "stationary_120",
+      "returned_pairs": 0,
+      "attempted_pairs": 119,
+      "maximum_pose_error_deg": null,
+      "maximum_landmark_rms_px": null,
+      "endpoint_pose_error_deg": null,
+      "mapping_status": "mapping_failed",
+      "grade": null,
+      "observed_longitude_deg": 0.0,
+      "passed": true,
+      "accuracy_unavailable": true,
+      "checks": {
+        "all_119_unavailable": true,
+        "endpoint_unavailable": true,
+        "no_map_or_grade": true
+      }
+    }
+  ]
+}

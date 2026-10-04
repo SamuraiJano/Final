@@ -1,0 +1,410 @@
+{
+  "group": "mandarins",
+  "object": "obj0000",
+  "views": 12,
+  "split": "calibration",
+  "pairs": [
+    {
+      "pair": 0,
+      "status": "ok",
+      "cost": 0.15188529918442517,
+      "rotation_vector_deg": [
+        -24.126186190191568,
+        -1.7271514578538834,
+        5.1203573279382516e-17
+      ]
+    },
+    {
+      "pair": 1,
+      "status": "ok",
+      "cost": 0.14441444999318068,
+      "rotation_vector_deg": [
+        -23.60020611539579,
+        1.9151081431604526,
+        0.0
+      ]
+    },
+    {
+      "pair": 2,
+      "status": "ok",
+      "cost": 0.1675303027241042,
+      "rotation_vector_deg": [
+        -24.260093980909748,
+        2.6844275574583123,
+        0.0
+      ]
+    },
+    {
+      "pair": 3,
+      "status": "ok",
+      "cost": 0.21532923054739944,
+      "rotation_vector_deg": [
+        -5.500000000000017,
+        -10.00000000000003,
+        0.0
+      ]
+    },
+    {
+      "pair": 4,
+      "status": "ok",
+      "cost": 0.28488858922288013,
+      "rotation_vector_deg": [
+        -12.726719535229453,
+        2.8979290023365296,
+        0.0
+      ]
+    },
+    {
+      "pair": 5,
+      "status": "ok",
+      "cost": 0.40528097129741636,
+      "rotation_vector_deg": [
+        -52.0,
+        -1.9999999999999996,
+        0.0
+      ]
+    },
+    {
+      "pair": 6,
+      "status": "ok",
+      "cost": 0.16401141613930487,
+      "rotation_vector_deg": [
+        -25.291412599676274,
+        -1.6500761159601542,
+        5.1354701130066256e-17
+      ]
+    },
+    {
+      "pair": 7,
+      "status": "ok",
+      "cost": 0.14378081529988895,
+      "rotation_vector_deg": [
+        -21.380114933018014,
+        3.803208980751314,
+        1.0181243800938174e-16
+      ]
+    },
+    {
+      "pair": 8,
+      "status": "ok",
+      "cost": 0.14799344224898803,
+      "rotation_vector_deg": [
+        -29.499999999999996,
+        -1.4999999999999998,
+        0.0
+      ]
+    },
+    {
+      "pair": 9,
+      "status": "ok",
+      "cost": 0.36737813626972277,
+      "rotation_vector_deg": [
+        -44.006642589230566,
+        -0.3959329228246593,
+        0.0
+      ]
+    },
+    {
+      "pair": 10,
+      "status": "ok",
+      "cost": 0.3669706156212771,
+      "rotation_vector_deg": [
+        -26.99999999999998,
+        2.4999999999999982,
+        -5.160088601467931e-17
+      ]
+    }
+  ],
+  "geometry": {
+    "status": "ok",
+    "A": 113.39911169586202,
+    "B": 91.61460712461071
+  },
+  "map": {
+    "status": "produced",
+    "result_status": "missing_defect_masks",
+    "grade": null,
+    "observed_surface_pct": 87.41757928361355,
+    "rotation_coverage_deg": 289.39137594365144,
+    "observed_longitude_deg": 360.0,
+    "view_frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "discarded_view_frames": [],
+    "selection_diagnostics": [
+      {
+        "source_frame": 0,
+        "target_frame": 1,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "coarse_rotation_deg": 24.126186190191568,
+        "rotation_vector_deg": [
+          -24.126186190191568,
+          -1.7271514578538834,
+          5.1203573279382516e-17
+        ],
+        "rotation_deg": 24.187929060631816,
+        "error": 0.15188529918442517,
+        "status": "accepted"
+      },
+      {
+        "source_frame": 1,
+        "target_frame": 2,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "coarse_rotation_deg": 23.60020611539579,
+        "rotation_vector_deg": [
+          -23.60020611539579,
+          1.9151081431604526,
+          0.0
+        ],
+        "rotation_deg": 23.67778215731288,
+        "error": 0.14441444999318068,
+        "status": "accepted"
+      },
+      {
+        "source_frame": 2,
+        "target_frame": 3,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "coarse_rotation_deg": 24.260093980909748,
+        "rotation_vector_deg": [
+          -24.260093980909748,
+          2.6844275574583123,
+          0.0
+        ],
+        "rotation_deg": 24.40816075155633,
+        "error": 0.1675303027241042,
+        "status": "accepted"
+      },
+      {
+        "source_frame": 3,
+        "target_frame": 4,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "coarse_rotation_deg": 5.500000000000017,
+        "rotation_vector_deg": [
+          -5.500000000000017,
+          -10.00000000000003,
+          0.0
+        ],
+        "rotation_deg": 11.412712210513362,
+        "error": 0.21532923054739944,
+        "status": "accepted"
+      },
+      {
+        "source_frame": 4,
+        "target_frame": 5,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "coarse_rotation_deg": 12.726719535229453,
+        "rotation_vector_deg": [
+          -12.726719535229453,
+          2.8979290023365296,
+          0.0
+        ],
+        "rotation_deg": 13.052485687828744,
+        "error": 0.28488858922288013,
+        "status": "accepted"
+      },
+      {
+        "source_frame": 5,
+        "target_frame": 6,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "coarse_rotation_deg": 52.0,
+        "rotation_vector_deg": [
+          -52.0,
+          -1.9999999999999996,
+          0.0
+        ],
+        "rotation_deg": 52.03844732503075,
+        "error": 0.40528097129741636,
+        "status": "accepted"
+      },
+      {
+        "source_frame": 6,
+        "target_frame": 7,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "coarse_rotation_deg": 25.291412599676274,
+        "rotation_vector_deg": [
+          -25.291412599676274,
+          -1.6500761159601542,
+          5.1354701130066256e-17
+        ],
+        "rotation_deg": 25.345183023121493,
+        "error": 0.16401141613930487,
+        "status": "accepted"
+      },
+      {
+        "source_frame": 7,
+        "target_frame": 8,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "coarse_rotation_deg": 21.380114933018014,
+        "rotation_vector_deg": [
+          -21.380114933018014,
+          3.803208980751314,
+          1.0181243800938174e-16
+        ],
+        "rotation_deg": 21.71574804376601,
+        "error": 0.14378081529988895,
+        "status": "accepted"
+      },
+      {
+        "source_frame": 8,
+        "target_frame": 9,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "coarse_rotation_deg": 29.499999999999996,
+        "rotation_vector_deg": [
+          -29.499999999999996,
+          -1.4999999999999998,
+          0.0
+        ],
+        "rotation_deg": 29.538110975483853,
+        "error": 0.14799344224898803,
+        "status": "accepted"
+      },
+      {
+        "source_frame": 9,
+        "target_frame": 10,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "coarse_rotation_deg": 44.006642589230566,
+        "rotation_vector_deg": [
+          -44.006642589230566,
+          -0.3959329228246593,
+          0.0
+        ],
+        "rotation_deg": 44.00842368065071,
+        "error": 0.36737813626972277,
+        "status": "accepted"
+      },
+      {
+        "source_frame": 10,
+        "target_frame": 11,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "image_downsample": 1,
+        "highpass_sigma": 5.0,
+        "coarse_rotation_deg": 26.99999999999998,
+        "rotation_vector_deg": [
+          -26.99999999999998,
+          2.4999999999999982,
+          -5.160088601467931e-17
+        ],
+        "rotation_deg": 27.115493725912476,
+        "error": 0.3669706156212771,
+        "status": "accepted"
+      }
+    ]
+  },
+  "silhouettes": [
+    {
+      "view": 0,
+      "major": 113.61712798461546,
+      "minor": 100.49641433845954,
+      "mask_pixels": 35833
+    },
+    {
+      "view": 1,
+      "major": 113.52879206564307,
+      "minor": 102.5241036219826,
+      "mask_pixels": 36507
+    },
+    {
+      "view": 2,
+      "major": 113.25894456154978,
+      "minor": 102.62845976940861,
+      "mask_pixels": 36436
+    },
+    {
+      "view": 3,
+      "major": 113.50659971064022,
+      "minor": 99.00762905789264,
+      "mask_pixels": 35282
+    },
+    {
+      "view": 4,
+      "major": 113.87402265293757,
+      "minor": 91.61747393207402,
+      "mask_pixels": 32739
+    },
+    {
+      "view": 5,
+      "major": 113.43272534974123,
+      "minor": 93.30578093517204,
+      "mask_pixels": 33234
+    },
+    {
+      "view": 6,
+      "major": 112.46345181637693,
+      "minor": 101.55882923051098,
+      "mask_pixels": 35845
+    },
+    {
+      "view": 7,
+      "major": 113.21699669756312,
+      "minor": 102.80971918212418,
+      "mask_pixels": 36497
+    },
+    {
+      "view": 8,
+      "major": 113.89937885906016,
+      "minor": 102.14080370883943,
+      "mask_pixels": 36487
+    },
+    {
+      "view": 9,
+      "major": 113.08275956689364,
+      "minor": 99.35514223328467,
+      "mask_pixels": 35271
+    },
+    {
+      "view": 10,
+      "major": 113.37073545436877,
+      "minor": 91.61460712461071,
+      "mask_pixels": 32609
+    },
+    {
+      "view": 11,
+      "major": 113.53780563095437,
+      "minor": 93.07336162035749,
+      "mask_pixels": 33181
+    }
+  ],
+  "seconds": 3.715020999999979
+}

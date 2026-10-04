@@ -1,0 +1,158 @@
+{
+  "checked_at": "2026-10-03T18:49:59.349240+00:00",
+  "passed": true,
+  "method": "Actual local Vite/API in isolated headless Edge; no mocked responses or inference requests.",
+  "scope": "actual_saved_report",
+  "job_id": "d0cb7e25b5e14d76a7ebf03c111e259b",
+  "latest_records": 474,
+  "classes": {
+    "Class 1": 293,
+    "Class 2": 1,
+    "Class 3": 0,
+    "ungraded": 180
+  },
+  "provisional_records": 292,
+  "checks": [
+    {
+      "track_id": 340,
+      "label": "Class 2 (partial)",
+      "overlay_default": true,
+      "original_toggle": true,
+      "legend_matches_metadata": true,
+      "coverage_target_pct": 80.0,
+      "observed_surface_pct": 26.51571379905746,
+      "defect_pct_of_observed": 17.842163663758484,
+      "grade_provisional": true
+    },
+    {
+      "track_id": 98,
+      "label": "Class 1",
+      "overlay_default": true,
+      "original_toggle": true,
+      "legend_matches_metadata": true,
+      "coverage_target_pct": 80.0,
+      "observed_surface_pct": 85.1501205452467,
+      "defect_pct_of_observed": 4.511577700155574,
+      "grade_provisional": false
+    },
+    {
+      "track_id": 47,
+      "missing_map_not_invented": true
+    }
+  ],
+  "mobile_horizontal_overflow": false,
+  "page_errors": [],
+  "api_requests": [
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/health"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/analysis/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/health"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/analysis/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/dashboard"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/camera/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/camera/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/live/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/live/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/backend/control"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/analysis/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/backend/control"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/analysis/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/analysis/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/analysis/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/health"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/analysis/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/camera/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/live/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/backend/control"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/analysis/status"
+    }
+  ],
+  "analysis_status_before": {
+    "state": "processing",
+    "run_id": "3cd9d9cd-ec24-4e82-bad4-85644b7f5dd1",
+    "frames_processed": 250,
+    "frames_total": 797,
+    "error": null
+  },
+  "analysis_status_after": {
+    "state": "processing",
+    "run_id": "3cd9d9cd-ec24-4e82-bad4-85644b7f5dd1",
+    "frames_processed": 250,
+    "frames_total": 797,
+    "error": null
+  },
+  "runtime_note": "The existing API was retained because a user analysis was processing. Root verified that API main76 remains running; changed backend source on disk is pending an idle refresh. This GET-only check verifies saved map assets and metadata rendered in the current UI, without asserting that new backend pipeline defaults have been loaded.",
+  "api_restarted": false,
+  "analysis_cancelled": false,
+  "inference_requested": false,
+  "software_checks": {
+    "build": "passed",
+    "lint": "passed"
+  },
+  "limitations": "UI correctness only; this does not prove segmentation, identity association or grading accuracy.",
+  "source_sha256": {
+    "App.jsx": "6956d9bf926a6fbe02c3c9c47d28d037bfce8cbca4bbb1e464eb32b4fc112b3b",
+    "App.css": "c85455722c3172af16e2657286cdf8dae847a4d733dc8665e7f669932596052e"
+  }
+}

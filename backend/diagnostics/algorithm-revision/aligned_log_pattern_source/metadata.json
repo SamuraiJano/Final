@@ -1,0 +1,6 @@
+{
+  "baseline_sha256": "9a5a3e13c8b9200958c678110640153022dbe8e59d4e3559ea1743ef579b5067",
+  "candidate_sha256": "1cfbadc5627c57ba2a36f1319598272ec01bc542eac9b796239de45370627ee5",
+  "changes": "Only optional aligned_mad compares log(max(green/255,1/255)) with existingGaussian2preblur, then the unchanged full9 locally centered/RMS-scaled surface-neighborhood descriptor and weightedMAD. Multiplicative illumination becomes additive before smoothing when channels remain abovefloor; this does not guarantee invariance to spatially curved illumination after rotation. Constant additive exposure offsets are not invariant under logarithm. Original strong-point selection, visibility, two-axis grid, coarse gate/3degreeagreement/limits and MAD/normalized/green_mad modes unchanged. Experimental, not production.",
+  "generator_sha256": "964c8fcb3f11116917d06ece5110c38d635c2dbeffd02ada4e0c01bbc057e8d8"
+}

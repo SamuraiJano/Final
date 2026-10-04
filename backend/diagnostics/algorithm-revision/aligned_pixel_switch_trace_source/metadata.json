@@ -1,0 +1,6 @@
+{
+  "baseline_sha256": "d57078ace090cd6aedaad97a614d0a3bb9d8045c2896141400c052e8aa7ce12c",
+  "candidate_sha256": "50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d",
+  "changes": "Trace-only correction: initialize requested/actual mode,1pixelthreshold and unavailable estimatedmovement before coarse search; record chosen native mode before native search can raise. No mathematical, control-flow, search, threshold or decision changes to d570. Numeric equivalence must be checked separately. Experimental, not production.",
+  "generator_sha256": "4a011dfcfb1e13fa64c18ab3434fc08a622d4a8c81d694a8525a37d94341dc60"
+}

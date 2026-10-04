@@ -1,0 +1,619 @@
+{
+  "recorded_at": "2026-10-04T10:52:36.502538+02:00",
+  "algorithm_sha256": "d2a49090d0c8abc9d9d2785da05664e3ee677f70eb812994e86617cac927b164",
+  "method": "Analytically rendered radius-55 sphere, exact 25-degree y rotations, 16 views, true longitude-wedge defect masks. Geometry and motion estimators bypassed only in this control.",
+  "limitations": "No neural models; validates projection, repeated-defect fusion, area normalization and grading arithmetic, not field accuracy.",
+  "tolerance_percentage_points": 1.0,
+  "cases": [
+    {
+      "expected_pct_of_observed": 5.0,
+      "measured_pct_of_observed": 5.143653862859557,
+      "absolute_error_percentage_points": 0.14365386285955672,
+      "expected_grade": "Class 1",
+      "grade": "Class 1",
+      "status": "graded",
+      "expected_rotation_deg": 375.0,
+      "rotation_deg": 374.9999999999998,
+      "observed_surface_pct": 86.45081483551486,
+      "passed": true
+    },
+    {
+      "expected_pct_of_observed": 15.0,
+      "measured_pct_of_observed": 15.178670530544993,
+      "absolute_error_percentage_points": 0.17867053054499316,
+      "expected_grade": "Class 2",
+      "grade": "Class 2",
+      "status": "graded",
+      "expected_rotation_deg": 375.0,
+      "rotation_deg": 374.9999999999998,
+      "observed_surface_pct": 86.45081483551486,
+      "passed": true
+    },
+    {
+      "expected_pct_of_observed": 30.0,
+      "measured_pct_of_observed": 30.09275852616302,
+      "absolute_error_percentage_points": 0.0927585261630206,
+      "expected_grade": "Class 3",
+      "grade": "Class 3",
+      "status": "graded",
+      "expected_rotation_deg": 375.0,
+      "rotation_deg": 374.9999999999998,
+      "observed_surface_pct": 86.45081483551486,
+      "passed": true
+    }
+  ],
+  "input_manifest": [
+    {
+      "file": "defect_5pct\\inputs\\view_00.npz",
+      "sha256": "baff39e369209fd8790f6f1115d42c84c283c2e8b4716d54ccc85780990bb594"
+    },
+    {
+      "file": "defect_5pct\\inputs\\view_01.npz",
+      "sha256": "70bc1fbf9c12d3314396f221750f31f25cd04218d5b8f1039c982d3d681c8cbc"
+    },
+    {
+      "file": "defect_5pct\\inputs\\view_02.npz",
+      "sha256": "ebc30fa53c3a1620a904af1d82165c07ee692daf79dbaef4876499e5d38a1eaf"
+    },
+    {
+      "file": "defect_5pct\\inputs\\view_03.npz",
+      "sha256": "480df2ccc66441dbb7fa0f950a155b8656b964756bd86ede1d18552f747dd4e1"
+    },
+    {
+      "file": "defect_5pct\\inputs\\view_04.npz",
+      "sha256": "f898762e69b41ed7d8aab6719786830d2c80bf8fdb54adfc29050db1c27e4181"
+    },
+    {
+      "file": "defect_5pct\\inputs\\view_05.npz",
+      "sha256": "be011690445b4dc8d1edd6b7d3a53e5bd1d2b1694be80a2369202860b3d63d3c"
+    },
+    {
+      "file": "defect_5pct\\inputs\\view_06.npz",
+      "sha256": "0f8d533d02619f6ddb12033bb2b030033d6eae62b3d15bd8e029809d8e85a48b"
+    },
+    {
+      "file": "defect_5pct\\inputs\\view_07.npz",
+      "sha256": "92b5ea8a7f74c54c296803bc14601eac1ece07107c174f79a4085fd2e256dd12"
+    },
+    {
+      "file": "defect_5pct\\inputs\\view_08.npz",
+      "sha256": "5a51f9a69c1fe92267bea42d386768392fd20c975616d9b88108770db65a4f79"
+    },
+    {
+      "file": "defect_5pct\\inputs\\view_09.npz",
+      "sha256": "0b2d352d58aa7a45e3aa29c26e82bbb9a24b1b39de14af62477cee35dffead31"
+    },
+    {
+      "file": "defect_5pct\\inputs\\view_10.npz",
+      "sha256": "3cac44b5d7d5d16ed8b3302b79d30634c8d46ca080f0733abc17bec0f51c2cee"
+    },
+    {
+      "file": "defect_5pct\\inputs\\view_11.npz",
+      "sha256": "1c9f9e5d82a6a6931a364855e79a6410769e7d9bae169a078994a929d43c6004"
+    },
+    {
+      "file": "defect_5pct\\inputs\\view_12.npz",
+      "sha256": "c66737ecf0fb8cee5b606ad27604b42787d720ee495efa616ae2b3c7fdbcb5ef"
+    },
+    {
+      "file": "defect_5pct\\inputs\\view_13.npz",
+      "sha256": "bed9e339385245b382144f41fb96108181f3d4739d62dcbd94957d0dfa56ed23"
+    },
+    {
+      "file": "defect_5pct\\inputs\\view_14.npz",
+      "sha256": "cb83dad5f66ec5da738e1931ad71c670c15be299b9f5a5cb3c42d33914b3ce7e"
+    },
+    {
+      "file": "defect_5pct\\inputs\\view_15.npz",
+      "sha256": "415960087f72a3b6c6dd86d6f5327dfa6ee90313cb4a1f006e24d63da856ca22"
+    },
+    {
+      "file": "defect_15pct\\inputs\\view_00.npz",
+      "sha256": "f6452be2084807d92d9bffaeced4087b6423aedb6e20752b56a0f8e9e5b877ca"
+    },
+    {
+      "file": "defect_15pct\\inputs\\view_01.npz",
+      "sha256": "d99f1257664e9fe63f8b9d106b2d848531ff45985b10e2b51e0891ad3abf44ed"
+    },
+    {
+      "file": "defect_15pct\\inputs\\view_02.npz",
+      "sha256": "45f48eb20b27bda3159b7caf76a3e1310892f468018900767d8561d59a2b431b"
+    },
+    {
+      "file": "defect_15pct\\inputs\\view_03.npz",
+      "sha256": "c0eb89245ac583e965a23f1c5aed7eb8601986a1b10f16cb6c7223c0f11713a8"
+    },
+    {
+      "file": "defect_15pct\\inputs\\view_04.npz",
+      "sha256": "33ab769c1d22b6380e1eb5b9cf544deb76c46ee2965c341b61dd8a2b3ee7cd78"
+    },
+    {
+      "file": "defect_15pct\\inputs\\view_05.npz",
+      "sha256": "69de7d63c9c9dc6a0affcb71bdf3e21a4f9223afa575f5f2074a33d76e6ac002"
+    },
+    {
+      "file": "defect_15pct\\inputs\\view_06.npz",
+      "sha256": "f114049deee47834d9d8f7f5f811e518664b5038052c2edc6223a6e03b7abea0"
+    },
+    {
+      "file": "defect_15pct\\inputs\\view_07.npz",
+      "sha256": "63c2c1724297560993ad5d773b51748813eac92f63398e9aa41d617fe8fbc951"
+    },
+    {
+      "file": "defect_15pct\\inputs\\view_08.npz",
+      "sha256": "39c35a47165ad2a86680314e242d5ddd83b6d6d1bce9478daeffd340db29c59f"
+    },
+    {
+      "file": "defect_15pct\\inputs\\view_09.npz",
+      "sha256": "cd147aaa4fcbee7f393f85e8a6bab4378d6ea9a6cd364a85eb33720733af1dbc"
+    },
+    {
+      "file": "defect_15pct\\inputs\\view_10.npz",
+      "sha256": "368d2f2635efc72b41429b8dc7d775f86afb8eb5a81ea7c00eb44f420b4be470"
+    },
+    {
+      "file": "defect_15pct\\inputs\\view_11.npz",
+      "sha256": "d99377760687934124604f217581f7ab798f4b09cfe1d828a039c6e7aa71fec6"
+    },
+    {
+      "file": "defect_15pct\\inputs\\view_12.npz",
+      "sha256": "a3c1c20a8db9558a73c78a08ec77862be106080588b6a94517454471a4897a72"
+    },
+    {
+      "file": "defect_15pct\\inputs\\view_13.npz",
+      "sha256": "8eb84f710f6ce5d7bdd206738bcb08a6439157cc654f60301d9c0bf259bf9ad6"
+    },
+    {
+      "file": "defect_15pct\\inputs\\view_14.npz",
+      "sha256": "3e6add1f9013f2976d12e195a9d3b3f1b51f153b15942bb04c0487c357bfafb5"
+    },
+    {
+      "file": "defect_15pct\\inputs\\view_15.npz",
+      "sha256": "8fbdf7cd04dc7dc25bb6ac0273573cb68e1f207253f825e9189b3db6a6baea68"
+    },
+    {
+      "file": "defect_30pct\\inputs\\view_00.npz",
+      "sha256": "1622a39baa9c7d8b6c21aba48361f19c12afc1f668463047d5d2cb5f3f050b6d"
+    },
+    {
+      "file": "defect_30pct\\inputs\\view_01.npz",
+      "sha256": "a7fe5c8f0e6ff3477684fcf67da6eb6922132194f72910e2b706379eb476e6bd"
+    },
+    {
+      "file": "defect_30pct\\inputs\\view_02.npz",
+      "sha256": "2762d4cd916fd85f1c8fb448ee217f6ec623be31ad708bc95de61bdfde1d779b"
+    },
+    {
+      "file": "defect_30pct\\inputs\\view_03.npz",
+      "sha256": "1250d72ceed636ad5917fa6350ef66ed9a5359d0f25b6a512e6f2a6be7817b7e"
+    },
+    {
+      "file": "defect_30pct\\inputs\\view_04.npz",
+      "sha256": "614e637ff72b5ce659bceca73295998bf95d768d4291e8f0cd3bba2aae536fde"
+    },
+    {
+      "file": "defect_30pct\\inputs\\view_05.npz",
+      "sha256": "d36231f2c7d80275a7c650a7b34f0efd353376f88538385bc967b98645f45805"
+    },
+    {
+      "file": "defect_30pct\\inputs\\view_06.npz",
+      "sha256": "ee7bb8d481c6c3c8175869765518716ec8cf967cfa0ddce98c4de21187cf9056"
+    },
+    {
+      "file": "defect_30pct\\inputs\\view_07.npz",
+      "sha256": "8b7d5e0c0653a3dfc83c2e0c386df6e4083a9d2548981034fe399933861442af"
+    },
+    {
+      "file": "defect_30pct\\inputs\\view_08.npz",
+      "sha256": "f78ee1fa5d0b88c1dcada61b25f30a3e7177c7628b5658bf33d27928d94b718d"
+    },
+    {
+      "file": "defect_30pct\\inputs\\view_09.npz",
+      "sha256": "1cca2799c5511edd14eddc9d0d2722d06dcde0145588c639d99429c226fea1f5"
+    },
+    {
+      "file": "defect_30pct\\inputs\\view_10.npz",
+      "sha256": "a599d9bb2cecb8fbd3ae9e61262d08ec484397ae21e62e6df3abb7a7689a4643"
+    },
+    {
+      "file": "defect_30pct\\inputs\\view_11.npz",
+      "sha256": "fe4aaa79186e1a6ca6d56323fa1df7689fe65f555ec0a5a1b713a056670702e5"
+    },
+    {
+      "file": "defect_30pct\\inputs\\view_12.npz",
+      "sha256": "83db335ba55282b42829e14253adcd1e5ae360cb79ab287fc7b2a54556c0b4ef"
+    },
+    {
+      "file": "defect_30pct\\inputs\\view_13.npz",
+      "sha256": "5752677182be9582cadd87fe6e8bd033299ef99004cbbda7931b1c8916e32fa4"
+    },
+    {
+      "file": "defect_30pct\\inputs\\view_14.npz",
+      "sha256": "9796e0b7b868db89917dfa385f5f5a742233040ce9ff206b917b4e89a15d38aa"
+    },
+    {
+      "file": "defect_30pct\\inputs\\view_15.npz",
+      "sha256": "6d2e8341a011ce403407f082be4a408531c470a538b1823045d39e69a1c52f8f"
+    },
+    {
+      "file": "coverage_375deg\\inputs\\view_00.npz",
+      "sha256": "f6452be2084807d92d9bffaeced4087b6423aedb6e20752b56a0f8e9e5b877ca"
+    },
+    {
+      "file": "coverage_375deg\\inputs\\view_01.npz",
+      "sha256": "d99f1257664e9fe63f8b9d106b2d848531ff45985b10e2b51e0891ad3abf44ed"
+    },
+    {
+      "file": "coverage_375deg\\inputs\\view_02.npz",
+      "sha256": "45f48eb20b27bda3159b7caf76a3e1310892f468018900767d8561d59a2b431b"
+    },
+    {
+      "file": "coverage_375deg\\inputs\\view_03.npz",
+      "sha256": "c0eb89245ac583e965a23f1c5aed7eb8601986a1b10f16cb6c7223c0f11713a8"
+    },
+    {
+      "file": "coverage_375deg\\inputs\\view_04.npz",
+      "sha256": "33ab769c1d22b6380e1eb5b9cf544deb76c46ee2965c341b61dd8a2b3ee7cd78"
+    },
+    {
+      "file": "coverage_375deg\\inputs\\view_05.npz",
+      "sha256": "69de7d63c9c9dc6a0affcb71bdf3e21a4f9223afa575f5f2074a33d76e6ac002"
+    },
+    {
+      "file": "coverage_375deg\\inputs\\view_06.npz",
+      "sha256": "f114049deee47834d9d8f7f5f811e518664b5038052c2edc6223a6e03b7abea0"
+    },
+    {
+      "file": "coverage_375deg\\inputs\\view_07.npz",
+      "sha256": "63c2c1724297560993ad5d773b51748813eac92f63398e9aa41d617fe8fbc951"
+    },
+    {
+      "file": "coverage_375deg\\inputs\\view_08.npz",
+      "sha256": "39c35a47165ad2a86680314e242d5ddd83b6d6d1bce9478daeffd340db29c59f"
+    },
+    {
+      "file": "coverage_375deg\\inputs\\view_09.npz",
+      "sha256": "cd147aaa4fcbee7f393f85e8a6bab4378d6ea9a6cd364a85eb33720733af1dbc"
+    },
+    {
+      "file": "coverage_375deg\\inputs\\view_10.npz",
+      "sha256": "368d2f2635efc72b41429b8dc7d775f86afb8eb5a81ea7c00eb44f420b4be470"
+    },
+    {
+      "file": "coverage_375deg\\inputs\\view_11.npz",
+      "sha256": "d99377760687934124604f217581f7ab798f4b09cfe1d828a039c6e7aa71fec6"
+    },
+    {
+      "file": "coverage_375deg\\inputs\\view_12.npz",
+      "sha256": "a3c1c20a8db9558a73c78a08ec77862be106080588b6a94517454471a4897a72"
+    },
+    {
+      "file": "coverage_375deg\\inputs\\view_13.npz",
+      "sha256": "8eb84f710f6ce5d7bdd206738bcb08a6439157cc654f60301d9c0bf259bf9ad6"
+    },
+    {
+      "file": "coverage_375deg\\inputs\\view_14.npz",
+      "sha256": "3e6add1f9013f2976d12e195a9d3b3f1b51f153b15942bb04c0487c357bfafb5"
+    },
+    {
+      "file": "coverage_375deg\\inputs\\view_15.npz",
+      "sha256": "8fbdf7cd04dc7dc25bb6ac0273573cb68e1f207253f825e9189b3db6a6baea68"
+    },
+    {
+      "file": "coverage_270deg\\inputs\\view_00.npz",
+      "sha256": "f6452be2084807d92d9bffaeced4087b6423aedb6e20752b56a0f8e9e5b877ca"
+    },
+    {
+      "file": "coverage_270deg\\inputs\\view_01.npz",
+      "sha256": "872d7dd120aa0f80cd39e521edf7e60f27300d411d5c82033b321d90f0b4b5f3"
+    },
+    {
+      "file": "coverage_270deg\\inputs\\view_02.npz",
+      "sha256": "bfb0963ef0d600d829cc2eb332450065a981e125ade053b0ee68325e7eac7ce5"
+    },
+    {
+      "file": "coverage_270deg\\inputs\\view_03.npz",
+      "sha256": "1fc450875f7562c746cb6affac211f5422683c58323ccf3c399a48b3e49acb2a"
+    },
+    {
+      "file": "coverage_270deg\\inputs\\view_04.npz",
+      "sha256": "71fcef0e0116e326297e86fd1cb7dde8bb85d90ae7c2e2a11c62110b45ee9c15"
+    },
+    {
+      "file": "coverage_270deg\\inputs\\view_05.npz",
+      "sha256": "67c3d1bfae07ba9fc9eb5bf4598320026dcc8291ee629b4a0898daa67863aad2"
+    },
+    {
+      "file": "coverage_270deg\\inputs\\view_06.npz",
+      "sha256": "bbebb56ff7ee9baf3a35643710a9482f7cf215ec287e755c1a85beed38472853"
+    },
+    {
+      "file": "coverage_270deg\\inputs\\view_07.npz",
+      "sha256": "efbdb3ff774e7b716dbe55dedfa43720317f93e161730c63e92435cfcc1f5c45"
+    },
+    {
+      "file": "coverage_270deg\\inputs\\view_08.npz",
+      "sha256": "a9a408abdbed2b40d94e62b700cad89e22991ce3378ce34b470081053e928cc3"
+    },
+    {
+      "file": "coverage_270deg\\inputs\\view_09.npz",
+      "sha256": "8eb793730eaadd63400725cc0c0e18b3adec685dcc1dcc5e178dc29712866fd5"
+    },
+    {
+      "file": "coverage_270deg\\inputs\\view_10.npz",
+      "sha256": "a64d967196741957d85f5393152e6079b6c22f664d685f9deefbdf9e18a5521b"
+    },
+    {
+      "file": "coverage_270deg\\inputs\\view_11.npz",
+      "sha256": "c74c33eb89745c7b1291243d5acb53bc7b6292a8bc63a94c84dcb61c21d13adb"
+    },
+    {
+      "file": "coverage_270deg\\inputs\\view_12.npz",
+      "sha256": "a9cce2a845342494d1a4a6bffed5b5cadad8e35e77c68c4aba1812e005ffacf5"
+    },
+    {
+      "file": "coverage_270deg\\inputs\\view_13.npz",
+      "sha256": "864e578528fb3045f92fec97d8b6c7eb4c17a748ec478a10452a4bbe935e80af"
+    },
+    {
+      "file": "coverage_270deg\\inputs\\view_14.npz",
+      "sha256": "fdba6346147ea27418826b4dfc766686ef316c1df642c365934682abe885de37"
+    },
+    {
+      "file": "coverage_270deg\\inputs\\view_15.npz",
+      "sha256": "777c7797a6eeed9d5ee0d57608ddffd318ae04506cb2f0a417ec5780f2381e68"
+    },
+    {
+      "file": "coverage_250deg\\inputs\\view_00.npz",
+      "sha256": "f6452be2084807d92d9bffaeced4087b6423aedb6e20752b56a0f8e9e5b877ca"
+    },
+    {
+      "file": "coverage_250deg\\inputs\\view_01.npz",
+      "sha256": "ca7e8704d6f969c0df26716a37d5e737c848f6c321c7db2aa61b99b8f7108906"
+    },
+    {
+      "file": "coverage_250deg\\inputs\\view_02.npz",
+      "sha256": "2cde89d9145cebf9362cc43ddfa8c64a4798972c98a4fedf9008dcdb2f6cdcd1"
+    },
+    {
+      "file": "coverage_250deg\\inputs\\view_03.npz",
+      "sha256": "f61d4bacb2e29fe87aef3a5627a4fd1181d6df769fcd9a684eb3c90481deea8b"
+    },
+    {
+      "file": "coverage_250deg\\inputs\\view_04.npz",
+      "sha256": "5bbb7597732403cdafa2c012c006b0a20b17fece6f1e2e73c00969b0ff47726f"
+    },
+    {
+      "file": "coverage_250deg\\inputs\\view_05.npz",
+      "sha256": "70f0ee49bbe68bdb341ab633a2636f4dbff4f07d56142d49e6b0ae63998ebc5d"
+    },
+    {
+      "file": "coverage_250deg\\inputs\\view_06.npz",
+      "sha256": "82a00c657fa8959e502408586c2be50514e47ba1547ddf7222a615dd561704be"
+    },
+    {
+      "file": "coverage_250deg\\inputs\\view_07.npz",
+      "sha256": "71dc689209c6ea16eb783ad7174362c503d4b8ee5e17f4e21cb5d7a9e271acb8"
+    },
+    {
+      "file": "coverage_250deg\\inputs\\view_08.npz",
+      "sha256": "4dda0ec121a1a2b9ca5d45912ed87ded8fafd0eaeb52e010911c8ae8e1a8456b"
+    },
+    {
+      "file": "coverage_250deg\\inputs\\view_09.npz",
+      "sha256": "8fb9e930ee41e294b3d3918172650f691954c10790101976dcd2d93d7dd4758d"
+    },
+    {
+      "file": "coverage_250deg\\inputs\\view_10.npz",
+      "sha256": "0f500a11853eec1ee4d602152226c0c154cd1680b9b25cf5178f556fed48514f"
+    },
+    {
+      "file": "coverage_250deg\\inputs\\view_11.npz",
+      "sha256": "609bdfcb90cc6a3bc4663dfc38866b3bfb160477598b29c3e5a0cf93ff38eaae"
+    },
+    {
+      "file": "coverage_250deg\\inputs\\view_12.npz",
+      "sha256": "4f9e4177a957790cdc1ee247bfe6daec87a1c97131d22d7de9fc8dcdb53e6b78"
+    },
+    {
+      "file": "coverage_250deg\\inputs\\view_13.npz",
+      "sha256": "19fe0108bb28ea670660946fddc7ef4685e0d22b1c6d31dabebfa4803df0a3d1"
+    },
+    {
+      "file": "coverage_250deg\\inputs\\view_14.npz",
+      "sha256": "924eae0ccbe5779c1489b8fe865c1eacb5ec33cdf49057574fbc6b611112dbd5"
+    },
+    {
+      "file": "coverage_250deg\\inputs\\view_15.npz",
+      "sha256": "862a97f3b4d5ded0256beabec8bc43ceceaeb28bac98055007c6a27800c61719"
+    },
+    {
+      "file": "coverage_100deg\\inputs\\view_00.npz",
+      "sha256": "f6452be2084807d92d9bffaeced4087b6423aedb6e20752b56a0f8e9e5b877ca"
+    },
+    {
+      "file": "coverage_100deg\\inputs\\view_01.npz",
+      "sha256": "a1ad51d5c0cf04131241bcecf725826bc19dd925a1b253e829c53aff3b7de298"
+    },
+    {
+      "file": "coverage_100deg\\inputs\\view_02.npz",
+      "sha256": "b760bb48d77fb9a232e3beec0298126a26afbca1e0292628873e43a0272f6b45"
+    },
+    {
+      "file": "coverage_100deg\\inputs\\view_03.npz",
+      "sha256": "8e4b48ca60d7a5e7721683320894d8c0eca14f628c1fa3d89682f0e0d037e84c"
+    },
+    {
+      "file": "coverage_100deg\\inputs\\view_04.npz",
+      "sha256": "5e172e29a432b55af1d77b0ae3d658ef5b9e2d6882d21661f063d91431075205"
+    },
+    {
+      "file": "coverage_100deg\\inputs\\view_05.npz",
+      "sha256": "aeda85addb6fc1473be4e45d2300c40cdb0c16956783660d5af44e840c327a5b"
+    },
+    {
+      "file": "coverage_100deg\\inputs\\view_06.npz",
+      "sha256": "8dbc87249613d96739e736a5faef5439edac7698d27785534a69a9e92fbb165d"
+    },
+    {
+      "file": "coverage_100deg\\inputs\\view_07.npz",
+      "sha256": "04c14c505a87f9abf499b8d1ad8db3b32652ba0a248474edb65a8d1c85420a5b"
+    },
+    {
+      "file": "coverage_100deg\\inputs\\view_08.npz",
+      "sha256": "ff2c030981d3506c16ff14d1da0eb47d3d79a6e35b457974b42aa6067b87e7df"
+    },
+    {
+      "file": "coverage_100deg\\inputs\\view_09.npz",
+      "sha256": "b06dfd6f32f665a4c52a86b97a9e5b2c61f7aae49a21f08535d544588a38cefb"
+    },
+    {
+      "file": "coverage_100deg\\inputs\\view_10.npz",
+      "sha256": "d6401cb1ba09913d459f855156a025ff476de501ba4c3a09cbc833308e14a02b"
+    },
+    {
+      "file": "coverage_100deg\\inputs\\view_11.npz",
+      "sha256": "b5a3b24aeb604a98410ef7f8eff9c2e74f40a7036f8f47ac5b108a756b3a26e6"
+    },
+    {
+      "file": "coverage_100deg\\inputs\\view_12.npz",
+      "sha256": "ece743b99e33c5eb0993754292998faef2fcd0749a32e8d1a5074e2b32ffdaa9"
+    },
+    {
+      "file": "coverage_100deg\\inputs\\view_13.npz",
+      "sha256": "f978200ac40c8b8ad0601fd2ee86b3975bb62bfcae0e7eb776c76f803c65dda5"
+    },
+    {
+      "file": "coverage_100deg\\inputs\\view_14.npz",
+      "sha256": "247dcbe7620f39fab860155d24a1a156ad5b152cf546e6fe3196bbe25748c0ad"
+    },
+    {
+      "file": "coverage_100deg\\inputs\\view_15.npz",
+      "sha256": "a01c0483568b0e5e84d76802c3f598b9df7b70d3593b51fcbcf750ac18537b24"
+    }
+  ],
+  "validator_sha256": "207dfed1be9fa92b58a14d76435e12b8e0b2163522ae301ef09a6973da3829c7",
+  "settings": {
+    "spheroid_type": "sphere",
+    "spherical_tolerance": 0.06,
+    "rotation_axis": "y",
+    "rotation_direction": 1,
+    "max_pair_angle_deg": 55.0,
+    "transverse_angle_deg": 10.0,
+    "search_step_deg": 1.0,
+    "image_downsample": 4,
+    "refine_small_motion": true,
+    "native_matching_cost": "mad",
+    "highpass_sigma": 1.25,
+    "point_percentile": 97.0,
+    "min_pair_points": 12,
+    "min_pair_angle_deg": 1.0,
+    "max_pair_error": 0.58,
+    "min_texture": 0.006,
+    "matching_cost": "mad",
+    "batch_rotation_search": true,
+    "bidirectional_matching": false,
+    "select_rotating_views": false,
+    "minimum_view_rotation_deg": 3.0,
+    "maximum_view_index_gap": 1,
+    "texture_metric": "selected_rms",
+    "exclude_specular_texture": false,
+    "enforce_uniform_pair_rotation": false,
+    "max_latitude_deg": 60.0,
+    "map_angle_step_deg": null,
+    "grabcut_iterations": 3,
+    "minimum_surface_coverage": 0.65,
+    "minimum_rotation_coverage_deg": 350,
+    "minimum_longitude_coverage_deg": 0,
+    "maximum_pair_gap_deg": 55,
+    "pole_pose_tolerance_deg": 5.0,
+    "pole_pose_method": "silhouette_trend",
+    "minimum_mask_box_fraction": 0.4,
+    "minimum_silhouette_solidity": 0.95,
+    "class_1_max_defect_pct": 10.0,
+    "class_2_max_defect_pct": 20.0,
+    "defect_observations_complete": true,
+    "grade_partial_maps": false
+  },
+  "coverage_controls": [
+    {
+      "true_rotation_deg": 375.0,
+      "observed_longitude_deg": 360.0,
+      "observed_surface_pct": 86.45081483551486,
+      "expected_graded": true,
+      "grade": "Class 2",
+      "status": "graded",
+      "passed": true
+    },
+    {
+      "true_rotation_deg": 270.0,
+      "observed_longitude_deg": 360.0,
+      "observed_surface_pct": 86.45081483551486,
+      "expected_graded": true,
+      "grade": "Class 2",
+      "status": "graded",
+      "passed": true
+    },
+    {
+      "true_rotation_deg": 250.0,
+      "observed_longitude_deg": 340.23121387283237,
+      "observed_surface_pct": 81.7035157549519,
+      "expected_graded": false,
+      "grade": null,
+      "status": "insufficient_longitude_coverage",
+      "passed": true
+    },
+    {
+      "true_rotation_deg": 100.0,
+      "observed_longitude_deg": 190.40462427745663,
+      "observed_surface_pct": 45.72398588121161,
+      "expected_graded": false,
+      "grade": null,
+      "status": "insufficient_longitude_coverage",
+      "passed": true
+    }
+  ],
+  "coverage_control_settings": {
+    "spheroid_type": "sphere",
+    "spherical_tolerance": 0.06,
+    "rotation_axis": "y",
+    "rotation_direction": 1,
+    "max_pair_angle_deg": 55.0,
+    "transverse_angle_deg": 10.0,
+    "search_step_deg": 1.0,
+    "image_downsample": 4,
+    "refine_small_motion": true,
+    "native_matching_cost": "mad",
+    "highpass_sigma": 1.25,
+    "point_percentile": 97.0,
+    "min_pair_points": 12,
+    "min_pair_angle_deg": 1.0,
+    "max_pair_error": 0.58,
+    "min_texture": 0.006,
+    "matching_cost": "mad",
+    "batch_rotation_search": true,
+    "bidirectional_matching": false,
+    "select_rotating_views": false,
+    "minimum_view_rotation_deg": 3.0,
+    "maximum_view_index_gap": 1,
+    "texture_metric": "selected_rms",
+    "exclude_specular_texture": false,
+    "enforce_uniform_pair_rotation": false,
+    "max_latitude_deg": 60.0,
+    "map_angle_step_deg": null,
+    "grabcut_iterations": 3,
+    "minimum_surface_coverage": 0.65,
+    "minimum_rotation_coverage_deg": 0,
+    "minimum_longitude_coverage_deg": 350,
+    "maximum_pair_gap_deg": 55,
+    "pole_pose_tolerance_deg": 5.0,
+    "pole_pose_method": "silhouette_trend",
+    "minimum_mask_box_fraction": 0.4,
+    "minimum_silhouette_solidity": 0.95,
+    "class_1_max_defect_pct": 10.0,
+    "class_2_max_defect_pct": 20.0,
+    "defect_observations_complete": true,
+    "grade_partial_maps": false
+  },
+  "passed": true
+}

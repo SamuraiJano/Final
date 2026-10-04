@@ -1,0 +1,304 @@
+{
+  "method": "Independent exact-pose sphere rendering; production strip fusion versus diagnostic all-view projection union. Existing 60-degree latitude limit retained. Pose fitting, segmentation, masks and tracker identity are bypassed. Results are not recorded-video accuracy or a success-rate estimate.",
+  "all_view_weights": "Squared camera-normal cosine; optional conservative normal cosine cutoffs.",
+  "cases": [
+    {
+      "name": "forward_100",
+      "angles_deg": [
+        0.0,
+        6.666666666666667,
+        13.333333333333334,
+        20.0,
+        26.666666666666668,
+        33.333333333333336,
+        40.0,
+        46.66666666666667,
+        53.333333333333336,
+        60.0,
+        66.66666666666667,
+        73.33333333333334,
+        80.0,
+        86.66666666666667,
+        93.33333333333334,
+        100.0
+      ],
+      "current_strip": {
+        "surface_pct": 45.72398588121161,
+        "longitude_deg": 190.40462427745663,
+        "status": "insufficient_longitude_coverage",
+        "coverage_complete": false,
+        "defect_pct_of_observed": 0.0
+      },
+      "all_view_visibility": [
+        {
+          "normal_cosine_floor": 0.0,
+          "surface_pct": 65.86963602357893,
+          "longitude_deg": 279.8843930635838,
+          "defect_pct_of_observed": 9.338551089130963,
+          "meets_80_surface_and_350_longitude": false
+        },
+        {
+          "normal_cosine_floor": 0.25,
+          "surface_pct": 58.781318890269866,
+          "longitude_deg": 250.75144508670522,
+          "defect_pct_of_observed": 4.097827590629367,
+          "meets_80_surface_and_350_longitude": false
+        },
+        {
+          "normal_cosine_floor": 0.5,
+          "surface_pct": 49.02390192493628,
+          "longitude_deg": 219.53757225433526,
+          "defect_pct_of_observed": 0.0,
+          "meets_80_surface_and_350_longitude": false
+        }
+      ]
+    },
+    {
+      "name": "forward_250",
+      "angles_deg": [
+        0.0,
+        16.666666666666668,
+        33.333333333333336,
+        50.0,
+        66.66666666666667,
+        83.33333333333334,
+        100.0,
+        116.66666666666667,
+        133.33333333333334,
+        150.0,
+        166.66666666666669,
+        183.33333333333334,
+        200.0,
+        216.66666666666669,
+        233.33333333333334,
+        250.0
+      ],
+      "current_strip": {
+        "surface_pct": 81.7035157549519,
+        "longitude_deg": 340.23121387283237,
+        "status": "insufficient_longitude_coverage",
+        "coverage_complete": false,
+        "defect_pct_of_observed": 15.4528100508443
+      },
+      "all_view_visibility": [
+        {
+          "normal_cosine_floor": 0.0,
+          "surface_pct": 86.45081483551488,
+          "longitude_deg": 360.0,
+          "defect_pct_of_observed": 15.93497629216964,
+          "meets_80_surface_and_350_longitude": true
+        },
+        {
+          "normal_cosine_floor": 0.25,
+          "surface_pct": 86.45081483551488,
+          "longitude_deg": 360.0,
+          "defect_pct_of_observed": 15.354501418932616,
+          "meets_80_surface_and_350_longitude": true
+        },
+        {
+          "normal_cosine_floor": 0.5,
+          "surface_pct": 84.07941326410422,
+          "longitude_deg": 360.0,
+          "defect_pct_of_observed": 14.811871855661604,
+          "meets_80_surface_and_350_longitude": true
+        }
+      ]
+    },
+    {
+      "name": "forward_270",
+      "angles_deg": [
+        0.0,
+        18.0,
+        36.0,
+        54.0,
+        72.0,
+        90.0,
+        108.0,
+        126.0,
+        144.0,
+        162.0,
+        180.0,
+        198.0,
+        216.0,
+        234.0,
+        252.0,
+        270.0
+      ],
+      "current_strip": {
+        "surface_pct": 86.45081483551486,
+        "longitude_deg": 360.0,
+        "status": "graded",
+        "coverage_complete": true,
+        "defect_pct_of_observed": 15.133817218769506
+      },
+      "all_view_visibility": [
+        {
+          "normal_cosine_floor": 0.0,
+          "surface_pct": 86.45081483551488,
+          "longitude_deg": 360.0,
+          "defect_pct_of_observed": 16.16218592795636,
+          "meets_80_surface_and_350_longitude": true
+        },
+        {
+          "normal_cosine_floor": 0.25,
+          "surface_pct": 86.45081483551488,
+          "longitude_deg": 360.0,
+          "defect_pct_of_observed": 15.403169164451342,
+          "meets_80_surface_and_350_longitude": true
+        },
+        {
+          "normal_cosine_floor": 0.5,
+          "surface_pct": 85.44741080807715,
+          "longitude_deg": 360.0,
+          "defect_pct_of_observed": 15.221338871546063,
+          "meets_80_surface_and_350_longitude": true
+        }
+      ]
+    },
+    {
+      "name": "forward_375",
+      "angles_deg": [
+        0.0,
+        25.0,
+        50.0,
+        75.0,
+        100.0,
+        125.0,
+        150.0,
+        175.0,
+        200.0,
+        225.0,
+        250.0,
+        275.0,
+        300.0,
+        325.0,
+        350.0,
+        375.0
+      ],
+      "current_strip": {
+        "surface_pct": 86.45081483551486,
+        "longitude_deg": 360.0,
+        "status": "graded",
+        "coverage_complete": true,
+        "defect_pct_of_observed": 15.178670530544993
+      },
+      "all_view_visibility": [
+        {
+          "normal_cosine_floor": 0.0,
+          "surface_pct": 86.45081483551488,
+          "longitude_deg": 360.0,
+          "defect_pct_of_observed": 16.083387981852834,
+          "meets_80_surface_and_350_longitude": true
+        },
+        {
+          "normal_cosine_floor": 0.25,
+          "surface_pct": 86.45081483551488,
+          "longitude_deg": 360.0,
+          "defect_pct_of_observed": 15.485348924305532,
+          "meets_80_surface_and_350_longitude": true
+        },
+        {
+          "normal_cosine_floor": 0.5,
+          "surface_pct": 86.39187682670446,
+          "longitude_deg": 360.0,
+          "defect_pct_of_observed": 15.247906911325623,
+          "meets_80_surface_and_350_longitude": true
+        }
+      ]
+    },
+    {
+      "name": "stationary_duplicate_16",
+      "angles_deg": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "current_strip": {
+        "unavailable_reason": "No consistent angular progress"
+      },
+      "all_view_visibility": [
+        {
+          "normal_cosine_floor": 0.0,
+          "surface_pct": 41.87267386204796,
+          "longitude_deg": 180.0,
+          "defect_pct_of_observed": 13.89967636016719,
+          "meets_80_surface_and_350_longitude": false
+        },
+        {
+          "normal_cosine_floor": 0.25,
+          "surface_pct": 34.777190777236875,
+          "longitude_deg": 150.86705202312137,
+          "defect_pct_of_observed": 6.590716181124017,
+          "meets_80_surface_and_350_longitude": false
+        },
+        {
+          "normal_cosine_floor": 0.5,
+          "surface_pct": 25.00809848581627,
+          "longitude_deg": 119.65317919075143,
+          "defect_pct_of_observed": 0.0,
+          "meets_80_surface_and_350_longitude": false
+        }
+      ]
+    },
+    {
+      "name": "rocking_275_unique_span",
+      "angles_deg": [
+        0,
+        25,
+        50,
+        75,
+        100,
+        125,
+        150,
+        175,
+        200,
+        175,
+        150,
+        175,
+        200,
+        225,
+        250,
+        275
+      ],
+      "current_strip": {
+        "unavailable_reason": "Fruit-fixed longitude centers are not consistently ordered"
+      },
+      "all_view_visibility": [
+        {
+          "normal_cosine_floor": 0.0,
+          "surface_pct": 86.45081483551488,
+          "longitude_deg": 360.0,
+          "defect_pct_of_observed": 15.457151960329815,
+          "meets_80_surface_and_350_longitude": true
+        },
+        {
+          "normal_cosine_floor": 0.25,
+          "surface_pct": 86.45081483551488,
+          "longitude_deg": 360.0,
+          "defect_pct_of_observed": 15.41371140365514,
+          "meets_80_surface_and_350_longitude": true
+        },
+        {
+          "normal_cosine_floor": 0.5,
+          "surface_pct": 85.60390717237023,
+          "longitude_deg": 360.0,
+          "defect_pct_of_observed": 15.270524747677515,
+          "meets_80_surface_and_350_longitude": true
+        }
+      ]
+    }
+  ]
+}

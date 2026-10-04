@@ -1,0 +1,1971 @@
+{
+  "captured_at": "2026-10-03T01:02:48.651280+02:00",
+  "status": "failed",
+  "passed_execution": false,
+  "algorithm_sha256": "50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d",
+  "job_id": "78b4a03ccaa549de96ecd88c5efb5806",
+  "request_started_at": "2026-10-02T20:51:37.951279+02:00",
+  "analysis_id": "a43e26c70871450d8b72a5c291074b0c",
+  "video_sha256": "dc25964bf6052972cad761b0246f79906e768c6737bf4228ba44711d7272429c",
+  "frames_processed_at_last_status": 330,
+  "frames_total": 515,
+  "error": "Unable to allocate 1.26 MiB for an array with shape (115, 160, 9) and data type float64",
+  "api_observations": {
+    "health": {
+      "observed_at": "2026-10-03T01:02:49.548899+02:00",
+      "http_status": 200,
+      "body": {
+        "status": "ok",
+        "torch": "2.6.0+cu124",
+        "cuda_available": true,
+        "requested_device": "cuda",
+        "models_present": {
+          "detection": true,
+          "segmentation": true,
+          "segmentation_metadata": true
+        }
+      }
+    },
+    "analysis/status": {
+      "observed_at": "2026-10-03T01:02:49.564921+02:00",
+      "http_status": 200,
+      "body": {
+        "state": "error",
+        "run_id": "a43e26c70871450d8b72a5c291074b0c",
+        "frames_processed": 330,
+        "frames_total": 515,
+        "error": "Unable to allocate 1.26 MiB for an array with shape (115, 160, 9) and data type float64"
+      }
+    }
+  },
+  "response_http_status": 500,
+  "response_status_evidence": "Preserved validator traceback raises HTTPError: 500 Server Error.",
+  "failed_at": null,
+  "failure_timestamp_limit": "API state/traceback record no error timestamp. Response-file last-write time is a capture proxy, not exact server failure time.",
+  "deadline": "2026-10-03T00:00:00+02:00",
+  "deadline_full_video_verification_met": false,
+  "final_aggregate_report_exists": false,
+  "partial_track_result_count": 256,
+  "partial_job_directory": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806",
+  "source_records": [
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\api-runs\\full_pixel_switch_trace_20261002\\health.json",
+      "copy": "original_request/health.json",
+      "sha256": "60c747675ec161b7e11756ed88d2a39db417e3b21bc4548dc8db9c08f8481771",
+      "bytes": 222,
+      "last_write_at": "2026-10-02T20:51:37.976591+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\api-runs\\full_pixel_switch_trace_20261002\\request.json",
+      "copy": "original_request/request.json",
+      "sha256": "d4b93d86149308c13e46c33aedc3108ced7dd6bd3acbdf670371fc379a1408a4",
+      "bytes": 812,
+      "last_write_at": "2026-10-02T20:51:37.952674+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\api-runs\\full_pixel_switch_trace_20261002\\response.json",
+      "copy": "original_request/response.json",
+      "sha256": "e41656eb2ba6c6293bf6dd928e5a88cdbc50535cab661c1969e0f598e497ed62",
+      "bytes": 21,
+      "last_write_at": "2026-10-02T21:27:30.440607+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\api-runs\\full_pixel_switch_trace_20261002\\runtime_failure_20261003.json",
+      "copy": "original_request/runtime_failure_20261003.json",
+      "sha256": "f049841f8184de849ae00cba1250f0b8143c2fb28939d0a43fc8c74b7bf1ce92",
+      "bytes": 689,
+      "last_write_at": "2026-10-03T01:02:28.151942+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\algorithm-revision\\service_20261002\\full_pixel_switch_trace_20261002_stderr.log",
+      "copy": "validator_execution/full_pixel_switch_trace_20261002_stderr.log",
+      "sha256": "4ce012b549cb6b699bf8603d597ba90e0d096e51a30411128ef0e912d9035db3",
+      "bytes": 664,
+      "last_write_at": "2026-10-02T21:27:30.451683+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\algorithm-revision\\service_20261002\\full_pixel_switch_trace_20261002_stdout.log",
+      "copy": "validator_execution/full_pixel_switch_trace_20261002_stdout.log",
+      "sha256": "28255c0c9f8d21c09b261dc38dafc87b0247700e86674ae8072c0713f37aeb9f",
+      "bytes": 52,
+      "last_write_at": "2026-10-02T20:51:37.976591+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\algorithm-revision\\service_20261002\\full_pixel_switch_trace_launch.json",
+      "copy": "validator_execution/full_pixel_switch_trace_launch.json",
+      "sha256": "69d346f918b5df0c668e99dab30b8c843f6e39615bba470d4d7676126236fd78",
+      "bytes": 613,
+      "last_write_at": "2026-10-02T20:51:37.391010+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\algorithm-revision\\service_20261002\\pixel_switch_trace_services\\api_restart1_stderr.log",
+      "copy": "service/api_restart1_stderr.log",
+      "sha256": "e6366eaedd892edadc2e389abce202208671845db5effc331c08807076df77d8",
+      "bytes": 9029,
+      "last_write_at": "2026-10-02T21:27:30.418758+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\algorithm-revision\\service_20261002\\pixel_switch_trace_services\\api_restart1_stdout.log",
+      "copy": "service/api_restart1_stdout.log",
+      "sha256": "5efec5880a3ff48730d4758bd8627fc0e9ee01e9e5817cb45f38a1e0b598c63e",
+      "bytes": 9750,
+      "last_write_at": "2026-10-03T01:02:28.145910+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\algorithm-revision\\service_20261002\\pixel_switch_trace_services\\launch.json",
+      "copy": "service/launch.json",
+      "sha256": "8fb93f41882be213d8db8abfd5b4c0cd8cbea60546a45a1c44278e3ee623b5b2",
+      "bytes": 13362,
+      "last_write_at": "2026-10-02T20:49:18.413244+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\algorithm-revision\\service_20261002\\pixel_switch_trace_services\\restart1.json",
+      "copy": "service/restart1.json",
+      "sha256": "a413fd91d0b6779c72443d8a95e3c75de28ae3e6b6daba54f3d6cf85f3c3311c",
+      "bytes": 4793,
+      "last_write_at": "2026-10-02T20:49:18.411958+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\algorithm-revision\\service_20261002\\pixel_switch_trace_services\\runtime_config_evidence.json",
+      "copy": "service/runtime_config_evidence.json",
+      "sha256": "042b6010a16909ced5d68bc251b0ea58e3c5a9d8962a0fa4453d8e1e6a56cb09",
+      "bytes": 382,
+      "last_write_at": "2026-10-02T20:54:06.132452+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\algorithm-revision\\service_20261002\\pixel_switch_trace_services\\backend_algorithm.py.snapshot",
+      "copy": "service/backend_algorithm.py.snapshot",
+      "sha256": "50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d",
+      "bytes": 75759,
+      "last_write_at": "2026-10-02T20:46:38.601701+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\algorithm-revision\\service_20261002\\pixel_switch_trace_services\\backend_main.py.snapshot",
+      "copy": "service/backend_main.py.snapshot",
+      "sha256": "2a51490a827c7429114ec51d0e8b627f30a9be069dd7d5769af283780ae50d49",
+      "bytes": 31309,
+      "last_write_at": "2026-10-02T20:46:38.603053+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\algorithm-revision\\service_20261002\\pixel_switch_trace_services\\backend_dfine_segmenter.py.snapshot",
+      "copy": "service/backend_dfine_segmenter.py.snapshot",
+      "sha256": "20049bf4e24678342364f85b1f4eea69a36f5385c858189b40b52fac11fc360a",
+      "bytes": 16881,
+      "last_write_at": "2026-10-02T20:46:38.604052+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\algorithm.py.snapshot",
+      "copy": "partial_job/algorithm.py.snapshot",
+      "sha256": "50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d",
+      "bytes": 75759,
+      "last_write_at": "2026-10-02T20:51:38.413345+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\dfine_segmenter.py.snapshot",
+      "copy": "partial_job/dfine_segmenter.py.snapshot",
+      "sha256": "20049bf4e24678342364f85b1f4eea69a36f5385c858189b40b52fac11fc360a",
+      "bytes": 16881,
+      "last_write_at": "2026-10-02T20:51:38.415854+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\main.py.snapshot",
+      "copy": "partial_job/main.py.snapshot",
+      "sha256": "2a51490a827c7429114ec51d0e8b627f30a9be069dd7d5769af283780ae50d49",
+      "bytes": 31309,
+      "last_write_at": "2026-10-02T20:51:38.414844+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\1\\result.json",
+      "copy": "partial_job/1/result.json",
+      "sha256": "c5e31ddeb840da43a2aac8e0605e2e809d440d1391075d83662b5b48e2ff443d",
+      "bytes": 46813,
+      "last_write_at": "2026-10-02T20:54:59.036110+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\10\\result.json",
+      "copy": "partial_job/10/result.json",
+      "sha256": "a8e10793cfdd8753b57ab60125d95c8f7751c1a84664dd46ac97f06032538c6b",
+      "bytes": 17446,
+      "last_write_at": "2026-10-02T20:53:21.090965+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\100\\result.json",
+      "copy": "partial_job/100/result.json",
+      "sha256": "45594dd1d8a1bd0cfa64ec728487b9377af924fb0105338f720eb74971c313ee",
+      "bytes": 1539,
+      "last_write_at": "2026-10-02T20:55:27.866549+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\101\\result.json",
+      "copy": "partial_job/101/result.json",
+      "sha256": "ec8146f2810429a6ba9d8392b1da07df11b8ce3e6faa285a4b1e692937138879",
+      "bytes": 10400,
+      "last_write_at": "2026-10-02T21:00:29.807970+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\102\\result.json",
+      "copy": "partial_job/102/result.json",
+      "sha256": "d9acf17344278100f705f0c30587e3c76a72465d28714a01f0b6ebbace4ea1cf",
+      "bytes": 8113,
+      "last_write_at": "2026-10-02T21:01:05.472937+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\103\\result.json",
+      "copy": "partial_job/103/result.json",
+      "sha256": "7ecaeaab118ed621e29819a1d0e7ebc3b15800b9cb009b1d53e5d64c8114b9e5",
+      "bytes": 47399,
+      "last_write_at": "2026-10-02T21:05:37.220728+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\104\\result.json",
+      "copy": "partial_job/104/result.json",
+      "sha256": "b7e58484aaceaff01a6b30f21d0edab18aeffc24df2763546f01f1503b1ff1f2",
+      "bytes": 4946,
+      "last_write_at": "2026-10-02T20:57:25.020654+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\105\\result.json",
+      "copy": "partial_job/105/result.json",
+      "sha256": "9d6d809c33c9646ce2c4dd0a3b504af46037e7498ddd83e3f826885a053721fe",
+      "bytes": 47300,
+      "last_write_at": "2026-10-02T21:07:28.581646+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\106\\result.json",
+      "copy": "partial_job/106/result.json",
+      "sha256": "ae71d9f3822e73f8b9742ec896ea23cef129b0e348d49b83d138967145b073aa",
+      "bytes": 50751,
+      "last_write_at": "2026-10-02T21:07:07.168077+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\107\\result.json",
+      "copy": "partial_job/107/result.json",
+      "sha256": "434da9ae0c9498b1653143d1247601340a2131666b60ce1ee4f22465e76e5021",
+      "bytes": 67327,
+      "last_write_at": "2026-10-02T21:07:21.342869+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\108\\result.json",
+      "copy": "partial_job/108/result.json",
+      "sha256": "b9bef79bc98dd01b7f61deffa345681342b223d84205a5afcc7bf3bec1638d48",
+      "bytes": 66902,
+      "last_write_at": "2026-10-02T21:05:58.645049+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\109\\result.json",
+      "copy": "partial_job/109/result.json",
+      "sha256": "11a6d02267493133d71013f03f72d86b88192dad25ec550bb7b380910aa48ede",
+      "bytes": 67421,
+      "last_write_at": "2026-10-02T21:06:28.199178+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\11\\result.json",
+      "copy": "partial_job/11/result.json",
+      "sha256": "593f0865dbb90e4a3baf904cda5083fde3aa0dbf8627248792083e7a2d462477",
+      "bytes": 45124,
+      "last_write_at": "2026-10-02T20:55:23.964561+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\110\\result.json",
+      "copy": "partial_job/110/result.json",
+      "sha256": "c490da4320f137852df76c73daf98bf29943ed5c0f442a4a7dac2fad703c203f",
+      "bytes": 70415,
+      "last_write_at": "2026-10-02T21:06:42.681137+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\111\\result.json",
+      "copy": "partial_job/111/result.json",
+      "sha256": "dffacdcdb8f3190c6a44ecddcc4f5cb7dcacdbb84091e66fad3d4bcb507022b4",
+      "bytes": 69636,
+      "last_write_at": "2026-10-02T21:06:13.557753+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\112\\result.json",
+      "copy": "partial_job/112/result.json",
+      "sha256": "a7c9cdadb4ca345c0c0003b1d24e972b4ca33ceab886919f8fab0fef1aa79485",
+      "bytes": 70720,
+      "last_write_at": "2026-10-02T21:06:56.947192+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\113\\result.json",
+      "copy": "partial_job/113/result.json",
+      "sha256": "a93320e4eb703cd6d36640a25f950c6442e59639a3135a60691dbdf3aacb5a15",
+      "bytes": 7126,
+      "last_write_at": "2026-10-02T20:59:33.898435+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\114\\result.json",
+      "copy": "partial_job/114/result.json",
+      "sha256": "d80c49ea94ef61b8eb825cf295398e1cbfbaeb776ddcf2f6fa007a9803e956c3",
+      "bytes": 1112,
+      "last_write_at": "2026-10-02T20:57:16.657797+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\115\\result.json",
+      "copy": "partial_job/115/result.json",
+      "sha256": "d6b682fddfc99b032e97e11f7094897c6a41b01a671b028d332e0ac99be14116",
+      "bytes": 18347,
+      "last_write_at": "2026-10-02T21:07:29.906219+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\117\\result.json",
+      "copy": "partial_job/117/result.json",
+      "sha256": "1a09a44835d01fd10172db0373170a24476b79ea931a5bb2d03ca023f7060b6a",
+      "bytes": 43629,
+      "last_write_at": "2026-10-02T21:09:59.163906+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\118\\result.json",
+      "copy": "partial_job/118/result.json",
+      "sha256": "06db0aeb6c8e6e4e689ee100a8907b18948727c14c2d9620ddeef8ea9dace4ce",
+      "bytes": 62959,
+      "last_write_at": "2026-10-02T21:07:55.353131+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\119\\result.json",
+      "copy": "partial_job/119/result.json",
+      "sha256": "df37a93887f5b0b9b77935eb39b829126f2dd9c666adb03485bf22a71060ec4e",
+      "bytes": 70810,
+      "last_write_at": "2026-10-02T21:09:26.182353+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\12\\result.json",
+      "copy": "partial_job/12/result.json",
+      "sha256": "381095d699a2adeac435a4fe46560a4846d2d01e52ac48ed1e0b1fa1c09eb8f6",
+      "bytes": 27190,
+      "last_write_at": "2026-10-02T20:53:43.756204+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\120\\result.json",
+      "copy": "partial_job/120/result.json",
+      "sha256": "48a9054fbc187109986f8e3c6e476a3908a5ac6589d28530d821cae835564efc",
+      "bytes": 58774,
+      "last_write_at": "2026-10-02T21:09:45.209161+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\121\\result.json",
+      "copy": "partial_job/121/result.json",
+      "sha256": "14352aa7af79061becd6b09bbbdaaa8d82f72227d10056ac55507ca2736eca4d",
+      "bytes": 65632,
+      "last_write_at": "2026-10-02T21:08:25.818396+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\122\\result.json",
+      "copy": "partial_job/122/result.json",
+      "sha256": "bac9004fb2cae43142dfe233bbd951455baae3768ebe1e2ff69b2c8eebb79ebe",
+      "bytes": 62736,
+      "last_write_at": "2026-10-02T21:08:11.373929+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\123\\result.json",
+      "copy": "partial_job/123/result.json",
+      "sha256": "fb0ae3d67fa182d8cd40c6a0416588b42a06d58908ddf6b62f0c3dbffffd630e",
+      "bytes": 72381,
+      "last_write_at": "2026-10-02T21:08:40.874734+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\124\\result.json",
+      "copy": "partial_job/124/result.json",
+      "sha256": "a87a75d63bb893b186698bb5e4160d8af083687e0c15a17ae950fc1bd231dde8",
+      "bytes": 69114,
+      "last_write_at": "2026-10-02T21:09:01.687078+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\128\\result.json",
+      "copy": "partial_job/128/result.json",
+      "sha256": "f471203cf62f85121c2e9003edcc0e7556d81a63d5aa4b72e003e00a8db6e687",
+      "bytes": 1549,
+      "last_write_at": "2026-10-02T20:57:46.978412+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\13\\result.json",
+      "copy": "partial_job/13/result.json",
+      "sha256": "679c9e3c09f947c95e419261bc1186945c7f58883cd5a09b7a3f815e311c9dc4",
+      "bytes": 62786,
+      "last_write_at": "2026-10-02T20:56:30.448212+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\130\\result.json",
+      "copy": "partial_job/130/result.json",
+      "sha256": "321c9d336e1d9bb05c84ec40bbedfda2794ad38f352aedd4ceeefccabee11477",
+      "bytes": 895,
+      "last_write_at": "2026-10-02T20:57:31.392889+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\131\\result.json",
+      "copy": "partial_job/131/result.json",
+      "sha256": "55cea6c6b71794cdcc74e88953c6bced164d6dd74941d1b1df9d1ab7431aed76",
+      "bytes": 900,
+      "last_write_at": "2026-10-02T20:58:02.537630+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\132\\result.json",
+      "copy": "partial_job/132/result.json",
+      "sha256": "46e0d2348cd65ab9a83185ab67eec8699c1563010f158049b503c8627e441136",
+      "bytes": 17278,
+      "last_write_at": "2026-10-02T21:07:55.360096+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\133\\result.json",
+      "copy": "partial_job/133/result.json",
+      "sha256": "9c5c6053d65dd6faaa91fcfdba0a165793805bf6ec7d43bd46927ec83307039a",
+      "bytes": 38687,
+      "last_write_at": "2026-10-02T21:12:05.408121+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\134\\result.json",
+      "copy": "partial_job/134/result.json",
+      "sha256": "f5d66f70cd981a28c9f31ad07e6f24810dca4802a3cb06d10b499c4451c1a869",
+      "bytes": 65560,
+      "last_write_at": "2026-10-02T21:11:06.239911+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\135\\result.json",
+      "copy": "partial_job/135/result.json",
+      "sha256": "955c1f4e9c9f7439b2febff501325f67eddd562f829db621e460a205f521657e",
+      "bytes": 59247,
+      "last_write_at": "2026-10-02T21:10:18.315800+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\136\\result.json",
+      "copy": "partial_job/136/result.json",
+      "sha256": "eae6926251b497d89889d67eb86dd04b556a09d996959f839dccca3cd7f229b6",
+      "bytes": 66140,
+      "last_write_at": "2026-10-02T21:11:41.619023+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\137\\result.json",
+      "copy": "partial_job/137/result.json",
+      "sha256": "d589203896a4a62a60645d041677f49594c2cf94f90f9281a54242a085b898d7",
+      "bytes": 61511,
+      "last_write_at": "2026-10-02T21:10:33.409707+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\138\\result.json",
+      "copy": "partial_job/138/result.json",
+      "sha256": "4dde7cad8671ac4ce61da449d66085950139f71f2e12d83f4503e0ee4b7dc644",
+      "bytes": 17922,
+      "last_write_at": "2026-10-02T21:10:35.177377+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\139\\result.json",
+      "copy": "partial_job/139/result.json",
+      "sha256": "bd3548d2fa41009955a3351cbcb3f93a220b94f1782180f1b57390621437ad75",
+      "bytes": 69100,
+      "last_write_at": "2026-10-02T21:11:21.061096+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\14\\result.json",
+      "copy": "partial_job/14/result.json",
+      "sha256": "d1a2b16f8d9a9415d170c6e303f4b12c7df14aae134e5d97b063ac5709e340a0",
+      "bytes": 41636,
+      "last_write_at": "2026-10-02T20:54:48.407802+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\140\\result.json",
+      "copy": "partial_job/140/result.json",
+      "sha256": "d63019704c34bfd9b91362591d790e0e250202936b6f3be566a6caa17cdb1fd7",
+      "bytes": 906,
+      "last_write_at": "2026-10-02T20:59:30.956468+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\141\\result.json",
+      "copy": "partial_job/141/result.json",
+      "sha256": "e4a766ba2b94f7c31023ae38c71029695123e158249b388629cc03463d2cf04e",
+      "bytes": 1111,
+      "last_write_at": "2026-10-02T20:59:32.384192+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\142\\result.json",
+      "copy": "partial_job/142/result.json",
+      "sha256": "6c15bfbfff4c1caecf3892de53dfd3efb4cbab171c1c623a8a39498c9963b8d8",
+      "bytes": 1116,
+      "last_write_at": "2026-10-02T21:00:54.275134+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\143\\result.json",
+      "copy": "partial_job/143/result.json",
+      "sha256": "1f845079b739d0385418a10a93181654a4c1d966a10e0dde784092f5d5ec4192",
+      "bytes": 5403,
+      "last_write_at": "2026-10-02T21:03:09.625007+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\146\\result.json",
+      "copy": "partial_job/146/result.json",
+      "sha256": "309d9eee805e2c7a418b4180246cbbcca3569f4dd9385894241dff99aa61123f",
+      "bytes": 901,
+      "last_write_at": "2026-10-02T21:00:51.469615+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\147\\result.json",
+      "copy": "partial_job/147/result.json",
+      "sha256": "b9773aa7196bfaf9ff3a019e0a821e4949837ae710b0ada72aff4f7ded4313b4",
+      "bytes": 46349,
+      "last_write_at": "2026-10-02T21:11:59.786657+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\148\\result.json",
+      "copy": "partial_job/148/result.json",
+      "sha256": "98c4f76705c85ec5b24a5d8f6ea42f7d6f8ee7ec17e7d6b37e4cfa720ac35799",
+      "bytes": 27231,
+      "last_write_at": "2026-10-02T21:13:39.163334+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\149\\result.json",
+      "copy": "partial_job/149/result.json",
+      "sha256": "68399539e58e7951ecf12c7b8180d21ca41dbf9e34c2c83c37a7d399313f717b",
+      "bytes": 54201,
+      "last_write_at": "2026-10-02T21:11:51.261380+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\15\\result.json",
+      "copy": "partial_job/15/result.json",
+      "sha256": "7bc269bc82c9146ca85909a4f81e10a88737c8acfa97993e6487f1226f9c80d6",
+      "bytes": 60251,
+      "last_write_at": "2026-10-02T20:56:02.687388+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\150\\result.json",
+      "copy": "partial_job/150/result.json",
+      "sha256": "95f79104cc26d846840187ad9930a9b58244386bd843af9f00e9aa5b4554d515",
+      "bytes": 68311,
+      "last_write_at": "2026-10-02T21:13:56.480322+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\151\\result.json",
+      "copy": "partial_job/151/result.json",
+      "sha256": "e507fc7b6db083e964b54204a1c517b7c5ccd7ebc8ef8db373724eca398a0e26",
+      "bytes": 71765,
+      "last_write_at": "2026-10-02T21:13:14.042532+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\152\\result.json",
+      "copy": "partial_job/152/result.json",
+      "sha256": "50d9e603da241eb6a45091c00ba57be1e91d6096dfda3b3414932728ebe877e6",
+      "bytes": 63895,
+      "last_write_at": "2026-10-02T21:13:32.481709+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\153\\result.json",
+      "copy": "partial_job/153/result.json",
+      "sha256": "d5dbe4bff42a6686eb2129aa3f717865067998974b5358d37271fc1ca3dae064",
+      "bytes": 9015,
+      "last_write_at": "2026-10-02T21:12:54.481878+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\154\\result.json",
+      "copy": "partial_job/154/result.json",
+      "sha256": "8632f14927d6b828dd4bcefb08f45125f406519ff5d39d3893bd1a740bed6b77",
+      "bytes": 61918,
+      "last_write_at": "2026-10-02T21:12:52.394151+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\155\\result.json",
+      "copy": "partial_job/155/result.json",
+      "sha256": "c2011267ef021278e68d110895955bfa55a955dec29fda0559fdc7adde12b002",
+      "bytes": 900,
+      "last_write_at": "2026-10-02T21:01:01.420908+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\156\\result.json",
+      "copy": "partial_job/156/result.json",
+      "sha256": "aa5002877f670ca47213c41b145672bfff9c68c133435db5235d68f587bc08fa",
+      "bytes": 1547,
+      "last_write_at": "2026-10-02T21:02:54.932714+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\157\\result.json",
+      "copy": "partial_job/157/result.json",
+      "sha256": "ccadf1bc4640e3dd7bb7563e0368c8cde6ed87cd6ceaf690c0d9244e066bed7f",
+      "bytes": 37892,
+      "last_write_at": "2026-10-02T21:11:27.590000+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\158\\result.json",
+      "copy": "partial_job/158/result.json",
+      "sha256": "dce32ba8067b1768a5e1978058b579646e2cea075e5d62caa4f7110d9f51c040",
+      "bytes": 1332,
+      "last_write_at": "2026-10-02T21:03:09.633868+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\159\\result.json",
+      "copy": "partial_job/159/result.json",
+      "sha256": "403cdeb84edb36e8e561f8b4edf9af8f68af17a85f6ad0751d326450882f6d31",
+      "bytes": 1116,
+      "last_write_at": "2026-10-02T21:01:39.356947+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\16\\result.json",
+      "copy": "partial_job/16/result.json",
+      "sha256": "52adbc11f2e4ab759b3ba72fab59c1bd5b62027d72c70cb53d7fb0b277b0ca0f",
+      "bytes": 30795,
+      "last_write_at": "2026-10-02T20:53:59.177969+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\160\\result.json",
+      "copy": "partial_job/160/result.json",
+      "sha256": "fd3e79a3503f4aa8a5af6672ca242e1e45ab167d76d24b9a555488231d6fb51d",
+      "bytes": 51150,
+      "last_write_at": "2026-10-02T21:12:23.417814+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\161\\result.json",
+      "copy": "partial_job/161/result.json",
+      "sha256": "ef705f3a95b3dd3154c6869e88136796038ad18381f303ba57f61f518703099c",
+      "bytes": 2463,
+      "last_write_at": "2026-10-02T21:03:16.588061+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\162\\result.json",
+      "copy": "partial_job/162/result.json",
+      "sha256": "d587c9ed95aeeb273f7c0d7db405e8a10bfd2c108466e25f441ec46c9d3fe24f",
+      "bytes": 1739,
+      "last_write_at": "2026-10-02T21:05:23.476629+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\163\\result.json",
+      "copy": "partial_job/163/result.json",
+      "sha256": "a03e571668343dc1b37fddfdbb67733906d6a6644602e5503d58a1b575f98d21",
+      "bytes": 59083,
+      "last_write_at": "2026-10-02T21:14:25.834255+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\164\\result.json",
+      "copy": "partial_job/164/result.json",
+      "sha256": "26d20fd4e623465341547e0503957bbd6396056979a3a30fce9ba0f43d5d8d81",
+      "bytes": 14056,
+      "last_write_at": "2026-10-02T21:12:07.246736+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\165\\result.json",
+      "copy": "partial_job/165/result.json",
+      "sha256": "6d0fd971083ba77a52cf45d4c12ad9abe4849dbbd781a6a87e7db20715515f13",
+      "bytes": 56372,
+      "last_write_at": "2026-10-02T21:14:09.360825+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\166\\result.json",
+      "copy": "partial_job/166/result.json",
+      "sha256": "f18a0a9c198bb55ed495b1c9fb288ec0e633b676076588ee83fde8133232edba",
+      "bytes": 48036,
+      "last_write_at": "2026-10-02T21:14:35.463855+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\167\\result.json",
+      "copy": "partial_job/167/result.json",
+      "sha256": "fd6ab1de58cbdf325b3bda753a0ac6c8aedda5db0d9d6729414e95c21de594af",
+      "bytes": 3528,
+      "last_write_at": "2026-10-02T21:05:21.019293+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\168\\result.json",
+      "copy": "partial_job/168/result.json",
+      "sha256": "15a2601d1d3fca46dea76cef56acdb8dc021607b0522bba6f067ead1ce5a11f6",
+      "bytes": 64743,
+      "last_write_at": "2026-10-02T21:16:22.706666+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\169\\result.json",
+      "copy": "partial_job/169/result.json",
+      "sha256": "1f3440deacd8e8607347229a9cb32c16f0a7b5fb6344b6f3d48477ea4fc69235",
+      "bytes": 65596,
+      "last_write_at": "2026-10-02T21:16:54.193787+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\17\\result.json",
+      "copy": "partial_job/17/result.json",
+      "sha256": "1f7f2659543bfb807007f619b93230ddedf1242ec6629bd67fabba1b237e6660",
+      "bytes": 2127,
+      "last_write_at": "2026-10-02T20:52:47.516532+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\170\\result.json",
+      "copy": "partial_job/170/result.json",
+      "sha256": "2520ea857d7e6f0a514b0427e0857a1a2596546aa0309acc0cea7dfee758c096",
+      "bytes": 70977,
+      "last_write_at": "2026-10-02T21:16:03.882960+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\171\\result.json",
+      "copy": "partial_job/171/result.json",
+      "sha256": "1b7ac2c3f26eaf4d7d7328b6fb0187ba48666541944dab69474d951cb0d1d94d",
+      "bytes": 60788,
+      "last_write_at": "2026-10-02T21:16:37.308606+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\172\\result.json",
+      "copy": "partial_job/172/result.json",
+      "sha256": "109c38c54ed77061634d8760d216d75296d8ae4c0a7577994b72c04f79c4c6fa",
+      "bytes": 22755,
+      "last_write_at": "2026-10-02T21:15:10.176238+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\173\\result.json",
+      "copy": "partial_job/173/result.json",
+      "sha256": "19fdeb845c9da8799c6cd68e84c09bb6495fae2b7b18a7586743fb683abfa383",
+      "bytes": 63558,
+      "last_write_at": "2026-10-02T21:15:24.939745+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\174\\result.json",
+      "copy": "partial_job/174/result.json",
+      "sha256": "76545df372821df3464fdf99317f5708445873dea7cd110b4dd9b8e81d851315",
+      "bytes": 1119,
+      "last_write_at": "2026-10-02T21:03:16.594047+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\176\\result.json",
+      "copy": "partial_job/176/result.json",
+      "sha256": "a30816680bc67542335ad83befed6388ff11d1424985958b6de3eedd7c6948b4",
+      "bytes": 67032,
+      "last_write_at": "2026-10-02T21:15:44.739771+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\177\\result.json",
+      "copy": "partial_job/177/result.json",
+      "sha256": "fc9cc986d81113e5ba8b6ec08458ba7cf15d07fe20d32fb2eff69c1b033b3241",
+      "bytes": 1113,
+      "last_write_at": "2026-10-02T21:03:17.914032+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\178\\result.json",
+      "copy": "partial_job/178/result.json",
+      "sha256": "a7aadf3347e385cc21f65bd27a8bf826c3f56900fd081df4dc45b370bda89e76",
+      "bytes": 40104,
+      "last_write_at": "2026-10-02T21:15:05.112956+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\18\\result.json",
+      "copy": "partial_job/18/result.json",
+      "sha256": "800fe61b9830656d7ea40cfc9c8e6b40b435d480b3ce222835881514becf9171",
+      "bytes": 29243,
+      "last_write_at": "2026-10-02T20:54:03.334234+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\180\\result.json",
+      "copy": "partial_job/180/result.json",
+      "sha256": "90a276fd66820c5d58fb561753717a20a4c88432250538939583ae5214e0c757",
+      "bytes": 1108,
+      "last_write_at": "2026-10-02T21:04:04.982221+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\181\\result.json",
+      "copy": "partial_job/181/result.json",
+      "sha256": "a0188780f7fbecad18fe0a09b03fd614163fde012478423e4d1c4889f9768e1f",
+      "bytes": 13026,
+      "last_write_at": "2026-10-02T21:14:52.556773+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\182\\result.json",
+      "copy": "partial_job/182/result.json",
+      "sha256": "e04a71296ac5608d4e991047718a84e71863ef5718ac726fcb1280b983ce4e20",
+      "bytes": 1334,
+      "last_write_at": "2026-10-02T21:05:26.202316+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\183\\result.json",
+      "copy": "partial_job/183/result.json",
+      "sha256": "80fa5d7327d9c2b6b76a745d2107738a2c07f74a37b4412bdf59e2cab50160e4",
+      "bytes": 905,
+      "last_write_at": "2026-10-02T21:05:24.751470+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\184\\result.json",
+      "copy": "partial_job/184/result.json",
+      "sha256": "91f02a7315213624c7bcfb2617d48902114cb5f38a2c3412839e7a2003a83598",
+      "bytes": 60313,
+      "last_write_at": "2026-10-02T21:17:42.710096+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\185\\result.json",
+      "copy": "partial_job/185/result.json",
+      "sha256": "8c97291dc3eea05dcb99a94d5208d814711c26d76505e99601e2f8ebbb2f4c4d",
+      "bytes": 68508,
+      "last_write_at": "2026-10-02T21:19:38.189184+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\186\\result.json",
+      "copy": "partial_job/186/result.json",
+      "sha256": "2f8c7d938b687461b9cd747b4a8e0bd371e4053dc2f50432408b048646196527",
+      "bytes": 33597,
+      "last_write_at": "2026-10-02T21:17:11.998967+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\187\\result.json",
+      "copy": "partial_job/187/result.json",
+      "sha256": "c86bcab6081d28cd849a741f1249f3abc071b6613a813a741e3c0f2ac23bcd3c",
+      "bytes": 69047,
+      "last_write_at": "2026-10-02T21:18:34.710494+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\188\\result.json",
+      "copy": "partial_job/188/result.json",
+      "sha256": "56b5479abf97bc2e9df6e931c3454e5702d1128f3b0fee8a8f2d1b03cf680990",
+      "bytes": 68483,
+      "last_write_at": "2026-10-02T21:19:21.052880+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\189\\result.json",
+      "copy": "partial_job/189/result.json",
+      "sha256": "4176e8bddf170d6a0fd23eddaaaf27acd8ce4e91bdbe972674eac57b851bdc5f",
+      "bytes": 18549,
+      "last_write_at": "2026-10-02T21:17:14.584574+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\19\\result.json",
+      "copy": "partial_job/19/result.json",
+      "sha256": "d7bd4ec5fbc5a8df8e5b75bfbd0d702df7c8325c1dd406cc68db39512208573f",
+      "bytes": 2866,
+      "last_write_at": "2026-10-02T20:52:51.129015+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\190\\result.json",
+      "copy": "partial_job/190/result.json",
+      "sha256": "ee6631e504925489049dbab43a6277c3759d54176a0f48dc5305bd88f66c1438",
+      "bytes": 68012,
+      "last_write_at": "2026-10-02T21:18:49.148800+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\191\\result.json",
+      "copy": "partial_job/191/result.json",
+      "sha256": "f13a69604d2b3e949b6436a8b09b604fdb13636333703a07104f0e2ae5883dbf",
+      "bytes": 63721,
+      "last_write_at": "2026-10-02T21:19:02.536320+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\192\\result.json",
+      "copy": "partial_job/192/result.json",
+      "sha256": "40375fb35e38f9c212f9e2d42332a85a4e6affac63be70edeebb7396f94740f1",
+      "bytes": 61825,
+      "last_write_at": "2026-10-02T21:18:04.046895+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\193\\result.json",
+      "copy": "partial_job/193/result.json",
+      "sha256": "c7cba4acd4e6e91166ddc49e5bbbc64ffc006d60558e26c006199985c49cd8de",
+      "bytes": 61127,
+      "last_write_at": "2026-10-02T21:18:18.074483+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\194\\result.json",
+      "copy": "partial_job/194/result.json",
+      "sha256": "dfd7f0ae6bad94bfe01132e397aaea0cfdf4627b04b374cde201caec11a45c97",
+      "bytes": 19129,
+      "last_write_at": "2026-10-02T21:17:42.719021+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\195\\result.json",
+      "copy": "partial_job/195/result.json",
+      "sha256": "97c199500c44de16a11034968925e5146ae94fc2ae3c4b32d9b1323dc46b60b1",
+      "bytes": 26612,
+      "last_write_at": "2026-10-02T21:17:45.664014+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\196\\result.json",
+      "copy": "partial_job/196/result.json",
+      "sha256": "aa8aa28e1380c9bd3920d1dba63d33aa3236018c8e6945659c60cea5e6ea2e75",
+      "bytes": 64541,
+      "last_write_at": "2026-10-02T21:22:38.197754+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\197\\result.json",
+      "copy": "partial_job/197/result.json",
+      "sha256": "2a3ec503dd41ee0938f2fa7bdc65a79a1e420c90713f788588ca9af9d3a30a87",
+      "bytes": 39042,
+      "last_write_at": "2026-10-02T21:19:55.570369+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\198\\result.json",
+      "copy": "partial_job/198/result.json",
+      "sha256": "490cbe40dea44284187d28ea93ee0e763102d09529c18d923910f3f5f7996b82",
+      "bytes": 70537,
+      "last_write_at": "2026-10-02T21:22:21.991936+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\199\\result.json",
+      "copy": "partial_job/199/result.json",
+      "sha256": "dcfe561dd59e138cf816a2d62557a633b53b845ef04771b2fc1b30966113b123",
+      "bytes": 64497,
+      "last_write_at": "2026-10-02T21:21:32.247322+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\2\\result.json",
+      "copy": "partial_job/2/result.json",
+      "sha256": "0bab32df37f9b2082c9977d62a769d94def5f8aaa02a8fc0ee9035a21c4c0e05",
+      "bytes": 44322,
+      "last_write_at": "2026-10-02T20:54:33.213126+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\20\\result.json",
+      "copy": "partial_job/20/result.json",
+      "sha256": "d1a2ff089e45933c17f1eca4a32d5745b4a2d49cedf1d31110cb9f2316badc42",
+      "bytes": 2773,
+      "last_write_at": "2026-10-02T20:52:51.136086+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\200\\result.json",
+      "copy": "partial_job/200/result.json",
+      "sha256": "66282ba60b9a3681e0b5656beb194a0e2e38ff22829c946b1d1572c92c6599d5",
+      "bytes": 65140,
+      "last_write_at": "2026-10-02T21:20:56.292351+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\201\\result.json",
+      "copy": "partial_job/201/result.json",
+      "sha256": "b41b0f3b9b4ebe1b23f62592c38aadcaf515131d5a738223db9f14516b4f138d",
+      "bytes": 68298,
+      "last_write_at": "2026-10-02T21:22:03.193615+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\202\\result.json",
+      "copy": "partial_job/202/result.json",
+      "sha256": "0e5befb94945008a5a44c29e4728b47bbc933c73f830943fb19324904ecc1220",
+      "bytes": 63604,
+      "last_write_at": "2026-10-02T21:21:45.677665+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\203\\result.json",
+      "copy": "partial_job/203/result.json",
+      "sha256": "b572cc2c463d8ac7b89b1d074994217ab233154ad608c0af551c0309a291dec6",
+      "bytes": 59536,
+      "last_write_at": "2026-10-02T21:20:26.223159+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\204\\result.json",
+      "copy": "partial_job/204/result.json",
+      "sha256": "713ae31e2180d3f5aa2cc1eba793e49133615f54d19a62d9eef9fccae0e913a8",
+      "bytes": 16109,
+      "last_write_at": "2026-10-02T21:17:24.071806+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\205\\result.json",
+      "copy": "partial_job/205/result.json",
+      "sha256": "b3c1094d5984c557326a81424be9fc60c4572b3d5e6b990768efaacf1ac9bbcc",
+      "bytes": 39385,
+      "last_write_at": "2026-10-02T21:20:36.799019+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\206\\result.json",
+      "copy": "partial_job/206/result.json",
+      "sha256": "fc7907ade1ca6179694c693d6e7c65679c9edcddc0eef8bdcc340b0924f44ed4",
+      "bytes": 66218,
+      "last_write_at": "2026-10-02T21:21:13.022901+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\207\\result.json",
+      "copy": "partial_job/207/result.json",
+      "sha256": "cdf31a2ef6073176df55e26d4bb0022fe579aecbf2d38420f251b638deff1efb",
+      "bytes": 6733,
+      "last_write_at": "2026-10-02T21:12:23.422477+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\208\\result.json",
+      "copy": "partial_job/208/result.json",
+      "sha256": "4454af0fe8688fe7c8fa2d49694b62ccf4ce0b2a2dc4d41a20147d1d553878f4",
+      "bytes": 1119,
+      "last_write_at": "2026-10-02T21:07:56.910584+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\209\\result.json",
+      "copy": "partial_job/209/result.json",
+      "sha256": "0d5440ec6d57d50f0acccb4c69c3d55d27fde91ca65ef468f2cb73062537503b",
+      "bytes": 23639,
+      "last_write_at": "2026-10-02T21:19:57.123517+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\21\\result.json",
+      "copy": "partial_job/21/result.json",
+      "sha256": "30a09e0ec75e10836b0c684b960f7b18e0721a81d24f70021248a9ce076bc0d4",
+      "bytes": 29913,
+      "last_write_at": "2026-10-02T20:53:53.075296+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\210\\result.json",
+      "copy": "partial_job/210/result.json",
+      "sha256": "e227ede70ca00ac43fd5767b894acac5dfc14fc427f07da5e8d0c9ab7f3ab9f9",
+      "bytes": 904,
+      "last_write_at": "2026-10-02T21:08:11.378632+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\211\\result.json",
+      "copy": "partial_job/211/result.json",
+      "sha256": "b43b05fd05d8e9a700906acb286a71fafb96636f4db3e4e7dd5a1859a0689b18",
+      "bytes": 1118,
+      "last_write_at": "2026-10-02T21:09:45.215697+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\212\\result.json",
+      "copy": "partial_job/212/result.json",
+      "sha256": "d013c1edab2e83bdaf9a53f1e178474ebf25598d568ece7ede94b26df9eafce2",
+      "bytes": 6245,
+      "last_write_at": "2026-10-02T21:12:31.804789+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\213\\result.json",
+      "copy": "partial_job/213/result.json",
+      "sha256": "5569a9be4e1d6b71c43ae35489ef5260daa3f2650b06d5c542dadec3ba5251d5",
+      "bytes": 23304,
+      "last_write_at": "2026-10-02T21:22:46.976973+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\214\\result.json",
+      "copy": "partial_job/214/result.json",
+      "sha256": "46536783d739e0ddaf75d3ef5b1281d3bba614049ca7ec03c287570dd800d8b1",
+      "bytes": 18006,
+      "last_write_at": "2026-10-02T21:22:38.206536+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\215\\result.json",
+      "copy": "partial_job/215/result.json",
+      "sha256": "be9ca5fedb38b74cf9b7367ca7118a966e44e8dc91ede7708f18c00c054e996d",
+      "bytes": 66549,
+      "last_write_at": "2026-10-02T21:24:39.891499+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\216\\result.json",
+      "copy": "partial_job/216/result.json",
+      "sha256": "e3b1ff388b98cac350bb092b3e1aafe91466b2faa66c79e1638dc14710075913",
+      "bytes": 45721,
+      "last_write_at": "2026-10-02T21:23:17.942971+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\217\\result.json",
+      "copy": "partial_job/217/result.json",
+      "sha256": "f55c060d029d1357d1a746a623d816206b372e4dcdeb6db5b481bedbe328c374",
+      "bytes": 41320,
+      "last_write_at": "2026-10-02T21:23:46.078401+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\218\\result.json",
+      "copy": "partial_job/218/result.json",
+      "sha256": "e1fb5545f21abadcc47cc01c14439e2169a6aedd440cc5306fe072bf3567db98",
+      "bytes": 49166,
+      "last_write_at": "2026-10-02T21:23:02.785899+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\219\\result.json",
+      "copy": "partial_job/219/result.json",
+      "sha256": "4d9fdb5380612095e9a31613befcd68dedd0a2ca40574e2a41df9d2ba01c5e8b",
+      "bytes": 66841,
+      "last_write_at": "2026-10-02T21:24:10.155756+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\22\\result.json",
+      "copy": "partial_job/22/result.json",
+      "sha256": "4d38130904aec62978c8ef1b35e2c42eceea93582e063892fcb8a5b1d8514759",
+      "bytes": 12757,
+      "last_write_at": "2026-10-02T20:53:24.153198+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\220\\result.json",
+      "copy": "partial_job/220/result.json",
+      "sha256": "81975ef05190c7d15f53ceda6235b98f4a01437b145bc45d9c44d48c47488e7e",
+      "bytes": 3037,
+      "last_write_at": "2026-10-02T21:12:05.414516+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\222\\result.json",
+      "copy": "partial_job/222/result.json",
+      "sha256": "0a41b94cc3092071bc20532866cd965f349ca2d90201a0f2852b639e5cef02f5",
+      "bytes": 33926,
+      "last_write_at": "2026-10-02T21:23:23.526851+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\227\\result.json",
+      "copy": "partial_job/227/result.json",
+      "sha256": "2eb3e5c6ef31f11a564230584f84740d1fd102033c7a2c091cfd5e45f67e9124",
+      "bytes": 19588,
+      "last_write_at": "2026-10-02T21:24:50.566723+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\228\\result.json",
+      "copy": "partial_job/228/result.json",
+      "sha256": "210e6208676582b7433ffc3fe2b550d7b0ca772b0d9f9e27ac7eb2be033d6eca",
+      "bytes": 47300,
+      "last_write_at": "2026-10-02T21:23:33.720753+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\229\\result.json",
+      "copy": "partial_job/229/result.json",
+      "sha256": "80cdc30ade9817c9e4c43300c361c733f8177783296406ec7c0805e57c09d499",
+      "bytes": 20017,
+      "last_write_at": "2026-10-02T21:24:45.264981+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\23\\result.json",
+      "copy": "partial_job/23/result.json",
+      "sha256": "8d469b5d67b20e5c936a58848e844cc22762e2245d4d4ab1c48db11603c9a959",
+      "bytes": 61762,
+      "last_write_at": "2026-10-02T20:57:07.908765+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\230\\result.json",
+      "copy": "partial_job/230/result.json",
+      "sha256": "ed1bcc2d57fce8848f1071ccbe6e542ac7004363b11900f2f6ccf148c6ce13de",
+      "bytes": 1335,
+      "last_write_at": "2026-10-02T21:12:07.253184+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\231\\result.json",
+      "copy": "partial_job/231/result.json",
+      "sha256": "252f987405389fd1b2096111a16517d5ee24ed6b2db06808cce76d1a839d0e7d",
+      "bytes": 900,
+      "last_write_at": "2026-10-02T21:12:05.421350+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\232\\result.json",
+      "copy": "partial_job/232/result.json",
+      "sha256": "11f49b5b7aeba491314b32a463b92edce2ca34c581af3776f18bea1810544c60",
+      "bytes": 53719,
+      "last_write_at": "2026-10-02T21:25:07.189142+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\233\\result.json",
+      "copy": "partial_job/233/result.json",
+      "sha256": "26c19ab999014c08bbe02439109b90b2eef9421c72cabf3851b2ec899d20c6dd",
+      "bytes": 44590,
+      "last_write_at": "2026-10-02T21:24:20.852801+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\234\\result.json",
+      "copy": "partial_job/234/result.json",
+      "sha256": "869b802431d637c767da8fec37d0f17c0e5f17da20c430d0a5af99c985762d19",
+      "bytes": 20916,
+      "last_write_at": "2026-10-02T21:24:53.180324+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\235\\result.json",
+      "copy": "partial_job/235/result.json",
+      "sha256": "b51dc745d7e21c468ece73db5f4549cc74996c2a98ae6b4197f0c7948f1f602b",
+      "bytes": 67064,
+      "last_write_at": "2026-10-02T21:25:45.016712+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\236\\result.json",
+      "copy": "partial_job/236/result.json",
+      "sha256": "2eb9289dc1acb8770484621d27f0bdf8e9b9798b075f437bcf4205085b2262df",
+      "bytes": 64071,
+      "last_write_at": "2026-10-02T21:26:14.862030+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\237\\result.json",
+      "copy": "partial_job/237/result.json",
+      "sha256": "fb5363ac8c60c5fe710ca6964b971d63807d4c4983dc0e368918c5d23298f338",
+      "bytes": 51417,
+      "last_write_at": "2026-10-02T21:26:44.455331+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\238\\result.json",
+      "copy": "partial_job/238/result.json",
+      "sha256": "5ce431931633be31302227e4d49c390b8d7bbbb2bcbdf3fb71bb41ecab4f1a5e",
+      "bytes": 66561,
+      "last_write_at": "2026-10-02T21:26:01.423785+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\239\\result.json",
+      "copy": "partial_job/239/result.json",
+      "sha256": "49f4873439813fc3987ce12a34264af8e5c70c13c6ffa31086fea55ca5a0ac3c",
+      "bytes": 30616,
+      "last_write_at": "2026-10-02T21:25:47.719993+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\24\\result.json",
+      "copy": "partial_job/24/result.json",
+      "sha256": "b80ee99d4d2ea9837c1ca98d6b0f7f4d2e68c322cc1048a6f2d01ba8a8883ab6",
+      "bytes": 27050,
+      "last_write_at": "2026-10-02T20:55:26.756162+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\240\\result.json",
+      "copy": "partial_job/240/result.json",
+      "sha256": "06e909a568e3f34805a7d0c96186e6356eb997ce5bf4dfa6cedcd6fee1c95175",
+      "bytes": 27999,
+      "last_write_at": "2026-10-02T21:26:15.724674+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\241\\result.json",
+      "copy": "partial_job/241/result.json",
+      "sha256": "de4e1a61657708b4ce5e06a738e80d9a08220632f17c24f51dc75e6181b9fc9f",
+      "bytes": 20036,
+      "last_write_at": "2026-10-02T21:25:47.725094+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\242\\result.json",
+      "copy": "partial_job/242/result.json",
+      "sha256": "dd477a98b26e1dac92d42d59a14cc5bf31f83fcd317aebaa615a058dc94a4fb7",
+      "bytes": 62537,
+      "last_write_at": "2026-10-02T21:26:32.953455+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\243\\result.json",
+      "copy": "partial_job/243/result.json",
+      "sha256": "9054721e6c129df2814fc2c8fe029cebeb249e99d887e547a935c48062efc971",
+      "bytes": 19602,
+      "last_write_at": "2026-10-02T21:26:17.364749+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\244\\result.json",
+      "copy": "partial_job/244/result.json",
+      "sha256": "16827d31bbf68e24cd6a30efc9f587e28a414fb904996e8fd14edb347e40819f",
+      "bytes": 2117,
+      "last_write_at": "2026-10-02T21:14:39.606404+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\246\\result.json",
+      "copy": "partial_job/246/result.json",
+      "sha256": "71720411895475a32cf24166ce4d08fa7802070024017014065d08e1c487ae95",
+      "bytes": 12344,
+      "last_write_at": "2026-10-02T21:22:40.098879+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\248\\result.json",
+      "copy": "partial_job/248/result.json",
+      "sha256": "1a527685d69254230e841d31bc0c70f2bf2c246336dff32f0d9136681f05f48d",
+      "bytes": 17394,
+      "last_write_at": "2026-10-02T21:25:22.958321+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\249\\result.json",
+      "copy": "partial_job/249/result.json",
+      "sha256": "30cadc3f9519a416a74684de070dffab7f7b08e9fac881c5d7dd5e5de21c6351",
+      "bytes": 56565,
+      "last_write_at": "2026-10-02T21:27:08.735695+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\25\\result.json",
+      "copy": "partial_job/25/result.json",
+      "sha256": "7865d7b4f76d02725012c74d0faa05351b7c21c73a242c47b36049dd681fc4bb",
+      "bytes": 3188,
+      "last_write_at": "2026-10-02T20:52:51.155565+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\250\\result.json",
+      "copy": "partial_job/250/result.json",
+      "sha256": "0310a9ae3848863bac0be57137cd2594481217a57b3326ee6d602471dad9c823",
+      "bytes": 48104,
+      "last_write_at": "2026-10-02T21:26:57.612738+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\251\\result.json",
+      "copy": "partial_job/251/result.json",
+      "sha256": "1738f00efc9af49efd770152679800f0b12b44a9542184639615d8f85ae9e628",
+      "bytes": 45452,
+      "last_write_at": "2026-10-02T21:27:22.611031+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\254\\result.json",
+      "copy": "partial_job/254/result.json",
+      "sha256": "6fcf565eb146dd2479fd9bcab12a7b4b426998e88c543f235b14550e2227aa01",
+      "bytes": 17707,
+      "last_write_at": "2026-10-02T21:27:22.619218+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\256\\result.json",
+      "copy": "partial_job/256/result.json",
+      "sha256": "ad8d9c20c2af705f29677da1418d844881dceece9954b12d033bca1acddc3f37",
+      "bytes": 2610,
+      "last_write_at": "2026-10-02T21:16:54.202304+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\257\\result.json",
+      "copy": "partial_job/257/result.json",
+      "sha256": "d8e47e9b2e15e32ccb56a89bf7219855374cb20b2b51b02314b63bc4097beb41",
+      "bytes": 905,
+      "last_write_at": "2026-10-02T21:14:50.302868+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\26\\result.json",
+      "copy": "partial_job/26/result.json",
+      "sha256": "8866240ec47f5c3682ec1e26fb76cda10a53dfe6304613ae72435914a7198569",
+      "bytes": 27151,
+      "last_write_at": "2026-10-02T20:54:07.131185+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\263\\result.json",
+      "copy": "partial_job/263/result.json",
+      "sha256": "454c1bf6de7bf5bb68296b7a581464c318caea8b189a9dc501255fee0ec5c849",
+      "bytes": 902,
+      "last_write_at": "2026-10-02T21:15:05.121722+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\264\\result.json",
+      "copy": "partial_job/264/result.json",
+      "sha256": "bf6acb86efcae74ca0de7f78e3ba317fc183f57a43d9bd00325209e0d720ea3a",
+      "bytes": 903,
+      "last_write_at": "2026-10-02T21:15:05.181858+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\265\\result.json",
+      "copy": "partial_job/265/result.json",
+      "sha256": "a5ade0b79bcae4b4b8ea8c90e1ede15e384c3623656510bcaf2b2280287e1dfd",
+      "bytes": 906,
+      "last_write_at": "2026-10-02T21:16:37.316142+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\27\\result.json",
+      "copy": "partial_job/27/result.json",
+      "sha256": "1c99644a4251a312f77e486f2b1417d8c1a8e51309bf01b3cc2a1d014e688b38",
+      "bytes": 11758,
+      "last_write_at": "2026-10-02T20:53:22.011114+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\28\\result.json",
+      "copy": "partial_job/28/result.json",
+      "sha256": "271e1087b31f45bc23fe68b0335bf49416cfe849803b60f2b9ece33266fdedf9",
+      "bytes": 28011,
+      "last_write_at": "2026-10-02T20:55:48.766377+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\284\\result.json",
+      "copy": "partial_job/284/result.json",
+      "sha256": "e7005115d984257eff531e587c217c748af5a6b59471bdd2b847c512f8ee5e41",
+      "bytes": 906,
+      "last_write_at": "2026-10-02T21:17:19.198983+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\285\\result.json",
+      "copy": "partial_job/285/result.json",
+      "sha256": "6cc0925f3b72fb4b13d9d119d6e34e300d1d9aaa0b3ee473fea1b8d945a7a5d7",
+      "bytes": 905,
+      "last_write_at": "2026-10-02T21:19:38.196219+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\29\\result.json",
+      "copy": "partial_job/29/result.json",
+      "sha256": "06a68561e732e1f4e062af5007518bafe3d1e6e308bb5437f4c267e647d0b152",
+      "bytes": 11378,
+      "last_write_at": "2026-10-02T20:53:11.742266+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\291\\result.json",
+      "copy": "partial_job/291/result.json",
+      "sha256": "0a6ca0e7f2cfec3bf5a1cb2d372281a859c38bdfa7fa5d6fa462a6fb0a77dc58",
+      "bytes": 1334,
+      "last_write_at": "2026-10-02T21:20:26.228667+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\3\\result.json",
+      "copy": "partial_job/3/result.json",
+      "sha256": "5d3607fb856a51535f5093f7206d91defdea90d89a6d4bcdeff9800ae133757d",
+      "bytes": 42984,
+      "last_write_at": "2026-10-02T20:54:41.845148+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\30\\result.json",
+      "copy": "partial_job/30/result.json",
+      "sha256": "8dfb28bab8498adc47eaf013fc3445ce5c56fea1ff9fc3a08c007f72d57c51f4",
+      "bytes": 12727,
+      "last_write_at": "2026-10-02T20:53:08.212679+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\301\\result.json",
+      "copy": "partial_job/301/result.json",
+      "sha256": "4e799ac27032064b8227c3613494888bde638e5535923db6fe96e1625d396f87",
+      "bytes": 902,
+      "last_write_at": "2026-10-02T21:22:42.026097+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\31\\result.json",
+      "copy": "partial_job/31/result.json",
+      "sha256": "f7119cb1de2f2883b59dbe2dabd77d1aaff8ab14253742b1caa801caf6299f7d",
+      "bytes": 15390,
+      "last_write_at": "2026-10-02T20:54:11.715211+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\314\\result.json",
+      "copy": "partial_job/314/result.json",
+      "sha256": "f28a28c26d26a299b2674c72ca436e64ba106691cd5e0f8487bcd38c2c7cc41b",
+      "bytes": 904,
+      "last_write_at": "2026-10-02T21:23:33.727255+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\315\\result.json",
+      "copy": "partial_job/315/result.json",
+      "sha256": "732eb070bb17f71fe66b18a8e6ce1f2161424475adb6827309f3a9c615df9b64",
+      "bytes": 900,
+      "last_write_at": "2026-10-02T21:23:37.803337+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\316\\result.json",
+      "copy": "partial_job/316/result.json",
+      "sha256": "94460408e262cb6e9a94404cb03045be5880077f5c5fd03c93904aa73041662c",
+      "bytes": 2184,
+      "last_write_at": "2026-10-02T21:26:32.957875+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\317\\result.json",
+      "copy": "partial_job/317/result.json",
+      "sha256": "b9c48e963991c472dcc6e3379051632dcc1e418afd1acb064b89d26aefa147cf",
+      "bytes": 1955,
+      "last_write_at": "2026-10-02T21:26:01.428488+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\318\\result.json",
+      "copy": "partial_job/318/result.json",
+      "sha256": "afe6fb6b3f5dae6b6fc4d11a182c3522937ae1035ecec6620afe3d2b0a2c9ddb",
+      "bytes": 902,
+      "last_write_at": "2026-10-02T21:24:45.270127+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\32\\result.json",
+      "copy": "partial_job/32/result.json",
+      "sha256": "c7bb2162c4fba376d8bbd324f9651a6245bb38597b6c7d937495f7b5160416aa",
+      "bytes": 15225,
+      "last_write_at": "2026-10-02T20:53:13.990558+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\33\\result.json",
+      "copy": "partial_job/33/result.json",
+      "sha256": "e5294a6ef61711c4df2f9118084bbdb3ed19acf7d83e4af2bf35513c9954c140",
+      "bytes": 56848,
+      "last_write_at": "2026-10-02T20:56:38.964261+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\331\\result.json",
+      "copy": "partial_job/331/result.json",
+      "sha256": "28e32716778f12a11371394bab62eb3030974ab44ac3ac32775d79d035ef2a17",
+      "bytes": 1333,
+      "last_write_at": "2026-10-02T21:25:20.423199+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\333\\result.json",
+      "copy": "partial_job/333/result.json",
+      "sha256": "5099362d2aef8d092fcfaab679d32236f52822b4e2f7f6c6bcbbf08d45ab120a",
+      "bytes": 1334,
+      "last_write_at": "2026-10-02T21:26:32.961723+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\335\\result.json",
+      "copy": "partial_job/335/result.json",
+      "sha256": "692c5d0233ce24e5ce39e53fd8be586a5c9f1dc03d0f0499a97d0143db4814ce",
+      "bytes": 1114,
+      "last_write_at": "2026-10-02T21:26:17.369551+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\338\\result.json",
+      "copy": "partial_job/338/result.json",
+      "sha256": "06c0b501563378dd6f4d8fa8778b66ef3a6089a8bccba56eadd6b92cf982b142",
+      "bytes": 1959,
+      "last_write_at": "2026-10-02T21:26:57.616203+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\34\\result.json",
+      "copy": "partial_job/34/result.json",
+      "sha256": "803e1d62cf2324388105dab7e3866b34bcd771def2e3947a9c7c8d2106552157",
+      "bytes": 44741,
+      "last_write_at": "2026-10-02T20:55:06.181696+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\341\\result.json",
+      "copy": "partial_job/341/result.json",
+      "sha256": "235d1ef560b4940379b070dcf91d13b812b6640bda5052db4037e05399e4ea0d",
+      "bytes": 897,
+      "last_write_at": "2026-10-02T21:26:57.619358+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\342\\result.json",
+      "copy": "partial_job/342/result.json",
+      "sha256": "0309aff7b9e61bda7166235663e2f7f6cbb084e5a3b2de4a4b2561654f6608ab",
+      "bytes": 1121,
+      "last_write_at": "2026-10-02T21:27:10.677509+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\35\\result.json",
+      "copy": "partial_job/35/result.json",
+      "sha256": "d32eed91e701aa75f1b9ae190d86dca478e4630667f167733883d5f14898a9ac",
+      "bytes": 19910,
+      "last_write_at": "2026-10-02T20:54:10.126373+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\356\\result.json",
+      "copy": "partial_job/356/result.json",
+      "sha256": "f305cdb175b6274a8ae0a296daa4add01b947e869dc0f1422e2cd6a2ccf12ded",
+      "bytes": 905,
+      "last_write_at": "2026-10-02T21:27:25.004614+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\36\\result.json",
+      "copy": "partial_job/36/result.json",
+      "sha256": "e4593c13306246955d507895c92c2964f00eb7fdfbb86053729a855b995172dc",
+      "bytes": 13310,
+      "last_write_at": "2026-10-02T20:55:42.879538+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\37\\result.json",
+      "copy": "partial_job/37/result.json",
+      "sha256": "60a016954306009e627649cdb5a3551e364ab498dd74b159248d2042cf1fede9",
+      "bytes": 44489,
+      "last_write_at": "2026-10-02T20:57:14.007978+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\38\\result.json",
+      "copy": "partial_job/38/result.json",
+      "sha256": "c6af16777c95e56a4b0045dba8c7c5f899cf571f0c6fd53814e3f70ac15170e3",
+      "bytes": 16544,
+      "last_write_at": "2026-10-02T20:56:38.972592+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\39\\result.json",
+      "copy": "partial_job/39/result.json",
+      "sha256": "313a4dbca7f37d50ebe63777a85792869b754d7274a1895d69457624c384039a",
+      "bytes": 7020,
+      "last_write_at": "2026-10-02T20:53:27.760665+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\4\\result.json",
+      "copy": "partial_job/4/result.json",
+      "sha256": "61f86cc56574a9ce922be4bcbac92342f3aa43b2f7b41d7343debbf5022eba6c",
+      "bytes": 17146,
+      "last_write_at": "2026-10-02T20:53:19.124262+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\40\\result.json",
+      "copy": "partial_job/40/result.json",
+      "sha256": "8c4b795f3d1805401b4795462fb7adb33aa752d9bd019f343515a83cbee7554b",
+      "bytes": 12457,
+      "last_write_at": "2026-10-02T20:54:33.221778+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\41\\result.json",
+      "copy": "partial_job/41/result.json",
+      "sha256": "fa8cda1950342ea6334fa36acfc88e8ff4141d11c9919b0218971f3d724cbd85",
+      "bytes": 1733,
+      "last_write_at": "2026-10-02T20:52:45.081624+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\42\\result.json",
+      "copy": "partial_job/42/result.json",
+      "sha256": "535eb811cd5114f93702a6b8d0df92f08e3fed8b4647ee849cc9829439499b07",
+      "bytes": 15052,
+      "last_write_at": "2026-10-02T20:55:38.246539+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\43\\result.json",
+      "copy": "partial_job/43/result.json",
+      "sha256": "e3e421b9e76a12a1929a272d9d875549b22cf6e3e9ed8675abb621acb6028113",
+      "bytes": 31706,
+      "last_write_at": "2026-10-02T20:55:41.633039+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\44\\result.json",
+      "copy": "partial_job/44/result.json",
+      "sha256": "54c1a72b4a42f451bf1123db4a7acf456ad91d3a820d3dca513229d4bb0f68ad",
+      "bytes": 3207,
+      "last_write_at": "2026-10-02T20:52:53.657722+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\45\\result.json",
+      "copy": "partial_job/45/result.json",
+      "sha256": "0f477dc6cab8b154e0df667a6cf020c3cb7e9a67c6960b97d4a126a9794be289",
+      "bytes": 10382,
+      "last_write_at": "2026-10-02T20:54:14.003897+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\46\\result.json",
+      "copy": "partial_job/46/result.json",
+      "sha256": "dd247acb52d374a6c7b85b506a27acad6af81ac07a2ae11d06126e9b7ae18a01",
+      "bytes": 17895,
+      "last_write_at": "2026-10-02T20:57:15.364073+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\47\\result.json",
+      "copy": "partial_job/47/result.json",
+      "sha256": "2bd9a08a0d1cd8c8530ea4a8f54463ea483aa877dc8d848a6fb9602010da3217",
+      "bytes": 892,
+      "last_write_at": "2026-10-02T20:52:40.258870+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\48\\result.json",
+      "copy": "partial_job/48/result.json",
+      "sha256": "0d12f50a663d9ea4179e1bf8bc5c3be086eae871883f8bf06c191eaaf95c889c",
+      "bytes": 66436,
+      "last_write_at": "2026-10-02T20:59:00.773883+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\49\\result.json",
+      "copy": "partial_job/49/result.json",
+      "sha256": "fae1225702161a24b3968fbe68f3378e41640cc93049344a0db45eeeaef0ecfb",
+      "bytes": 66732,
+      "last_write_at": "2026-10-02T20:59:14.762715+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\5\\result.json",
+      "copy": "partial_job/5/result.json",
+      "sha256": "53b24ffe719744865660a2defb9080f3b88da517dfbcbd416a858a3f0944b61a",
+      "bytes": 61154,
+      "last_write_at": "2026-10-02T20:56:15.748363+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\50\\result.json",
+      "copy": "partial_job/50/result.json",
+      "sha256": "19797b25b78edba0edaee41dd82879905c871966d4697f89ff47f062db0981e9",
+      "bytes": 17994,
+      "last_write_at": "2026-10-02T20:57:18.062544+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\51\\result.json",
+      "copy": "partial_job/51/result.json",
+      "sha256": "c3228de00f7024bf62515f794f59cdd3c369144784352404d61107f6278f5d1b",
+      "bytes": 70645,
+      "last_write_at": "2026-10-02T20:58:02.531669+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\52\\result.json",
+      "copy": "partial_job/52/result.json",
+      "sha256": "c74a94668fa3eaa40da0db227e638aa4f045cc3a5991654691121086a3113370",
+      "bytes": 67230,
+      "last_write_at": "2026-10-02T20:58:17.083836+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\53\\result.json",
+      "copy": "partial_job/53/result.json",
+      "sha256": "ff4a92dff09ad082f224a31af62cff624750052b5f1f35de009f7f9fa2bbcd01",
+      "bytes": 64916,
+      "last_write_at": "2026-10-02T20:58:31.208999+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\54\\result.json",
+      "copy": "partial_job/54/result.json",
+      "sha256": "b925c813bbf796f5f3f3778a3d2e7dd7c1281e7159b7cc600483ece032538cf3",
+      "bytes": 66104,
+      "last_write_at": "2026-10-02T20:58:44.281906+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\55\\result.json",
+      "copy": "partial_job/55/result.json",
+      "sha256": "bad8b0c59bf8699c015d7a25f4c364c76937e2970ea21cc4a9eae60b8a707ca4",
+      "bytes": 67082,
+      "last_write_at": "2026-10-02T20:57:46.971880+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\56\\result.json",
+      "copy": "partial_job/56/result.json",
+      "sha256": "31339bc3258ca234d34df7b36d8ff0beb0c049e58790aa97343d642bed324451",
+      "bytes": 2843,
+      "last_write_at": "2026-10-02T20:52:52.425123+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\57\\result.json",
+      "copy": "partial_job/57/result.json",
+      "sha256": "5e69a7bafdd54fb99fd122bab62e2f36b447b7110115db603ba6e52bbdc6e4c9",
+      "bytes": 27834,
+      "last_write_at": "2026-10-02T20:57:31.386363+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\58\\result.json",
+      "copy": "partial_job/58/result.json",
+      "sha256": "9101a1dda95959f1093f0050d908949d184a243b59f466cc9be7078a66522fcc",
+      "bytes": 3631,
+      "last_write_at": "2026-10-02T20:52:57.468404+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\59\\result.json",
+      "copy": "partial_job/59/result.json",
+      "sha256": "5e9eefbc4ec2478cadaef78d54fd005d1bf02fcc2b0e8ef957143f89e2464854",
+      "bytes": 6283,
+      "last_write_at": "2026-10-02T20:54:19.195186+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\6\\result.json",
+      "copy": "partial_job/6/result.json",
+      "sha256": "57122618f763499d66952e1f571f4d4cdae42b647bbb9ea1d107c55778572c5b",
+      "bytes": 62220,
+      "last_write_at": "2026-10-02T20:56:52.937907+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\60\\result.json",
+      "copy": "partial_job/60/result.json",
+      "sha256": "8c3ead498b023c14997f20a047780e03e9986c16b8759e1826ee5577bfaadfd8",
+      "bytes": 19081,
+      "last_write_at": "2026-10-02T20:59:14.770346+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\61\\result.json",
+      "copy": "partial_job/61/result.json",
+      "sha256": "0d22fd7e47d321d6d02ef9f4823fd73eb2e254d373119eb7c94f21cbc4abe4af",
+      "bytes": 36906,
+      "last_write_at": "2026-10-02T20:59:19.304369+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\62\\result.json",
+      "copy": "partial_job/62/result.json",
+      "sha256": "4d8915a342c47c028429a1db513cba120f64b4fd882b1ba45be40d1bf01b2381",
+      "bytes": 1101,
+      "last_write_at": "2026-10-02T20:52:51.159085+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\63\\result.json",
+      "copy": "partial_job/63/result.json",
+      "sha256": "7ee4572c5c35a8ce07380edec470d0721cff30b015e1f06e43dd22faf47dbfd2",
+      "bytes": 1637,
+      "last_write_at": "2026-10-02T20:53:00.222203+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\65\\result.json",
+      "copy": "partial_job/65/result.json",
+      "sha256": "08345d7681b0fc9b5dc59109de4f9675a0a2ac46204652b5fbb5fc87eae059cd",
+      "bytes": 1113,
+      "last_write_at": "2026-10-02T20:52:54.875765+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\66\\result.json",
+      "copy": "partial_job/66/result.json",
+      "sha256": "5b1647bae6f2467c08a1113eaec64a874f8bb5a8aedb6d6a9862f3cd8842fd85",
+      "bytes": 1538,
+      "last_write_at": "2026-10-02T20:54:07.137573+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\67\\result.json",
+      "copy": "partial_job/67/result.json",
+      "sha256": "b99b2b4b375b470d7b5e155f175aa093f552656582a6e279cda579e55e567f65",
+      "bytes": 896,
+      "last_write_at": "2026-10-02T20:52:57.473302+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\68\\result.json",
+      "copy": "partial_job/68/result.json",
+      "sha256": "77eba7791778e8c4a14aa117d16d4f23dc3fcbed65aea33516a8cf1a66c7f7be",
+      "bytes": 37025,
+      "last_write_at": "2026-10-02T21:00:37.749975+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\69\\result.json",
+      "copy": "partial_job/69/result.json",
+      "sha256": "b2e9ec8493957091c8b937581427fb95956fa2b088acd04620d1a94218b772e8",
+      "bytes": 69950,
+      "last_write_at": "2026-10-02T21:00:17.564950+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\7\\result.json",
+      "copy": "partial_job/7/result.json",
+      "sha256": "ee5348aeaf264daf51a8364d3e077055b2cabe672e98fa85ac2f49da508650ae",
+      "bytes": 2155,
+      "last_write_at": "2026-10-02T20:52:47.509118+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\70\\result.json",
+      "copy": "partial_job/70/result.json",
+      "sha256": "71807a52281858db0932a4c36048bd3e91c36d3e71c8c87cc46d773982562453",
+      "bytes": 17834,
+      "last_write_at": "2026-10-02T20:59:33.891815+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\71\\result.json",
+      "copy": "partial_job/71/result.json",
+      "sha256": "4509978630dff4e5e353f2781a7943a126c5a801aef13d179067b178e5d79ec7",
+      "bytes": 1103,
+      "last_write_at": "2026-10-02T20:53:05.628448+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\72\\result.json",
+      "copy": "partial_job/72/result.json",
+      "sha256": "dc4295f83f3b6fc83510b370f24892616f0168692de6dff654752ef3ce9d6c9c",
+      "bytes": 69820,
+      "last_write_at": "2026-10-02T21:00:50.010998+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\73\\result.json",
+      "copy": "partial_job/73/result.json",
+      "sha256": "e4b308744f4dde1eda76d90ebccf0c2ef7526a8fc073d411339e7cc959ec5330",
+      "bytes": 68328,
+      "last_write_at": "2026-10-02T20:59:51.790183+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\74\\result.json",
+      "copy": "partial_job/74/result.json",
+      "sha256": "c419c5b24233faf8cbeaf8e7c3c8a3c86f7e17b448f28d3d93585b8c84184eac",
+      "bytes": 64420,
+      "last_write_at": "2026-10-02T21:00:29.800609+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\75\\result.json",
+      "copy": "partial_job/75/result.json",
+      "sha256": "08a8dec36270f22325baa5fda7b02eb6eb57c81597c489d65b579a854a57ea5f",
+      "bytes": 61817,
+      "last_write_at": "2026-10-02T21:00:02.780565+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\76\\result.json",
+      "copy": "partial_job/76/result.json",
+      "sha256": "81c8f8abe1d46a41736ba0c5bbe528e4ec9050c03f1078bd12244d8d70298684",
+      "bytes": 3235,
+      "last_write_at": "2026-10-02T20:54:19.200948+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\77\\result.json",
+      "copy": "partial_job/77/result.json",
+      "sha256": "45075adadb625873b176becac48451d16dcc0e6859056b9ffafae4d87696cda7",
+      "bytes": 1736,
+      "last_write_at": "2026-10-02T20:54:16.486437+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\78\\result.json",
+      "copy": "partial_job/78/result.json",
+      "sha256": "9474b02386dea931d2552c85e5810a73135ea43cdd03d4654aec3740c043e7d6",
+      "bytes": 58854,
+      "last_write_at": "2026-10-02T21:03:05.692450+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\79\\result.json",
+      "copy": "partial_job/79/result.json",
+      "sha256": "d320f9238c6640f1e7b44a4f9d0090384df4cd503f66f00c18c0dca7345dc735",
+      "bytes": 65639,
+      "last_write_at": "2026-10-02T21:01:53.681306+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\8\\result.json",
+      "copy": "partial_job/8/result.json",
+      "sha256": "7492d5d361b074ec315f975094273795b260861bacaa1ff3123be1818b2a59f3",
+      "bytes": 26334,
+      "last_write_at": "2026-10-02T20:53:49.024137+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\80\\result.json",
+      "copy": "partial_job/80/result.json",
+      "sha256": "7a47a2662f9dcbe6c1322e014145d287432513b55726c017498c879e8f21f0b0",
+      "bytes": 64701,
+      "last_write_at": "2026-10-02T21:02:48.891044+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\81\\result.json",
+      "copy": "partial_job/81/result.json",
+      "sha256": "67f617883a41a52d17ec1aeabb22033e49df6aa61410bab48e48ccb4a6d375a5",
+      "bytes": 43961,
+      "last_write_at": "2026-10-02T21:02:54.926410+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\82\\result.json",
+      "copy": "partial_job/82/result.json",
+      "sha256": "99549fa4b05c3802586ef9237371a04b6ae59207b87a21be4fb280979274ea69",
+      "bytes": 68469,
+      "last_write_at": "2026-10-02T21:01:23.235141+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\83\\result.json",
+      "copy": "partial_job/83/result.json",
+      "sha256": "b379f2b4cd71bd47499634454b34d946df6599d13a1d4ed74189bee965f5f905",
+      "bytes": 70687,
+      "last_write_at": "2026-10-02T21:02:23.804638+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\84\\result.json",
+      "copy": "partial_job/84/result.json",
+      "sha256": "419ab17a3015bb10e6ea0359f629e1e5a03ad2c62cfca59c8b4bc8711dfd8338",
+      "bytes": 69489,
+      "last_write_at": "2026-10-02T21:02:35.961635+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\85\\result.json",
+      "copy": "partial_job/85/result.json",
+      "sha256": "7f8fd37f48e5b321f3ef419eee99e24a9a6f68e8b391fcd2b0d477a0ca384f7a",
+      "bytes": 69295,
+      "last_write_at": "2026-10-02T21:02:09.056189+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\86\\result.json",
+      "copy": "partial_job/86/result.json",
+      "sha256": "3921e4a093b09778daf6c3f5a8765f6522baf94a829fb87cd4f407885dd759b1",
+      "bytes": 70078,
+      "last_write_at": "2026-10-02T21:01:39.350760+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\87\\result.json",
+      "copy": "partial_job/87/result.json",
+      "sha256": "0c8f65f008d4f5d1c91390f7ddfe4aaafdab8bc7a1b12fe6b9f9fcd27f5f1be8",
+      "bytes": 3429,
+      "last_write_at": "2026-10-02T20:54:14.009073+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\88\\result.json",
+      "copy": "partial_job/88/result.json",
+      "sha256": "230829b6009356b2db8ee733683d2616a099889456b92606fad2c7c37c28f0e0",
+      "bytes": 67158,
+      "last_write_at": "2026-10-02T21:04:20.391505+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\89\\result.json",
+      "copy": "partial_job/89/result.json",
+      "sha256": "98e1860350e3d4b6c959fc9493059e23090a003d9f44e83da9f9a0dc80ab5fef",
+      "bytes": 64596,
+      "last_write_at": "2026-10-02T21:05:15.009948+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\9\\result.json",
+      "copy": "partial_job/9/result.json",
+      "sha256": "7aef9dc48133e11aa2cd1c8f16ba0e94aa8c892634099b9442964136bc558a92",
+      "bytes": 45704,
+      "last_write_at": "2026-10-02T20:55:16.090448+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\90\\result.json",
+      "copy": "partial_job/90/result.json",
+      "sha256": "2e761c340260d81617ea709dbdfefdf52bafa0e14794823bb0752e81dff5bc5e",
+      "bytes": 20645,
+      "last_write_at": "2026-10-02T21:05:22.260794+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\91\\result.json",
+      "copy": "partial_job/91/result.json",
+      "sha256": "293c21e4b8562018ee52a86bd3a2a4de4a2976e42e04ca32fb78676a7dcd3c7e",
+      "bytes": 9682,
+      "last_write_at": "2026-10-02T20:59:25.211901+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\92\\result.json",
+      "copy": "partial_job/92/result.json",
+      "sha256": "de54cfcca10edb27fb7375e3ba6fe91da6bd012045da3a575216cd0696bf3834",
+      "bytes": 39406,
+      "last_write_at": "2026-10-02T21:05:19.790296+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\93\\result.json",
+      "copy": "partial_job/93/result.json",
+      "sha256": "a2e322a6760924d2cee3c49435d1912d3f933fd32df631c75b719c6e62e87098",
+      "bytes": 72471,
+      "last_write_at": "2026-10-02T21:04:35.104212+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\94\\result.json",
+      "copy": "partial_job/94/result.json",
+      "sha256": "01baae506546a3cf9488f3d74bd07ff752f35be623027c4566c9263bcd24b5d9",
+      "bytes": 68347,
+      "last_write_at": "2026-10-02T21:04:48.780466+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\95\\result.json",
+      "copy": "partial_job/95/result.json",
+      "sha256": "d789cde05c12f63ec892b9300fd732f7b1c83db67715867147b385e8965fa1d8",
+      "bytes": 66658,
+      "last_write_at": "2026-10-02T21:03:50.910063+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\96\\result.json",
+      "copy": "partial_job/96/result.json",
+      "sha256": "56cc517f46568685103024d8d8ddf802c60b3603c608ed4af80e7af3d1c13436",
+      "bytes": 65497,
+      "last_write_at": "2026-10-02T21:05:02.537925+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\97\\result.json",
+      "copy": "partial_job/97/result.json",
+      "sha256": "b6071d85db53a2ad265fde0c0306586f20266ca0e1c3a1e31751847a5196a7d0",
+      "bytes": 68450,
+      "last_write_at": "2026-10-02T21:04:04.975540+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\98\\result.json",
+      "copy": "partial_job/98/result.json",
+      "sha256": "1eed1403401f5b1e2185cf1145b366ee3673a3a8e84bef68d56f8349e81a76c8",
+      "bytes": 70236,
+      "last_write_at": "2026-10-02T21:03:36.019068+02:00"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\results\\78b4a03ccaa549de96ecd88c5efb5806\\99\\result.json",
+      "copy": "partial_job/99/result.json",
+      "sha256": "c9f61e8eeec40d66bf844fe70b84f16046654ed213ed3caa671974479e9be938",
+      "bytes": 1102,
+      "last_write_at": "2026-10-02T20:54:49.557859+02:00"
+    }
+  ],
+  "scope": "Failed full-video execution, not a motion-accuracy failure. Partial outputs are not a completed grading report. Health 200 does not imply successful analysis."
+}

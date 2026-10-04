@@ -1,0 +1,68 @@
+{
+  "verified_at": "2026-10-04T09:11:59.556734+00:00",
+  "measured_algorithm_sha256": "ed3328de998abba50cf9c135957176649bc2d2ef51ededc9eeed90be1bffc9af",
+  "final_algorithm_sha256": "cf6c2dd19968f0c159a7e2ecb8d781eee0206a88d0bab104df8d087023706745",
+  "only_executable_difference": "One additional s.max_pair_angle_deg <= 20 predicate in failed-coarse native retry eligibility.",
+  "whole_algorithm_AST_identical_after_removing_one_predicate": true,
+  "changed_predicate_line": 935,
+  "tested_20_degree_profiles": {
+    "candidate_03": {
+      "report_sha256": "4c0d27f95cb1c9606ce8b61d7c09a3b89915ce3a27ce7a3881caa6ba0bcd0ea6",
+      "maximum_pair_angle_deg_by_case": {
+        "full_turn_x12_linear_additive_texture_a": 20.0,
+        "full_turn_x12_linear_additive_texture_b": 20.0,
+        "full_turn_x12_lambertian_multiplicative_texture_a": 20.0,
+        "full_turn_x12_lambertian_multiplicative_texture_b": 20.0,
+        "short_xy_linear_additive_texture_a": 20.0,
+        "short_xy_linear_additive_texture_b": 20.0,
+        "short_xy_lambertian_multiplicative_texture_a": 20.0,
+        "short_xy_lambertian_multiplicative_texture_b": 20.0,
+        "stationary_120_linear_additive_texture_a": 20.0,
+        "stationary_120_linear_additive_texture_b": 20.0,
+        "stationary_120_lambertian_multiplicative_texture_a": 20.0,
+        "stationary_120_lambertian_multiplicative_texture_b": 20.0,
+        "variable_xy_texture_a": 20.0,
+        "variable_xy_texture_b": 20.0,
+        "stationary_120_texture_a": 20.0,
+        "stationary_120_texture_b": 20.0,
+        "variable_small_motion": 20.0,
+        "stationary_pixel_noise": 20.0,
+        "uniform_stationary": 20.0
+      },
+      "new_guard_always_true": true
+    },
+    "stress_candidate_03": {
+      "report_sha256": "487730b41c3a377745c67044156c51ec61e320f044fb27ffae998b203c9d1d58",
+      "maximum_pair_angle_deg_by_case": {
+        "moving_x6_log_light_reversal_g0.006_texture_a": 20.0,
+        "moving_x6_log_light_reversal_g0.012_texture_a": 20.0,
+        "stationary_log_light_reversal_g0.006_texture_a": 20.0,
+        "stationary_log_light_reversal_g0.012_texture_a": 20.0,
+        "moving_x6_log_light_reversal_g0.006_texture_b": 20.0,
+        "moving_x6_log_light_reversal_g0.012_texture_b": 20.0,
+        "stationary_log_light_reversal_g0.006_texture_b": 20.0,
+        "stationary_log_light_reversal_g0.012_texture_b": 20.0
+      },
+      "new_guard_always_true": true
+    },
+    "spatial_candidate_03": {
+      "report_sha256": "fd788eb56556a728076b1fb7c2fe762cfd280ddd3211d5c83f4ae9a7567cd3e3",
+      "maximum_pair_angle_deg_by_case": {
+        "full_turn_x12_y3_z6_texture_a": 20.0,
+        "full_turn_x12_y3_z6_texture_b": 20.0
+      },
+      "new_guard_always_true": true
+    }
+  },
+  "direct_component_controls": {
+    "native_spatial_component_03": {
+      "report_sha256": "a85549198a2411f41f3f2a821707d363bfcf4edd6fc664878935b46573c5f4ec",
+      "direct_search_executable_AST_unchanged": true
+    },
+    "native_stationary_component_03": {
+      "report_sha256": "f14a0f76f8101dfe50629630d9b38384b972ae5d952ddb76ca5a74f6c645dd30",
+      "direct_search_executable_AST_unchanged": true
+    }
+  },
+  "validation_scope": "Static path/output equivalence for the measured 20-degree profiles and unchanged direct-search component, rather than another runtime replay. Existing ed3328 artifacts retain their original source hashes. Wider sparse-view profiles are deliberately outside this equivalence because the new guard disables their retry."
+}

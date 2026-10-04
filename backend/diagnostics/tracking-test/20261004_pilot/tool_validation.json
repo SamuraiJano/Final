@@ -1,0 +1,38 @@
+{
+  "status": "tools_verified",
+  "tracking_correctness": "not_measured; independent real-video annotations remain pending",
+  "pilot_frames": 181,
+  "annotation_complete": false,
+  "checks": [
+    {
+      "name": "python_checks",
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "passed": true,
+      "log": "python_checks.txt"
+    },
+    {
+      "name": "annotation_ui_checks",
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "passed": true,
+      "log": "annotation_ui_checks.txt"
+    },
+    {
+      "name": "unreviewed_pilot_rejection",
+      "expected_exit_code": 2,
+      "exit_code": 2,
+      "passed": true,
+      "log": "unreviewed_pilot_rejection.txt"
+    }
+  ],
+  "algorithm_sha256": "cf6c2dd19968f0c159a7e2ecb8d781eee0206a88d0bab104df8d087023706745",
+  "tool_sha256": {
+    "prepare_tracking_test.py": "302ebef303f532e7b08e13e27110bea3219c8dc2ab0102e93c79ea816ef1373a",
+    "import_tracking_annotations.py": "81e3c93e7e40cd3fa26cbfbe673d9ec9f7bf24194d7832b897570451ff03d84c",
+    "evaluate_tracking_test.py": "ce6876f1dfa47e1fb0c53bdd2284b52bbcf43db9c175b841f3179462038bbefb",
+    "tracking_annotation.html": "bb391666dcfee02ec3cc8dea47d388799e313dacc6ad11363a8875755e9d98b3",
+    "TRACKING_TEST_METHOD.md": "1ae48988a75533dcb3f2597fb6d7b24d07d4e62a969021be09d4fe0eca5c74c3",
+    "export_tracking_test_predictions.py": "59766e2cc48018378455b0dd8d5893cf0240c905a64ae93b8cdd154b55b654ed"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-10-03T10:29:23.040263+00:00",
+  "passed": true,
+  "method": "Lightweight control tests with mocked sampling/clock; no API, frontend, monitor service, models or inference were started.",
+  "checks": [
+    "Wrong algorithm SHA fails before any service process starts.",
+    "Monitor waits through idle/processing, records completion and a final cleanup sample, then stops without controlling inference.",
+    "Three consecutive API failures stop monitoring with retained JSONL samples and an explicit reason.",
+    "The four-hour bound stops sampling without terminating the app or cancelling the analysis."
+  ],
+  "source_sha256": {
+    "start_detached_services": "f8e6570b8942a7ddea98c1667912656537e46cb23f1d602e782f654cb83f5e1a",
+    "monitor_analysis": "a6deb5788616d876a0da1bb413b1cc64d575659dbaa16afab65875b596c302c4"
+  }
+}

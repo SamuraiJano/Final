@@ -1,0 +1,140 @@
+{
+  "track_id": 25,
+  "views": 1,
+  "view_frames": [
+    0
+  ],
+  "rejected_views": {
+    "Fruit is cut off by the video frame": 9
+  },
+  "first_seen_frame": 0,
+  "last_seen_frame": 9,
+  "tracked_frames": 10,
+  "tracking_history": [
+    {
+      "frame": 0,
+      "bbox_xyxy": [
+        1594.763671875,
+        900.0289916992188,
+        1788.7039794921875,
+        1065.9666748046875
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 1,
+      "bbox_xyxy": [
+        1591.66552734375,
+        955.9644165039062,
+        1783.8709716796875,
+        1079.5001220703125
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 2,
+      "bbox_xyxy": [
+        1592.845458984375,
+        967.9915771484375,
+        1785.252197265625,
+        1079.5557861328125
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 3,
+      "bbox_xyxy": [
+        1593.895751953125,
+        984.2825927734375,
+        1785.7161865234375,
+        1079.71044921875
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 4,
+      "bbox_xyxy": [
+        1592.63916015625,
+        989.9694213867188,
+        1784.064697265625,
+        1079.7354736328125
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 5,
+      "bbox_xyxy": [
+        1592.6337890625,
+        1010.0150146484375,
+        1783.97021484375,
+        1079.3365478515625
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 6,
+      "bbox_xyxy": [
+        1592.189697265625,
+        1018.0908203125,
+        1782.2471923828125,
+        1079.2978515625
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 7,
+      "bbox_xyxy": [
+        1594.9449462890625,
+        1036.5169677734375,
+        1773.3505859375,
+        1079.080078125
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 8,
+      "bbox_xyxy": [
+        1595.444580078125,
+        1048.263427734375,
+        1765.323974609375,
+        1079.441650390625
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 9,
+      "bbox_xyxy": [
+        1602.255126953125,
+        1054.3115234375,
+        1759.5885009765625,
+        1079.798583984375
+      ],
+      "touches_frame_edge": true
+    }
+  ],
+  "tracking_evidence": [
+    {
+      "stage": "entry",
+      "frame": 0,
+      "crop": "/results/78b4a03ccaa549de96ecd88c5efb5806/25/tracking_entry_frame_00000.png"
+    },
+    {
+      "stage": "last_seen",
+      "frame": 9,
+      "crop": "/results/78b4a03ccaa549de96ecd88c5efb5806/25/tracking_last_seen_frame_00009.png"
+    }
+  ],
+  "status": "mapping_failed",
+  "grade": null,
+  "reason": "At least two views are required",
+  "view_selection": [],
+  "view_evidence": [
+    {
+      "frame": 0,
+      "crop": "/results/78b4a03ccaa549de96ecd88c5efb5806/25/frame_00000_crop.png",
+      "fruit_mask": "/results/78b4a03ccaa549de96ecd88c5efb5806/25/frame_00000_fruit_mask.png",
+      "overlay": "/results/78b4a03ccaa549de96ecd88c5efb5806/25/frame_00000_overlay.png",
+      "defect_inference_ran": false
+    }
+  ]
+}

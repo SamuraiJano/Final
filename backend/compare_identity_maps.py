@@ -1,0 +1,143 @@
+"""Paired reconstruction with identical crops, before/after identity separation.
+
+No fresh neural detection or defect segmentation. This isolates identity
+segmentation's effect on shape, rotation selection and texture fusion.
+"""
+from collections import defaultdict
+from dataclasses import asdict
+import hashlib
+import json
+from pathlib import Path
+import time
+from types import SimpleNamespace
+
+import cv2
+import numpy as np
+
+from algorithm import FruitView, MappingError, NaartjiePipeline, Settings, build_surface_map
+
+
+ROOT = Path(__file__).resolve().parent
+OUTPUT = ROOT/'diagnostics/identity-mapping-check/20261004_scene_motion_v3/paired_maps_geometry_only'
+GUARD_SOURCE = ROOT/'diagnostics/identity-guard/20261004_scene_motion_v3'
+
+
+def digest(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def reconstruct(views, settings, destination):
+    destination.mkdir(parents=True, exist_ok=True)
+    start = time.perf_counter()
+    row = {'input_frames': [v.frame_index for v in views]}
+    try:
+        result = build_surface_map(views, settings)
+        for filename, array in [('surface_map.png', result.bgr_map), ('observed.png', result.observed_mask*255)]:
+            cv2.imwrite(str(destination/filename), array)
+        row.update(status=result.status, mapped_frames=result.view_frames,
+                   observed_surface_pct=result.observed_surface_pct,
+                   observed_longitude_deg=result.observed_longitude_deg,
+                   measured_rotation_deg=result.rotation_coverage_deg,
+                   shape_radii_px=list(result.estimated_radii_px),
+                   map_sha256=digest(destination/'surface_map.png'),
+                   observed_sha256=digest(destination/'observed.png'),
+                   selection_diagnostics=result.selection_diagnostics)
+    except (MappingError, ValueError) as error:
+        row.update(status='mapping_failed', reason=str(error),
+                   selection_diagnostics=getattr(error, 'diagnostics', []))
+    row['seconds'] = time.perf_counter()-start
+    (destination/'result.json').write_text(json.dumps(row, indent=2))
+    return row
+
+
+def main():
+    OUTPUT.mkdir(parents=True, exist_ok=True)
+    integration = json.loads((ROOT/'diagnostics/algorithm-revision/identity_mapping_real_model_20261004/report.json').read_text())
+    settings = Settings(**integration['settings'])
+    # This ablation supplies no defect observations. Do not let an empty
+    # dictionary be interpreted as a completed defect-free inspection.
+    settings.defect_observations_complete = False
+    cv2.setNumThreads(1)
+    correspondences = json.loads((OUTPUT.parent/'fixture_correspondence.json').read_text())
+    metadata = json.loads((GUARD_SOURCE/'segments.json').read_text())
+    fixture_sources = {str(t['track']): Path(t['fixture']) for t in integration['tracks']}
+    inputs = {}
+    for identity, folder in fixture_sources.items():
+        groups = defaultdict(list)
+        views = []
+        matches = {row['frame']: row for row in correspondences[identity]}
+        for item in json.loads((folder/'views.json').read_text()):
+            with np.load(folder/item['file']) as data:
+                view = FruitView(data['image'].copy(), data['mask'].copy(), frame_index=item['frame'],
+                                 fruit_bbox=tuple(item['bbox']))
+            match = matches[item['frame']]
+            match = match['exact_pixel_matches'][0] if match['exact_pixel_matches'] else match['localized_crop_match']
+            if match is None:
+                raise RuntimeError('An unmatched fixture view cannot support an identity ablation')
+            groups[match['capture_id']].append(view)
+            views.append(view)
+        inputs['fixture_'+identity] = (views, groups, 'Frozen NPZ inputs; correspondence checked against original crop pixels.')
+
+    # The only three published maps spanning detected boundaries all cross 0->1.
+    # Recapture these boxes once, then share the exact arrays between variants.
+    replay = ROOT/'diagnostics/entry-tracking/entry_full_20261002'
+    sequence = json.loads((replay/'immediate_one_detection.json').read_text())
+    decisions = json.loads((GUARD_SOURCE/'decisions.json').read_text())
+    by_observation = {(item['raw_track_id'], item['frame']): item for item in decisions}
+    original = json.loads((ROOT/'results/ea6e595b8f3f45f2b5edfda8dafff3f2/report.json').read_text())['fruits']
+    frame_sets = {identity: set(next(row for row in original if row['track_id'] == identity)['view_frames'])
+                  for identity in (16, 18, 35)}
+    pipeline = NaartjiePipeline(SimpleNamespace(names={0: 'spot'}), settings=settings,
+                                defer_defect_segmentation=True)
+    capture = cv2.VideoCapture(json.loads((replay/'report.json').read_text())['video'])
+    for frame_index in range(max(max(frames) for frames in frame_sets.values())+1):
+        ok, frame = capture.read()
+        if not ok:
+            raise RuntimeError('Source video ended during recapture')
+        for row in sequence[frame_index]['tracks']:
+            identity = int(row[4])
+            if identity in frame_sets and frame_index in frame_sets[identity]:
+                pipeline.add_tracked_detection(frame, identity, row[:4], frame_index)
+    capture.release()
+    for identity in frame_sets:
+        groups = defaultdict(list)
+        views = pipeline.views_by_id[identity]
+        folder = OUTPUT/f'onset_{identity}/shared_inputs'
+        folder.mkdir(parents=True, exist_ok=True)
+        for view in views:
+            groups[by_observation[(identity, view.frame_index)]['capture_id']].append(view)
+            np.savez_compressed(folder/f'frame_{view.frame_index:05d}.npz',
+                                image=view.image, mask=view.object_mask, frame=view.frame_index,
+                                bbox=view.fruit_bbox)
+        inputs['onset_'+str(identity)] = (views, groups, 'Source frames recaptured with actual GrabCut once; shared by both variants.')
+
+    report = {'algorithm_sha256': digest(ROOT/'algorithm.py'), 'settings': asdict(settings),
+              'guard_source': str(GUARD_SOURCE), 'guard_sha256': digest(ROOT/'fruit_identity.py'),
+              'method': __doc__, 'cases': [],
+              'limitations': ['No physical identity or pose labels; not reconstruction accuracy.',
+                              'Defect inference is omitted in this paired geometry test.',
+                              'Recaptured onset silhouettes need not equal historical GrabCut masks.']}
+    for name, (views, groups, source) in inputs.items():
+        destination = OUTPUT/name
+        print(f'{name}: {len(views)} views, {len(groups)} identity segments.', flush=True)
+        baseline = reconstruct(views, settings, destination/'baseline')
+        variants = []
+        for capture_id, subset in groups.items():
+            if len(subset) == len(views):
+                variant = dict(baseline, reused_identical_input_result=True)
+            else:
+                variant = reconstruct(subset, settings, destination/f'segment_{capture_id}')
+            variant.update(capture_id=capture_id, identity_status=metadata[str(capture_id)]['identity_status'])
+            variants.append(variant)
+        row = {'case': name, 'source': source, 'baseline': baseline, 'segments': variants}
+        report['cases'].append(row)
+        (OUTPUT/'report.json').write_text(json.dumps(report, indent=2))
+        print(json.dumps({'case': name, 'baseline_surface_pct': baseline.get('observed_surface_pct'),
+                          'segments_surface_pct': [v.get('observed_surface_pct') for v in variants],
+                          'segments_status': [v['status'] for v in variants]}), flush=True)
+    (OUTPUT/'algorithm.py.snapshot').write_bytes((ROOT/'algorithm.py').read_bytes())
+    (OUTPUT/'compare_identity_maps.py.snapshot').write_bytes(Path(__file__).read_bytes())
+
+
+if __name__ == '__main__':
+    main()

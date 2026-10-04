@@ -1,0 +1,202 @@
+{
+  "track_id": 24,
+  "views": 19,
+  "view_frames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    17,
+    19,
+    20,
+    21,
+    30
+  ],
+  "rejected_views": {
+    "Fruit silhouette is occluded or too irregular for a spheroid": 26,
+    "Fruit foreground has fewer than 100 pixels": 1,
+    "Fruit is cut off by the video frame": 13
+  },
+  "status": "insufficient_longitude_coverage",
+  "grade": null,
+  "model_type": "oblate",
+  "estimated_radii_px": [
+    99.83561793932054,
+    78.22250900150647,
+    99.83561793932054
+  ],
+  "rotation_coverage_deg": 6.002750704971792,
+  "map_longitude_span_deg": 7.246678968457732,
+  "mapped_view_frames": [
+    8,
+    11
+  ],
+  "discarded_view_frames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    9,
+    10,
+    12,
+    13,
+    17,
+    19,
+    20,
+    21,
+    30
+  ],
+  "view_selection": [
+    {
+      "source_frame": 0,
+      "target_frame": 1,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 54.6 deg, error 0.744"
+    },
+    {
+      "source_frame": 0,
+      "target_frame": 2,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 55.0 deg, error 0.726"
+    },
+    {
+      "source_frame": 0,
+      "target_frame": 3,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 53.3 deg, error 0.679"
+    },
+    {
+      "source_frame": 0,
+      "target_frame": 4,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 2.5 deg, error 0.779"
+    },
+    {
+      "source_frame": 0,
+      "target_frame": 5,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 51.0 deg, error 0.710"
+    },
+    {
+      "source_frame": 0,
+      "target_frame": 6,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 49.0 deg, error 0.786"
+    },
+    {
+      "source_frame": 0,
+      "target_frame": 7,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 0.5 deg, error 0.705"
+    },
+    {
+      "source_frame": 0,
+      "target_frame": 8,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 41.0 deg, error 0.671"
+    },
+    {
+      "source_frame": 8,
+      "target_frame": 9,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 9.2 deg, error 0.588"
+    },
+    {
+      "source_frame": 8,
+      "target_frame": 10,
+      "rotation_deg": 2.9999999999999662,
+      "error": 0.5030736314872228,
+      "status": "skipped",
+      "reason": "insufficient_angular_change"
+    },
+    {
+      "source_frame": 8,
+      "target_frame": 11,
+      "rotation_deg": 6.002750704971792,
+      "error": 0.5654366088087786,
+      "status": "accepted"
+    },
+    {
+      "source_frame": 11,
+      "target_frame": 12,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 12.5 deg, error 0.688"
+    },
+    {
+      "source_frame": 11,
+      "target_frame": 13,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 10.4 deg, error 0.669"
+    },
+    {
+      "source_frame": 11,
+      "target_frame": 17,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 28.1 deg, error 0.808"
+    },
+    {
+      "source_frame": 11,
+      "target_frame": 19,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 0.6 deg, error 0.674"
+    },
+    {
+      "source_frame": 11,
+      "target_frame": 20,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 0.2 deg, error 0.696"
+    },
+    {
+      "source_frame": 11,
+      "target_frame": 21,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 41.5 deg, error 0.756"
+    },
+    {
+      "source_frame": 11,
+      "target_frame": 30,
+      "status": "skipped",
+      "reason": "Unreliable pair 0: rotation 0.7 deg, error 0.677"
+    }
+  ],
+  "observed_surface_pct": 22.77966858103231,
+  "observed_longitude_deg": 97.45222929936305,
+  "defect_pct_of_observed": 0.0,
+  "pair_rotations_deg": [
+    6.002750704971792
+  ],
+  "pair_rotation_vectors_deg": [
+    [
+      6.002750704971792,
+      -1.1299915114415733,
+      0.0
+    ]
+  ],
+  "pair_errors": [
+    0.5654366088087786
+  ],
+  "surface_map": "/results/original_video_symmetric_v1/24/surface_map.png",
+  "observed_mask": "/results/original_video_symmetric_v1/24/observed.png",
+  "defect_maps": {
+    "dark_marking": "/results/original_video_symmetric_v1/24/defect_dark_marking.png",
+    "light_brown_discolouration": "/results/original_video_symmetric_v1/24/defect_light_brown_discolouration.png",
+    "open_skin": "/results/original_video_symmetric_v1/24/defect_open_skin.png",
+    "skin_wrinkling": "/results/original_video_symmetric_v1/24/defect_skin_wrinkling.png",
+    "wind_scarring": "/results/original_video_symmetric_v1/24/defect_wind_scarring.png"
+  },
+  "reason": "The views do not cover enough of the fruit's circumference for a reliable class."
+}

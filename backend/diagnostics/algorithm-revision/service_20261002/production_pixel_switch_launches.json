@@ -1,0 +1,32 @@
+[
+  {
+    "label": "real_segmenter_pixel_switch_trace20_20261002",
+    "pid": 43632,
+    "args": [
+      "backend/validate_model_mapping_integration.py",
+      "--label",
+      "real_segmenter_pixel_switch_trace20_20261002"
+    ],
+    "launched_at": "2026-10-02T20:44:14.699595",
+    "cpu_thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    }
+  },
+  {
+    "label": "software_pixel_switch_trace20_20261002",
+    "pid": 45732,
+    "args": [
+      "backend/validate_software_checks.py",
+      "--label",
+      "pixel_switch_trace20_20261002"
+    ],
+    "launched_at": "2026-10-02T20:44:14.711161",
+    "cpu_thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    }
+  }
+]

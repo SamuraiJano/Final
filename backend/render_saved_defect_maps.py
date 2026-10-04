@@ -1,0 +1,146 @@
+"""Add coloured maps and the 80% policy using saved outputs, without inference."""
+import argparse
+from collections import Counter
+from dataclasses import asdict
+from datetime import datetime, timezone
+import hashlib
+import json
+from pathlib import Path
+import re
+from uuid import uuid4
+
+import cv2
+
+from algorithm import Settings, _grade_map
+from map_visualization import render_defect_overlay
+
+
+BACKEND = Path(__file__).resolve().parent
+RESULTS = BACKEND / 'results'
+
+
+def digest(path):
+    with path.open('rb') as stream:
+        return hashlib.file_digest(stream, 'sha256').hexdigest()
+
+
+def asset(url):
+    if not isinstance(url, str) or not url.startswith('/results/'):
+        raise ValueError('Expected a local saved-result asset')
+    path = (RESULTS / url.removeprefix('/results/')).resolve()
+    path.relative_to(RESULTS.resolve())
+    if not path.is_file():
+        raise FileNotFoundError(path)
+    return path
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('source_job_id')
+    parser.add_argument('--evidence', type=Path, required=True)
+    parser.add_argument('--strict-coverage', action='store_true')
+    args = parser.parse_args()
+    if not re.fullmatch('[0-9a-f]{32}', args.source_job_id):
+        parser.error('Use a saved job ID')
+    evidence = args.evidence.resolve()
+    evidence.relative_to(BACKEND / 'diagnostics')
+    source = RESULTS / args.source_job_id
+    source_report = source / 'report.json'
+    original_hash = digest(source_report)
+    report = json.loads(source_report.read_text(encoding='utf-8'))
+    settings = Settings(**report['metrics']['geometry_settings'])
+    settings.minimum_surface_coverage = .8
+    settings.grade_partial_maps = not args.strict_coverage
+    job_id = uuid4().hex
+    output = RESULTS / job_id
+    output.mkdir()
+    verified = []
+    for row in report['fruits']:
+        row['coverage_target_pct'] = 80.
+        row['grade_provisional'] = False
+        row['coverage_complete'] = False
+        if row.get('surface_map'):
+            map_path, observed_path = asset(row['surface_map']), asset(row['observed_mask'])
+            mask_paths = {name: asset(url) for name, url in row.get('defect_maps', {}).items()}
+            paths = [map_path, observed_path, *mask_paths.values()]
+            before = {str(path): digest(path) for path in paths}
+            image = cv2.imread(str(map_path), cv2.IMREAD_COLOR)
+            observed = cv2.imread(str(observed_path), cv2.IMREAD_GRAYSCALE)
+            masks = {name: cv2.imread(str(path), cv2.IMREAD_GRAYSCALE)
+                     for name, path in mask_paths.items()}
+            if image is None or observed is None or any(mask is None for mask in masks.values()):
+                raise ValueError('A saved map or mask could not be decoded')
+            overlay, legend = render_defect_overlay(image, observed, masks)
+            folder = output / str(row['track_id'])
+            folder.mkdir()
+            if not cv2.imwrite(str(folder / 'surface_map_overlay.png'), overlay):
+                raise OSError('Could not save the coloured map')
+            row['surface_map_overlay'] = f'/results/{job_id}/{row["track_id"]}/surface_map_overlay.png'
+            row['defect_legend'] = legend
+            coverage = row['observed_surface_pct'] / 100
+            longitude = row['observed_longitude_deg']
+            rotation = row['rotation_coverage_deg']
+            pair_gap = max(abs(value) for value in row['pair_rotations_deg'])
+            has_defects = bool(masks) or settings.defect_observations_complete
+            grade, status = _grade_map(row.get('defect_pct_of_observed') if has_defects else None,
+                                      coverage, longitude, rotation, pair_gap, settings)
+            row.update(grade=grade, status=status, grade_provisional=status == 'graded_partial',
+                       grade_scope='observed_surface' if grade else None,
+                       coverage_complete=(coverage >= .8 and
+                                          longitude >= settings.minimum_longitude_coverage_deg and
+                                          rotation >= settings.minimum_rotation_coverage_deg))
+            if grade:
+                row.pop('reason', None)
+            if row['grade_provisional']:
+                row['grade_note'] = ('Provisional grade based on the observed surface; '
+                                     'unseen areas were not assessed.')
+            else:
+                row.pop('grade_note', None)
+            if not grade and status == 'insufficient_surface_coverage':
+                row['reason'] = 'Less than 80% of the surface was observed.'
+            assert all(digest(Path(path)) == value for path, value in before.items())
+            verified.extend(dict(path=str(Path(path).relative_to(BACKEND)), sha256=value)
+                            for path, value in before.items())
+        folder = output / str(row['track_id'])
+        folder.mkdir(exist_ok=True)
+        (folder / 'result.json').write_text(json.dumps(row, indent=2), encoding='utf-8')
+    snapshots = ('algorithm.py', 'main.py', 'map_visualization.py')
+    for name in snapshots:
+        (output / f'display_{name}.snapshot').write_bytes((BACKEND / name).read_bytes())
+    prior_created = report['created_at']
+    report['previous_grading_policy'] = report.get('grading_policy')
+    report['grading_policy'] = {
+        'allow_partial_maps': settings.grade_partial_maps,
+        'grade_scope': 'observed_surface', 'settings': asdict(settings),
+        'source_sha256': digest(BACKEND / 'algorithm.py'),
+        'method': 'Apply the 80% regular-grade target to saved defect percentages; no inference.'}
+    report.update(job_id=job_id, created_at=datetime.now(timezone.utc).isoformat(),
+                  analysis_kind='saved_map_display_and_coverage_update',
+                  derived_from_job_id=source.name,
+                  mapping_created_at=report.get('mapping_created_at', prior_created),
+                  display_policy={'minimum_surface_coverage': .8,
+                                  'grade_partial_maps': settings.grade_partial_maps,
+                                  'settings': asdict(settings),
+                                  'source_sha256': {name: digest(BACKEND / name) for name in snapshots},
+                                  'method': 'Render saved masks over the original map. Reuse saved percentages; no inference.'})
+    assert digest(source_report) == original_hash
+    temporary = output / 'report.tmp'
+    temporary.write_text(json.dumps(report, indent=2), encoding='utf-8')
+    temporary.replace(output / 'report.json')
+    summary = dict(job_id=job_id, source_job_id=source.name, records=len(report['fruits']),
+                   grades=dict(Counter(row.get('grade') or 'ungraded' for row in report['fruits'])),
+                   provisional_grades=sum(row['grade_provisional'] for row in report['fruits']),
+                   overlays=sum(bool(row.get('surface_map_overlay')) for row in report['fruits']),
+                   coverage_target_pct=80., allow_partial_grades=settings.grade_partial_maps,
+                   original_report_sha256=original_hash, original_report_unchanged=True,
+                   verified_original_map_and_mask_files=len(verified), model_calls=0,
+                   source_sha256=report['display_policy']['source_sha256'])
+    evidence.mkdir(parents=True, exist_ok=True)
+    (evidence / 'summary.json').write_text(json.dumps(summary, indent=2), encoding='utf-8')
+    (evidence / 'original_assets.json').write_text(json.dumps(verified, indent=2), encoding='utf-8')
+    (evidence / Path(__file__).name).write_bytes(Path(__file__).read_bytes())
+    print(json.dumps(summary, indent=2))
+
+
+if __name__ == '__main__':
+    main()

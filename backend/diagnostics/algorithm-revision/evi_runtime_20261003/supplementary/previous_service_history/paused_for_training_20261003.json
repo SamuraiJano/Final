@@ -1,0 +1,104 @@
+{
+  "recorded_at": "2026-10-03T01:05:09.805326+02:00",
+  "reason": "Testing paused until concurrent model training finishes. Stop only owned test API/dashboard to release resources; training processes left untouched.",
+  "services": [
+    {
+      "pid": 45580,
+      "kind": "detached API",
+      "verified_workspace": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final",
+      "tree_before": [
+        {
+          "pid": 31488,
+          "parent_pid": 45580,
+          "command": [
+            "C:\\Python312\\python.exe",
+            "-B",
+            "-m",
+            "uvicorn",
+            "main:app",
+            "--app-dir",
+            "backend",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "8000"
+          ],
+          "rss_bytes": 30760960,
+          "committed_bytes": 2733801472
+        },
+        {
+          "pid": 45580,
+          "parent_pid": 44916,
+          "command": [
+            "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\venv\\Scripts\\python.exe",
+            "-B",
+            "-m",
+            "uvicorn",
+            "main:app",
+            "--app-dir",
+            "backend",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "8000"
+          ],
+          "rss_bytes": 4001792,
+          "committed_bytes": 888832
+        }
+      ],
+      "stopped_pids": [
+        45580,
+        31488
+      ],
+      "remaining_pids": [],
+      "excluded_descendants": [
+        {
+          "pid": 39328,
+          "name": "conhost.exe",
+          "reason": "Outside workspace; not directly terminated."
+        }
+      ]
+    },
+    {
+      "pid": 5740,
+      "kind": "dashboard manager",
+      "verified_workspace": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final",
+      "tree_before": [
+        {
+          "pid": 39568,
+          "parent_pid": 5740,
+          "command": [
+            "C:\\Program Files\\nodejs\\node.EXE",
+            "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\node_modules\\vite\\bin\\vite.js"
+          ],
+          "rss_bytes": 829009920,
+          "committed_bytes": 1389613056
+        },
+        {
+          "pid": 5740,
+          "parent_pid": 41536,
+          "command": [
+            "C:\\Program Files\\nodejs\\node.EXE",
+            "scripts/dev.mjs"
+          ],
+          "rss_bytes": 9728000,
+          "committed_bytes": 54427648
+        }
+      ],
+      "stopped_pids": [
+        5740,
+        39568
+      ],
+      "remaining_pids": [],
+      "excluded_descendants": [
+        {
+          "pid": 44792,
+          "name": "conhost.exe",
+          "reason": "Outside workspace; not directly terminated."
+        }
+      ]
+    }
+  ],
+  "source_changes": false,
+  "test_status": "paused pending user training completion"
+}

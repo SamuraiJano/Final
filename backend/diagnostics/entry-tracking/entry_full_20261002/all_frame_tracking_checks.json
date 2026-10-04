@@ -1,0 +1,54 @@
+{
+  "baseline_three_detections.json": {
+    "track_ids": 402,
+    "ids_with_at_most_two_observations": 11,
+    "median_observed_frames_per_id": 84.0,
+    "coincident_box_pairs_iou_above_0_7": 5,
+    "frames_tested": 515
+  },
+  "immediate_one_detection.json": {
+    "track_ids": 474,
+    "ids_with_at_most_two_observations": 54,
+    "median_observed_frames_per_id": 86.0,
+    "coincident_box_pairs_iou_above_0_7": 0,
+    "frames_tested": 515
+  },
+  "cross_replay_identity_consistency": {
+    "eligible_baseline_ids": 379,
+    "ids_with_multiple_substantial_matches": 7,
+    "ids_without_multiple_substantial_matches": 372,
+    "multiple_matches": {
+      "82": {
+        "59": 15,
+        "91": 42,
+        "102": 31
+      },
+      "113": {
+        "90": 91,
+        "162": 3
+      },
+      "175": {
+        "101": 10,
+        "70": 4
+      },
+      "222": {
+        "161": 3,
+        "164": 59
+      },
+      "349": {
+        "244": 3,
+        "248": 76
+      },
+      "490": {
+        "339": 6,
+        "343": 71
+      },
+      "604": {
+        "400": 48,
+        "454": 23
+      }
+    },
+    "rule": "Best per-frame box IoU > 0.5; at least 10 matched frames per baseline ID; multiple IDs each matched on at least 3 frames count as inconsistent.",
+    "limitation": "The legacy tracker is not ground truth. These are consistency checks, not measured ID-switch accuracy or unique physical fruit counts."
+  }
+}

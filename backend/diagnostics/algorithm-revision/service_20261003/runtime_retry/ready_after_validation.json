@@ -1,0 +1,134 @@
+{
+  "captured_at": "2026-10-03T11:14:53.319174+00:00",
+  "passed": true,
+  "health": {
+    "status": "ok",
+    "torch": "2.6.0+cu124",
+    "cuda_available": true,
+    "requested_device": "cuda",
+    "models_present": {
+      "detection": true,
+      "segmentation": true,
+      "segmentation_metadata": true
+    }
+  },
+  "frontend_http_status": 200,
+  "analysis": {
+    "state": "complete",
+    "run_id": "e40c363cba5d4093ab647a438b1cbe96",
+    "frames_processed": 515,
+    "frames_total": 515,
+    "error": null
+  },
+  "backend_control": {
+    "type": "backend-control-result",
+    "id": "52145152-f288-490f-a506-0e8ca61ba3c4",
+    "managed": false,
+    "refreshing": false
+  },
+  "owned_processes": [
+    {
+      "role": "api",
+      "pid": 17328,
+      "running": true,
+      "children": [
+        30832,
+        21712
+      ]
+    },
+    {
+      "role": "dashboard",
+      "pid": 39332,
+      "running": true,
+      "children": [
+        34108,
+        32188
+      ]
+    }
+  ],
+  "source_checks": [
+    {
+      "path": "backend/algorithm.py",
+      "sha256": "50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d",
+      "unchanged": true
+    },
+    {
+      "path": "backend/main.py",
+      "sha256": "4c0b69d815164c9e4745af72a69880a417ee6b940cc1792027be4b31e775cfdb",
+      "unchanged": true
+    },
+    {
+      "path": "backend/dfine_segmenter.py",
+      "sha256": "20049bf4e24678342364f85b1f4eea69a36f5385c858189b40b52fac11fc360a",
+      "unchanged": true
+    },
+    {
+      "path": "backend/requirements.txt",
+      "sha256": "2b880df5495aa56cbbd21abb752b301f4f563c267d5ade481295b151dcd4e9c4",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/dev.mjs",
+      "sha256": "f41579d588457f17b06372077abc3f0e93a007ccdadbd415e256a32146abb230",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/stop_process_tree.py",
+      "sha256": "fcd6db0138a16caaee584d0c6db42e093aee9c05f983dc3f7f40f66d6a8c1dea",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/start_detached_services.py",
+      "sha256": "f8e6570b8942a7ddea98c1667912656537e46cb23f1d602e782f654cb83f5e1a",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/monitor_analysis.py",
+      "sha256": "a6deb5788616d876a0da1bb413b1cc64d575659dbaa16afab65875b596c302c4",
+      "unchanged": true
+    },
+    {
+      "path": "src/App.jsx",
+      "sha256": "6638db6b7c173e407f0f4789a8071a5d1ba235110fc587341bcb24681aa5b2d7",
+      "unchanged": true
+    },
+    {
+      "path": "src/App.css",
+      "sha256": "3a9777321794c168f188cc75c749d26e3c625eeb6620c236f37899b45fe50d4c",
+      "unchanged": true
+    },
+    {
+      "path": "src/main.jsx",
+      "sha256": "4b4b864dbe45253425d0c925337180ec07e204295179f80f59551216f466f618",
+      "unchanged": true
+    },
+    {
+      "path": "src/index.css",
+      "sha256": "d02f1a1688506ace94191713b81c0d5f982f6c35194ce5aba7aac8676aed79d0",
+      "unchanged": true
+    },
+    {
+      "path": "vite.config.js",
+      "sha256": "5473aba67e8860d0fff9622fcecd4a7eaa617c1dc70c391857063be5a41ffc82",
+      "unchanged": true
+    },
+    {
+      "path": "package.json",
+      "sha256": "839bf7dd631e2db3b286ada60506db2b95400e58482c30b93d02f255037752c5",
+      "unchanged": true
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "137cedf00998cacdd00de8f82eaccc1de3dd5dc97510123609928e50f1df424e",
+      "unchanged": true
+    },
+    {
+      "path": "index.html",
+      "sha256": "08ccfcf30941c752d946b580f256a18fb3222e61f5649d1de2dd4c2ed6f6668d",
+      "unchanged": true
+    }
+  ],
+  "analysis_requested": false,
+  "analysis_cancelled": false,
+  "services_stopped": false
+}

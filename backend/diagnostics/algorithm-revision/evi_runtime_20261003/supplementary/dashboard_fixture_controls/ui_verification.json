@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-10-02T18:41:51.192985+00:00",
+  "passed": true,
+  "method": "Isolated headless Edge. Frozen built HTML/JS/CSS and artificial API fixture supplied through intercepted loopback requests; no HTTP or inference service, and no user browser profile.",
+  "limitations": "UI checks only. Fixture classes are artificial controls, not model predictions or proof of grade accuracy. Numeric comparisons allow locale-specific separators.",
+  "fixture_sha256": "d1578fac7f30e96076e655aad3dafb84a900d3addd27aa453dd97c3bdb8ef8ea",
+  "source_hashes": {
+    "App.jsx.snapshot": "6638db6b7c173e407f0f4789a8071a5d1ba235110fc587341bcb24681aa5b2d7",
+    "App.css.snapshot": "3a9777321794c168f188cc75c749d26e3c625eeb6620c236f37899b45fe50d4c",
+    "validate_ui_scope.py": "b26934c37472010c9944eb8baf76184e6e392689ae10929539c564d3795eadd8"
+  },
+  "checks": [
+    "Latest run counts all 474 records, including grades beyond row 60, while initially rendering six table rows.",
+    "Class filters find graded records at list positions 98, 472 and 474.",
+    "All saved runs retains the 711 older Review records and preserves latest-run model metrics.",
+    "Show more affects rows without changing totals; changing scope resets visible rows to six.",
+    "Both scope controls remain visible at 390px width, without horizontal page overflow.",
+    "Empty saved history displays zero counts without an exception."
+  ],
+  "page_errors": [],
+  "mobile_dimensions": {
+    "width": 390,
+    "content": 390
+  },
+  "software_checks": {
+    "npm run build": "passed",
+    "npm run lint": "passed"
+  }
+}

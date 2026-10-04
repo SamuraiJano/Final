@@ -1,0 +1,443 @@
+{
+  "started_at": "2026-10-02T18:46:38.752550+00:00",
+  "status": "ready",
+  "workspace": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final",
+  "expected_algorithm_sha256": "50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d",
+  "source_manifest": [
+    {
+      "path": "backend/algorithm.py",
+      "sha256": "50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d",
+      "bytes": 75759,
+      "snapshot": "backend_algorithm.py.snapshot"
+    },
+    {
+      "path": "backend/main.py",
+      "sha256": "2a51490a827c7429114ec51d0e8b627f30a9be069dd7d5769af283780ae50d49",
+      "bytes": 31309,
+      "snapshot": "backend_main.py.snapshot"
+    },
+    {
+      "path": "backend/dfine_segmenter.py",
+      "sha256": "20049bf4e24678342364f85b1f4eea69a36f5385c858189b40b52fac11fc360a",
+      "bytes": 16881,
+      "snapshot": "backend_dfine_segmenter.py.snapshot"
+    },
+    {
+      "path": "backend/requirements.txt",
+      "sha256": "2b880df5495aa56cbbd21abb752b301f4f563c267d5ade481295b151dcd4e9c4",
+      "bytes": 168,
+      "snapshot": "backend_requirements.txt.snapshot"
+    },
+    {
+      "path": "scripts/dev.mjs",
+      "sha256": "f41579d588457f17b06372077abc3f0e93a007ccdadbd415e256a32146abb230",
+      "bytes": 5605,
+      "snapshot": "scripts_dev.mjs.snapshot"
+    },
+    {
+      "path": "scripts/stop_process_tree.py",
+      "sha256": "fcd6db0138a16caaee584d0c6db42e093aee9c05f983dc3f7f40f66d6a8c1dea",
+      "bytes": 683,
+      "snapshot": "scripts_stop_process_tree.py.snapshot"
+    },
+    {
+      "path": "src/App.jsx",
+      "sha256": "6638db6b7c173e407f0f4789a8071a5d1ba235110fc587341bcb24681aa5b2d7",
+      "bytes": 28424,
+      "snapshot": "src_App.jsx.snapshot"
+    },
+    {
+      "path": "src/App.css",
+      "sha256": "3a9777321794c168f188cc75c749d26e3c625eeb6620c236f37899b45fe50d4c",
+      "bytes": 23555,
+      "snapshot": "src_App.css.snapshot"
+    },
+    {
+      "path": "src/main.jsx",
+      "sha256": "4b4b864dbe45253425d0c925337180ec07e204295179f80f59551216f466f618",
+      "bytes": 229,
+      "snapshot": "src_main.jsx.snapshot"
+    },
+    {
+      "path": "src/index.css",
+      "sha256": "d02f1a1688506ace94191713b81c0d5f982f6c35194ce5aba7aac8676aed79d0",
+      "bytes": 262,
+      "snapshot": "src_index.css.snapshot"
+    },
+    {
+      "path": "vite.config.js",
+      "sha256": "7e57b4f8c04bcd405881e9431a665842a3b1d99d70c9a61ef60aacffe0470ae3",
+      "bytes": 2092,
+      "snapshot": "vite.config.js.snapshot"
+    },
+    {
+      "path": "package.json",
+      "sha256": "839bf7dd631e2db3b286ada60506db2b95400e58482c30b93d02f255037752c5",
+      "bytes": 762,
+      "snapshot": "package.json.snapshot"
+    },
+    {
+      "path": "index.html",
+      "sha256": "08ccfcf30941c752d946b580f256a18fb3222e61f5649d1de2dd4c2ed6f6668d",
+      "bytes": 442,
+      "snapshot": "index.html.snapshot"
+    }
+  ],
+  "models": [
+    {
+      "path": "backend/models/D-FINE/detection/best_stg1.pth",
+      "sha256": "06f2675d12ec200b4a0419b1bd505c4aa113674c69ab6894684867bd194048b1",
+      "bytes": 60787495
+    },
+    {
+      "path": "backend/models/D-FINE/segmentation/model.pt",
+      "sha256": "2869048b1bba2ca0e5cfb0416bf9977f79f851dd8907ffa8b07b54e8c6d049c0",
+      "bytes": 47734143
+    }
+  ],
+  "child_environment_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONUNBUFFERED": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "creation_flags": 150995456,
+  "hidden": true,
+  "detached_process_group": true,
+  "breakaway_from_job": true,
+  "architecture": "Independently detached uvicorn API started first; separately detached Node manager attaches to its existing health endpoint and owns Vite only.",
+  "refresh_behavior": "Refresh backend is disabled because Node did not start or own this API.",
+  "inference_requested": false,
+  "import_provenance_limit": "The expected imported algorithm hash will be checked against the completed full API report. Startup only checks frozen disk sources and health.",
+  "api": {
+    "command": [
+      "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\venv\\Scripts\\python.exe",
+      "-B",
+      "-m",
+      "uvicorn",
+      "main:app",
+      "--app-dir",
+      "backend",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "8000"
+    ],
+    "pid": 45580,
+    "stdout": "api_restart1_stdout.log",
+    "stderr": "api_restart1_stderr.log",
+    "ready_at": "2026-10-02T18:49:16.105237+00:00",
+    "process_tree": [
+      {
+        "pid": 45580,
+        "ppid": 44916,
+        "name": "python.exe",
+        "command": [
+          "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\venv\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "uvicorn",
+          "main:app",
+          "--app-dir",
+          "backend",
+          "--host",
+          "127.0.0.1",
+          "--port",
+          "8000"
+        ],
+        "created_at": 1790966949.2594626
+      },
+      {
+        "pid": 39328,
+        "ppid": 45580,
+        "name": "conhost.exe",
+        "command": [
+          "\\??\\C:\\WINDOWS\\system32\\conhost.exe",
+          "0x4"
+        ],
+        "created_at": 1790966949.2699456
+      },
+      {
+        "pid": 31488,
+        "ppid": 45580,
+        "name": "python.exe",
+        "command": [
+          "C:\\Python312\\python.exe",
+          "-B",
+          "-m",
+          "uvicorn",
+          "main:app",
+          "--app-dir",
+          "backend",
+          "--host",
+          "127.0.0.1",
+          "--port",
+          "8000"
+        ],
+        "created_at": 1790966949.3031852
+      }
+    ],
+    "health": {
+      "status": "ok",
+      "torch": "2.6.0+cu124",
+      "cuda_available": true,
+      "requested_device": "cuda",
+      "models_present": {
+        "detection": true,
+        "segmentation": true,
+        "segmentation_metadata": true
+      }
+    },
+    "environment_overrides": {
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "PYTHONUNBUFFERED": "1",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "YOLO_CONFIG_DIR": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\runtime\\ultralytics"
+    }
+  },
+  "dashboard": {
+    "command": [
+      "C:\\Program Files\\nodejs\\node.EXE",
+      "scripts/dev.mjs"
+    ],
+    "pid": 5740,
+    "stdout": "dashboard_stdout.log",
+    "stderr": "dashboard_stderr.log",
+    "ready_at": "2026-10-02T18:47:26.065342+00:00",
+    "process_tree": [
+      {
+        "pid": 5740,
+        "ppid": 41536,
+        "name": "node.exe",
+        "command": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "scripts/dev.mjs"
+        ],
+        "created_at": 1790966806.5200872
+      },
+      {
+        "pid": 44792,
+        "ppid": 5740,
+        "name": "conhost.exe",
+        "command": [
+          "\\??\\C:\\WINDOWS\\system32\\conhost.exe",
+          "0x4"
+        ],
+        "created_at": 1790966807.2906697
+      },
+      {
+        "pid": 39568,
+        "ppid": 5740,
+        "name": "node.exe",
+        "command": [
+          "C:\\Program Files\\nodejs\\node.EXE",
+          "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\node_modules\\vite\\bin\\vite.js"
+        ],
+        "created_at": 1790966807.5756004
+      }
+    ],
+    "url": "http://localhost:5173",
+    "http_status": 200,
+    "backend_control": {
+      "type": "backend-control-result",
+      "id": "8178c842-49e6-4583-80bb-3c21839ecded",
+      "managed": false,
+      "refreshing": false
+    }
+  },
+  "finished_at": "2026-10-02T18:47:26.150793+00:00",
+  "api_restart_history": [
+    {
+      "started_at": "2026-10-02T18:49:08.992906+00:00",
+      "reason": "Place Ultralytics runtime settings in the writable workspace instead of the protected global AppData profile.",
+      "state_before_restart": {
+        "state": "idle",
+        "run_id": null,
+        "frames_processed": 0,
+        "frames_total": null,
+        "error": null
+      },
+      "old_api": {
+        "command": [
+          "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\venv\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "uvicorn",
+          "main:app",
+          "--app-dir",
+          "backend",
+          "--host",
+          "127.0.0.1",
+          "--port",
+          "8000"
+        ],
+        "pid": 29660,
+        "stdout": "api_stdout.log",
+        "stderr": "api_stderr.log",
+        "ready_at": "2026-10-02T18:46:46.403960+00:00",
+        "process_tree": [
+          {
+            "pid": 29660,
+            "ppid": 41536,
+            "name": "python.exe",
+            "command": [
+              "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\venv\\Scripts\\python.exe",
+              "-B",
+              "-m",
+              "uvicorn",
+              "main:app",
+              "--app-dir",
+              "backend",
+              "--host",
+              "127.0.0.1",
+              "--port",
+              "8000"
+            ],
+            "created_at": 1790966798.75779
+          },
+          {
+            "pid": 43284,
+            "ppid": 29660,
+            "name": "conhost.exe",
+            "command": [
+              "\\??\\C:\\WINDOWS\\system32\\conhost.exe",
+              "0x4"
+            ],
+            "created_at": 1790966798.7734709
+          },
+          {
+            "pid": 26316,
+            "ppid": 29660,
+            "name": "python.exe",
+            "command": [
+              "C:\\Python312\\python.exe",
+              "-B",
+              "-m",
+              "uvicorn",
+              "main:app",
+              "--app-dir",
+              "backend",
+              "--host",
+              "127.0.0.1",
+              "--port",
+              "8000"
+            ],
+            "created_at": 1790966798.8048332
+          }
+        ],
+        "health": {
+          "status": "ok",
+          "torch": "2.6.0+cu124",
+          "cuda_available": true,
+          "requested_device": "cuda",
+          "models_present": {
+            "detection": true,
+            "segmentation": true,
+            "segmentation_metadata": true
+          }
+        }
+      },
+      "source_changed": false,
+      "status": "ready",
+      "new_api_pid": 45580,
+      "finished_at": "2026-10-02T18:49:18.409924+00:00",
+      "new_api": {
+        "command": [
+          "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\venv\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "uvicorn",
+          "main:app",
+          "--app-dir",
+          "backend",
+          "--host",
+          "127.0.0.1",
+          "--port",
+          "8000"
+        ],
+        "pid": 45580,
+        "stdout": "api_restart1_stdout.log",
+        "stderr": "api_restart1_stderr.log",
+        "ready_at": "2026-10-02T18:49:16.105237+00:00",
+        "process_tree": [
+          {
+            "pid": 45580,
+            "ppid": 44916,
+            "name": "python.exe",
+            "command": [
+              "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\venv\\Scripts\\python.exe",
+              "-B",
+              "-m",
+              "uvicorn",
+              "main:app",
+              "--app-dir",
+              "backend",
+              "--host",
+              "127.0.0.1",
+              "--port",
+              "8000"
+            ],
+            "created_at": 1790966949.2594626
+          },
+          {
+            "pid": 39328,
+            "ppid": 45580,
+            "name": "conhost.exe",
+            "command": [
+              "\\??\\C:\\WINDOWS\\system32\\conhost.exe",
+              "0x4"
+            ],
+            "created_at": 1790966949.2699456
+          },
+          {
+            "pid": 31488,
+            "ppid": 45580,
+            "name": "python.exe",
+            "command": [
+              "C:\\Python312\\python.exe",
+              "-B",
+              "-m",
+              "uvicorn",
+              "main:app",
+              "--app-dir",
+              "backend",
+              "--host",
+              "127.0.0.1",
+              "--port",
+              "8000"
+            ],
+            "created_at": 1790966949.3031852
+          }
+        ],
+        "health": {
+          "status": "ok",
+          "torch": "2.6.0+cu124",
+          "cuda_available": true,
+          "requested_device": "cuda",
+          "models_present": {
+            "detection": true,
+            "segmentation": true,
+            "segmentation_metadata": true
+          }
+        },
+        "environment_overrides": {
+          "OMP_NUM_THREADS": "1",
+          "MKL_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1",
+          "PYTHONUNBUFFERED": "1",
+          "PYTHONDONTWRITEBYTECODE": "1",
+          "YOLO_CONFIG_DIR": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\runtime\\ultralytics"
+        }
+      },
+      "backend_control": {
+        "type": "backend-control-result",
+        "id": "427ab87c-ac32-4705-8800-749b81fc0b3a",
+        "managed": false,
+        "refreshing": false
+      }
+    }
+  ]
+}

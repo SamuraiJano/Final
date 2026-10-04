@@ -1,0 +1,209 @@
+{
+  "method": "Compare proposed2-axis pair pose with independent descriptor matches.\n\nThe matching inliers are selected by a3-axis diagnostic RANSAC, not labelled\nground truth, so report both all-mutual-match and selected-inlier residuals.\n",
+  "comparisons": [
+    {
+      "source_frame": 305,
+      "target_frame": 306,
+      "method": "sift",
+      "preprocess": "raw",
+      "mutual_matches": 26,
+      "three_axis_inliers": 22,
+      "candidate_vector_deg": [
+        5.0,
+        -5.0,
+        0.0
+      ],
+      "candidate_all_mutual_median_error_px": 3.6643778050897224,
+      "diagnostic3d_all_mutual_median_error_px": 0.8423942360843546,
+      "candidate_inlier_median_error_px": 3.3945254299824272,
+      "diagnostic3d_inlier_median_error_px": 0.6331025347792997
+    },
+    {
+      "source_frame": 308,
+      "target_frame": 309,
+      "method": "sift",
+      "preprocess": "raw",
+      "mutual_matches": 10,
+      "three_axis_inliers": 7,
+      "candidate_vector_deg": [
+        11.59,
+        -8.22,
+        0.0
+      ],
+      "candidate_all_mutual_median_error_px": 5.470518878899724,
+      "diagnostic3d_all_mutual_median_error_px": 1.0113231466449204,
+      "candidate_inlier_median_error_px": 5.078612525506089,
+      "diagnostic3d_inlier_median_error_px": 0.7303981251687474
+    },
+    {
+      "source_frame": 305,
+      "target_frame": 306,
+      "method": "sift",
+      "preprocess": "clahe",
+      "mutual_matches": 26,
+      "three_axis_inliers": 22,
+      "candidate_vector_deg": [
+        5.0,
+        -5.0,
+        0.0
+      ],
+      "candidate_all_mutual_median_error_px": 3.842480827111138,
+      "diagnostic3d_all_mutual_median_error_px": 1.0038943312483855,
+      "candidate_inlier_median_error_px": 3.6642045830114087,
+      "diagnostic3d_inlier_median_error_px": 0.7980699959100692
+    },
+    {
+      "source_frame": 308,
+      "target_frame": 309,
+      "method": "sift",
+      "preprocess": "clahe",
+      "mutual_matches": 9,
+      "three_axis_inliers": 5,
+      "candidate_vector_deg": [
+        11.59,
+        -8.22,
+        0.0
+      ],
+      "candidate_all_mutual_median_error_px": 6.41639756971738,
+      "diagnostic3d_all_mutual_median_error_px": 1.2882558468669474,
+      "candidate_inlier_median_error_px": 5.644456535695572,
+      "diagnostic3d_inlier_median_error_px": 0.8745164799219113
+    },
+    {
+      "source_frame": 305,
+      "target_frame": 306,
+      "method": "sift",
+      "preprocess": "highpass",
+      "mutual_matches": 27,
+      "three_axis_inliers": 25,
+      "candidate_vector_deg": [
+        5.0,
+        -5.0,
+        0.0
+      ],
+      "candidate_all_mutual_median_error_px": 3.92986380819915,
+      "diagnostic3d_all_mutual_median_error_px": 0.7530019438039594,
+      "candidate_inlier_median_error_px": 3.5160011288273703,
+      "diagnostic3d_inlier_median_error_px": 0.7530019438039594
+    },
+    {
+      "source_frame": 308,
+      "target_frame": 309,
+      "method": "sift",
+      "preprocess": "highpass",
+      "mutual_matches": 9,
+      "three_axis_inliers": 4,
+      "candidate_vector_deg": [
+        11.59,
+        -8.22,
+        0.0
+      ],
+      "candidate_all_mutual_median_error_px": 6.817994888454876,
+      "diagnostic3d_all_mutual_median_error_px": 4.375746537672452,
+      "candidate_inlier_median_error_px": 5.040808951347671,
+      "diagnostic3d_inlier_median_error_px": 0.8991030292036457
+    },
+    {
+      "source_frame": 305,
+      "target_frame": 306,
+      "method": "orb",
+      "preprocess": "raw",
+      "mutual_matches": 32,
+      "three_axis_inliers": 22,
+      "candidate_vector_deg": [
+        5.0,
+        -5.0,
+        0.0
+      ],
+      "candidate_all_mutual_median_error_px": 4.345613022303295,
+      "diagnostic3d_all_mutual_median_error_px": 1.225949675259972,
+      "candidate_inlier_median_error_px": 3.530801938974049,
+      "diagnostic3d_inlier_median_error_px": 0.9467487935644292
+    },
+    {
+      "source_frame": 308,
+      "target_frame": 309,
+      "method": "orb",
+      "preprocess": "raw",
+      "mutual_matches": 17,
+      "three_axis_inliers": 7,
+      "candidate_vector_deg": [
+        11.59,
+        -8.22,
+        0.0
+      ],
+      "candidate_all_mutual_median_error_px": 7.608570558966212,
+      "diagnostic3d_all_mutual_median_error_px": 3.714218751534123,
+      "candidate_inlier_median_error_px": 5.799209316470774,
+      "diagnostic3d_inlier_median_error_px": 0.8041448249068299
+    },
+    {
+      "source_frame": 305,
+      "target_frame": 306,
+      "method": "orb",
+      "preprocess": "clahe",
+      "mutual_matches": 49,
+      "three_axis_inliers": 37,
+      "candidate_vector_deg": [
+        5.0,
+        -5.0,
+        0.0
+      ],
+      "candidate_all_mutual_median_error_px": 3.1628180739713585,
+      "diagnostic3d_all_mutual_median_error_px": 1.4978569522734355,
+      "candidate_inlier_median_error_px": 2.7555833642825474,
+      "diagnostic3d_inlier_median_error_px": 1.0868238992661787
+    },
+    {
+      "source_frame": 308,
+      "target_frame": 309,
+      "method": "orb",
+      "preprocess": "clahe",
+      "mutual_matches": 16,
+      "three_axis_inliers": 8,
+      "candidate_vector_deg": [
+        11.59,
+        -8.22,
+        0.0
+      ],
+      "candidate_all_mutual_median_error_px": 6.072851387312008,
+      "diagnostic3d_all_mutual_median_error_px": 1.7337955442466169,
+      "candidate_inlier_median_error_px": 5.860447805380861,
+      "diagnostic3d_inlier_median_error_px": 0.741080395688444
+    },
+    {
+      "source_frame": 305,
+      "target_frame": 306,
+      "method": "orb",
+      "preprocess": "highpass",
+      "mutual_matches": 50,
+      "three_axis_inliers": 41,
+      "candidate_vector_deg": [
+        5.0,
+        -5.0,
+        0.0
+      ],
+      "candidate_all_mutual_median_error_px": 3.6718239057818014,
+      "diagnostic3d_all_mutual_median_error_px": 0.9635485893964411,
+      "candidate_inlier_median_error_px": 3.679413761117713,
+      "diagnostic3d_inlier_median_error_px": 0.8734491587469901
+    },
+    {
+      "source_frame": 308,
+      "target_frame": 309,
+      "method": "orb",
+      "preprocess": "highpass",
+      "mutual_matches": 23,
+      "three_axis_inliers": 20,
+      "candidate_vector_deg": [
+        11.59,
+        -8.22,
+        0.0
+      ],
+      "candidate_all_mutual_median_error_px": 5.335880673780198,
+      "diagnostic3d_all_mutual_median_error_px": 1.385234879404399,
+      "candidate_inlier_median_error_px": 4.903490940415456,
+      "diagnostic3d_inlier_median_error_px": 1.244803137148919
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "recorded_at": "2026-10-03T10:37:35.276395+00:00",
+  "scope": "Read-only/lightweight independent review of runtime evidence configuration and cleanup proof; no estimator/model tests, service calls, production edits or archive sealing.",
+  "configuration": "backend\\current_profile_evidence_runtime_20261003.json",
+  "configuration_sha256": "ebebdcc33fcdff6d2fc16a83e45d6fed2497a178dd4ae1ea1f6e7a816be3daa6",
+  "material_scope_issues_found": false,
+  "verified": [
+    "Synthetic controls described as inspected development inputs rather than held-out field evaluation.",
+    "Author36/all497 labels, conditional prediction errors and unavailable endpoints remain separate; source/profile differences explicitly declared.",
+    "Conveyor profile rolling20 differs explicitly from author rolling55/direction-1; numerical/known-area fixture parameter exceptions are declared.",
+    "Frozen215crop real-model replay states detector zero calls and no human pose/mask/grade truth.",
+    "Older source863 tracking evidence donor is declared independently of source50 mapper/main4c.",
+    "Original330/515 failure remains failed, primaryfalse, exact failure time/causal attribution unknown;256partial rows not a final outcome.",
+    "Cleanup unit tests are scoped to state release/error propagation; not full-video accuracy or removal of original pressure cause.",
+    "Configured workspace-file hashes match available files; runtime model main4c hash and candidate exact-label author report reference match."
+  ],
+  "pending": [
+    "full_video_runtime"
+  ],
+  "historical_failure": {
+    "status": "failed",
+    "passed_execution": false,
+    "progress": 330,
+    "total": 515,
+    "partial_rows": 256,
+    "deadline_verification_met": false
+  },
+  "wording_recommendation": {
+    "severity": "minor clarification",
+    "file": "backend/build_current_profile_evidence.py",
+    "finding": "Generated headline/figure use independent controls; this could be read as held-out evaluation despite clear surrounding development limitations.",
+    "suggested": "Use known-answer development controls instead. Configuration and raw scopes already correctly describe development testing."
+  },
+  "cleanup_proof_hashes": {
+    "main.py.before.snapshot": "2a51490a827c7429114ec51d0e8b627f30a9be069dd7d5769af283780ae50d49",
+    "main.py.after.snapshot": "4c0b69d815164c9e4745af72a69880a417ee6b940cc1792027be4b31e775cfdb",
+    "test_analysis_cleanup.py": "a5aef6f1fc54fc7b502283488f328021917940256d10c500bb16a27616191bd2",
+    "focused_tests.txt": "b96e9cabe2766dce143affd3557120364140df0cfd4b63a67773a007c3a969e3",
+    "report.json": "8f7d1de2288ef2765bd0e0bfc808501e21730387e599ec5e81ef7907c04a307d",
+    "CHANGE.md": "2bb87391294a6885c48accba6994a2b0e54fc82bb6204ed592306ce3663e4f3a"
+  }
+}

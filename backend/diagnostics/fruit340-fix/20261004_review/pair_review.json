@@ -1,0 +1,2808 @@
+{
+  "source": "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\diagnostics\\identity-mapping-check\\20261004_scene_motion_v3\\source\\algorithm.py",
+  "scope": "Search minima and independent inverse checks using frozen fixture, not mapping accuracy or altered map validity.",
+  "pairs": [
+    {
+      "source_frame": 305,
+      "target_frame": 306,
+      "modes": {
+        "mad": {
+          "independent_inverse_disagreement_deg": 2.2346840532810273,
+          "negative_inverse_disagreement_deg": 0.0,
+          "forward": {
+            "rotation_vector_deg": [
+              5.919431855919764,
+              -5.290354338498842,
+              0.0
+            ],
+            "residual": 0.26509642061076877,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -3.685857861502609,
+              5.199862159537515,
+              0.0
+            ],
+            "residual": 0.40412085787216007,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              3.0052534312732613,
+              -5.261838851517671,
+              0.0
+            ],
+            "residual": 0.34834412752161703,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              0.0,
+              -5.499999999999972,
+              0.0
+            ],
+            "residual": 0.47785965720383683,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              0.0,
+              -5.499999999999972,
+              0.0
+            ],
+            "residual": 0.47329738170522934,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              5.499999999999972,
+              0.0
+            ],
+            "residual": 0.48242193270244427,
+            "status": "measured"
+          }
+        },
+        "green_mad": {
+          "independent_inverse_disagreement_deg": 1.88918934029084,
+          "negative_inverse_disagreement_deg": 13.499999999999957,
+          "forward": {
+            "rotation_vector_deg": [
+              4.996827486010168,
+              -5.234777264577868,
+              0.0
+            ],
+            "residual": 0.18054622980653173,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -6.0634317503687845,
+              3.6740288826889413,
+              -2.49116058809877e-17
+            ],
+            "residual": 0.22685791908114503,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              5.310239209459632,
+              -4.697174598379483,
+              -2.4911603851325238e-17
+            ],
+            "residual": 0.20741777910237036,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              0.0,
+              -5.499999999999972,
+              0.0
+            ],
+            "residual": 0.3257838475834559,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              0.0,
+              -5.499999999999972,
+              0.0
+            ],
+            "residual": 0.2756073989316611,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              -7.99999999999998,
+              0.0
+            ],
+            "residual": 0.36080797134170206,
+            "status": "measured"
+          }
+        },
+        "aligned_mad": {
+          "independent_inverse_disagreement_deg": 2.110526370325162,
+          "negative_inverse_disagreement_deg": 16.086589339176193,
+          "forward": {
+            "rotation_vector_deg": [
+              4.999999999999996,
+              -4.999999999999996,
+              0.0
+            ],
+            "residual": 0.4263229373168431,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -6.41224036246706,
+              3.429795888476028,
+              2.4914918963614704e-17
+            ],
+            "residual": 0.4399726714150583,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              4.999999999999996,
+              -4.999999999999996,
+              0.0
+            ],
+            "residual": 0.4357080981291535,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -8.522213076323608,
+              7.237848384424744,
+              5.0012992280967884e-17
+            ],
+            "residual": 0.5609895933992597,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              0.0,
+              -6.499999999999966,
+              0.0
+            ],
+            "residual": 0.5447733220692378,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              8.51459996483231,
+              -7.151294377963272,
+              0.0
+            ],
+            "residual": 0.5322005208979212,
+            "status": "measured"
+          }
+        }
+      },
+      "selected_native_points": 160,
+      "selected_glare_fraction": 0.0,
+      "selected_green_mean": 90.28125
+    },
+    {
+      "source_frame": 306,
+      "target_frame": 307,
+      "modes": {
+        "mad": {
+          "independent_inverse_disagreement_deg": 0.7087667522984656,
+          "negative_inverse_disagreement_deg": 0.7255752096522433,
+          "forward": {
+            "rotation_vector_deg": [
+              7.392573507875738,
+              -4.730679879930817,
+              0.0
+            ],
+            "residual": 0.34996909942716586,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -7.11171378993418,
+              4.0796990893902105,
+              2.4933086808001074e-17
+            ],
+            "residual": 0.33554122882326876,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              7.357921906024053,
+              -4.577391810106876,
+              0.0
+            ],
+            "residual": 0.34516408287719724,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -5.946419254537189,
+              -4.511022882315074,
+              -2.4918501508202755e-17
+            ],
+            "residual": 0.5276612872101983,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -5.6616112050393115,
+              -4.479977923854489,
+              0.0
+            ],
+            "residual": 0.5556682298348038,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              6.381850734731237,
+              4.5688743140678865,
+              0.0
+            ],
+            "residual": 0.4901236558184246,
+            "status": "measured"
+          }
+        },
+        "green_mad": {
+          "independent_inverse_disagreement_deg": 1.6332163706430933,
+          "forward": {
+            "rotation_vector_deg": [
+              9.823653419497639,
+              -2.0413224173572293,
+              2.4975538633068014e-17
+            ],
+            "residual": 0.26293641084973296,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -8.499999999999988,
+              2.9999999999999956,
+              0.0
+            ],
+            "residual": 0.1425714098163357,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              9.032395714564315,
+              -2.7666817955034597,
+              0.0
+            ],
+            "residual": 0.20368472865782572,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              0.0,
+              -3.9999999999998583,
+              0.0
+            ],
+            "residual": 0.4657127774398229,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "status": "rejected",
+            "reason": "Unreliable pair 0: rotation 20.0 deg, error 0.360"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              4.999999999999993,
+              0.0
+            ],
+            "residual": 0.4273502451711788,
+            "status": "measured"
+          }
+        },
+        "aligned_mad": {
+          "independent_inverse_disagreement_deg": 0.27015164663513547,
+          "negative_inverse_disagreement_deg": 17.997825871431722,
+          "forward": {
+            "rotation_vector_deg": [
+              8.999999999999961,
+              -2.9999999999999876,
+              0.0
+            ],
+            "residual": 0.3797502792315246,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -9.1746505356131,
+              2.793546603513022,
+              2.49644966893859e-17
+            ],
+            "residual": 0.33706316731613933,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              8.999999999999961,
+              -2.9999999999999876,
+              0.0
+            ],
+            "residual": 0.35864736999453317,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "status": "rejected",
+            "reason": "Unreliable pair 0: rotation 18.2 deg, error 0.587"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -18.49999999999999,
+              -15.999999999999991,
+              2.0495321399276624e-16
+            ],
+            "residual": 0.5627122786183512,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              5.569037573703499,
+              3.480916808878077,
+              -2.4902577817741272e-17
+            ],
+            "residual": 0.5520332026662453,
+            "status": "measured"
+          }
+        }
+      },
+      "selected_native_points": 160,
+      "selected_glare_fraction": 0.0,
+      "selected_green_mean": 83.08125
+    },
+    {
+      "source_frame": 307,
+      "target_frame": 308,
+      "modes": {
+        "mad": {
+          "independent_inverse_disagreement_deg": 2.707703813208059,
+          "forward": {
+            "rotation_vector_deg": [
+              17.956873548090766,
+              -0.14958653380902404,
+              -3.1574501125781843e-18
+            ],
+            "residual": 0.49977254574959823,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -15.648210823024488,
+              -1.2708933208876705,
+              2.5161772092623314e-17
+            ],
+            "residual": 0.5278155535793618,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              16.959651577392492,
+              -0.9216052438092837,
+              1.2607886713387522e-17
+            ],
+            "residual": 0.5291995990808576,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "status": "rejected",
+            "reason": "Unreliable pair 0: rotation 17.5 deg, error 0.709"
+          },
+          "negative_forward": {
+            "status": "rejected",
+            "reason": "Unreliable pair 0: rotation 18.6 deg, error 0.722"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "residual": 0.5703506900913528,
+            "status": "measured"
+          }
+        },
+        "green_mad": {
+          "independent_inverse_disagreement_deg": 1.6182637180528325,
+          "forward": {
+            "rotation_vector_deg": [
+              12.600281553926926,
+              -3.849033955342605,
+              0.0
+            ],
+            "residual": 0.44726408975928084,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -13.499999999999984,
+              2.499999999999996,
+              2.5087483916065474e-17
+            ],
+            "residual": 0.2988447425275068,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              13.474668687165346,
+              -3.2319711148590056,
+              0.0
+            ],
+            "residual": 0.3757962163893134,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -17.999999999999993,
+              14.999999999999993,
+              0.0
+            ],
+            "residual": 0.47782016449525566,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -18.02259619542675,
+              14.585701219899677,
+              0.0
+            ],
+            "residual": 0.31735441885008436,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "status": "rejected",
+            "reason": "Unreliable pair 0: rotation 0.0 deg, error 0.640"
+          }
+        },
+        "aligned_mad": {
+          "independent_inverse_disagreement_deg": 1.5470674452293964,
+          "negative_inverse_disagreement_deg": 2.7505307199062776,
+          "forward": {
+            "rotation_vector_deg": [
+              16.500000000000025,
+              -1.0000000000000013,
+              0.0
+            ],
+            "residual": 0.4360185851783566,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -16.91513226845022,
+              -0.4956679121670034,
+              0.0
+            ],
+            "residual": 0.4545980288757732,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              16.500000000000025,
+              -1.0000000000000013,
+              0.0
+            ],
+            "residual": 0.45428520767252645,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "status": "rejected",
+            "reason": "Unreliable pair 0: rotation 11.1 deg, error 0.582"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -12.554772012117889,
+              -13.380277686217417,
+              2.0222334625491902e-16
+            ],
+            "residual": 0.5461583368860776,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              9.9423056814516,
+              12.511327860244842,
+              0.0
+            ],
+            "residual": 0.5788278013871562,
+            "status": "measured"
+          }
+        }
+      },
+      "selected_native_points": 160,
+      "selected_glare_fraction": 0.0,
+      "selected_green_mean": 79.50625
+    },
+    {
+      "source_frame": 308,
+      "target_frame": 309,
+      "modes": {
+        "mad": {
+          "forward": {
+            "rotation_vector_deg": [
+              11.499999999999972,
+              -7.99999999999998,
+              0.0
+            ],
+            "residual": 0.49511240443558385,
+            "status": "measured"
+          },
+          "reverse": {
+            "status": "rejected",
+            "reason": "Unreliable pair 0: rotation 5.5 deg, error 0.608"
+          },
+          "joint": {
+            "status": "rejected",
+            "reason": "Unreliable pair 0: rotation 11.5 deg, error 0.617"
+          },
+          "negative_direction_probe": {
+            "status": "rejected",
+            "reason": "Unreliable pair 0: rotation 18.0 deg, error 0.740"
+          },
+          "negative_forward": {
+            "status": "rejected",
+            "reason": "Unreliable pair 0: rotation 14.0 deg, error 0.710"
+          },
+          "negative_reverse": {
+            "status": "rejected",
+            "reason": "Unreliable pair 0: rotation 17.6 deg, error 0.662"
+          }
+        },
+        "green_mad": {
+          "independent_inverse_disagreement_deg": 5.869626421542256,
+          "negative_inverse_disagreement_deg": 33.60768862808955,
+          "forward": {
+            "rotation_vector_deg": [
+              10.886613615369086,
+              -10.325650085729801,
+              0.0
+            ],
+            "residual": 0.24980666619708644,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -8.96752902609993,
+              4.774844285755612,
+              0.0
+            ],
+            "residual": 0.29193237561593305,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              11.871129045414731,
+              -8.404567308671902,
+              -1.0046797171070534e-16
+            ],
+            "residual": 0.30173376059725004,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -12.999999999999993,
+              -19.999999999999986,
+              -2.0464541829981046e-16
+            ],
+            "residual": 0.39743909425238655,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -12.999999999999993,
+              -19.999999999999986,
+              -2.0464541829981046e-16
+            ],
+            "residual": 0.264478958683465,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              -10.999999999999993,
+              0.0
+            ],
+            "residual": 0.39383396841397755,
+            "status": "measured"
+          }
+        },
+        "aligned_mad": {
+          "independent_inverse_disagreement_deg": 2.392007972825961,
+          "negative_inverse_disagreement_deg": 13.071743323961094,
+          "forward": {
+            "rotation_vector_deg": [
+              10.775119848302289,
+              -9.666393280368077,
+              1.0045763425606978e-16
+            ],
+            "residual": 0.46766489685089646,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -12.499999999999979,
+              7.999999999999988,
+              -1.0051250002893852e-16
+            ],
+            "residual": 0.4741116570453445,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              11.587602378943252,
+              -8.223198630558407,
+              0.0
+            ],
+            "residual": 0.48044478079401876,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -19.499999999999993,
+              1.4999999999999998,
+              0.0
+            ],
+            "residual": 0.5393600473028806,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -15.500000000000009,
+              -11.000000000000007,
+              2.0247783472369374e-16
+            ],
+            "residual": 0.5582468771595456,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              19.65281426232821,
+              -1.45262826851573,
+              -2.5344835396154253e-17
+            ],
+            "residual": 0.43856685476696144,
+            "status": "measured"
+          }
+        }
+      },
+      "selected_native_points": 160,
+      "selected_glare_fraction": 0.0,
+      "selected_green_mean": 76.1125
+    },
+    {
+      "source_frame": 309,
+      "target_frame": 310,
+      "modes": {
+        "mad": {
+          "forward": {
+            "rotation_vector_deg": [
+              19.455447251404653,
+              -9.445283211716063,
+              -2.0358473671121175e-16
+            ],
+            "residual": 0.5650712510384829,
+            "status": "measured"
+          },
+          "reverse": {
+            "status": "rejected",
+            "reason": "Unreliable pair 0: rotation 6.0 deg, error 0.608"
+          },
+          "joint": {
+            "status": "rejected",
+            "reason": "Unreliable pair 0: rotation 19.0 deg, error 0.581"
+          },
+          "negative_direction_probe": {
+            "status": "rejected",
+            "reason": "Unreliable pair 0: rotation 19.9 deg, error 0.737"
+          },
+          "negative_forward": {
+            "status": "rejected",
+            "reason": "Unreliable pair 0: rotation 20.0 deg, error 0.740"
+          },
+          "negative_reverse": {
+            "status": "rejected",
+            "reason": "Unreliable pair 0: rotation 5.6 deg, error 0.676"
+          }
+        },
+        "green_mad": {
+          "independent_inverse_disagreement_deg": 21.497674910503708,
+          "negative_inverse_disagreement_deg": 15.038568180260423,
+          "forward": {
+            "rotation_vector_deg": [
+              0.0,
+              -11.999999999999988,
+              0.0
+            ],
+            "residual": 0.30509411676382087,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -2.543923901565309,
+              -9.347182873616845,
+              0.0
+            ],
+            "residual": 0.3495087694908541,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              19.191284135393897,
+              -7.115541762639165,
+              0.0
+            ],
+            "residual": 0.3883563048602152,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -5.767996259054754,
+              -1.3794333726998598,
+              -6.2231275410799055e-18
+            ],
+            "residual": 0.3897040792070693,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -8.000000000000004,
+              -14.000000000000004,
+              0.0
+            ],
+            "residual": 0.31415278291698306,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              4.000000000000035,
+              -0.5000000000000043,
+              0.0
+            ],
+            "residual": 0.34182066663731936,
+            "status": "measured"
+          }
+        },
+        "aligned_mad": {
+          "independent_inverse_disagreement_deg": 4.5188278414138905,
+          "negative_inverse_disagreement_deg": 11.062350011179937,
+          "forward": {
+            "rotation_vector_deg": [
+              0.0,
+              -12.500000000000002,
+              0.0
+            ],
+            "residual": 0.5420177460288004,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -4.49999999999998,
+              12.999999999999941,
+              5.017688575840067e-17
+            ],
+            "residual": 0.5620125743441492,
+            "status": "measured"
+          },
+          "joint": {
+            "status": "rejected",
+            "reason": "Unreliable pair 0: rotation 10.5 deg, error 0.581"
+          },
+          "negative_direction_probe": {
+            "status": "rejected",
+            "reason": "Unreliable pair 0: rotation 6.2 deg, error 0.586"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -2.499999999999993,
+              -12.499999999999963,
+              -2.5054271589301198e-17
+            ],
+            "residual": 0.5006449938111459,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              5.999999999999922,
+              1.9999999999999738,
+              0.0
+            ],
+            "residual": 0.5216456697447466,
+            "status": "measured"
+          }
+        }
+      },
+      "selected_native_points": 160,
+      "selected_glare_fraction": 0.0,
+      "selected_green_mean": 99.825
+    },
+    {
+      "source_frame": 310,
+      "target_frame": 311,
+      "modes": {
+        "mad": {
+          "independent_inverse_disagreement_deg": 2.42837940932775,
+          "negative_inverse_disagreement_deg": 1.4999999999993152,
+          "forward": {
+            "rotation_vector_deg": [
+              0.6299049202776783,
+              -3.513534421338117,
+              0.0
+            ],
+            "residual": 0.47464176743191794,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -2.834084572022011,
+              2.493532422976438,
+              0.0
+            ],
+            "residual": 0.3561763427699771,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              1.6386197043587256,
+              -1.913066535863842,
+              0.0
+            ],
+            "residual": 0.4498018920147026,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              0.0,
+              -1.999999999999765,
+              0.0
+            ],
+            "residual": 0.4669153233144609,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              0.0,
+              -3.499999999999842,
+              0.0
+            ],
+            "residual": 0.49341411841443905,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              1.999999999999765,
+              0.0
+            ],
+            "residual": 0.4111043115930386,
+            "status": "measured"
+          }
+        },
+        "green_mad": {
+          "independent_inverse_disagreement_deg": 14.152844488854743,
+          "negative_inverse_disagreement_deg": 0.9999999999999001,
+          "forward": {
+            "rotation_vector_deg": [
+              12.243845982476754,
+              -10.595570778474238,
+              -1.0072774265436328e-16
+            ],
+            "residual": 0.2595362861670621,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -0.9999999999999424,
+              1.9999999999998848,
+              -1.5533995126558315e-18
+            ],
+            "residual": 0.1267615501752225,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              0.7118906757683515,
+              -3.2961452414405636,
+              0.0
+            ],
+            "residual": 0.1871561085625787,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              0.0,
+              -3.499999999999842,
+              0.0
+            ],
+            "residual": 0.1935960377088335,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              0.0,
+              -3.499999999999842,
+              0.0
+            ],
+            "residual": 0.24223698451297945,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              2.4999999999998077,
+              0.0
+            ],
+            "residual": 0.13512861165126222,
+            "status": "measured"
+          }
+        },
+        "aligned_mad": {
+          "independent_inverse_disagreement_deg": 1.8499946432989416,
+          "negative_inverse_disagreement_deg": 1.7545898929341723,
+          "forward": {
+            "rotation_vector_deg": [
+              0.5000000000000043,
+              -4.000000000000035,
+              0.0
+            ],
+            "residual": 0.4879887304389657,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -1.5119294303041213,
+              2.451107093929481,
+              0.0
+            ],
+            "residual": 0.43272044161934936,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              0.57611889678397,
+              -3.354230434616519,
+              0.0
+            ],
+            "residual": 0.4762481038188663,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              0.0,
+              -3.499999999999842,
+              0.0
+            ],
+            "residual": 0.4870847155393795,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -0.40969765301671157,
+              -4.206095001353183,
+              -1.5544142167888873e-18
+            ],
+            "residual": 0.48432071483094546,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              2.4999999999998077,
+              0.0
+            ],
+            "residual": 0.46983212389905704,
+            "status": "measured"
+          }
+        }
+      },
+      "selected_native_points": 160,
+      "selected_glare_fraction": 0.0,
+      "selected_green_mean": 100.9875
+    },
+    {
+      "source_frame": 311,
+      "target_frame": 312,
+      "modes": {
+        "mad": {
+          "independent_inverse_disagreement_deg": 7.017820741758591,
+          "negative_inverse_disagreement_deg": 7.860731703656183,
+          "forward": {
+            "rotation_vector_deg": [
+              0.4999999999999429,
+              -1.4999999999998286,
+              0.0
+            ],
+            "residual": 0.46863139034398626,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              -5.499999999999972,
+              0.0
+            ],
+            "residual": 0.49986808783099823,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              0.0,
+              4.999999999999993,
+              0.0
+            ],
+            "residual": 0.514590664446213,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -0.8771250130464311,
+              5.293734723530443,
+              0.0
+            ],
+            "residual": 0.4769777039774385,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              0.0,
+              -2.4999999999998077,
+              0.0
+            ],
+            "residual": 0.47215116701543364,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.6843234995170103,
+              -5.330892579784941,
+              -3.1105702812757454e-18
+            ],
+            "residual": 0.4540513045371734,
+            "status": "measured"
+          }
+        },
+        "green_mad": {
+          "independent_inverse_disagreement_deg": 18.887829017227993,
+          "negative_inverse_disagreement_deg": 16.27702167585846,
+          "forward": {
+            "rotation_vector_deg": [
+              2.6126072313847484,
+              -1.5447262315558339,
+              3.10746353814468e-18
+            ],
+            "residual": 0.15247475412262324,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -19.34033736213667,
+              10.315891887329093,
+              2.0371772915981847e-16
+            ],
+            "residual": 0.1616476428680405,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              0.49999999999995487,
+              0.9999999999999097,
+              0.0
+            ],
+            "residual": 0.1720476312422427,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              0.0,
+              0.9999999999999002,
+              0.0
+            ],
+            "residual": 0.17285314773613886,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -2.99999999999968,
+              0.0,
+              0.0
+            ],
+            "residual": 0.14085027445311984,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              15.999999999999995,
+              0.0
+            ],
+            "residual": 0.21598341575522645,
+            "status": "measured"
+          }
+        },
+        "aligned_mad": {
+          "independent_inverse_disagreement_deg": 6.90768095848424,
+          "negative_inverse_disagreement_deg": 6.50177523812462,
+          "forward": {
+            "rotation_vector_deg": [
+              1.8215615057810108,
+              -3.66323706867482,
+              6.217302669783728e-18
+            ],
+            "residual": 0.4398818150271467,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              -2.99999999999968,
+              0.0
+            ],
+            "residual": 0.49694089294596905,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              1.3208574995254465,
+              -3.7040123618632474,
+              0.0
+            ],
+            "residual": 0.49773073515748933,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              0.0,
+              -3.499999999999842,
+              0.0
+            ],
+            "residual": 0.5106226314347667,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              0.0,
+              -3.499999999999842,
+              0.0
+            ],
+            "residual": 0.48545154968569365,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.16930798496235852,
+              -2.999571137391581,
+              -3.8842927745557495e-19
+            ],
+            "residual": 0.4952328228521189,
+            "status": "measured"
+          }
+        }
+      },
+      "selected_native_points": 159,
+      "selected_glare_fraction": 0.0,
+      "selected_green_mean": 117.59119496855345
+    },
+    {
+      "source_frame": 312,
+      "target_frame": 313,
+      "modes": {
+        "mad": {
+          "independent_inverse_disagreement_deg": 0.36222864283510964,
+          "negative_inverse_disagreement_deg": 0.4999999999991335,
+          "forward": {
+            "rotation_vector_deg": [
+              0.46495869557463365,
+              2.4611179591492074,
+              0.0
+            ],
+            "residual": 0.37199216827633835,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -0.49984326642398685,
+              -2.1005707534556026,
+              -7.766864363729811e-19
+            ],
+            "residual": 0.39332403476255234,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              0.4645788281909982,
+              2.307921953198785,
+              0.0
+            ],
+            "residual": 0.3842609731701802,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              0.0,
+              2.4999999999998077,
+              0.0
+            ],
+            "residual": 0.4128193937906399,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              0.0,
+              1.999999999999765,
+              0.0
+            ],
+            "residual": 0.4001451106809638,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              -2.4999999999998077,
+              0.0
+            ],
+            "residual": 0.4209230948397266,
+            "status": "measured"
+          }
+        },
+        "green_mad": {
+          "independent_inverse_disagreement_deg": 0.38431910328106406,
+          "negative_inverse_disagreement_deg": 1.4999571630527928,
+          "forward": {
+            "rotation_vector_deg": [
+              0.0,
+              1.4999999999993152,
+              0.0
+            ],
+            "residual": 0.1359243051222121,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -0.37642800769960216,
+              -1.4224679344464388,
+              3.8829398447877273e-19
+            ],
+            "residual": 0.0684139216771775,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              0.0,
+              1.4999999999993152,
+              0.0
+            ],
+            "residual": 0.1027299902667608,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -0.9999999999999688,
+              1.4999999999999531,
+              0.0
+            ],
+            "residual": 0.08916961631903067,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -1.4999999999998785,
+              1.4999999999998785,
+              0.0
+            ],
+            "residual": 0.09689643810316871,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              -1.4999999999993152,
+              0.0
+            ],
+            "residual": 0.06953567541130949,
+            "status": "measured"
+          }
+        },
+        "aligned_mad": {
+          "independent_inverse_disagreement_deg": 0.4999999999991335,
+          "negative_inverse_disagreement_deg": 0.3617596078480167,
+          "forward": {
+            "rotation_vector_deg": [
+              0.0,
+              2.4999999999998077,
+              0.0
+            ],
+            "residual": 0.3704962689423949,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              -1.999999999999765,
+              0.0
+            ],
+            "residual": 0.31703457887978964,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              0.0,
+              1.999999999999765,
+              0.0
+            ],
+            "residual": 0.34473071473603634,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -1.1570785908739754,
+              2.176857179650106,
+              3.106969010074553e-18
+            ],
+            "residual": 0.28345555933345123,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -1.2614675558748,
+              2.250013243259313,
+              0.0
+            ],
+            "residual": 0.2842694193369592,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.9999999999999424,
+              -1.9999999999998848,
+              -1.5533995126558315e-18
+            ],
+            "residual": 0.27531095671393635,
+            "status": "measured"
+          }
+        }
+      },
+      "selected_native_points": 160,
+      "selected_glare_fraction": 0.0,
+      "selected_green_mean": 121.7875
+    },
+    {
+      "source_frame": 313,
+      "target_frame": 314,
+      "modes": {
+        "mad": {
+          "independent_inverse_disagreement_deg": 1.999999999999765,
+          "negative_inverse_disagreement_deg": 2.2538291871947074,
+          "forward": {
+            "rotation_vector_deg": [
+              0.0,
+              1.999999999999765,
+              0.0
+            ],
+            "residual": 0.4167981126623245,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "residual": 0.35503527300811194,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              0.0,
+              0.9999999999999002,
+              0.0
+            ],
+            "residual": 0.39414889059300917,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -0.4733048557346655,
+              1.2501550823508214,
+              3.8828652844365503e-19
+            ],
+            "residual": 0.3867471007381613,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -0.4134693020206313,
+              2.0658615395957,
+              7.766776225476949e-19
+            ],
+            "residual": 0.40188551323495325,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.332068830460625,
+              0.18650049870949956,
+              -4.8531770384656856e-20
+            ],
+            "residual": 0.34462270265494677,
+            "status": "measured"
+          }
+        },
+        "green_mad": {
+          "independent_inverse_disagreement_deg": 0.7070888317058631,
+          "negative_inverse_disagreement_deg": 1.0752428506099956,
+          "forward": {
+            "rotation_vector_deg": [
+              0.4999999999999429,
+              1.4999999999998286,
+              0.0
+            ],
+            "residual": 0.1064033863556818,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              -1.999999999999765,
+              0.0
+            ],
+            "residual": 0.09163042229749731,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              0.0,
+              1.999999999999765,
+              0.0
+            ],
+            "residual": 0.09908258651525108,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              0.0,
+              1.999999999999765,
+              0.0
+            ],
+            "residual": 0.09908258651525108,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              0.0,
+              1.4999999999993152,
+              0.0
+            ],
+            "residual": 0.10581474431862094,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              1.020732011880023,
+              -1.8381018411076961,
+              0.0
+            ],
+            "residual": 0.08784379287666262,
+            "status": "measured"
+          }
+        },
+        "aligned_mad": {
+          "independent_inverse_disagreement_deg": 0.0,
+          "negative_inverse_disagreement_deg": 0.23535334865953011,
+          "forward": {
+            "rotation_vector_deg": [
+              0.0,
+              2.4999999999998077,
+              0.0
+            ],
+            "residual": 0.3520736949542432,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              -2.4999999999998077,
+              0.0
+            ],
+            "residual": 0.3075645824485325,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              0.0,
+              2.4999999999998077,
+              0.0
+            ],
+            "residual": 0.32981913870138785,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -1.320312694638098,
+              2.429152860571119,
+              0.0
+            ],
+            "residual": 0.2578251630030641,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -1.2570277411449575,
+              2.3382821449224043,
+              0.0
+            ],
+            "residual": 0.26731944367130145,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              1.406952664370256,
+              -2.5197045721695943,
+              0.0
+            ],
+            "residual": 0.24515396066789993,
+            "status": "measured"
+          }
+        }
+      },
+      "selected_native_points": 160,
+      "selected_glare_fraction": 0.0,
+      "selected_green_mean": 117.65
+    },
+    {
+      "source_frame": 315,
+      "target_frame": 316,
+      "modes": {
+        "mad": {
+          "independent_inverse_disagreement_deg": 0.6871323970510687,
+          "negative_inverse_disagreement_deg": 10.417859147858046,
+          "forward": {
+            "rotation_vector_deg": [
+              5.312726829516803,
+              7.020593902249127,
+              -2.494613921555585e-17
+            ],
+            "residual": 0.5511825666577735,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -5.999999999999957,
+              -6.999999999999948,
+              -4.991127601517049e-17
+            ],
+            "residual": 0.5153349629709922,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              5.463529919441276,
+              7.076415488521578,
+              0.0
+            ],
+            "residual": 0.5401566872772416,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -4.681574037062655,
+              -4.4833750411802615,
+              0.0
+            ],
+            "residual": 0.5472451125455341,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -12.529147961141646,
+              1.0614114512628376,
+              1.2524332487426803e-17
+            ],
+            "residual": 0.5617813338283129,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              4.801405193398232,
+              5.936740684409579,
+              -2.492178106296839e-17
+            ],
+            "residual": 0.443555428827064,
+            "status": "measured"
+          }
+        },
+        "green_mad": {
+          "independent_inverse_disagreement_deg": 10.18090935170193,
+          "negative_inverse_disagreement_deg": 6.966925642937547,
+          "forward": {
+            "rotation_vector_deg": [
+              0.0,
+              12.500000000000002,
+              0.0
+            ],
+            "residual": 0.2778540038818522,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -7.5761733999961605,
+              -5.682366180473341,
+              -4.9923177038592176e-17
+            ],
+            "residual": 0.14123557599914266,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              0.0,
+              7.99999999999998,
+              0.0
+            ],
+            "residual": 0.2553865219868961,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -15.499999999999996,
+              1.5,
+              0.0
+            ],
+            "residual": 0.2777298747041093,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -15.866290095112486,
+              0.8137373944247871,
+              0.0
+            ],
+            "residual": 0.15415819375601475,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              8.999999999999932,
+              -1.9999999999999853,
+              1.2477819003792623e-17
+            ],
+            "residual": 0.23631565536281252,
+            "status": "measured"
+          }
+        },
+        "aligned_mad": {
+          "negative_inverse_disagreement_deg": 0.8183564899916486,
+          "forward": {
+            "rotation_vector_deg": [
+              9.500000000000002,
+              3.500000000000001,
+              0.0
+            ],
+            "residual": 0.5212245634350398,
+            "status": "measured"
+          },
+          "reverse": {
+            "status": "rejected",
+            "reason": "Unreliable pair 0: rotation 20.0 deg, error 0.503"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              1.8933214549855,
+              -7.66897876192884,
+              -1.2463487481769296e-17
+            ],
+            "residual": 0.5185893731917728,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -4.499999999999991,
+              -3.4999999999999933,
+              0.0
+            ],
+            "residual": 0.4591289556522061,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -5.302506482981579,
+              -3.6606272166159437,
+              0.0
+            ],
+            "residual": 0.4669698681009203,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              4.499999999999991,
+              3.4999999999999933,
+              0.0
+            ],
+            "residual": 0.4452186677916179,
+            "status": "measured"
+          }
+        }
+      },
+      "selected_native_points": 160,
+      "selected_glare_fraction": 0.0,
+      "selected_green_mean": 109.625
+    },
+    {
+      "source_frame": 316,
+      "target_frame": 317,
+      "modes": {
+        "mad": {
+          "negative_inverse_disagreement_deg": 0.32709943790434615,
+          "forward": {
+            "rotation_vector_deg": [
+              0.0,
+              -2.4999999999998077,
+              0.0
+            ],
+            "residual": 0.4622803624044032,
+            "status": "measured"
+          },
+          "reverse": {
+            "status": "rejected",
+            "reason": "Unreliable pair 0: rotation 0.0 deg, error 0.602"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              0.0,
+              -3.9999999999998583,
+              0.0
+            ],
+            "residual": 0.5313538272369662,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -4.330517203371046,
+              -2.127321613303091,
+              0.0
+            ],
+            "residual": 0.37063391690159797,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -4.464354324423538,
+              -2.1051316220805547,
+              -6.219710859055877e-18
+            ],
+            "residual": 0.29957657552897654,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              4.139098545057511,
+              2.0703489580192356,
+              -6.218781003157455e-18
+            ],
+            "residual": 0.4418798303797402,
+            "status": "measured"
+          }
+        },
+        "green_mad": {
+          "independent_inverse_disagreement_deg": 9.010878855413347,
+          "negative_inverse_disagreement_deg": 12.689687425942093,
+          "forward": {
+            "rotation_vector_deg": [
+              3.2667314958302853,
+              0.6563388110340371,
+              0.0
+            ],
+            "residual": 0.21267833751581297,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -11.696779051700162,
+              -3.83923634185478,
+              -5.0080616211540385e-17
+            ],
+            "residual": 0.12649742809023465,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              3.6058094092239905,
+              0.19462921321092388,
+              -7.770169079864551e-19
+            ],
+            "residual": 0.20320112691331438,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              0.0,
+              -0.5000000000005914,
+              0.0
+            ],
+            "residual": 0.2289893034575785,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -3.165843212088122,
+              -3.3740290681224234,
+              0.0
+            ],
+            "residual": 0.18172794608441498,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              15.724873510253985,
+              1.5415837345643548,
+              0.0
+            ],
+            "residual": 0.16374363789917637,
+            "status": "measured"
+          }
+        },
+        "aligned_mad": {
+          "independent_inverse_disagreement_deg": 20.617972920625913,
+          "negative_inverse_disagreement_deg": 0.5684708903463424,
+          "forward": {
+            "rotation_vector_deg": [
+              19.5900485515328,
+              -10.44103617011519,
+              0.0
+            ],
+            "residual": 0.5085631789198221,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              3.9999999999998583,
+              0.0
+            ],
+            "residual": 0.5348269004359443,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              0.0,
+              -3.9999999999998583,
+              0.0
+            ],
+            "residual": 0.5331476039397599,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -3.999999999999994,
+              -2.9999999999999956,
+              0.0
+            ],
+            "residual": 0.38068055893180286,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -3.786457446748096,
+              -3.1123301789561135,
+              -1.2439208039651323e-17
+            ],
+            "residual": 0.3361493509610879,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              4.082408289712523,
+              2.626773255433538,
+              -1.2438918746880555e-17
+            ],
+            "residual": 0.4144230374573823,
+            "status": "measured"
+          }
+        }
+      },
+      "selected_native_points": 160,
+      "selected_glare_fraction": 0.0,
+      "selected_green_mean": 110.9875
+    },
+    {
+      "source_frame": 324,
+      "target_frame": 325,
+      "modes": {
+        "mad": {
+          "independent_inverse_disagreement_deg": 0.6869820211818528,
+          "forward": {
+            "rotation_vector_deg": [
+              4.499999999999927,
+              -2.499999999999959,
+              0.0
+            ],
+            "residual": 0.29639917363298557,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -5.183412995951358,
+              2.5702863008528616,
+              -1.2445181128359982e-17
+            ],
+            "residual": 0.35011847841428134,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              4.830657188879179,
+              -2.4300758522432333,
+              0.0
+            ],
+            "residual": 0.3320698821338476,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "status": "rejected",
+            "reason": "Unreliable pair 0: rotation 0.0 deg, error 0.591"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              0.0,
+              0.5000000000005914,
+              0.0
+            ],
+            "residual": 0.5772791994260382,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "status": "rejected",
+            "reason": "Unreliable pair 0: rotation 0.0 deg, error 0.587"
+          }
+        },
+        "green_mad": {
+          "independent_inverse_disagreement_deg": 0.37743678194936614,
+          "negative_inverse_disagreement_deg": 24.057217947128073,
+          "forward": {
+            "rotation_vector_deg": [
+              3.8028477946927257,
+              -0.36605080215078856,
+              1.5541566123030984e-18
+            ],
+            "residual": 0.06886646945535639,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -4.155234332246529,
+              0.5012766114283667,
+              -1.5543872306187734e-18
+            ],
+            "residual": 0.0420619407539365,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              3.9366864666717425,
+              -0.4133713564171112,
+              0.0
+            ],
+            "residual": 0.05609714026693577,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              0.0,
+              0.5000000000005914,
+              0.0
+            ],
+            "residual": 0.15356757218357486,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -19.52241019630803,
+              13.558010580361058,
+              0.0
+            ],
+            "residual": 0.1537705452003081,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              0.5000000000005914,
+              0.0
+            ],
+            "residual": 0.14061117709432452,
+            "status": "measured"
+          }
+        },
+        "aligned_mad": {
+          "independent_inverse_disagreement_deg": 0.1845530267894785,
+          "forward": {
+            "rotation_vector_deg": [
+              5.130763331559034,
+              -0.5722409323348152,
+              3.1102172212149693e-18
+            ],
+            "residual": 0.22369789409234114,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -5.177245962429064,
+              0.7509006347834564,
+              -3.1103302714849986e-18
+            ],
+            "residual": 0.1926394958772453,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              5.158464127516642,
+              -0.6481226879831872,
+              0.0
+            ],
+            "residual": 0.20854863220452607,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              0.0,
+              0.9999999999999002,
+              0.0
+            ],
+            "residual": 0.5354589893573201,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "status": "rejected",
+            "reason": "Unreliable pair 0: rotation 20.0 deg, error 0.478"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              -0.5000000000005914,
+              0.0
+            ],
+            "residual": 0.551743357925091,
+            "status": "measured"
+          }
+        }
+      },
+      "selected_native_points": 160,
+      "selected_glare_fraction": 0.0,
+      "selected_green_mean": 112.0125
+    },
+    {
+      "source_frame": 337,
+      "target_frame": 338,
+      "modes": {
+        "mad": {
+          "independent_inverse_disagreement_deg": 0.5000000000005913,
+          "negative_inverse_disagreement_deg": 2.8133073281952243,
+          "forward": {
+            "rotation_vector_deg": [
+              0.0,
+              -4.499999999999928,
+              0.0
+            ],
+            "residual": 0.43138059234184384,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              4.999999999999993,
+              0.0
+            ],
+            "residual": 0.5309299072548705,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              0.0,
+              -4.499999999999928,
+              0.0
+            ],
+            "residual": 0.4788331859643058,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -2.22434105772879,
+              -4.613019835167936,
+              0.0
+            ],
+            "residual": 0.40937402699364245,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              0.0,
+              -4.499999999999928,
+              0.0
+            ],
+            "residual": 0.43138059234184384,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              2.776010542881436,
+              4.960894974361467,
+              -1.2444449355321369e-17
+            ],
+            "residual": 0.3890104895767404,
+            "status": "measured"
+          }
+        },
+        "green_mad": {
+          "independent_inverse_disagreement_deg": 2.4998172616066383,
+          "negative_inverse_disagreement_deg": 2.6466842579325873,
+          "forward": {
+            "rotation_vector_deg": [
+              1.4999999999999651,
+              -5.99999999999986,
+              6.224100628041005e-18
+            ],
+            "residual": 0.15012375686490484,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              3.9999999999998583,
+              0.0
+            ],
+            "residual": 0.13145604184044307,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              0.0,
+              -4.999999999999993,
+              0.0
+            ],
+            "residual": 0.14634453661136243,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -1.9999999999999913,
+              -3.9999999999999827,
+              0.0
+            ],
+            "residual": 0.1395984162330019,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              0.0,
+              -5.999999999999905,
+              0.0
+            ],
+            "residual": 0.1526537226887204,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              2.0820360476328577,
+              4.364755681983083,
+              0.0
+            ],
+            "residual": 0.11291657262691988,
+            "status": "measured"
+          }
+        },
+        "aligned_mad": {
+          "independent_inverse_disagreement_deg": 0.0,
+          "negative_inverse_disagreement_deg": 0.5829470123062637,
+          "forward": {
+            "rotation_vector_deg": [
+              0.0,
+              -4.999999999999993,
+              0.0
+            ],
+            "residual": 0.4313052584188358,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              4.999999999999993,
+              0.0
+            ],
+            "residual": 0.4590239079153289,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              0.0,
+              -4.999999999999993,
+              0.0
+            ],
+            "residual": 0.44516458316708235,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -1.4999999999999558,
+              -4.499999999999867,
+              6.219122627139922e-18
+            ],
+            "residual": 0.4122573225423415,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -1.594652330156759,
+              -4.044734568471393,
+              6.2179864634230436e-18
+            ],
+            "residual": 0.413648923159232,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              1.7834867478685632,
+              4.596249864293885,
+              0.0
+            ],
+            "residual": 0.4062421472889682,
+            "status": "measured"
+          }
+        }
+      },
+      "selected_native_points": 160,
+      "selected_glare_fraction": 0.00625,
+      "selected_green_mean": 105.60625
+    },
+    {
+      "source_frame": 340,
+      "target_frame": 341,
+      "modes": {
+        "mad": {
+          "independent_inverse_disagreement_deg": 1.3142427885512786,
+          "negative_inverse_disagreement_deg": 1.5811262883772172,
+          "forward": {
+            "rotation_vector_deg": [
+              0.0,
+              -3.9999999999998583,
+              0.0
+            ],
+            "residual": 0.20659912067622443,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -0.06503246261493953,
+              2.687366538739771,
+              1.941968890095413e-19
+            ],
+            "residual": 0.2761835760673231,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              0.0,
+              -3.9999999999998583,
+              0.0
+            ],
+            "residual": 0.24387354328220473,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -0.5000000000000043,
+              -4.000000000000035,
+              0.0
+            ],
+            "residual": 0.2391222540161755,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -0.5000000000000043,
+              -4.000000000000035,
+              0.0
+            ],
+            "residual": 0.19737966137978663,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              2.4999999999998077,
+              0.0
+            ],
+            "residual": 0.2845755366609493,
+            "status": "measured"
+          }
+        },
+        "green_mad": {
+          "independent_inverse_disagreement_deg": 15.000000000000018,
+          "negative_inverse_disagreement_deg": 12.162650802668406,
+          "forward": {
+            "rotation_vector_deg": [
+              0.0,
+              12.99999999999997,
+              0.0
+            ],
+            "residual": 0.12155609810686563,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              1.999999999999765,
+              0.0
+            ],
+            "residual": 0.11994044804794092,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              0.0,
+              -1.999999999999765,
+              0.0
+            ],
+            "residual": 0.14626229877216768,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -0.6879395508974102,
+              -2.0891880960670877,
+              1.5533867326876115e-18
+            ],
+            "residual": 0.1448974269593336,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -3.868708896277188,
+              9.628717287552062,
+              0.0
+            ],
+            "residual": 0.10459108298616532,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.7771279038529851,
+              2.13472172805944,
+              -1.5534122085619384e-18
+            ],
+            "residual": 0.11404989113312979,
+            "status": "measured"
+          }
+        },
+        "aligned_mad": {
+          "independent_inverse_disagreement_deg": 0.9999999999999002,
+          "negative_inverse_disagreement_deg": 2.2534608325293344,
+          "forward": {
+            "rotation_vector_deg": [
+              0.0,
+              -0.9999999999999002,
+              0.0
+            ],
+            "residual": 0.3613499029080793,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              1.999999999999765,
+              0.0
+            ],
+            "residual": 0.318193776358259,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              0.0,
+              -1.999999999999765,
+              0.0
+            ],
+            "residual": 0.34474973024623734,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -0.812697025167282,
+              -3.2069973018378373,
+              0.0
+            ],
+            "residual": 0.33487137455567095,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -0.025342270782332928,
+              -0.9682155033450727,
+              -2.4266862212475306e-20
+            ],
+            "residual": 0.36032726178011376,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.9999999999999758,
+              2.9999999999999276,
+              0.0
+            ],
+            "residual": 0.30013277145915446,
+            "status": "measured"
+          }
+        }
+      },
+      "selected_native_points": 160,
+      "selected_glare_fraction": 0.19375,
+      "selected_green_mean": 124.81875
+    },
+    {
+      "source_frame": 350,
+      "target_frame": 351,
+      "modes": {
+        "mad": {
+          "independent_inverse_disagreement_deg": 0.10762745091085092,
+          "negative_inverse_disagreement_deg": 0.5000000000005914,
+          "forward": {
+            "rotation_vector_deg": [
+              0.15640109447537207,
+              -0.2303874520767839,
+              0.0
+            ],
+            "residual": 0.06942901476523214,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -0.21118968405269287,
+              0.3230258821710563,
+              4.853177998090274e-20
+            ],
+            "residual": 0.07973909944307374,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              0.2034646527838735,
+              -0.2886154329149768,
+              0.0
+            ],
+            "residual": 0.07370888983789875,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              0.0,
+              -0.5000000000005914,
+              0.0
+            ],
+            "residual": 0.08777378812714556,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "residual": 0.08054114296678302,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              0.5000000000005914,
+              0.0
+            ],
+            "residual": 0.09425530287091406,
+            "status": "measured"
+          }
+        },
+        "green_mad": {
+          "independent_inverse_disagreement_deg": 0.0,
+          "negative_inverse_disagreement_deg": 0.07286487983759884,
+          "forward": {
+            "rotation_vector_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "residual": 0.02712948786296561,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "residual": 0.030095911012931888,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "residual": 0.02861269943794875,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -0.3148370623403673,
+              0.009448053055625866,
+              0.0
+            ],
+            "residual": 0.022868403778142705,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -0.3034232950471156,
+              -0.025745742517510575,
+              -6.066455182814898e-21
+            ],
+            "residual": 0.02114368348154451,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.3321416502043688,
+              -0.04122110039005972,
+              1.2132922247101876e-20
+            ],
+            "residual": 0.024534009797587127,
+            "status": "measured"
+          }
+        },
+        "aligned_mad": {
+          "independent_inverse_disagreement_deg": 0.0,
+          "negative_inverse_disagreement_deg": 0.1771159939307842,
+          "forward": {
+            "rotation_vector_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "residual": 0.11041052608865749,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "residual": 0.10899937430273683,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "residual": 0.10970495019569716,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -0.5000000000005914,
+              0.0,
+              0.0
+            ],
+            "residual": 0.0865286969049417,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -0.5000000000005914,
+              0.0,
+              0.0
+            ],
+            "residual": 0.08766029725830993,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.6769888437702475,
+              0.006710050144604165,
+              0.0
+            ],
+            "residual": 0.08485831850823476,
+            "status": "measured"
+          }
+        }
+      },
+      "selected_native_points": 160,
+      "selected_glare_fraction": 0.0,
+      "selected_green_mean": 122.25625
+    },
+    {
+      "source_frame": 360,
+      "target_frame": 361,
+      "modes": {
+        "mad": {
+          "independent_inverse_disagreement_deg": 0.0,
+          "negative_inverse_disagreement_deg": 0.4999984134484348,
+          "forward": {
+            "rotation_vector_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "residual": 0.11224004897035136,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "residual": 0.10654435677736253,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "residual": 0.10939220287385695,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -0.45796775026035363,
+              -0.1325034441036454,
+              -4.853197301878515e-20
+            ],
+            "residual": 0.09896973000996126,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -0.5000000000005914,
+              0.0,
+              0.0
+            ],
+            "residual": 0.0976161615435114,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.49999999999932065,
+              0.49999999999932065,
+              0.0
+            ],
+            "residual": 0.10178147718019043,
+            "status": "measured"
+          }
+        },
+        "green_mad": {
+          "independent_inverse_disagreement_deg": 0.5115482034690697,
+          "negative_inverse_disagreement_deg": 0.0,
+          "forward": {
+            "rotation_vector_deg": [
+              0.2303884342076336,
+              -0.11158431153074448,
+              2.4265787223253313e-20
+            ],
+            "residual": 0.060177565981392185,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              -0.7277924031021165,
+              0.23104508365611823,
+              0.0
+            ],
+            "residual": 0.07382655403768343,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              0.39150478692465746,
+              -0.09100130118991634,
+              -2.426590552622781e-20
+            ],
+            "residual": 0.06776968713004547,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "residual": 0.06945816304096013,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "residual": 0.061352580834509375,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "residual": 0.07756374524741087,
+            "status": "measured"
+          }
+        },
+        "aligned_mad": {
+          "independent_inverse_disagreement_deg": 0.0,
+          "negative_inverse_disagreement_deg": 0.1927969076704598,
+          "forward": {
+            "rotation_vector_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "residual": 0.16559537376273953,
+            "status": "measured"
+          },
+          "reverse": {
+            "rotation_vector_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "residual": 0.15929430628301225,
+            "status": "measured"
+          },
+          "joint": {
+            "rotation_vector_deg": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "residual": 0.1624448400228759,
+            "status": "measured"
+          },
+          "negative_direction_probe": {
+            "rotation_vector_deg": [
+              -0.6655945977899776,
+              -0.01734158291196507,
+              0.0
+            ],
+            "residual": 0.14863644808821436,
+            "status": "measured"
+          },
+          "negative_forward": {
+            "rotation_vector_deg": [
+              -0.6923415122237478,
+              0.013243541699306048,
+              -6.0665743106731585e-21
+            ],
+            "residual": 0.14758032457060466,
+            "status": "measured"
+          },
+          "negative_reverse": {
+            "rotation_vector_deg": [
+              0.5000000000005914,
+              0.0,
+              0.0
+            ],
+            "residual": 0.14919751175066498,
+            "status": "measured"
+          }
+        }
+      },
+      "selected_native_points": 160,
+      "selected_glare_fraction": 0.0,
+      "selected_green_mean": 115.81875
+    }
+  ]
+}

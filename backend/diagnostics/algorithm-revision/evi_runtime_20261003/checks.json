@@ -1,0 +1,1201 @@
+[
+  {
+    "run": "camera_lighting",
+    "check": "full_turn_x12_linear_additive_texture_a",
+    "status": "PASS",
+    "scope": "All twelve frozen camera-fixed lighting scenes, identical inputs and predeclared motion/noise criteria; inspected synthetic development controls.",
+    "details": "30/30 pairs; max pose 0.0636240357474335 deg; max landmark RMS 0.04318710849884259 px",
+    "motion_accuracy_unavailable": false,
+    "primary": true
+  },
+  {
+    "run": "camera_lighting",
+    "check": "full_turn_x12_linear_additive_texture_a /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "All twelve frozen camera-fixed lighting scenes, identical inputs and predeclared motion/noise criteria; inspected synthetic development controls.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": true
+  },
+  {
+    "run": "camera_lighting",
+    "check": "full_turn_x12_linear_additive_texture_b",
+    "status": "PASS",
+    "scope": "All twelve frozen camera-fixed lighting scenes, identical inputs and predeclared motion/noise criteria; inspected synthetic development controls.",
+    "details": "30/30 pairs; max pose 0.050216759812404914 deg; max landmark RMS 0.030826290395896176 px",
+    "motion_accuracy_unavailable": false,
+    "primary": true
+  },
+  {
+    "run": "camera_lighting",
+    "check": "full_turn_x12_linear_additive_texture_b /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "All twelve frozen camera-fixed lighting scenes, identical inputs and predeclared motion/noise criteria; inspected synthetic development controls.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": true
+  },
+  {
+    "run": "camera_lighting",
+    "check": "full_turn_x12_lambertian_multiplicative_texture_a",
+    "status": "PASS",
+    "scope": "All twelve frozen camera-fixed lighting scenes, identical inputs and predeclared motion/noise criteria; inspected synthetic development controls.",
+    "details": "30/30 pairs; max pose 0.0914016421485477 deg; max landmark RMS 0.056605141845908154 px",
+    "motion_accuracy_unavailable": false,
+    "primary": true
+  },
+  {
+    "run": "camera_lighting",
+    "check": "full_turn_x12_lambertian_multiplicative_texture_a /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "All twelve frozen camera-fixed lighting scenes, identical inputs and predeclared motion/noise criteria; inspected synthetic development controls.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": true
+  },
+  {
+    "run": "camera_lighting",
+    "check": "full_turn_x12_lambertian_multiplicative_texture_b",
+    "status": "PASS",
+    "scope": "All twelve frozen camera-fixed lighting scenes, identical inputs and predeclared motion/noise criteria; inspected synthetic development controls.",
+    "details": "30/30 pairs; max pose 0.04145797309272411 deg; max landmark RMS 0.020009233560720388 px",
+    "motion_accuracy_unavailable": false,
+    "primary": true
+  },
+  {
+    "run": "camera_lighting",
+    "check": "full_turn_x12_lambertian_multiplicative_texture_b /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "All twelve frozen camera-fixed lighting scenes, identical inputs and predeclared motion/noise criteria; inspected synthetic development controls.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": true
+  },
+  {
+    "run": "camera_lighting",
+    "check": "short_xy_linear_additive_texture_a",
+    "status": "PASS",
+    "scope": "All twelve frozen camera-fixed lighting scenes, identical inputs and predeclared motion/noise criteria; inspected synthetic development controls.",
+    "details": "10/10 pairs; max pose 0.25548400913118 deg; max landmark RMS 0.23268830415208092 px",
+    "motion_accuracy_unavailable": false,
+    "primary": true
+  },
+  {
+    "run": "camera_lighting",
+    "check": "short_xy_linear_additive_texture_b",
+    "status": "PASS",
+    "scope": "All twelve frozen camera-fixed lighting scenes, identical inputs and predeclared motion/noise criteria; inspected synthetic development controls.",
+    "details": "10/10 pairs; max pose 0.09538561088667188 deg; max landmark RMS 0.08709994842609695 px",
+    "motion_accuracy_unavailable": false,
+    "primary": true
+  },
+  {
+    "run": "camera_lighting",
+    "check": "short_xy_lambertian_multiplicative_texture_a",
+    "status": "PASS",
+    "scope": "All twelve frozen camera-fixed lighting scenes, identical inputs and predeclared motion/noise criteria; inspected synthetic development controls.",
+    "details": "10/10 pairs; max pose 0.26537988050653943 deg; max landmark RMS 0.24210865630791742 px",
+    "motion_accuracy_unavailable": false,
+    "primary": true
+  },
+  {
+    "run": "camera_lighting",
+    "check": "short_xy_lambertian_multiplicative_texture_b",
+    "status": "PASS",
+    "scope": "All twelve frozen camera-fixed lighting scenes, identical inputs and predeclared motion/noise criteria; inspected synthetic development controls.",
+    "details": "10/10 pairs; max pose 0.3018905973763493 deg; max landmark RMS 0.2743792744240039 px",
+    "motion_accuracy_unavailable": false,
+    "primary": true
+  },
+  {
+    "run": "camera_lighting",
+    "check": "stationary_120_linear_additive_texture_a",
+    "status": "PASS",
+    "scope": "All twelve frozen camera-fixed lighting scenes, identical inputs and predeclared motion/noise criteria; inspected synthetic development controls.",
+    "details": "0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored",
+    "motion_accuracy_unavailable": true,
+    "primary": true
+  },
+  {
+    "run": "camera_lighting",
+    "check": "stationary_120_linear_additive_texture_b",
+    "status": "PASS",
+    "scope": "All twelve frozen camera-fixed lighting scenes, identical inputs and predeclared motion/noise criteria; inspected synthetic development controls.",
+    "details": "0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored",
+    "motion_accuracy_unavailable": true,
+    "primary": true
+  },
+  {
+    "run": "camera_lighting",
+    "check": "stationary_120_lambertian_multiplicative_texture_a",
+    "status": "PASS",
+    "scope": "All twelve frozen camera-fixed lighting scenes, identical inputs and predeclared motion/noise criteria; inspected synthetic development controls.",
+    "details": "0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored",
+    "motion_accuracy_unavailable": true,
+    "primary": true
+  },
+  {
+    "run": "camera_lighting",
+    "check": "stationary_120_lambertian_multiplicative_texture_b",
+    "status": "PASS",
+    "scope": "All twelve frozen camera-fixed lighting scenes, identical inputs and predeclared motion/noise criteria; inspected synthetic development controls.",
+    "details": "0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored",
+    "motion_accuracy_unavailable": true,
+    "primary": true
+  },
+  {
+    "run": "short_motion",
+    "check": "variable_xy_texture_a",
+    "status": "PASS",
+    "scope": "Two moving chains, two 120-frame stationary sequences and two exposure-offset checks; unavailable stationary poses are not zero-error estimates.",
+    "details": "10/10 pairs; max pose 0.22195284743479204 deg; max landmark RMS 0.2023188400794917 px",
+    "motion_accuracy_unavailable": false,
+    "primary": true
+  },
+  {
+    "run": "short_motion",
+    "check": "variable_xy_texture_b",
+    "status": "PASS",
+    "scope": "Two moving chains, two 120-frame stationary sequences and two exposure-offset checks; unavailable stationary poses are not zero-error estimates.",
+    "details": "10/10 pairs; max pose 0.09416876298970926 deg; max landmark RMS 0.08598666410163051 px",
+    "motion_accuracy_unavailable": false,
+    "primary": true
+  },
+  {
+    "run": "short_motion",
+    "check": "stationary_120_texture_a",
+    "status": "PASS",
+    "scope": "Two moving chains, two 120-frame stationary sequences and two exposure-offset checks; unavailable stationary poses are not zero-error estimates.",
+    "details": "0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored",
+    "motion_accuracy_unavailable": true,
+    "primary": true
+  },
+  {
+    "run": "short_motion",
+    "check": "stationary_120_texture_b",
+    "status": "PASS",
+    "scope": "Two moving chains, two 120-frame stationary sequences and two exposure-offset checks; unavailable stationary poses are not zero-error estimates.",
+    "details": "0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored",
+    "motion_accuracy_unavailable": true,
+    "primary": true
+  },
+  {
+    "run": "short_motion",
+    "check": "variable_xy_texture_a /brightness offset",
+    "status": "PASS",
+    "scope": "Two moving chains, two 120-frame stationary sequences and two exposure-offset checks; unavailable stationary poses are not zero-error estimates.",
+    "details": "Recorded exposure comparison {'rotation_change_deg': 1.2074182697257333e-06, 'residual_change': 5.456871855422096e-10}; exact predeclared geometry/invariance flags retained",
+    "primary": true
+  },
+  {
+    "run": "short_motion",
+    "check": "variable_xy_texture_b /brightness offset",
+    "status": "PASS",
+    "scope": "Two moving chains, two 120-frame stationary sequences and two exposure-offset checks; unavailable stationary poses are not zero-error estimates.",
+    "details": "Recorded exposure comparison {'rotation_change_deg': 0.0, 'residual_change': 5.260673022200457e-09}; exact predeclared geometry/invariance flags retained",
+    "primary": true
+  },
+  {
+    "run": "large_sideways20",
+    "check": "texture_a_transverse_-13 /transverse 20 deg",
+    "status": "PASS",
+    "scope": "Four known +/-13-degree sideways pairs at unchanged one-degree / one-pixel limits. Only transverse bound 20 is primary; bound 10 alternatives remain raw comparison data.",
+    "details": "1/1 pairs; max pose 0.0 deg; max landmark RMS 0.003070045416960688 px",
+    "motion_accuracy_unavailable": false,
+    "primary": true
+  },
+  {
+    "run": "large_sideways20",
+    "check": "texture_a_transverse_+13 /transverse 20 deg",
+    "status": "PASS",
+    "scope": "Four known +/-13-degree sideways pairs at unchanged one-degree / one-pixel limits. Only transverse bound 20 is primary; bound 10 alternatives remain raw comparison data.",
+    "details": "1/1 pairs; max pose 0.007290541693372202 deg; max landmark RMS 0.00943384735666366 px",
+    "motion_accuracy_unavailable": false,
+    "primary": true
+  },
+  {
+    "run": "large_sideways20",
+    "check": "texture_b_transverse_-13 /transverse 20 deg",
+    "status": "PASS",
+    "scope": "Four known +/-13-degree sideways pairs at unchanged one-degree / one-pixel limits. Only transverse bound 20 is primary; bound 10 alternatives remain raw comparison data.",
+    "details": "1/1 pairs; max pose 0.0028689680939879077 deg; max landmark RMS 0.005374462832144966 px",
+    "motion_accuracy_unavailable": false,
+    "primary": true
+  },
+  {
+    "run": "large_sideways20",
+    "check": "texture_b_transverse_+13 /transverse 20 deg",
+    "status": "PASS",
+    "scope": "Four known +/-13-degree sideways pairs at unchanged one-degree / one-pixel limits. Only transverse bound 20 is primary; bound 10 alternatives remain raw comparison data.",
+    "details": "1/1 pairs; max pose 0.005105042265145527 deg; max landmark RMS 0.007087492643223005 px",
+    "motion_accuracy_unavailable": false,
+    "primary": true
+  },
+  {
+    "run": "fresh_texture",
+    "check": "full_turn_x12_lambertian_multiplicative_fresh_texture_c",
+    "status": "PASS",
+    "scope": "Fresh texture C under two camera lighting profiles; all-clear maps separately verify supplied-mask class arithmetic.",
+    "details": "30/30 pairs; max pose 0.03961761236930761 deg; max landmark RMS 0.02689141414160646 px",
+    "motion_accuracy_unavailable": false,
+    "primary": true
+  },
+  {
+    "run": "fresh_texture",
+    "check": "full_turn_x12_lambertian_multiplicative_fresh_texture_c /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "Fresh texture C under two camera lighting profiles; all-clear maps separately verify supplied-mask class arithmetic.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": true
+  },
+  {
+    "run": "fresh_texture",
+    "check": "full_turn_x12_linear_additive_fresh_texture_c",
+    "status": "PASS",
+    "scope": "Fresh texture C under two camera lighting profiles; all-clear maps separately verify supplied-mask class arithmetic.",
+    "details": "30/30 pairs; max pose 0.021738312552052056 deg; max landmark RMS 0.013279654369825502 px",
+    "motion_accuracy_unavailable": false,
+    "primary": true
+  },
+  {
+    "run": "fresh_texture",
+    "check": "full_turn_x12_linear_additive_fresh_texture_c /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "Fresh texture C under two camera lighting profiles; all-clear maps separately verify supplied-mask class arithmetic.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": true
+  },
+  {
+    "run": "vertical_full_turn",
+    "check": "constant_6deg_texture_a",
+    "status": "PASS",
+    "scope": "Both exact frozen vertical-axis full turns; acceptance and original inputs unchanged; separate all-clear arithmetic flags.",
+    "details": "60/60 pairs; max pose 0.024542959102319337 deg; max landmark RMS 0.016318448101253328 px",
+    "motion_accuracy_unavailable": false,
+    "primary": true
+  },
+  {
+    "run": "vertical_full_turn",
+    "check": "constant_6deg_texture_a /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "Both exact frozen vertical-axis full turns; acceptance and original inputs unchanged; separate all-clear arithmetic flags.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": true
+  },
+  {
+    "run": "vertical_full_turn",
+    "check": "variable_06_54deg_texture_b",
+    "status": "PASS",
+    "scope": "Both exact frozen vertical-axis full turns; acceptance and original inputs unchanged; separate all-clear arithmetic flags.",
+    "details": "120/120 pairs; max pose 0.5893301646698308 deg; max landmark RMS 0.4020145571616988 px",
+    "motion_accuracy_unavailable": false,
+    "primary": true
+  },
+  {
+    "run": "vertical_full_turn",
+    "check": "variable_06_54deg_texture_b /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "Both exact frozen vertical-axis full turns; acceptance and original inputs unchanged; separate all-clear arithmetic flags.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": true
+  },
+  {
+    "run": "numerical_equivalence",
+    "check": "numeric",
+    "status": "PASS",
+    "scope": "Exact source50 numerical descriptor/legacy-cost equivalence. Its numerical fixture settings differ from the conveyor profile and do not constitute a conveyor-motion or grading test.",
+    "details": "Recorded implementation/execution check; field motion and grade accuracy unverified",
+    "primary": true
+  },
+  {
+    "run": "fixed_conveyor_geometry",
+    "check": "track 98 /adjacent_native",
+    "status": "UNAVAILABLE",
+    "scope": "Four exact frozen conveyor tracks; geometric availability/coverage only. Missing defect observations forbid assigning geometry-only grades.",
+    "details": "24 selected views; longitude 360.000 deg; missing_defect_masks; field pose accuracy unavailable",
+    "primary": true
+  },
+  {
+    "run": "fixed_conveyor_geometry",
+    "check": "track 1 /adjacent_native",
+    "status": "UNAVAILABLE",
+    "scope": "Four exact frozen conveyor tracks; geometric availability/coverage only. Missing defect observations forbid assigning geometry-only grades.",
+    "details": "12 selected views; longitude 162.395 deg; insufficient_longitude_coverage; field pose accuracy unavailable",
+    "primary": true
+  },
+  {
+    "run": "fixed_conveyor_geometry",
+    "check": "track 14 /adjacent_native",
+    "status": "UNAVAILABLE",
+    "scope": "Four exact frozen conveyor tracks; geometric availability/coverage only. Missing defect observations forbid assigning geometry-only grades.",
+    "details": "2 selected views; longitude 108.401 deg; insufficient_longitude_coverage; field pose accuracy unavailable",
+    "primary": true
+  },
+  {
+    "run": "fixed_conveyor_geometry",
+    "check": "track 491 /adjacent_native",
+    "status": "UNAVAILABLE",
+    "scope": "Four exact frozen conveyor tracks; geometric availability/coverage only. Missing defect observations forbid assigning geometry-only grades.",
+    "details": "4 selected views; longitude 161.527 deg; insufficient_longitude_coverage; field pose accuracy unavailable",
+    "primary": true
+  },
+  {
+    "run": "author_all36",
+    "check": "author",
+    "status": "UNAVAILABLE",
+    "scope": "All 36 public author sequences and all 497 published labels. Author frame spacing uses a 55-degree rolling bound and direction -1. Repeatedly inspected development data; no declared held-out accuracy acceptance threshold.",
+    "details": "36 sequences; 457/497 returned; conditional RMS 5.224578715801349 px; no accuracy acceptance threshold declared",
+    "primary": true
+  },
+  {
+    "run": "retained_author_all36",
+    "check": "retained-map published labels",
+    "status": "UNAVAILABLE",
+    "scope": "Retained-map subset over all 36sequences/all 497labels. Excluded endpoints remain unavailable in the full denominator; no nonadjacent bridge or hidden replacement subset.",
+    "details": "36 sequences; 348/497 returned; conditional RMS 5.359672788954673 px; 286 of all labels within 5 px; 0 nonadjacent bridges; no declared field accuracy threshold",
+    "primary": true
+  },
+  {
+    "run": "paired_author_labels",
+    "check": "same labels versus operational_profile_v1",
+    "status": "UNAVAILABLE",
+    "scope": "Same exact labels versus both earlier profiles; gains/losses, common-label errors and all 497availability remain separate. No overall author-accuracy improvement is claimed.",
+    "details": "450 common labels; RMS 4.912064 to 4.887740 px; 124 improved/99 worsened/227 unchanged; 7 gained/8 lost/32 unavailable in both; no overall improvement acceptance claim",
+    "primary": true
+  },
+  {
+    "run": "paired_author_labels",
+    "check": "same labels versus hybrid_wobble_profile_20261002",
+    "status": "UNAVAILABLE",
+    "scope": "Same exact labels versus both earlier profiles; gains/losses, common-label errors and all 497availability remain separate. No overall author-accuracy improvement is claimed.",
+    "details": "454 common labels; RMS 5.225545 to 5.240480 px; 103 improved/100 worsened/251 unchanged; 3 gained/8 lost/32 unavailable in both; no overall improvement acceptance claim",
+    "primary": true
+  },
+  {
+    "run": "real_model",
+    "check": "actual frozen-crop model execution",
+    "status": "PASS",
+    "scope": "Actual source50/main4c GPU integration on 215 frozen detector/tracker crops and fruit masks. Detector loaded but zero detector calls; 42 segmentation calls/80 instances, 62.1 ms mean latency. Track 98 Class 1 arithmetic and three other tracks partial. No human pose/mask/grade truth.",
+    "details": "42 actual segmenter calls; 80 instances; mean 62.1 ms/confidence 0.492; detector calls 0; no human pose/mask/grade truth",
+    "primary": true
+  },
+  {
+    "run": "known_area_arithmetic",
+    "check": 0,
+    "status": "PASS",
+    "scope": "Source50known5/15/30percent defect masks and supplied true rotations test area/class and coverage arithmetic. Motion estimation/view selection are bypassed; recorded fixture settings differ deliberately from the conveyor profile.",
+    "details": "Known defect 5.0%; measured 5.143653862859557%; absolute error 0.14365386285955672 percentage points; grade Class 1",
+    "motion_accuracy_unavailable": false,
+    "primary": true
+  },
+  {
+    "run": "known_area_arithmetic",
+    "check": 1,
+    "status": "PASS",
+    "scope": "Source50known5/15/30percent defect masks and supplied true rotations test area/class and coverage arithmetic. Motion estimation/view selection are bypassed; recorded fixture settings differ deliberately from the conveyor profile.",
+    "details": "Known defect 15.0%; measured 15.178670530544993%; absolute error 0.17867053054499316 percentage points; grade Class 2",
+    "motion_accuracy_unavailable": false,
+    "primary": true
+  },
+  {
+    "run": "known_area_arithmetic",
+    "check": 2,
+    "status": "PASS",
+    "scope": "Source50known5/15/30percent defect masks and supplied true rotations test area/class and coverage arithmetic. Motion estimation/view selection are bypassed; recorded fixture settings differ deliberately from the conveyor profile.",
+    "details": "Known defect 30.0%; measured 30.09275852616302%; absolute error 0.0927585261630206 percentage points; grade Class 3",
+    "motion_accuracy_unavailable": false,
+    "primary": true
+  },
+  {
+    "run": "known_area_arithmetic",
+    "check": "known-pose coverage arithmetic /375.0 deg",
+    "status": "PASS",
+    "scope": "Source50known5/15/30percent defect masks and supplied true rotations test area/class and coverage arithmetic. Motion estimation/view selection are bypassed; recorded fixture settings differ deliberately from the conveyor profile.",
+    "details": "Supplied true rotation 375.0 deg; observed longitude 360.000 deg; status graded; mask/rotation supplied, not neural or motion accuracy",
+    "primary": true
+  },
+  {
+    "run": "known_area_arithmetic",
+    "check": "known-pose coverage arithmetic /270.0 deg",
+    "status": "PASS",
+    "scope": "Source50known5/15/30percent defect masks and supplied true rotations test area/class and coverage arithmetic. Motion estimation/view selection are bypassed; recorded fixture settings differ deliberately from the conveyor profile.",
+    "details": "Supplied true rotation 270.0 deg; observed longitude 360.000 deg; status graded; mask/rotation supplied, not neural or motion accuracy",
+    "primary": true
+  },
+  {
+    "run": "known_area_arithmetic",
+    "check": "known-pose coverage arithmetic /250.0 deg",
+    "status": "PASS",
+    "scope": "Source50known5/15/30percent defect masks and supplied true rotations test area/class and coverage arithmetic. Motion estimation/view selection are bypassed; recorded fixture settings differ deliberately from the conveyor profile.",
+    "details": "Supplied true rotation 250.0 deg; observed longitude 340.231 deg; status insufficient_longitude_coverage; mask/rotation supplied, not neural or motion accuracy",
+    "primary": true
+  },
+  {
+    "run": "known_area_arithmetic",
+    "check": "known-pose coverage arithmetic /100.0 deg",
+    "status": "PASS",
+    "scope": "Source50known5/15/30percent defect masks and supplied true rotations test area/class and coverage arithmetic. Motion estimation/view selection are bypassed; recorded fixture settings differ deliberately from the conveyor profile.",
+    "details": "Supplied true rotation 100.0 deg; observed longitude 190.405 deg; status insufficient_longitude_coverage; mask/rotation supplied, not neural or motion accuracy",
+    "primary": true
+  },
+  {
+    "run": "original_software",
+    "check": "python_tests",
+    "status": "PASS",
+    "scope": "Original source50/main2a software checkpoint:43tests/build/lint pass. This is not a test of the later runtime main cleanup.",
+    "details": "Exit code 0; started 2026-10-02T20:50:19.964601+02:00; exact command and console log retained",
+    "primary": true
+  },
+  {
+    "run": "original_software",
+    "check": "frontend_build",
+    "status": "PASS",
+    "scope": "Original source50/main2a software checkpoint:43tests/build/lint pass. This is not a test of the later runtime main cleanup.",
+    "details": "Exit code 0; started 2026-10-02T20:50:26.938496+02:00; exact command and console log retained",
+    "primary": true
+  },
+  {
+    "run": "original_software",
+    "check": "frontend_lint",
+    "status": "PASS",
+    "scope": "Original source50/main2a software checkpoint:43tests/build/lint pass. This is not a test of the later runtime main cleanup.",
+    "details": "Exit code 0; started 2026-10-02T20:50:31.896571+02:00; exact command and console log retained",
+    "primary": true
+  },
+  {
+    "run": "runtime_software",
+    "check": "python_tests",
+    "status": "PASS",
+    "scope": "New runtime software checkpoint after explicit track cleanup; final execution source/hash required separately. No changed rotation algorithm or field-accuracy claim.",
+    "details": "Exit code 0; started 2026-10-03T12:24:59.645028+02:00; exact command and console log retained",
+    "primary": true
+  },
+  {
+    "run": "runtime_software",
+    "check": "frontend_build",
+    "status": "PASS",
+    "scope": "New runtime software checkpoint after explicit track cleanup; final execution source/hash required separately. No changed rotation algorithm or field-accuracy claim.",
+    "details": "Exit code 0; started 2026-10-03T12:25:08.334068+02:00; exact command and console log retained",
+    "primary": true
+  },
+  {
+    "run": "runtime_software",
+    "check": "frontend_lint",
+    "status": "PASS",
+    "scope": "New runtime software checkpoint after explicit track cleanup; final execution source/hash required separately. No changed rotation algorithm or field-accuracy claim.",
+    "details": "Exit code 0; started 2026-10-03T12:25:11.344923+02:00; exact command and console log retained",
+    "primary": true
+  },
+  {
+    "run": "full_video_runtime",
+    "check": "api",
+    "status": "PASS",
+    "scope": "Separately labelled full original 515-frame POST/API replay after runtime cleanup and training pause. Requires completed aggregate report and exact job snapshots; execution is not field grade/pose accuracy.",
+    "details": "Completed video execution; accuracy unverified",
+    "primary": true
+  },
+  {
+    "run": "failed_full_video330",
+    "check": "api",
+    "status": "FAIL",
+    "scope": "Preserved original source50/main2a HTTP500 allocation failure at last published330/515 progress. Exact failure time/cause unknown. Concurrent training is context, not established causation;256 partial rows are not completed execution.",
+    "details": "Failed video execution at last published progress 330/515; Unable to allocate 1.26 MiB for an array with shape (115, 160, 9) and data type float64; separate runtime failure, not an image-accuracy score",
+    "primary": false
+  },
+  {
+    "run": "operational_author_reference",
+    "check": "author",
+    "status": "UNAVAILABLE",
+    "scope": "Historical source74author reference used in exact-label comparison; all 36/all 497scope. Distinct source, not current-source validation.",
+    "details": "36 sequences; 458/497 returned; conditional RMS 5.102881441773768 px; no accuracy acceptance threshold declared",
+    "primary": false
+  },
+  {
+    "run": "wobble_author_reference",
+    "check": "author",
+    "status": "UNAVAILABLE",
+    "scope": "Historical source951/native8/side20author reference; later failed horizontal-turn controls. All 36/all 497scope retained as comparison only.",
+    "details": "36 sequences; 462/497 returned; conditional RMS 5.3986826198984215 px; no accuracy acceptance threshold declared",
+    "primary": false
+  },
+  {
+    "run": "failed_native8_x12",
+    "check": "constant_12deg_texture_a",
+    "status": "FAIL",
+    "scope": "Historical source951 native8 ideal12-degree horizontal turns fail despite clear Class1 maps.",
+    "details": "30/30 pairs; max pose 11.091995907368636 deg; max landmark RMS 7.484797229416884 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_native8_x12",
+    "check": "constant_12deg_texture_a /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "Historical source951 native8 ideal12-degree horizontal turns fail despite clear Class1 maps.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": false
+  },
+  {
+    "run": "failed_native8_x12",
+    "check": "constant_12deg_texture_b",
+    "status": "FAIL",
+    "scope": "Historical source951 native8 ideal12-degree horizontal turns fail despite clear Class1 maps.",
+    "details": "30/30 pairs; max pose 6.18857812510916 deg; max landmark RMS 4.194537175136294 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_native8_x12",
+    "check": "constant_12deg_texture_b /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "Historical source951 native8 ideal12-degree horizontal turns fail despite clear Class1 maps.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": false
+  },
+  {
+    "run": "native20_setting_trial",
+    "check": "constant_12deg_texture_a",
+    "status": "PASS",
+    "scope": "Settings-only source951 native20 ideal-turn passes are comparison history; author availability/fixedcoverage regressions prevented adoption.",
+    "details": "30/30 pairs; max pose 2.063387566295737 deg; max landmark RMS 1.4001752694123666 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "native20_setting_trial",
+    "check": "constant_12deg_texture_a /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "Settings-only source951 native20 ideal-turn passes are comparison history; author availability/fixedcoverage regressions prevented adoption.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": false
+  },
+  {
+    "run": "native20_setting_trial",
+    "check": "constant_12deg_texture_b",
+    "status": "PASS",
+    "scope": "Settings-only source951 native20 ideal-turn passes are comparison history; author availability/fixedcoverage regressions prevented adoption.",
+    "details": "30/30 pairs; max pose 0.9359294325524352 deg; max landmark RMS 0.6352815032970704 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "native20_setting_trial",
+    "check": "constant_12deg_texture_b /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "Settings-only source951 native20 ideal-turn passes are comparison history; author availability/fixedcoverage regressions prevented adoption.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": false
+  },
+  {
+    "run": "failed_detrended_lighting",
+    "check": "full_turn_x12_linear_additive_texture_a",
+    "status": "PASS",
+    "scope": "Distinct6f2c source lighting trial9/12 PASS; curved-full and short-chain failures remain in images/rawreports.",
+    "details": "30/30 pairs; max pose 3.6554174131934785 deg; max landmark RMS 2.4799572455985492 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_detrended_lighting",
+    "check": "full_turn_x12_linear_additive_texture_a /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "Distinct6f2c source lighting trial9/12 PASS; curved-full and short-chain failures remain in images/rawreports.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": false
+  },
+  {
+    "run": "failed_detrended_lighting",
+    "check": "full_turn_x12_linear_additive_texture_b",
+    "status": "PASS",
+    "scope": "Distinct6f2c source lighting trial9/12 PASS; curved-full and short-chain failures remain in images/rawreports.",
+    "details": "30/30 pairs; max pose 3.271786626471521 deg; max landmark RMS 2.219969744959767 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_detrended_lighting",
+    "check": "full_turn_x12_linear_additive_texture_b /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "Distinct6f2c source lighting trial9/12 PASS; curved-full and short-chain failures remain in images/rawreports.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": false
+  },
+  {
+    "run": "failed_detrended_lighting",
+    "check": "full_turn_x12_lambertian_multiplicative_texture_a",
+    "status": "FAIL",
+    "scope": "Distinct6f2c source lighting trial9/12 PASS; curved-full and short-chain failures remain in images/rawreports.",
+    "details": "30/30 pairs; max pose 6.676572983862286 deg; max landmark RMS 4.524457051949303 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_detrended_lighting",
+    "check": "full_turn_x12_lambertian_multiplicative_texture_a /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "Distinct6f2c source lighting trial9/12 PASS; curved-full and short-chain failures remain in images/rawreports.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": false
+  },
+  {
+    "run": "failed_detrended_lighting",
+    "check": "full_turn_x12_lambertian_multiplicative_texture_b",
+    "status": "FAIL",
+    "scope": "Distinct6f2c source lighting trial9/12 PASS; curved-full and short-chain failures remain in images/rawreports.",
+    "details": "30/30 pairs; max pose 5.25311365114571 deg; max landmark RMS 3.561941131658298 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_detrended_lighting",
+    "check": "full_turn_x12_lambertian_multiplicative_texture_b /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "Distinct6f2c source lighting trial9/12 PASS; curved-full and short-chain failures remain in images/rawreports.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": false
+  },
+  {
+    "run": "failed_detrended_lighting",
+    "check": "short_xy_linear_additive_texture_a",
+    "status": "PASS",
+    "scope": "Distinct6f2c source lighting trial9/12 PASS; curved-full and short-chain failures remain in images/rawreports.",
+    "details": "10/10 pairs; max pose 0.24361620727738906 deg; max landmark RMS 0.22227726706471373 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_detrended_lighting",
+    "check": "short_xy_linear_additive_texture_b",
+    "status": "PASS",
+    "scope": "Distinct6f2c source lighting trial9/12 PASS; curved-full and short-chain failures remain in images/rawreports.",
+    "details": "10/10 pairs; max pose 0.10527296123724268 deg; max landmark RMS 0.09607653809474202 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_detrended_lighting",
+    "check": "short_xy_lambertian_multiplicative_texture_a",
+    "status": "FAIL",
+    "scope": "Distinct6f2c source lighting trial9/12 PASS; curved-full and short-chain failures remain in images/rawreports.",
+    "details": "10/10 pairs; max pose 1.3879754252226268 deg; max landmark RMS 1.2649296230642981 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_detrended_lighting",
+    "check": "short_xy_lambertian_multiplicative_texture_b",
+    "status": "PASS",
+    "scope": "Distinct6f2c source lighting trial9/12 PASS; curved-full and short-chain failures remain in images/rawreports.",
+    "details": "10/10 pairs; max pose 0.13600869165584697 deg; max landmark RMS 0.12404471397408462 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_detrended_lighting",
+    "check": "stationary_120_linear_additive_texture_a",
+    "status": "PASS",
+    "scope": "Distinct6f2c source lighting trial9/12 PASS; curved-full and short-chain failures remain in images/rawreports.",
+    "details": "0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored",
+    "motion_accuracy_unavailable": true,
+    "primary": false
+  },
+  {
+    "run": "failed_detrended_lighting",
+    "check": "stationary_120_linear_additive_texture_b",
+    "status": "PASS",
+    "scope": "Distinct6f2c source lighting trial9/12 PASS; curved-full and short-chain failures remain in images/rawreports.",
+    "details": "0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored",
+    "motion_accuracy_unavailable": true,
+    "primary": false
+  },
+  {
+    "run": "failed_detrended_lighting",
+    "check": "stationary_120_lambertian_multiplicative_texture_a",
+    "status": "PASS",
+    "scope": "Distinct6f2c source lighting trial9/12 PASS; curved-full and short-chain failures remain in images/rawreports.",
+    "details": "0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored",
+    "motion_accuracy_unavailable": true,
+    "primary": false
+  },
+  {
+    "run": "failed_detrended_lighting",
+    "check": "stationary_120_lambertian_multiplicative_texture_b",
+    "status": "PASS",
+    "scope": "Distinct6f2c source lighting trial9/12 PASS; curved-full and short-chain failures remain in images/rawreports.",
+    "details": "0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored",
+    "motion_accuracy_unavailable": true,
+    "primary": false
+  },
+  {
+    "run": "failed_unblurred_lighting",
+    "check": "full_turn_x12_linear_additive_texture_a",
+    "status": "PASS",
+    "scope": "Distinctc5c7 source lighting trial8/12 PASS, including curved failures; not the adopted source.",
+    "details": "30/30 pairs; max pose 0.1733328850704081 deg; max landmark RMS 0.11764248848931078 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_unblurred_lighting",
+    "check": "full_turn_x12_linear_additive_texture_a /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "Distinctc5c7 source lighting trial8/12 PASS, including curved failures; not the adopted source.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": false
+  },
+  {
+    "run": "failed_unblurred_lighting",
+    "check": "full_turn_x12_linear_additive_texture_b",
+    "status": "PASS",
+    "scope": "Distinctc5c7 source lighting trial8/12 PASS, including curved failures; not the adopted source.",
+    "details": "30/30 pairs; max pose 0.03484564759322293 deg; max landmark RMS 0.02125731812658928 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_unblurred_lighting",
+    "check": "full_turn_x12_linear_additive_texture_b /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "Distinctc5c7 source lighting trial8/12 PASS, including curved failures; not the adopted source.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": false
+  },
+  {
+    "run": "failed_unblurred_lighting",
+    "check": "full_turn_x12_lambertian_multiplicative_texture_a",
+    "status": "FAIL",
+    "scope": "Distinctc5c7 source lighting trial8/12 PASS, including curved failures; not the adopted source.",
+    "details": "30/30 pairs; max pose 5.254898973886953 deg; max landmark RMS 3.562256292993178 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_unblurred_lighting",
+    "check": "full_turn_x12_lambertian_multiplicative_texture_a /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "Distinctc5c7 source lighting trial8/12 PASS, including curved failures; not the adopted source.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": false
+  },
+  {
+    "run": "failed_unblurred_lighting",
+    "check": "full_turn_x12_lambertian_multiplicative_texture_b",
+    "status": "PASS",
+    "scope": "Distinctc5c7 source lighting trial8/12 PASS, including curved failures; not the adopted source.",
+    "details": "30/30 pairs; max pose 2.3490161757591066 deg; max landmark RMS 1.5941175211337073 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_unblurred_lighting",
+    "check": "full_turn_x12_lambertian_multiplicative_texture_b /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "Distinctc5c7 source lighting trial8/12 PASS, including curved failures; not the adopted source.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": false
+  },
+  {
+    "run": "failed_unblurred_lighting",
+    "check": "short_xy_linear_additive_texture_a",
+    "status": "PASS",
+    "scope": "Distinctc5c7 source lighting trial8/12 PASS, including curved failures; not the adopted source.",
+    "details": "10/10 pairs; max pose 0.6537836852414117 deg; max landmark RMS 0.5960233077460217 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_unblurred_lighting",
+    "check": "short_xy_linear_additive_texture_b",
+    "status": "PASS",
+    "scope": "Distinctc5c7 source lighting trial8/12 PASS, including curved failures; not the adopted source.",
+    "details": "10/10 pairs; max pose 0.1663696116908372 deg; max landmark RMS 0.15179771047854645 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_unblurred_lighting",
+    "check": "short_xy_lambertian_multiplicative_texture_a",
+    "status": "FAIL",
+    "scope": "Distinctc5c7 source lighting trial8/12 PASS, including curved failures; not the adopted source.",
+    "details": "10/10 pairs; max pose 1.505871723053788 deg; max landmark RMS 1.3725149077507037 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_unblurred_lighting",
+    "check": "short_xy_lambertian_multiplicative_texture_b",
+    "status": "PASS",
+    "scope": "Distinctc5c7 source lighting trial8/12 PASS, including curved failures; not the adopted source.",
+    "details": "10/10 pairs; max pose 0.06789051472132179 deg; max landmark RMS 0.062073313927137504 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_unblurred_lighting",
+    "check": "stationary_120_linear_additive_texture_a",
+    "status": "FAIL",
+    "scope": "Distinctc5c7 source lighting trial8/12 PASS, including curved failures; not the adopted source.",
+    "details": "29/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored",
+    "motion_accuracy_unavailable": true,
+    "primary": false
+  },
+  {
+    "run": "failed_unblurred_lighting",
+    "check": "stationary_120_linear_additive_texture_b",
+    "status": "PASS",
+    "scope": "Distinctc5c7 source lighting trial8/12 PASS, including curved failures; not the adopted source.",
+    "details": "0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored",
+    "motion_accuracy_unavailable": true,
+    "primary": false
+  },
+  {
+    "run": "failed_unblurred_lighting",
+    "check": "stationary_120_lambertian_multiplicative_texture_a",
+    "status": "FAIL",
+    "scope": "Distinctc5c7 source lighting trial8/12 PASS, including curved failures; not the adopted source.",
+    "details": "119/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored",
+    "motion_accuracy_unavailable": true,
+    "primary": false
+  },
+  {
+    "run": "failed_unblurred_lighting",
+    "check": "stationary_120_lambertian_multiplicative_texture_b",
+    "status": "PASS",
+    "scope": "Distinctc5c7 source lighting trial8/12 PASS, including curved failures; not the adopted source.",
+    "details": "0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored",
+    "motion_accuracy_unavailable": true,
+    "primary": false
+  },
+  {
+    "run": "failed_log_blurred_lighting",
+    "check": "full_turn_x12_linear_additive_texture_a",
+    "status": "PASS",
+    "scope": "Distinct1cfb source lighting trial10/12 PASS; two failed full curved turns retained.",
+    "details": "30/30 pairs; max pose 1.044617015467678 deg; max landmark RMS 0.7090333205027872 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_log_blurred_lighting",
+    "check": "full_turn_x12_linear_additive_texture_a /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "Distinct1cfb source lighting trial10/12 PASS; two failed full curved turns retained.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": false
+  },
+  {
+    "run": "failed_log_blurred_lighting",
+    "check": "full_turn_x12_linear_additive_texture_b",
+    "status": "PASS",
+    "scope": "Distinct1cfb source lighting trial10/12 PASS; two failed full curved turns retained.",
+    "details": "30/30 pairs; max pose 0.819030665748483 deg; max landmark RMS 0.5559222233744571 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_log_blurred_lighting",
+    "check": "full_turn_x12_linear_additive_texture_b /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "Distinct1cfb source lighting trial10/12 PASS; two failed full curved turns retained.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": false
+  },
+  {
+    "run": "failed_log_blurred_lighting",
+    "check": "full_turn_x12_lambertian_multiplicative_texture_a",
+    "status": "FAIL",
+    "scope": "Distinct1cfb source lighting trial10/12 PASS; two failed full curved turns retained.",
+    "details": "30/30 pairs; max pose 7.406101749368426 deg; max landmark RMS 5.01533257214098 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_log_blurred_lighting",
+    "check": "full_turn_x12_lambertian_multiplicative_texture_a /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "Distinct1cfb source lighting trial10/12 PASS; two failed full curved turns retained.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": false
+  },
+  {
+    "run": "failed_log_blurred_lighting",
+    "check": "full_turn_x12_lambertian_multiplicative_texture_b",
+    "status": "PASS",
+    "scope": "Distinct1cfb source lighting trial10/12 PASS; two failed full curved turns retained.",
+    "details": "30/30 pairs; max pose 3.6916264989911243 deg; max landmark RMS 2.5044705880070985 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_log_blurred_lighting",
+    "check": "full_turn_x12_lambertian_multiplicative_texture_b /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "Distinct1cfb source lighting trial10/12 PASS; two failed full curved turns retained.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": false
+  },
+  {
+    "run": "failed_log_blurred_lighting",
+    "check": "short_xy_linear_additive_texture_a",
+    "status": "PASS",
+    "scope": "Distinct1cfb source lighting trial10/12 PASS; two failed full curved turns retained.",
+    "details": "10/10 pairs; max pose 0.6988828402487601 deg; max landmark RMS 0.6371107289189809 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_log_blurred_lighting",
+    "check": "short_xy_linear_additive_texture_b",
+    "status": "PASS",
+    "scope": "Distinct1cfb source lighting trial10/12 PASS; two failed full curved turns retained.",
+    "details": "10/10 pairs; max pose 0.16017985018588915 deg; max landmark RMS 0.14616435496367294 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_log_blurred_lighting",
+    "check": "short_xy_lambertian_multiplicative_texture_a",
+    "status": "FAIL",
+    "scope": "Distinct1cfb source lighting trial10/12 PASS; two failed full curved turns retained.",
+    "details": "10/10 pairs; max pose 1.5398340680285991 deg; max landmark RMS 1.4034623560599766 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_log_blurred_lighting",
+    "check": "short_xy_lambertian_multiplicative_texture_b",
+    "status": "PASS",
+    "scope": "Distinct1cfb source lighting trial10/12 PASS; two failed full curved turns retained.",
+    "details": "10/10 pairs; max pose 0.07886892688159138 deg; max landmark RMS 0.07221102454156432 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_log_blurred_lighting",
+    "check": "stationary_120_linear_additive_texture_a",
+    "status": "PASS",
+    "scope": "Distinct1cfb source lighting trial10/12 PASS; two failed full curved turns retained.",
+    "details": "0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored",
+    "motion_accuracy_unavailable": true,
+    "primary": false
+  },
+  {
+    "run": "failed_log_blurred_lighting",
+    "check": "stationary_120_linear_additive_texture_b",
+    "status": "PASS",
+    "scope": "Distinct1cfb source lighting trial10/12 PASS; two failed full curved turns retained.",
+    "details": "0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored",
+    "motion_accuracy_unavailable": true,
+    "primary": false
+  },
+  {
+    "run": "failed_log_blurred_lighting",
+    "check": "stationary_120_lambertian_multiplicative_texture_a",
+    "status": "PASS",
+    "scope": "Distinct1cfb source lighting trial10/12 PASS; two failed full curved turns retained.",
+    "details": "0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored",
+    "motion_accuracy_unavailable": true,
+    "primary": false
+  },
+  {
+    "run": "failed_log_blurred_lighting",
+    "check": "stationary_120_lambertian_multiplicative_texture_b",
+    "status": "PASS",
+    "scope": "Distinct1cfb source lighting trial10/12 PASS; two failed full curved turns retained.",
+    "details": "0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored",
+    "motion_accuracy_unavailable": true,
+    "primary": false
+  },
+  {
+    "run": "failed_log_detrended_stationary",
+    "check": "full_turn_x12_linear_additive_texture_a",
+    "status": "PASS",
+    "scope": "Distinct25d1 source 9/12 PASS;117/0/119/27 false stationary returns. Actual false-map images retained.",
+    "details": "30/30 pairs; max pose 0.0636240357474335 deg; max landmark RMS 0.04318710849884259 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_log_detrended_stationary",
+    "check": "full_turn_x12_linear_additive_texture_a /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "Distinct25d1 source 9/12 PASS;117/0/119/27 false stationary returns. Actual false-map images retained.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": false
+  },
+  {
+    "run": "failed_log_detrended_stationary",
+    "check": "full_turn_x12_linear_additive_texture_b",
+    "status": "PASS",
+    "scope": "Distinct25d1 source 9/12 PASS;117/0/119/27 false stationary returns. Actual false-map images retained.",
+    "details": "30/30 pairs; max pose 0.050216759812404914 deg; max landmark RMS 0.030826290395896176 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_log_detrended_stationary",
+    "check": "full_turn_x12_linear_additive_texture_b /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "Distinct25d1 source 9/12 PASS;117/0/119/27 false stationary returns. Actual false-map images retained.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": false
+  },
+  {
+    "run": "failed_log_detrended_stationary",
+    "check": "full_turn_x12_lambertian_multiplicative_texture_a",
+    "status": "PASS",
+    "scope": "Distinct25d1 source 9/12 PASS;117/0/119/27 false stationary returns. Actual false-map images retained.",
+    "details": "30/30 pairs; max pose 0.0914016421485477 deg; max landmark RMS 0.056605141845908154 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_log_detrended_stationary",
+    "check": "full_turn_x12_lambertian_multiplicative_texture_a /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "Distinct25d1 source 9/12 PASS;117/0/119/27 false stationary returns. Actual false-map images retained.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": false
+  },
+  {
+    "run": "failed_log_detrended_stationary",
+    "check": "full_turn_x12_lambertian_multiplicative_texture_b",
+    "status": "PASS",
+    "scope": "Distinct25d1 source 9/12 PASS;117/0/119/27 false stationary returns. Actual false-map images retained.",
+    "details": "30/30 pairs; max pose 0.04145797309272411 deg; max landmark RMS 0.020009233560720388 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_log_detrended_stationary",
+    "check": "full_turn_x12_lambertian_multiplicative_texture_b /all-clear arithmetic",
+    "status": "PASS",
+    "scope": "Distinct25d1 source 9/12 PASS;117/0/119/27 false stationary returns. Actual false-map images retained.",
+    "details": "Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test",
+    "primary": false
+  },
+  {
+    "run": "failed_log_detrended_stationary",
+    "check": "short_xy_linear_additive_texture_a",
+    "status": "PASS",
+    "scope": "Distinct25d1 source 9/12 PASS;117/0/119/27 false stationary returns. Actual false-map images retained.",
+    "details": "10/10 pairs; max pose 0.4291111080002986 deg; max landmark RMS 0.39135309640683275 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_log_detrended_stationary",
+    "check": "short_xy_linear_additive_texture_b",
+    "status": "PASS",
+    "scope": "Distinct25d1 source 9/12 PASS;117/0/119/27 false stationary returns. Actual false-map images retained.",
+    "details": "10/10 pairs; max pose 0.09841238993818949 deg; max landmark RMS 0.08988736871401626 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_log_detrended_stationary",
+    "check": "short_xy_lambertian_multiplicative_texture_a",
+    "status": "PASS",
+    "scope": "Distinct25d1 source 9/12 PASS;117/0/119/27 false stationary returns. Actual false-map images retained.",
+    "details": "10/10 pairs; max pose 0.6510887742633208 deg; max landmark RMS 0.5936246745109888 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_log_detrended_stationary",
+    "check": "short_xy_lambertian_multiplicative_texture_b",
+    "status": "PASS",
+    "scope": "Distinct25d1 source 9/12 PASS;117/0/119/27 false stationary returns. Actual false-map images retained.",
+    "details": "10/10 pairs; max pose 0.07263597617755535 deg; max landmark RMS 0.06621322909771925 px",
+    "motion_accuracy_unavailable": false,
+    "primary": false
+  },
+  {
+    "run": "failed_log_detrended_stationary",
+    "check": "stationary_120_linear_additive_texture_a",
+    "status": "FAIL",
+    "scope": "Distinct25d1 source 9/12 PASS;117/0/119/27 false stationary returns. Actual false-map images retained.",
+    "details": "117/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored",
+    "motion_accuracy_unavailable": true,
+    "primary": false
+  },
+  {
+    "run": "failed_log_detrended_stationary",
+    "check": "stationary_120_linear_additive_texture_b",
+    "status": "PASS",
+    "scope": "Distinct25d1 source 9/12 PASS;117/0/119/27 false stationary returns. Actual false-map images retained.",
+    "details": "0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored",
+    "motion_accuracy_unavailable": true,
+    "primary": false
+  },
+  {
+    "run": "failed_log_detrended_stationary",
+    "check": "stationary_120_lambertian_multiplicative_texture_a",
+    "status": "FAIL",
+    "scope": "Distinct25d1 source 9/12 PASS;117/0/119/27 false stationary returns. Actual false-map images retained.",
+    "details": "119/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored",
+    "motion_accuracy_unavailable": true,
+    "primary": false
+  },
+  {
+    "run": "failed_log_detrended_stationary",
+    "check": "stationary_120_lambertian_multiplicative_texture_b",
+    "status": "FAIL",
+    "scope": "Distinct25d1 source 9/12 PASS;117/0/119/27 false stationary returns. Actual false-map images retained.",
+    "details": "27/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored",
+    "motion_accuracy_unavailable": true,
+    "primary": false
+  },
+  {
+    "run": "failed_mock_checks",
+    "check": "python_tests",
+    "status": "FAIL",
+    "scope": "Historical failed software attempt retained with original logs; no retrospective PASS or relabelled current runtime validation.",
+    "details": "Exit code 1; started 2026-10-02T20:44:14.935714+02:00; exact command and console log retained",
+    "primary": false
+  },
+  {
+    "run": "failed_mock_checks",
+    "check": "frontend_build",
+    "status": "PASS",
+    "scope": "Historical failed software attempt retained with original logs; no retrospective PASS or relabelled current runtime validation.",
+    "details": "Exit code 0; started 2026-10-02T20:44:31.077565+02:00; exact command and console log retained",
+    "primary": false
+  },
+  {
+    "run": "failed_mock_checks",
+    "check": "frontend_lint",
+    "status": "FAIL",
+    "scope": "Historical failed software attempt retained with original logs; no retrospective PASS or relabelled current runtime validation.",
+    "details": "Exit code 1; started 2026-10-02T20:44:36.469891+02:00; exact command and console log retained",
+    "primary": false
+  },
+  {
+    "run": "failed_artifact_lint",
+    "check": "python_tests",
+    "status": "FAIL",
+    "scope": "Historical failed software attempt retained with original logs; no retrospective PASS or relabelled current runtime validation.",
+    "details": "Exit code 1; started 2026-10-02T20:49:48.638261+02:00; exact command and console log retained",
+    "primary": false
+  },
+  {
+    "run": "failed_artifact_lint",
+    "check": "frontend_build",
+    "status": "PASS",
+    "scope": "Historical failed software attempt retained with original logs; no retrospective PASS or relabelled current runtime validation.",
+    "details": "Exit code 0; started 2026-10-02T20:49:56.675265+02:00; exact command and console log retained",
+    "primary": false
+  },
+  {
+    "run": "failed_artifact_lint",
+    "check": "frontend_lint",
+    "status": "PASS",
+    "scope": "Historical failed software attempt retained with original logs; no retrospective PASS or relabelled current runtime validation.",
+    "details": "Exit code 0; started 2026-10-02T20:50:02.070535+02:00; exact command and console log retained",
+    "primary": false
+  },
+  {
+    "run": "original_real_model",
+    "check": "actual frozen-crop model execution",
+    "status": "PASS",
+    "scope": "Earlier source50/main2a actual GPU integration on frozen crops, retained as execution history. It does not validate the later cleanup runtime.",
+    "details": "42 actual segmenter calls; 80 instances; mean 104.8 ms/confidence 0.492; detector calls 0; no human pose/mask/grade truth",
+    "primary": false
+  }
+]

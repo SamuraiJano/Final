@@ -1,0 +1,3 @@
+# Retained paper-profile numerical equivalence
+
+All checks pass for source `951b55a4912d3147d349282846e2e02d20159a410b6bb2e8fdd4ab4dd3abea2d` against baseline `863fd09cfa629c5b5b8ba7c73963fbe993441b3e3dd989f1e451d0a5f62c9db1`. Sixteen batched hypotheses and the matching scalar calculations cover both cost modes, visible/hidden surfaces and all-masked targets. The legacy pair profile returns identical rotations, residuals or explicit unavailability on two archived image pairs. The optional green refinement is not enabled in this legacy check. This proves numerical preservation on these inputs, not motion or grade accuracy. Inputs, settings and both exact source snapshots are retained.

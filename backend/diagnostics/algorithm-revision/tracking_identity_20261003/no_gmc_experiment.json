@@ -1,0 +1,129 @@
+{
+  "created_at": "2026-10-03T18:40:27.206020+00:00",
+  "diagnostic_kind": "Cached real detections, CPU tracker replay only; no detector or segmentation calls.",
+  "change": "Disable camera-motion compensation; keep all association/edge adapter settings unchanged.",
+  "duration_seconds": 27.68448680000438,
+  "software_versions": {
+    "ultralytics": "8.4.170",
+    "opencv": "5.0.0",
+    "numpy": "2.5.3"
+  },
+  "existing_sparse_optical_flow_gmc": {
+    "frames": 515,
+    "observations": 32875,
+    "track_records": 474,
+    "ids_at_most_two_observations": 54,
+    "median_observations_per_id": 86.0,
+    "coincident_box_pairs_iou_above_0_7": 0
+  },
+  "experimental_no_gmc": {
+    "frames": 515,
+    "observations": 32878,
+    "track_records": 506,
+    "ids_at_most_two_observations": 82,
+    "median_observations_per_id": 83.0,
+    "coincident_box_pairs_iou_above_0_7": 0
+  },
+  "cross_replay": {
+    "eligible_original_ids": 393,
+    "ids_matching_multiple_experimental_ids": 14,
+    "details": {
+      "13": {
+        "13": 14,
+        "34": 61
+      },
+      "42": {
+        "42": 57,
+        "127": 10,
+        "100": 1
+      },
+      "58": {
+        "98": 10,
+        "103": 4
+      },
+      "70": {
+        "110": 77,
+        "45": 4
+      },
+      "87": {
+        "127": 3,
+        "42": 10
+      },
+      "101": {
+        "45": 40,
+        "110": 6
+      },
+      "115": {
+        "156": 79,
+        "227": 4
+      },
+      "132": {
+        "179": 4,
+        "155": 74
+      },
+      "153": {
+        "189": 6,
+        "203": 33
+      },
+      "178": {
+        "228": 3,
+        "204": 80
+      },
+      "227": {
+        "259": 3,
+        "260": 86
+      },
+      "241": {
+        "289": 18,
+        "278": 72
+      },
+      "254": {
+        "291": 60,
+        "363": 1,
+        "375": 18
+      },
+      "386": {
+        "431": 8,
+        "439": 4
+      }
+    },
+    "rule": "Per-frame best IoU > 0.5; at least 10 matched frames; multiple IDs each >= 3 matched frames.",
+    "interpretation": "Disagreement/fragmentation indicator, not physical-identity ground truth or measured ID-switch accuracy."
+  },
+  "known_synthetic_identity_replacement": [
+    {
+      "frame": 0,
+      "physical_identity_in_synthetic_scene": "A",
+      "published_track_ids": [
+        1
+      ]
+    },
+    {
+      "frame": 1,
+      "physical_identity_in_synthetic_scene": "none",
+      "published_track_ids": []
+    },
+    {
+      "frame": 2,
+      "physical_identity_in_synthetic_scene": "B",
+      "published_track_ids": [
+        1
+      ]
+    }
+  ],
+  "source_sha256": {
+    "tracker_adapter": "20049bf4e24678342364f85b1f4eea69a36f5385c858189b40b52fac11fc360a",
+    "raw_detections": "66bf9024d16bc82e3f5510416049b87456f411e9c23b9a672125a0db10ba5a6f",
+    "existing_tracking": "795bc8a90bb34384c408f4d0136d185487aaf2c88fb3eabb70385a83f3d504ca",
+    "video": "dc25964bf6052972cad761b0246f79906e768c6737bf4228ba44711d7272429c",
+    "script": "275aac0d6b7885d45d6914538229d61aeb23857af5557434a101b3c62f653098",
+    "experiment_tracking": "11247b5bccbe2b961d5bfbae6256e55d890a8290686a9a1b11fbdabade5b19d6"
+  },
+  "limitations": [
+    "No physical fruit IDs have been manually labelled for the real video.",
+    "Track count alone cannot decide which tracker is more accurate.",
+    "The synthetic A/B replacement is deliberately indistinguishable from detector geometry; it proves a limitation, not a diagnosed switch in the user video.",
+    "No surface maps were built and no grade/coverage improvement is claimed.",
+    "Production tracking source and configuration were not changed."
+  ]
+}

@@ -1,0 +1,364 @@
+{
+  "started_at": "2026-10-04T08:57:36.755066+00:00",
+  "algorithm_sha256": "d2a49090d0c8abc9d9d2785da05664e3ee677f70eb812994e86617cac927b164",
+  "validator_sha256": "24690711a00ed1b0725ccba7012fff72ab395139210bed0c2edc17c3eb104179",
+  "method": "Explicitly invoke production native bidirectional aligned_mad withZbound10degrees, rolling/transverse bounds20degrees, radius fitted from exact frozen sphere masks, native sigma5, unchanged0.58residual/.25degree minimum gates. Prescribed first6pairs of each of four stationary noisy scenes, plus all8prescribed stationary light-reversal pairs. No mocked motion or zero substitution.",
+  "scope": "Limited component safety control, not full-pipeline map/grade execution or proof for all realistic lighting. Automatic coarse eligibility is bypassed explicitly. Samples are fixed before estimation, not selected by failures. Exact stationary poses are identities in frozen input NPZs.",
+  "cases": {
+    "stationary_120_texture_a_inputs": {
+      "input_sha256": "b973556de921cdf36ebc329472e6b824dc92ea1ca6698f269642c9566f31683c",
+      "pairs": [
+        {
+          "source_frame": 0,
+          "target_frame": 1,
+          "status": "false_motion",
+          "residual": 0.03263429006174605,
+          "rotation_vector_deg": [
+            0.4558510179568881,
+            0.2907424000153327,
+            -0.10177581327055767
+          ]
+        },
+        {
+          "source_frame": 1,
+          "target_frame": 2,
+          "status": "unavailable",
+          "reason": "Unreliable three-axis pair 1: rotation 0.0 deg, in-plane 0.8 deg, error 0.037"
+        },
+        {
+          "source_frame": 2,
+          "target_frame": 3,
+          "status": "false_motion",
+          "residual": 0.03495153751176626,
+          "rotation_vector_deg": [
+            0.41492803386498894,
+            0.3439427353858117,
+            0.049856914551519665
+          ]
+        },
+        {
+          "source_frame": 3,
+          "target_frame": 4,
+          "status": "false_motion",
+          "residual": 0.0353317985370505,
+          "rotation_vector_deg": [
+            0.47759712178996955,
+            0.24558810737584444,
+            -0.03483042792312738
+          ]
+        },
+        {
+          "source_frame": 4,
+          "target_frame": 5,
+          "status": "false_motion",
+          "residual": 0.03580115621222004,
+          "rotation_vector_deg": [
+            0.43546788417331483,
+            0.3005729016061508,
+            -0.07996535033789523
+          ]
+        },
+        {
+          "source_frame": 5,
+          "target_frame": 6,
+          "status": "false_motion",
+          "residual": 0.031584119002487476,
+          "rotation_vector_deg": [
+            0.3653064454271801,
+            0.26941934599355416,
+            0.009198974787887237
+          ]
+        }
+      ],
+      "summary": {
+        "tested_pairs": 6,
+        "false_motion_pairs": 5
+      },
+      "passed": false
+    },
+    "stationary_120_texture_b_inputs": {
+      "input_sha256": "b4bd3571d5b10dffb932dbe44597890ebc25014f37377de42815f70162afa29a",
+      "pairs": [
+        {
+          "source_frame": 0,
+          "target_frame": 1,
+          "status": "unavailable",
+          "reason": "Unreliable three-axis pair 0: rotation 0.0 deg, in-plane 0.0 deg, error 0.022"
+        },
+        {
+          "source_frame": 1,
+          "target_frame": 2,
+          "status": "unavailable",
+          "reason": "Unreliable three-axis pair 1: rotation 0.0 deg, in-plane 0.0 deg, error 0.023"
+        },
+        {
+          "source_frame": 2,
+          "target_frame": 3,
+          "status": "unavailable",
+          "reason": "Unreliable three-axis pair 2: rotation 0.0 deg, in-plane 0.0 deg, error 0.022"
+        },
+        {
+          "source_frame": 3,
+          "target_frame": 4,
+          "status": "unavailable",
+          "reason": "Unreliable three-axis pair 3: rotation 0.0 deg, in-plane 0.0 deg, error 0.023"
+        },
+        {
+          "source_frame": 4,
+          "target_frame": 5,
+          "status": "unavailable",
+          "reason": "Unreliable three-axis pair 4: rotation 0.0 deg, in-plane 0.2 deg, error 0.023"
+        },
+        {
+          "source_frame": 5,
+          "target_frame": 6,
+          "status": "unavailable",
+          "reason": "Unreliable three-axis pair 5: rotation 0.0 deg, in-plane -0.2 deg, error 0.024"
+        }
+      ],
+      "summary": {
+        "tested_pairs": 6,
+        "false_motion_pairs": 0
+      },
+      "passed": true
+    },
+    "stationary_120_lambertian_multiplicative_texture_a": {
+      "input_sha256": "930c7c2e115d67bd30338a6ab79d0b3c578b37e6ffe9d5e1b145ced974249e15",
+      "pairs": [
+        {
+          "source_frame": 0,
+          "target_frame": 1,
+          "status": "false_motion",
+          "residual": 0.048192676759232556,
+          "rotation_vector_deg": [
+            0.5984515064737651,
+            0.4674036156690588,
+            -0.00035362465147537335
+          ]
+        },
+        {
+          "source_frame": 1,
+          "target_frame": 2,
+          "status": "false_motion",
+          "residual": 0.05052270690530204,
+          "rotation_vector_deg": [
+            0.6948200910526786,
+            0.46074196209663265,
+            0.11261222290014018
+          ]
+        },
+        {
+          "source_frame": 2,
+          "target_frame": 3,
+          "status": "false_motion",
+          "residual": 0.046845362797572676,
+          "rotation_vector_deg": [
+            0.5767172944250687,
+            0.49373898560168517,
+            -0.08542236076434583
+          ]
+        },
+        {
+          "source_frame": 3,
+          "target_frame": 4,
+          "status": "false_motion",
+          "residual": 0.049039340222468114,
+          "rotation_vector_deg": [
+            0.6397381127479391,
+            0.524447450836358,
+            2.4454118882613623e-05
+          ]
+        },
+        {
+          "source_frame": 4,
+          "target_frame": 5,
+          "status": "false_motion",
+          "residual": 0.046376066232776986,
+          "rotation_vector_deg": [
+            0.5692432582985275,
+            0.5010862690430146,
+            -0.0484627232622928
+          ]
+        },
+        {
+          "source_frame": 5,
+          "target_frame": 6,
+          "status": "false_motion",
+          "residual": 0.050009325920301065,
+          "rotation_vector_deg": [
+            0.6656993801476768,
+            0.421528245552993,
+            -0.01393085528393352
+          ]
+        }
+      ],
+      "summary": {
+        "tested_pairs": 6,
+        "false_motion_pairs": 6
+      },
+      "passed": false
+    },
+    "stationary_120_lambertian_multiplicative_texture_b": {
+      "input_sha256": "e7dcfab8c470216d9354fd9a61c507b9e3b4aeac8641d2ace7d288f6126ef481",
+      "pairs": [
+        {
+          "source_frame": 0,
+          "target_frame": 1,
+          "status": "unavailable",
+          "reason": "Unreliable three-axis pair 0: rotation 0.0 deg, in-plane -0.2 deg, error 0.038"
+        },
+        {
+          "source_frame": 1,
+          "target_frame": 2,
+          "status": "false_motion",
+          "residual": 0.036800886384011466,
+          "rotation_vector_deg": [
+            0.3031732420647381,
+            0.2323066051857732,
+            -0.13882710449982402
+          ]
+        },
+        {
+          "source_frame": 2,
+          "target_frame": 3,
+          "status": "unavailable",
+          "reason": "Unreliable three-axis pair 2: rotation 0.2 deg, in-plane 0.0 deg, error 0.036"
+        },
+        {
+          "source_frame": 3,
+          "target_frame": 4,
+          "status": "false_motion",
+          "residual": 0.03669266398259563,
+          "rotation_vector_deg": [
+            0.297119150840243,
+            0.2927288532065385,
+            -0.19088182713246118
+          ]
+        },
+        {
+          "source_frame": 4,
+          "target_frame": 5,
+          "status": "unavailable",
+          "reason": "Unreliable three-axis pair 4: rotation 0.0 deg, in-plane 0.2 deg, error 0.037"
+        },
+        {
+          "source_frame": 5,
+          "target_frame": 6,
+          "status": "unavailable",
+          "reason": "Unreliable three-axis pair 5: rotation 0.0 deg, in-plane -0.5 deg, error 0.039"
+        }
+      ],
+      "summary": {
+        "tested_pairs": 6,
+        "false_motion_pairs": 2
+      },
+      "passed": false
+    },
+    "stationary_log_light_reversal_g0.006_texture_a": {
+      "input_sha256": "54bba3532acb9fd7c801381f8eeb91eff8c98efa238e4b475f75840b7491d7c6",
+      "pairs": [
+        {
+          "source_frame": 0,
+          "target_frame": 1,
+          "status": "unavailable",
+          "reason": "Unreliable three-axis pair 0: rotation 0.0 deg, in-plane -0.5 deg, error 0.025"
+        },
+        {
+          "source_frame": 1,
+          "target_frame": 2,
+          "status": "false_motion",
+          "residual": 0.023190178617982657,
+          "rotation_vector_deg": [
+            0.30803697006002434,
+            0.21346125112083844,
+            -0.01871151355363203
+          ]
+        }
+      ],
+      "summary": {
+        "tested_pairs": 2,
+        "false_motion_pairs": 1
+      },
+      "passed": false
+    },
+    "stationary_log_light_reversal_g0.012_texture_a": {
+      "input_sha256": "5e9adbbfcb8632cb5eaf80ef79a92dc2d9299181b2d41607b7c83a064dc3a98b",
+      "pairs": [
+        {
+          "source_frame": 0,
+          "target_frame": 1,
+          "status": "false_motion",
+          "residual": 0.022507728388304483,
+          "rotation_vector_deg": [
+            0.4893337940918803,
+            0.3830848399120418,
+            -0.011457394643143557
+          ]
+        },
+        {
+          "source_frame": 1,
+          "target_frame": 2,
+          "status": "false_motion",
+          "residual": 0.02244684849462992,
+          "rotation_vector_deg": [
+            0.4604709462742547,
+            0.3593201155698595,
+            0.007265402124867658
+          ]
+        }
+      ],
+      "summary": {
+        "tested_pairs": 2,
+        "false_motion_pairs": 2
+      },
+      "passed": false
+    },
+    "stationary_log_light_reversal_g0.006_texture_b": {
+      "input_sha256": "dccca8a89134439298c09f6365450ffb9557fee3d250d733f275fe42a235a3c8",
+      "pairs": [
+        {
+          "source_frame": 0,
+          "target_frame": 1,
+          "status": "unavailable",
+          "reason": "Unreliable three-axis pair 0: rotation 0.0 deg, in-plane 0.0 deg, error 0.018"
+        },
+        {
+          "source_frame": 1,
+          "target_frame": 2,
+          "status": "unavailable",
+          "reason": "Unreliable three-axis pair 1: rotation 0.0 deg, in-plane 0.0 deg, error 0.018"
+        }
+      ],
+      "summary": {
+        "tested_pairs": 2,
+        "false_motion_pairs": 0
+      },
+      "passed": true
+    },
+    "stationary_log_light_reversal_g0.012_texture_b": {
+      "input_sha256": "732db6707e98471bf62a369d359829d5df65bd46891f3d9d3295219bb92a2bcc",
+      "pairs": [
+        {
+          "source_frame": 0,
+          "target_frame": 1,
+          "status": "unavailable",
+          "reason": "Unreliable three-axis pair 0: rotation 0.2 deg, in-plane -0.2 deg, error 0.021"
+        },
+        {
+          "source_frame": 1,
+          "target_frame": 2,
+          "status": "unavailable",
+          "reason": "Unreliable three-axis pair 1: rotation 0.0 deg, in-plane -0.2 deg, error 0.021"
+        }
+      ],
+      "summary": {
+        "tested_pairs": 2,
+        "false_motion_pairs": 0
+      },
+      "passed": true
+    }
+  },
+  "all_component_stationary_controls_passed": false,
+  "seconds": 59.72689540000283,
+  "completed_at": "2026-10-04T08:58:36.488327+00:00"
+}

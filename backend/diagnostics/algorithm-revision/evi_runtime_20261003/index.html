@@ -1,0 +1,308 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Current naartjie algorithm evidence</title>
+<style>body{font:17px/1.55 system-ui;color:#24382b;background:#f3f5f0}main{max-width:1150px;margin:auto;padding:28px}.status{background:#efddd5;padding:18px}img{max-width:100%;height:auto}figure{background:white;padding:18px;margin:24px 0}pre{font:14px/1.65 monospace;white-space:pre-wrap;overflow-wrap:anywhere}</style>
+<main><h1>Current algorithm profile: testing evidence</h1><p class="status">Complete offline execution succeeded for this clip: 515 frames, 2/474 records assigned a class (0.42%), 472 Review. Grading remains very limited. A 17.3-second clip required 37.4 minutes; this is not real-time operation. The declared known-answer development controls pass; field motion and grade accuracy remain unverified.</p><p><a href="VALIDATION_REPORT.md">Testing report</a> · <a href="configuration.json">Exact source and settings</a> · <a href="SHA256SUMS.txt">Checksums</a></p><figure><img src="control_outcomes.png" alt="Known-answer development control outcomes"><figcaption>Known-answer development control outcomes</figcaption></figure><figure><img src="worst_author_pair.png" alt="Worst actual returned author pair"><figcaption>Worst actual returned author pair</figcaption></figure><figure><img src="real_fruit98.png" alt="Real fruit 98: tracking and model evidence"><figcaption>Real fruit 98: tracking and model evidence</figcaption></figure><figure><img src="api_actual_fruit98.png" alt="Actual original-video fruit 98: separate full-pipeline example; grade accuracy unverified"><figcaption>Actual original-video fruit 98: separate full-pipeline example; grade accuracy unverified</figcaption></figure><figure><img src="historical_false_eligible_maps.png" alt="Historical failed synthetic candidates: actual false-eligible maps; supplied clear masks, not current-source results"><figcaption>Historical failed synthetic candidates: actual false-eligible maps; supplied clear masks, not current-source results</figcaption></figure><figure><img src="historical_lighting_comparison.png" alt="Earlier lighting-trial outcomes with unchanged criteria; historical sources only"><figcaption>Earlier lighting-trial outcomes with unchanged criteria; historical sources only</figcaption></figure><figure><img src="actual_runtime_resources.png" alt="Actual complete-run resource samples and post-run state: runtime evidence, not accuracy proof"><figcaption>Actual complete-run resource samples and post-run state: runtime evidence, not accuracy proof</figcaption></figure><pre># Current algorithm profile: frozen testing evidence
+
+Built 2026-10-03T13:18:29.487488+02:00. **Complete offline execution succeeded for this clip: 515 frames, 2/474 records assigned a class (0.42%), 472 Review. Grading remains very limited. A 17.3-second clip required 37.4 minutes; this is not real-time operation. The declared known-answer development controls pass; field motion and grade accuracy remain unverified.**
+Exact source SHA256 `50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d`. [Explicit parameters and input selection](configuration.json).
+This report draws recorded results; it runs no estimator, model or resumed video job.
+
+## What was tested
+
+**camera_lighting** (shading, current source, source `50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d`): All twelve frozen camera-fixed lighting scenes, identical inputs and predeclared motion/noise criteria; inspected synthetic development controls.
+
+**short_motion** (motion, current source, source `50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d`): Two moving chains, two 120-frame stationary sequences and two exposure-offset checks; unavailable stationary poses are not zero-error estimates.
+
+**large_sideways20** (large_transverse, current source, source `50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d`): Four known +/-13-degree sideways pairs at unchanged one-degree / one-pixel limits. Only transverse bound 20 is primary; bound 10 alternatives remain raw comparison data.
+
+**fresh_texture** (fresh_texture, current source, source `50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d`): Fresh texture C under two camera lighting profiles; all-clear maps separately verify supplied-mask class arithmetic.
+
+**vertical_full_turn** (full_turn, current source, source `50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d`): Both exact frozen vertical-axis full turns; acceptance and original inputs unchanged; separate all-clear arithmetic flags.
+
+**numerical_equivalence** (numeric, current source, source `50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d`): Exact source50 numerical descriptor/legacy-cost equivalence. Its numerical fixture settings differ from the conveyor profile and do not constitute a conveyor-motion or grading test.
+
+**fixed_conveyor_geometry** (fixed, current source, source `50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d`): Four exact frozen conveyor tracks; geometric availability/coverage only. Missing defect observations forbid assigning geometry-only grades.
+
+**author_all36** (author, current source, source `50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d`): All 36 public author sequences and all 497 published labels. Author frame spacing uses a 55-degree rolling bound and direction -1. Repeatedly inspected development data; no declared held-out accuracy acceptance threshold.
+
+**retained_author_all36** (retained_author, current source, source `50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d`): Retained-map subset over all 36sequences/all 497labels. Excluded endpoints remain unavailable in the full denominator; no nonadjacent bridge or hidden replacement subset.
+
+**paired_author_labels** (author_comparison, current source, source `50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d`): Same exact labels versus both earlier profiles; gains/losses, common-label errors and all 497availability remain separate. No overall author-accuracy improvement is claimed.
+
+**real_model** (model, current source, source `50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d`): Actual source50/main4c GPU integration on 215 frozen detector/tracker crops and fruit masks. Detector loaded but zero detector calls; 42 segmentation calls/80 instances, 62.1 ms mean latency. Track 98 Class 1 arithmetic and three other tracks partial. No human pose/mask/grade truth.
+
+**known_area_arithmetic** (area, current source, source `50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d`): Source50known5/15/30percent defect masks and supplied true rotations test area/class and coverage arithmetic. Motion estimation/view selection are bypassed; recorded fixture settings differ deliberately from the conveyor profile.
+
+**original_software** (software, current source, source `50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d`): Original source50/main2a software checkpoint:43tests/build/lint pass. This is not a test of the later runtime main cleanup.
+
+**runtime_software** (software, current source, source `50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d`): New runtime software checkpoint after explicit track cleanup; final execution source/hash required separately. No changed rotation algorithm or field-accuracy claim.
+
+**full_video_runtime** (api, current source, source `50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d`): Separately labelled full original 515-frame POST/API replay after runtime cleanup and training pause. Requires completed aggregate report and exact job snapshots; execution is not field grade/pose accuracy.
+
+**failed_full_video330** (api, comparison only, source `50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d`): Preserved original source50/main2a HTTP500 allocation failure at last published330/515 progress. Exact failure time/cause unknown. Concurrent training is context, not established causation;256 partial rows are not completed execution.
+
+**operational_author_reference** (author, comparison only, source `74af29eb38afd8f2eeadc8857e310d5e018288845c4a24d1205f188e991f373c`): Historical source74author reference used in exact-label comparison; all 36/all 497scope. Distinct source, not current-source validation.
+
+**wobble_author_reference** (author, comparison only, source `951b55a4912d3147d349282846e2e02d20159a410b6bb2e8fdd4ab4dd3abea2d`): Historical source951/native8/side20author reference; later failed horizontal-turn controls. All 36/all 497scope retained as comparison only.
+
+**failed_native8_x12** (full_turn, comparison only, source `951b55a4912d3147d349282846e2e02d20159a410b6bb2e8fdd4ab4dd3abea2d`): Historical source951 native8 ideal12-degree horizontal turns fail despite clear Class1 maps.
+
+**native20_setting_trial** (full_turn, comparison only, source `951b55a4912d3147d349282846e2e02d20159a410b6bb2e8fdd4ab4dd3abea2d`): Settings-only source951 native20 ideal-turn passes are comparison history; author availability/fixedcoverage regressions prevented adoption.
+
+**failed_detrended_lighting** (shading, comparison only, source `6f2c56ac6edbdc3cc72fecd995055f01a6690113c54115c304b7e29595c20961`): Distinct6f2c source lighting trial9/12 PASS; curved-full and short-chain failures remain in images/rawreports.
+
+**failed_unblurred_lighting** (shading, comparison only, source `c5c7e7292af1ef67eeca476ed99389b96f8aa17fd2d3814cbe7934934be2b911`): Distinctc5c7 source lighting trial8/12 PASS, including curved failures; not the adopted source.
+
+**failed_log_blurred_lighting** (shading, comparison only, source `1cfbadc5627c57ba2a36f1319598272ec01bc542eac9b796239de45370627ee5`): Distinct1cfb source lighting trial10/12 PASS; two failed full curved turns retained.
+
+**failed_log_detrended_stationary** (shading, comparison only, source `25d14c1be4321bc6d031eee948d48bd32785a4528d3f45a2eb078fef72a1be04`): Distinct25d1 source 9/12 PASS;117/0/119/27 false stationary returns. Actual false-map images retained.
+
+**failed_mock_checks** (software, comparison only, source `50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d`): Historical failed software attempt retained with original logs; no retrospective PASS or relabelled current runtime validation.
+
+**failed_artifact_lint** (software, comparison only, source `50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d`): Historical failed software attempt retained with original logs; no retrospective PASS or relabelled current runtime validation.
+
+**original_real_model** (model, comparison only, source `50bdd78eafcc5581d0368353c9996c2f95823c69f734dac6f778dc82f22c815d`): Earlier source50/main2a actual GPU integration on frozen crops, retained as execution history. It does not validate the later cleanup runtime.
+
+## Full-video execution and remaining Review records
+
+### full_video_runtime: complete video execution
+
+515 frames; 474 saved track records.
+
+| Saved status | Records |
+| --- | --- |
+| mapping_failed | 180 |
+| insufficient_longitude_coverage | 292 |
+| graded | 2 |
+
+| Configured class /Review | Records |
+| --- | --- |
+| Review | 472 |
+| Class 1 | 2 |
+
+| Copied reason for Review | Records |
+| --- | --- |
+| No complete, usable fruit silhouettes were captured. | 164 |
+| At least two views are required | 6 |
+| The views do not cover enough of the fruit&#x27;s circumference for a reliable class. | 292 |
+| No reliable rotating sequence; inspect motion, reflections and fruit masks | 10 |
+
+| Automatic rejected-capture reason | Capture attempts |
+| --- | --- |
+| Fruit is cut off by the video frame | 12914 |
+| Fruit silhouette is occluded or too irregular for a spheroid | 1878 |
+| Crop is too small for GrabCut | 2 |
+| Foreground mask has no fruit | 166 |
+| Fruit mask covers too little of its detection box | 47 |
+| Fruit foreground has fewer than 100 pixels | 647 |
+
+| Motion diagnostic status | Pair events |
+| --- | --- |
+| split | 9693 |
+| accepted | 2710 |
+| other_segment | 4732 |
+| measured | 1 |
+
+Saved track records, not manually verified unique fruits. Fruit reasons, rejected-capture attempts and pair splits have distinct denominators; event totals are not additional fruit counts. Automatic edge/silhouette rejection labels do not independently establish physical truncation. Observed map longitude is computed coverage, not ground-truth physical rotation. No manually labelled identity, pose, mask or grade truth. [Raw counts and records](api_execution/full_video_runtime/record_status_breakdown.json).
+
+## Checks and unavailable outcomes
+
+| Run | Check | Outcome | Source scope | Recorded measurement |
+| --- | --- | --- | --- | --- |
+| camera_lighting | full_turn_x12_linear_additive_texture_a | PASS | current | 30/30 pairs; max pose 0.0636240357474335 deg; max landmark RMS 0.04318710849884259 px |
+| camera_lighting | full_turn_x12_linear_additive_texture_a /all-clear arithmetic | PASS | current | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| camera_lighting | full_turn_x12_linear_additive_texture_b | PASS | current | 30/30 pairs; max pose 0.050216759812404914 deg; max landmark RMS 0.030826290395896176 px |
+| camera_lighting | full_turn_x12_linear_additive_texture_b /all-clear arithmetic | PASS | current | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| camera_lighting | full_turn_x12_lambertian_multiplicative_texture_a | PASS | current | 30/30 pairs; max pose 0.0914016421485477 deg; max landmark RMS 0.056605141845908154 px |
+| camera_lighting | full_turn_x12_lambertian_multiplicative_texture_a /all-clear arithmetic | PASS | current | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| camera_lighting | full_turn_x12_lambertian_multiplicative_texture_b | PASS | current | 30/30 pairs; max pose 0.04145797309272411 deg; max landmark RMS 0.020009233560720388 px |
+| camera_lighting | full_turn_x12_lambertian_multiplicative_texture_b /all-clear arithmetic | PASS | current | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| camera_lighting | short_xy_linear_additive_texture_a | PASS | current | 10/10 pairs; max pose 0.25548400913118 deg; max landmark RMS 0.23268830415208092 px |
+| camera_lighting | short_xy_linear_additive_texture_b | PASS | current | 10/10 pairs; max pose 0.09538561088667188 deg; max landmark RMS 0.08709994842609695 px |
+| camera_lighting | short_xy_lambertian_multiplicative_texture_a | PASS | current | 10/10 pairs; max pose 0.26537988050653943 deg; max landmark RMS 0.24210865630791742 px |
+| camera_lighting | short_xy_lambertian_multiplicative_texture_b | PASS | current | 10/10 pairs; max pose 0.3018905973763493 deg; max landmark RMS 0.2743792744240039 px |
+| camera_lighting | stationary_120_linear_additive_texture_a | PASS | current | 0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored |
+| camera_lighting | stationary_120_linear_additive_texture_b | PASS | current | 0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored |
+| camera_lighting | stationary_120_lambertian_multiplicative_texture_a | PASS | current | 0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored |
+| camera_lighting | stationary_120_lambertian_multiplicative_texture_b | PASS | current | 0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored |
+| short_motion | variable_xy_texture_a | PASS | current | 10/10 pairs; max pose 0.22195284743479204 deg; max landmark RMS 0.2023188400794917 px |
+| short_motion | variable_xy_texture_b | PASS | current | 10/10 pairs; max pose 0.09416876298970926 deg; max landmark RMS 0.08598666410163051 px |
+| short_motion | stationary_120_texture_a | PASS | current | 0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored |
+| short_motion | stationary_120_texture_b | PASS | current | 0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored |
+| short_motion | variable_xy_texture_a /brightness offset | PASS | current | Recorded exposure comparison {&#x27;rotation_change_deg&#x27;: 1.2074182697257333e-06, &#x27;residual_change&#x27;: 5.456871855422096e-10}; exact predeclared geometry/invariance flags retained |
+| short_motion | variable_xy_texture_b /brightness offset | PASS | current | Recorded exposure comparison {&#x27;rotation_change_deg&#x27;: 0.0, &#x27;residual_change&#x27;: 5.260673022200457e-09}; exact predeclared geometry/invariance flags retained |
+| large_sideways20 | texture_a_transverse_-13 /transverse 20 deg | PASS | current | 1/1 pairs; max pose 0.0 deg; max landmark RMS 0.003070045416960688 px |
+| large_sideways20 | texture_a_transverse_+13 /transverse 20 deg | PASS | current | 1/1 pairs; max pose 0.007290541693372202 deg; max landmark RMS 0.00943384735666366 px |
+| large_sideways20 | texture_b_transverse_-13 /transverse 20 deg | PASS | current | 1/1 pairs; max pose 0.0028689680939879077 deg; max landmark RMS 0.005374462832144966 px |
+| large_sideways20 | texture_b_transverse_+13 /transverse 20 deg | PASS | current | 1/1 pairs; max pose 0.005105042265145527 deg; max landmark RMS 0.007087492643223005 px |
+| fresh_texture | full_turn_x12_lambertian_multiplicative_fresh_texture_c | PASS | current | 30/30 pairs; max pose 0.03961761236930761 deg; max landmark RMS 0.02689141414160646 px |
+| fresh_texture | full_turn_x12_lambertian_multiplicative_fresh_texture_c /all-clear arithmetic | PASS | current | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| fresh_texture | full_turn_x12_linear_additive_fresh_texture_c | PASS | current | 30/30 pairs; max pose 0.021738312552052056 deg; max landmark RMS 0.013279654369825502 px |
+| fresh_texture | full_turn_x12_linear_additive_fresh_texture_c /all-clear arithmetic | PASS | current | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| vertical_full_turn | constant_6deg_texture_a | PASS | current | 60/60 pairs; max pose 0.024542959102319337 deg; max landmark RMS 0.016318448101253328 px |
+| vertical_full_turn | constant_6deg_texture_a /all-clear arithmetic | PASS | current | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| vertical_full_turn | variable_06_54deg_texture_b | PASS | current | 120/120 pairs; max pose 0.5893301646698308 deg; max landmark RMS 0.4020145571616988 px |
+| vertical_full_turn | variable_06_54deg_texture_b /all-clear arithmetic | PASS | current | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| numerical_equivalence | numeric | PASS | current | Recorded implementation/execution check; field motion and grade accuracy unverified |
+| fixed_conveyor_geometry | track 98 /adjacent_native | UNAVAILABLE | current | 24 selected views; longitude 360.000 deg; missing_defect_masks; field pose accuracy unavailable |
+| fixed_conveyor_geometry | track 1 /adjacent_native | UNAVAILABLE | current | 12 selected views; longitude 162.395 deg; insufficient_longitude_coverage; field pose accuracy unavailable |
+| fixed_conveyor_geometry | track 14 /adjacent_native | UNAVAILABLE | current | 2 selected views; longitude 108.401 deg; insufficient_longitude_coverage; field pose accuracy unavailable |
+| fixed_conveyor_geometry | track 491 /adjacent_native | UNAVAILABLE | current | 4 selected views; longitude 161.527 deg; insufficient_longitude_coverage; field pose accuracy unavailable |
+| author_all36 | author | UNAVAILABLE | current | 36 sequences; 457/497 returned; conditional RMS 5.224578715801349 px; no accuracy acceptance threshold declared |
+| retained_author_all36 | retained-map published labels | UNAVAILABLE | current | 36 sequences; 348/497 returned; conditional RMS 5.359672788954673 px; 286 of all labels within 5 px; 0 nonadjacent bridges; no declared field accuracy threshold |
+| paired_author_labels | same labels versus operational_profile_v1 | UNAVAILABLE | current | 450 common labels; RMS 4.912064 to 4.887740 px; 124 improved/99 worsened/227 unchanged; 7 gained/8 lost/32 unavailable in both; no overall improvement acceptance claim |
+| paired_author_labels | same labels versus hybrid_wobble_profile_20261002 | UNAVAILABLE | current | 454 common labels; RMS 5.225545 to 5.240480 px; 103 improved/100 worsened/251 unchanged; 3 gained/8 lost/32 unavailable in both; no overall improvement acceptance claim |
+| real_model | actual frozen-crop model execution | PASS | current | 42 actual segmenter calls; 80 instances; mean 62.1 ms/confidence 0.492; detector calls 0; no human pose/mask/grade truth |
+| known_area_arithmetic | 0 | PASS | current | Known defect 5.0%; measured 5.143653862859557%; absolute error 0.14365386285955672 percentage points; grade Class 1 |
+| known_area_arithmetic | 1 | PASS | current | Known defect 15.0%; measured 15.178670530544993%; absolute error 0.17867053054499316 percentage points; grade Class 2 |
+| known_area_arithmetic | 2 | PASS | current | Known defect 30.0%; measured 30.09275852616302%; absolute error 0.0927585261630206 percentage points; grade Class 3 |
+| known_area_arithmetic | known-pose coverage arithmetic /375.0 deg | PASS | current | Supplied true rotation 375.0 deg; observed longitude 360.000 deg; status graded; mask/rotation supplied, not neural or motion accuracy |
+| known_area_arithmetic | known-pose coverage arithmetic /270.0 deg | PASS | current | Supplied true rotation 270.0 deg; observed longitude 360.000 deg; status graded; mask/rotation supplied, not neural or motion accuracy |
+| known_area_arithmetic | known-pose coverage arithmetic /250.0 deg | PASS | current | Supplied true rotation 250.0 deg; observed longitude 340.231 deg; status insufficient_longitude_coverage; mask/rotation supplied, not neural or motion accuracy |
+| known_area_arithmetic | known-pose coverage arithmetic /100.0 deg | PASS | current | Supplied true rotation 100.0 deg; observed longitude 190.405 deg; status insufficient_longitude_coverage; mask/rotation supplied, not neural or motion accuracy |
+| original_software | python_tests | PASS | current | Exit code 0; started 2026-10-02T20:50:19.964601+02:00; exact command and console log retained |
+| original_software | frontend_build | PASS | current | Exit code 0; started 2026-10-02T20:50:26.938496+02:00; exact command and console log retained |
+| original_software | frontend_lint | PASS | current | Exit code 0; started 2026-10-02T20:50:31.896571+02:00; exact command and console log retained |
+| runtime_software | python_tests | PASS | current | Exit code 0; started 2026-10-03T12:24:59.645028+02:00; exact command and console log retained |
+| runtime_software | frontend_build | PASS | current | Exit code 0; started 2026-10-03T12:25:08.334068+02:00; exact command and console log retained |
+| runtime_software | frontend_lint | PASS | current | Exit code 0; started 2026-10-03T12:25:11.344923+02:00; exact command and console log retained |
+| full_video_runtime | api | PASS | current | Completed video execution; accuracy unverified |
+| failed_full_video330 | api | FAIL | comparison history | Failed video execution at last published progress 330/515; Unable to allocate 1.26 MiB for an array with shape (115, 160, 9) and data type float64; separate runtime failure, not an image-accuracy score |
+| operational_author_reference | author | UNAVAILABLE | comparison history | 36 sequences; 458/497 returned; conditional RMS 5.102881441773768 px; no accuracy acceptance threshold declared |
+| wobble_author_reference | author | UNAVAILABLE | comparison history | 36 sequences; 462/497 returned; conditional RMS 5.3986826198984215 px; no accuracy acceptance threshold declared |
+| failed_native8_x12 | constant_12deg_texture_a | FAIL | comparison history | 30/30 pairs; max pose 11.091995907368636 deg; max landmark RMS 7.484797229416884 px |
+| failed_native8_x12 | constant_12deg_texture_a /all-clear arithmetic | PASS | comparison history | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| failed_native8_x12 | constant_12deg_texture_b | FAIL | comparison history | 30/30 pairs; max pose 6.18857812510916 deg; max landmark RMS 4.194537175136294 px |
+| failed_native8_x12 | constant_12deg_texture_b /all-clear arithmetic | PASS | comparison history | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| native20_setting_trial | constant_12deg_texture_a | PASS | comparison history | 30/30 pairs; max pose 2.063387566295737 deg; max landmark RMS 1.4001752694123666 px |
+| native20_setting_trial | constant_12deg_texture_a /all-clear arithmetic | PASS | comparison history | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| native20_setting_trial | constant_12deg_texture_b | PASS | comparison history | 30/30 pairs; max pose 0.9359294325524352 deg; max landmark RMS 0.6352815032970704 px |
+| native20_setting_trial | constant_12deg_texture_b /all-clear arithmetic | PASS | comparison history | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| failed_detrended_lighting | full_turn_x12_linear_additive_texture_a | PASS | comparison history | 30/30 pairs; max pose 3.6554174131934785 deg; max landmark RMS 2.4799572455985492 px |
+| failed_detrended_lighting | full_turn_x12_linear_additive_texture_a /all-clear arithmetic | PASS | comparison history | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| failed_detrended_lighting | full_turn_x12_linear_additive_texture_b | PASS | comparison history | 30/30 pairs; max pose 3.271786626471521 deg; max landmark RMS 2.219969744959767 px |
+| failed_detrended_lighting | full_turn_x12_linear_additive_texture_b /all-clear arithmetic | PASS | comparison history | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| failed_detrended_lighting | full_turn_x12_lambertian_multiplicative_texture_a | FAIL | comparison history | 30/30 pairs; max pose 6.676572983862286 deg; max landmark RMS 4.524457051949303 px |
+| failed_detrended_lighting | full_turn_x12_lambertian_multiplicative_texture_a /all-clear arithmetic | PASS | comparison history | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| failed_detrended_lighting | full_turn_x12_lambertian_multiplicative_texture_b | FAIL | comparison history | 30/30 pairs; max pose 5.25311365114571 deg; max landmark RMS 3.561941131658298 px |
+| failed_detrended_lighting | full_turn_x12_lambertian_multiplicative_texture_b /all-clear arithmetic | PASS | comparison history | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| failed_detrended_lighting | short_xy_linear_additive_texture_a | PASS | comparison history | 10/10 pairs; max pose 0.24361620727738906 deg; max landmark RMS 0.22227726706471373 px |
+| failed_detrended_lighting | short_xy_linear_additive_texture_b | PASS | comparison history | 10/10 pairs; max pose 0.10527296123724268 deg; max landmark RMS 0.09607653809474202 px |
+| failed_detrended_lighting | short_xy_lambertian_multiplicative_texture_a | FAIL | comparison history | 10/10 pairs; max pose 1.3879754252226268 deg; max landmark RMS 1.2649296230642981 px |
+| failed_detrended_lighting | short_xy_lambertian_multiplicative_texture_b | PASS | comparison history | 10/10 pairs; max pose 0.13600869165584697 deg; max landmark RMS 0.12404471397408462 px |
+| failed_detrended_lighting | stationary_120_linear_additive_texture_a | PASS | comparison history | 0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored |
+| failed_detrended_lighting | stationary_120_linear_additive_texture_b | PASS | comparison history | 0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored |
+| failed_detrended_lighting | stationary_120_lambertian_multiplicative_texture_a | PASS | comparison history | 0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored |
+| failed_detrended_lighting | stationary_120_lambertian_multiplicative_texture_b | PASS | comparison history | 0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored |
+| failed_unblurred_lighting | full_turn_x12_linear_additive_texture_a | PASS | comparison history | 30/30 pairs; max pose 0.1733328850704081 deg; max landmark RMS 0.11764248848931078 px |
+| failed_unblurred_lighting | full_turn_x12_linear_additive_texture_a /all-clear arithmetic | PASS | comparison history | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| failed_unblurred_lighting | full_turn_x12_linear_additive_texture_b | PASS | comparison history | 30/30 pairs; max pose 0.03484564759322293 deg; max landmark RMS 0.02125731812658928 px |
+| failed_unblurred_lighting | full_turn_x12_linear_additive_texture_b /all-clear arithmetic | PASS | comparison history | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| failed_unblurred_lighting | full_turn_x12_lambertian_multiplicative_texture_a | FAIL | comparison history | 30/30 pairs; max pose 5.254898973886953 deg; max landmark RMS 3.562256292993178 px |
+| failed_unblurred_lighting | full_turn_x12_lambertian_multiplicative_texture_a /all-clear arithmetic | PASS | comparison history | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| failed_unblurred_lighting | full_turn_x12_lambertian_multiplicative_texture_b | PASS | comparison history | 30/30 pairs; max pose 2.3490161757591066 deg; max landmark RMS 1.5941175211337073 px |
+| failed_unblurred_lighting | full_turn_x12_lambertian_multiplicative_texture_b /all-clear arithmetic | PASS | comparison history | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| failed_unblurred_lighting | short_xy_linear_additive_texture_a | PASS | comparison history | 10/10 pairs; max pose 0.6537836852414117 deg; max landmark RMS 0.5960233077460217 px |
+| failed_unblurred_lighting | short_xy_linear_additive_texture_b | PASS | comparison history | 10/10 pairs; max pose 0.1663696116908372 deg; max landmark RMS 0.15179771047854645 px |
+| failed_unblurred_lighting | short_xy_lambertian_multiplicative_texture_a | FAIL | comparison history | 10/10 pairs; max pose 1.505871723053788 deg; max landmark RMS 1.3725149077507037 px |
+| failed_unblurred_lighting | short_xy_lambertian_multiplicative_texture_b | PASS | comparison history | 10/10 pairs; max pose 0.06789051472132179 deg; max landmark RMS 0.062073313927137504 px |
+| failed_unblurred_lighting | stationary_120_linear_additive_texture_a | FAIL | comparison history | 29/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored |
+| failed_unblurred_lighting | stationary_120_linear_additive_texture_b | PASS | comparison history | 0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored |
+| failed_unblurred_lighting | stationary_120_lambertian_multiplicative_texture_a | FAIL | comparison history | 119/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored |
+| failed_unblurred_lighting | stationary_120_lambertian_multiplicative_texture_b | PASS | comparison history | 0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored |
+| failed_log_blurred_lighting | full_turn_x12_linear_additive_texture_a | PASS | comparison history | 30/30 pairs; max pose 1.044617015467678 deg; max landmark RMS 0.7090333205027872 px |
+| failed_log_blurred_lighting | full_turn_x12_linear_additive_texture_a /all-clear arithmetic | PASS | comparison history | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| failed_log_blurred_lighting | full_turn_x12_linear_additive_texture_b | PASS | comparison history | 30/30 pairs; max pose 0.819030665748483 deg; max landmark RMS 0.5559222233744571 px |
+| failed_log_blurred_lighting | full_turn_x12_linear_additive_texture_b /all-clear arithmetic | PASS | comparison history | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| failed_log_blurred_lighting | full_turn_x12_lambertian_multiplicative_texture_a | FAIL | comparison history | 30/30 pairs; max pose 7.406101749368426 deg; max landmark RMS 5.01533257214098 px |
+| failed_log_blurred_lighting | full_turn_x12_lambertian_multiplicative_texture_a /all-clear arithmetic | PASS | comparison history | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| failed_log_blurred_lighting | full_turn_x12_lambertian_multiplicative_texture_b | PASS | comparison history | 30/30 pairs; max pose 3.6916264989911243 deg; max landmark RMS 2.5044705880070985 px |
+| failed_log_blurred_lighting | full_turn_x12_lambertian_multiplicative_texture_b /all-clear arithmetic | PASS | comparison history | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| failed_log_blurred_lighting | short_xy_linear_additive_texture_a | PASS | comparison history | 10/10 pairs; max pose 0.6988828402487601 deg; max landmark RMS 0.6371107289189809 px |
+| failed_log_blurred_lighting | short_xy_linear_additive_texture_b | PASS | comparison history | 10/10 pairs; max pose 0.16017985018588915 deg; max landmark RMS 0.14616435496367294 px |
+| failed_log_blurred_lighting | short_xy_lambertian_multiplicative_texture_a | FAIL | comparison history | 10/10 pairs; max pose 1.5398340680285991 deg; max landmark RMS 1.4034623560599766 px |
+| failed_log_blurred_lighting | short_xy_lambertian_multiplicative_texture_b | PASS | comparison history | 10/10 pairs; max pose 0.07886892688159138 deg; max landmark RMS 0.07221102454156432 px |
+| failed_log_blurred_lighting | stationary_120_linear_additive_texture_a | PASS | comparison history | 0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored |
+| failed_log_blurred_lighting | stationary_120_linear_additive_texture_b | PASS | comparison history | 0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored |
+| failed_log_blurred_lighting | stationary_120_lambertian_multiplicative_texture_a | PASS | comparison history | 0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored |
+| failed_log_blurred_lighting | stationary_120_lambertian_multiplicative_texture_b | PASS | comparison history | 0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored |
+| failed_log_detrended_stationary | full_turn_x12_linear_additive_texture_a | PASS | comparison history | 30/30 pairs; max pose 0.0636240357474335 deg; max landmark RMS 0.04318710849884259 px |
+| failed_log_detrended_stationary | full_turn_x12_linear_additive_texture_a /all-clear arithmetic | PASS | comparison history | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| failed_log_detrended_stationary | full_turn_x12_linear_additive_texture_b | PASS | comparison history | 30/30 pairs; max pose 0.050216759812404914 deg; max landmark RMS 0.030826290395896176 px |
+| failed_log_detrended_stationary | full_turn_x12_linear_additive_texture_b /all-clear arithmetic | PASS | comparison history | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| failed_log_detrended_stationary | full_turn_x12_lambertian_multiplicative_texture_a | PASS | comparison history | 30/30 pairs; max pose 0.0914016421485477 deg; max landmark RMS 0.056605141845908154 px |
+| failed_log_detrended_stationary | full_turn_x12_lambertian_multiplicative_texture_a /all-clear arithmetic | PASS | comparison history | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| failed_log_detrended_stationary | full_turn_x12_lambertian_multiplicative_texture_b | PASS | comparison history | 30/30 pairs; max pose 0.04145797309272411 deg; max landmark RMS 0.020009233560720388 px |
+| failed_log_detrended_stationary | full_turn_x12_lambertian_multiplicative_texture_b /all-clear arithmetic | PASS | comparison history | Supplied all-clear defect observations; class arithmetic only, no neural mask/grade accuracy test |
+| failed_log_detrended_stationary | short_xy_linear_additive_texture_a | PASS | comparison history | 10/10 pairs; max pose 0.4291111080002986 deg; max landmark RMS 0.39135309640683275 px |
+| failed_log_detrended_stationary | short_xy_linear_additive_texture_b | PASS | comparison history | 10/10 pairs; max pose 0.09841238993818949 deg; max landmark RMS 0.08988736871401626 px |
+| failed_log_detrended_stationary | short_xy_lambertian_multiplicative_texture_a | PASS | comparison history | 10/10 pairs; max pose 0.6510887742633208 deg; max landmark RMS 0.5936246745109888 px |
+| failed_log_detrended_stationary | short_xy_lambertian_multiplicative_texture_b | PASS | comparison history | 10/10 pairs; max pose 0.07263597617755535 deg; max landmark RMS 0.06621322909771925 px |
+| failed_log_detrended_stationary | stationary_120_linear_additive_texture_a | FAIL | comparison history | 117/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored |
+| failed_log_detrended_stationary | stationary_120_linear_additive_texture_b | PASS | comparison history | 0/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored |
+| failed_log_detrended_stationary | stationary_120_lambertian_multiplicative_texture_a | FAIL | comparison history | 119/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored |
+| failed_log_detrended_stationary | stationary_120_lambertian_multiplicative_texture_b | FAIL | comparison history | 27/119 pairs; stationary pose accuracy unavailable; reference-scaffold zero maxima not scored |
+| failed_mock_checks | python_tests | FAIL | comparison history | Exit code 1; started 2026-10-02T20:44:14.935714+02:00; exact command and console log retained |
+| failed_mock_checks | frontend_build | PASS | comparison history | Exit code 0; started 2026-10-02T20:44:31.077565+02:00; exact command and console log retained |
+| failed_mock_checks | frontend_lint | FAIL | comparison history | Exit code 1; started 2026-10-02T20:44:36.469891+02:00; exact command and console log retained |
+| failed_artifact_lint | python_tests | FAIL | comparison history | Exit code 1; started 2026-10-02T20:49:48.638261+02:00; exact command and console log retained |
+| failed_artifact_lint | frontend_build | PASS | comparison history | Exit code 0; started 2026-10-02T20:49:56.675265+02:00; exact command and console log retained |
+| failed_artifact_lint | frontend_lint | PASS | comparison history | Exit code 0; started 2026-10-02T20:50:02.070535+02:00; exact command and console log retained |
+| original_real_model | actual frozen-crop model execution | PASS | comparison history | 42 actual segmenter calls; 80 instances; mean 104.8 ms/confidence 0.492; detector calls 0; no human pose/mask/grade truth |
+
+PASS refers only to the stated predeclared control or execution check. Author point
+accuracy has no declared acceptance threshold here and is reported with prediction
+availability. A missing pose is unavailable, not an estimated zero rotation. A
+stationary scaffold zero maximum is never scored as zero-error motion. An execution
+PASS, full coverage or a Class 1 output does not prove correct surface geometry or grade.
+
+## Actual images retained for the report
+
+![Known-answer development control outcomes](control_outcomes.png)
+[300-dpi PNG](control_outcomes.png) · [PDF](control_outcomes.pdf)
+
+![Worst actual returned author pair](worst_author_pair.png)
+[300-dpi PNG](worst_author_pair.png) · [PDF](worst_author_pair.pdf)
+
+![Real fruit 98: tracking and model evidence](real_fruit98.png)
+[300-dpi PNG](real_fruit98.png) · [PDF](real_fruit98.pdf)
+
+![Actual original-video fruit 98: separate full-pipeline example; grade accuracy unverified](api_actual_fruit98.png)
+[300-dpi PNG](api_actual_fruit98.png) · [PDF](api_actual_fruit98.pdf)
+
+![Historical failed synthetic candidates: actual false-eligible maps; supplied clear masks, not current-source results](historical_false_eligible_maps.png)
+[300-dpi PNG](historical_false_eligible_maps.png) · [PDF](historical_false_eligible_maps.pdf)
+
+![Earlier lighting-trial outcomes with unchanged criteria; historical sources only](historical_lighting_comparison.png)
+[300-dpi PNG](historical_lighting_comparison.png) · [PDF](historical_lighting_comparison.pdf)
+
+![Actual complete-run resource samples and post-run state: runtime evidence, not accuracy proof](actual_runtime_resources.png)
+[300-dpi PNG](actual_runtime_resources.png) · [PDF](actual_runtime_resources.pdf)
+
+Worst returned author label: `{&quot;line&quot;: 61, &quot;object&quot;: &quot;obj0004&quot;, &quot;source&quot;: 6, &quot;target&quot;: 5, &quot;source_xy&quot;: [104, 147], &quot;target_xy&quot;: [115, 44], &quot;group&quot;: &quot;mandarins&quot;, &quot;split&quot;: &quot;evaluation&quot;, &quot;status&quot;: &quot;ok&quot;, &quot;prediction&quot;: [142.60821493615774, 72.33331470459527], &quot;error_px&quot;: 39.559957711184644, &quot;error_pct_diameter&quot;: 15.676883153524052, &quot;center_translation_baseline_px&quot;: 80.6472936482966}`. Prediction and annotation are
+drawn on the unchanged original source/target images, with source-frame hashes.
+Tracking donor images retain their separate source. Actual segmentation overlays
+are predictions, not manual labels; the current model report and weights hashes,
+when recorded, are copied without reinterpretation. Field accuracy remains unverified.
+
+## Provenance and reproduction
+
+Each named report collection is copied with original images, NPZ inputs, frozen
+scripts, source snapshots, parameters and raw outputs. Identical NPZ payloads are
+stored once by SHA256; input_references.json resolves aliases. Source records and
+figure_provenance.json identify their origins. No previous sealed evidence is overwritten.
+
+Research context: [2021 spheroid rotation paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC8004661/)
+and [2022 surface-map paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC9323781/).
+This is an independent implementation. The selected source and recorded settings
+identify its engineering adaptations; author-data correspondence scoring, controlled
+motion scoring and real-model execution have different scopes and denominators.
+
+```powershell
+./backend/venv/Scripts/python.exe -B backend/build_current_profile_evidence.py --config &lt;configuration.json&gt;
+```
+
+Use a fresh output label. Software and synthetic development checks do not establish
+held-out field motion, defect-mask accuracy, identity accuracy, grading accuracy
+or real-time throughput. Completed video outcomes require their own complete
+report and execution snapshots; saved partial rows do not establish completion.
+</pre></main></html>

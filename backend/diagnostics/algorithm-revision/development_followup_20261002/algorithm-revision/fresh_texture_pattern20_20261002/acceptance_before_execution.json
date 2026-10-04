@@ -1,0 +1,18 @@
+{
+  "prepared_at": "2026-10-02T20:11:53.043408+02:00",
+  "seed": 20261002771,
+  "acceptance": {
+    "all_30_pairs_measured": true,
+    "maximum_pose_error_deg": 5.0,
+    "maximum_front_visible_landmark_rms_px": 5.0
+  },
+  "motion": "Known horizontal x-axis 360-degree turn:30 successive12-degree increments,31frames.",
+  "waveform": "Fourteen seeded independent3D directions/frequencies/phases/amplitudes; reflectance125+55*tanh(sum(a*sin(body dot k+phase))/sqrt(sum(a^2)/2)). Frequencies are continuous random values; no repeated angular tile.",
+  "illumination_equations": {
+    "linear_additive": "I=reflectance+0.30*camera_x+0.20*camera_y",
+    "lambertian_multiplicative": "I=reflectance*(0.55+0.45*max(camera_normal dot normalized[0.45,-0.35,1.0],0))"
+  },
+  "scope": "Limited fresh synthetic control after candidate design; not a formally held-out dataset or neural-model/field-grade accuracy test. One new texture, two lighting scenes, ideal sphere/masks, no translation/perspective/occlusion/specular glare. No tuning based on this control's outputs.",
+  "scoring": "Independent truth poses and36body landmarks. Compose actual adjacent measured rotations without correction/extrapolation. Score only truth landmarks with camera_z>10pixels. Any unavailable pair fails completeness.",
+  "cases": {}
+}

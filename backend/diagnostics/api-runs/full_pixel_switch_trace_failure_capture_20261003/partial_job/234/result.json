@@ -1,0 +1,936 @@
+{
+  "track_id": 234,
+  "views": 4,
+  "view_frames": [
+    205,
+    207,
+    212,
+    217
+  ],
+  "rejected_views": {
+    "Fruit is cut off by the video frame": 20,
+    "Fruit mask covers too little of its detection box": 1,
+    "Fruit foreground has fewer than 100 pixels": 10,
+    "Foreground mask has no fruit": 1,
+    "Fruit silhouette is occluded or too irregular for a spheroid": 49
+  },
+  "first_seen_frame": 196,
+  "last_seen_frame": 280,
+  "tracked_frames": 85,
+  "tracking_history": [
+    {
+      "frame": 196,
+      "bbox_xyxy": [
+        1461.98974609375,
+        -0.6609517335891724,
+        1525.5181884765625,
+        8.819503784179688
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 197,
+      "bbox_xyxy": [
+        1449.159912109375,
+        -0.0697481632232666,
+        1546.45654296875,
+        29.582317352294922
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 198,
+      "bbox_xyxy": [
+        1442.156005859375,
+        -0.20939737558364868,
+        1550.2156982421875,
+        37.20637893676758
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 199,
+      "bbox_xyxy": [
+        1443.794921875,
+        -0.21756872534751892,
+        1575.98974609375,
+        63.34321212768555
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 200,
+      "bbox_xyxy": [
+        1439.2108154296875,
+        -0.40242791175842285,
+        1573.96044921875,
+        76.88677978515625
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 201,
+      "bbox_xyxy": [
+        1437.0279541015625,
+        -0.18896698951721191,
+        1572.6800537109375,
+        90.28772735595703
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 202,
+      "bbox_xyxy": [
+        1439.380126953125,
+        -0.1363581418991089,
+        1576.89794921875,
+        103.00762176513672
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 203,
+      "bbox_xyxy": [
+        1441.7261962890625,
+        -0.1622602343559265,
+        1581.0814208984375,
+        119.24710845947266
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 204,
+      "bbox_xyxy": [
+        1446.1507568359375,
+        0.44188857078552246,
+        1586.5628662109375,
+        141.73033142089844
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 205,
+      "bbox_xyxy": [
+        1450.4776611328125,
+        14.463909149169922,
+        1592.4600830078125,
+        161.22817993164062
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 206,
+      "bbox_xyxy": [
+        1451.711181640625,
+        27.963895797729492,
+        1594.09814453125,
+        174.09512329101562
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 207,
+      "bbox_xyxy": [
+        1447.988037109375,
+        49.080322265625,
+        1592.9825439453125,
+        188.8173828125
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 208,
+      "bbox_xyxy": [
+        1449.9844970703125,
+        62.009063720703125,
+        1594.592529296875,
+        203.66317749023438
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 209,
+      "bbox_xyxy": [
+        1446.8316650390625,
+        82.12979888916016,
+        1594.74658203125,
+        221.8153839111328
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 210,
+      "bbox_xyxy": [
+        1446.030517578125,
+        98.76171112060547,
+        1594.375244140625,
+        235.11305236816406
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 211,
+      "bbox_xyxy": [
+        1450.564453125,
+        114.10194396972656,
+        1596.2489013671875,
+        249.39491271972656
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 212,
+      "bbox_xyxy": [
+        1455.498046875,
+        121.82821655273438,
+        1598.0634765625,
+        262.7012023925781
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 213,
+      "bbox_xyxy": [
+        1458.490966796875,
+        137.0692138671875,
+        1596.5091552734375,
+        282.1944885253906
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 214,
+      "bbox_xyxy": [
+        1463.4569091796875,
+        143.09564208984375,
+        1598.584228515625,
+        289.9100341796875
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 215,
+      "bbox_xyxy": [
+        1472.136474609375,
+        159.1123046875,
+        1602.723388671875,
+        311.2014465332031
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 216,
+      "bbox_xyxy": [
+        1472.983642578125,
+        177.5090789794922,
+        1607.963134765625,
+        324.4112854003906
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 217,
+      "bbox_xyxy": [
+        1465.352294921875,
+        194.45672607421875,
+        1604.2607421875,
+        340.48638916015625
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 218,
+      "bbox_xyxy": [
+        1468.2322998046875,
+        214.6356658935547,
+        1609.8909912109375,
+        357.0546569824219
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 219,
+      "bbox_xyxy": [
+        1472.116455078125,
+        228.646484375,
+        1614.221435546875,
+        369.2063903808594
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 220,
+      "bbox_xyxy": [
+        1468.54638671875,
+        239.89222717285156,
+        1612.4659423828125,
+        376.9667053222656
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 221,
+      "bbox_xyxy": [
+        1470.684814453125,
+        259.1940612792969,
+        1615.462646484375,
+        392.8265380859375
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 222,
+      "bbox_xyxy": [
+        1476.916748046875,
+        278.9477844238281,
+        1619.725830078125,
+        412.3679504394531
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 223,
+      "bbox_xyxy": [
+        1478.81689453125,
+        285.84747314453125,
+        1621.9185791015625,
+        420.8302307128906
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 224,
+      "bbox_xyxy": [
+        1478.099853515625,
+        299.061767578125,
+        1619.3433837890625,
+        436.9501953125
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 225,
+      "bbox_xyxy": [
+        1476.5938720703125,
+        314.58905029296875,
+        1619.5799560546875,
+        452.79168701171875
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 226,
+      "bbox_xyxy": [
+        1481.1884765625,
+        328.59027099609375,
+        1619.54296875,
+        469.0364685058594
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 227,
+      "bbox_xyxy": [
+        1480.3912353515625,
+        339.8614501953125,
+        1619.5330810546875,
+        485.3370666503906
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 228,
+      "bbox_xyxy": [
+        1480.1070556640625,
+        356.1835021972656,
+        1617.8800048828125,
+        500.40234375
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 229,
+      "bbox_xyxy": [
+        1478.6812744140625,
+        375.2317199707031,
+        1614.6851806640625,
+        523.2808227539062
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 230,
+      "bbox_xyxy": [
+        1477.9927978515625,
+        391.0883483886719,
+        1615.6917724609375,
+        538.0109252929688
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 231,
+      "bbox_xyxy": [
+        1466.6722412109375,
+        398.1430358886719,
+        1608.676025390625,
+        546.9572143554688
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 232,
+      "bbox_xyxy": [
+        1468.0635986328125,
+        419.1244201660156,
+        1611.89306640625,
+        566.0179443359375
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 233,
+      "bbox_xyxy": [
+        1465.287841796875,
+        432.8857421875,
+        1609.1844482421875,
+        579.9260864257812
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 234,
+      "bbox_xyxy": [
+        1466.9630126953125,
+        449.0409240722656,
+        1608.607421875,
+        598.7532958984375
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 235,
+      "bbox_xyxy": [
+        1475.9273681640625,
+        461.80810546875,
+        1615.3857421875,
+        607.3519897460938
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 236,
+      "bbox_xyxy": [
+        1475.6553955078125,
+        475.0859680175781,
+        1614.917724609375,
+        624.83642578125
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 237,
+      "bbox_xyxy": [
+        1475.384033203125,
+        487.0332946777344,
+        1616.022705078125,
+        638.1019897460938
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 238,
+      "bbox_xyxy": [
+        1471.451171875,
+        502.3464660644531,
+        1615.416015625,
+        653.8001708984375
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 239,
+      "bbox_xyxy": [
+        1475.79736328125,
+        515.0767211914062,
+        1617.297607421875,
+        665.3663330078125
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 240,
+      "bbox_xyxy": [
+        1475.3692626953125,
+        530.2948608398438,
+        1617.127197265625,
+        680.5623168945312
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 241,
+      "bbox_xyxy": [
+        1474.3837890625,
+        544.3580932617188,
+        1617.055419921875,
+        694.8926391601562
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 242,
+      "bbox_xyxy": [
+        1477.67578125,
+        553.6759033203125,
+        1621.2327880859375,
+        705.16162109375
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 243,
+      "bbox_xyxy": [
+        1478.23876953125,
+        567.923828125,
+        1619.8818359375,
+        719.7017822265625
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 244,
+      "bbox_xyxy": [
+        1479.1668701171875,
+        579.8309326171875,
+        1619.3372802734375,
+        729.0842895507812
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 245,
+      "bbox_xyxy": [
+        1479.592041015625,
+        595.6099853515625,
+        1620.3463134765625,
+        748.6832275390625
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 246,
+      "bbox_xyxy": [
+        1483.525146484375,
+        608.1392211914062,
+        1621.0625,
+        759.4910278320312
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 247,
+      "bbox_xyxy": [
+        1477.885009765625,
+        625.0859375,
+        1618.4559326171875,
+        775.37939453125
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 248,
+      "bbox_xyxy": [
+        1481.1998291015625,
+        639.1260986328125,
+        1619.6162109375,
+        789.0958862304688
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 249,
+      "bbox_xyxy": [
+        1484.4517822265625,
+        646.0746459960938,
+        1624.6241455078125,
+        798.3082885742188
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 250,
+      "bbox_xyxy": [
+        1485.2659912109375,
+        662.353515625,
+        1625.4432373046875,
+        810.6723022460938
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 251,
+      "bbox_xyxy": [
+        1486.0096435546875,
+        673.9492797851562,
+        1625.0850830078125,
+        821.0048217773438
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 252,
+      "bbox_xyxy": [
+        1489.03466796875,
+        688.6809692382812,
+        1627.824951171875,
+        838.6067504882812
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 253,
+      "bbox_xyxy": [
+        1487.2489013671875,
+        703.2780151367188,
+        1625.751953125,
+        849.7449340820312
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 254,
+      "bbox_xyxy": [
+        1486.515869140625,
+        716.2536010742188,
+        1625.04248046875,
+        866.095703125
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 255,
+      "bbox_xyxy": [
+        1489.8057861328125,
+        732.7947387695312,
+        1626.5614013671875,
+        878.8941650390625
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 256,
+      "bbox_xyxy": [
+        1492.2353515625,
+        741.443359375,
+        1627.0001220703125,
+        887.895751953125
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 257,
+      "bbox_xyxy": [
+        1489.799560546875,
+        761.2880249023438,
+        1625.0966796875,
+        906.7115478515625
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 258,
+      "bbox_xyxy": [
+        1490.2896728515625,
+        776.8279418945312,
+        1624.8548583984375,
+        921.5074462890625
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 259,
+      "bbox_xyxy": [
+        1492.935791015625,
+        789.7739868164062,
+        1626.6527099609375,
+        936.7474975585938
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 260,
+      "bbox_xyxy": [
+        1492.8870849609375,
+        801.915283203125,
+        1625.75341796875,
+        950.0646362304688
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 261,
+      "bbox_xyxy": [
+        1489.486083984375,
+        813.9324340820312,
+        1624.531005859375,
+        961.5021362304688
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 262,
+      "bbox_xyxy": [
+        1493.7720947265625,
+        824.05908203125,
+        1625.7408447265625,
+        970.0367431640625
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 263,
+      "bbox_xyxy": [
+        1490.478515625,
+        841.7811889648438,
+        1624.80517578125,
+        987.130615234375
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 264,
+      "bbox_xyxy": [
+        1491.7288818359375,
+        854.64013671875,
+        1623.5504150390625,
+        997.955810546875
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 265,
+      "bbox_xyxy": [
+        1492.026611328125,
+        871.1821899414062,
+        1624.4117431640625,
+        1016.8750610351562
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 266,
+      "bbox_xyxy": [
+        1491.2603759765625,
+        883.0636596679688,
+        1622.4765625,
+        1028.5872802734375
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 267,
+      "bbox_xyxy": [
+        1493.0006103515625,
+        898.0540771484375,
+        1624.00244140625,
+        1045.1500244140625
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 268,
+      "bbox_xyxy": [
+        1496.4417724609375,
+        908.2343139648438,
+        1624.73095703125,
+        1053.029541015625
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 269,
+      "bbox_xyxy": [
+        1493.9078369140625,
+        920.5167236328125,
+        1622.7445068359375,
+        1065.8096923828125
+      ],
+      "touches_frame_edge": false
+    },
+    {
+      "frame": 270,
+      "bbox_xyxy": [
+        1490.87109375,
+        939.0958251953125,
+        1621.9100341796875,
+        1078.640625
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 271,
+      "bbox_xyxy": [
+        1495.1168212890625,
+        954.4418334960938,
+        1623.1143798828125,
+        1079.751953125
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 272,
+      "bbox_xyxy": [
+        1499.4132080078125,
+        964.6998291015625,
+        1622.059326171875,
+        1079.4039306640625
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 273,
+      "bbox_xyxy": [
+        1497.1318359375,
+        978.919189453125,
+        1618.09912109375,
+        1079.986083984375
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 274,
+      "bbox_xyxy": [
+        1499.275634765625,
+        990.1907958984375,
+        1620.2689208984375,
+        1079.785400390625
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 275,
+      "bbox_xyxy": [
+        1502.640380859375,
+        1002.5944213867188,
+        1623.271240234375,
+        1079.779541015625
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 276,
+      "bbox_xyxy": [
+        1496.0643310546875,
+        1017.2493896484375,
+        1617.19921875,
+        1079.12451171875
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 277,
+      "bbox_xyxy": [
+        1494.96484375,
+        1025.7186279296875,
+        1613.9403076171875,
+        1079.20947265625
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 278,
+      "bbox_xyxy": [
+        1495.49462890625,
+        1045.4979248046875,
+        1604.1351318359375,
+        1078.8636474609375
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 279,
+      "bbox_xyxy": [
+        1493.4228515625,
+        1050.58740234375,
+        1597.80078125,
+        1078.9681396484375
+      ],
+      "touches_frame_edge": true
+    },
+    {
+      "frame": 280,
+      "bbox_xyxy": [
+        1493.3125,
+        1062.8785400390625,
+        1574.835693359375,
+        1079.763671875
+      ],
+      "touches_frame_edge": true
+    }
+  ],
+  "tracking_evidence": [
+    {
+      "stage": "entry",
+      "frame": 196,
+      "crop": "/results/78b4a03ccaa549de96ecd88c5efb5806/234/tracking_entry_frame_00196.png"
+    },
+    {
+      "stage": "last_seen",
+      "frame": 280,
+      "crop": "/results/78b4a03ccaa549de96ecd88c5efb5806/234/tracking_last_seen_frame_00280.png"
+    }
+  ],
+  "status": "mapping_failed",
+  "grade": null,
+  "reason": "No reliable rotating sequence; inspect motion, reflections and fruit masks",
+  "view_selection": [
+    {
+      "source_frame": 205,
+      "target_frame": 207,
+      "source_frame_gap": 2,
+      "method": "adjacent_measurement",
+      "status": "split",
+      "reason": "Missing original frames between captured views"
+    },
+    {
+      "source_frame": 207,
+      "target_frame": 212,
+      "source_frame_gap": 5,
+      "method": "adjacent_measurement",
+      "status": "split",
+      "reason": "Missing original frames between captured views"
+    },
+    {
+      "source_frame": 212,
+      "target_frame": 217,
+      "source_frame_gap": 5,
+      "method": "adjacent_measurement",
+      "status": "split",
+      "reason": "Missing original frames between captured views"
+    }
+  ],
+  "view_evidence": [
+    {
+      "frame": 205,
+      "crop": "/results/78b4a03ccaa549de96ecd88c5efb5806/234/frame_00205_crop.png",
+      "fruit_mask": "/results/78b4a03ccaa549de96ecd88c5efb5806/234/frame_00205_fruit_mask.png",
+      "overlay": "/results/78b4a03ccaa549de96ecd88c5efb5806/234/frame_00205_overlay.png",
+      "defect_inference_ran": false
+    },
+    {
+      "frame": 212,
+      "crop": "/results/78b4a03ccaa549de96ecd88c5efb5806/234/frame_00212_crop.png",
+      "fruit_mask": "/results/78b4a03ccaa549de96ecd88c5efb5806/234/frame_00212_fruit_mask.png",
+      "overlay": "/results/78b4a03ccaa549de96ecd88c5efb5806/234/frame_00212_overlay.png",
+      "defect_inference_ran": false
+    },
+    {
+      "frame": 217,
+      "crop": "/results/78b4a03ccaa549de96ecd88c5efb5806/234/frame_00217_crop.png",
+      "fruit_mask": "/results/78b4a03ccaa549de96ecd88c5efb5806/234/frame_00217_fruit_mask.png",
+      "overlay": "/results/78b4a03ccaa549de96ecd88c5efb5806/234/frame_00217_overlay.png",
+      "defect_inference_ran": false
+    }
+  ]
+}

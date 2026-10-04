@@ -1,0 +1,10 @@
+{
+  "baseline_sha256": "1fb1a343f66ef30445ce1544338dc61b5717c22a804b6f209a355001e9f1186d",
+  "candidate_sha256": "951b55a4912d3147d349282846e2e02d20159a410b6bb2e8fdd4ab4dd3abea2d",
+  "changes": [
+    "Original quarter-resolution paper MAD remains the coarse matcher.",
+    "Optional native_matching_cost green_mad for successful coarse turns below configurable recheck threshold; planned video profile8degrees.",
+    "Smoothed originalgreen/MAD/median brightness offset; native refinement cannot differ from coarse rolling by morethan3degrees. No rescue or fallback afterfailures.",
+    "Legacy mad profile remains available forreproduction; no productionchange yet."
+  ]
+}

@@ -1,0 +1,230 @@
+# Algorithm revision: testing and evidence
+
+Built 2026-10-02T15:03:14.674009+02:00.
+Status: **draft; final hybrid full API run pending**.
+
+**The final hybrid source passes the specified synthetic motion, observability and area controls.**
+It preserves approximately the earlier author-label accuracy while fixing the demonstrated
+ideal full-turn drift. The four fixed real conveyor examples remain partial. General
+conveyor motion, segmentation and grade accuracy are not established by these tests.
+
+Exact execution source SHA256: `951b55a4912d3147d349282846e2e02d20159a410b6bb2e8fdd4ab4dd3abea2d`. Detection and segmentation weights
+are unchanged. [Simple code explanation](source/ALGORITHM_EXPLAINED.md).
+
+The spheroid shape, 3D texture lifting, rotation search, matrix propagation and
+surface-area calculation follow the research papers. The paper's quarter-resolution
+high-pass MAD remains the normal matcher. A successful coarse turn below eight
+degrees is rechecked at original resolution using smoothed green-channel MAD and
+median brightness-offset compensation. A disagreement above three degrees rejects
+the transition. Failed or unobservable transitions end a connected sequence;
+missing poses are never assumed to be zero or joined by a replacement bridge.
+These native rechecks and conservative selection are explicit engineering adaptations.
+
+## Author data and labelled point accuracy
+
+All 578 original images in 36 sequences (15 mandarins, 10 oranges, 11 tomatoes)
+and all 497 published correspondences are used. Labels only score predictions;
+they do not fit motion. Masks are derived from nonblack backgrounds. These images
+were inspected during development and are not held-out evaluation.
+
+| Source/profile | Returned / labels | Conditional RMS, px | Within 5 px / all labels | Maximum returned error, px |
+| --- | --- | --- | --- | --- |
+| Previous operational | 458/497 | 5.10288 | 367/497 | 35.93046 |
+| Prior observable 863 | 458/497 | 5.10295 | 367/497 | 35.93046 |
+| Rejected native original green 46a46 | 457/497 | 18.43342 | 269/497 | 89.59003 |
+| Final hybrid 951b55 | 455/497 | 5.10965 | 366/497 | 35.93046 |
+
+The hybrid returns slightly fewer independent predictions than the prior profiles;
+the conditional RMS is approximately unchanged on a different returned subset.
+This does not show a general accuracy improvement. The native original-green
+replacement is rejected because author accuracy substantially worsens.
+Final author maps: `{"insufficient_longitude_coverage": 22, "missing_defect_masks": 14}`. Coverage-eligible maps have no
+author defect truth and cannot validate grades.
+
+For publication context, the [2021 paper, Section 4.2 and Table 4](https://pmc.ncbi.nlm.nih.gov/articles/PMC8004661/)
+reports the following pixel reprojection RMS values. The authors describe about
+200 point correspondences per fruit class. The public annotation files evaluated
+here contain 132/179/186 labels (497 total), with 119/175/161 returned predictions.
+
+| Fruit class | Published Table 4 RMS, px | Independent hybrid conditional RMS, px | Returned / available labels |
+| --- | --- | --- | --- |
+| Mandarins | 6.5 | 4.733 | 119/132 |
+| Oranges | 2.53 | 3.316 | 175/179 |
+| Tomatoes | 5.2 | 6.728 | 161/186 |
+
+The returned prediction denominator, rejection gates, shape/profile choices and
+independent implementation differ from the publication. Conditional error on
+returned predictions omits unavailable ones. These values are a contextual
+comparison; they do not establish reproduction of the published evaluation or
+that this implementation beats its accuracy.
+
+![Publication context with prediction denominators](publication_table4_context.png)
+[Publication comparison provenance](publication_table4_comparison.json).
+
+The final retained-map audit returns 348/497 original labels, conditional RMS 4.99196 pixels, with 280/497 within five pixels. It creates 0 nonadjacent bridges. This subset is selected by the algorithm and has a different denominator from independent pair scoring; unavailable labels are not silently removed. Exact chained labels are correlated with the published annotations.
+
+![Author accuracy and availability](author_comparison.png)
+[Exact author record](authors-benchmark/runs/hybrid_photometric_profile_20261002/report.json).
+
+## Independently known motion and unavailable stationary motion
+
+The actual fitted sphere, matcher, matrix propagation and selector execute on
+the SAME four archived NPZ scenes used for the previous candidates. Two different
+analytic body textures undergo ten known noncommuting x/y wobble steps. Six
+independently projected visible landmarks score the complete measured chain.
+Moving controls require all ten pairs, endpoint error at most one degree and
+every landmark RMS at most one pixel; these limits are unchanged.
+
+| Known scene | Returned / attempted | Endpoint pose error, deg | Maximum visible-landmark RMS, px | Mapping outcome |
+| --- | --- | --- | --- | --- |
+| variable_xy_texture_a | 10/10 | 0.222 | 0.202 | insufficient_longitude_coverage |
+| variable_xy_texture_b | 10/10 | 0.085 | 0.086 | insufficient_longitude_coverage |
+| stationary_120_texture_a | 0/119 | unavailable | unavailable | mapping_failed |
+| stationary_120_texture_b | 0/119 | unavailable | unavailable | mapping_failed |
+
+Each stationary scene contains 120 frames with independently sampled pixel noise.
+All 119 dominant-turn measurements per texture are unavailable, after 119 native
+attempts, with null endpoints and no map or grade. The helper's maximum pose/RMS
+of zero comes ONLY from the frame-zero reference scaffold. It is not estimated
+zero stationary error, and none of the 238 rejected pairs is scored as zero.
+The quarter-degree observability bound is unchanged.
+
+Two unsaturated global +10 gray offsets on the second image only preserve
+estimated geometry and residual under the predeclared 0.01-degree/0.00001
+invariance limits. Both original and shifted pairs also meet one-degree/one-pixel
+known-geometry criteria. [Motion and exposure record](algorithm-revision/hybrid_motion_controls_20261002/PHOTOMETRIC_MOTION_CONTROLS.md).
+
+![Moving geometry](algorithm-revision/hybrid_motion_controls_20261002/observable_moving_accuracy.png)
+![Actual stationary outcomes](algorithm-revision/hybrid_motion_controls_20261002/stationary_observability.png)
+![Exposure invariance](algorithm-revision/hybrid_motion_controls_20261002/brightness_offset_invariance.png)
+
+## Actual matcher over complete known turns
+
+These controls execute the real geometry fit, two-axis image matcher, pose
+composition, selector and surface fusion, with no mocked rotations. Texture A
+has sixty six-degree steps; texture B has 120 alternating 0.6/5.4-degree steps.
+Thirty-six known spherical landmarks are scored whenever front-visible. Perfect
+masks and analytical camera geometry isolate motion from detector errors. Limits
+are predeclared at five degrees maximum pose error and five pixels landmark RMS.
+
+| Complete known turn | Returned / attempted | Maximum pose error, deg | Maximum front-visible RMS, px | All-clear class arithmetic | Motion control |
+| --- | --- | --- | --- | --- | --- |
+| constant_6deg_texture_a | 60/60 | 1.976 | 1.342 | Class 1 | PASS |
+| variable_06_54deg_texture_b | 120/120 | 1.482 | 1.004 | Class 1 | PASS |
+
+Both ideal complete-turn controls pass and all 180 transitions are measured.
+Their all-clear masks test zero-defect class arithmetic, not the real segmentation
+model or general real-fruit grading accuracy. [Complete-turn record](algorithm-revision/full_turn_hybrid_20261002/FULL_TURN_CONTROLS.md).
+
+![Actual full-turn geometry](algorithm-revision/full_turn_hybrid_20261002/full_turn_accuracy.png)
+
+## Frozen real conveyor inputs and the user's segmentation model
+
+The exact 215 detector/tracker crops and fruit masks of tracks 98, 1, 14 and 491
+are held fixed across variants. They are selected development cases, not a
+random or held-out sample. Detection, tracking, GrabCut and neural inference are
+not rerun in this geometry comparison. No independent conveyor motion truth is available.
+
+| Track | Input views | Retained views | Original frames | Observed longitude, deg | Result |
+| --- | --- | --- | --- | --- | --- |
+| 98 | 66 | 20 | 66–85 | 343.98 | insufficient_longitude_coverage |
+| 1 | 46 | 6 | 11–16 | 126.47 | insufficient_longitude_coverage |
+| 14 | 44 | 5 | 6–10 | 121.12 | insufficient_longitude_coverage |
+| 491 | 59 | 4 | 305–308 | 161.53 | insufficient_longitude_coverage |
+
+All four remain below the 350-degree longitude gate and receive no grade. More
+coverage, an ordered map, or a low matching residual does not establish correct
+surface geometry. Independently marked conveyor landmarks and verified turns
+are needed to score field motion and map accuracy.
+
+The separate real D-FINE integration executes 35 model
+calls and returns 74 defect instances on those
+same frozen crops. Actual masks, overlays and partial maps are retained. All
+four remain partial and ungraded. This verifies model execution and mapper/report
+connection; no defect-mask or grade truth is available to score accuracy. Detection,
+tracking and GrabCut are not recomputed in that isolated segmentation run.
+
+![Real conveyor comparison](algorithm-revision/fixed_hybrid_conveyor_20261002/fixed_input_comparison.png)
+[Actual model record](algorithm-revision/real_segmenter_hybrid_20261002/report.json).
+
+## Area arithmetic, implementation checks and full-video execution
+
+Known defect longitude wedges are projected with exact geometry and supplied
+rotations. This control intentionally bypasses the image matcher and neural
+models; it verifies repeated-defect union and spherical area normalization.
+
+| Known observed defect area | Measured | Absolute error, percentage points | Configured class |
+| --- | --- | --- | --- |
+| 5% | 5.14365% | 0.14365 | Class 1 |
+| 15% | 15.17867% | 0.17867 | Class 2 |
+| 30% | 30.09276% | 0.09276 | Class 3 |
+
+Coverage controls also pass: known 250- and 100-degree turns stay partial.
+The configured 10%/20% class boundaries are engineering rules, not published
+author validation of conveyor grades.
+
+All 43 Python tests, frontend build and lint pass, with commands,
+timestamps, output and exact source hashes retained in [software-checks/hybrid_photometric_20261002](software-checks/hybrid_photometric_20261002/summary.json).
+New checks cover brightness-offset invariance, scalar/batch agreement, all-invalid
+hypotheses without NaN warnings, native recheck settings, disagreement rejection
+and preservation of the paper matcher for larger motion. Existing failure/no-bridge
+and native-failure checks remain. [Legacy-profile equivalence](algorithm-revision/photometric_equivalence_20261002/PHOTOMETRIC_EQUIVALENCE.md)
+also confirms bit-identical scalar/batch costs and two archived image-pair outcomes
+against source 863 when the optional green adaptation is disabled. Software
+equivalence is separate from ground-truth image accuracy.
+
+The final hybrid full API run is pending. Its incomplete request, if present, is retained; no completed hybrid detector/tracker/video outcome is claimed. The old observable-source run is recorded separately and cannot count as final hybrid validation.
+
+## Rejected and failed development results remain preserved
+
+The earlier observable source 863 produces full-looking all-clear Class 1 maps
+despite maximum full-turn errors of 25.744/21.415 degrees and 17.029/14.371 pixels.
+Native resolution with the old high-pass objective also fails (18.651/13.878
+degrees; 12.565/9.383 pixels). Those failures motivate the separate photometric
+diagnosis; they are not overwritten by later passes.
+
+The original-green source 46a46 passes ideal full turns but returns 83/119 false
+stationary texture-A turns and a partial map. Its author RMS is about 18.43 pixels,
+so it is rejected. Smoothed-green source 1fb passes the tested ideal short/full
+turn and stationary controls; this is not a claim of general author accuracy.
+The hybrid keeps the original objective for larger author motions instead of
+globally replacing it. [Original-green failure record](algorithm-revision/photometric_motion_controls_20261002/PHOTOMETRIC_MOTION_CONTROLS.md).
+
+Historical source 52 raw forced-zero-minimum stationary chains drift by
+59.768 and 7.388 degrees. Native sigma 1.118/2 prefilter trials do not pass all
+original raw accuracy limits. These unchanged failures, rejected native trials,
+objective curves and source/settings records remain in the bundle. The original
+green chart's false static annotation was corrected with explicit postprocessing
+provenance; original exports and measurements are preserved.
+
+The older full_revised API is interrupted and incomplete. Full_observable is
+an earlier execution source and has its own state in [api_run_states.json](api_run_states.json).
+Neither can count as completion of the final hybrid full-video test.
+Geometry-size and paired GrabCut-thread diagnostics remain separate historical
+investigations; they establish neither a camera correction nor a production
+thread-speed improvement.
+
+## Reproduce and report images
+
+The gallery provides actual author/conveyor images, known-answer controls and
+300-dpi PNG/PDF figures. Result JSON, NPZ inputs, frozen sources, settings,
+software output, model hashes and author source/license provenance are retained.
+NPZ inputs are stored once by SHA256; [input_references.json](input_references.json)
+resolves duplicate paths from historical reports. Models and the complete original
+author dataset/video are not duplicated. The original clip is
+`WIN_20260818_13_29_43_Pro.mp4`, SHA256
+`dc25964bf6052972cad761b0246f79906e768c6737bf4228ba44711d7272429c`.
+
+Research basis: [2021 spheroid rotation paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC8004661/)
+and [2022 surface-map paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC9323781/).
+This is an independent implementation. The public author repositories provide
+data and feature annotations rather than the reconstruction software used here.
+These are development tests with explicit scope, not certification of real grade accuracy.
+
+```powershell
+./backend/venv/Scripts/python.exe -B backend/build_algorithm_revision_evidence.py --profile hybrid --label evidence_hybrid_20261002 --refresh
+```
+
+Run each validation under a fresh label; recorded inputs/settings/scripts supply
+individual reproduction. [SHA256SUMS.txt](SHA256SUMS.txt) identifies every payload;
+[bundle_summary.json](bundle_summary.json) states completion and limitations.

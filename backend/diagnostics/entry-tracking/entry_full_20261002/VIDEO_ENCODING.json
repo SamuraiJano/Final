@@ -1,0 +1,74 @@
+[
+  {
+    "file": "entry_to_exit.mp4",
+    "command": [
+      "C:\\ffmpeg-7.1-essentials_build\\bin\\ffmpeg.EXE",
+      "-hide_banner",
+      "-loglevel",
+      "error",
+      "-i",
+      "backend\\diagnostics\\entry-tracking\\entry_full_20261002\\entry_to_exit.mpeg4.mp4",
+      "-an",
+      "-c:v",
+      "libx264",
+      "-preset",
+      "fast",
+      "-crf",
+      "18",
+      "-pix_fmt",
+      "yuv420p",
+      "-movflags",
+      "+faststart",
+      "backend\\diagnostics\\entry-tracking\\entry_full_20261002\\entry_to_exit.mp4"
+    ],
+    "verification": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "14873/500",
+          "nb_read_frames": "88"
+        }
+      ]
+    }
+  },
+  {
+    "file": "all_fruit_tracking.mp4",
+    "command": [
+      "C:\\ffmpeg-7.1-essentials_build\\bin\\ffmpeg.EXE",
+      "-hide_banner",
+      "-loglevel",
+      "error",
+      "-i",
+      "backend\\diagnostics\\entry-tracking\\entry_full_20261002\\all_fruit_tracking.mpeg4.mp4",
+      "-an",
+      "-c:v",
+      "libx264",
+      "-preset",
+      "fast",
+      "-crf",
+      "18",
+      "-pix_fmt",
+      "yuv420p",
+      "-movflags",
+      "+faststart",
+      "backend\\diagnostics\\entry-tracking\\entry_full_20261002\\all_fruit_tracking.mp4"
+    ],
+    "verification": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "14873/500",
+          "nb_read_frames": "515"
+        }
+      ]
+    }
+  }
+]

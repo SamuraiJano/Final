@@ -1,0 +1,2324 @@
+{
+  "name": "adjacent_native",
+  "algorithm_source_sha256": "9a0108a98440f3152c78445c9da25cb6747b4eb06478e1e6740cf67d4e82109b",
+  "settings": {
+    "spheroid_type": "auto",
+    "spherical_tolerance": 0.06,
+    "rotation_axis": "x",
+    "rotation_direction": 1,
+    "max_pair_angle_deg": 55.0,
+    "transverse_angle_deg": 10.0,
+    "search_step_deg": 1.0,
+    "image_downsample": 4,
+    "refine_small_motion": true,
+    "highpass_sigma": 1.25,
+    "point_percentile": 97.0,
+    "min_pair_points": 12,
+    "min_pair_angle_deg": 1.0,
+    "max_pair_error": 0.58,
+    "min_texture": 0.006,
+    "matching_cost": "mad",
+    "batch_rotation_search": true,
+    "bidirectional_matching": true,
+    "select_rotating_views": true,
+    "minimum_view_rotation_deg": 3.0,
+    "maximum_view_index_gap": 1,
+    "texture_metric": "selected_rms",
+    "exclude_specular_texture": false,
+    "enforce_uniform_pair_rotation": false,
+    "max_latitude_deg": 60.0,
+    "map_angle_step_deg": null,
+    "grabcut_iterations": 3,
+    "minimum_surface_coverage": 0.65,
+    "minimum_rotation_coverage_deg": 0.0,
+    "minimum_longitude_coverage_deg": 350,
+    "maximum_pair_gap_deg": 55,
+    "pole_pose_tolerance_deg": 5.0,
+    "pole_pose_method": "silhouette_trend",
+    "minimum_mask_box_fraction": 0.4,
+    "minimum_silhouette_solidity": 0.95,
+    "class_1_max_defect_pct": 10.0,
+    "class_2_max_defect_pct": 20.0,
+    "defect_observations_complete": false
+  },
+  "adaptive_recheck_threshold_deg": 3.0,
+  "input_frames": [
+    305,
+    306,
+    307,
+    308,
+    309,
+    310,
+    311,
+    312,
+    313,
+    314,
+    315,
+    316,
+    317,
+    318,
+    319,
+    320,
+    321,
+    322,
+    323,
+    324,
+    325,
+    326,
+    327,
+    328,
+    329,
+    331,
+    332,
+    333,
+    334,
+    335,
+    336,
+    337,
+    338,
+    339,
+    340,
+    341,
+    342,
+    343,
+    344,
+    345,
+    346,
+    347,
+    348,
+    349,
+    350,
+    351,
+    352,
+    353,
+    354,
+    355,
+    356,
+    357,
+    358,
+    359,
+    360,
+    361,
+    362,
+    363,
+    364
+  ],
+  "grade_evaluated": false,
+  "neural_inference_executed": false,
+  "mask_extraction_executed": false,
+  "status": "insufficient_longitude_coverage",
+  "rotation_deg": 27.322826914689806,
+  "longitude_deg": 161.52744630071598,
+  "surface_pct": 25.590508091449824,
+  "selected_frames": [
+    305,
+    306,
+    307,
+    308
+  ],
+  "discarded_frames": [
+    309,
+    310,
+    311,
+    312,
+    313,
+    314,
+    315,
+    316,
+    317,
+    318,
+    319,
+    320,
+    321,
+    322,
+    323,
+    324,
+    325,
+    326,
+    327,
+    328,
+    329,
+    331,
+    332,
+    333,
+    334,
+    335,
+    336,
+    337,
+    338,
+    339,
+    340,
+    341,
+    342,
+    343,
+    344,
+    345,
+    346,
+    347,
+    348,
+    349,
+    350,
+    351,
+    352,
+    353,
+    354,
+    355,
+    356,
+    357,
+    358,
+    359,
+    360,
+    361,
+    362,
+    363,
+    364
+  ],
+  "selection_diagnostics": [
+    {
+      "source_frame": 305,
+      "target_frame": 306,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 3.0052534312732613,
+      "image_downsample": 4,
+      "rotation_vector_deg": [
+        3.0052534312732613,
+        -5.261838851517671,
+        0.0
+      ],
+      "rotation_deg": 6.059578886813878,
+      "error": 0.34834412752161703,
+      "status": "accepted"
+    },
+    {
+      "source_frame": 306,
+      "target_frame": 307,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 7.357921906024053,
+      "image_downsample": 4,
+      "rotation_vector_deg": [
+        7.357921906024053,
+        -4.577391810106876,
+        0.0
+      ],
+      "rotation_deg": 8.66553694576292,
+      "error": 0.34516408287719724,
+      "status": "accepted"
+    },
+    {
+      "source_frame": 307,
+      "target_frame": 308,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 16.959651577392492,
+      "image_downsample": 4,
+      "rotation_vector_deg": [
+        16.959651577392492,
+        -0.9216052438092837,
+        1.2607886713387522e-17
+      ],
+      "rotation_deg": 16.984673616292085,
+      "error": 0.5291995990808576,
+      "status": "accepted"
+    },
+    {
+      "source_frame": 308,
+      "target_frame": 309,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 11.5 deg, error 0.600"
+    },
+    {
+      "source_frame": 309,
+      "target_frame": 310,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 19.0 deg, error 0.581"
+    },
+    {
+      "source_frame": 310,
+      "target_frame": 311,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 7.8 deg, error 0.704"
+    },
+    {
+      "source_frame": 311,
+      "target_frame": 312,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 9.1 deg, error 0.704"
+    },
+    {
+      "source_frame": 312,
+      "target_frame": 313,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.4645788281909982,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        2.4999999999998077,
+        0.0
+      ],
+      "rotation_deg": 2.4999999999998077,
+      "error": 0.4443679275031457,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 313,
+      "target_frame": 314,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.0,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        2.4999999999998077,
+        0.0
+      ],
+      "rotation_deg": 2.4999999999998077,
+      "error": 0.47230386220835796,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 314,
+      "target_frame": 315,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 5.0 deg, error 0.698"
+    },
+    {
+      "source_frame": 315,
+      "target_frame": 316,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 5.463529919441276,
+      "image_downsample": 4,
+      "rotation_vector_deg": [
+        5.463529919441276,
+        7.076415488521578,
+        0.0
+      ],
+      "rotation_deg": 8.940123899970184,
+      "error": 0.5401566872772416,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 316,
+      "target_frame": 317,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 0.0 deg, error 0.663"
+    },
+    {
+      "source_frame": 317,
+      "target_frame": 318,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 2.5000000000000866,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        1.7397513699397404,
+        1.745166148073482,
+        -3.1069681899909918e-18
+      ],
+      "rotation_deg": 2.4642117834286967,
+      "error": 0.5048476675011269,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 318,
+      "target_frame": 319,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 9.21006641807988,
+      "image_downsample": 4,
+      "rotation_vector_deg": [
+        9.21006641807988,
+        2.9086288029913017,
+        2.496615682789704e-17
+      ],
+      "rotation_deg": 9.65843905292327,
+      "error": 0.5157645551732991,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 319,
+      "target_frame": 320,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.6336830097882171,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        1.4726414068935616,
+        -2.180635842615854,
+        3.107102526650997e-18
+      ],
+      "rotation_deg": 2.631320085318091,
+      "error": 0.48157322595998064,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 320,
+      "target_frame": 321,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 2.9 deg, error 0.652"
+    },
+    {
+      "source_frame": 321,
+      "target_frame": 322,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 3.8 deg, error 0.647"
+    },
+    {
+      "source_frame": 322,
+      "target_frame": 323,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 5.702634558776613,
+      "image_downsample": 4,
+      "rotation_vector_deg": [
+        5.702634558776613,
+        2.2077027530012985,
+        -1.2447659863754842e-17
+      ],
+      "rotation_deg": 6.11506274346902,
+      "error": 0.528187472666918,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 323,
+      "target_frame": 324,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 8.085589832467331,
+      "image_downsample": 4,
+      "rotation_vector_deg": [
+        8.085589832467331,
+        0.5754507626318731,
+        -3.1163962115235406e-18
+      ],
+      "rotation_deg": 8.106041359326555,
+      "error": 0.4176209010784504,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 324,
+      "target_frame": 325,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 4.830657188879179,
+      "image_downsample": 4,
+      "rotation_vector_deg": [
+        4.830657188879179,
+        -2.4300758522432333,
+        0.0
+      ],
+      "rotation_deg": 5.407450186929675,
+      "error": 0.3320698821338476,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 325,
+      "target_frame": 326,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 4.009259958616136,
+      "image_downsample": 4,
+      "rotation_vector_deg": [
+        4.009259958616136,
+        2.0754976526759354,
+        -6.218453584314212e-18
+      ],
+      "rotation_deg": 4.514626886247187,
+      "error": 0.33997453686046125,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 326,
+      "target_frame": 327,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 1.1 deg, error 0.681"
+    },
+    {
+      "source_frame": 327,
+      "target_frame": 328,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.0,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        0.5000000000005914,
+        0.0
+      ],
+      "rotation_deg": 0.5000000000005914,
+      "error": 0.4480213444524517,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 328,
+      "target_frame": 329,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 4.9 deg, error 0.631"
+    },
+    {
+      "source_frame": 329,
+      "target_frame": 331,
+      "source_frame_gap": 2,
+      "method": "adjacent_measurement",
+      "status": "split",
+      "reason": "Missing original frames between captured views"
+    },
+    {
+      "source_frame": 331,
+      "target_frame": 332,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 1.9623409492590915,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.9999999999999424,
+        -1.9999999999998848,
+        -1.5533995126558315e-18
+      ],
+      "rotation_deg": 2.236067977499661,
+      "error": 0.37198594909672256,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 332,
+      "target_frame": 333,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.83268932579388,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        1.7974160352078061,
+        -2.00839277268428,
+        0.0
+      ],
+      "rotation_deg": 2.69524505991433,
+      "error": 0.24516144364611403,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 333,
+      "target_frame": 334,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.9999999999993554,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        1.662809119155459,
+        -0.5182175989357243,
+        0.0
+      ],
+      "rotation_deg": 1.7416898824398277,
+      "error": 0.2693822645420806,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 334,
+      "target_frame": 335,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 1.8030971849547863,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        1.6369889807758853,
+        -1.3143486576522114,
+        0.0
+      ],
+      "rotation_deg": 2.099344020653557,
+      "error": 0.33265989182788336,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 335,
+      "target_frame": 336,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.0,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.2766940422874128,
+        -1.4838974047440203,
+        -3.8829622006042594e-19
+      ],
+      "rotation_deg": 1.5094737827611937,
+      "error": 0.30338502334031325,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 336,
+      "target_frame": 337,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 1.2091746724306311,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.8420155706448708,
+        -3.9137233566838234,
+        -3.108539059011382e-18
+      ],
+      "rotation_deg": 4.00327625000585,
+      "error": 0.5383646329018115,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 337,
+      "target_frame": 338,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "status": "split",
+      "reason": "Unreliable pair 0: rotation 16.4 deg, error 0.827"
+    },
+    {
+      "source_frame": 338,
+      "target_frame": 339,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.0,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        -7.4999999999999645,
+        0.0
+      ],
+      "rotation_deg": 7.4999999999999645,
+      "error": 0.5658113405800569,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 339,
+      "target_frame": 340,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.0,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        -6.499999999999966,
+        0.0
+      ],
+      "rotation_deg": 6.499999999999966,
+      "error": 0.4684875453213697,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 340,
+      "target_frame": 341,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.0,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        -4.499999999999928,
+        0.0
+      ],
+      "rotation_deg": 4.499999999999928,
+      "error": 0.48632436763025866,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 341,
+      "target_frame": 342,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.0,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        -1.4999999999993152,
+        0.0
+      ],
+      "rotation_deg": 1.4999999999993152,
+      "error": 0.4132470666959651,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 342,
+      "target_frame": 343,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.3901203666054257,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        1.999999999999765,
+        0.0
+      ],
+      "rotation_deg": 1.999999999999765,
+      "error": 0.2565123333910591,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 343,
+      "target_frame": 344,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 2.0251629862069405,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.2595781577917828,
+        3.00460606470539,
+        7.768612747088071e-19
+      ],
+      "rotation_deg": 3.015798140470775,
+      "error": 0.32860840892693566,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 344,
+      "target_frame": 345,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.0,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.16499042989518775,
+        3.989164199403582,
+        7.771313876003718e-19
+      ],
+      "rotation_deg": 3.992574714612141,
+      "error": 0.3715960640343341,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 345,
+      "target_frame": 346,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.0,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        1.4999999999993152,
+        0.0
+      ],
+      "rotation_deg": 1.4999999999993152,
+      "error": 0.2328972753648395,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 346,
+      "target_frame": 347,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.0,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": 0.0,
+      "error": 0.3053011492893676,
+      "status": "split",
+      "reason": "Unobservable change below 0.25 degrees; motion is not accumulated"
+    },
+    {
+      "source_frame": 347,
+      "target_frame": 348,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.0,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        -0.9999999999999002,
+        0.0
+      ],
+      "rotation_deg": 0.9999999999999002,
+      "error": 0.23991799150146964,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 348,
+      "target_frame": 349,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.0,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        -0.5000000000005914,
+        0.0
+      ],
+      "rotation_deg": 0.5000000000005914,
+      "error": 0.3923093729880268,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 349,
+      "target_frame": 350,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.0,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": 0.0,
+      "error": 0.25338458865235747,
+      "status": "split",
+      "reason": "Unobservable change below 0.25 degrees; motion is not accumulated"
+    },
+    {
+      "source_frame": 350,
+      "target_frame": 351,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.2034646527838735,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": 0.0,
+      "error": 0.20801326059886655,
+      "status": "split",
+      "reason": "Unobservable change below 0.25 degrees; motion is not accumulated"
+    },
+    {
+      "source_frame": 351,
+      "target_frame": 352,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.0,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        -0.5000000000005914,
+        0.0
+      ],
+      "rotation_deg": 0.5000000000005914,
+      "error": 0.2224601770587321,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 352,
+      "target_frame": 353,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.0,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        0.5000000000005914,
+        0.0
+      ],
+      "rotation_deg": 0.5000000000005914,
+      "error": 0.19774397546029443,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 353,
+      "target_frame": 354,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.0,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": 0.0,
+      "error": 0.13305453451969917,
+      "status": "split",
+      "reason": "Unobservable change below 0.25 degrees; motion is not accumulated"
+    },
+    {
+      "source_frame": 354,
+      "target_frame": 355,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.03159712412579045,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": 0.0,
+      "error": 0.19686050424668272,
+      "status": "split",
+      "reason": "Unobservable change below 0.25 degrees; motion is not accumulated"
+    },
+    {
+      "source_frame": 355,
+      "target_frame": 356,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.1948157881515584,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        0.5000000000005914,
+        0.0
+      ],
+      "rotation_deg": 0.5000000000005914,
+      "error": 0.13928818696130224,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 356,
+      "target_frame": 357,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.0,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        0.9999999999999002,
+        0.0
+      ],
+      "rotation_deg": 0.9999999999999002,
+      "error": 0.18532109654839968,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 357,
+      "target_frame": 358,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.0,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        -0.5000000000005914,
+        0.0
+      ],
+      "rotation_deg": 0.5000000000005914,
+      "error": 0.15915043323225797,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 358,
+      "target_frame": 359,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.0,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        0.5000000000005914,
+        0.0
+      ],
+      "rotation_deg": 0.5000000000005914,
+      "error": 0.20145735470169238,
+      "status": "other_segment"
+    },
+    {
+      "source_frame": 359,
+      "target_frame": 360,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.0,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": 0.0,
+      "error": 0.3129275222056903,
+      "status": "split",
+      "reason": "Unobservable change below 0.25 degrees; motion is not accumulated"
+    },
+    {
+      "source_frame": 360,
+      "target_frame": 361,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.0,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": 0.0,
+      "error": 0.28932786451989734,
+      "status": "split",
+      "reason": "Unobservable change below 0.25 degrees; motion is not accumulated"
+    },
+    {
+      "source_frame": 361,
+      "target_frame": 362,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.10203403070749775,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.11626551531830835,
+        0.06792482487931434,
+        6.066432207398235e-21
+      ],
+      "rotation_deg": 0.13465307975355525,
+      "error": 0.19677086813830136,
+      "status": "split",
+      "reason": "Unobservable change below 0.25 degrees; motion is not accumulated"
+    },
+    {
+      "source_frame": 362,
+      "target_frame": 363,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.0,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": 0.0,
+      "error": 0.22655417384447313,
+      "status": "split",
+      "reason": "Unobservable change below 0.25 degrees; motion is not accumulated"
+    },
+    {
+      "source_frame": 363,
+      "target_frame": 364,
+      "source_frame_gap": 1,
+      "method": "adjacent_measurement",
+      "coarse_rotation_deg": 0.0,
+      "image_downsample": 1,
+      "rotation_vector_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": 0.0,
+      "error": 0.32975385747289754,
+      "status": "split",
+      "reason": "Unobservable change below 0.25 degrees; motion is not accumulated"
+    },
+    {
+      "source_frame": 357,
+      "target_frame": 358,
+      "method": "map_trajectory_check",
+      "status": "split",
+      "longitude_delta_deg": -0.27291347952827305,
+      "reason": "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees"
+    },
+    {
+      "source_frame": 351,
+      "target_frame": 352,
+      "method": "map_trajectory_check",
+      "status": "split",
+      "longitude_delta_deg": 0.0,
+      "reason": "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees"
+    },
+    {
+      "source_frame": 352,
+      "target_frame": 353,
+      "method": "map_trajectory_check",
+      "status": "split",
+      "longitude_delta_deg": 0.0,
+      "reason": "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees"
+    },
+    {
+      "source_frame": 347,
+      "target_frame": 348,
+      "method": "map_trajectory_check",
+      "status": "split",
+      "longitude_delta_deg": 0.23999178147112754,
+      "reason": "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees"
+    },
+    {
+      "source_frame": 348,
+      "target_frame": 349,
+      "method": "map_trajectory_check",
+      "status": "split",
+      "longitude_delta_deg": 0.12008606178875846,
+      "reason": "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees"
+    },
+    {
+      "source_frame": 338,
+      "target_frame": 339,
+      "method": "map_trajectory_check",
+      "status": "split",
+      "longitude_delta_deg": -1.2459618548887943,
+      "reason": "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees"
+    },
+    {
+      "source_frame": 339,
+      "target_frame": 340,
+      "method": "map_trajectory_check",
+      "status": "split",
+      "longitude_delta_deg": -1.0237644652780244,
+      "reason": "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees"
+    },
+    {
+      "source_frame": 340,
+      "target_frame": 341,
+      "method": "map_trajectory_check",
+      "status": "split",
+      "longitude_delta_deg": -0.6940161645537606,
+      "reason": "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees"
+    },
+    {
+      "source_frame": 341,
+      "target_frame": 342,
+      "method": "map_trajectory_check",
+      "status": "split",
+      "longitude_delta_deg": -0.23042645939680267,
+      "reason": "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees"
+    },
+    {
+      "source_frame": 345,
+      "target_frame": 346,
+      "method": "map_trajectory_check",
+      "status": "split",
+      "longitude_delta_deg": 0.23767700947329928,
+      "reason": "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees"
+    },
+    {
+      "source_frame": 327,
+      "target_frame": 328,
+      "method": "map_trajectory_check",
+      "status": "split",
+      "longitude_delta_deg": 0.24041669978704194,
+      "reason": "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees"
+    },
+    {
+      "source_frame": 319,
+      "target_frame": 320,
+      "method": "map_trajectory_check",
+      "status": "split",
+      "longitude_delta_deg": -0.3482019667025247,
+      "reason": "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees"
+    }
+  ],
+  "seconds": 8.26702239999986,
+  "estimator_attempt_count": 57,
+  "native_recheck_count": 46,
+  "estimator_status_counts": {
+    "accepted": 46,
+    "failed_coarse": 2,
+    "failed_native": 9
+  },
+  "selection_status_counts": {
+    "accepted": 3,
+    "split": 34,
+    "other_segment": 33
+  },
+  "selection_reason_counts": {
+    "accepted": 36,
+    "Unreliable pair 0: rotation 11.5 deg, error 0.600": 1,
+    "Unreliable pair 0: rotation 19.0 deg, error 0.581": 1,
+    "Unreliable pair 0: rotation 7.8 deg, error 0.704": 1,
+    "Unreliable pair 0: rotation 9.1 deg, error 0.704": 1,
+    "Unreliable pair 0: rotation 5.0 deg, error 0.698": 1,
+    "Unreliable pair 0: rotation 0.0 deg, error 0.663": 1,
+    "Unreliable pair 0: rotation 2.9 deg, error 0.652": 1,
+    "Unreliable pair 0: rotation 3.8 deg, error 0.647": 1,
+    "Unreliable pair 0: rotation 1.1 deg, error 0.681": 1,
+    "Unreliable pair 0: rotation 4.9 deg, error 0.631": 1,
+    "Missing original frames between captured views": 1,
+    "Unreliable pair 0: rotation 16.4 deg, error 0.827": 1,
+    "Unobservable change below 0.25 degrees; motion is not accumulated": 10,
+    "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees": 12
+  },
+  "selected_trace": {
+    "frames": [
+      305,
+      306,
+      307,
+      308
+    ],
+    "reference_frame": 305,
+    "progress_deg": [
+      0.0,
+      7.5502456780041625,
+      36.11707901097057,
+      71.48872891504148
+    ],
+    "longitude_steps_deg": [
+      7.5502456780041625,
+      28.566833332966404,
+      35.37164990407091
+    ],
+    "below_025_count": 0,
+    "backward_count": 0,
+    "above_maximum_count": 0,
+    "A": 66.56092963559688,
+    "B": 58.21514388035197,
+    "pair_errors": [
+      0.34834412752161703,
+      0.34516408287719724,
+      0.5291995990808576
+    ],
+    "selection_diagnostics": [
+      {
+        "source_frame": 305,
+        "target_frame": 306,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 3.0052534312732613,
+        "image_downsample": 4,
+        "rotation_vector_deg": [
+          3.0052534312732613,
+          -5.261838851517671,
+          0.0
+        ],
+        "rotation_deg": 6.059578886813878,
+        "error": 0.34834412752161703,
+        "status": "accepted"
+      },
+      {
+        "source_frame": 306,
+        "target_frame": 307,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 7.357921906024053,
+        "image_downsample": 4,
+        "rotation_vector_deg": [
+          7.357921906024053,
+          -4.577391810106876,
+          0.0
+        ],
+        "rotation_deg": 8.66553694576292,
+        "error": 0.34516408287719724,
+        "status": "accepted"
+      },
+      {
+        "source_frame": 307,
+        "target_frame": 308,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 16.959651577392492,
+        "image_downsample": 4,
+        "rotation_vector_deg": [
+          16.959651577392492,
+          -0.9216052438092837,
+          1.2607886713387522e-17
+        ],
+        "rotation_deg": 16.984673616292085,
+        "error": 0.5291995990808576,
+        "status": "accepted"
+      },
+      {
+        "source_frame": 308,
+        "target_frame": 309,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "status": "split",
+        "reason": "Unreliable pair 0: rotation 11.5 deg, error 0.600"
+      },
+      {
+        "source_frame": 309,
+        "target_frame": 310,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "status": "split",
+        "reason": "Unreliable pair 0: rotation 19.0 deg, error 0.581"
+      },
+      {
+        "source_frame": 310,
+        "target_frame": 311,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "status": "split",
+        "reason": "Unreliable pair 0: rotation 7.8 deg, error 0.704"
+      },
+      {
+        "source_frame": 311,
+        "target_frame": 312,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "status": "split",
+        "reason": "Unreliable pair 0: rotation 9.1 deg, error 0.704"
+      },
+      {
+        "source_frame": 312,
+        "target_frame": 313,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.4645788281909982,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          2.4999999999998077,
+          0.0
+        ],
+        "rotation_deg": 2.4999999999998077,
+        "error": 0.4443679275031457,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 313,
+        "target_frame": 314,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.0,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          2.4999999999998077,
+          0.0
+        ],
+        "rotation_deg": 2.4999999999998077,
+        "error": 0.47230386220835796,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 314,
+        "target_frame": 315,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "status": "split",
+        "reason": "Unreliable pair 0: rotation 5.0 deg, error 0.698"
+      },
+      {
+        "source_frame": 315,
+        "target_frame": 316,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 5.463529919441276,
+        "image_downsample": 4,
+        "rotation_vector_deg": [
+          5.463529919441276,
+          7.076415488521578,
+          0.0
+        ],
+        "rotation_deg": 8.940123899970184,
+        "error": 0.5401566872772416,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 316,
+        "target_frame": 317,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "status": "split",
+        "reason": "Unreliable pair 0: rotation 0.0 deg, error 0.663"
+      },
+      {
+        "source_frame": 317,
+        "target_frame": 318,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 2.5000000000000866,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          1.7397513699397404,
+          1.745166148073482,
+          -3.1069681899909918e-18
+        ],
+        "rotation_deg": 2.4642117834286967,
+        "error": 0.5048476675011269,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 318,
+        "target_frame": 319,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 9.21006641807988,
+        "image_downsample": 4,
+        "rotation_vector_deg": [
+          9.21006641807988,
+          2.9086288029913017,
+          2.496615682789704e-17
+        ],
+        "rotation_deg": 9.65843905292327,
+        "error": 0.5157645551732991,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 319,
+        "target_frame": 320,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.6336830097882171,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          1.4726414068935616,
+          -2.180635842615854,
+          3.107102526650997e-18
+        ],
+        "rotation_deg": 2.631320085318091,
+        "error": 0.48157322595998064,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 320,
+        "target_frame": 321,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "status": "split",
+        "reason": "Unreliable pair 0: rotation 2.9 deg, error 0.652"
+      },
+      {
+        "source_frame": 321,
+        "target_frame": 322,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "status": "split",
+        "reason": "Unreliable pair 0: rotation 3.8 deg, error 0.647"
+      },
+      {
+        "source_frame": 322,
+        "target_frame": 323,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 5.702634558776613,
+        "image_downsample": 4,
+        "rotation_vector_deg": [
+          5.702634558776613,
+          2.2077027530012985,
+          -1.2447659863754842e-17
+        ],
+        "rotation_deg": 6.11506274346902,
+        "error": 0.528187472666918,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 323,
+        "target_frame": 324,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 8.085589832467331,
+        "image_downsample": 4,
+        "rotation_vector_deg": [
+          8.085589832467331,
+          0.5754507626318731,
+          -3.1163962115235406e-18
+        ],
+        "rotation_deg": 8.106041359326555,
+        "error": 0.4176209010784504,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 324,
+        "target_frame": 325,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 4.830657188879179,
+        "image_downsample": 4,
+        "rotation_vector_deg": [
+          4.830657188879179,
+          -2.4300758522432333,
+          0.0
+        ],
+        "rotation_deg": 5.407450186929675,
+        "error": 0.3320698821338476,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 325,
+        "target_frame": 326,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 4.009259958616136,
+        "image_downsample": 4,
+        "rotation_vector_deg": [
+          4.009259958616136,
+          2.0754976526759354,
+          -6.218453584314212e-18
+        ],
+        "rotation_deg": 4.514626886247187,
+        "error": 0.33997453686046125,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 326,
+        "target_frame": 327,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "status": "split",
+        "reason": "Unreliable pair 0: rotation 1.1 deg, error 0.681"
+      },
+      {
+        "source_frame": 327,
+        "target_frame": 328,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.0,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          0.5000000000005914,
+          0.0
+        ],
+        "rotation_deg": 0.5000000000005914,
+        "error": 0.4480213444524517,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 328,
+        "target_frame": 329,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "status": "split",
+        "reason": "Unreliable pair 0: rotation 4.9 deg, error 0.631"
+      },
+      {
+        "source_frame": 329,
+        "target_frame": 331,
+        "source_frame_gap": 2,
+        "method": "adjacent_measurement",
+        "status": "split",
+        "reason": "Missing original frames between captured views"
+      },
+      {
+        "source_frame": 331,
+        "target_frame": 332,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 1.9623409492590915,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.9999999999999424,
+          -1.9999999999998848,
+          -1.5533995126558315e-18
+        ],
+        "rotation_deg": 2.236067977499661,
+        "error": 0.37198594909672256,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 332,
+        "target_frame": 333,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.83268932579388,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          1.7974160352078061,
+          -2.00839277268428,
+          0.0
+        ],
+        "rotation_deg": 2.69524505991433,
+        "error": 0.24516144364611403,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 333,
+        "target_frame": 334,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.9999999999993554,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          1.662809119155459,
+          -0.5182175989357243,
+          0.0
+        ],
+        "rotation_deg": 1.7416898824398277,
+        "error": 0.2693822645420806,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 334,
+        "target_frame": 335,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 1.8030971849547863,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          1.6369889807758853,
+          -1.3143486576522114,
+          0.0
+        ],
+        "rotation_deg": 2.099344020653557,
+        "error": 0.33265989182788336,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 335,
+        "target_frame": 336,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.0,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.2766940422874128,
+          -1.4838974047440203,
+          -3.8829622006042594e-19
+        ],
+        "rotation_deg": 1.5094737827611937,
+        "error": 0.30338502334031325,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 336,
+        "target_frame": 337,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 1.2091746724306311,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.8420155706448708,
+          -3.9137233566838234,
+          -3.108539059011382e-18
+        ],
+        "rotation_deg": 4.00327625000585,
+        "error": 0.5383646329018115,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 337,
+        "target_frame": 338,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "status": "split",
+        "reason": "Unreliable pair 0: rotation 16.4 deg, error 0.827"
+      },
+      {
+        "source_frame": 338,
+        "target_frame": 339,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.0,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          -7.4999999999999645,
+          0.0
+        ],
+        "rotation_deg": 7.4999999999999645,
+        "error": 0.5658113405800569,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 339,
+        "target_frame": 340,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.0,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          -6.499999999999966,
+          0.0
+        ],
+        "rotation_deg": 6.499999999999966,
+        "error": 0.4684875453213697,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 340,
+        "target_frame": 341,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.0,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          -4.499999999999928,
+          0.0
+        ],
+        "rotation_deg": 4.499999999999928,
+        "error": 0.48632436763025866,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 341,
+        "target_frame": 342,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.0,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          -1.4999999999993152,
+          0.0
+        ],
+        "rotation_deg": 1.4999999999993152,
+        "error": 0.4132470666959651,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 342,
+        "target_frame": 343,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.3901203666054257,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          1.999999999999765,
+          0.0
+        ],
+        "rotation_deg": 1.999999999999765,
+        "error": 0.2565123333910591,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 343,
+        "target_frame": 344,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 2.0251629862069405,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.2595781577917828,
+          3.00460606470539,
+          7.768612747088071e-19
+        ],
+        "rotation_deg": 3.015798140470775,
+        "error": 0.32860840892693566,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 344,
+        "target_frame": 345,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.0,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.16499042989518775,
+          3.989164199403582,
+          7.771313876003718e-19
+        ],
+        "rotation_deg": 3.992574714612141,
+        "error": 0.3715960640343341,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 345,
+        "target_frame": 346,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.0,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          1.4999999999993152,
+          0.0
+        ],
+        "rotation_deg": 1.4999999999993152,
+        "error": 0.2328972753648395,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 346,
+        "target_frame": 347,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.0,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_deg": 0.0,
+        "error": 0.3053011492893676,
+        "status": "split",
+        "reason": "Unobservable change below 0.25 degrees; motion is not accumulated"
+      },
+      {
+        "source_frame": 347,
+        "target_frame": 348,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.0,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          -0.9999999999999002,
+          0.0
+        ],
+        "rotation_deg": 0.9999999999999002,
+        "error": 0.23991799150146964,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 348,
+        "target_frame": 349,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.0,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          -0.5000000000005914,
+          0.0
+        ],
+        "rotation_deg": 0.5000000000005914,
+        "error": 0.3923093729880268,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 349,
+        "target_frame": 350,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.0,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_deg": 0.0,
+        "error": 0.25338458865235747,
+        "status": "split",
+        "reason": "Unobservable change below 0.25 degrees; motion is not accumulated"
+      },
+      {
+        "source_frame": 350,
+        "target_frame": 351,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.2034646527838735,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_deg": 0.0,
+        "error": 0.20801326059886655,
+        "status": "split",
+        "reason": "Unobservable change below 0.25 degrees; motion is not accumulated"
+      },
+      {
+        "source_frame": 351,
+        "target_frame": 352,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.0,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          -0.5000000000005914,
+          0.0
+        ],
+        "rotation_deg": 0.5000000000005914,
+        "error": 0.2224601770587321,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 352,
+        "target_frame": 353,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.0,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          0.5000000000005914,
+          0.0
+        ],
+        "rotation_deg": 0.5000000000005914,
+        "error": 0.19774397546029443,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 353,
+        "target_frame": 354,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.0,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_deg": 0.0,
+        "error": 0.13305453451969917,
+        "status": "split",
+        "reason": "Unobservable change below 0.25 degrees; motion is not accumulated"
+      },
+      {
+        "source_frame": 354,
+        "target_frame": 355,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.03159712412579045,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_deg": 0.0,
+        "error": 0.19686050424668272,
+        "status": "split",
+        "reason": "Unobservable change below 0.25 degrees; motion is not accumulated"
+      },
+      {
+        "source_frame": 355,
+        "target_frame": 356,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.1948157881515584,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          0.5000000000005914,
+          0.0
+        ],
+        "rotation_deg": 0.5000000000005914,
+        "error": 0.13928818696130224,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 356,
+        "target_frame": 357,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.0,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          0.9999999999999002,
+          0.0
+        ],
+        "rotation_deg": 0.9999999999999002,
+        "error": 0.18532109654839968,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 357,
+        "target_frame": 358,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.0,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          -0.5000000000005914,
+          0.0
+        ],
+        "rotation_deg": 0.5000000000005914,
+        "error": 0.15915043323225797,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 358,
+        "target_frame": 359,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.0,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          0.5000000000005914,
+          0.0
+        ],
+        "rotation_deg": 0.5000000000005914,
+        "error": 0.20145735470169238,
+        "status": "other_segment"
+      },
+      {
+        "source_frame": 359,
+        "target_frame": 360,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.0,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_deg": 0.0,
+        "error": 0.3129275222056903,
+        "status": "split",
+        "reason": "Unobservable change below 0.25 degrees; motion is not accumulated"
+      },
+      {
+        "source_frame": 360,
+        "target_frame": 361,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.0,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_deg": 0.0,
+        "error": 0.28932786451989734,
+        "status": "split",
+        "reason": "Unobservable change below 0.25 degrees; motion is not accumulated"
+      },
+      {
+        "source_frame": 361,
+        "target_frame": 362,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.10203403070749775,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.11626551531830835,
+          0.06792482487931434,
+          6.066432207398235e-21
+        ],
+        "rotation_deg": 0.13465307975355525,
+        "error": 0.19677086813830136,
+        "status": "split",
+        "reason": "Unobservable change below 0.25 degrees; motion is not accumulated"
+      },
+      {
+        "source_frame": 362,
+        "target_frame": 363,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.0,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_deg": 0.0,
+        "error": 0.22655417384447313,
+        "status": "split",
+        "reason": "Unobservable change below 0.25 degrees; motion is not accumulated"
+      },
+      {
+        "source_frame": 363,
+        "target_frame": 364,
+        "source_frame_gap": 1,
+        "method": "adjacent_measurement",
+        "coarse_rotation_deg": 0.0,
+        "image_downsample": 1,
+        "rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_deg": 0.0,
+        "error": 0.32975385747289754,
+        "status": "split",
+        "reason": "Unobservable change below 0.25 degrees; motion is not accumulated"
+      },
+      {
+        "source_frame": 357,
+        "target_frame": 358,
+        "method": "map_trajectory_check",
+        "status": "split",
+        "longitude_delta_deg": -0.27291347952827305,
+        "reason": "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees"
+      },
+      {
+        "source_frame": 351,
+        "target_frame": 352,
+        "method": "map_trajectory_check",
+        "status": "split",
+        "longitude_delta_deg": 0.0,
+        "reason": "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees"
+      },
+      {
+        "source_frame": 352,
+        "target_frame": 353,
+        "method": "map_trajectory_check",
+        "status": "split",
+        "longitude_delta_deg": 0.0,
+        "reason": "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees"
+      },
+      {
+        "source_frame": 347,
+        "target_frame": 348,
+        "method": "map_trajectory_check",
+        "status": "split",
+        "longitude_delta_deg": 0.23999178147112754,
+        "reason": "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees"
+      },
+      {
+        "source_frame": 348,
+        "target_frame": 349,
+        "method": "map_trajectory_check",
+        "status": "split",
+        "longitude_delta_deg": 0.12008606178875846,
+        "reason": "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees"
+      },
+      {
+        "source_frame": 338,
+        "target_frame": 339,
+        "method": "map_trajectory_check",
+        "status": "split",
+        "longitude_delta_deg": -1.2459618548887943,
+        "reason": "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees"
+      },
+      {
+        "source_frame": 339,
+        "target_frame": 340,
+        "method": "map_trajectory_check",
+        "status": "split",
+        "longitude_delta_deg": -1.0237644652780244,
+        "reason": "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees"
+      },
+      {
+        "source_frame": 340,
+        "target_frame": 341,
+        "method": "map_trajectory_check",
+        "status": "split",
+        "longitude_delta_deg": -0.6940161645537606,
+        "reason": "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees"
+      },
+      {
+        "source_frame": 341,
+        "target_frame": 342,
+        "method": "map_trajectory_check",
+        "status": "split",
+        "longitude_delta_deg": -0.23042645939680267,
+        "reason": "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees"
+      },
+      {
+        "source_frame": 345,
+        "target_frame": 346,
+        "method": "map_trajectory_check",
+        "status": "split",
+        "longitude_delta_deg": 0.23767700947329928,
+        "reason": "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees"
+      },
+      {
+        "source_frame": 327,
+        "target_frame": 328,
+        "method": "map_trajectory_check",
+        "status": "split",
+        "longitude_delta_deg": 0.24041669978704194,
+        "reason": "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees"
+      },
+      {
+        "source_frame": 319,
+        "target_frame": 320,
+        "method": "map_trajectory_check",
+        "status": "split",
+        "longitude_delta_deg": -0.3482019667025247,
+        "reason": "Longitude increment outside fusion bounds 0.25..max_pair+12 degrees"
+      }
+    ],
+    "pair_vectors_deg": [
+      [
+        3.0052534312732613,
+        -5.261838851517671,
+        0.0
+      ],
+      [
+        7.357921906024053,
+        -4.577391810106876,
+        0.0
+      ],
+      [
+        16.959651577392492,
+        -0.9216052438092837,
+        1.2607886713387522e-17
+      ]
+    ]
+  },
+  "fragmentation": {
+    "failed_motion": {
+      "count": 11,
+      "pairs": [
+        [
+          308,
+          309
+        ],
+        [
+          309,
+          310
+        ],
+        [
+          310,
+          311
+        ],
+        [
+          311,
+          312
+        ],
+        [
+          314,
+          315
+        ],
+        [
+          316,
+          317
+        ],
+        [
+          320,
+          321
+        ],
+        [
+          321,
+          322
+        ],
+        [
+          326,
+          327
+        ],
+        [
+          328,
+          329
+        ],
+        [
+          337,
+          338
+        ]
+      ]
+    },
+    "missing_source_frame": {
+      "count": 1,
+      "pairs": [
+        [
+          329,
+          331
+        ]
+      ]
+    },
+    "total_rotation_below_025": {
+      "count": 10,
+      "pairs": [
+        [
+          346,
+          347
+        ],
+        [
+          349,
+          350
+        ],
+        [
+          350,
+          351
+        ],
+        [
+          353,
+          354
+        ],
+        [
+          354,
+          355
+        ],
+        [
+          359,
+          360
+        ],
+        [
+          360,
+          361
+        ],
+        [
+          361,
+          362
+        ],
+        [
+          362,
+          363
+        ],
+        [
+          363,
+          364
+        ]
+      ]
+    },
+    "longitude_below_025": {
+      "count": 12,
+      "pairs": [
+        [
+          319,
+          320
+        ],
+        [
+          327,
+          328
+        ],
+        [
+          338,
+          339
+        ],
+        [
+          339,
+          340
+        ],
+        [
+          340,
+          341
+        ],
+        [
+          341,
+          342
+        ],
+        [
+          345,
+          346
+        ],
+        [
+          347,
+          348
+        ],
+        [
+          348,
+          349
+        ],
+        [
+          351,
+          352
+        ],
+        [
+          352,
+          353
+        ],
+        [
+          357,
+          358
+        ]
+      ]
+    },
+    "longitude_backward": {
+      "count": 6,
+      "pairs": [
+        [
+          319,
+          320
+        ],
+        [
+          338,
+          339
+        ],
+        [
+          339,
+          340
+        ],
+        [
+          340,
+          341
+        ],
+        [
+          341,
+          342
+        ],
+        [
+          357,
+          358
+        ]
+      ]
+    },
+    "longitude_above_maximum": {
+      "count": 0,
+      "pairs": []
+    }
+  }
+}

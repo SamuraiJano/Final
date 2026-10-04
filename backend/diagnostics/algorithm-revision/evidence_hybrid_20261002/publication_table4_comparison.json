@@ -1,0 +1,31 @@
+{
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8004661/",
+  "section": "4.2, Table 4",
+  "verified_at": "2026-10-02",
+  "paper_reported_correspondences_per_fruit_class": "approximately 200",
+  "algorithm_sha256": "951b55a4912d3147d349282846e2e02d20159a410b6bb2e8fdd4ab4dd3abea2d",
+  "comparison": [
+    {
+      "group": "mandarins",
+      "published_table4_rms_px": 6.5,
+      "independent_hybrid_conditional_rms_px": 4.733114498664256,
+      "returned_predictions": 119,
+      "available_published_labels": 132
+    },
+    {
+      "group": "oranges",
+      "published_table4_rms_px": 2.53,
+      "independent_hybrid_conditional_rms_px": 3.3164902423301887,
+      "returned_predictions": 175,
+      "available_published_labels": 179
+    },
+    {
+      "group": "tomatoes",
+      "published_table4_rms_px": 5.2,
+      "independent_hybrid_conditional_rms_px": 6.728380012438789,
+      "returned_predictions": 161,
+      "available_published_labels": 186
+    }
+  ],
+  "scope": "Independent implementation and different prediction/annotation denominators; contextual comparison only, not reproduction or a claim of beating publication accuracy."
+}

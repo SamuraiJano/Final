@@ -1,0 +1,55 @@
+{
+  "checks": [
+    {
+      "name": "python_tests",
+      "command": [
+        "C:\\Users\\USER\\Desktop\\1Skripsie\\VS Code\\final\\backend\\venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "backend",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "started_at": "2026-10-03T18:44:15.371723+00:00",
+      "exit_code": 0,
+      "log": "python_tests.txt"
+    },
+    {
+      "name": "frontend_build",
+      "command": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "run",
+        "build"
+      ],
+      "started_at": "2026-10-03T18:44:15.371723+00:00",
+      "exit_code": 0,
+      "log": "frontend_build.txt"
+    },
+    {
+      "name": "frontend_lint",
+      "command": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "run",
+        "lint"
+      ],
+      "started_at": "2026-10-03T18:44:15.372978+00:00",
+      "exit_code": 0,
+      "log": "frontend_lint.txt"
+    }
+  ],
+  "source_sha256": {
+    "backend/algorithm.py": "f10e8393f1af64f67023f9519fcbf1b117d91418c1955ec44c2bd329fa22e657",
+    "backend/main.py": "3e6496ca136ce4ac837dc492aac966745117bd0dd8c3f0180fd952933045d363",
+    "backend/map_visualization.py": "c26bd9a73484b93b8a870c46d7f8c1a6885aa33c4273fc82df1ec65c3ffbaaa9",
+    "backend/test_map_visualization.py": "a96861aedccd4508d9b4471bfde7434d7e8d7a9bdfd1d36d12b0b7dfd7b84be6",
+    "backend/dfine_segmenter.py": "20049bf4e24678342364f85b1f4eea69a36f5385c858189b40b52fac11fc360a",
+    "src/App.jsx": "6956d9bf926a6fbe02c3c9c47d28d037bfce8cbca4bbb1e464eb32b4fc112b3b",
+    "src/App.css": "c85455722c3172af16e2657286cdf8dae847a4d733dc8665e7f669932596052e",
+    "vite.config.js": "1b6582dca898de357a7b048a30489197d860509aa01c3c1803a03590079dec4e"
+  },
+  "model_inference_requested": false
+}
