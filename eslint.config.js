@@ -6,7 +6,7 @@ import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
   globalIgnores(['dist', 'backend/venv/**', 'backend/__pycache__/**',
-    'backend/diagnostics/**', 'backend/results/**']),
+    'backend/diagnostics/**', 'backend/results/**', 'backend/runtime/**']),
   {
     files: ['**/*.{js,jsx}'],
     extends: [

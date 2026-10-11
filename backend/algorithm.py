@@ -21,6 +21,7 @@ from __future__ import annotations
 import argparse
 from dataclasses import dataclass, field, replace
 import json
+import time
 from pathlib import Path
 from typing import Callable, Mapping, Sequence
 
@@ -34,9 +35,11 @@ from conveyor_identity import ConveyorIdentityManager, ConveyorIdentitySettings
 class MappingError(RuntimeError):
     """The images do not support a reliable surface reconstruction."""
 
-    def __init__(self, message: str, diagnostics: list[dict] | None = None):
+    def __init__(self, message: str, diagnostics: list[dict] | None = None,
+                 measurement: dict | None = None):
         super().__init__(message)
         self.diagnostics = diagnostics or []
+        self.measurement = measurement or {}
 
 
 @dataclass
@@ -61,6 +64,7 @@ class Settings:
     refine_small_motion: bool = True  # dense video needs native pixels for small turns
     native_matching_cost: str = 'mad'  # green_mad is the dense-video adaptation
     highpass_sigma: float = 1.25
+    native_point_preblur_sigma: float = 2.0  # historical native texture prefilter; calibrate independently
     point_percentile: float = 97.0
     min_pair_points: int = 12
     min_pair_angle_deg: float = 1.0
@@ -68,8 +72,18 @@ class Settings:
     min_texture: float = 0.006  # green channel intensity 0-1
     matching_cost: str = 'mad'  # paper Eq. 17; normalized cost retained for ablation
     batch_rotation_search: bool = True
+    rotation_estimator: str = 'search'  # 'features': tracked skin plus local photometric refinement
+    feature_rotation_fallback: bool = True
+    vectorized_fusion: bool = False
     bidirectional_matching: bool = False  # engineering extension; evaluate separately
     select_rotating_views: bool = False
+    adaptive_keyframes: bool = False  # dense-video adaptation; sparse callers retain adjacent mode
+    keyframe_minimum_rotation_deg: float = 8.0
+    keyframe_candidate_spacing: int = 4  # scheduling only; never supplies an angle
+    maximum_keyframe_index_gap: int = 12  # bounded direct image-measurement interval
+    keyframe_inverse_tolerance_deg: float = 3.0  # existing native retry consistency bound
+    relevant_ellipse_fraction: float | None = .66  # None: ellipsoid normal visibility cone
+    relevant_visibility_margin_deg: float = 2.0
     minimum_view_rotation_deg: float = 3.0  # native-resolution recheck threshold
     maximum_view_index_gap: int = 1  # original frame numbers, not positions in a crop list
     texture_metric: str = 'selected_rms'
@@ -84,6 +98,8 @@ class Settings:
     maximum_pair_gap_deg: float | None = None
     pole_pose_tolerance_deg: float = 5.0
     pole_pose_method: str = 'silhouette_trend'
+    pole_trend_window: int = 7  # maximum dense silhouette fit window; shrinks for real curvature
+    pole_trend_sigma_multiple: float = 2.0
     minimum_mask_box_fraction: float = 0.4
     minimum_silhouette_solidity: float = 0.95
     class_1_max_defect_pct: float = 10.0  # upper boundary is exclusive
@@ -241,8 +257,59 @@ def _validate_capture_mask(mask: np.ndarray, bbox: tuple[int, int, int, int],
         raise MappingError('Fruit silhouette is occluded or too irregular for a spheroid')
 
 
+def _silhouette_slopes(ellipses, frame_indices, s, *, measurements=None, noise_scale=1.):
+    """Estimate a silhouette trend without differentiating pixel noise.
+
+    Application-specific dense-video adaptation of 2021 Sec. 3.1.3. A local
+    quadratic estimates a minor-radius or projected-pole derivative and uncertainty. The
+    nominally invariant major radius supplies a measured noise floor. Neither
+    these slopes nor these pole axes are ever counted as texture-measured turns.
+    """
+    n=len(ellipses)
+    if s.pole_trend_window<3 or s.pole_trend_window%2!=1 or s.pole_trend_sigma_multiple<0:
+        raise ValueError('Pole trend requires an odd window >=3 and nonnegative uncertainty multiplier')
+    minor=np.asarray(measurements,dtype=float) if measurements is not None else np.array([e.minor for e in ellipses])
+    major=np.array([e.major for e in ellipses])*noise_scale
+    times=np.asarray(frame_indices if frame_indices is not None else np.arange(n),dtype=float)
+    if not np.all(np.diff(times)>0):
+        times=np.arange(n,dtype=float)  # sparse image manifests may omit frame numbers
+    if n<3:
+        return np.gradient(minor,times)
+    differences=np.diff(major)
+    noise=1.4826*np.median(np.abs(differences-np.median(differences)))/np.sqrt(2)
+    size=min(n,s.pole_trend_window)
+    if size%2==0:
+        size-=1
+    slopes=np.zeros(n)
+    numerical_floor=np.finfo(float).eps*max(float(major.mean()),1.)*64
+    for i in range(n):
+        local_size=size
+        while True:
+            start=min(max(0,i-local_size//2),n-local_size)
+            x=times[start:start+local_size]-times[i]
+            design=np.column_stack((np.ones(local_size),x,x*x))
+            values=minor[start:start+local_size]
+            coefficients=np.linalg.lstsq(design,values,rcond=None)[0]
+            residual=values-design@coefficients
+            # A fixed large window can average over a real rapid turning point.
+            # Reduce it when curvature cannot be fitted within measured noise.
+            fit_noise=float(np.sqrt(np.sum(residual**2)/max(1,local_size-3)))
+            if local_size<=3 or fit_noise<=max(s.pole_trend_sigma_multiple*float(noise),numerical_floor):
+                break
+            local_size-=2
+        sigma=max(float(noise),float(np.sqrt(np.sum(residual**2)/max(1,local_size-3))))
+        uncertainty=sigma*np.sqrt(np.linalg.pinv(design.T@design)[1,1])
+        threshold=max(s.pole_trend_sigma_multiple*uncertainty,
+                      numerical_floor)
+        if abs(coefficients[1])>threshold:
+            slopes[i]=coefficients[1]
+        # Zero means ambiguous derivative, not zero physical rotation. Below,
+        # choose only the nearest geometric branch until its sign is supported.
+    return slopes
+
+
 def _oblate_poles(ellipses: Sequence[Ellipse], A: float, B: float,
-                  s: Settings) -> list[np.ndarray]:
+                  s: Settings, frame_indices: Sequence[int] | None = None) -> list[np.ndarray]:
     """2021 section 3.1.3: disambiguate depth from minor-axis variation.
 
     The fitted silhouettes are measurements of imperfect fruit, not exact
@@ -251,15 +318,31 @@ def _oblate_poles(ellipses: Sequence[Ellipse], A: float, B: float,
     """
     if s.pole_pose_method == 'constrained':
         return _constrained_oblate_poles(ellipses, A, B, s)
-    if s.pole_pose_method != 'silhouette_trend':
-        raise ValueError('pole_pose_method must be silhouette_trend or constrained')
+    if s.pole_pose_method not in ('silhouette_trend','robust_trend','projected_trend'):
+        raise ValueError('pole_pose_method must be silhouette_trend, robust_trend, projected_trend or constrained')
     axis = 0 if s.rotation_axis == 'x' else 1
     other = 1-axis
     minor = np.array([e.minor for e in ellipses])
     # One-sided second-order slopes at endpoints avoid choosing the wrong
     # depth sign when a turning point lies inside the final view interval.
-    derivative = np.gradient(minor, edge_order=2 if len(minor) >= 3 else 1)
+    derivative = (_silhouette_slopes(ellipses,frame_indices,s) if s.pole_pose_method=='robust_trend'
+                  else np.gradient(minor, edge_order=2 if len(minor) >= 3 else 1))
     span = max(A*A-B*B, 1e-9)
+    if s.pole_pose_method=='projected_trend':
+        # For the searched two-component domain (camera-axis component zero),
+        # dp_y/dt=-omega_x*p_z and dp_x/dt=omega_y*p_z. The minor-axis trend
+        # instead depends on BOTH rolling components and can choose a wrong
+        # depth sign even within the configured transverse bound.
+        projected=np.sqrt(np.clip((A*A-minor**2)/span,0.,1.))
+        projected_xy=[]
+        for e,length in zip(ellipses,projected):
+            xy=e.v_minor.copy()*length
+            if projected_xy and xy@projected_xy[-1]<0:
+                xy*=-1
+            projected_xy.append(xy)
+        measured=[xy[other] for xy in projected_xy]
+        derivative=_silhouette_slopes(ellipses,frame_indices,s,
+                                      measurements=measured,noise_scale=1/A)
     result = []
     for i, e in enumerate(ellipses):
         projected = np.sqrt(np.clip((A*A-e.minor**2)/span, 0., 1.))
@@ -267,9 +350,11 @@ def _oblate_poles(ellipses: Sequence[Ellipse], A: float, B: float,
         vector = e.v_minor.copy()
         if vector[other] < 0:
             vector *= -1
-        xy = vector*projected
+        xy = projected_xy[i] if s.pole_pose_method=='projected_trend' else vector*projected
         # d(p_z^2)/dt = +2*w*p_y*p_z for x rotation, -2*w*p_x*p_z for y.
         sign = np.sign(derivative[i])*s.rotation_direction*(1 if axis == 0 else -1)
+        if s.pole_pose_method=='projected_trend':
+            sign*=-1
         if sign == 0:
             candidates = [np.r_[xy, depth], np.r_[xy, -depth]]
             pole = (max(candidates, key=lambda p: abs(float(p @ result[-1])))
@@ -388,7 +473,7 @@ def _constrained_oblate_poles(ellipses: Sequence[Ellipse], A: float, B: float,
     return [candidates[i][signs[i]] for i in range(len(candidates))]
 
 
-def fit_spheroid(views: Sequence[FruitView], s: Settings) -> Spheroid:
+def fit_spheroid(views: Sequence[FruitView], s: Settings, *, ellipses=None) -> Spheroid:
     """Fit shared radii and per-view pose from all silhouettes (2021 Sec. 3.1)."""
     if len(views) < 2:
         raise MappingError("At least two views are required to fit a spheroid")
@@ -398,7 +483,9 @@ def fit_spheroid(views: Sequence[FruitView], s: Settings) -> Spheroid:
         raise ValueError("spherical_tolerance must be in [0, 1)")
     if s.rotation_axis not in ("x", "y") or s.rotation_direction not in (-1, 1):
         raise ValueError("Set rotation_axis x/y and direction +1/-1 from the conveyor")
-    ellipses = [_ellipse(v.object_mask) for v in views]
+    ellipses = [_ellipse(v.object_mask) for v in views] if ellipses is None else list(ellipses)
+    if len(ellipses) != len(views):
+        raise ValueError('Cached ellipse count must match the supplied views')
     major = np.array([e.major for e in ellipses])
     minor = np.array([e.minor for e in ellipses])
     near_sphere = (float(major.mean()) - float(minor.min())) / float(major.mean()) < s.spherical_tolerance
@@ -416,10 +503,10 @@ def fit_spheroid(views: Sequence[FruitView], s: Settings) -> Spheroid:
     if (A - B) / A < 0.035:
         raise MappingError("Oblate pole pose is ambiguous; choose spheroid_type='sphere'")
     reference = int(np.argmin(minor))
-    poles = _oblate_poles(ellipses, A, B, s)
+    poles = _oblate_poles(ellipses, A, B, s, [v.frame_index for v in views])
     matrices = []
     for pole in poles:
-        # M = P^T diag(1/B²,1/A²,1/A²) P; rotation about pole is immaterial.
+        # M = P^T diag(1/BÃƒâ€šÃ‚Â²,1/AÃƒâ€šÃ‚Â²,1/AÃƒâ€šÃ‚Â²) P; rotation about pole is immaterial.
         M = np.eye(3) / A**2 + (1 / B**2 - 1 / A**2) * np.outer(pole, pole)
         matrices.append(M)
     pole = poles[reference]
@@ -445,11 +532,12 @@ def _height(M: np.ndarray, x: np.ndarray, y: np.ndarray) -> np.ndarray:
     return np.where(disc >= 0, z, np.nan)
 
 
-def _preprocess(v: FruitView, down: int, sigma: float) -> tuple[np.ndarray, np.ndarray]:
+def _preprocess(v: FruitView, down: int, sigma: float,
+                native_preblur_sigma: float = 2.) -> tuple[np.ndarray, np.ndarray]:
     # 2021 Section 3.3.1: green channel, 4x area shrink, signed high-pass.
     green = v.image[:, :, 1].astype(np.float32) / 255.0
-    if down == 1:
-        green = cv2.GaussianBlur(green, (0, 0), 2.0)
+    if down == 1 and native_preblur_sigma > 0:
+        green = cv2.GaussianBlur(green, (0, 0), native_preblur_sigma)
     h, w = green.shape
     size = (max(1, w // down), max(1, h // down))
     small = cv2.resize(green, size, interpolation=cv2.INTER_AREA)
@@ -460,7 +548,7 @@ def _preprocess(v: FruitView, down: int, sigma: float) -> tuple[np.ndarray, np.n
 
 def _relevant(v: FruitView, model: Spheroid, index: int, s: Settings
               ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
-    high, mask = _preprocess(v, s.image_downsample, s.highpass_sigma)
+    high, mask = _preprocess(v, s.image_downsample, s.highpass_sigma, s.native_point_preblur_sigma)
     h, w = high.shape
     yy, xx = np.mgrid[:h, :w]
     e = model.ellipses[index]
@@ -470,8 +558,34 @@ def _relevant(v: FruitView, model: Spheroid, index: int, s: Settings
     delta = np.stack((sx - e.center[0], sy - e.center[1]), axis=-1)
     along_major = delta @ e.v_major
     along_minor = delta @ e.v_minor
-    # The ellipse interior excludes unstable silhouette and occluding edge.
-    interior = ((along_major / e.major)**2 + (along_minor / e.minor)**2 < .66**2) & (mask > 0)
+    # The paper says this region depends on the maximum expected rotation;
+    # .66 was our implementation choice, not a number specified by the paper.
+    if s.relevant_ellipse_fraction is not None:
+        if not 0 < s.relevant_ellipse_fraction < 1:
+            raise ValueError('relevant_ellipse_fraction must be in (0, 1) or None')
+        interior = ((along_major / e.major)**2 + (along_minor / e.minor)**2
+                    < s.relevant_ellipse_fraction**2) & (mask > 0)
+    else:
+        # Engineering adaptation: visibility is n_z > 0, where n = M p.
+        # If angle(n,+z) + beta < 90 deg, ANY rotation of magnitude <= beta
+        # keeps the normal facing the camera. For a sphere this gives the
+        # familiar projected radius rho < cos(beta); use actual normals for
+        # tilted oblates. The target foreground test remains mandatory.
+        beta = np.hypot(s.max_pair_angle_deg, s.transverse_angle_deg)
+        if (s.max_pair_angle_deg <= 20 and s.refine_small_motion and
+                s.native_matching_cost == 'aligned_mad' and s.bidirectional_matching and
+                s.pole_pose_method != 'projected_trend'):
+            beta = np.hypot(beta, 10.)  # bounded camera-axis native retry
+        beta += s.relevant_visibility_margin_deg
+        if not 0 <= beta < 90:
+            raise ValueError('Rotation bounds plus visibility margin must be below 90 degrees')
+        matrix = model.matrices[index]
+        zgrid = _height(matrix, delta[..., 0], delta[..., 1])
+        xyz = np.dstack((delta, zgrid))
+        normals = xyz @ matrix
+        lengths = np.linalg.norm(normals, axis=-1)
+        interior = (np.isfinite(zgrid) & (mask > 0) &
+                    (normals[..., 2] > np.sin(np.deg2rad(beta))*lengths))
     if s.exclude_specular_texture:
         small_color = cv2.resize(v.image, (w,h), interpolation=cv2.INTER_AREA)
         hsv = cv2.cvtColor(small_color, cv2.COLOR_BGR2HSV)
@@ -651,7 +765,9 @@ def _cost_many(vectors: np.ndarray, points: np.ndarray, source_values: np.ndarra
 
 
 def _search_rotation(source: FruitView, target: FruitView, model: Spheroid,
-                     index: int, s: Settings, *, inplane_angle_deg: float = 0.0
+                     index: int, s: Settings, *, inplane_angle_deg: float = 0.0,
+                     initial_rotation_deg: Sequence[float] | None = None,
+                     local_radius_deg: float = 2.0
                      ) -> tuple[np.ndarray, float]:
     """Paper two-component search, with an optional bounded tumbling retry."""
     if not np.isfinite(inplane_angle_deg) or inplane_angle_deg < 0:
@@ -659,11 +775,11 @@ def _search_rotation(source: FruitView, target: FruitView, model: Spheroid,
     points, values, _ = _relevant(source, model, index, s)
     if s.matching_cost not in ('mad', 'normalized', 'green_mad', 'aligned_mad'):
         raise ValueError('matching_cost must be mad or normalized')
-    target_high, target_mask = _preprocess(target, s.image_downsample, s.highpass_sigma)
+    target_high, target_mask = _preprocess(target, s.image_downsample, s.highpass_sigma, s.native_point_preblur_sigma)
     reverse = None
     if s.bidirectional_matching:
         reverse_points, reverse_values, _ = _relevant(target, model, index+1, s)
-        source_high, source_mask = _preprocess(source, s.image_downsample, s.highpass_sigma)
+        source_high, source_mask = _preprocess(source, s.image_downsample, s.highpass_sigma, s.native_point_preblur_sigma)
         reverse = (reverse_points, reverse_values, source_high, source_mask)
     green_mad = s.matching_cost in ('green_mad', 'aligned_mad')
     patches, reverse_patches = None, None
@@ -711,6 +827,19 @@ def _search_rotation(source: FruitView, target: FruitView, model: Spheroid,
     side = np.arange(-s.transverse_angle_deg, s.transverse_angle_deg + .001, step)
     axis = 0 if s.rotation_axis == 'x' else 1
     other = 1 - axis
+    local_bounds = None
+    if initial_rotation_deg is not None:
+        seed = np.asarray(initial_rotation_deg, dtype=float)
+        if (seed.shape != (3,) or not np.all(np.isfinite(seed)) or
+                not np.isfinite(local_radius_deg) or local_radius_deg <= 0 or inplane_angle_deg > 0):
+            raise ValueError('Invalid local rotation search seed')
+        u, v = s.rotation_direction * seed[axis], seed[other]
+        local_bounds = (max(0., u - local_radius_deg), min(s.max_pair_angle_deg, u + local_radius_deg),
+                        max(-s.transverse_angle_deg, v - local_radius_deg),
+                        min(s.transverse_angle_deg, v + local_radius_deg))
+        offsets = np.arange(-local_radius_deg, local_radius_deg + .001, step)
+        main = np.unique(np.clip(np.r_[u + offsets, u], 0, s.max_pair_angle_deg))
+        side = np.unique(np.clip(np.r_[v + offsets, v], -s.transverse_angle_deg, s.transverse_angle_deg))
     best = (float('inf'), None)
     def vector_cost(vec: np.ndarray, normalize: bool) -> float:
         forward = _cost(vec, points, values, target_high, target_mask,
@@ -723,6 +852,9 @@ def _search_rotation(source: FruitView, target: FruitView, model: Spheroid,
         return (forward+backward)/2
 
     def score(u: float, v: float) -> float:
+        if local_bounds is not None and not (local_bounds[0] <= u <= local_bounds[1] and
+                                            local_bounds[2] <= v <= local_bounds[3]):
+            return float('inf')
         vec = np.zeros(3, np.float64)
         vec[axis] = s.rotation_direction * np.deg2rad(u)
         vec[other] = np.deg2rad(v)
@@ -835,7 +967,9 @@ def _search_rotation(source: FruitView, target: FruitView, model: Spheroid,
                 abs(degrees[2]) >= inplane_angle_deg):
             raise MappingError(f'Unreliable three-axis pair {index}: rotation '
                                f'{degrees[0]:.1f} deg, in-plane {degrees[2]:.1f} deg, '
-                               f'error {residual:.3f}')
+                               f'error {residual:.3f}', measurement=dict(
+                                   rotation_vector_deg=np.rad2deg(vector).tolist(),
+                                   rotation_deg=float(np.rad2deg(np.linalg.norm(vector))), error=float(residual)))
         return cv2.Rodrigues(vector)[0], float(residual)
     if s.batch_rotation_search:
         uu, vv = np.meshgrid(main, side, indexing='ij')
@@ -903,7 +1037,9 @@ def _search_rotation(source: FruitView, target: FruitView, model: Spheroid,
     residual = vector_cost(vec, normalize=True)
     if (not np.isfinite(residual) or residual > s.max_pair_error or
             u0 < s.min_pair_angle_deg or u0 >= s.max_pair_angle_deg):
-        raise MappingError(f'Unreliable pair {index}: rotation {u0:.1f} deg, error {residual:.3f}')
+        raise MappingError(f'Unreliable pair {index}: rotation {u0:.1f} deg, error {residual:.3f}',
+                           measurement=dict(rotation_vector_deg=np.rad2deg(vec).tolist(),
+                                            rotation_deg=float(np.rad2deg(np.linalg.norm(vec))), error=float(residual)))
     return cv2.Rodrigues(vec)[0], float(residual)
 
 
@@ -917,30 +1053,51 @@ def estimate_rotation(source: FruitView, target: FruitView, model: Spheroid,
     with unchanged quality bounds and independent inverse-consistency checks.
     An unavailable native measurement still breaks the sequence.
     """
+    if s.rotation_estimator not in ('search', 'features'):
+        raise ValueError('rotation_estimator must be search or features')
+    if s.rotation_estimator == 'features':
+        from fast_rotation import estimate_feature_rotation
+        try:
+            return estimate_feature_rotation(source, target, model, index, s, details)
+        except MappingError as failure:
+            if details is not None:
+                details.update(feature_failure=str(failure), feature_fallback=s.feature_rotation_fallback)
+            if not s.feature_rotation_fallback:
+                raise
     pair_settings = replace(s, min_pair_angle_deg=0.)
     if details is not None:
         details.update(image_downsample=s.image_downsample, highpass_sigma=s.highpass_sigma,
+                       native_point_preblur_sigma=s.native_point_preblur_sigma,
+                       search_step_deg=s.search_step_deg,
+                       native_pattern_coarse_step_deg=2*s.search_step_deg,
                        native_matching_cost_requested=s.native_matching_cost,
                        matching_cost_used=s.matching_cost,
                        estimated_rolling_movement_px=None, native_switch_threshold_px=1.)
     try:
         rotation, error = _search_rotation(source, target, model, index, pair_settings)
     except MappingError as coarse_failure:
+        if details is not None and coarse_failure.measurement:
+            details['coarse_rejected_measurement'] = coarse_failure.measurement
         # A poor low-resolution photometric match is not evidence that the
         # fruit stopped. Require separately measured native matches in both
         # directions before accepting a replacement; a joint cost alone can
         # conceal one direction choosing an unrelated texture minimum.
-        # The retry is validated for the dense recorded-video search. Wider
-        # sparse-view searches are much more expensive and retain their
-        # established behavior until separately validated.
-        if not (s.max_pair_angle_deg <= 20. and
+        # Sparse callers retain the established retry domain. The separately
+        # validated dense keyframe path can remeasure its two-component domain.
+        if not ((s.max_pair_angle_deg <= 20. or
+                 (s.adaptive_keyframes and s.max_pair_angle_deg <= 40.)) and
                 s.refine_small_motion and s.image_downsample > 1 and
                 s.native_matching_cost == 'aligned_mad' and s.bidirectional_matching):
             raise
+        # Separated dense keyframes may need the wider two-component domain.
+        # Do not extend the earlier three-axis retry's 20-degree validation:
+        # at 40 degrees retry the original x/y rotation model only. Every
+        # replacement still needs all independent inverse checks below.
+        retry_inplane = 10. if s.max_pair_angle_deg <= 20. and s.pole_pose_method != 'projected_trend' else 0.
         if details is not None:
             details.update(coarse_match_failure=str(coarse_failure),
                            native_retry_reason='coarse_match_unavailable',
-                           native_retry_inplane_angle_limit_deg=10.,
+                           native_retry_inplane_angle_limit_deg=retry_inplane,
                            image_downsample=1,
                            highpass_sigma=s.highpass_sigma*s.image_downsample,
                            native_matching_cost='aligned_mad', matching_cost_used='aligned_mad')
@@ -949,15 +1106,15 @@ def estimate_rotation(source: FruitView, target: FruitView, model: Spheroid,
                          matching_cost='aligned_mad')
         try:
             rotation, error = _search_rotation(source, target, model, index, native,
-                                               inplane_angle_deg=10.)
+                                               inplane_angle_deg=retry_inplane)
             forward, _ = _search_rotation(source, target, model, index,
                                           replace(native, bidirectional_matching=False),
-                                          inplane_angle_deg=10.)
+                                          inplane_angle_deg=retry_inplane)
             reverse_model = _subset_spheroid(model, [index+1, index])
             backward, _ = _search_rotation(target, source, reverse_model, 0,
                                            replace(native, bidirectional_matching=False,
                                                    rotation_direction=-s.rotation_direction),
-                                            inplane_angle_deg=10.)
+                                            inplane_angle_deg=retry_inplane)
             inverse_error = float(np.rad2deg(np.linalg.norm(cv2.Rodrigues(forward @ backward)[0])))
             forward_error = float(np.rad2deg(np.linalg.norm(cv2.Rodrigues(rotation @ forward.T)[0])))
             backward_error = float(np.rad2deg(np.linalg.norm(cv2.Rodrigues(rotation @ backward)[0])))
@@ -970,7 +1127,8 @@ def estimate_rotation(source: FruitView, target: FruitView, model: Spheroid,
                                    f'inverse {inverse_error:.2f}, forward {forward_error:.2f}, '
                                    f'backward {backward_error:.2f} degrees')
         except MappingError as native_failure:
-            raise MappingError(f'{coarse_failure}; native remeasurement failed: {native_failure}') from native_failure
+            raise MappingError(f'{coarse_failure}; native remeasurement failed: {native_failure}',
+                               measurement=native_failure.measurement) from native_failure
         if details is not None:
             details['native_retry_accepted'] = True
         return rotation, error
@@ -1016,7 +1174,10 @@ def estimate_rotation(source: FruitView, target: FruitView, model: Spheroid,
     if details is not None:
         details.update(coarse_rotation_deg=coarse_angle, image_downsample=resolution)
     if angle < s.min_pair_angle_deg:
-        raise MappingError(f'Unreliable pair {index}: rotation {angle:.2f} deg is too small')
+        raise MappingError(f'Unreliable pair {index}: rotation {angle:.2f} deg is too small',
+                           measurement=dict(rotation_vector_deg=np.rad2deg(cv2.Rodrigues(rotation)[0]).ravel().tolist(),
+                                            rotation_deg=float(np.rad2deg(np.linalg.norm(cv2.Rodrigues(rotation)[0]))),
+                                            error=float(error)))
     return rotation, error
 
 
@@ -1029,12 +1190,28 @@ def _sample_view(view: FruitView, points: np.ndarray,
     ix, iy = np.rint(x).astype(int), np.rint(y).astype(int)
     centered = points.copy()
     centered[:, :2] -= center
-    valid = (centered @ matrix[:, 2] > 0).reshape(-1, 1) & (ix >= 0) & (iy >= 0) & (ix < w) & (iy < h)
+    valid = ((centered @ matrix[:, 2] > 0).reshape(-1, 1) &
+             (x >= 0) & (y >= 0) & (x <= w-1) & (y <= h-1))
     valid &= view.object_mask[np.clip(iy, 0, h-1), np.clip(ix, 0, w-1)] > 0
     color = cv2.remap(view.image, x, y, cv2.INTER_LINEAR)
     masks = {name: (cv2.remap(view.defect_masks[name], x, y,
                              cv2.INTER_NEAREST) > 0) & valid for name in names}
     return color, valid[:, 0], {name: mask[:, 0] for name, mask in masks.items()}
+
+
+def _ellipsoid_jacobian(latitude: np.ndarray, longitude: np.ndarray,
+                        radii: Sequence[float]) -> np.ndarray:
+    """Norm of dX/dlatitude cross dX/dlongitude; full-surface area density.
+
+    Uniform angular cell factors cancel from area ratios. This is the existing
+    mapper expression, shared with numerical/analytical validation unchanged.
+    """
+    rx, ry, rz = radii
+    cosine = np.cos(latitude)[:, None]
+    sine = np.sin(latitude)[:, None]
+    return cosine * np.sqrt(
+        (ry*rz*cosine*np.cos(longitude)[None, :])**2 +
+        (rx*rz*sine)**2 + (rx*ry*cosine*np.sin(longitude)[None, :])**2)
 
 
 def _grade(defect_pct: float | None, coverage: float,
@@ -1138,7 +1315,7 @@ def _map_trajectory(model: Spheroid, rotations: Sequence[np.ndarray], s: Setting
     return axes, radii, unwrapped, direction, progress
 
 
-def _select_rotating_views(views: Sequence[FruitView], model: Spheroid, s: Settings):
+def _select_adjacent_views(views: Sequence[FruitView], model: Spheroid, s: Settings):
     """Keep directly measured, ordered adjacent views of the same fruit.
 
     Every failed, missing or unobservable transition breaks the sequence.
@@ -1184,6 +1361,119 @@ def _select_rotating_views(views: Sequence[FruitView], model: Spheroid, s: Setti
     if rotations:
         segments.append((indices, rotations, errors))
 
+    return _choose_rotating_segment(views, model, s, segments, records)
+
+
+def _verify_keyframe_rotation(source, target, model, rotation, s, details):
+    """Independent forward and reverse minima must support the joint estimate.
+
+    A low averaged residual alone can hide incompatible directional minima.
+    Reuse the native retry's existing three-degree bound, without relaxing any
+    photometric or texture gate. This is an application-specific safeguard.
+    """
+    if details.get('native_retry_accepted') or details.get('feature_rotation_verified'):
+        return  # all three independent checks already ran in estimate_rotation
+    matching = replace(s, image_downsample=details.get('image_downsample', s.image_downsample),
+                       highpass_sigma=details.get('highpass_sigma', s.highpass_sigma),
+                       matching_cost=details.get('matching_cost_used', s.matching_cost),
+                       bidirectional_matching=False, min_pair_angle_deg=0.)
+    forward, forward_residual = _search_rotation(source, target, model, 0, matching)
+    reverse_model = _subset_spheroid(model, [1, 0])
+    backward, backward_residual = _search_rotation(target, source, reverse_model, 0,
+                             replace(matching, rotation_direction=-s.rotation_direction))
+    def angle(matrix):
+        return float(np.rad2deg(np.linalg.norm(cv2.Rodrigues(matrix)[0])))
+    inverse = angle(forward @ backward)
+    forward_difference = angle(rotation @ forward.T)
+    backward_difference = angle(rotation @ backward)
+    details.update(inverse_disagreement_deg=inverse,
+                   forward_disagreement_deg=forward_difference,
+                   backward_disagreement_deg=backward_difference,
+                   independent_forward_error=forward_residual,
+                   independent_backward_error=backward_residual,
+                   independent_forward_vector_deg=np.rad2deg(cv2.Rodrigues(forward)[0]).ravel().tolist(),
+                   independent_backward_vector_deg=np.rad2deg(cv2.Rodrigues(backward)[0]).ravel().tolist())
+    if max(inverse, forward_difference, backward_difference) > s.keyframe_inverse_tolerance_deg:
+        raise MappingError(f'Independent keyframe rotations disagree: inverse {inverse:.2f}, '
+                           f'forward {forward_difference:.2f}, backward {backward_difference:.2f} degrees')
+
+
+def _select_keyframes(views: Sequence[FruitView], model: Spheroid, s: Settings):
+    """Measure each candidate directly from the last accepted mapping view.
+
+    Tracking/capture history is untouched. Four-frame scheduling avoids paying
+    for every redundant video frame; it predicts no rotation. Candidate failures
+    keep the anchor until a bounded window expires, while missing capture frames
+    still break continuity. Never compose skipped or rejected measurements.
+    """
+    if not (1 <= s.keyframe_candidate_spacing <= s.maximum_keyframe_index_gap and
+            s.maximum_view_index_gap >= 1 and
+            0 < s.min_pair_angle_deg <= s.keyframe_minimum_rotation_deg < s.max_pair_angle_deg and
+            0 < s.keyframe_inverse_tolerance_deg <= 3):
+        raise ValueError('Invalid adaptive keyframe spacing, angular or consistency bounds')
+    indices, rotations, errors = [0], [], []
+    records, segments = [], []
+    axis = 0 if s.rotation_axis == 'x' else 1
+    for target in range(1, len(views)):
+        source = indices[-1]
+        gap = views[target].frame_index - views[source].frame_index
+        record = dict(source_frame=views[source].frame_index, target_frame=views[target].frame_index,
+                      source_frame_gap=gap, method='adaptive_keyframe',
+                      skipped_candidate_frames=[views[i].frame_index for i in range(source+1, target)],
+                      rotation_deg=None, rotation_vector_deg=None, error=None)
+        consecutive_gap = views[target].frame_index - views[target-1].frame_index
+        if not 1 <= consecutive_gap <= s.maximum_view_index_gap or gap > s.maximum_keyframe_index_gap:
+            if rotations:
+                segments.append((indices, rotations, errors))
+            indices, rotations, errors = [target], [], []
+            record.update(status='split', reason=('Missing original frames between captured views'
+                          if not 1 <= consecutive_gap <= s.maximum_view_index_gap else
+                          'Direct keyframe measurement window exceeded; no bridge assumed'))
+            records.append(record)
+            continue
+        if gap < s.keyframe_candidate_spacing and target != len(views)-1:
+            record.update(status='skipped', reason='Waiting for candidate spacing; no rotation inferred')
+            records.append(record)
+            continue
+        try:
+            pair_model = _subset_spheroid(model, [source, target])
+            rotation, error = estimate_rotation(views[source], views[target], pair_model, 0, s, record)
+            vector = np.rad2deg(cv2.Rodrigues(rotation)[0]).ravel()
+            record.update(rotation_deg=float(np.linalg.norm(vector)), rotation_vector_deg=vector.tolist(), error=error)
+            if abs(vector[axis]) < s.keyframe_minimum_rotation_deg:
+                record.update(status='skipped', reason='Measured rotation below mapping keyframe minimum; not accumulated')
+            else:
+                _verify_keyframe_rotation(views[source], views[target], pair_model, rotation, s, record)
+                indices.append(target)
+                rotations.append(rotation)
+                errors.append(error)
+                record.update(status='measured', reason='Direct image measurement and independent inverse checks passed')
+        except MappingError as error:
+            if error.measurement:
+                record['rejected_measurement'] = error.measurement
+                if record['rotation_vector_deg'] is None:
+                    record.update(error.measurement)
+            record.update(status='rejected', reason=str(error))
+        records.append(record)
+        if record['status'] != 'measured' and gap >= s.maximum_keyframe_index_gap:
+            if rotations:
+                segments.append((indices, rotations, errors))
+            indices, rotations, errors = [target], [], []
+            records.append(dict(source_frame=record['source_frame'], target_frame=record['target_frame'],
+                                source_frame_gap=gap, method='keyframe_window', status='split',
+                                reason='Direct keyframe measurement window exhausted; no bridge assumed',
+                                last_candidate_reason=record['reason']))
+    if rotations:
+        segments.append((indices, rotations, errors))
+    return _choose_rotating_segment(views, model, s, segments, records)
+
+
+def _select_rotating_views(views: Sequence[FruitView], model: Spheroid, s: Settings):
+    return (_select_keyframes if s.adaptive_keyframes else _select_adjacent_views)(views, model, s)
+
+
+def _choose_rotating_segment(views, model, s, segments, records):
+
     # Each split removes a pair. Recheck child segments because their minimum
     # ellipse and thus their reference frame can differ from the parent's.
     ordered = []
@@ -1221,7 +1511,7 @@ def _select_rotating_views(views: Sequence[FruitView], model: Spheroid, s: Setti
     selected_pairs = {(indices[i], indices[i+1]) for i in range(len(indices)-1)}
     frame_pairs = {(views[a].frame_index, views[b].frame_index) for a,b in selected_pairs}
     for record in records:
-        if record['method'] == 'adjacent_measurement' and record['status'] == 'measured':
+        if record['method'] in ('adjacent_measurement', 'adaptive_keyframe') and record['status'] == 'measured':
             pair = (record['source_frame'], record['target_frame'])
             record['status'] = 'accepted' if pair in frame_pairs else 'other_segment'
     return [views[i] for i in indices], selected_model, rotations, errors, records
@@ -1229,7 +1519,8 @@ def _select_rotating_views(views: Sequence[FruitView], model: Spheroid, s: Setti
 
 def build_surface_map(views: Sequence[FruitView],
                       settings: Settings | None = None,
-                      defect_provider: Callable[[FruitView], Mapping[str, np.ndarray]] | None = None) -> MapResult:
+                      defect_provider: Callable[[FruitView], Mapping[str, np.ndarray]] | None = None,
+                      *, defect_batch_provider=None) -> MapResult:
     """Estimate geometry/rotations, unwrap views, and grade observed area."""
     s = settings or Settings()
     if not (0 < s.max_latitude_deg < 90 and 0 <= s.minimum_surface_coverage <= 1 and
@@ -1261,13 +1552,20 @@ def build_surface_map(views: Sequence[FruitView],
         raise MappingError('No consistent angular progress')
     if np.any(np.diff(progress) < np.deg2rad(.25)) or np.any(np.diff(progress) > np.deg2rad(s.max_pair_angle_deg + 12)):
         raise MappingError('Fruit-fixed longitude centers are not consistently ordered')
-    if defect_provider is not None:
-        for view in prepared:
+    if defect_provider is not None or defect_batch_provider is not None:
+        predictions = (list(defect_batch_provider(prepared)) if defect_batch_provider is not None else
+                       [defect_provider(view) for view in prepared])
+        if len(predictions) != len(prepared):
+            raise MappingError('Segmentation batch result count does not match selected views')
+        for view, prediction in zip(prepared, predictions):
             view.defect_masks = {name: _binary(mask, view.object_mask.shape) & view.object_mask
-                                 for name, mask in defect_provider(view).items()}
+                                 for name, mask in prediction.items()}
         names = set(prepared[0].defect_masks)
         if any(set(view.defect_masks) != names for view in prepared[1:]):
             raise MappingError('Selected views must supply identical defect classes')
+    if s.vectorized_fusion:
+        from surface_atlas import fuse_surface
+        return fuse_surface(prepared, model, rotations, errors, s, diagnostics, captured_frames)
     step = (np.deg2rad(s.map_angle_step_deg) if s.map_angle_step_deg else 1 / model.A)
     if not 0 < step < np.deg2rad(10):
         raise ValueError('Map angular step must be between 0 and 10 degrees')
@@ -1284,14 +1582,6 @@ def build_surface_map(views: Sequence[FruitView],
     for col, q in enumerate(qgrid):
         if q < -np.pi/4 or q > progress[-1] + np.pi/4:
             continue
-        if q < 0:
-            indices, weights = [0], [1.0]
-        elif q > progress[-1]:
-            indices, weights = [len(prepared)-1], [1.0]
-        else:
-            k = min(max(int(np.searchsorted(progress, q, side='right'))-1, 0), len(prepared)-2)
-            fraction = (q-progress[k])/(progress[k+1]-progress[k])
-            indices, weights = [k,k+1], [1-fraction, fraction]
         lam = latitude
         phi = longitude[col]
         fruit = np.column_stack((rx*np.cos(lam)*np.cos(phi),
@@ -1299,27 +1589,37 @@ def build_surface_map(views: Sequence[FruitView],
                                  rz*np.cos(lam)*np.sin(phi)))
         accum = np.zeros((height,3), np.float32)
         weight_sum = np.zeros(height, np.float32)
-        for index, weight in zip(indices, weights):
-            projected = fruit @ axes[index].T
-            projected[:, 0:2] += model.ellipses[index].center
-            matrix = axes[index] @ np.diag(1/radii**2) @ axes[index].T
-            color, valid, defects = _sample_view(prepared[index], projected, names,
-                                                matrix, model.ellipses[index].center)
-            valid &= visible_lat
-            factor = np.where(valid, weight, 0).astype(np.float32)
-            accum += color[:,0,:] * factor[:,None]
-            weight_sum += factor
-            for name in names:
-                defect_maps[name][:,col] |= (defects[name] & valid).astype(np.uint8)
+        # 2022 creates an unwrapped map that can repeat physical skin after
+        # 360 degrees. Our unique full-surface chart folds those *measured*
+        # revisits onto the same cells. Each revisit still uses only its two
+        # neighboring measured views and their interpolation weights. Areas
+        # are counted once, and unavailable revisit samples add no support.
+        for measured_q in np.arange(q, progress[-1]+np.pi/4+1e-10, 2*np.pi):
+            if measured_q < 0:
+                indices, weights = [0], [1.0]
+            elif measured_q > progress[-1]:
+                indices, weights = [len(prepared)-1], [1.0]
+            else:
+                k = min(max(int(np.searchsorted(progress, measured_q, side='right'))-1, 0), len(prepared)-2)
+                fraction = (measured_q-progress[k])/(progress[k+1]-progress[k])
+                indices, weights = [k,k+1], [1-fraction, fraction]
+            for index, weight in zip(indices, weights):
+                projected = fruit @ axes[index].T
+                projected[:, 0:2] += model.ellipses[index].center
+                matrix = axes[index] @ np.diag(1/radii**2) @ axes[index].T
+                color, valid, defects = _sample_view(prepared[index], projected, names,
+                                                    matrix, model.ellipses[index].center)
+                valid &= visible_lat
+                factor = np.where(valid, weight, 0).astype(np.float32)
+                accum += color[:,0,:] * factor[:,None]
+                weight_sum += factor
+                for name in names:
+                    defect_maps[name][:,col] |= (defects[name] & (factor > 0)).astype(np.uint8)
         occupied = weight_sum > 1e-7
         bgr[occupied,col] = np.clip(accum[occupied]/weight_sum[occupied,None],0,255).astype(np.uint8)
         observed[:,col] = occupied
     # General ellipsoid Jacobian: the short radius may lie on map x or y.
-    cosine = np.cos(latitude)[:, None]
-    sine = np.sin(latitude)[:, None]
-    jacobian = cosine * np.sqrt(
-        (ry*rz*cosine*np.cos(longitude)[None, :])**2 +
-        (rx*rz*sine)**2 + (rx*ry*cosine*np.sin(longitude)[None, :])**2)
+    jacobian = _ellipsoid_jacobian(latitude, longitude, radii)
     total = float(jacobian.sum())
     observed_area = float((observed*jacobian).sum())
     union = np.zeros_like(observed)
@@ -1338,7 +1638,8 @@ def build_surface_map(views: Sequence[FruitView],
                                rotation_coverage, float(magnitudes.max()), s)
     coverage_complete = (coverage/100 >= s.minimum_surface_coverage and
                          observed_longitude >= s.minimum_longitude_coverage_deg and
-                         rotation_coverage >= s.minimum_rotation_coverage_deg)
+                         rotation_coverage >= s.minimum_rotation_coverage_deg and
+                         (s.maximum_pair_gap_deg is None or magnitudes.max() <= s.maximum_pair_gap_deg))
     vectors = [cv2.Rodrigues(R)[0].ravel() for R in rotations]
     return MapResult(bgr, observed.astype(np.uint8), defect_maps,
                      np.rad2deg(longitude), np.rad2deg(latitude),
@@ -1396,6 +1697,7 @@ class NaartjiePipeline:
                  max_views_per_track: int = 120, defer_defect_segmentation: bool = False,
                  identity_settings: ConveyorIdentitySettings | None = None):
         self.detector = detector_model
+        self.tracking_metrics = None  # Optional passive observer of raw TrackTrack output.
         self.segmenter = segmentation_model
         self.settings = settings or Settings()
         self.defect_names = _model_names(self.segmenter)
@@ -1476,6 +1778,10 @@ class NaartjiePipeline:
         masked_crop = cv2.bitwise_and(crop, crop, mask=fruit_mask)
         result = self.segmenter.predict(masked_crop, conf=self.segmentation_conf,
                                         retina_masks=True, verbose=False)[0]
+        return self._defects_from_result(result, fruit_mask)
+
+    def _defects_from_result(self, result, fruit_mask: np.ndarray) -> dict[str, np.ndarray]:
+        """Shared single/batched result validation; an empty prediction is assessed clean skin."""
         class_masks = {name: np.zeros(fruit_mask.shape, np.uint8)
                        for name in self.defect_names.values()}
         if result.masks is None:
@@ -1549,6 +1855,7 @@ class NaartjiePipeline:
         """
         if self.detector is None:
             raise ValueError('No detector supplied; use add_tracked_detection')
+        tracking_started = time.perf_counter()
         result = self.detector.track(frame, persist=True, tracker='tracktrack.yaml',
                                      conf=self.detection_conf, verbose=False)[0]
         boxes = result.boxes
@@ -1559,6 +1866,9 @@ class NaartjiePipeline:
                 return decisions
             return self.identity_guard.update(bounds, ids, frame_index, frame.shape)
         if boxes is None or boxes.id is None:
+            if self.tracking_metrics is not None:
+                self.tracking_metrics.observe(frame_index, timestamp, frame.shape, [], [],
+                                              time.perf_counter()-tracking_started)
             validate_identity([], [])
             return []
         xyxy = _as_numpy(boxes.xyxy)
@@ -1569,6 +1879,9 @@ class NaartjiePipeline:
         keep = [i for i, category in enumerate(classes)
                 if self.fruit_names.get(int(category), '').casefold() == self.fruit_class_name]
         xyxy, track_ids = xyxy[keep], track_ids[keep]
+        if self.tracking_metrics is not None:
+            self.tracking_metrics.observe(frame_index, timestamp, frame.shape, track_ids, xyxy,
+                                          time.perf_counter()-tracking_started)
         decisions = validate_identity(xyxy, track_ids)
         captured = []
         for bounds, decision in zip(xyxy, decisions):
@@ -1613,8 +1926,24 @@ class NaartjiePipeline:
             masks = self._segment_defects(view.image, view.object_mask)
             originals[view.frame_index].defect_masks = masks
             return masks
-        result = build_surface_map(views, self.settings,
-                                   provide_defects if self.defer_defect_segmentation else None)
+        def provide_batch(selected):
+            predictions = []
+            for start in range(0, len(selected), 4):
+                chunk = selected[start:start + 4]
+                images = [cv2.bitwise_and(view.image, view.image, mask=view.object_mask) for view in chunk]
+                results = self.segmenter.predict_batch(images, conf=self.segmentation_conf)
+                if len(results) != len(chunk):
+                    raise MappingError('Segmentation batch result count does not match selected views')
+                for view, prediction in zip(chunk, results):
+                    masks = self._defects_from_result(prediction, view.object_mask)
+                    originals[view.frame_index].defect_masks = masks
+                    predictions.append(masks)
+            return predictions
+        if self.defer_defect_segmentation and self.settings.vectorized_fusion and hasattr(self.segmenter, 'predict_batch'):
+            result = build_surface_map(views, self.settings, defect_batch_provider=provide_batch)
+        else:
+            result = build_surface_map(views, self.settings,
+                                       provide_defects if self.defer_defect_segmentation else None)
         if self.identity_guard.metadata.get(track_id, {}).get('identity_status') == 'uncertain':
             result = replace(result, grade=None, status='identity_uncertain', grade_provisional=False)
         self.drop_track(track_id)

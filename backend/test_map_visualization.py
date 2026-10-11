@@ -81,6 +81,7 @@ class MapVisualizationTests(unittest.TestCase):
             pipeline, _, _ = main._make_pipeline(capture_stride_frames=1)
         self.assertEqual(pipeline.settings.minimum_surface_coverage, .8)
         self.assertTrue(pipeline.settings.grade_partial_maps)
+        pipeline.close()
 
 
 if __name__ == '__main__':

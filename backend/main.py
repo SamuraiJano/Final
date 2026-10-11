@@ -1,26 +1,33 @@
 """Video upload API for the Python fruit mapping pipeline."""
 
 import json
+import asyncio
 import hashlib
 import os
+import re
 import shutil
 import tempfile
 import threading
 import time
 from datetime import datetime, timezone
-from dataclasses import asdict
+from dataclasses import asdict, replace
+from collections import Counter, deque
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from uuid import uuid4
 
 import cv2
-from fastapi import FastAPI, Header, HTTPException, UploadFile
+from fastapi import FastAPI, Header, HTTPException, Request, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse
+from fastapi.responses import FileResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 
 from algorithm import MappingError, NaartjiePipeline, Settings
 from dfine_segmenter import DfineDetector, DfineSegmenter, inference_device
 from map_visualization import render_defect_overlay
+from conveyor_identity import ConveyorIdentitySettings
+from tracking_metrics import TrackingConfig, TrackingMetrics, EXPORTS, config_from_dict, replay_journal
+from inspection_config import InspectionConfiguration
 
 
 BACKEND = Path(__file__).resolve().parent
@@ -29,7 +36,10 @@ RESULTS = Path(__file__).resolve().parent / "results"
 RESULTS.mkdir(exist_ok=True)
 SOURCE_SNAPSHOTS = {name: (BACKEND/name).read_bytes()
                     for name in ('algorithm.py','main.py','dfine_segmenter.py','map_visualization.py',
-                                 'fruit_identity.py', 'conveyor_identity.py')}
+                                 'fruit_identity.py', 'conveyor_identity.py', 'tracking_metrics.py',
+                                 'fast_rotation.py', 'surface_atlas.py', 'realtime_pipeline.py', 'inference_scheduler.py',
+                                 'inspection_config.py', 'nine_view.py', 'inspection_pipeline.py', 'inspection_export.py',
+                                 'export_detector.py','optimized_segmenter.py')}
 ALGORITHM_SHA256 = hashlib.sha256(SOURCE_SNAPSHOTS['algorithm.py']).hexdigest()
 
 app = FastAPI()
@@ -40,6 +50,85 @@ app.add_middleware(
     allow_headers=["*"],
 )
 app.mount("/results", StaticFiles(directory=RESULTS), name="results")
+
+tracking_lock = threading.RLock()
+tracking_current = None
+tracking_config_path = BACKEND / 'runtime' / 'tracking_metrics_config.json'
+inspection_configuration = InspectionConfiguration(BACKEND / 'runtime' / 'inspection_config.json')
+tracking_preview_condition = threading.Condition()
+tracking_preview_jpeg = None
+tracking_preview_sequence = 0
+tracking_preview_last_update = 0.0
+
+
+def _tracking_config():
+    if tracking_config_path.is_file():
+        return config_from_dict(json.loads(tracking_config_path.read_text(encoding='utf-8')))
+    return TrackingConfig(direction=ConveyorIdentitySettings.from_environment().conveyor_direction)
+
+
+def _begin_tracking(output):
+    global tracking_current, tracking_preview_jpeg
+    with tracking_lock:
+        tracking_current = TrackingMetrics(_tracking_config(), output, output.name)
+        with tracking_preview_condition:
+            tracking_preview_jpeg = None
+        return tracking_current
+
+
+def _tracking_for_output(output):
+    with tracking_lock:
+        if tracking_current is not None and tracking_current.job_id == output.name and tracking_current.state == 'collecting':
+            return tracking_current
+        return _begin_tracking(output)
+
+
+def _tracking_report(collector):
+    return dict(collector.snapshot()['summary'], config=asdict(collector.config),
+                data=f'/api/tracking/runs/{collector.job_id}',
+                exports={name: f'/api/tracking/runs/{collector.job_id}/exports/{name}' for name in EXPORTS})
+
+
+def _update_tracking_preview(frame, collector):
+    """Annotate the exact processed frame; never draw stale boxes on the camera feed."""
+    global tracking_preview_jpeg, tracking_preview_sequence, tracking_preview_last_update
+    now = time.monotonic()
+    preview_hz=float(os.getenv('FRUIT_TRACKING_PREVIEW_HZ','5'))
+    if preview_hz<=0 or now-tracking_preview_last_update < 1/preview_hz:
+        return
+    tracking_preview_last_update = now
+    h, w = frame.shape[:2]
+    scale = min(1., 960/w)
+    image = cv2.resize(frame, (round(w*scale), round(h*scale)))
+    region = collector.config.region
+    if region:
+        left, top, right, bottom = region
+        vertical = collector.config.direction in ('top_to_bottom', 'bottom_to_top')
+        reverse = collector.config.direction in ('bottom_to_top', 'right_to_left')
+        for percent in range(0, 101, 10):
+            fraction = 1-percent/100 if reverse else percent/100
+            x = round((left+fraction*(right-left))*w*scale)
+            y = round((top+fraction*(bottom-top))*h*scale)
+            a = (round(left*w*scale), y) if vertical else (x, round(top*h*scale))
+            b = (round(right*w*scale), y) if vertical else (x, round(bottom*h*scale))
+            cv2.line(image, a, b, (140, 225, 180), 1)
+            cv2.putText(image, f'{percent}%', (a[0]+3, max(15, a[1]-3)),
+                        cv2.FONT_HERSHEY_SIMPLEX, .4, (140, 225, 180), 1)
+        cv2.rectangle(image, (round(left*w*scale), round(top*h*scale)),
+                      (round(right*w*scale), round(bottom*h*scale)), (140, 225, 180), 2)
+    for track_id, box in collector.last_boxes:
+        x0, y0, x1, y1 = [round(v*scale) for v in box]
+        cv2.rectangle(image, (x0, y0), (x1, y1), (126, 243, 181), 2)
+        cv2.putText(image, f'ID {track_id}', (x0, max(18, y0-5)),
+                    cv2.FONT_HERSHEY_SIMPLEX, .55, (0, 0, 0), 3)
+        cv2.putText(image, f'ID {track_id}', (x0, max(18, y0-5)),
+                    cv2.FONT_HERSHEY_SIMPLEX, .55, (126, 243, 181), 1)
+    ok, jpeg = cv2.imencode('.jpg', image, [cv2.IMWRITE_JPEG_QUALITY, 78])
+    if ok:
+        with tracking_preview_condition:
+            tracking_preview_jpeg = jpeg.tobytes()
+            tracking_preview_sequence += 1
+            tracking_preview_condition.notify_all()
 
 
 class CameraFeed:
@@ -53,6 +142,9 @@ class CameraFeed:
         self.raw_frame = None
         self.raw_timestamp = None
         self.sequence = 0
+        self.preview_sequence = 0
+        self.frames = deque(maxlen=4)
+        self.fps = 30.
         self.last_frame_at: datetime | None = None
 
     def start(self) -> None:
@@ -63,6 +155,7 @@ class CameraFeed:
                 return
             self.started = True
         threading.Thread(target=self._capture, name="fruit-camera", daemon=True).start()
+        threading.Thread(target=self._preview, name="fruit-camera-preview", daemon=True).start()
 
     def _capture(self) -> None:
         source = int(self.source) if self.source.isdecimal() else self.source
@@ -72,29 +165,52 @@ class CameraFeed:
                 capture.release()
                 time.sleep(2)
                 continue
+            capture.set(cv2.CAP_PROP_BUFFERSIZE, 1)
+            fps = capture.get(cv2.CAP_PROP_FPS)
+            if fps and fps > 0:
+                self.fps = fps
             try:
                 while True:
                     ok, image = capture.read()
                     captured_at = time.monotonic()
                     if not ok:
                         break
-                    raw_image = image
-                    height, width = image.shape[:2]
-                    if width > 960:
-                        image = cv2.resize(image, (960, max(1, round(height * 960 / width))))
-                    encoded, jpeg = cv2.imencode(".jpg", image, [cv2.IMWRITE_JPEG_QUALITY, 78])
-                    if encoded:
-                        with self.condition:
-                            self.frame = jpeg.tobytes()
-                            self.raw_frame = raw_image
-                            self.raw_timestamp = captured_at
-                            self.sequence += 1
-                            self.last_frame_at = datetime.now(timezone.utc)
-                            self.condition.notify_all()
-                    time.sleep(1 / 12)
+                    with self.condition:
+                        self.raw_frame = image
+                        self.raw_timestamp = captured_at
+                        self.sequence += 1
+                        self.frames.append((self.sequence, image, captured_at))
+                        self.last_frame_at = datetime.now(timezone.utc)
+                        self.condition.notify_all()
             finally:
                 capture.release()
             time.sleep(2)
+
+    def _preview(self):
+        sequence = 0
+        while True:
+            with self.condition:
+                self.condition.wait_for(lambda: self.sequence > sequence, timeout=2)
+                if self.raw_frame is None or self.sequence == sequence:
+                    continue
+                sequence, image = self.sequence, self.raw_frame
+            height, width = image.shape[:2]
+            if width > 960:
+                image = cv2.resize(image, (960, max(1, round(height * 960 / width))))
+            encoded, jpeg = cv2.imencode('.jpg', image, [cv2.IMWRITE_JPEG_QUALITY, 78])
+            if encoded:
+                with self.condition:
+                    self.frame = jpeg.tobytes()
+                    self.preview_sequence += 1
+                    self.condition.notify_all()
+            time.sleep(1 / 12)
+
+    def next_frame(self, after, stop_event, timeout=2):
+        with self.condition:
+            self.condition.wait_for(lambda: self.sequence > after or stop_event.is_set(), timeout=timeout)
+            if stop_event.is_set():
+                return None
+            return next((item for item in self.frames if item[0] > after), None)
 
     def status(self) -> dict:
         self.start()
@@ -114,10 +230,10 @@ class CameraFeed:
         sequence = 0
         while True:
             with self.condition:
-                self.condition.wait_for(lambda: self.sequence > sequence, timeout=5)
-                if self.sequence == sequence or self.frame is None:
+                self.condition.wait_for(lambda: self.preview_sequence > sequence, timeout=5)
+                if self.preview_sequence == sequence or self.frame is None:
                     continue
-                sequence, frame = self.sequence, self.frame
+                sequence, frame = self.preview_sequence, self.frame
             yield b"--frame\r\nContent-Type: image/jpeg\r\n\r\n" + frame + b"\r\n"
 
 
@@ -156,7 +272,45 @@ def _model_metrics(model: object) -> dict:
         "instances": predictions,
         "mean_latency_ms": round(model.total_latency_ms / calls, 1) if calls else None,
         "mean_confidence": round(model.total_confidence / predictions, 3) if predictions else None,
+        "model_id": getattr(model, 'model_id', None),
+        "backend": getattr(model, 'backend', None),
     }
+
+
+def _mapping_settings(capture_stride_frames: int = 3) -> Settings:
+    """Dense uploaded-video calibration; sparse live capture retains its profile.
+
+    Tracking still processes every frame. Keyframe spacing schedules measured
+    candidates; it supplies no rotation. See SURFACE_MAPPING_AUDIT.md and the
+    frozen paired replay for scale, pose, visibility and acquisition evidence.
+    """
+    dense = capture_stride_frames == 1
+    return Settings(spheroid_type="auto", defect_observations_complete=True,
+                    grade_partial_maps=True, minimum_surface_coverage=.80,
+                    select_rotating_views=True, adaptive_keyframes=dense,
+                    keyframe_candidate_spacing=1, keyframe_minimum_rotation_deg=3.,
+                    maximum_keyframe_index_gap=8, keyframe_inverse_tolerance_deg=3.,
+                    image_downsample=2 if dense else 4,
+                    highpass_sigma=2.5 if dense else 1.25,
+                    # Native preblur erased small peel features in these crops;
+                    # the physical five-pixel high-pass scale is retained.
+                    native_point_preblur_sigma=0. if dense else 2.,
+                    relevant_ellipse_fraction=None if dense else .66,
+                    pole_pose_method='projected_trend' if dense else 'silhouette_trend',
+                    exclude_specular_texture=dense,
+                    native_matching_cost="aligned_mad", minimum_view_rotation_deg=20,
+                    transverse_angle_deg=10 if dense else 20,
+                    max_pair_angle_deg=40 if dense else 55,
+                    # One missing silhouette may be crossed only by a directly
+                    # measured pair, within the eight-frame anchor window. The
+                    # upstream identity guard still splits uncertain identities.
+                    maximum_view_index_gap=2 if dense else capture_stride_frames,
+                    bidirectional_matching=True,
+                    rotation_axis=os.getenv("FRUIT_ROTATION_AXIS", "x"),
+                    rotation_direction=int(os.getenv("FRUIT_ROTATION_DIRECTION", "1")),
+                    minimum_rotation_coverage_deg=0,
+                    minimum_longitude_coverage_deg=350,
+                    maximum_pair_gap_deg=40 if dense else 55)
 
 
 def _make_pipeline(capture_stride_frames: int = 3,
@@ -167,35 +321,91 @@ def _make_pipeline(capture_stride_frames: int = 3,
     segmenter_weights = Path(os.getenv(
         "DFINE_SEG_WEIGHTS", MODELS / "segmentation" / "model.pt"
     ))
-    if not detector_weights.is_file() or not segmenter_weights.is_file():
-        raise FileNotFoundError("D-FINE model weights are missing from backend/models/D-FINE")
+    legacy_detector = 'FRUIT_DETECTOR_MODEL' not in os.environ and detector_weights.is_file()
+    if not segmenter_weights.is_file() or ('FRUIT_DETECTOR_WEIGHTS' in os.environ and not detector_weights.is_file()):
+        raise FileNotFoundError("Requested model weights are missing from backend/models")
 
-    device = inference_device()
-    segmenter = DfineSegmenter(segmenter_weights, device=device)
-    detector = DfineDetector(detector_weights, device=device)
-    pipeline = NaartjiePipeline(
-        segmenter, detector,
-        settings=Settings(spheroid_type="auto", defect_observations_complete=True,
-                          grade_partial_maps=True,
-                          minimum_surface_coverage=.80,
-                          select_rotating_views=True,
-                          native_matching_cost="aligned_mad",
-                          minimum_view_rotation_deg=20,
-                          transverse_angle_deg=20,
-                          # Consecutive video frames use a tighter rolling bound.
-                          # Live capture skips frames, so retains the wider bound.
-                          max_pair_angle_deg=20 if capture_stride_frames == 1 else 55,
-                          maximum_view_index_gap=capture_stride_frames,
-                          bidirectional_matching=True,
-                          rotation_axis=os.getenv("FRUIT_ROTATION_AXIS", "x"),
-                          rotation_direction=int(os.getenv("FRUIT_ROTATION_DIRECTION", "1")),
-                          minimum_rotation_coverage_deg=0,
-                          minimum_longitude_coverage_deg=350,
-                          maximum_pair_gap_deg=55),
-        capture_stride_frames=capture_stride_frames,
-        max_views_per_track=max_views_per_track,
-        defer_defect_segmentation=True,
-    )
+    hardware = os.getenv('FRUIT_HARDWARE_PROFILE', 'laptop')
+    if hardware not in ('laptop', 'pi4'):
+        raise ValueError('FRUIT_HARDWARE_PROFILE must be laptop or pi4')
+    device = 'cpu' if hardware == 'pi4' and 'FRUIT_DEVICE' not in os.environ else inference_device()
+    if hardware == 'pi4':
+        import torch
+        torch.set_num_threads(int(os.getenv('FRUIT_CPU_THREADS', '2')))
+        cv2.setNumThreads(1)
+    profile = os.getenv('FRUIT_PIPELINE', 'reference').casefold()
+    if profile not in ('realtime', 'reference'):
+        raise ValueError('FRUIT_PIPELINE must be realtime or reference')
+    realtime = profile == 'realtime'
+    half = realtime and os.getenv('FRUIT_MIXED_PRECISION', '0') == '1'
+    from optimized_segmenter import configured_segmenter
+    segmenter = configured_segmenter(segmenter_weights, device, half)
+    if legacy_detector:
+        detector = DfineDetector(detector_weights, device=device, mixed_precision=half)
+    else:
+        from export_detector import configured_detector
+        detector = configured_detector(device)
+    if getattr(detector, 'input_size', (640, 640)) != (640, 640) or getattr(segmenter, 'input_size', (640, 640)) != (640, 640):
+        raise ValueError('Both inspection strategies require 640 x 640 model inputs')
+    if hasattr(detector, 'warmup'):
+        detector.warmup()
+    if hasattr(segmenter, 'warmup'):
+        segmenter.warmup()
+    settings = replace(_mapping_settings(capture_stride_frames), vectorized_fusion=True)
+    factory = NaartjiePipeline
+    extra = {}
+    scheduler = None
+    if realtime:
+        from realtime_pipeline import RealtimePipeline
+        from inference_scheduler import InferenceScheduler, ScheduledDetector, ScheduledSegmenter
+        if detector.input_size != (640, 640) or segmenter.input_size != (640, 640):
+            raise ValueError('Realtime inspection requires both models to retain 640 x 640 inputs')
+        cv2.setNumThreads(int(os.getenv('FRUIT_OPENCV_THREADS', '1')))
+        settings = replace(_mapping_settings(1), rotation_estimator='features', vectorized_fusion=True,
+                           keyframe_minimum_rotation_deg=15., feature_rotation_fallback=False)
+        factory = RealtimePipeline
+        extra = dict(segmentation_batch_size=int(os.getenv('FRUIT_SEGMENTATION_BATCH', '4')),
+                     maximum_keyframes=32, recovery_searches=int(os.getenv('FRUIT_ROTATION_RECOVERIES', '1')))
+        scheduler = InferenceScheduler()
+        detector, segmenter = ScheduledDetector(detector, scheduler, independent_cpu=not legacy_detector), ScheduledSegmenter(segmenter, scheduler)
+        capture_stride_frames = 1
+    try:
+        pipeline = factory(
+            segmenter, detector,
+            settings=settings,
+            capture_stride_frames=capture_stride_frames,
+            max_views_per_track=max_views_per_track,
+            defer_defect_segmentation=True,
+            **extra,
+        )
+    except BaseException:
+        if scheduler is not None:
+            scheduler.close()
+        raise
+    pipeline.inspection_profile = profile
+    from inference_scheduler import InferenceScheduler, ScheduledDetector, ScheduledSegmenter
+    from inspection_pipeline import InspectionPipeline
+    if scheduler is None:
+        scheduler = InferenceScheduler()
+        detector, segmenter = ScheduledDetector(detector, scheduler, independent_cpu=not legacy_detector), ScheduledSegmenter(segmenter, scheduler)
+        pipeline.detector, pipeline.segmenter = detector, segmenter
+    try:
+        timed = inspection_configuration.snapshot().nine_view.acquisition == 'timed'
+        pipeline = InspectionPipeline(pipeline, lambda: inspection_configuration.snapshot(_tracking_config()),
+            batch_size=int(os.getenv('FRUIT_NINE_BATCH', '1' if device == 'cpu' else '4')),
+            maximum_active=int(os.getenv('FRUIT_NINE_ACTIVE', '24' if hardware == 'pi4' and not timed else '96')),
+            maximum_pending=int(os.getenv('FRUIT_NINE_PENDING', '32' if hardware == 'pi4' and not timed else '128')),
+            maximum_inflight=int(os.getenv('FRUIT_NINE_INFLIGHT', '1' if device=='cpu' else '2')),
+            progressive_timed=os.getenv('FRUIT_CPU_OPTIMIZED')=='1',
+            mask_mode=os.getenv('FRUIT_MASK_BACKEND','hsv' if device=='cpu' and os.getenv('FRUIT_CPU_OPTIMIZED')=='1' else 'grabcut'))
+        pipeline.detection_interval_seconds = float(os.getenv('FRUIT_DETECTION_INTERVAL', '0'))
+        if not 0 <= pipeline.detection_interval_seconds <= 1:
+            raise ValueError('FRUIT_DETECTION_INTERVAL must be within 0..1 seconds')
+    except BaseException:
+        scheduler.close()
+        if hasattr(pipeline, 'close'):
+            pipeline.close()
+        raise
     return pipeline, detector, segmenter
 
 
@@ -229,6 +439,9 @@ def _finish_track(pipeline: NaartjiePipeline, track_id: int, output: Path) -> di
 
 
 def _write_track_result(pipeline: NaartjiePipeline, track_id: int, output: Path) -> dict | None:
+    if hasattr(pipeline, 'nine_view_result'):
+        from inspection_export import write_nine_view
+        return write_nine_view(pipeline, track_id, output)
     views = pipeline.views_by_id.get(track_id, [])
     rejected = pipeline.rejected_views_by_id.get(track_id, {}).copy()
     history = getattr(pipeline, 'tracking_history_by_id', {}).get(track_id, []).copy()
@@ -256,6 +469,7 @@ def _write_track_result(pipeline: NaartjiePipeline, track_id: int, output: Path)
                    "rejected_views": rejected, **tracking}
             if history:
                 (folder / 'result.json').write_text(json.dumps(row, indent=2), encoding='utf-8')
+            row.update(getattr(pipeline, 'algorithm_assignment', {}))
             return row
         return None
     row = {"track_id": track_id, "views": len(views),
@@ -325,6 +539,7 @@ def _write_track_result(pipeline: NaartjiePipeline, track_id: int, output: Path)
         row.update(status="mapping_failed", grade=None, reason=str(error))
         row['view_selection'] = getattr(error, 'diagnostics', [])
     row['view_evidence']=_save_view_evidence(views,folder,f'/results/{output.name}/{track_id}')
+    row.update(getattr(pipeline, 'algorithm_assignment', {}))
     (folder / 'result.json').write_text(json.dumps(row,indent=2),encoding='utf-8')
     return row
 
@@ -346,6 +561,74 @@ def _write_report(output: Path, report: dict) -> None:
     temporary.replace(output / "report.json")
 
 
+class TrackWriter:
+    """Bound completed-fruit exports while capture and inference continue."""
+    def __init__(self, output):
+        self.output = output
+        self.pool = ThreadPoolExecutor(max_workers=1, thread_name_prefix='fruit-export')
+        self.nine_pool = ThreadPoolExecutor(max_workers=1, thread_name_prefix='nine-view-export')
+        self.pending = deque()
+        self.results = []
+        self.stage_seconds = Counter()
+        self.stage_lock = threading.Lock()
+
+    def _export(self, frozen, track_id):
+        started = time.perf_counter()
+        try:
+            return _finish_track(frozen, track_id, self.output)
+        finally:
+            with self.stage_lock:
+                self.stage_seconds['evidence_and_publication'] += time.perf_counter()-started
+
+    def collect(self, wait=False):
+        for future in list(self.pending):
+            if not wait and not future.done():
+                continue
+            self.pending.remove(future)
+            result = future.result()
+            if result is not None:
+                self.results.append(result)
+
+    def finish(self, pipeline, track_id):
+        if getattr(pipeline, 'inspection_router', False):
+            if pipeline.already_published(track_id):
+                pipeline.drop_track(track_id)
+                return
+            if track_id not in pipeline.routes:
+                pipeline.drop_track(track_id)
+                return
+            pipeline.end_track(track_id)
+            if not pipeline.track_ready(track_id):
+                return
+            frozen = pipeline.detach_track(track_id)
+            pool = self.nine_pool if hasattr(frozen, 'nine_view_result') else self.pool
+            self.pending.append(pool.submit(self._export, frozen, track_id))
+            if len(self.pending) >= 16:
+                result = self.pending.popleft().result()
+                if result is not None:
+                    self.results.append(result)
+            self.collect()
+        elif getattr(pipeline, 'inspection_profile', None) == 'realtime':
+            pipeline.end_track(track_id)
+            if not pipeline.track_ready(track_id):
+                return
+            frozen = pipeline.detach_track(track_id)
+            self.pending.append(self.pool.submit(self._export, frozen, track_id))
+            if len(self.pending) >= 16:
+                result = self.pending.popleft().result()
+                if result is not None:
+                    self.results.append(result)
+            self.collect()
+        else:
+            result = _finish_track(pipeline, track_id, self.output)
+            if result is not None:
+                self.results.append(result)
+
+    def close(self):
+        self.pool.shutdown(wait=True, cancel_futures=False)
+        self.nine_pool.shutdown(wait=True, cancel_futures=False)
+
+
 def analyze_video(path: Path, output: Path, metrics: dict | None = None,
                   progress=None) -> list[dict]:
     """Track each fruit through a video and save its completed surface map."""
@@ -355,17 +638,22 @@ def analyze_video(path: Path, output: Path, metrics: dict | None = None,
     _check_analysis_cancelled()
     if progress:
         progress(state="loading_models")
-    pipeline, detector, segmenter = _make_pipeline(
-        capture_stride_frames=1, max_views_per_track=120)
+    collector = _tracking_for_output(output)
+    try:
+        pipeline, detector, segmenter = _make_pipeline(
+            capture_stride_frames=1, max_views_per_track=120)
+    except Exception:
+        collector.finish('error')
+        raise
+    pipeline.tracking_metrics = collector
     video = None
-    results = []
+    writer = TrackWriter(output)
+    results = writer.results
 
     def finish(track_id: int) -> None:
         _check_analysis_cancelled()
-        row = _finish_track(pipeline, track_id, output)
+        writer.finish(pipeline, track_id)
         _check_analysis_cancelled()
-        if row is not None:
-            results.append(row)
 
     try:
         _check_analysis_cancelled()
@@ -379,6 +667,7 @@ def analyze_video(path: Path, output: Path, metrics: dict | None = None,
         if hasattr(pipeline, 'configure_identity_debug'):
             pipeline.configure_identity_debug(output)
         total = int(video.get(cv2.CAP_PROP_FRAME_COUNT))
+        processing_started = time.perf_counter()
         previous_sample = None
         sampled_frames = 0
         if progress:
@@ -397,25 +686,40 @@ def analyze_video(path: Path, output: Path, metrics: dict | None = None,
                 sampled_frames += 1
             timestamp = video.get(cv2.CAP_PROP_POS_MSEC) / 1000.
             pipeline.process_frame(frame, frame_index, capture_views=capture_views, timestamp=timestamp)
+            _update_tracking_preview(frame, collector)
             _check_analysis_cancelled()
             for track_id, last_seen in list(pipeline.last_seen_frame.items()):
                 buffer = getattr(getattr(pipeline, 'identity_guard', None), 'lost_track_buffer_frames', 30)
                 if frame_index - last_seen > buffer:
                     finish(track_id)
             frame_index += 1
+            writer.collect()
+            if getattr(pipeline, 'inspection_router', False):
+                for track_id in pipeline.ready_tracks():
+                    finish(track_id)
             if progress and frame_index % 10 == 0:
                 progress(frames_processed=frame_index)
         if frame_index == 0:
             raise ValueError("The video contains no readable frames")
+        collector.finish()
         _check_analysis_cancelled()
         if progress:
             progress(state="building_maps", frames_processed=frame_index)
+        if getattr(pipeline, 'inspection_router', False) or getattr(pipeline, 'inspection_profile', None) == 'realtime':
+            pipeline.flush()
         for track_id in list(pipeline.last_seen_frame):
             finish(track_id)
+        writer.collect(wait=True)
+        processing_seconds = time.perf_counter() - processing_started
         _check_analysis_cancelled()
     finally:
+        if collector.state == 'collecting':
+            collector.finish('cancelled' if analysis_cancel_event.is_set() else 'error')
         if video is not None:
             video.release()
+        writer.close()
+        if hasattr(pipeline, 'close'):
+            pipeline.close()
         if hasattr(pipeline, 'close_identity_debug'):
             pipeline.close_identity_debug()
         # A traceback may retain the pipeline after an aborted run. Remove its
@@ -423,7 +727,22 @@ def analyze_video(path: Path, output: Path, metrics: dict | None = None,
         for track_id in list(pipeline.last_seen_frame):
             pipeline.drop_track(track_id)
     if metrics is not None:
+        metrics['tracking'] = _tracking_report(collector)
         metrics.update(_analysis_metrics(frame_index, started, detector, segmenter, fps))
+        if getattr(pipeline, 'inspection_router', False):
+            metrics['inspection'] = pipeline.runtime_metrics()
+        metrics['runtime'] = {
+            'profile': getattr(pipeline, 'inspection_profile', 'reference'),
+            'model_input_size': [640, 640], 'pipeline_duration_sec': processing_seconds,
+            'pipeline_fps': frame_index / processing_seconds,
+            'source_fps': fps, 'meets_source_rate': frame_index / processing_seconds >= fps,
+            'precision': 'mixed_fp16' if getattr(detector, 'mixed_precision', False) else 'fp32'}
+        if getattr(pipeline, 'inspection_profile', None) == 'realtime':
+            metrics['realtime'] = {**pipeline.runtime_metrics(),
+                'pipeline_duration_sec': processing_seconds,
+                'pipeline_fps': frame_index / processing_seconds,
+                'source_fps': fps, 'meets_source_rate': frame_index / processing_seconds >= fps,
+                'precision': 'mixed_fp16' if detector.mixed_precision else 'fp32'}
         metrics.update(sampled_frames=sampled_frames, duplicate_frames=frame_index-sampled_frames,
                        algorithm_sha256=ALGORITHM_SHA256,
                        deferred_defect_segmentation=pipeline.defer_defect_segmentation,
@@ -489,44 +808,82 @@ class LiveInspector:
             "metrics": {},
             "fruits": [],
         }
+        writer = None
+        pipeline = None
         try:
             output.mkdir(exist_ok=True)
+            collector = _begin_tracking(output)
             _write_report(output, report)
             started = time.perf_counter()
             pipeline, detector, segmenter = _make_pipeline()
+            writer = TrackWriter(output)
+            report['fruits'] = writer.results
+            pipeline.tracking_metrics = collector
             pipeline.configure_identity_debug(output)
+            pipeline.set_frame_rate(camera.fps)
             with self.lock:
                 self.state = "running"
             report["status"] = "running"
             frame_index = 0
-            sequence = 0
+            with camera.condition:
+                sequence = camera.sequence
+            initial_sequence = sequence
+            skipped_frames = 0
+            frame_ages = deque(maxlen=600)
             last_save = 0.0
             while not self.stop_event.is_set():
-                with camera.condition:
-                    camera.condition.wait_for(
-                        lambda: camera.sequence > sequence or self.stop_event.is_set(), timeout=2
-                    )
-                    if camera.sequence == sequence or camera.raw_frame is None:
-                        continue
-                    sequence, frame = camera.sequence, camera.raw_frame.copy()
-                    timestamp = camera.raw_timestamp
-                pipeline.process_frame(frame, frame_index, timestamp=timestamp)
+                item = camera.next_frame(sequence, self.stop_event)
+                if item is None:
+                    continue
+                next_sequence, frame, timestamp = item
+                skipped_frames += max(0, next_sequence - sequence - 1)
+                sequence = next_sequence
+                source_index = sequence - initial_sequence - 1
+                if getattr(pipeline, 'inspection_router', False) or getattr(pipeline, 'inspection_profile', None) == 'realtime':
+                    pipeline.process_frame(frame, source_index, timestamp=timestamp, capture_monotonic=timestamp)
+                else:
+                    pipeline.process_frame(frame, source_index, timestamp=timestamp)
+                frame_ages.append(time.monotonic() - timestamp)
+                _update_tracking_preview(frame, collector)
                 for track_id, last_seen in list(pipeline.last_seen_frame.items()):
                     buffer = getattr(pipeline.identity_guard, 'lost_track_buffer_frames', 20)
-                    if frame_index - last_seen > buffer:
-                        row = _finish_track(pipeline, track_id, output)
-                        if row is not None:
-                            report["fruits"].append(row)
+                    if source_index - last_seen > buffer:
+                        writer.finish(pipeline, track_id)
                 frame_index += 1
+                writer.collect()
+                if getattr(pipeline, 'inspection_router', False):
+                    for track_id in pipeline.ready_tracks():
+                        writer.finish(pipeline, track_id)
                 if time.perf_counter() - last_save > 2:
                     report["metrics"] = _analysis_metrics(frame_index, started, detector, segmenter)
+                    if getattr(pipeline, 'inspection_router', False):
+                        report['metrics']['inspection'] = pipeline.runtime_metrics()
+                    if getattr(pipeline, 'inspection_profile', None) == 'realtime':
+                        import numpy as np
+                        report['metrics']['realtime'] = {**pipeline.runtime_metrics(),
+                            'capture_fps': camera.fps, 'skipped_capture_frames': skipped_frames,
+                            'capture_to_processing_p95_ms': float(np.percentile(frame_ages, 95) * 1000),
+                            'precision': 'mixed_fp16' if detector.mixed_precision else 'fp32'}
+                    report['metrics']['tracking'] = _tracking_report(collector)
                     _write_report(output, report)
                     last_save = time.perf_counter()
+            collector.finish()
+            if getattr(pipeline, 'inspection_router', False) or getattr(pipeline, 'inspection_profile', None) == 'realtime':
+                pipeline.flush()
             for track_id in list(pipeline.last_seen_frame):
-                row = _finish_track(pipeline, track_id, output)
-                if row is not None:
-                    report["fruits"].append(row)
+                writer.finish(pipeline, track_id)
+            writer.collect(wait=True)
             report["metrics"] = _analysis_metrics(frame_index, started, detector, segmenter)
+            if getattr(pipeline, 'inspection_router', False):
+                report['metrics']['inspection'] = pipeline.runtime_metrics()
+            report['metrics']['tracking'] = _tracking_report(collector)
+            if getattr(pipeline, 'inspection_profile', None) == 'realtime':
+                import numpy as np
+                report['metrics']['realtime'] = {**pipeline.runtime_metrics(),
+                    'capture_fps': camera.fps, 'skipped_capture_frames': skipped_frames,
+                    'capture_to_processing_p95_ms': float(np.percentile(frame_ages, 95) * 1000)
+                        if frame_ages else None,
+                    'precision': 'mixed_fp16' if detector.mixed_precision else 'fp32'}
             report["status"] = "stopped"
             _write_report(output, report)
             with self.lock:
@@ -534,18 +891,178 @@ class LiveInspector:
         except Exception as error:
             report["status"] = "error"
             report["error"] = str(error)
+            if 'collector' in locals():
+                if collector.state == 'collecting':
+                    collector.finish('error')
+                report['metrics']['tracking'] = _tracking_report(collector)
             if output.is_dir():
                 _write_report(output, report)
             with self.lock:
                 self.state = "error"
                 self.error = str(error)
         finally:
-            if 'pipeline' in locals():
+            if 'collector' in locals() and collector.state == 'collecting':
+                collector.finish('error')
+            if writer is not None:
+                writer.close()
+            if pipeline is not None:
+                if hasattr(pipeline, 'close'):
+                    pipeline.close()
                 pipeline.close_identity_debug()
+                for track_id in list(pipeline.last_seen_frame):
+                    pipeline.drop_track(track_id)
             analysis_lock.release()
 
 
 live_inspector = LiveInspector()
+
+
+@app.get('/api/inspection/config')
+def inspection_config():
+    snapshot = inspection_configuration.snapshot(_tracking_config())
+    calibration = BACKEND / 'diagnostics/timed-views/calibration.json'
+    recommended = None
+    if calibration.is_file():
+        record = json.loads(calibration.read_text(encoding='utf-8'))
+        timing = record.get('timing', {}).get('recommended')
+        if timing:
+            recommended = dict(acquisition='timed', required_views=timing['views'], evidence_level='contact_sheet',
+                snapshot_interval_seconds=timing['interval_seconds'], first_snapshot_delay_seconds=0.,
+                snapshot_lateness_seconds=min(.15, timing['interval_seconds']*.75),
+                timing_calibration_id=hashlib.sha256(calibration.read_bytes()).hexdigest()[:16])
+    return dict(config=asdict(inspection_configuration.snapshot()), effective=asdict(snapshot),
+                recommended_timing=recommended,
+                active=analysis_lock.locked(),
+                message='Changes apply at fruit entry; active fruit retain their assigned mode and thresholds.')
+
+
+@app.post('/api/inspection/config')
+def update_inspection_config(data: dict):
+    try:
+        snapshot = inspection_configuration.update(data)
+    except (ValueError, TypeError) as error:
+        raise HTTPException(422, str(error)) from error
+    return dict(config=asdict(snapshot), message='Saved for newly entering fruit. Active fruit keep their assignment.')
+
+
+@app.get('/api/tracking/config')
+def tracking_configuration():
+    return asdict(_tracking_config())
+
+
+@app.post('/api/tracking/config')
+def set_tracking_configuration(data: dict):
+    try:
+        config = config_from_dict(data)
+    except ValueError as error:
+        raise HTTPException(422, str(error)) from error
+    with tracking_lock:
+        tracking_config_path.parent.mkdir(parents=True, exist_ok=True)
+        temporary = tracking_config_path.with_suffix('.tmp')
+        temporary.write_text(json.dumps(asdict(config), allow_nan=False), encoding='utf-8')
+        temporary.replace(tracking_config_path)
+    return dict(config=asdict(config), message='Saved for future runs. An active run keeps its starting configuration.')
+
+
+def _tracking_folder(job_id):
+    if not re.fullmatch(r'[a-zA-Z0-9_-]{1,100}', job_id):
+        raise HTTPException(400, 'Invalid run ID')
+    folder = (RESULTS/job_id).resolve()
+    if not folder.is_relative_to(RESULTS.resolve()) or not folder.is_dir():
+        raise HTTPException(404, 'Tracking run not found')
+    return folder
+
+
+@app.get('/api/tracking/status')
+def tracking_status():
+    with tracking_lock:
+        if tracking_current is None:
+            return dict(job_id=None, state='idle')
+        return dict(job_id=tracking_current.job_id, state=tracking_current.state, active=analysis_lock.locked())
+
+
+@app.get('/api/tracking/runs')
+def tracking_runs():
+    runs = []
+    for path in RESULTS.glob('*/report.json'):
+        try:
+            report = json.loads(path.read_text(encoding='utf-8'))
+            runs.append(dict(job_id=path.parent.name, source_name=report.get('source_name'),
+                created_at=report.get('created_at'), available=(path.parent/'tracking_observations.jsonl').is_file()))
+        except (OSError, ValueError):
+            continue
+    return sorted(runs, key=lambda r: r['created_at'] or '', reverse=True)
+
+
+@app.get('/api/tracking/runs/{job_id}')
+def tracking_run(job_id: str):
+    folder = _tracking_folder(job_id)
+    with tracking_lock:
+        if tracking_current is not None and tracking_current.job_id == job_id and tracking_current.state != 'cancelled':
+            return tracking_current.snapshot()
+        path = folder/'tracking_metrics.json'
+        if not path.is_file():
+            return dict(job_id=job_id, state='unavailable', summary=None, regions=[], events=[], tracks=[])
+        return json.loads(path.read_text(encoding='utf-8'))
+
+
+@app.post('/api/tracking/runs/{job_id}/recalculate')
+def recalculate_tracking(job_id: str, data: dict):
+    global tracking_current
+    folder = _tracking_folder(job_id)
+    try:
+        config = config_from_dict(data)
+    except ValueError as error:
+        raise HTTPException(422, str(error)) from error
+    if config.region is None:
+        raise HTTPException(422, 'Choose a valid conveyor region first')
+    # Do not mix coordinate systems or overwrite a journal while inference runs.
+    if not analysis_lock.acquire(blocking=False):
+        raise HTTPException(409, 'Wait until the current inspection finishes before recalculating')
+    try:
+        with tracking_lock:
+            journal = folder/'tracking_observations.jsonl'
+            if not journal.is_file():
+                raise HTTPException(404, 'This older run has no raw tracking observation journal')
+            collector = replay_journal(journal, config, job_id, folder)
+            if tracking_current is not None and tracking_current.job_id == job_id:
+                tracking_current = collector
+            report_path = folder/'report.json'
+            if report_path.is_file():
+                report = json.loads(report_path.read_text(encoding='utf-8'))
+                report.setdefault('metrics', {})['tracking'] = _tracking_report(collector)
+                _write_report(folder, report)
+            return collector.snapshot()
+    finally:
+        analysis_lock.release()
+
+
+@app.get('/api/tracking/runs/{job_id}/exports/{filename}')
+def tracking_export(job_id: str, filename: str):
+    folder = _tracking_folder(job_id)
+    if filename not in EXPORTS:
+        raise HTTPException(404, 'Unknown tracking export')
+    with tracking_lock:
+        if tracking_current is not None and tracking_current.job_id == job_id and tracking_current.state == 'collecting':
+            tracking_current.save()
+        path = folder/filename
+        if not path.is_file():
+            raise HTTPException(404, 'No tracking measurements were recorded for this run')
+        return FileResponse(path, media_type='text/csv', filename=filename)
+
+
+@app.get('/api/tracking/preview')
+def tracking_preview(request: Request):
+    async def frames():
+        sequence = -1
+        while not await request.is_disconnected():
+            with tracking_preview_condition:
+                latest, jpeg = tracking_preview_sequence, tracking_preview_jpeg
+            if latest != sequence and jpeg is not None:
+                sequence = latest
+                yield b'--frame\r\nContent-Type: image/jpeg\r\n\r\n' + jpeg + b'\r\n'
+            await asyncio.sleep(.1)
+    return StreamingResponse(frames(), media_type='multipart/x-mixed-replace; boundary=frame')
 
 
 @app.get("/api/health")
@@ -562,9 +1079,14 @@ def health() -> dict:
         "status": "ok",
         "torch": torch.__version__,
         "cuda_available": torch.cuda.is_available(),
-        "requested_device": os.getenv("FRUIT_DEVICE", "cuda"),
+        "requested_device": os.getenv("FRUIT_DEVICE", "cpu" if os.getenv('FRUIT_HARDWARE_PROFILE') == 'pi4' else "cuda"),
+        "hardware_profile": os.getenv('FRUIT_HARDWARE_PROFILE', 'laptop'),
+        "inspection_algorithm": inspection_configuration.snapshot().algorithm,
+        "inspection_algorithms": ['surface_mapping', 'nine_view'],
+        "pipeline_profile": os.getenv("FRUIT_PIPELINE", "reference").casefold(),
+        "model_input_size": [640, 640],
         "models_present": {
-            "detection": detector.is_file(),
+            "detection": detector.is_file() or (BACKEND/'models/YOLO/detection/model_rgb.ncnn.bin').is_file(),
             "segmentation": segmenter.is_file(),
             "segmentation_metadata": segmenter.with_suffix(".dfineseg.json").is_file(),
         },
@@ -734,6 +1256,7 @@ def analyze_upload(video: UploadFile,
         job_id = uuid4().hex
         output = RESULTS / job_id
         output.mkdir()
+        _begin_tracking(output)
         temporary = tempfile.NamedTemporaryFile(suffix=Path(video.filename).suffix, delete=False)
         with temporary:
             while chunk := video.file.read(1024 * 1024):
@@ -757,6 +1280,9 @@ def analyze_upload(video: UploadFile,
             _set_analysis_state(state="complete", error=None)
         return report
     except AnalysisCancelled:
+        with tracking_lock:
+            if tracking_current is not None and output is not None and tracking_current.job_id == output.name:
+                tracking_current.finish('cancelled')
         if output is not None:
             shutil.rmtree(output, ignore_errors=True)
         with analysis_control_lock:

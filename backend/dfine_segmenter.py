@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+from collections import Counter
 import json
 import os
 import sys
@@ -225,7 +226,7 @@ def associate_fruit_detections(tracker, rows, frame, typical_size=None, entry_co
 class DfineDetector:
     """Run the local D-FINE nano checkpoint and feed its boxes to TrackTrack."""
 
-    def __init__(self, weights: str | Path, device: str):
+    def __init__(self, weights: str | Path, device: str, mixed_precision: bool = False):
         runner_python = Path(__file__).resolve().parents[2] / "Inference Runner" / "backend" / "python"
         if not (runner_python / "dfine_checkpoint.py").is_file():
             raise FileNotFoundError(f"D-FINE checkpoint loader is missing: {runner_python}")
@@ -235,6 +236,8 @@ class DfineDetector:
         self.processor, self.model, labels = load_dfine_nano(Path(weights), device)
         self.names = dict(enumerate(labels))
         self.device = device
+        self.mixed_precision = bool(mixed_precision and device == 'cuda')
+        self.input_size = (640, 640)
         self.tracker = make_fruit_tracker(device)
         self.tracking_size_px = None
         self.inference_calls = 0
@@ -242,23 +245,36 @@ class DfineDetector:
         self.total_predictions = 0
         self.total_confidence = 0.0
 
+    def warmup(self):
+        """Warm inference without changing tracker identity or measured calls."""
+        import torch
+        if getattr(self, 'warmed', False):
+            return
+        inputs = self.processor(images=np.zeros((640, 640, 3), np.uint8), return_tensors='pt')
+        inputs = {key: value.to(self.device) for key, value in inputs.items()}
+        with torch.inference_mode(), torch.autocast(device_type='cuda', dtype=torch.float16, enabled=self.mixed_precision):
+            self.model(**inputs)
+        if self.device == 'cuda':
+            torch.cuda.synchronize()
+        self.warmed = True
+
     def track(self, frame, conf: float = 0.25, **_kwargs):
         import torch
-        from PIL import Image
         from ultralytics.engine.results import Boxes
 
         started = perf_counter()
         height, width = frame.shape[:2]
         rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        inputs = self.processor(images=Image.fromarray(rgb), return_tensors="pt")
+        inputs = self.processor(images=rgb, return_tensors="pt")
         inputs = {key: value.to(self.device) for key, value in inputs.items()}
         with torch.inference_mode():
-            outputs = self.model(**inputs)
+            with torch.autocast(device_type='cuda', dtype=torch.float16, enabled=self.mixed_precision):
+                outputs = self.model(**inputs)
             detected = self.processor.post_process_object_detection(
                 outputs, threshold=conf, target_sizes=[(height, width)]
             )[0]
-        boxes = detected["boxes"].detach().cpu().numpy()
-        scores = detected["scores"].detach().cpu().numpy()
+        boxes = detected["boxes"].detach().float().cpu().numpy()
+        scores = detected["scores"].detach().float().cpu().numpy()
         classes = detected["labels"].detach().cpu().numpy()
         self.inference_calls += 1
         self.total_latency_ms += (perf_counter() - started) * 1000
@@ -273,7 +289,7 @@ class DfineDetector:
 
 class DfineSegmenter:
     def __init__(self, weights: str | Path, source_root: str | Path | None = None,
-                 device: str | None = None):
+                 device: str | None = None, mixed_precision: bool = False):
         import torch
 
         weights = Path(weights).resolve()
@@ -282,10 +298,17 @@ class DfineSegmenter:
             raise ValueError("Expected D-FINE SEG metadata beside the weights")
         labels = manifest["labels"]
         self.names = {index: name for index, name in enumerate(labels)}
+        self.device = device or inference_device()
+        self.mixed_precision = bool(mixed_precision and self.device == 'cuda')
+        self.input_size = (manifest['inputHeight'], manifest['inputWidth'])
+        self.batch_calls = 0
+        self.maximum_batch_size = 0
         self.inference_calls = 0
         self.total_latency_ms = 0.0
         self.total_predictions = 0
         self.total_confidence = 0.0
+        self.stage_seconds = Counter()
+        self.backend = 'torch'
 
         with weights.open("rb") as checkpoint:
             digest = hashlib.file_digest(checkpoint, "sha256").hexdigest()
@@ -304,7 +327,7 @@ class DfineSegmenter:
             n_outputs=len(labels), input_width=manifest["inputWidth"],
             input_height=manifest["inputHeight"], conf_thresh=0.5,
             keep_ratio=True, apply_nms=False, enable_mask_head=True,
-            binarize_masks=False, device=device or inference_device(),
+            binarize_masks=False, device=self.device,
             task="segment",
         )
         state = torch.load(weights, map_location="cpu", weights_only=True)
@@ -313,26 +336,62 @@ class DfineSegmenter:
         self.model.model.load_state_dict(state, strict=True)
 
     def predict(self, bgr, conf: float = 0.25, **_kwargs):
-        import torch
+        return self.predict_batch([bgr], conf=conf)
 
+    def warmup(self):
+        if getattr(self, 'warmed', False):
+            return
+        fields = ('inference_calls', 'batch_calls', 'maximum_batch_size', 'total_latency_ms',
+                  'total_predictions', 'total_confidence')
+        previous = {name: getattr(self, name) for name in fields}
+        stages = getattr(self, 'stage_seconds', Counter()).copy()
+        self.predict_batch([np.zeros((640, 640, 3), np.uint8)])
+        for name, value in previous.items():
+            setattr(self, name, value)
+        self.stage_seconds = stages
+        self.warmed = True
+
+    def predict_batch(self, images, conf: float = 0.25):
+        """Letterbox variable-size crops independently to the unchanged model size."""
+        import torch
+        if not images:
+            return []
+        self.stage_seconds = getattr(self, 'stage_seconds', Counter())
         started = perf_counter()
         self.model.conf_threshs = [conf] * len(self.names)
-        rgb = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
-        inputs, processed_sizes, original_sizes = self.model._prepare_inputs(rgb, bgr=False)
+        processed = np.stack([self.model._preprocess(image, bgr=True) for image in images])
+        if processed.shape[-2:] != self.input_size:
+            raise RuntimeError('Segmentation preprocessing changed the configured input size')
+        inputs = torch.from_numpy(processed).to(self.device, non_blocking=True).float().div_(255.)
+        prepared = perf_counter()
+        original_sizes = [image.shape[:2] for image in images]
+        processed_sizes = [self.input_size] * len(images)
         with torch.inference_mode():
-            raw = self.model._predict(inputs)
-            result = self.model._postprocess(raw, processed_sizes, original_sizes)[0]
-        labels = result["labels"]
-        masks = result.get("masks")
-        scores = result.get("scores")
-        self.inference_calls += 1
+            with torch.autocast(device_type='cuda', dtype=torch.float16, enabled=self.mixed_precision):
+                raw = self.model._predict(inputs)
+            inferred = perf_counter()
+            results = self.model._postprocess(raw, processed_sizes, original_sizes)
+        postprocessed = perf_counter()
+        if len(results) != len(images):
+            raise RuntimeError('Segmentation batch result count does not match its inputs')
+        self.inference_calls += len(images)
+        self.batch_calls += 1
+        self.maximum_batch_size = max(self.maximum_batch_size, len(images))
+        adapted = []
+        for result in results:
+            labels, masks, scores = result['labels'], result.get('masks'), result.get('scores')
+            self.total_predictions += len(labels)
+            if scores is not None:
+                self.total_confidence += float(scores.sum().item())
+            if masks is None or len(labels) == 0:
+                adapted.append(SimpleNamespace(masks=None, boxes=None))
+            else:
+                # Transfer only binary masks; keep the model's >0.5 decision unchanged.
+                adapted.append(SimpleNamespace(masks=SimpleNamespace(data=(masks > .5).cpu()),
+                    boxes=SimpleNamespace(cls=labels.cpu(), conf=scores.cpu() if scores is not None else None)))
         self.total_latency_ms += (perf_counter() - started) * 1000
-        self.total_predictions += len(labels)
-        if scores is not None:
-            self.total_confidence += float(scores.sum().item())
-        if masks is None or len(labels) == 0:
-            return [SimpleNamespace(masks=None, boxes=None)]
-        return [SimpleNamespace(
-            masks=SimpleNamespace(data=masks),
-            boxes=SimpleNamespace(cls=labels, conf=scores),
-        )]
+        self.stage_seconds['preprocess'] += prepared-started
+        self.stage_seconds['neural_inference'] += inferred-prepared
+        self.stage_seconds['mask_postprocess'] += postprocessed-inferred
+        self.stage_seconds['result_adapter'] += perf_counter()-postprocessed
+        return adapted

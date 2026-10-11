@@ -2,6 +2,39 @@
 
 The dashboard shows the conveyor camera, assigned quality classes, detection and segmentation signals, and recent fruit surface maps. It reads results from either a recorded video or a live camera inspection. Empty states represent actual missing data; the dashboard does not generate sample results.
 
+The **Algorithm for entering fruit** panel now switches between the existing
+surface mapping and [nine-view grading](backend/NINE_VIEW_GRADING.md) while a run
+is active. Existing fruit keep their assigned method and settings; newly entering
+fruit use the new selection. Multiview grading supports timed acquisition of
+4–9 distinct crops, bypasses reconstruction and reports grades as provisional.
+Set the inspection region and decision deadline before using it. Both models
+remain at 640 × 640. The [paced benchmark results](backend/diagnostics/nine-view/RESULTS.md)
+include incomplete fruit and have not established real-time operation.
+
+The [timed inspection extension](backend/TIMED_VIEW_GRADING.md) measures operating
+sections from all 50 videos, compares the four RGB/HSV detector exports with the
+existing segmenter, and provides source-paced replay plus a CPU-constrained Pi
+rehearsal. Use the dashboard's measured timing preset or configure four snapshots
+0.4 seconds apart to match the latest performance comparison. Inputs remain 640.
+
+The [CPU optimization measurements](backend/diagnostics/cpu-optimization/RESULTS.md)
+add verified FP32 ONNX execution of the original segmentation weights, timed
+snapshot processing, cheaper evidence and a four-core CPU replay. Enable
+`FRUIT_CPU_OPTIMIZED=1` with the Pi CPU profile to use it. The measured pipeline
+still cannot keep up with the recorded conveyor load; the report lists each stage's cost.
+
+The [640-pixel streaming prototype](backend/REALTIME_PIPELINE.md) adds bounded
+camera acquisition, batched defects, measured feature rotation and incremental
+mapping. Set `FRUIT_PIPELINE=realtime` before restarting the backend to try it.
+The default reference profile keeps its existing motion estimator and gains
+vectorised fusion plus defect batches. The prototype has not met real-time
+throughput on the conveyor video; the [measured results](backend/diagnostics/realtime/20261009_implementation/RESULTS.md)
+include its mapping limitations. Both model inputs remain 640 × 640.
+
+For tracker selection, run `npm run compare:trackers` to choose one detector and conveyor video and compare all six installed Ultralytics trackers in a separate experiment. It produces full and cached timing comparisons, raw-ID diagnostics, CSV/JSON exports and an offline HTML report. See [TRACKER_COMPARISON.md](backend/TRACKER_COMPARISON.md). This experiment does not select or change the production tracker.
+
+The **Tracking performance** section records raw TrackTrack checkpoint continuity, suspected failures and measured detection + tracking FPS for each new run. Set the valid conveyor region once, then inspect the regional graph, per-ID details and four CSV exports. See [TRACKING_PERFORMANCE.md](backend/TRACKING_PERFORMANCE.md) for setup and measurement definitions.
+
 ## GitHub source and current validation
 
 The `Final` repository contains the application, tracking and mapping tools,

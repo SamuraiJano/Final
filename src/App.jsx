@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import './App.css'
+import TrackingPerformance from './TrackingPerformance'
+import InspectionMode from './InspectionMode'
 
 const emptyDashboard = {
   summary: { runs: 0, fruit_count: 0, classes: { 'Class 1': 0, 'Class 2': 0, 'Class 3': 0, ungraded: 0 } },
@@ -29,7 +31,7 @@ function formatNumber(value) { return new Intl.NumberFormat().format(value ?? 0)
 function formatPercent(value) { return value == null ? '—' : `${Number(value).toFixed(1)}%` }
 function formatTime(value) { return value ? new Date(value).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' }) : 'No inspections yet' }
 function gradeText(fruit) {
-  if (fruit.grade) return `${fruit.grade}${fruit.status === 'graded_partial' || fruit.grade_provisional ? ' (partial)' : ''}`
+  if (fruit.grade) return `${fruit.grade}${fruit.algorithm === 'nine_view' && fruit.grade_provisional ? ' (provisional)' : fruit.status === 'graded_partial' || fruit.grade_provisional ? ' (partial)' : ''}`
   return fruit.status === 'mapping_failed' ? 'Mapping failed' : 'Needs review'
 }
 function gradeClass(fruit) { return fruit.grade ? `grade-${fruit.grade.slice(-1)}` : 'grade-review' }
@@ -46,6 +48,7 @@ function MetricCard({ title, value, hint, icon, tone }) {
 
 function ModelRow({ title, subtitle, data, accent }) {
   const confidence = data?.mean_confidence == null ? null : data.mean_confidence * 100
+  if (data?.model_id) subtitle = `${data.model_id.replace('_', ' · ').toUpperCase()} · ${data.backend || 'inference'}`
   return <div className="model-row"><div className="model-row-head"><span className={`model-mark ${accent}`}><Icon name={title === 'Fruit detection' ? 'camera' : 'layers'} size={17} /></span><div><strong>{title}</strong><small>{subtitle}</small></div><span className="model-latency">{data?.mean_latency_ms == null ? '—' : `${data.mean_latency_ms} ms`}</span></div><div className="confidence-line"><span>Mean confidence</span><strong>{confidence == null ? '—' : `${confidence.toFixed(1)}%`}</strong></div><div className="confidence-track"><span style={{ width: `${confidence ?? 0}%` }} /></div><small className="model-note">{data ? `${formatNumber(data.instances)} detections across ${formatNumber(data.calls)} ${title === 'Fruit detection' ? 'frames' : 'fruit views'}` : 'Available during live inspection or after video analysis'}</small></div>
 }
 
@@ -61,30 +64,35 @@ function FruitDetail({ fruit, onClose }) {
   const showingDefects = mapView === 'defects' && Boolean(fruit.surface_map_overlay)
   const surfaceMap = showingDefects ? fruit.surface_map_overlay : fruit.surface_map || fruit.surface_map_overlay
   const defectLegend = fruit.defect_legend || []
+  const nineView = fruit.algorithm === 'nine_view'
   return <div className="drawer-backdrop" onClick={onClose}>
     <aside className="detail-drawer" role="dialog" aria-modal="true" aria-label={`Fruit ${fruit.track_id} inspection`} onClick={(event) => event.stopPropagation()}>
       <div className="drawer-top"><div><span className="eyebrow">FRUIT INSPECTION</span><h2>Fruit {String(fruit.track_id).padStart(3, '0')}</h2></div><button className="icon-button" onClick={onClose} aria-label="Close inspection"><Icon name="close" /></button></div>
       <span className={`grade-pill ${gradeClass(fruit)}`}>{gradeText(fruit)}</span>
       <p className="drawer-subtitle">{fruit.source_name || 'Recorded video'} &middot; {formatTime(fruit.created_at)}</p>
-      {(fruit.status === 'graded_partial' || fruit.grade_provisional) && <p className="evidence-note">Provisional grade based on the observed surface; unseen areas were not assessed.</p>}
+      {nineView && <p className="evidence-note">Multiview grading · configuration {fruit.configuration_version}. {fruit.grade ? 'Graded from' : 'Processed'} {fruit.processed_crops ?? 0} snapshots.
+        Calibration {fruit.calibration_status}. Whole-surface coverage is unknown.</p>}
+      {(fruit.status === 'graded_partial' || fruit.grade_provisional) && <p className="evidence-note">{nineView ? 'Provisional grade from the worst supported visible-view defect percentage. Thresholds need labelled-fruit calibration.' : 'Provisional grade based on the observed surface; unseen areas were not assessed.'}</p>}
       {fruit.identity_status === 'uncertain' && <p className="evidence-note">Identity needs review. This record is a separate capture segment and may belong to a fruit seen in another record. It is excluded from grading.</p>}
       {fruit.source_tracker_ids?.length > 1 && <p className="evidence-note">Motion continuity linked {fruit.source_tracker_ids.length} tracker IDs into this capture. Physical identity has not been manually verified.</p>}
       {fruit.surface_map_overlay && fruit.surface_map && <div className="filter-tabs map-view-tabs" role="group" aria-label="Surface map view">
         {[['defects', 'Defects'], ['original', 'Original']].map(([value, label]) => <button key={value} type="button" className={mapView === value ? 'selected' : ''} aria-pressed={mapView === value} onClick={() => setMapView(value)}>{label}</button>)}
       </div>}
-      <div className="detail-map">{surfaceMap ? <img src={surfaceMap} alt={`${showingDefects ? 'Defect highlights on the surface map' : 'Original surface map'} of fruit ${fruit.track_id}`} /> : <div className="map-unavailable"><Icon name="alert" size={25} /><span>No surface map available</span></div>}</div>
+      <div className="detail-map">{nineView && fruit.contact_sheet ? <img src={fruit.contact_sheet} alt={`Chronological inspection views of fruit ${fruit.track_id}`} /> : surfaceMap ? <img src={surfaceMap} alt={`${showingDefects ? 'Defect highlights on the surface map' : 'Original surface map'} of fruit ${fruit.track_id}`} /> : <div className="map-unavailable"><Icon name="alert" size={25} /><span>{nineView ? 'No accepted views available' : 'No surface map available'}</span></div>}</div>
       {fruit.surface_map_overlay && <>
         <p className="evidence-note">Coloured areas highlight predicted defects over the recorded surface. Blank areas were not observed.</p>
         {!!defectLegend.length && <ul className="defect-legend" aria-label="Defect class colours">{defectLegend.map((defect) => <li key={defect.name}><span className="defect-colour" style={{ backgroundColor: defect.color }} aria-hidden="true" /><span>{defect.label || defect.name.replaceAll('_', ' ')}</span></li>)}</ul>}
       </>}
       <div className="detail-stats">
-        <div><span>Observed surface</span><strong>{formatPercent(fruit.observed_surface_pct)}</strong></div>
+        {nineView ? <><div><span>Worst visible-view defects</span><strong>{formatPercent(fruit.worst_view_defect_pct)}</strong></div>
+          <div><span>Contributing frame</span><strong>{fruit.worst_view_frame ?? '—'}</strong></div>
+          <div><span>Decision deadline</span><strong>{fruit.deadline_missed == null ? 'Unassessed' : fruit.deadline_missed ? 'Missed' : 'Within deadline'}</strong></div></> : <div><span>Observed surface</span><strong>{formatPercent(fruit.observed_surface_pct)}</strong></div>}
         {fruit.coverage_target_pct != null && <div><span>Coverage target</span><strong>{formatPercent(fruit.coverage_target_pct)}</strong></div>}
-        <div><span>Surface defects</span><strong>{formatPercent(fruit.defect_pct_of_observed)}</strong></div>
-        <div><span>Measured rotation</span><strong>{degrees(fruit.rotation_coverage_deg)}</strong></div>
-        <div><span>Circumference observed</span><strong>{degrees(fruit.observed_longitude_deg)}</strong></div>
+        {!nineView && <><div><span>Surface defects</span><strong>{formatPercent(fruit.defect_pct_of_observed)}</strong></div>
+          <div><span>Measured rotation</span><strong>{degrees(fruit.rotation_coverage_deg)}</strong></div>
+          <div><span>Circumference observed</span><strong>{degrees(fruit.observed_longitude_deg)}</strong></div></>}
         <div><span>Captured views</span><strong>{fruit.views ?? '\u2014'}</strong></div>
-        <div><span>Views used in map</span><strong>{fruit.mapped_view_frames?.length ?? '\u2014'}</strong></div>
+        <div><span>{nineView ? 'Successful view inferences' : 'Views used in map'}</span><strong>{nineView ? fruit.processed_crops : fruit.mapped_view_frames?.length ?? '\u2014'}</strong></div>
         {fruit.first_seen_frame != null && <>
           <div><span>First tracked frame</span><strong>{fruit.first_seen_frame}</strong></div>
           <div><span>Last tracked frame</span><strong>{fruit.last_seen_frame}</strong></div>
@@ -94,7 +102,7 @@ function FruitDetail({ fruit, onClose }) {
       {fruit.reason && <div className="review-reason"><Icon name="alert" size={18} /><span>{fruit.reason}</span></div>}
       {!!fruit.tracking_evidence?.length && <details className="map-details">
         <summary>Entry and last seen</summary>
-        <p className="evidence-note">Tracking includes partially visible fruit at the frame edge. Surface reconstruction uses the usable complete-outline views from that same identity.</p>
+        <p className="evidence-note">Tracking includes partially visible fruit at the frame edge. Inspection uses accepted crops from that same association.</p>
         <div className="mask-grid">{fruit.tracking_evidence.map((view) => <div key={view.stage}>
           <span>{view.stage === 'entry' ? 'First tracked' : 'Last seen'} &middot; frame {view.frame}</span>
           <a href={view.crop} target="_blank" rel="noreferrer"><img src={view.crop} alt={`${view.stage === 'entry' ? 'Entry' : 'Last seen'} crop at frame ${view.frame}`} /></a>
@@ -104,12 +112,12 @@ function FruitDetail({ fruit, onClose }) {
         <summary>Source views and model masks</summary>
         <p className="evidence-note">Green outlines the fruit. Highlights show predicted defects. These are model outputs, not manually verified labels.</p>
         {fruit.view_evidence.map((view) => <div className="evidence-view" key={view.frame}>
-          <strong>Frame {view.frame}</strong>
-          <div className="mask-grid evidence-grid">
+          <strong>Frame {view.frame}{view.bin != null ? ` · bin ${view.bin + 1}` : ''}</strong>
+          {view.crop ? <div className="mask-grid evidence-grid">
             <div><span>Source crop</span><a href={view.crop} target="_blank" rel="noreferrer"><img src={view.crop} alt={`Fruit crop at frame ${view.frame}`} /></a></div>
             <div><span>Fruit mask</span><a href={view.fruit_mask} target="_blank" rel="noreferrer"><img src={view.fruit_mask} alt={`Fruit silhouette at frame ${view.frame}`} /></a></div>
             <div><span>{view.defect_inference_ran ? 'Predicted defects' : 'Fruit boundary only'}</span><a href={view.overlay} target="_blank" rel="noreferrer"><img src={view.overlay} alt={`Inspection overlay at frame ${view.frame}`} /></a></div>
-          </div>
+          </div> : <p className="evidence-note">Source view shown in the contact sheet. Individual mask files were disabled for this run.</p>}
           {!view.defect_inference_ran && <p className="evidence-note">Defect inference was not run on this unused view.</p>}
         </div>)}
       </details>}
@@ -128,6 +136,7 @@ export default function App() {
   const [file, setFile] = useState(null)
   const [previewUrl, setPreviewUrl] = useState(null)
   const [viewMode, setViewMode] = useState('camera')
+  const [trackingOverlay, setTrackingOverlay] = useState(false)
   const [uploading, setUploading] = useState(false)
   const [stopBusy, setStopBusy] = useState(false)
   const analysisIdRef = useRef(null)
@@ -311,20 +320,20 @@ export default function App() {
         : 'Uploading video and starting analysis…'
 
   return <div className="app-shell" id="overview">
-    <aside className="sidebar"><a className="brand" href="#overview"><span className="brand-mark"><span /></span><span><strong>Citrus<span>vision</span></strong><small>INSPECTION SYSTEM</small></span></a><div className="side-nav-label">WORKSPACE</div><nav className="side-nav" aria-label="Main navigation"><a className="active" href="#overview"><Icon name="grid" size={17} /> Overview</a><a href="#inspections"><Icon name="layers" size={17} /> Inspections</a></nav><div className="sidebar-bottom"><div className={`system-dot ${health?.cuda_available ? 'online' : ''}`} /><div><strong>{health?.cuda_available ? 'Models ready' : health ? 'GPU unavailable' : 'Backend offline'}</strong><span>{health?.cuda_available ? 'CUDA acceleration active' : 'Check the backend service'}</span></div></div></aside>
+    <aside className="sidebar"><a className="brand" href="#overview"><span className="brand-mark"><span /></span><span><strong>Citrus<span>vision</span></strong><small>INSPECTION SYSTEM</small></span></a><div className="side-nav-label">WORKSPACE</div><nav className="side-nav" aria-label="Main navigation"><a className="active" href="#overview"><Icon name="grid" size={17} /> Overview</a><a href="#tracking"><Icon name="check" size={17} /> Tracking performance</a><a href="#inspections"><Icon name="layers" size={17} /> Inspections</a></nav><div className="sidebar-bottom"><div className={`system-dot ${health && (health.requested_device === 'cpu' || health.cuda_available) ? 'online' : ''}`} /><div><strong>{health && (health.requested_device === 'cpu' || health.cuda_available) ? 'Models ready' : health ? 'GPU unavailable' : 'Backend offline'}</strong><span>{health?.requested_device === 'cpu' ? 'CPU inference configured' : health?.cuda_available ? 'CUDA acceleration active' : 'Check the backend service'}</span></div></div></aside>
 
     <main className="workspace"><header className="topbar"><div className="breadcrumbs">OPERATIONS <span>/</span> OVERVIEW</div><div className="top-status"><span className={`live-dot ${camera.connected ? 'on' : ''}`} /> {liveActive ? `Inspection ${live.state}` : camera.connected ? 'Camera connected' : 'Camera offline'}<span className="top-status-divider" />{health ? 'Backend online' : 'Backend offline'}</div></header>
-      <div className="page-heading"><div><span className="eyebrow">QUALITY CONTROL DASHBOARD</span><h1>Conveyor overview<span className="heading-period">.</span></h1><p>Camera, model signals and the latest naartjie surface inspections.</p></div><div className="last-analysis"><span>LATEST ANALYSIS</span><strong>{formatTime(latestRun?.created_at)}</strong></div></div>
+      <div className="page-heading"><div><span className="eyebrow">QUALITY CONTROL DASHBOARD</span><h1>Conveyor overview<span className="heading-period">.</span></h1><p>Camera, model signals and the latest naartjie inspections.</p></div><div className="last-analysis"><span>LATEST ANALYSIS</span><strong>{formatTime(latestRun?.created_at)}</strong></div></div>
       <div className="history-scope-row">
         <div className="filter-tabs history-scope" role="group" aria-label="Inspection history scope">
           {[['latest', 'Latest run'], ['all', 'All saved runs']].map(([value, label]) => <button key={value} type="button" className={historyScope === value ? 'selected' : ''} aria-pressed={historyScope === value} onClick={() => { setHistoryScope(value); setShown(6) }}>{label}</button>)}
         </div>
         <p>{historyScope === 'latest' ? latestRun ? `${latestRun.source_name || 'Recorded video'} · ${formatTime(latestRun.created_at)}` : 'No saved run yet' : 'Saved analyses include repeat runs of the same video.'}</p>
       </div>
-      <section className="summary-grid" aria-label="Inspection summary"><MetricCard title="Inspection records" value={formatNumber(summary.fruit_count)} hint={`${formatNumber(summary.runs)} inspection ${summary.runs === 1 ? 'session' : 'sessions'}`} icon="grid" /><MetricCard title="Class 1 share" value={classOneShare == null ? '—' : `${classOneShare}%`} hint="Of fruit assigned a grade" icon="check" tone="accent" /><MetricCard title="Needs review" value={formatNumber(counts.ungraded)} hint="No usable map or defect estimate" icon="alert" /></section>
+      <section className="summary-grid" aria-label="Inspection summary"><MetricCard title="Inspection records" value={formatNumber(summary.fruit_count)} hint={`${formatNumber(summary.runs)} inspection ${summary.runs === 1 ? 'session' : 'sessions'}`} icon="grid" /><MetricCard title="Class 1 share" value={classOneShare == null ? '—' : `${classOneShare}%`} hint="Of fruit assigned a grade" icon="check" tone="accent" /><MetricCard title="Needs review" value={formatNumber(counts.ungraded)} hint="Incomplete evidence or unassessed defects" icon="alert" /></section>
 
       <section className="monitor-grid" aria-label="Camera and model monitoring"><div className="panel camera-panel"><div className="panel-heading"><div><span className="eyebrow">01 / CAMERA</span><h2>Conveyor view</h2></div><span className={`feed-badge ${camera.connected ? 'connected' : ''}`}><span />{liveActive ? 'INSPECTION ACTIVE' : previewActive ? 'UPLOAD PREVIEW' : camera.connected ? 'LIVE FEED' : 'NO LIVE FEED'}</span></div><div className={`camera-stage ${previewActive || camera.configured ? 'has-video' : ''}`}>
-        {previewActive ? <video src={previewUrl} controls muted playsInline aria-label="Selected conveyor video preview" /> : camera.configured ? <><img src="/api/camera/stream" alt="Live conveyor camera" />{!camera.connected && <div className="camera-overlay"><Icon name="camera" size={29} /><strong>Waiting for camera</strong><span>Checking {camera.source?.toLowerCase()} for frames</span></div>}</> : <div className="camera-empty"><div className="camera-empty-icon"><Icon name="camera" size={34} /></div><strong>Camera source not connected</strong><span>Configure a USB camera or network stream to monitor the conveyor here.</span></div>}
+        {trackingOverlay && (liveActive || analysisActive) ? <img src="/api/tracking/preview" alt="Processed conveyor frame with raw TrackTrack IDs and checkpoint guides" /> : previewActive ? <video src={previewUrl} controls muted playsInline aria-label="Selected conveyor video preview" /> : camera.configured ? <><img src="/api/camera/stream" alt="Live conveyor camera" />{!camera.connected && <div className="camera-overlay"><Icon name="camera" size={29} /><strong>Waiting for camera</strong><span>Checking {camera.source?.toLowerCase()} for frames</span></div>}</> : <div className="camera-empty"><div className="camera-empty-icon"><Icon name="camera" size={34} /></div><strong>Camera source not connected</strong><span>Configure a USB camera or network stream to monitor the conveyor here.</span></div>}
         <span className="camera-corner top-left" /><span className="camera-corner top-right" /><span className="camera-corner bottom-left" /><span className="camera-corner bottom-right" /></div>
         <form className="camera-controls" onSubmit={analyze}>
           <div className="source-caption"><span className="source-label">{previewActive ? 'SELECTED VIDEO' : 'CAMERA SOURCE'}</span><strong title={previewActive ? file?.name : camera.source || ''}>{previewActive ? file?.name : camera.source || 'Not configured'}</strong></div>
@@ -345,5 +354,8 @@ export default function App() {
 
       <div className="monitor-side"><div className="panel quality-panel"><div className="panel-heading"><div><span className="eyebrow">02 / QUALITY</span><h2>Class mix</h2></div><span className="panel-caption">{historyScope === 'latest' ? 'LATEST RUN' : 'ALL SAVED RUNS'}</span></div><div className="quality-total"><strong>{formatNumber(summary.fruit_count)}</strong><span>inspection records</span></div><div className="mix-bar" aria-label="Fruit class distribution">{['Class 1', 'Class 2', 'Class 3', 'ungraded'].map((name) => <span key={name} className={`mix-${name.replace(' ', '-').toLowerCase()}`} style={{ width: `${summary.fruit_count ? (counts[name] / summary.fruit_count) * 100 : 0}%` }} />)}</div><div className="mix-legend">{['Class 1', 'Class 2', 'Class 3', 'ungraded'].map((name) => <div key={name}><span className={`legend-dot mix-${name.replace(' ', '-').toLowerCase()}`} /><span>{name === 'ungraded' ? 'Review' : name}</span><strong>{formatNumber(counts[name])}</strong></div>)}</div></div><div className="panel performance-panel"><div className="panel-heading"><div><span className="eyebrow">03 / MODEL SIGNAL</span><h2>Inference performance</h2></div><span className="panel-caption">LATEST RUN</span></div><ModelRow title="Fruit detection" subtitle="D-FINE · object boxes" data={latestRun?.metrics?.detection} accent="detect" /><ModelRow title="Defect segmentation" subtitle="D-FINE-seg · fruit crops" data={latestRun?.metrics?.segmentation} accent="segment" /><p className="confidence-disclaimer">Confidence is model certainty, not measured accuracy.</p></div></div></section>
 
-      <section className="inspections-section" id="inspections"><div className="section-heading"><div><span className="eyebrow">04 / INSPECTIONS</span><h2>Recent fruit <span>and surface maps</span></h2></div><span className="section-count">{formatNumber(filtered.length)} shown in history</span></div><div className="panel inspection-panel"><div className="inspection-toolbar"><div className="filter-tabs" role="group" aria-label="Filter fruit by class">{['All fruit', 'Class 1', 'Class 2', 'Class 3', 'Needs review'].map((name) => <button key={name} type="button" className={filter === name ? 'selected' : ''} onClick={() => { setFilter(name); setShown(6) }}>{name}</button>)}</div><label className="search-box"><Icon name="search" size={17} /><input value={search} onChange={(event) => { setSearch(event.target.value); setShown(6) }} placeholder="Search fruit or video" aria-label="Search fruit or video" /></label></div><div className="inspection-table"><div className="table-head"><span>FRUIT / SOURCE</span><span>CLASS</span><span>OBSERVED</span><span>DEFECTS</span><span>SURFACE MAP</span><span /></div>{visible.length ? visible.map((fruit) => <button type="button" className="fruit-row" key={`${fruit.job_id}-${fruit.track_id}`} onClick={() => setSelectedFruit(fruit)}><span className="fruit-identity"><span className="fruit-avatar">{fruit.surface_map ? <img src={fruit.surface_map} alt="" /> : <Icon name="file" size={19} />}</span><span><strong>Fruit {String(fruit.track_id).padStart(3, '0')}</strong><small>{fruit.source_name || 'Recorded video'} · {formatTime(fruit.created_at)}</small></span></span><span><span className={`grade-pill ${gradeClass(fruit)}`}>{gradeText(fruit)}</span></span><span className="table-number">{formatPercent(fruit.observed_surface_pct)}</span><span className="table-number">{formatPercent(fruit.defect_pct_of_observed)}</span><span className="map-cell">{fruit.surface_map ? 'View map' : 'Unavailable'}</span><Icon name="arrow" size={17} /></button>) : <div className="inspection-empty"><span className="empty-symbol"><Icon name="layers" size={25} /></span><strong>{fruits.length ? 'No fruit match this view' : 'No inspections recorded yet'}</strong><span>{fruits.length ? 'Try another class or search term.' : 'Analyze a video or start live inspection above.'}</span></div>}</div>{filtered.length > shown && <div className="table-footer"><button type="button" onClick={() => setShown(shown + 6)}>Show more inspections <Icon name="arrow" size={16} /></button></div>}</div></section><footer className="app-footer"><span>Citrusvision · Naartjie quality monitoring</span><span>Results update during live inspection and after video analysis.</span></footer></main>{selectedFruit && <FruitDetail fruit={selectedFruit} onClose={() => setSelectedFruit(null)} />}</div>
+      <InspectionMode />
+      <TrackingPerformance latestJobId={latestRun?.job_id} MetricCard={MetricCard} overlay={trackingOverlay} onOverlayChange={setTrackingOverlay} />
+
+      <section className="inspections-section" id="inspections"><div className="section-heading"><div><span className="eyebrow">05 / INSPECTIONS</span><h2>Recent fruit <span>and inspection evidence</span></h2></div><span className="section-count">{formatNumber(filtered.length)} shown in history</span></div><div className="panel inspection-panel"><div className="inspection-toolbar"><div className="filter-tabs" role="group" aria-label="Filter fruit by class">{['All fruit', 'Class 1', 'Class 2', 'Class 3', 'Needs review'].map((name) => <button key={name} type="button" className={filter === name ? 'selected' : ''} onClick={() => { setFilter(name); setShown(6) }}>{name}</button>)}</div><label className="search-box"><Icon name="search" size={17} /><input value={search} onChange={(event) => { setSearch(event.target.value); setShown(6) }} placeholder="Search fruit or video" aria-label="Search fruit or video" /></label></div><div className="inspection-table"><div className="table-head"><span>FRUIT / SOURCE</span><span>CLASS</span><span>OBSERVED</span><span>DEFECTS</span><span>EVIDENCE</span><span /></div>{visible.length ? visible.map((fruit) => <button type="button" className="fruit-row" key={`${fruit.job_id}-${fruit.track_id}`} onClick={() => setSelectedFruit(fruit)}><span className="fruit-identity"><span className="fruit-avatar">{(fruit.contact_sheet || fruit.surface_map) ? <img src={fruit.contact_sheet || fruit.surface_map} alt="" /> : <Icon name="file" size={19} />}</span><span><strong>Fruit {String(fruit.track_id).padStart(3, '0')}</strong><small>{fruit.source_name || 'Recorded video'} · {formatTime(fruit.created_at)}</small></span></span><span><span className={`grade-pill ${gradeClass(fruit)}`}>{gradeText(fruit)}</span></span><span className="table-number">{fruit.algorithm === 'nine_view' ? `${fruit.processed_crops ?? 0} snapshots` : formatPercent(fruit.observed_surface_pct)}</span><span className="table-number" title={fruit.algorithm === 'nine_view' ? 'Worst visible-view percentage; whole-fruit area unknown' : 'Defects on observed surface'}>{formatPercent(fruit.algorithm === 'nine_view' ? fruit.worst_view_defect_pct : fruit.defect_pct_of_observed)}{fruit.algorithm === 'nine_view' && <small> worst view</small>}</span><span className="map-cell">{fruit.algorithm === 'nine_view' ? 'View crops' : fruit.surface_map ? 'View map' : 'Unavailable'}</span><Icon name="arrow" size={17} /></button>) : <div className="inspection-empty"><span className="empty-symbol"><Icon name="layers" size={25} /></span><strong>{fruits.length ? 'No fruit match this view' : 'No inspections recorded yet'}</strong><span>{fruits.length ? 'Try another class or search term.' : 'Analyze a video or start live inspection above.'}</span></div>}</div>{filtered.length > shown && <div className="table-footer"><button type="button" onClick={() => setShown(shown + 6)}>Show more inspections <Icon name="arrow" size={16} /></button></div>}</div></section><footer className="app-footer"><span>Citrusvision · Naartjie quality monitoring</span><span>Results update during live inspection and after video analysis.</span></footer></main>{selectedFruit && <FruitDetail fruit={selectedFruit} onClose={() => setSelectedFruit(null)} />}</div>
 }

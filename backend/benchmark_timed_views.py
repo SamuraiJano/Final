@@ -1,0 +1,329 @@
+"""Source-paced, operation-only full-pipeline benchmark of the four detectors.
+
+The Pi profile is a CPU/thread/RAM-constrained workstation rehearsal, not ARM
+emulation. Never present its FPS as measured Raspberry Pi performance.
+"""
+from collections import Counter, deque
+from dataclasses import asdict
+from datetime import datetime, timezone
+from pathlib import Path
+from uuid import uuid4
+import argparse
+import hashlib
+import json
+import math
+import os
+import platform
+import threading
+import time
+import cProfile
+import pstats
+
+ROOT = Path(__file__).resolve().parent
+os.environ.setdefault('YOLO_CONFIG_DIR', str(ROOT / 'runtime/ultralytics-validation'))
+os.environ.setdefault('OMP_NUM_THREADS', '2')
+os.environ.setdefault('OPENBLAS_NUM_THREADS', '1')
+
+import cv2
+import numpy as np
+import psutil
+cv2.setNumThreads(1)
+
+
+def write(path, data):
+    path.write_text(json.dumps(data, indent=2, allow_nan=False), encoding='utf-8')
+
+
+def four_core_affinity():
+    permitted=psutil.Process().cpu_affinity()
+    if platform.system()=='Windows':
+        import ctypes
+        size=ctypes.c_ulong(0)
+        query=ctypes.windll.kernel32.GetLogicalProcessorInformationEx
+        query(0,None,ctypes.byref(size))
+        buffer=ctypes.create_string_buffer(size.value)
+        if query(0,buffer,ctypes.byref(size)):
+            cores=[];offset=0
+            while offset<size.value:
+                record_size=int.from_bytes(buffer.raw[offset+4:offset+8],'little')
+                if record_size<48:break
+                mask=int.from_bytes(buffer.raw[offset+32:offset+40],'little')
+                available=[cpu for cpu in permitted if mask & (1<<cpu)]
+                if available:cores.append(available[0])
+                offset+=record_size
+            if len(cores)>=4:return cores[:4],'Windows processor-core topology; one logical CPU per physical core'
+    return permitted[:4],'First four permitted CPUs; physical topology not verified'
+
+
+class OperationCapture:
+    """Decode incoming BGR frames at original FPS; retain only the latest two."""
+    def __init__(self, video, fps, start, end, capture_hz=0.):
+        self.video, self.fps, self.start, self.end = video, fps, start, end
+        self.first, self.last = round(start*fps), int(end*fps)
+        self.frames, self.condition = deque(maxlen=2), threading.Condition()
+        self.event, self.finished = threading.Event(), False
+        self.produced, self.decode_seconds = 0, 0.
+        self.retrieved,self.capture_hz=0,capture_hz
+        self.origin, self.error = None, None
+        self.thread = threading.Thread(target=self._run, name='live-video-replay', daemon=True)
+
+    def _run(self):
+        cap = cv2.VideoCapture(str(self.video))
+        cap.set(cv2.CAP_PROP_POS_FRAMES, self.first)
+        self.origin = time.monotonic()
+        next_capture=0.
+        try:
+            for index in range(self.first, self.last):
+                if self.event.is_set(): break
+                began = time.perf_counter(); ok = cap.grab()
+                self.decode_seconds += time.perf_counter()-began
+                if not ok: break
+                timestamp = self.origin+(index-self.first)/self.fps
+                self.event.wait(max(0., timestamp-time.monotonic()))
+                if self.event.is_set(): break
+                self.produced += 1
+                offset=(index-self.first)/self.fps
+                if self.capture_hz and offset+1e-6<next_capture:continue
+                if self.capture_hz:next_capture=offset+1/self.capture_hz
+                began=time.perf_counter();ok,frame=cap.retrieve()
+                self.decode_seconds+=time.perf_counter()-began
+                if not ok:break
+                with self.condition:
+                    self.frames.append((index, frame, timestamp))
+                    self.retrieved+=1;self.condition.notify_all()
+        except Exception as error:
+            self.error = str(error)
+        finally:
+            cap.release()
+            with self.condition:
+                self.finished = True; self.condition.notify_all()
+
+    def next(self, after):
+        with self.condition:
+            self.condition.wait_for(lambda:self.finished or (self.frames and self.frames[-1][0]>after),timeout=1.)
+            return self.frames[-1] if self.frames and self.frames[-1][0]>after else None
+
+    def close(self):
+        self.event.set(); self.thread.join()
+
+
+class MemoryMonitor:
+    def __init__(self):
+        self.samples, self.event = [], threading.Event()
+        self.process=psutil.Process()
+        self.thread=threading.Thread(target=self._run,daemon=True)
+
+    def _run(self):
+        self.process.cpu_percent()
+        while not self.event.wait(.5):
+            self.samples.append(dict(time=time.monotonic(),rss_bytes=self.process.memory_info().rss,
+                                     process_cpu_percent=self.process.cpu_percent()))
+
+    def close(self):
+        self.event.set(); self.thread.join()
+
+
+def run_clip(args, calibration, video, interval, output):
+    import main
+    from inspection_config import InspectionConfiguration
+    config = InspectionConfiguration()
+    config.update(dict(algorithm='nine_view',nine_view=dict(region=(0,0,1,1), acquisition='timed',
+        required_views=args.views,snapshot_interval_seconds=interval,evidence_level=args.evidence,
+        snapshot_lateness_seconds=min(.15,interval*.75),decision_deadline_seconds=args.deadline,
+        timing_calibration_id=hashlib.sha256(args.calibration.read_bytes()).hexdigest()[:16])))
+    main.inspection_configuration=config
+    a,b=max(video['operation_ranges'],key=lambda ab:ab[1]-ab[0])
+    if not args.all_videos: b=min(b,a+args.seconds)
+    path=args.videos/video['video']
+    # Reject changed source files before using a persisted stop boundary.
+    with path.open('rb') as f:
+        if hashlib.file_digest(f,'sha256').hexdigest()!=video['sha256']:
+            raise ValueError(f'Calibration source changed: {path}')
+    began=time.monotonic()
+    pipeline,detector,segmenter=main._make_pipeline(capture_stride_frames=1)
+    startup=time.monotonic()-began
+    job=main.RESULTS/uuid4().hex;job.mkdir()
+    pipeline.run_id=job.name;pipeline.set_frame_rate(video['fps'])
+    collector=main._begin_tracking(job);pipeline.tracking_metrics=collector
+    writer=main.TrackWriter(job)
+    capture=OperationCapture(path,video['fps'],a,b,args.capture_hz)
+    monitor=MemoryMonitor()
+    processed=0;sequence=capture.first-1;last_progress=time.monotonic()
+    profiler=cProfile.Profile() if args.profile else None
+    if profiler:profiler.enable()
+    monitor.thread.start();capture.thread.start();started=time.monotonic()
+    try:
+        while True:
+            item=capture.next(sequence)
+            if item is None:
+                if capture.finished:break
+                continue
+            index,frame,timestamp=item;sequence=index
+            pipeline.process_frame(frame,index,timestamp=index/video['fps'],capture_monotonic=timestamp)
+            main._update_tracking_preview(frame,collector)
+            for track_id,last in list(pipeline.last_seen_frame.items()):
+                if index-last>pipeline.identity_guard.lost_track_buffer_frames:
+                    writer.finish(pipeline,track_id)
+            for track_id in pipeline.ready_tracks():writer.finish(pipeline,track_id)
+            writer.collect();processed+=1
+            if args.hardware=='pi4' and psutil.Process().memory_info().rss>3*1024**3:
+                raise MemoryError('3 GiB process RSS budget exceeded; reserve 1 GiB for Pi OS')
+            if time.monotonic()-last_progress>5:
+                print(args.model,args.hardware,video['video'],'frames',processed,'source',capture.produced,
+                      'grades',sum(bool(r.get('grade')) for r in writer.results),
+                      'pending',pipeline.nine.pending_depth(),flush=True)
+                last_progress=time.monotonic()
+        if capture.error:raise RuntimeError(capture.error)
+        pipeline.flush()
+        for track_id in list(pipeline.last_seen_frame):writer.finish(pipeline,track_id)
+        writer.collect(wait=True)
+        pipeline.close()  # account for expired in-flight model work in wall time
+        if profiler:
+            profiler.disable();profiler.dump_stats(str(output/'consumer.pstats'))
+            with (output/'consumer_profile.txt').open('w') as stream:
+                pstats.Stats(profiler,stream=stream).sort_stats('cumulative').print_stats(60)
+        duration=time.monotonic()-started;collector.finish()
+        rows=writer.results;counts=pipeline.counters
+        model_calls=detector.inference_calls
+        expected_calls=int((b-a)/args.detector_interval) if args.detector_interval else capture.produced
+        peak=max([psutil.Process().memory_info().rss]+[r['rss_bytes'] for r in monitor.samples])
+        metrics=dict(video=video['video'],job_id=job.name,operation_range=[a,b],source_fps=video['fps'],
+            source_frames=capture.produced,delivered_frames=processed,
+            capture_overwritten_frames=capture.retrieved-processed,
+            capture_unretrieved_frames=capture.produced-capture.retrieved,
+            capture_hz=args.capture_hz,
+            timer_skipped_detector_frames=counts['timer_skipped_detector_frames'],
+            detector_calls=model_calls,detector_updates_per_source_second=model_calls/(capture.produced/video['fps']),
+            expected_detector_updates_approx=expected_calls,
+            detector_mean_ms=detector.total_latency_ms/max(1,model_calls),
+            detector_preprocess_mean_ms=detector.preprocess_ms/max(1,model_calls),
+            detector_backend_mean_ms=detector.backend_ms/max(1,model_calls),
+            association_mean_ms=detector.association_ms/max(1,model_calls),
+            segmentation_crops=segmenter.inference_calls,
+            segmentation_effective_ms_per_crop=segmenter.total_latency_ms/max(1,segmenter.inference_calls),
+            segmentation_stages_seconds=dict(getattr(segmenter,'stage_seconds',{})),
+            segmentation_backend=getattr(segmenter,'backend','torch'),
+            fruit_mask_backend=pipeline.nine.mask_mode,
+            publication_stages_seconds=dict(writer.stage_seconds),
+            evidence_write_seconds=sum(r.get('evidence_write_seconds',0.) for r in rows),
+            pipeline_wall_seconds=duration,source_seconds=capture.produced/video['fps'],
+            detector_update_fps_including_drain=model_calls/duration,decode_seconds=capture.decode_seconds,
+            model_startup_warmup_seconds=startup,peak_rss_bytes=peak,
+            frame_age_p95_ms=float(np.percentile(pipeline.frame_ages,95)*1000) if pipeline.frame_ages else None,
+            arrivals=counts['entered_fruit'],terminal_results=len(rows),
+            complete_evidence=sum(bool(r.get('evidence_complete')) for r in rows),
+            graded=sum(bool(r.get('grade')) and not r.get('deadline_missed') for r in rows),
+            grades_produced=sum(bool(r.get('grade')) for r in rows),
+            grading_policy='available_views',
+            deadline_misses=sum(bool(r.get('deadline_missed')) for r in rows),
+            statuses=dict(Counter(r['status'] for r in rows)),
+            selected_view_histogram=dict(Counter(str(r['selected_crops']) for r in rows)),
+            processed_view_histogram=dict(Counter(str(r['processed_crops']) for r in rows)),
+            duplicate_terminal_uids=len(rows)-len({r['fruit_uid'] for r in rows}),
+            publication_p95_seconds=float(np.percentile([r['publication_latency_seconds'] for r in rows],95)) if rows else None,
+            runtime=pipeline.runtime_metrics(),
+            accurate_real_time_pass=bool(rows) and all(r.get('grade') and not r['deadline_missed'] for r in rows))
+        main._write_report(job,dict(job_id=job.name,created_at=datetime.now(timezone.utc).isoformat(),mode='video',
+            source_name=video['video'],status='complete',metrics=metrics,fruits=rows))
+        write(output/f'{path.stem}_{round(a*1000)}.json',dict(metrics=metrics,fruits=rows,resource_samples=monitor.samples))
+        print('RESULT',args.model,args.hardware,metrics['graded'],'/',len(rows),'detectorHz',
+              round(metrics['detector_updates_per_source_second'],2),'seg ms/crop',
+              round(metrics['segmentation_effective_ms_per_crop'],1),flush=True)
+        return metrics
+    finally:
+        capture.close();monitor.close();writer.close();pipeline.close();pipeline.close_identity_debug()
+
+
+def run(args):
+    if args.optimized and args.hardware!='pi4':raise ValueError('Optimized profile is CPU-only')
+    os.environ['FRUIT_CPU_OPTIMIZED']='1' if args.optimized else '0'
+    if args.optimized:
+        os.environ.setdefault('FRUIT_DETECTOR_THREADS','2')
+        os.environ.setdefault('FRUIT_SEGMENTATION_THREADS','2')
+        os.environ.setdefault('FRUIT_TRACKING_PREVIEW_HZ','2')
+    os.environ['FRUIT_DETECTOR_MODEL']=args.model
+    os.environ['FRUIT_DEVICE']='cpu' if args.hardware=='pi4' else 'cuda'
+    os.environ['FRUIT_HARDWARE_PROFILE']=args.hardware
+    os.environ['FRUIT_CPU_THREADS']=str(args.threads)
+    os.environ['FRUIT_DETECTION_INTERVAL']=str(args.detector_interval)
+    os.environ['FRUIT_NINE_BATCH']=str(args.batch or (1 if args.hardware=='pi4' else 8))
+    import torch
+    torch.set_num_threads(args.threads)
+    cv2.setNumThreads(1)
+    # Four logical CPUs selected explicitly; report affinity instead of claiming
+    # we know x86 logical-to-physical topology or ARM-equivalent clock speed.
+    process=psutil.Process()
+    affinity_method=None
+    if args.hardware=='pi4' and hasattr(process,'cpu_affinity'):
+        selected,affinity_method=four_core_affinity();process.cpu_affinity(selected)
+    calibration=json.loads(args.calibration.read_text())
+    interval=args.interval or calibration['timing']['recommended']['interval_seconds']
+    output=ROOT/'diagnostics/timed-views'/args.label/f'{args.hardware}_{args.model}'
+    output.mkdir(parents=True,exist_ok=False)
+    names=args.clips or ['WIN_20260818_13_05_49_Pro.mp4','WIN_20260818_13_35_37_Pro.mp4','WIN_20260818_13_52_31_Pro.mp4']
+    videos=[v for v in calibration['videos'] if v['operation_ranges'] and (args.all_videos or v['video'] in names)]
+    if args.all_videos:
+        videos=[{**v,'operation_ranges':[r]} for v in videos for r in v['operation_ranges']]
+    from export_detector import ROOT as MODELS
+    folder=MODELS/('YOLO' if args.model.startswith('yolo') else 'D-FINE')/'detection'
+    colour=args.model.split('_')[1]
+    paths=([folder/f'model_{colour}.ncnn.param',folder/f'model_{colour}.ncnn.bin'] if args.hardware=='pi4' and args.model.startswith('yolo') and not args.optimized
+           else [folder/f'model_{colour}.onnx'] if args.hardware=='pi4' else [folder/f'model_fp32_{colour}.engine'])
+    paths.append(MODELS/'D-FINE/segmentation/model.pt')
+    if args.optimized:paths.extend([MODELS/'D-FINE/segmentation/model_cpu_fp32.onnx',MODELS/'D-FINE/segmentation/model_cpu_fp32.json'])
+    request=dict(arguments=vars(args),interval_seconds=interval,input_size=[640,640],
+        profile='workstation CPU proxy; ARM speed/cache/bandwidth/thermals are not simulated' if args.hardware=='pi4' else 'laptop CUDA',
+        cpu_affinity=process.cpu_affinity() if hasattr(process,'cpu_affinity') else None,
+        affinity_method=affinity_method,
+        torch_threads=torch.get_num_threads(),opencv_threads=cv2.getNumThreads(),
+        cpu_optimized=args.optimized,detector_threads=os.getenv('FRUIT_DETECTOR_THREADS',str(args.threads)),
+        segmentation_threads=os.getenv('FRUIT_SEGMENTATION_THREADS',str(args.threads)),
+        preview_hz=float(os.getenv('FRUIT_TRACKING_PREVIEW_HZ','5')),
+        memory_budget_bytes=3*1024**3 if args.hardware=='pi4' else None,
+        memory_enforcement='RSS watchdog after each processed frame; not a hard OS memory cap',
+        platform=platform.platform(),cpu=platform.processor(),python=platform.python_version(),
+        torch=torch.__version__,opencv=cv2.__version__,
+        gpu=torch.cuda.get_device_name() if args.hardware!='pi4' else None,
+        calibrated_source_sha256=hashlib.sha256(args.calibration.read_bytes()).hexdigest(),
+        hsv='HSV_FULL conversion after RGB geometry for every detector invocation; no preconverted videos',
+        replay='Original FPS, decoded BGR at arrival; latest-two ring; no sleep or HSV cache in consumer',
+        models={str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in paths},
+        sources={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in [ROOT/n for n in
+            ('benchmark_timed_views.py','export_detector.py','nine_view.py','inspection_pipeline.py',
+             'inspection_config.py','inspection_export.py','algorithm.py','realtime_pipeline.py',
+             'main.py','dfine_segmenter.py','inference_scheduler.py','optimized_segmenter.py')]},
+        accuracy='No independent video identity/defect/grade labels. Timing success is not accuracy.',
+        calibration_scope='All 50 videos screened for motion; timing fitted offline; three operation-only scenarios replayed per model by default')
+    request['arguments']={k:str(v) if isinstance(v,Path) else v for k,v in vars(args).items()}
+    write(output/'request.json',request)
+    records=[]
+    for video in videos:
+        records.append(run_clip(args,calibration,video,interval,output))
+        write(output/'summary.json',dict(model=args.model,hardware=args.hardware,views=args.views,interval=interval,clips=records))
+
+
+if __name__=='__main__':
+    p=argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--model',choices=['yolo_rgb','yolo_hsv','dfine_rgb','dfine_hsv'],required=True)
+    p.add_argument('--hardware',choices=['laptop','pi4'],default='laptop')
+    p.add_argument('--calibration',type=Path,default=ROOT/'diagnostics/timed-views/calibration.json')
+    p.add_argument('--videos',type=Path,default=ROOT.parent/'videos')
+    p.add_argument('--clips',nargs='+')
+    p.add_argument('--all-videos',action='store_true')
+    p.add_argument('--seconds',type=float,default=10.)
+    p.add_argument('--views',type=int,choices=range(4,10),default=4)
+    p.add_argument('--interval',type=float)
+    p.add_argument('--detector-interval',type=float,default=.1)
+    p.add_argument('--threads',type=int,default=2)
+    p.add_argument('--batch',type=int)
+    p.add_argument('--deadline',type=float,default=5.)
+    p.add_argument('--label',default=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ'))
+    p.add_argument('--profile',action='store_true')
+    p.add_argument('--optimized',action='store_true')
+    p.add_argument('--capture-hz',type=float,default=0.)
+    p.add_argument('--evidence',choices=['full','contact_sheet'],default='contact_sheet')
+    options=p.parse_args()
+    if (options.seconds<=0 or options.threads<1 or not 0<=options.detector_interval<=1 or options.deadline<=0
+            or not math.isfinite(options.capture_hz) or options.capture_hz<0):
+        p.error('Invalid benchmark timing/resource options')
+    run(options)
