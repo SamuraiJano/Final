@@ -1,0 +1,312 @@
+"""Hot per-fruit strategy assignment around the existing detector and tracker."""
+from collections import Counter, deque
+from dataclasses import asdict, replace
+from types import SimpleNamespace
+from uuid import uuid4
+import time
+
+import cv2
+import numpy as np
+
+from algorithm import NaartjiePipeline, MappingError, _as_numpy
+from nine_view import NineViewEngine, progress_at, box_in_region, select_crop
+
+
+class ObservedDetector:
+    def __init__(self, model, owner):
+        self.model, self.owner = model, owner
+
+    def __getattr__(self, name):
+        return getattr(self.model, name)
+
+    def track(self, *args, **kwargs):
+        kwargs['source_timestamp'] = self.owner.timestamp
+        result = self.model.track(*args, **kwargs)
+        boxes = result[0].boxes
+        self.owner.neighbours = _as_numpy(boxes.xyxy) if boxes is not None else []
+        return result
+
+
+class InspectionPipeline:
+    inspection_router = True
+
+    def __init__(self, surface, configuration_provider, run_id=None, **engine_options):
+        self.surface = surface
+        self.provider = configuration_provider
+        self.run_id = run_id or uuid4().hex
+        self.nine = NineViewEngine(surface.segmenter, **engine_options)
+        self.routes = {}
+        self.neighbours = []
+        self.timestamp, self.captured_at, self.fps = 0., time.monotonic(), 30.
+        self.frame_times, self.frame_ages = deque(maxlen=10000), deque(maxlen=10000)
+        self.counters = Counter()
+        self.detection_interval_seconds, self.next_detection = 0., None
+        self.previous_motion_image, self.stream_change = None, None
+        self.frame_snapshot = None
+        self.start = time.monotonic()
+        self._original_record = surface.record_tracked_detection
+        self._original_capture = surface.add_tracked_detection
+        surface.record_tracked_detection = self._record
+        surface.add_tracked_detection = self._capture
+        surface.detector = ObservedDetector(surface.detector, self)
+
+    def __getattr__(self, name):
+        return getattr(self.surface, name)
+
+    @property
+    def tracking_metrics(self):
+        return self.surface.tracking_metrics
+
+    @tracking_metrics.setter
+    def tracking_metrics(self, value):
+        self.surface.tracking_metrics = value
+
+    def set_frame_rate(self, fps):
+        if fps and fps > 0:
+            self.fps = float(fps)
+        self.surface.set_frame_rate(fps)
+
+    def _record(self, frame, track_id, box, index):
+        route = self.routes.get(track_id)
+        if route is not None and route['published']:
+            self.last_seen_frame[track_id] = index
+            # The shared tracking loop annotates the current observation after
+            # this hook returns. Keep one lightweight row for that annotation.
+            x0, y0, x1, y1 = map(float, box)
+            h, w = frame.shape[:2]
+            self.tracking_history_by_id[track_id] = [dict(frame=index,
+                bbox_xyxy=[x0, y0, x1, y1], touches_frame_edge=x0 <= 2 or y0 <= 2 or x1 >= w - 2 or y1 >= h - 2)]
+            return
+        self._original_record(frame, track_id, box, index)
+        route = self.routes.get(track_id)
+        if route is None:
+            snapshot = self.frame_snapshot or self.provider()
+            timed = snapshot.algorithm == 'nine_view' and snapshot.nine_view.acquisition == 'timed'
+            if timed and (self.stream_change is None or self.stream_change < snapshot.nine_view.minimum_stream_change):
+                return
+            if timed and not box_in_region(box, frame.shape, snapshot.nine_view):
+                return
+            if timed:
+                eligible, _ = select_crop(frame, box, index, self.timestamp, self.captured_at,
+                                           0, None, snapshot.nine_view, self.neighbours)
+                if eligible is None:
+                    return
+            progress, across = (None, True) if timed else progress_at(box, frame.shape, snapshot.nine_view)
+            if progress is not None and (not across or progress < 0 or progress >= 1):
+                history = self.tracking_history_by_id[track_id]
+                if len(history) > 128:
+                    self.tracking_history_by_id[track_id] = history[:1] + history[-127:]
+                return
+            route = dict(snapshot=snapshot, key=f'{self.run_id}:{track_id}',
+                         surface_settings=replace(self.surface.settings), published=False, last_frame=-1,
+                         entered_at=self.captured_at, last_motion=self.timestamp)
+            self.routes[track_id] = route
+            self.counters['entered_fruit'] += 1
+            if snapshot.algorithm == 'nine_view':
+                if not self.nine.open(route['key'], track_id, snapshot, self.timestamp, self.captured_at):
+                    route['overloaded'] = True
+                    self.nine.counts['active_overloads'] += 1
+        if route['published'] or route['last_frame'] == index:
+            return
+        route['last_frame'] = index
+        if route['snapshot'].algorithm == 'nine_view' and not route.get('overloaded'):
+            cfg = route['snapshot'].nine_view
+            if cfg.acquisition == 'timed':
+                if self.stream_change is not None and self.stream_change >= cfg.minimum_stream_change:
+                    route['last_motion'] = self.timestamp
+                elif self.timestamp-route['last_motion'] >= cfg.conveyor_stop_grace_seconds:
+                    self.nine.end(route['key'], 'conveyor_stopped_or_scene_unchanged')
+                    return
+            history = self.tracking_history_by_id[track_id]
+            if len(history) > 128:
+                self.tracking_history_by_id[track_id] = history[:1] + history[-127:]
+            uncertain = self.identity_guard.metadata.get(track_id, {}).get('identity_status') == 'uncertain'
+            self.nine.observe(route['key'], frame, box, index, self.timestamp, self.captured_at,
+                              self.neighbours, uncertain)
+
+    def _capture(self, frame, track_id, box, index):
+        route = self.routes.get(track_id)
+        if route is None or route['published']:
+            return False
+        if route['snapshot'].algorithm == 'nine_view':
+            return False  # Selection already ran from every tracking observation.
+        return self._original_capture(frame, track_id, box, index)
+
+    def process_frame(self, frame, frame_index, capture_views=True, timestamp=None, capture_monotonic=None):
+        started = time.perf_counter()
+        self.timestamp = float(timestamp) if timestamp is not None else frame_index / self.fps
+        self.captured_at = time.monotonic() if capture_monotonic is None else capture_monotonic
+        config = self.provider()
+        timed_only = config.algorithm == 'nine_view' and config.nine_view.acquisition == 'timed' and all(
+            route['published'] or route['snapshot'].algorithm == 'nine_view' for route in self.routes.values())
+        if timed_only and self.detection_interval_seconds:
+            if self.next_detection is not None and self.timestamp + 1e-6 < self.next_detection:
+                self.counters['timer_skipped_detector_frames'] += 1
+                self.nine.expire()
+                return []
+            self.next_detection = self.timestamp + self.detection_interval_seconds
+        else:
+            self.next_detection = None
+        if config.nine_view.acquisition == 'timed' or any(
+                r['snapshot'].nine_view.acquisition == 'timed' for r in self.routes.values()):
+            small = cv2.cvtColor(cv2.resize(frame, (64, 36)), cv2.COLOR_BGR2GRAY)
+            self.stream_change = float(cv2.absdiff(small, self.previous_motion_image).mean()) if self.previous_motion_image is not None else None
+            self.previous_motion_image = small
+        kwargs = dict(capture_views=capture_views, timestamp=self.timestamp)
+        if getattr(self.surface, 'inspection_profile', None) == 'realtime':
+            kwargs['capture_monotonic'] = self.captured_at
+        self.frame_snapshot = config
+        try:
+            result = self.surface.process_frame(frame, frame_index, **kwargs)
+        finally:
+            self.frame_snapshot = None
+        self.nine.expire()
+        self.frame_times.append(time.perf_counter() - started)
+        self.frame_ages.append(max(0., time.monotonic() - self.captured_at))
+        self.counters['processed_frames'] += 1
+        return result
+
+    def ready_tracks(self):
+        self.nine.expire()
+        with self.nine.condition:
+            return [track_id for track_id, route in self.routes.items() if not route['published'] and
+                    route['snapshot'].algorithm == 'nine_view' and
+                    (route.get('overloaded') or (self.nine.fruit.get(route['key']) is not None and
+                                               self.nine.fruit[route['key']].result is not None))]
+
+    def end_track(self, track_id, reason='track_loss'):
+        route = self.routes.get(track_id)
+        if route is None or route['published']:
+            return
+        if route['snapshot'].algorithm == 'nine_view':
+            self.nine.end(route['key'], reason)
+        elif hasattr(self.surface, 'end_track'):
+            self.surface.end_track(track_id)
+
+    def track_ready(self, track_id):
+        route = self.routes.get(track_id)
+        if route is None or route['published']:
+            return False
+        if route['snapshot'].algorithm == 'nine_view':
+            return route.get('overloaded', False) or self.nine.ready(route['key'])
+        return self.surface.track_ready(track_id) if hasattr(self.surface, 'track_ready') else True
+
+    def already_published(self, track_id):
+        return self.routes.get(track_id, {}).get('published', False)
+
+    def detach_track(self, track_id):
+        route = self.routes[track_id]
+        if route['published'] or not self.track_ready(track_id):
+            raise RuntimeError('Track cannot be published twice or before its evidence drains')
+        snapshot = route['snapshot']
+        identity = dict(self.identity_guard.metadata.get(track_id, {}))
+        history = list(self.tracking_history_by_id.get(track_id, []))
+        images = dict(self.tracking_images_by_id.get(track_id, {}))
+        if snapshot.algorithm == 'nine_view':
+            if route.get('overloaded'):
+                result, views = dict(track_id=track_id, fruit_uid=route['key'], algorithm='nine_view',
+                    configuration_version=snapshot.version, configuration_snapshot=asdict(snapshot),
+                    status='nine_view_overloaded', reason='Active-fruit buffer is full', grade=None,
+                    grade_provisional=False, evidence_complete=False, selected_crops=0,
+                    processed_crops=0, required_crops=snapshot.nine_view.required_views, views=0, view_frames=[],
+                    calibration_status=snapshot.nine_view.calibration_status,
+                    calibration_id=snapshot.nine_view.calibration_id, whole_surface_coverage_known=False,
+                    calibration_validated=snapshot.nine_view.calibration_status == 'validated',
+                    missing_bins=list(range(snapshot.nine_view.required_views)), rejected_crops={},
+                    entry_capture_monotonic=route['entered_at'],
+                    decision_deadline_monotonic=route['entered_at'] + snapshot.nine_view.decision_deadline_seconds,
+                    deadline_seconds=snapshot.nine_view.decision_deadline_seconds,
+                    deadline_missed=time.monotonic() >= route['entered_at'] + snapshot.nine_view.decision_deadline_seconds), []
+            else:
+                result, views = self.nine.detach(route['key'])
+                views = [replace(view, mask=None if view.mask is None else view.mask.copy(),
+                         defect_masks={name: mask.copy() for name, mask in view.defect_masks.items()})
+                         for view in views]
+            result.update(identity)
+            if identity.get('identity_status') == 'uncertain':
+                result.update(status='identity_uncertain', grade=None, grade_provisional=False,
+                              reason='Uncertain physical-fruit association; grading withheld')
+            frozen = SimpleNamespace(nine_view_result=result, nine_view_images=views,
+                contact_sheet=snapshot.nine_view.contact_sheet,
+                evidence_level=snapshot.nine_view.evidence_level,
+                tracking_history_by_id={track_id: history}, tracking_images_by_id={track_id: images})
+        elif hasattr(self.surface, 'detach_track'):
+            try:
+                mapped, failure = self.surface.finish_track(track_id), None
+            except MappingError as error:
+                mapped, failure = None, error
+            frozen = SimpleNamespace(settings=route['surface_settings'],
+                views_by_id={track_id: list(self.views_by_id.get(track_id, []))},
+                rejected_views_by_id={track_id: dict(self.rejected_views_by_id.get(track_id, {}))},
+                tracking_history_by_id={track_id: history}, tracking_images_by_id={track_id: images},
+                identity_guard=SimpleNamespace(metadata={track_id: identity}))
+            def finish(_track_id):
+                if failure is not None:
+                    raise failure
+                return mapped
+            frozen.finish_track = finish
+            self.surface.online.pop(track_id, None)
+        else:
+            # Only the finished fruit's immutable evidence is used on the export
+            # worker. Shared model calls still pass through the bounded scheduler.
+            frozen = NaartjiePipeline(self.segmenter, settings=route['surface_settings'],
+                defer_defect_segmentation=self.defer_defect_segmentation)
+            frozen.views_by_id[track_id] = list(self.views_by_id.get(track_id, []))
+            frozen.rejected_views_by_id[track_id] = dict(self.rejected_views_by_id.get(track_id, {}))
+            frozen.tracking_history_by_id[track_id] = history
+            frozen.tracking_images_by_id[track_id] = images
+            frozen.identity_guard.metadata[track_id] = identity
+        frozen.algorithm_assignment = dict(algorithm=snapshot.algorithm, fruit_uid=route['key'],
+            configuration_version=snapshot.version, configuration_snapshot=asdict(snapshot),
+            surface_mapping_settings=asdict(route['surface_settings']))
+        if not hasattr(frozen, 'drop_track'):
+            frozen.drop_track = lambda _track_id: None
+        route['published'] = True
+        # Preserve the guard's association until actual track loss. A timed-out
+        # stationary fruit must not get a new ID/result on its next observation.
+        self.views_by_id.pop(track_id, None)
+        self.tracking_history_by_id.pop(track_id, None)
+        self.tracking_images_by_id.pop(track_id, None)
+        self.counters['published_fruit'] += 1
+        return frozen
+
+    def drop_track(self, track_id):
+        # _finish_track operates on a detached object; live tombstones disappear
+        # only when the tracker has actually lost that fruit.
+        route = self.routes.pop(track_id, None)
+        if route:
+            with self.nine.condition:
+                self.nine.fruit.pop(route['key'], None)
+        self.surface.drop_track(track_id)
+
+    def flush(self):
+        for track_id in list(self.routes):
+            self.end_track(track_id, 'end_of_stream')
+        if hasattr(self.surface, 'flush'):
+            self.surface.flush()
+        # Deadline bounds the drain; the dispatcher continues processing crops.
+        while any(not self.track_ready(i) and not r['published'] for i, r in self.routes.items()):
+            with self.nine.condition:
+                self.nine.condition.wait(timeout=.025)
+            self.nine.expire()
+
+    def runtime_metrics(self):
+        elapsed = max(.000001, time.monotonic() - self.start)
+        return dict(profile='mixed_strategies', model_input_size=[640, 640],
+            counters=dict(self.counters), nine_view=self.nine.metrics(),
+            processing_fps=len(self.frame_times) / sum(self.frame_times) if self.frame_times else 0.,
+            frame_age_p50_ms=float(np.percentile(self.frame_ages, 50) * 1000) if self.frame_ages else None,
+            frame_age_p95_ms=float(np.percentile(self.frame_ages, 95) * 1000) if self.frame_ages else None,
+            fruit_arrivals_per_second=self.counters['entered_fruit'] / elapsed,
+            published_fruit_per_second=self.counters['published_fruit'] / elapsed)
+
+    def close(self):
+        self.nine.close()
+        if hasattr(self.surface, 'close'):
+            self.surface.close()
+        else:
+            scheduler = getattr(self.segmenter, 'scheduler', None)
+            if scheduler:
+                scheduler.close()
+        for track_id in list(self.last_seen_frame):
+            self.drop_track(track_id)

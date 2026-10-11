@@ -1,0 +1,18 @@
+{
+  "checkpoint_sha256": "2869048b1bba2ca0e5cfb0416bf9977f79f851dd8907ffa8b07b54e8c6d049c0",
+  "onnx_sha256": "58cd5238def81bbc66b83b7c626acce7caa441f92a349647d92fa2326ac5216e",
+  "input_size": [
+    640,
+    640
+  ],
+  "precision": "fp32",
+  "outputs": [
+    "logits",
+    "boxes",
+    "masks"
+  ],
+  "postprocessing_parity_passed": true,
+  "parity_scope": "Prediction agreement on source crops, not independent defect accuracy",
+  "parity_crops": 8,
+  "parity_positive_crops": 1
+}

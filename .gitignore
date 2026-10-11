@@ -21,6 +21,7 @@ __pycache__/
 !.env.example
 backend/runtime/
 backend/uploads/
+videos/
 *.tmp
 
 # Trained checkpoints remain in the local model directory.
@@ -46,6 +47,11 @@ backend/diagnostics/**/*.zip
 backend/diagnostics/**/*.npz
 backend/diagnostics/**/*.npy
 backend/diagnostics/**/*.pdf
+backend/diagnostics/**/*.csv
+backend/diagnostics/**/*.json
+backend/diagnostics/**/*.jsonl
+backend/diagnostics/**/*.pstats
+backend/diagnostics/**/*.html
 
 # Editor directories and files
 .vscode/*

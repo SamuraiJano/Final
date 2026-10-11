@@ -1,0 +1,80 @@
+"""One bounded GPU queue; detector requests precede waiting segmentation batches."""
+from concurrent.futures import Future
+from itertools import count
+from queue import PriorityQueue, Full
+import threading
+
+
+class InferenceScheduler:
+    def __init__(self, capacity=32):
+        if capacity < 1:
+            raise ValueError('Inference queue capacity must be positive')
+        self.queue = PriorityQueue(maxsize=capacity)
+        self.sequence = count()
+        self.lock = threading.Lock()
+        self.closed = False
+        self.maximum_pending = 0
+        self.thread = threading.Thread(target=self._run, name='fruit-inference', daemon=True)
+        self.thread.start()
+
+    def submit(self, operation, *args, priority=1, **kwargs):
+        future = Future()
+        with self.lock:
+            if self.closed:
+                raise RuntimeError('Inference scheduler is closed')
+            try:
+                self.queue.put_nowait((priority, next(self.sequence), future, operation, args, kwargs))
+            except Full:
+                raise RuntimeError('Inspection inference queue is full; input exceeds processing capacity') from None
+            self.maximum_pending = max(self.maximum_pending, self.queue.qsize())
+        return future
+
+    def _run(self):
+        while True:
+            _, _, future, operation, args, kwargs = self.queue.get()
+            try:
+                if operation is None:
+                    return
+                if future.set_running_or_notify_cancel():
+                    try:
+                        future.set_result(operation(*args, **kwargs))
+                    except BaseException as failure:
+                        future.set_exception(failure)
+            finally:
+                self.queue.task_done()
+
+    def close(self):
+        with self.lock:
+            if self.closed:
+                return
+            self.closed = True
+        self.queue.put((2, next(self.sequence), None, None, (), {}))
+        self.thread.join()
+
+
+class ScheduledDetector:
+    def __init__(self, model, scheduler):
+        self.model, self.scheduler = model, scheduler
+
+    def __getattr__(self, name):
+        return getattr(self.model, name)
+
+    def track(self, *args, **kwargs):
+        return self.scheduler.submit(self.model.track, *args, priority=0, **kwargs).result()
+
+
+class ScheduledSegmenter:
+    def __init__(self, model, scheduler):
+        self.model, self.scheduler = model, scheduler
+
+    def __getattr__(self, name):
+        return getattr(self.model, name)
+
+    def predict_batch_async(self, images, conf=.25):
+        return self.scheduler.submit(self.model.predict_batch, images, conf=conf, priority=1)
+
+    def predict(self, *args, **kwargs):
+        return self.scheduler.submit(self.model.predict, *args, priority=1, **kwargs).result()
+
+    def predict_batch(self, *args, **kwargs):
+        return self.predict_batch_async(*args, **kwargs).result()

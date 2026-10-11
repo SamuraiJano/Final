@@ -1,0 +1,483 @@
+"""Progress-bin acquisition and conservative per-view decision fusion.
+
+No pose, rotation, atlas or surface reconstruction is used. Image selection
+does not establish different skin angles. Thresholds require fruit calibration.
+"""
+from collections import Counter, deque
+from dataclasses import dataclass, field, asdict
+from concurrent.futures import Future
+import threading
+import time
+
+import cv2
+import numpy as np
+
+from algorithm import _grabcut, _as_numpy, MappingError
+
+
+def progress_at(box, shape, settings):
+    if settings.region is None:
+        return None, False
+    h, w = shape[:2]
+    x, y = (box[0] + box[2]) / (2 * w), (box[1] + box[3]) / (2 * h)
+    l, t, r, b = settings.region
+    vertical = settings.direction in ('top_to_bottom', 'bottom_to_top')
+    progress = (y - t) / (b - t) if vertical else (x - l) / (r - l)
+    if settings.direction in ('bottom_to_top', 'right_to_left'):
+        progress = 1 - progress
+    across = l <= x <= r if vertical else t <= y <= b
+    return float(progress), across
+
+
+@dataclass
+class View:
+    image: np.ndarray
+    box: tuple
+    frame: int
+    timestamp: float
+    captured_at: float
+    bin: int
+    progress: float
+    quality: dict
+    mask: np.ndarray | None = None
+    defect_masks: dict = field(default_factory=dict)
+    inference: dict | None = None
+    error: str | None = None
+    finalized: bool = False
+    submitted: bool = False
+
+
+@dataclass
+class Fruit:
+    key: str
+    track_id: int
+    snapshot: object
+    entered_at: float
+    source_entered: float
+    deadline: float
+    slots: list = field(default_factory=lambda: [None] * 9)
+    finalized_bin: int = -1
+    last_progress: float = -1.
+    last_frame: int = -1
+    last_seen: float = 0.
+    source_last: float = 0.
+    observations: int = 0
+    rejection_counts: Counter = field(default_factory=Counter)
+    closed: bool = False
+    end_reason: str | None = None
+    result: dict | None = None
+    identity_uncertain: bool = False
+
+
+def select_crop(frame, box, index, timestamp, captured_at, bin_index, progress, settings, neighbours=()):
+    h, w = frame.shape[:2]
+    x0, y0, x1, y1 = map(float, box)
+    if x0 <= 1 or y0 <= 1 or x1 >= w - 1 or y1 >= h - 1:
+        return None, 'clipped_crop'
+    if min(x1 - x0, y1 - y0) < settings.minimum_crop_pixels:
+        return None, 'crop_too_small'
+    area = (x1 - x0) * (y1 - y0)
+    occlusion = 0.
+    for other in neighbours:
+        if np.allclose(box, other, atol=.01):
+            continue
+        overlap = max(0., min(x1, other[2]) - max(x0, other[0])) * max(0., min(y1, other[3]) - max(y0, other[1]))
+        occlusion = max(occlusion, overlap / max(area, 1.))
+    if occlusion > settings.maximum_occlusion_fraction:
+        return None, 'overlapping_fruit'
+    px, py = .12 * (x1 - x0), .12 * (y1 - y0)
+    l, t = max(0, int(x0 - px)), max(0, int(y0 - py))
+    r, b = min(w, int(np.ceil(x1 + px))), min(h, int(np.ceil(y1 + py)))
+    crop = frame[t:b, l:r].copy()
+    local = (int(x0) - l, int(y0) - t, int(np.ceil(x1)) - l, int(np.ceil(y1)) - t)
+    inner = crop[local[1]:local[3], local[0]:local[2]]
+    if not inner.size:
+        return None, 'empty_crop'
+    # An interior rectangle reduces background contributions to the blur metric.
+    ih, iw = inner.shape[:2]
+    center = inner[ih // 5:ih - ih // 5, iw // 5:iw - iw // 5]
+    blur = float(cv2.Laplacian(cv2.cvtColor(center, cv2.COLOR_BGR2GRAY), cv2.CV_32F).var())
+    hsv = cv2.cvtColor(inner, cv2.COLOR_BGR2HSV)
+    glare = float(np.mean((hsv[..., 1] < 45) & (hsv[..., 2] > 235)))
+    if blur < settings.minimum_blur_variance:
+        return None, 'blurred_crop'
+    if glare > settings.maximum_glare_fraction:
+        return None, 'excessive_glare'
+    return View(crop, local, int(index), float(timestamp), float(captured_at), bin_index, progress,
+                dict(blur_variance=blur, glare_fraction=glare, occlusion_fraction=occlusion,
+                     crop_width=crop.shape[1], crop_height=crop.shape[0])), None
+
+
+def fuse_view(result, view, names, settings):
+    """Union confidence-filtered genuine mask pixels within this visible view."""
+    valid = view.mask > 0
+    if not valid.any():
+        raise MappingError('No valid visible fruit pixels')
+    masks = {name: np.zeros(valid.shape, np.uint8) for name in names.values()}
+    supported_confidences = []
+    if result.masks is not None:
+        if result.boxes is None or getattr(result.boxes, 'conf', None) is None:
+            raise MappingError('Defect instances lack confidence evidence')
+        raw = _as_numpy(result.masks.data)
+        labels = _as_numpy(result.boxes.cls).astype(int).ravel()
+        scores = _as_numpy(result.boxes.conf).ravel()
+        if not len(raw) == len(labels) == len(scores):
+            raise MappingError('Defect masks, labels and confidence counts disagree')
+        for mask, label, score in zip(raw, labels, scores):
+            if label not in names or not np.isfinite(score):
+                raise MappingError('Invalid defect model label/confidence')
+            if score < settings.minimum_instance_confidence:
+                continue
+            binary = (mask > .5).astype(np.uint8)
+            if binary.shape != valid.shape:
+                binary = cv2.resize(binary, (valid.shape[1], valid.shape[0]), interpolation=cv2.INTER_NEAREST)
+            binary &= valid.astype(np.uint8)
+            if np.count_nonzero(binary) < settings.minimum_defect_pixels:
+                continue
+            masks[names[label]] |= binary
+            supported_confidences.append(float(score))
+    union = np.zeros(valid.shape, bool)
+    for mask in masks.values():
+        union |= mask > 0
+    pixels, denominator = int(union.sum()), int(valid.sum())
+    pct = 100 * pixels / denominator
+    severity = 1 if pct < settings.class_1_max_defect_pct else 2 if pct <= settings.class_2_max_defect_pct else 3
+    view.defect_masks = masks
+    view.inference = dict(defect_pixels=pixels, visible_fruit_pixels=denominator,
+        defect_pct_of_visible=pct, severity=severity, grade=f'Class {severity}',
+        supported_confidences=supported_confidences,
+        instance_confidence_threshold=settings.minimum_instance_confidence)
+
+
+class NineViewEngine:
+    def __init__(self, segmenter, batch_size=4, maximum_active=96, maximum_pending=128,
+                 maximum_inflight=2, batching_delay_seconds=.025, clock=time.monotonic,
+                 mask_provider=None, start_worker=True):
+        if min(batch_size, maximum_active, maximum_pending, maximum_inflight) < 1 or batching_delay_seconds < 0:
+            raise ValueError('Invalid nine-view resource limits')
+        self.segmenter = segmenter
+        self.names = dict(segmenter.names)
+        self.batch_size, self.maximum_active = batch_size, maximum_active
+        self.maximum_pending, self.maximum_inflight = maximum_pending, maximum_inflight
+        self.delay, self.clock = batching_delay_seconds, clock
+        self.mask_provider = mask_provider or (lambda view: _grabcut(view.image, 3, view.box))
+        self.condition = threading.Condition(threading.RLock())
+        self.fruit = {}
+        self.inflight = {}
+        self.job_sequence = 0
+        self.fair_cursor = 0
+        self.counts, self.seconds = Counter(), Counter()
+        self.latencies = deque(maxlen=10000)
+        self.frame_ages = deque(maxlen=10000)
+        self.closed = False
+        self.worker = None
+        if start_worker:
+            self.worker = threading.Thread(target=self._run, name='nine-view-dispatch', daemon=True)
+            self.worker.start()
+
+    def open(self, key, track_id, snapshot, timestamp, captured_at):
+        with self.condition:
+            if key in self.fruit:
+                raise ValueError('Fruit identity already active')
+            if len(self.fruit) >= self.maximum_active:
+                return False
+            state = Fruit(key, track_id, snapshot, captured_at, timestamp,
+                          captured_at + snapshot.nine_view.decision_deadline_seconds,
+                          last_seen=captured_at, source_last=timestamp)
+            if snapshot.nine_view.region is None:
+                state.closed, state.end_reason = True, 'inspection_region_not_configured'
+            self.fruit[key] = state
+            self.counts['arrivals'] += 1
+            self.counts['maximum_active'] = max(self.counts['maximum_active'], len(self.fruit))
+            self.condition.notify_all()
+            return True
+
+    def observe(self, key, frame, box, frame_index, timestamp, captured_at, neighbours=(), uncertain=False):
+        started = time.perf_counter()
+        with self.condition:
+            state = self.fruit.get(key)
+            if state is None or state.closed or state.result is not None or frame_index <= state.last_frame:
+                return False
+            state.identity_uncertain |= uncertain
+            state.last_frame, state.last_seen, state.source_last = frame_index, captured_at, timestamp
+            state.observations += 1
+            cfg = state.snapshot.nine_view
+            progress, across = progress_at(box, frame.shape, cfg)
+            if not across:
+                return False
+            if progress >= 1:
+                self._end(state, 'region_exit')
+                return False
+            if progress < 0:
+                return False
+            if progress < state.last_progress - .03:
+                state.rejection_counts['backwards_progress'] += 1
+                return False
+            index = min(8, int(progress * 9))
+            if index <= state.finalized_bin:
+                return False
+            self._finalize_through(state, index - 1)
+            state.last_progress = max(state.last_progress, progress)
+            candidate, reason = select_crop(frame, box, frame_index, timestamp, captured_at, index, progress, cfg, neighbours)
+            if reason:
+                state.rejection_counts[reason] += 1
+            else:
+                previous = state.slots[index]
+                # Sharper, less glare/occlusion, then earlier original frame wins ties.
+                def rank(view):
+                    q = view.quality
+                    return (q['blur_variance'], -q['glare_fraction'], -q['occlusion_fraction'], -view.frame)
+                if previous is None or rank(candidate) > rank(previous):
+                    state.slots[index] = candidate
+            self.seconds['selection'] += time.perf_counter() - started
+            self.condition.notify_all()
+            return candidate is not None
+
+    def _finalize_through(self, state, index):
+        for current in range(state.finalized_bin + 1, min(index, 8) + 1):
+            view = state.slots[current]
+            if view is not None:
+                view.finalized = True
+                self.counts['selected_crops'] += 1
+                if self.pending_depth() > self.maximum_pending:
+                    view.error = 'inference_overloaded'
+                    self.counts['dropped_accepted_views'] += 1
+                self.counts['maximum_queue'] = max(self.counts['maximum_queue'], self.pending_depth())
+        state.finalized_bin = max(state.finalized_bin, min(index, 8))
+
+    def _end(self, state, reason):
+        if not state.closed:
+            self._finalize_through(state, 8)
+            state.closed, state.end_reason = True, reason
+            self.condition.notify_all()
+
+    def end(self, key, reason='track_loss'):
+        with self.condition:
+            if key in self.fruit:
+                self._end(self.fruit[key], reason)
+
+    def pending_depth(self):
+        return sum(v is not None and v.finalized and not v.submitted and v.error is None
+                   for state in self.fruit.values() for v in state.slots)
+
+    def expire(self):
+        with self.condition:
+            now = self.clock()
+            for state in self.fruit.values():
+                if state.result is not None:
+                    continue
+                cfg = state.snapshot.nine_view
+                if now >= state.deadline:
+                    self._end(state, 'decision_deadline')
+                    for view in state.slots:
+                        if view is not None and view.inference is None and view.error is None:
+                            view.error = 'decision_deadline'
+                elif now - state.entered_at > cfg.maximum_dwell_seconds:
+                    self._end(state, 'stationary_or_dwell_timeout')
+                elif now - state.last_seen > cfg.track_loss_seconds:
+                    self._end(state, 'track_loss')
+                self._result(state)
+
+    def dispatch(self):
+        """Fair round robin across fruit, earliest decision deadlines first."""
+        with self.condition:
+            if len(self.inflight) >= self.maximum_inflight:
+                return
+            ready = sorted((s for s in self.fruit.values() if s.result is None), key=lambda s: (s.deadline, s.key))
+            requests = []
+            # At most one view from each fruit in the first round, then repeat.
+            for _ in range(self.batch_size):
+                found = False
+                for offset in range(len(ready)):
+                    state = ready[(self.fair_cursor + offset) % len(ready)]
+                    view = next((v for v in state.slots if v is not None and v.finalized and
+                                 not v.submitted and v.error is None), None)
+                    if view is not None:
+                        view.submitted = True
+                        requests.append((state.key, view, state.snapshot.nine_view))
+                        self.fair_cursor = (self.fair_cursor + offset + 1) % len(ready)
+                        found = True
+                        break
+                if not found:
+                    break
+            if not requests:
+                return
+            self.job_sequence += 1
+            job = self.job_sequence
+            self.inflight[job] = requests
+            self.counts['submitted_crops'] += len(requests)
+            self.counts['batches'] += 1
+            self.counts['maximum_inflight'] = max(self.counts['maximum_inflight'], len(self.inflight))
+            self.counts['maximum_queue'] = max(self.counts['maximum_queue'], self.pending_depth())
+        # Silhouettes only for finalized crops, outside capture and selection.
+        started = time.perf_counter()
+        try:
+            images, valid_requests = [], []
+            for key, view, cfg in requests:
+                try:
+                    if view.error is not None:
+                        continue
+                    view.mask = (self.mask_provider(view) > 0).astype(np.uint8)
+                    x0, y0, x1, y1 = view.box
+                    fraction = np.count_nonzero(view.mask) / max(1, (x1 - x0) * (y1 - y0))
+                    if view.mask.shape != view.image.shape[:2] or fraction < cfg.minimum_mask_box_fraction:
+                        raise MappingError('Selected crop has insufficient visible fruit mask')
+                    images.append(cv2.bitwise_and(view.image, view.image, mask=view.mask))
+                    valid_requests.append((key, view, cfg))
+                except Exception as error:
+                    with self.condition:
+                        view.error = 'fruit_mask_failed: ' + str(error)
+                        self.counts['failed_crops'] += 1
+                        if key in self.fruit:
+                            self._result(self.fruit[key])
+            with self.condition:
+                self.inflight[job] = valid_requests
+            if not valid_requests:
+                future = Future(); future.set_result([])
+                self.complete(job, future, started)
+                return
+            if hasattr(self.segmenter, 'predict_batch_async'):
+                future = self.segmenter.predict_batch_async(images, conf=min(cfg.minimum_instance_confidence for _, _, cfg in valid_requests))
+            else:
+                future = Future()
+                future.set_result(self.segmenter.predict_batch(images, conf=min(cfg.minimum_instance_confidence for _, _, cfg in valid_requests)))
+            future.add_done_callback(lambda completed: self.complete(job, completed, started))
+        except Exception as error:
+            future = Future()
+            future.set_exception(error)
+            self.complete(job, future, started)
+
+    def complete(self, job, future, started):
+        with self.condition:
+            requests = self.inflight.pop(job, None)
+            if requests is None:
+                return  # A repeated/late notification cannot publish another fruit.
+            self.seconds['inference_and_masks'] += time.perf_counter() - started
+            try:
+                predictions = future.result()
+                if len(predictions) != len(requests):
+                    raise MappingError('Inference result count disagrees with accepted views')
+                failure = None
+            except Exception as error:
+                predictions, failure = [None] * len(requests), str(error)
+            for (key, view, cfg), result in zip(requests, predictions):
+                state = self.fruit.get(key)
+                if state is None or state.result is not None or view.error is not None:
+                    self.counts['late_completions_ignored'] += 1
+                    continue
+                try:
+                    if failure:
+                        raise MappingError(failure)
+                    fuse_view(result, view, self.names, cfg)
+                    self.counts['successful_crops'] += 1
+                except Exception as error:
+                    view.error = 'inference_failed: ' + str(error)
+                    self.counts['failed_crops'] += 1
+                self._result(state)
+            self.condition.notify_all()
+
+    def _result(self, state):
+        if state.result is not None or not state.closed:
+            return
+        views = [v for v in state.slots if v is not None and v.finalized]
+        if any(v.inference is None and v.error is None for v in views):
+            return
+        cfg = state.snapshot.nine_view
+        successes = [v for v in views if v.inference is not None and v.error is None]
+        complete = len(views) == len(successes) == len({v.frame for v in views}) == 9
+        deadline_missed = self.clock() >= state.deadline
+        worst = max(successes, key=lambda v: (v.inference['severity'], v.inference['defect_pct_of_visible'], -v.frame), default=None)
+        reason = None
+        if state.identity_uncertain:
+            status, reason = 'identity_uncertain', 'Tracker association is uncertain; grading withheld'
+        elif not complete:
+            status = 'nine_view_incomplete'
+            errors = [v.error for v in views if v.error]
+            reason = state.end_reason if state.end_reason not in ('region_exit', 'track_loss') else 'missing_progress_bins'
+            if errors:
+                reason = errors[0]
+            if 'inference_overloaded' in errors:
+                status, reason = 'nine_view_overloaded', 'inference_overloaded'
+            elif state.end_reason in ('decision_deadline', 'stationary_or_dwell_timeout') or 'decision_deadline' in errors:
+                status = 'nine_view_timeout'
+        elif deadline_missed:
+            status, reason = 'nine_view_timeout', 'Decision completed after its configured deadline'
+        else:
+            status = 'graded_nine_view'
+        grade = worst.inference['grade'] if status == 'graded_nine_view' else None
+        source_span = max(0., state.source_last - state.source_entered)
+        cadence = (state.observations - 1) / source_span if source_span and state.observations > 1 else None
+        expected = cfg.expected_dwell_seconds
+        cadence_possible = cadence * expected >= 9 if cadence is not None and expected else None
+        latency = self.clock() - state.entered_at
+        state.result = dict(track_id=state.track_id, fruit_uid=state.key, algorithm='nine_view',
+            configuration_version=state.snapshot.version, configuration_snapshot=asdict(state.snapshot),
+            status=status, grade=grade, reason=reason, grade_provisional=bool(grade and cfg.calibration_status != 'validated'),
+            end_reason=state.end_reason,
+            grade_scope='worst_supported_view' if grade else None, evidence_complete=complete,
+            calibration_status=cfg.calibration_status, calibration_id=cfg.calibration_id,
+            calibration_validated=cfg.calibration_status == 'validated', coverage_complete=None,
+            observed_surface_pct=None, defect_pct_of_observed=None, whole_surface_coverage_known=False,
+            selected_crops=len(views), processed_crops=len(successes), required_crops=9,
+            views=len(views), view_frames=[v.frame for v in sorted(views, key=lambda v: v.frame)],
+            missing_bins=[i for i, v in enumerate(state.slots) if v is None],
+            rejected_crops=dict(state.rejection_counts), decision_latency_seconds=latency,
+            entry_capture_monotonic=state.entered_at, decision_deadline_monotonic=state.deadline,
+            deadline_seconds=cfg.decision_deadline_seconds, deadline_missed=deadline_missed,
+            source_dwell_observed_seconds=source_span, observed_cadence_fps=cadence,
+            observation_count=state.observations,
+            configured_dwell_can_supply_nine=cadence_possible,
+            acquisition_limitation='Observed cadence × configured dwell is below nine' if cadence_possible is False else None,
+            worst_view_frame=worst.frame if worst else None,
+            worst_view_defect_pct=worst.inference['defect_pct_of_visible'] if worst else None,
+            fusion_rule='worst_supported_per_view_severity',
+            selected_views=[dict(frame=v.frame, timestamp=v.timestamp, capture_monotonic=v.captured_at,
+                bin=v.bin, progress=v.progress, quality=v.quality, inference=v.inference, error=v.error) for v in sorted(views, key=lambda v: v.frame)])
+        self.counts['terminal_results'] += 1
+        self.counts['complete_evidence'] += int(complete)
+        self.counts['graded_fruit'] += int(grade is not None)
+        self.counts['incomplete_fruit'] += int(not complete)
+        self.counts['deadline_misses'] += int(deadline_missed)
+        self.latencies.append(latency)
+
+    def ready(self, key):
+        self.expire()
+        with self.condition:
+            state = self.fruit.get(key)
+            if state:
+                self._result(state)
+            return bool(state and state.result is not None)
+
+    def detach(self, key):
+        with self.condition:
+            state = self.fruit.pop(key)
+            if state.result is None:
+                raise RuntimeError('Nine-view fruit is not ready')
+            return state.result, [v for v in state.slots if v is not None and v.finalized]
+
+    def _run(self):
+        while True:
+            with self.condition:
+                if self.closed:
+                    return
+                self.condition.wait(timeout=max(.005, self.delay))
+            self.expire()
+            self.dispatch()
+
+    def metrics(self):
+        with self.condition:
+            return dict(counters=dict(self.counts), stage_seconds=dict(self.seconds),
+                queue_depth=self.pending_depth(), inflight_batches=len(self.inflight), active_fruit=len(self.fruit),
+                batch_size=self.batch_size, maximum_pending_views=self.maximum_pending,
+                batching_delay_seconds=self.delay,
+                end_to_end_p50_ms=float(np.percentile(self.latencies, 50) * 1000) if self.latencies else None,
+                end_to_end_p95_ms=float(np.percentile(self.latencies, 95) * 1000) if self.latencies else None)
+
+    def close(self):
+        with self.condition:
+            self.closed = True
+            self.condition.notify_all()
+        if self.worker:
+            self.worker.join()
+        with self.condition:
+            self.fruit.clear()

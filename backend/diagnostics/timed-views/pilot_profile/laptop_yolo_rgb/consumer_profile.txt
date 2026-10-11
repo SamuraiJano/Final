@@ -1,0 +1,68 @@
+         4797503 function calls (4403361 primitive calls) in 14.935 seconds
+
+   Ordered by: cumulative time
+   List reduced from 934 to 60 due to restriction <60>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+ 1134/943    0.020    0.000   11.797    0.013 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\inspection_pipeline.py:67(_record)
+ 16296/24    0.098    0.000    7.606    0.317 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\venv\Lib\site-packages\torch\nn\modules\module.py:1735(_wrapped_call_impl)
+       21    0.008    0.000    6.222    0.296 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\inspection_pipeline.py:22(track)
+       21    0.013    0.001    5.303    0.253 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\inference_scheduler.py:63(track)
+       21    0.008    0.000    4.465    0.213 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\algorithm.py:1862(validate_identity)
+       21    0.001    0.000    4.357    0.207 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\inspection_pipeline.py:133(process_frame)
+     1098    0.022    0.000    3.660    0.003 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\algorithm.py:1748(record_tracked_detection)
+ 16296/24    0.140    0.000    3.653    0.152 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\venv\Lib\site-packages\torch\nn\modules\module.py:1743(_call_impl)
+       24    0.002    0.000    3.521    0.147 C:\Users\USER\Desktop\1Skripsie\VS Code\New Model Trainer\model_training\third_party\D-FINE-seg\src\d_fine\dfine.py:40(forward)
+       21    0.001    0.000    3.365    0.160 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\algorithm.py:1849(process_frame)
+       21    0.025    0.001    3.326    0.158 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\conveyor_identity.py:219(update)
+       21    0.004    0.000    2.367    0.113 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\export_detector.py:159(track)
+  744/432    0.014    0.000    2.257    0.005 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\venv\Lib\site-packages\torch\nn\modules\container.py:248(forward)
+2626/2624    0.050    0.000    1.892    0.001 {putText}
+      779    0.014    0.000    1.878    0.002 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\nine_view.py:207(observe)
+      762    0.056    0.000    1.796    0.002 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\venv\Lib\site-packages\ultralytics\trackers\track_tracker.py:303(update)
+    27782    0.078    0.000    1.779    0.000 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\venv\Lib\site-packages\numpy\_core\numeric.py:2226(allclose)
+       96    0.001    0.000    1.709    0.018 C:\Users\USER\Desktop\1Skripsie\VS Code\New Model Trainer\model_training\third_party\D-FINE-seg\src\d_fine\arch\hgnetv2.py:327(forward)
+  188/179    0.004    0.000    1.631    0.009 C:\Python312\Lib\concurrent\futures\_base.py:428(result)
+      186    0.002    0.000    1.594    0.009 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\main.py:565(collect)
+    27782    0.724    0.000    1.448    0.000 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\venv\Lib\site-packages\numpy\_core\numeric.py:2320(isclose)
+       24    0.002    0.000    1.350    0.056 C:\Users\USER\Desktop\1Skripsie\VS Code\New Model Trainer\model_training\third_party\D-FINE-seg\src\infer\torch_model.py:366(_postprocess)
+ 1146/331    0.114    0.000    1.334    0.004 C:\Python312\Lib\threading.py:323(wait)
+   162/62    0.011    0.000    1.271    0.021 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\main.py:433(_write_track_result)
+      520    0.059    0.000    1.270    0.002 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\nine_view.py:83(select_crop)
+     1008    0.026    0.000    1.269    0.001 C:\Users\USER\Desktop\1Skripsie\VS Code\New Model Trainer\model_training\third_party\D-FINE-seg\src\d_fine\arch\hgnetv2.py:76(forward)
+ 1553/203    0.078    0.000    1.235    0.006 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\venv\Lib\site-packages\ultralytics\utils\patches.py:135(imwrite)
+       24    0.001    0.000    1.219    0.051 C:\Users\USER\Desktop\1Skripsie\VS Code\New Model Trainer\model_training\third_party\D-FINE-seg\src\d_fine\arch\hgnetv2.py:567(forward)
+      460    0.005    0.000    1.194    0.003 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\nine_view.py:329(dispatch)
+      164    0.003    0.000    1.177    0.007 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\nine_view.py:174(<lambda>)
+       21    0.003    0.000    1.144    0.054 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\venv\Lib\site-packages\ultralytics\trackers\track_tracker.py:454(update)
+       24    0.002    0.000    1.086    0.045 C:\Users\USER\Desktop\1Skripsie\VS Code\New Model Trainer\model_training\third_party\D-FINE-seg\src\d_fine\arch\dfine_decoder.py:1069(forward)
+      288    0.001    0.000    1.068    0.004 C:\Users\USER\Desktop\1Skripsie\VS Code\New Model Trainer\model_training\third_party\D-FINE-seg\src\d_fine\arch\hybrid_encoder.py:205(<genexpr>)
+       24    0.002    0.000    1.065    0.044 C:\Users\USER\Desktop\1Skripsie\VS Code\New Model Trainer\model_training\third_party\D-FINE-seg\src\d_fine\arch\hybrid_encoder.py:443(forward)
+     2496    0.016    0.000    1.029    0.000 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\venv\Lib\site-packages\torch\nn\modules\conv.py:553(forward)
+      416    0.013    0.000    1.017    0.002 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\nine_view.py:250(_observe_timed)
+   156/16    0.004    0.000    1.010    0.063 C:\Python312\Lib\concurrent\futures\thread.py:53(run)
+    23/19    0.007    0.000    1.002    0.053 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\venv\Lib\site-packages\torch\autograd\grad_mode.py:273(__exit__)
+  328/164    0.014    0.000    0.985    0.006 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\algorithm.py:174(_grabcut)
+      820    0.004    0.000    0.969    0.001 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\venv\Lib\site-packages\ultralytics\trackers\utils\kalman_filter.py:461(update)
+     2496    0.053    0.000    0.918    0.000 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\venv\Lib\site-packages\torch\nn\modules\conv.py:536(_conv_forward)
+      120    0.004    0.000    0.873    0.007 C:\Users\USER\Desktop\1Skripsie\VS Code\New Model Trainer\model_training\third_party\D-FINE-seg\src\d_fine\arch\hgnetv2.py:266(forward)
+     21/5    0.002    0.000    0.846    0.169 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\venv\Lib\site-packages\torch\utils\_contextlib.py:113(decorate_context)
+35812/35775    0.121    0.000    0.804    0.000 {method 'copy' of 'numpy.ndarray' objects}
+2043/1964    0.002    0.000    0.796    0.000 {method 'extend' of 'list' objects}
+     22/5    0.002    0.000    0.782    0.156 C:\Users\USER\Desktop\1Skripsie\VS Code\New Model Trainer\model_training\third_party\D-FINE-seg\src\infer\torch_model.py:362(_predict)
+   158/16    0.011    0.000    0.762    0.048 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\main.py:424(_finish_track)
+   163/62    0.023    0.000    0.697    0.011 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\inspection_export.py:10(write_nine_view)
+      912    0.014    0.000    0.686    0.001 C:\Users\USER\Desktop\1Skripsie\VS Code\New Model Trainer\model_training\third_party\D-FINE-seg\src\d_fine\arch\hybrid_encoder.py:40(forward)
+ 1573/568    2.143    0.001    0.646    0.001 {imencode}
+      185    0.004    0.000    0.639    0.003 C:\Python312\Lib\json\__init__.py:183(dumps)
+      185    0.067    0.000    0.635    0.003 C:\Python312\Lib\json\encoder.py:183(encode)
+      164    0.004    0.000    0.629    0.004 C:\Python312\Lib\pathlib.py:1039(write_text)
+       21    0.001    0.000    0.629    0.030 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\venv\Lib\site-packages\ultralytics\trackers\track_tracker.py:444(_apply_gmc)
+     2376    0.023    0.000    0.621    0.000 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\venv\Lib\site-packages\torch\nn\modules\batchnorm.py:159(forward)
+    20/16    0.011    0.001    0.614    0.038 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\inference_scheduler.py:83(_batch)
+       96    0.003    0.000    0.597    0.006 C:\Users\USER\Desktop\1Skripsie\VS Code\New Model Trainer\model_training\third_party\D-FINE-seg\src\d_fine\arch\hybrid_encoder.py:203(forward)
+118606/117335    0.373    0.000    0.562    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+   283343    0.090    0.000    0.559    0.000 C:\Python312\Lib\json\encoder.py:414(_iterencode)
+      498    0.004    0.000    0.558    0.001 C:\Users\USER\Desktop\1Skripsie\VS Code\final\backend\main.py:389(<lambda>)
+
+
