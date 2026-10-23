@@ -63,3 +63,18 @@ backend/diagnostics/**/*.html
 *.njsproj
 *.sln
 *.sw?
+
+# Private local configuration and development sessions
+.codex/
+.agents/
+.claude/
+.cursor/
+.aider*
+AGENTS.md
+chat-transcripts/
+prompt-history/
+!.env.sample
+*.pem
+*.p12
+*.pfx
+*.kdbx
